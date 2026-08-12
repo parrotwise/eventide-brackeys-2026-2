@@ -15,8 +15,8 @@
 - Use composition to implement complex objects in a modular way, avoid inheritance except for basic use cases.
   - Implement components as nodes, put instances of each component under the parent object's scene tree.
   - Do initialization in the object's script, and leverage the tree order (top to bottom) for component processing.
-  - To access a component from an object, define getters on the object to locate the component by its node path.
-  - To access the object from a component, have the object store a reference to itself in the component on `_ready()`.
+  - To access a component from an object, define getters on the object to locate the component by its path.
+  - To access the object from a component, have the object store a reference to itself in the comp on `_ready()`.
 - Prioritize an early implementation over a high-performing one, don't pre-emptively stress about optimization.
 
 ## Collaboration practices
