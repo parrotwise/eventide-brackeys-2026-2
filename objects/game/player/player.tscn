@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2tb7j8f8p2tm"]
+
+[ext_resource type="Script" uid="uid://bq42wyi38hkkg" path="res://objects/game/player/player.gd" id="1_eodns"]
+[ext_resource type="Texture2D" uid="uid://cklahbcbv30qa" path="res://assets/art/icons/icon_godot.svg" id="2_pgn6d"]
+[ext_resource type="Script" uid="uid://cpsyyceqbaaaw" path="res://objects/game/components/sample_component.gd" id="3_2ca05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywvrj"]
+size = Vector2(126, 126)
+
+[node name="Player" type="CharacterBody2D" unique_id=1591856680]
+script = ExtResource("1_eodns")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=405491755]
+texture = ExtResource("2_pgn6d")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=2006458506]
+shape = SubResource("RectangleShape2D_ywvrj")
+
+[node name="SampleComponent" type="Node" parent="." unique_id=1338845533]
+script = ExtResource("3_2ca05")

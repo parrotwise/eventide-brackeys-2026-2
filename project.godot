@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+warnings/check_invalid_track_paths=false
+
+[application]
+
+config/name="Eventide Brackeys 2026.2"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="uid://cukbrwhqq3j4y"
+
+[audio]
+
+buses/default_bus_layout="uid://blvcceoo7rnvg"
+
+[autoload]
+
+Enums="*uid://mxuycahcqgn1"
+Debug="*uid://cinaakpe340f0"
+Audio="*uid://cedxs74eaob67"
+Game="*uid://dbyjtgtfj3gux"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

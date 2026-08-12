@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvnnp4oqsrhm8"]
+
+[ext_resource type="AudioStream" uid="uid://bopvkhqpu5b0b" path="res://objects/audio/sfx_stream.tres" id="1_745ec"]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" unique_id=1813658307]
+stream = ExtResource("1_745ec")
+max_polyphony = 2
