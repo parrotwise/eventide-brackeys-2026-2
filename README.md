@@ -57,13 +57,11 @@
       - 📄 `sound.wav`
       - 📄 `sound_stream.tres`
       - 📄 `...`
-  - 📂 `fonts`
-    - 📄 `font.otf`
-    - 📄 `...`
   - 📂 `shaders`
     - 📄 `shader.gdshader`
     - 📄 `...`
-  - 📂 `styles`
+  - 📂 `theme`
+    - 📄 `font.otf`
     - 📄 `theme.tres`
     - 📄 `stylebox.tres`
     - 📄 `...`
