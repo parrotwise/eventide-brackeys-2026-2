@@ -28,10 +28,12 @@
 - For the sake of speed, always commit to the main branch. If some merge conflicts slip through, just resolve them.
 
 ## Globals
-- The `Game` autoload serves as a global registry of game object instances and game state flags/counters.
-  - Have `Node` objects *(e.g. the player)* register their own instances as `Game` variables when `_ready()`.
-  - Instantiate `Resource` scripts directly in `Game._ready()` and register those too as `Game` variables.
-  - Declare game state parameters as `Game` variables. Have other scripts treat them as public attributes.
+- The `Game` autoload serves as a global registry of ***core*** game objects as well as game state flags/counters.
+  - Unique objects *(e.g. the player, the current level)* register themselves as `Game` variables when `_ready()`.
+  - Grouping objects *(e.g. collectables)* append themselves to `Game` arrays instead, and erase on `_exit_tree()`.
+  - `Resource` based objects can be instantiated directly in `Game._ready()` and registered like `Node` based ones.
+  - Have other scripts treat these cached instances as read-only values *(e.g. to count them, or get their positions)*.
+  - Declare game state variables as `Game` variables. Have other scripts treat them as read/write public attributes.
 - Instantiate audio players under the `Audio` autoload and handle audio events across game scenes in it.
 - The `Debug` autoload can pretty-print debug messages and stack traces color-coded by debug level as desired.
 - Use local enum definitions *only* if no other script will ever use them, otherwise use the `Enums` autoload.
