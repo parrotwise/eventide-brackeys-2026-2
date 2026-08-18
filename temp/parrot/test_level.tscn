@@ -1,9 +1,43 @@
 [gd_scene format=3 uid="uid://negrl4caln1s"]
 
+[ext_resource type="Script" uid="uid://5oboc3juueup" path="res://objects/game/levels/test_level.gd" id="1_0w8lq"]
 [ext_resource type="PackedScene" uid="uid://d2tb7j8f8p2tm" path="res://objects/game/player/player.tscn" id="1_dkk2m"]
+[ext_resource type="PackedScene" uid="uid://cuockdwqd0agu" path="res://objects/game/hazards/hazard.tscn" id="3_ump2o"]
 
 [node name="ParrotTestLevel" type="Node2D" unique_id=1154679703]
+script = ExtResource("1_0w8lq")
 
 [node name="Player" parent="." unique_id=1591856680 instance=ExtResource("1_dkk2m")]
+position = Vector2(916, 661)
+
+[node name="Hazards" type="Node2D" parent="." unique_id=690934761]
+
+[node name="Hazard1" parent="Hazards" unique_id=2065349293 instance=ExtResource("3_ump2o")]
+position = Vector2(1089, 291)
+damage = 40
+
+[node name="Hazard2" parent="Hazards" unique_id=1751897706 instance=ExtResource("3_ump2o")]
+position = Vector2(522, 566)
+damage = 45
+
+[node name="Hazard3" parent="Hazards" unique_id=123137310 instance=ExtResource("3_ump2o")]
+position = Vector2(818, 369)
+damage = 35
+
+[node name="Hazard4" parent="Hazards" unique_id=1419558676 instance=ExtResource("3_ump2o")]
+position = Vector2(1379, 574)
+damage = 40
+
+[node name="Hazard5" parent="Hazards" unique_id=1428222734 instance=ExtResource("3_ump2o")]
+position = Vector2(1391, 861)
+damage = 45
+
+[node name="Hazard6" parent="Hazards" unique_id=507377437 instance=ExtResource("3_ump2o")]
+position = Vector2(1093, 907)
+damage = 35
+
+[node name="Hazard7" parent="Hazards" unique_id=1693044959 instance=ExtResource("3_ump2o")]
+position = Vector2(713, 888)
+damage = 50
 
 [editable path="Player"]

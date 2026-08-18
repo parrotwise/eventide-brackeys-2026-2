@@ -1,7 +1,13 @@
 extends Node
 
 
-@warning_ignore("unused_signal") signal start()
-@warning_ignore("unused_signal") signal end()
+signal start()
+signal end()
 
 var player: Player
+var hazards: Array[Hazard] = []
+
+
+func _ready() -> void:
+	start.connect(Debug.info.bind('Game started.'))
+	end.connect(Debug.info.bind('Game ended.'))

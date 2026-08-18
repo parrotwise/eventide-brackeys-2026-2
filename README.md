@@ -31,10 +31,13 @@
 - The `Game` autoload serves as a global registry of ***core*** game objects as well as game state flags/counters.
   - Unique objects *(e.g. the player, the current level)* register themselves as `Game` variables when `_ready()`.
   - Grouping objects *(e.g. collectables)* append themselves to `Game` arrays instead, and erase on `_exit_tree()`.
-  - `Resource` based objects can be instantiated directly in `Game._ready()` and registered like `Node` based ones.
-  - Have other scripts treat these cached instances as read-only values *(e.g. to count them, or get their positions)*.
-  - Declare game state variables as `Game` variables. Have other scripts treat them as read/write public attributes.
-- Instantiate audio players under the `Audio` autoload and handle audio events across game scenes in it.
+  - `Resource` objects *(e.g. game state map)* can be instantiated and registered directly in `Game._ready()`.
+  - Use these registered instances to access the objects from other scripts, never overwrite them or keep copies.
+- The `Audio` autoload is used to manage audio players, control audio buses, and expose a global audio interface.
+  - Unique local audio players *(e.g. the level's finish line)* register themselves as `Audio` variables when `_ready()`.
+  - Grouping local players *(e.g. alarms)* append themselves to `Audio` arrays instead, and erase on `_exit_tree()`.
+  - Global audio players *(e.g. UI SFX, BG music)* can be instantiated and registered directly in `Audio._ready()`.
+  - Avoid accessing these cached instances from other scripts, use public interface functions of `Audio` instead.
 - The `Debug` autoload can pretty-print debug messages and stack traces color-coded by debug level as desired.
 - Use local enum definitions *only* if no other script will ever use them, otherwise use the `Enums` autoload.
 - The `Random` utility class manages RNGs and exposes convenience functions for generating random values.
@@ -42,52 +45,52 @@
 ## Directory structure
 - 📂 `assets`  *— media resources, not scenes or scripts*
   - 📂 `art`  *— sprites/animations and derived resources*
-    - 📂 `plants`  *— subfolders by theme*
-      - 📄 `bushes.png`
-      - 📄 `bushes_anim.tres`
-      - 📄 `bushes_atlas.tres`
-      - 📄 `bushes_tileset.tres`
-      - 📄 `trees.png`
-      - 📄 `...`
-    - 📂 `...`
+	- 📂 `plants`  *— subfolders by theme*
+	  - 📄 `bushes.png`
+	  - 📄 `bushes_anim.tres`
+	  - 📄 `bushes_atlas.tres`
+	  - 📄 `bushes_tileset.tres`
+	  - 📄 `trees.png`
+	  - 📄 `...`
+	- 📂 `...`
   - 📂 `audio`  *— music/sounds and derived resources*
-    - 📂 `music`  *— subfolders by asset type*
-      - 📄 `theme.ogg`
-      - 📄 `theme_stream.tres`
-      - 📄 `...`
-    - 📂 `sfx`
-      - 📄 `sound.wav`
-      - 📄 `sound_stream.tres`
-      - 📄 `...`
+	- 📂 `music`  *— subfolders by asset type*
+	  - 📄 `theme.ogg`
+	  - 📄 `theme_stream.tres`
+	  - 📄 `...`
+	- 📂 `sfx`
+	  - 📄 `sound.wav`
+	  - 📄 `sound_stream.tres`
+	  - 📄 `...`
   - 📂 `shaders`
-    - 📄 `shader.gdshader`
-    - 📄 `...`
+	- 📄 `shader.gdshader`
+	- 📄 `...`
   - 📂 `theme`
-    - 📄 `font.otf`
-    - 📄 `theme.tres`
-    - 📄 `stylebox.tres`
-    - 📄 `...`
+	- 📄 `font.otf`
+	- 📄 `theme.tres`
+	- 📄 `stylebox.tres`
+	- 📄 `...`
   - 📂 `...`
 - 📂 `objects`  *— scenes and scripts together*
   - 📂 `audio`  *— audio stream players*
-    - 📄 `music_player.gd`
-    - 📄 `music_player.tscn`
-    - 📄 `...`
+	- 📄 `music_player.gd`
+	- 📄 `music_player.tscn`
+	- 📄 `...`
   - 📂 `game`  *— game objects*
-    - 📂 `birbs`  *— subfolders by theme*
-      - 📄 `pigeon.gd`
-      - 📄 `pigeon.tscn`
-      - 📄 `...`
-    - 📂 `...`
+	- 📂 `birbs`  *— subfolders by theme*
+	  - 📄 `pigeon.gd`
+	  - 📄 `pigeon.tscn`
+	  - 📄 `...`
+	- 📂 `...`
   - 📂 `global`  *— autoloads and utilities*
-    - 📄 `audio.gd`
-    - 📄 `game.gd`
-    - 📄 `...`
+	- 📄 `audio.gd`
+	- 📄 `game.gd`
+	- 📄 `...`
   - 📂 `ui`  *— control nodes*
-    - 📄 `menu.gd`
-    - 📄 `menu.tscn`
-    - 📄 `...`
+	- 📄 `menu.gd`
+	- 📄 `menu.tscn`
+	- 📄 `...`
 - 📂 `temp`  *— test scenes etc, use as sandbox*
   - 📂 `parrot`  *— make your own subfolder*
-    - 📄 `...`
+	- 📄 `...`
   - 📂 `...`

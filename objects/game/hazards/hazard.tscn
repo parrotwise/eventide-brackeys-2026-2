@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cuockdwqd0agu"]
+
+[ext_resource type="Script" uid="uid://btq70chnx6edu" path="res://objects/game/hazards/hazard.gd" id="1_j38ge"]
+[ext_resource type="Texture2D" uid="uid://cklahbcbv30qa" path="res://assets/art/icons/icon_godot.svg" id="2_fhj5w"]
+[ext_resource type="PackedScene" uid="uid://d2lumitmelwm2" path="res://objects/game/components/hitbox_component.tscn" id="3_6l50c"]
+
+[node name="Hazard" type="Node2D" unique_id=2065349293]
+script = ExtResource("1_j38ge")
+damage = 10
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1905798098]
+self_modulate = Color(1, 0.26666668, 0.26666668, 1)
+texture = ExtResource("2_fhj5w")
+
+[node name="HitboxComponent" parent="." unique_id=720074007 instance=ExtResource("3_6l50c")]

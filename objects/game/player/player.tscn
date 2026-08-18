@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bq42wyi38hkkg" path="res://objects/game/player/player.gd" id="1_eodns"]
 [ext_resource type="Texture2D" uid="uid://cklahbcbv30qa" path="res://assets/art/icons/icon_godot.svg" id="2_pgn6d"]
-[ext_resource type="Script" uid="uid://cpsyyceqbaaaw" path="res://objects/game/components/sample_component.gd" id="3_2ca05"]
+[ext_resource type="PackedScene" uid="uid://cmt56akdl4tce" path="res://objects/game/components/input_component.tscn" id="3_2ca05"]
+[ext_resource type="PackedScene" uid="uid://ocihqkddfqgm" path="res://objects/game/components/movement_component.tscn" id="4_56wwm"]
+[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/health_component.tscn" id="4_re7xk"]
+[ext_resource type="PackedScene" uid="uid://b8vmcro0xw8v5" path="res://objects/game/components/hurtbox_component.tscn" id="6_re7xk"]
+[ext_resource type="PackedScene" uid="uid://docaxv0miryg2" path="res://objects/game/components/audio_component.tscn" id="7_re7xk"]
+[ext_resource type="AudioStream" uid="uid://bopvkhqpu5b0b" path="res://assets/audio/sfx/sfx_stream.tres" id="8_qxl5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywvrj"]
 size = Vector2(126, 126)
@@ -16,5 +21,13 @@ texture = ExtResource("2_pgn6d")
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=2006458506]
 shape = SubResource("RectangleShape2D_ywvrj")
 
-[node name="SampleComponent" type="Node" parent="." unique_id=1338845533]
-script = ExtResource("3_2ca05")
+[node name="InputComponent" parent="." unique_id=710571611 instance=ExtResource("3_2ca05")]
+
+[node name="HealthComponent" parent="." unique_id=1290732730 instance=ExtResource("4_re7xk")]
+
+[node name="MovementComponent" parent="." unique_id=165375919 instance=ExtResource("4_56wwm")]
+
+[node name="HurtboxComponent" parent="." unique_id=320001002 instance=ExtResource("6_re7xk")]
+
+[node name="AudioComponent" parent="." unique_id=767357198 instance=ExtResource("7_re7xk")]
+audio_stream = ExtResource("8_qxl5d")

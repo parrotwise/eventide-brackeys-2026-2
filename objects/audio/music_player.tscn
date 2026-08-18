@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba21xjlco2vi8"]
 
 [ext_resource type="AudioStream" uid="uid://bixgnuaaopfj1" path="res://assets/audio/music/music_stream.tres" id="1_1hait"]
-[ext_resource type="Script" uid="uid://df3r88qyvohem" path="res://objects/audio/music_player.gd" id="2_rylt1"]
+[ext_resource type="Script" uid="uid://dxdm812ho6jo7" path="res://objects/audio/music_player.gd" id="2_rylt1"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" unique_id=1608115462]
 stream = ExtResource("1_1hait")
