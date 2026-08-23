@@ -22,10 +22,9 @@ var status_effect_tracker: Node:
 		return $StatusEffectTracker
 
 
-var turn_tracker_component: Node:
+var turn_tracker_component: TurnTrackerComponent:
 	get:
 		return $TurnTrackerComponent
-
 
 var scenery: Node:
 	get:
@@ -87,7 +86,24 @@ func _ready() -> void:
 
 	for character: Character in enemies:
 		print("Enemy: ", character.name)
+		
+	turn_tracker_component.round_started.connect(
+		_on_round_started
+	)
 
+	turn_tracker_component.battle_group_started.connect(
+		_on_battle_group_started
+	)
+
+	turn_tracker_component.turn_started.connect(
+		_on_turn_started
+	)
+
+	turn_tracker_component.turn_ended.connect(
+		_on_turn_ended
+	)
+	turn_tracker_component.start_tracking(allies, enemies)
+	
 
 func _exit_tree() -> void:
 	if Game.level == self:
@@ -117,3 +133,18 @@ func _on_action_effect_applied(
 			target.name
 		]
 	)
+	
+func _on_round_started(round_number: int) -> void:
+	print("ROUND ", round_number)
+
+
+func _on_battle_group_started(group_name: StringName) -> void:
+	print("PHASE: ", group_name)
+
+
+func _on_turn_started(character: Character) -> void:
+	print("TURN STARTED: ", character.name)
+
+
+func _on_turn_ended(character: Character) -> void:
+	print("TURN ENDED: ", character.name)

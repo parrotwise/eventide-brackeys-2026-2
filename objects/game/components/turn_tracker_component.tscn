@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhcochngxa5w6"]
+
+[ext_resource type="Script" uid="uid://ce7ptx0k88ux6" path="res://objects/game/components/turn_tracker_component.gd" id="1_ertgo"]
+
+[node name="TurnTrackerComponent" type="Node2D" unique_id=1878263473]
+script = ExtResource("1_ertgo")
