@@ -4,6 +4,7 @@ extends Node
 signal start()
 signal end()
 
+var level: GameLevel
 var player: Character
 var hazards: Array[Node] = []
 
