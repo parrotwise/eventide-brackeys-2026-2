@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character_generic.tscn" id="1_5ksr3"]
 [ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_8qob3"]
+[ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/game_level.gd" id="1_gn8s7"]
+[ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/components/effector_component.tscn" id="2_aokjo"]
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
+[ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="3_gkvui"]
+[ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="7_e32i8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
 size = Vector2(720, 320)
@@ -16,9 +20,12 @@ size = Vector2(554, 204)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fk5qa"]
 size = Vector2(275, 100)
 
-[node name="CombatLevel" type="Node" unique_id=1073512595]
+[node name="CombatLevel" type="Node2D" unique_id=1694577298]
+script = ExtResource("1_gn8s7")
 
-[node name="EffectorComponent" type="Node" parent="." unique_id=1570299564]
+[node name="EffectorComponent" parent="." unique_id=755835823 instance=ExtResource("2_aokjo")]
+
+[node name="ActionsComponent" parent="." unique_id=1878263473 instance=ExtResource("3_gkvui")]
 
 [node name="PreviewComponent" type="Node" parent="." unique_id=946695866]
 
@@ -73,8 +80,17 @@ position = Vector2(1768, 938)
 
 [node name="Characters" type="Node" parent="." unique_id=322452111]
 
-[node name="CharacterBody2D" parent="Characters" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
+[node name="Allies" type="Node2D" parent="Characters" unique_id=1347544150]
+
+[node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
 position = Vector2(309, 757)
+script = ExtResource("7_e32i8")
+
+[node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
+
+[node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
+position = Vector2(309, 757)
+script = ExtResource("7_e32i8")
 
 [node name="UI" type="Control" parent="." unique_id=1091256798]
 layout_mode = 3
@@ -136,3 +152,5 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[editable path="Characters/Allies/TestAlly"]
