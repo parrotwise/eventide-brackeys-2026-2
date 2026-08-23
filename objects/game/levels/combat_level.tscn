@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://iocsq4dy46kl"]
 
 [ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character_generic.tscn" id="1_5ksr3"]
+[ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_8qob3"]
+[ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
+size = Vector2(720, 320)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stt5f"]
+texture = SubResource("PlaceholderTexture2D_1whi2")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_stt5f"]
+size = Vector2(554, 204)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fk5qa"]
+size = Vector2(275, 100)
 
 [node name="CombatLevel" type="Node" unique_id=1073512595]
 
@@ -14,44 +28,108 @@
 
 [node name="TurnTrackerComponent" type="Node" parent="." unique_id=1353429950]
 
-[node name="Scenery" type="Node2D" parent="." unique_id=1879469673]
+[node name="Scenery" type="Control" parent="." unique_id=1569313103]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Background" type="Sprite2D" parent="Scenery" unique_id=1551316852]
+[node name="Background" type="TextureRect" parent="Scenery" unique_id=1361847838]
+layout_mode = 0
+texture = ExtResource("1_8qob3")
 
-[node name="Foreground" type="Sprite2D" parent="Scenery" unique_id=1661976914]
+[node name="Foreground" type="TextureRect" parent="Scenery" unique_id=1636875971]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_fk5qa")
+
+[node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
+
+[node name="Marker2D" type="Marker2D" parent="AllySpawnPoints" unique_id=961468435]
+position = Vector2(529, 760)
+
+[node name="Marker2D2" type="Marker2D" parent="AllySpawnPoints" unique_id=740332740]
+position = Vector2(442, 940)
+
+[node name="Marker2D3" type="Marker2D" parent="AllySpawnPoints" unique_id=457803474]
+position = Vector2(305, 755)
+
+[node name="Marker2D4" type="Marker2D" parent="AllySpawnPoints" unique_id=660916843]
+position = Vector2(154, 934)
+
+[node name="EnemySpawnPoints" type="Node2D" parent="." unique_id=151942005]
+
+[node name="Marker2D" type="Marker2D" parent="EnemySpawnPoints" unique_id=399747414]
+position = Vector2(1400, 764)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemySpawnPoints" unique_id=835950342]
+position = Vector2(1510, 936)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemySpawnPoints" unique_id=1005415996]
+position = Vector2(1642, 766)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemySpawnPoints" unique_id=914440911]
+position = Vector2(1768, 938)
 
 [node name="Characters" type="Node" parent="." unique_id=322452111]
 
 [node name="CharacterBody2D" parent="Characters" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
+position = Vector2(309, 757)
 
 [node name="UI" type="Control" parent="." unique_id=1091256798]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="AttackMenu" type="Control" parent="UI" unique_id=134528713]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GridContainer" type="GridContainer" parent="UI/AttackMenu" unique_id=1587638769]
+[node name="TopPanel" type="PanelContainer" parent="UI" unique_id=991168168]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 80.0
+
+[node name="BottomPanel" type="PanelContainer" parent="UI" unique_id=1648745534]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -132.0
+offset_right = 252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_stt5f")
+
+[node name="PanelBG" type="TextureRect" parent="UI/BottomPanel" unique_id=2021343633]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_stt5f")
+
+[node name="AbilityButtons" type="GridContainer" parent="UI/BottomPanel" unique_id=1587638769]
+layout_mode = 2
 columns = 2
 
-[node name="Ability1" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1013299224]
+[node name="Ability1" type="TextureButton" parent="UI/BottomPanel/AbilityButtons" unique_id=1013299224]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Ability2" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1170146136]
+[node name="Ability2" type="TextureButton" parent="UI/BottomPanel/AbilityButtons" unique_id=1170146136]
 layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Ability3" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1734799412]
+[node name="Ability3" type="TextureButton" parent="UI/BottomPanel/AbilityButtons" unique_id=1734799412]
 layout_mode = 2
+size_flags_vertical = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Ability4" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1003885170]
+[node name="Ability4" type="TextureButton" parent="UI/BottomPanel/AbilityButtons" unique_id=1003885170]
 layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
 [node name="PauseMenu" type="Control" parent="UI" unique_id=1930026128]
 visible = false
