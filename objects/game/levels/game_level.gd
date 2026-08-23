@@ -77,6 +77,15 @@ func _ready() -> void:
 	effector_component.action_effect_applied.connect(
 		_on_action_effect_applied
 	)
+
+	selector_component.targeting_requested.connect(
+		_on_targeting_requested
+	)
+
+	selector_component.target_selected.connect(
+		_on_target_selected
+	)
+
 	print("=== GAME LEVEL TEST ===")
 	print("Allies: ", allies.size())
 	print("Enemies: ", enemies.size())
@@ -86,7 +95,7 @@ func _ready() -> void:
 
 	for character: Character in enemies:
 		print("Enemy: ", character.name)
-		
+
 	turn_tracker_component.round_started.connect(
 		_on_round_started
 	)
@@ -102,8 +111,8 @@ func _ready() -> void:
 	turn_tracker_component.turn_ended.connect(
 		_on_turn_ended
 	)
+
 	turn_tracker_component.start_tracking(allies, enemies)
-	
 
 func _exit_tree() -> void:
 	if Game.level == self:
@@ -132,6 +141,27 @@ func _on_action_effect_applied(
 			user.name,
 			target.name
 		]
+	)
+	
+	
+func _on_targeting_requested(
+	action: Action,
+	user: Character
+) -> void:
+	Debug.info(
+		"%s is selecting a target." % user.name
+	)
+
+
+func _on_target_selected(
+	action: Action,
+	user: Character,
+	target: Character
+) -> void:
+	effector_component.apply_action_effects(
+		action,
+		user,
+		target
 	)
 	
 func _on_round_started(round_number: int) -> void:
