@@ -2,7 +2,7 @@ class_name Action
 extends Resource
 
 
-signal used(user: Node, target: Node)
+signal used(user: Character, target: Character)
 
 
 @export_category("Effects")
@@ -11,5 +11,5 @@ signal used(user: Node, target: Node)
 @export var healing: int = 0
 
 
-func use(user: Node, target: Node) -> void:
+func use(user: Character, target: Character) -> void:
 	used.emit(user, target)

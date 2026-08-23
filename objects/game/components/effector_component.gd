@@ -2,7 +2,11 @@ class_name EffectorComponent
 extends Node
 
 
-signal action_effect_applied(action: Action, user: Character, target: Character)
+signal action_effect_applied(
+	action: Action,
+	user: Character,
+	target: Character
+)
 
 
 func apply_action_effects(
