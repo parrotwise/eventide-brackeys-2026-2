@@ -4,7 +4,7 @@ extends Area2D
 
 signal hurt(by_hazard: Node)
 
-var character: Player
+var character: Character
 
 
 func _ready() -> void:

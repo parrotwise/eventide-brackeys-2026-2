@@ -9,7 +9,7 @@ const DECELERATION_SPEED: float = 6
 
 @export var speed: float = 600.0
 
-var character: Player
+var character: Character
 var new_velocity: Vector2
 
 

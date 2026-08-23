@@ -6,7 +6,7 @@ extends Node
 
 signal movement_input(move_direction: Vector2)
 
-var character: Player
+var character: Character
 var is_moving: bool = false
 
 

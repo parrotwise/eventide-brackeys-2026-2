@@ -6,6 +6,7 @@ signal knockout
 
 @export var max_health: int = 100
 
+var character: Character
 var current_health: int
 var knocked_out: bool = false
 
