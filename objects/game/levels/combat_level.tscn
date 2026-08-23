@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/components/effector_component.tscn" id="2_aokjo"]
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="3_gkvui"]
+[ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="7_e32i8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
@@ -31,9 +32,9 @@ script = ExtResource("1_gn8s7")
 
 [node name="SelectorComponent" type="Node" parent="." unique_id=1901528704]
 
-[node name="StatusEffectTracker" type="Node" parent="." unique_id=96565409]
+[node name="TurnTrackerComponent" parent="SelectorComponent" unique_id=2074221435 instance=ExtResource("4_c7jmv")]
 
-[node name="TurnTrackerComponent" type="Node" parent="." unique_id=1353429950]
+[node name="StatusEffectTracker" type="Node" parent="." unique_id=96565409]
 
 [node name="Scenery" type="Control" parent="." unique_id=1569313103]
 layout_mode = 3
