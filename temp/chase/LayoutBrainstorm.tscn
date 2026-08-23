@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://mitjys3ofgdk"]
+
+[node name="LayoutBrainstorm" type="Node" unique_id=128985633]
+
+[node name="Level" type="Node" parent="." unique_id=931097829]
+
+[node name="Background" type="Node" parent="Level" unique_id=1363214280]
+
+[node name="Foreground" type="Node" parent="Level" unique_id=276290668]
+
+[node name="Character" type="AnimatedSprite2D" parent="." unique_id=2065201966]
+
+[node name="HealthComponent" type="Node" parent="Character" unique_id=1931946559]
+
+[node name="CombatComponent" type="Node" parent="Character" unique_id=848372951]
+
+[node name="AbilitiesComponent" type="Node" parent="Character" unique_id=490450578]

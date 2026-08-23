@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://iocsq4dy46kl"]
+
+[ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character_generic.tscn" id="1_5ksr3"]
+
+[node name="CombatLevel" type="Node" unique_id=1073512595]
+
+[node name="EffectorComponent" type="Node" parent="." unique_id=1570299564]
+
+[node name="PreviewComponent" type="Node" parent="." unique_id=946695866]
+
+[node name="SelectorComponent" type="Node" parent="." unique_id=1901528704]
+
+[node name="StatusEffectTracker" type="Node" parent="." unique_id=96565409]
+
+[node name="TurnTrackerComponent" type="Node" parent="." unique_id=1353429950]
+
+[node name="Scenery" type="Node2D" parent="." unique_id=1879469673]
+
+[node name="Background" type="Sprite2D" parent="Scenery" unique_id=1551316852]
+
+[node name="Foreground" type="Sprite2D" parent="Scenery" unique_id=1661976914]
+
+[node name="Characters" type="Node" parent="." unique_id=322452111]
+
+[node name="CharacterBody2D" parent="Characters" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
+
+[node name="UI" type="Control" parent="." unique_id=1091256798]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AttackMenu" type="Control" parent="UI" unique_id=134528713]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="UI/AttackMenu" unique_id=1587638769]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="Ability1" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1013299224]
+layout_mode = 2
+
+[node name="Ability2" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1170146136]
+layout_mode = 2
+
+[node name="Ability3" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1734799412]
+layout_mode = 2
+
+[node name="Ability4" type="TextureButton" parent="UI/AttackMenu/GridContainer" unique_id=1003885170]
+layout_mode = 2
+
+[node name="PauseMenu" type="Control" parent="UI" unique_id=1930026128]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
