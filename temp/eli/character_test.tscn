@@ -1,20 +1,40 @@
 [gd_scene format=3 uid="uid://bdwjfhknhoqcw"]
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_1ysf8"]
+[ext_resource type="Script" uid="uid://0sae8shl2icg" path="res://temp/eli/effector_test.gd" id="1_qq1j2"]
 [ext_resource type="Script" uid="uid://cjeypy6rmrh5d" path="res://objects/game/components/health_component.gd" id="2_02jx3"]
 [ext_resource type="Script" uid="uid://c6lfqbeeycr0g" path="res://objects/game/components/actions_component.gd" id="3_qq1j2"]
+[ext_resource type="Script" uid="uid://ty17mm6pxof7" path="res://objects/game/components/effector_component.gd" id="4_02jx3"]
 
 [node name="CharacterTest" type="Node2D" unique_id=343154417]
+script = ExtResource("1_qq1j2")
 
-[node name="Allies" type="Node2D" parent="." unique_id=842698183]
+[node name="Allies" type="Node2D" parent="." unique_id=911668507]
 
-[node name="Character" type="Node2D" parent="Allies" unique_id=657772029]
+[node name="User" type="Node2D" parent="Allies" unique_id=2037747183]
 script = ExtResource("1_1ysf8")
 
-[node name="HealthComponent" type="Node" parent="Allies/Character" unique_id=1577015836]
+[node name="HealthComponent" type="Node" parent="Allies/User" unique_id=1614071591]
 script = ExtResource("2_02jx3")
 metadata/_custom_type_script = "uid://cjeypy6rmrh5d"
 
-[node name="ActionsComponent" type="Node" parent="Allies/Character" unique_id=809778213]
+[node name="ActionsComponent" type="Node" parent="Allies/User" unique_id=145848321]
 script = ExtResource("3_qq1j2")
 metadata/_custom_type_script = "uid://c6lfqbeeycr0g"
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1412918774]
+
+[node name="Target" type="Node2D" parent="Enemies" unique_id=1308906922]
+script = ExtResource("1_1ysf8")
+
+[node name="HealthComponent" type="Node" parent="Enemies/Target" unique_id=326728996]
+script = ExtResource("2_02jx3")
+metadata/_custom_type_script = "uid://cjeypy6rmrh5d"
+
+[node name="ActionsComponent" type="Node" parent="Enemies/Target" unique_id=1967095922]
+script = ExtResource("3_qq1j2")
+metadata/_custom_type_script = "uid://c6lfqbeeycr0g"
+
+[node name="EffectorComponent" type="Node" parent="." unique_id=1204096414]
+script = ExtResource("4_02jx3")
+metadata/_custom_type_script = "uid://ty17mm6pxof7"

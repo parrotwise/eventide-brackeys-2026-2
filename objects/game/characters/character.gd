@@ -31,11 +31,6 @@ func _ready() -> void:
 	health_component.character = self
 	_register_battle_group()
 
-	print("Character ready")
-	print("Battle group: ", battle_group)
-	print("Health component: ", health_component)
-	print("Actions component: ", actions_component)
-
 
 func _register_battle_group() -> void:
 	var parent_node: Node = get_parent()
