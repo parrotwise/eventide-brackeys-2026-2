@@ -33,6 +33,11 @@ func _ready() -> void:
 	print("Parent: ", get_parent().name)
 	print("Battle group: ", battle_group)
 
+	actions_component.character = self
+	for action: Action in actions:
+		action.character = self
+
+
 func _register_battle_group() -> void:
 	var parent_node: Node = get_parent()
 
