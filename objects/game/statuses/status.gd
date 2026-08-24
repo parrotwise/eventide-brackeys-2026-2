@@ -1,4 +1,4 @@
-class_name StatusEffect
+class_name Status
 extends Resource
 
 

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://8xs6rchf475r"]
 
 [ext_resource type="Script" uid="uid://bw2invxcpjyp1" path="res://temp/chase/generic_equipment_example.gd" id="1_1ghlm"]
-[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/resources/equipment.gd" id="2_4o7i5"]
-[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/resources/status_effect.gd" id="3_4o7i5"]
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="2_4o7i5"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_4o7i5"]
+
 
 [sub_resource type="PlaceholderTexture3D" id="PlaceholderTexture3D_4o7i5"]
 size = Vector3i(16, 16, 1)

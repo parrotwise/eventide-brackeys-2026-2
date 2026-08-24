@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://iocsq4dy46kl"]
 
-[ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character_generic.tscn" id="1_5ksr3"]
+[ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character.tscn" id="1_5ksr3"]
 [ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_8qob3"]
-[ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/game_level.gd" id="1_gn8s7"]
+[ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/combat_level.gd" id="1_gn8s7"]
 [ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/components/effector_component.tscn" id="2_aokjo"]
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="3_gkvui"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
-[ext_resource type="Script" uid="uid://c55dod6tid8hq" path="res://objects/game/components/selector_component.gd" id="4_q682q"]
+[ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="7_e32i8"]
 [ext_resource type="Script" uid="uid://d0edyodrpybi7" path="res://objects/game/levels/ability_buttons_container.gd" id="10_hyn1k"]
 
@@ -32,8 +32,7 @@ script = ExtResource("1_gn8s7")
 
 [node name="PreviewComponent" type="Node" parent="." unique_id=946695866]
 
-[node name="SelectorComponent" type="Node" parent="." unique_id=1901528704]
-script = ExtResource("4_q682q")
+[node name="SelectorComponent" parent="." unique_id=157429735 instance=ExtResource("4_hyn1k")]
 
 [node name="TurnTrackerComponent" parent="." unique_id=2074221435 instance=ExtResource("4_c7jmv")]
 
