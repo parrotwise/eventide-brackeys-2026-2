@@ -26,9 +26,9 @@ signal status_triggered(character: Character, effects: Dictionary)
 @export var can_attack_twice: bool = false
 
 var _character: Character = null
+var character: Character:
+	get: return _character
 
-func get_character() -> Character:
-	return _character
 
 func apply_to(character: Character) -> void:
 	_character = character
@@ -41,8 +41,8 @@ func remove_from() -> void:
 func trigger(effects: Dictionary = {}) -> void:
 	status_triggered.emit(_character, effects)
 	
-func modify_action(action: Action, user: Character, target: Character) -> Action:
-	var modified: Action = action.duplicate(true)
+func modify_action(action: Action, user: Character, target: Character, in_place: bool = true) -> Action:
+	var modified: Action = action if in_place else action.duplicate(true)
  
 	if _character == user:
 		if damage_adder != 0 and "damage" in modified:
