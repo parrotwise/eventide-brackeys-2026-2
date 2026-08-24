@@ -1,5 +1,5 @@
 class_name GameLevel
-extends Node2D
+extends Node
 
 
 var effector_component: EffectorComponent:

@@ -2,8 +2,13 @@ class_name StatusEffect
 extends Resource
 
 
-var name: String
-var icon: Sprite2D
-var description: String
-var vfx: Node2D
-var applied_to: Character
+@export_group("Required vars")
+## A name to be exposed to the player.
+@export var name: String
+## A description to be exposed to the player.
+@export_multiline() var description: String
+## An icon to be exposed to the player.
+@export var icon: Texture
+
+@export_group("Optional vars")
+@export var vfx: PackedScene
