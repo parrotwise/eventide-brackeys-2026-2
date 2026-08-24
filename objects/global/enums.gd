@@ -6,3 +6,9 @@ enum Direction {
 	LEFT,
 	RIGHT,
 }
+
+enum RangeType {
+	MELEE,
+	RANGED,
+	ALLY
+}
