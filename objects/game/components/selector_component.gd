@@ -46,6 +46,12 @@ func select_target(target: Character) -> void:
 	if target == null:
 		return
 
+	if not _is_target_in_range(target):
+		Debug.info(
+			"%s is out of range." % target.name
+		)
+		return
+
 	target_selected.emit(
 		current_action,
 		current_user,
@@ -63,3 +69,10 @@ func _clear_targeting() -> void:
 	current_action = null
 	current_user = null
 	is_targeting = false
+
+func _is_target_in_range(target: Character) -> bool:
+	var distance: float = current_user.global_position.distance_to(
+		target.global_position
+	)
+
+	return distance <= current_action.range
