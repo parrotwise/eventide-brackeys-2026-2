@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ny1jdimt2uae"]
+
+[ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_ui.gd" id="1_mhon3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
+size = Vector2(720, 320)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stt5f"]
+texture = SubResource("PlaceholderTexture2D_1whi2")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_stt5f"]
+size = Vector2(554, 204)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fk5qa"]
+size = Vector2(275, 100)
+
+[node name="UI" type="CanvasLayer" unique_id=1657674242]
+script = ExtResource("1_mhon3")
+
+[node name="TopPanel" type="PanelContainer" parent="." unique_id=1366081002]
+offset_right = 1920.0
+offset_bottom = 80.0
+
+[node name="BottomPanel" type="PanelContainer" parent="." unique_id=640258778]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -277.0
+offset_top = -204.0
+offset_right = 277.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_stt5f")
+
+[node name="PanelBG" type="TextureRect" parent="BottomPanel" unique_id=598273827]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_stt5f")
+
+[node name="ActionButtons" type="GridContainer" parent="BottomPanel" unique_id=1396322277]
+layout_mode = 2
+columns = 2
+
+[node name="Action1" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=1638952832]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="Action2" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=598201936]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="Action3" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=290088071]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="Action4" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=777913158]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=253626098]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

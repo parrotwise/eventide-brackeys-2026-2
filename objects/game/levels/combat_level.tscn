@@ -7,19 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
-[ext_resource type="Script" uid="uid://d0edyodrpybi7" path="res://objects/game/levels/ability_buttons_container.gd" id="10_hyn1k"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
-size = Vector2(720, 320)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stt5f"]
-texture = SubResource("PlaceholderTexture2D_1whi2")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_stt5f"]
-size = Vector2(554, 204)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fk5qa"]
-size = Vector2(275, 100)
+[ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -89,59 +77,6 @@ position = Vector2(531, 762)
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
 position = Vector2(1401, 765)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1183864425]
-
-[node name="TopPanel" type="PanelContainer" parent="UI" unique_id=991168168]
-offset_right = 1920.0
-offset_bottom = 80.0
-
-[node name="BottomPanel" type="PanelContainer" parent="UI" unique_id=1648745534]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -277.0
-offset_top = -204.0
-offset_right = 277.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_stt5f")
-
-[node name="PanelBG" type="TextureRect" parent="UI/BottomPanel" unique_id=2021343633]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_stt5f")
-
-[node name="AbilityButtonsContainer" type="GridContainer" parent="UI/BottomPanel" unique_id=1587638769]
-layout_mode = 2
-columns = 2
-script = ExtResource("10_hyn1k")
-
-[node name="Ability1" type="TextureButton" parent="UI/BottomPanel/AbilityButtonsContainer" unique_id=1013299224]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
-
-[node name="Ability2" type="TextureButton" parent="UI/BottomPanel/AbilityButtonsContainer" unique_id=1170146136]
-layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
-
-[node name="Ability3" type="TextureButton" parent="UI/BottomPanel/AbilityButtonsContainer" unique_id=1734799412]
-layout_mode = 2
-size_flags_vertical = 3
-texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
-
-[node name="Ability4" type="TextureButton" parent="UI/BottomPanel/AbilityButtonsContainer" unique_id=1003885170]
-layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
-
-[node name="PauseMenu" type="Control" parent="UI" unique_id=1930026128]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
 [editable path="Characters/Allies/TestAlly"]

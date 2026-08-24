@@ -7,14 +7,12 @@ const ENEMIES_GROUP: StringName = &"enemies"
 
 
 var health_component: HealthComponent:
-	get:
-		return $HealthComponent
-
-
+	get: return $HealthComponent
 var actions_component: ActionsComponent:
-	get:
-		return $ActionsComponent
+	get: return $ActionsComponent
 
+var actions: Array[Action]:
+	get: return actions_component.actions
 
 var battle_group: StringName:
 	get:
