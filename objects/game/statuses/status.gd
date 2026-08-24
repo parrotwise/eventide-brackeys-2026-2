@@ -21,7 +21,9 @@ signal status_triggered(character: Character, effects: Dictionary)
 ## Value to be added to the owner's damage. Negative values subtract damage.
 @export var damage_adder: float = 0
 ## Value to be added to the owner's health. Negative values subtract health.
-@export var health_adder: float = 0
+@export var max_health_adder: float = 0
+##Value to be added to the owner's healing. Negative values subtract healing.
+@export var healing_adder: float = 0
 ## Allows the owner to attack twice in one turn.
 @export var can_attack_twice: bool = false
 
@@ -51,7 +53,8 @@ func modify_action(action: Action, user: Character, target: Character, in_place:
 			modified.can_attack_twice = true
 	
 	if _character == target:
-		if health_adder != 0 and "healing" in modified:
-			modified.healing += health_adder
+		if healing_adder != 0 and "healing" in modified:
+			modified.healing += healing_adder
+		
  
 	return modified
