@@ -3,27 +3,24 @@
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
+[ext_resource type="Texture2D" uid="uid://dcw627c6y0ebt" path="res://assets/art/characters/character_sprite_placeholder.png" id="2_ko2tq"]
 [ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
-size = Vector2(220, 480)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5p4nv"]
-size = Vector2(128, 24)
+[ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="6_yogf4"]
+[ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="7_g2flc"]
 
 [node name="Character" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_4nnrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1833322172]
 position = Vector2(0, -240)
-texture = SubResource("PlaceholderTexture2D_1whi2")
+texture = ExtResource("2_ko2tq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=628121818]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1528904343]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1579786761]
-polygon = PackedVector2Array(-110, -480, 110, -480, 110, 0, -110, 0)
+polygon = PackedVector2Array(-84, -438, -55.756393, -479.99994, 80, -479.99997, 110, -417, 110, -25, -63, 0, -110, 0, -109.99999, -298.99606)
 
 [node name="AbilitiesComponent" type="Node" parent="." unique_id=439284246]
 
@@ -45,8 +42,8 @@ offset_top = 8.0
 offset_right = 64.0
 offset_bottom = 48.0
 value = 60.0
-texture_under = SubResource("PlaceholderTexture2D_5p4nv")
-texture_progress = SubResource("PlaceholderTexture2D_5p4nv")
+texture_under = ExtResource("6_yogf4")
+texture_progress = ExtResource("7_g2flc")
 
 [node name="StatusEffectIndicator" type="PanelContainer" parent="IndicatorsComponent" unique_id=957868128]
 layout_mode = 0
