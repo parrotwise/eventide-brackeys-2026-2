@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
-[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/health_component.tscn" id="1_iixya"]
+[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
+[ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
 size = Vector2(220, 480)
@@ -28,9 +29,17 @@ polygon = PackedVector2Array(-110, -480, 110, -480, 110, 0, -110, 0)
 
 [node name="ActionsComponent" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
 
-[node name="HealthComponent" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
+[node name="StateComponent" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
 
-[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1427321058]
+[node name="IndicatorsComponent" type="Control" parent="." unique_id=2046534940]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_glbma")
+
+[node name="HealthBar" type="TextureProgressBar" parent="IndicatorsComponent" unique_id=1427321058]
+layout_mode = 0
 offset_left = -64.0
 offset_top = 8.0
 offset_right = 64.0
@@ -39,22 +48,23 @@ value = 60.0
 texture_under = SubResource("PlaceholderTexture2D_5p4nv")
 texture_progress = SubResource("PlaceholderTexture2D_5p4nv")
 
-[node name="StatusEffectIndicator" type="PanelContainer" parent="." unique_id=957868128]
+[node name="StatusEffectIndicator" type="PanelContainer" parent="IndicatorsComponent" unique_id=957868128]
+layout_mode = 0
 offset_left = -64.0
 offset_top = 40.0
 offset_right = 64.0
 offset_bottom = 80.0
 
-[node name="TextureRect" type="TextureRect" parent="StatusEffectIndicator" unique_id=702871460]
+[node name="TextureRect" type="TextureRect" parent="IndicatorsComponent/StatusEffectIndicator" unique_id=702871460]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StatusEffectIndicator" unique_id=2064300795]
+[node name="VBoxContainer" type="VBoxContainer" parent="IndicatorsComponent/StatusEffectIndicator" unique_id=2064300795]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="StatusEffectIndicator/VBoxContainer" unique_id=622680735]
+[node name="Label" type="Label" parent="IndicatorsComponent/StatusEffectIndicator/VBoxContainer" unique_id=622680735]
 layout_mode = 2
 text = "Status Effects"
 horizontal_alignment = 1
 
-[node name="StatusEffectSymbols" type="HBoxContainer" parent="StatusEffectIndicator/VBoxContainer" unique_id=1946498350]
+[node name="StatusEffectSymbols" type="HBoxContainer" parent="IndicatorsComponent/StatusEffectIndicator/VBoxContainer" unique_id=1946498350]
 layout_mode = 2

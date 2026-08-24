@@ -1,4 +1,4 @@
-class_name HealthComponent
+class_name StateComponent
 extends Node
 
 signal health_changed(current_health: int, max_health: int)

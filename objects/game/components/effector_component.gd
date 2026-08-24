@@ -27,7 +27,7 @@ func apply_action_effects(
 
 func _apply_action(action: Action, target: Character) -> void:
 	if action.damage > 0:
-		target.health_component.take_damage(action.damage)
+		target.state_component.take_damage(action.damage)
 
 	if action.healing > 0:
-		target.health_component.heal(action.healing)
+		target.state_component.heal(action.healing)

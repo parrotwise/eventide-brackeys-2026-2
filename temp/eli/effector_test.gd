@@ -17,7 +17,7 @@ func _test_damage() -> void:
 	var action := Action.new()
 	action.damage = 25
 
-	var before: int = target.health_component.current_health
+	var before: int = target.state_component.current_health
 
 	effector.apply_action_effects(
 		action,
@@ -25,18 +25,18 @@ func _test_damage() -> void:
 		target
 	)
 
-	var after: int = target.health_component.current_health
+	var after: int = target.state_component.current_health
 
 	print("Damage test: ", before, " -> ", after)
 
 
 func _test_healing() -> void:
-	target.health_component.take_damage(50)
+	target.state_component.take_damage(50)
 
 	var action := Action.new()
 	action.healing = 20
 
-	var before: int = target.health_component.current_health
+	var before: int = target.state_component.current_health
 
 	effector.apply_action_effects(
 		action,
@@ -44,7 +44,7 @@ func _test_healing() -> void:
 		target
 	)
 
-	var after: int = target.health_component.current_health
+	var after: int = target.state_component.current_health
 
 	print("Healing test: ", before, " -> ", after)
 

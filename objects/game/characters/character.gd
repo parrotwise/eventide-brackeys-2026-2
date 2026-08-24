@@ -6,10 +6,12 @@ const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
 
-var health_component: HealthComponent:
-	get: return $HealthComponent
+var state_component: StateComponent:
+	get: return $StateComponent
 var actions_component: ActionsComponent:
 	get: return $ActionsComponent
+var indicators_component: IndicatorsComponent:
+	get: return $IndicatorsComponent
 
 var actions: Array[Action]:
 	get: return actions_component.actions
@@ -26,7 +28,7 @@ var battle_group: StringName:
 
 
 func _ready() -> void:
-	health_component.character = self
+	state_component.character = self
 	_register_battle_group()
 
 	print("Character: ", name)
@@ -36,6 +38,8 @@ func _ready() -> void:
 	actions_component.character = self
 	for action: Action in actions:
 		action.character = self
+	
+	indicators_component.character = self
 
 
 func _register_battle_group() -> void:
