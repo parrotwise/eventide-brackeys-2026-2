@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://c2tccc3qvyvca"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_uc64m"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_x7w0p"]
+
+[resource]
+script = ExtResource("1_uc64m")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

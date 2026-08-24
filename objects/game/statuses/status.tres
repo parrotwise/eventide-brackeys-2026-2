@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://ci1h01guccnmg"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_d741v"]
+
+[resource]
+script = ExtResource("1_d741v")
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

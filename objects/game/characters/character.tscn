@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bjemghlr4x223"]
 
+[ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/health_component.tscn" id="1_iixya"]
 
@@ -10,6 +11,7 @@ size = Vector2(220, 480)
 size = Vector2(128, 24)
 
 [node name="Character" type="Node2D" unique_id=1172588862]
+script = ExtResource("1_4nnrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1833322172]
 position = Vector2(0, -240)

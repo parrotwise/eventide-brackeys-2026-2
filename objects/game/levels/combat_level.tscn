@@ -5,10 +5,8 @@
 [ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/combat_level.gd" id="1_gn8s7"]
 [ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/components/effector_component.tscn" id="2_aokjo"]
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
-[ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="3_gkvui"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
-[ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="7_e32i8"]
 [ext_resource type="Script" uid="uid://d0edyodrpybi7" path="res://objects/game/levels/ability_buttons_container.gd" id="10_hyn1k"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
@@ -27,8 +25,6 @@ size = Vector2(275, 100)
 script = ExtResource("1_gn8s7")
 
 [node name="EffectorComponent" parent="." unique_id=755835823 instance=ExtResource("2_aokjo")]
-
-[node name="ActionsComponent" parent="." unique_id=1878263473 instance=ExtResource("3_gkvui")]
 
 [node name="PreviewComponent" type="Node" parent="." unique_id=946695866]
 
@@ -87,13 +83,11 @@ position = Vector2(1768, 938)
 
 [node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
 position = Vector2(531, 762)
-script = ExtResource("7_e32i8")
 
 [node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
 
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
 position = Vector2(1401, 765)
-script = ExtResource("7_e32i8")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1183864425]
 
