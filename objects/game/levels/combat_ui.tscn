@@ -2,17 +2,14 @@
 
 [ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_ui.gd" id="1_mhon3"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1whi2"]
-size = Vector2(720, 320)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stt5f"]
-texture = SubResource("PlaceholderTexture2D_1whi2")
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_stt5f"]
 size = Vector2(554, 204)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fk5qa"]
-size = Vector2(275, 100)
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5p4nv"]
+size = Vector2(100, 100)
 
 [node name="UI" type="CanvasLayer" unique_id=1657674242]
 script = ExtResource("1_mhon3")
@@ -21,46 +18,163 @@ script = ExtResource("1_mhon3")
 offset_right = 1920.0
 offset_bottom = 80.0
 
-[node name="BottomPanel" type="PanelContainer" parent="." unique_id=640258778]
+[node name="BottomPanel" type="PanelContainer" parent="." unique_id=1035039101]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -277.0
-offset_top = -204.0
+offset_top = -256.0
 offset_right = 277.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_stt5f")
 
 [node name="PanelBG" type="TextureRect" parent="BottomPanel" unique_id=598273827]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_stt5f")
 
-[node name="ActionButtons" type="GridContainer" parent="BottomPanel" unique_id=1396322277]
+[node name="BottomPanel" type="HBoxContainer" parent="BottomPanel" unique_id=1732133601]
 layout_mode = 2
-columns = 2
 
-[node name="Action1" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=1638952832]
+[node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/BottomPanel" unique_id=1993286851]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Action1" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1638952832]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Action2" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=598201936]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action1" unique_id=330167914]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Action2" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=598201936]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action2" unique_id=450774057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Action3" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=290088071]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action3" unique_id=1959144522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Action4" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=777913158]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action4" unique_id=1988419114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PassiveBG" type="TextureRect" parent="BottomPanel/BottomPanel" unique_id=1155250975]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_5p4nv")
+
+[node name="PassiveIcon" type="TextureRect" parent="BottomPanel/BottomPanel/PassiveBG" unique_id=1709889876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/BottomPanel" unique_id=672581597]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Equipment1" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=1282407045]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Action3" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=290088071]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment1" unique_id=765497082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equipment2" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=701891551]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
 
-[node name="Action4" type="TextureButton" parent="BottomPanel/ActionButtons" unique_id=777913158]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment2" unique_id=1639446732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equipment3" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=2062073495]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment3" unique_id=278954018]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equipment4" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=1340092485]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("PlaceholderTexture2D_fk5qa")
+
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment4" unique_id=1165131882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PauseMenu" type="Control" parent="." unique_id=253626098]
 visible = false

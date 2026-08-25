@@ -7,7 +7,47 @@
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
+[ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/backgrounds/bg_space_cloud.png" id="6_hyn1k"]
+[ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/backgrounds/space_dust_sheet.png" id="6_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_stt5f"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2500, 270, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 100, 1)
+angle_min = -4.9999895
+angle_max = 5.000011
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hyn1k"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5p4nv"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2000, 270, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 270, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(-10, 0, 0)
+spread = 5.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+anim_offset_max = 1.0
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -28,54 +68,76 @@ anchors_preset = 0
 
 [node name="Background" type="TextureRect" parent="Scenery" unique_id=1361847838]
 layout_mode = 0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 2220.0
+offset_bottom = 1380.0
 texture = ExtResource("1_8qob3")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Scenery" unique_id=557498324]
+amount = 1
+texture = ExtResource("6_hyn1k")
+lifetime = 150.0
+preprocess = 60.0
+fixed_fps = 15
+process_material = SubResource("ParticleProcessMaterial_stt5f")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Scenery" unique_id=22470241]
+material = SubResource("CanvasItemMaterial_hyn1k")
+amount = 24
+texture = ExtResource("6_q682q")
+lifetime = 20.0
+preprocess = 30.0
+fixed_fps = 15
+process_material = SubResource("ParticleProcessMaterial_5p4nv")
 
 [node name="Foreground" type="TextureRect" parent="Scenery" unique_id=1636875971]
 layout_mode = 0
-offset_top = 450.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 2220.0
+offset_bottom = 1380.0
 texture = ExtResource("2_fk5qa")
 
 [node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
 
 [node name="Marker2D" type="Marker2D" parent="AllySpawnPoints" unique_id=961468435]
-position = Vector2(529, 760)
+position = Vector2(740, 707)
 
 [node name="Marker2D2" type="Marker2D" parent="AllySpawnPoints" unique_id=740332740]
-position = Vector2(442, 940)
+position = Vector2(572, 707)
 
 [node name="Marker2D3" type="Marker2D" parent="AllySpawnPoints" unique_id=457803474]
-position = Vector2(305, 755)
+position = Vector2(389, 708)
 
 [node name="Marker2D4" type="Marker2D" parent="AllySpawnPoints" unique_id=660916843]
-position = Vector2(154, 934)
+position = Vector2(219, 709)
 
 [node name="EnemySpawnPoints" type="Node2D" parent="." unique_id=151942005]
 
 [node name="Marker2D" type="Marker2D" parent="EnemySpawnPoints" unique_id=399747414]
-position = Vector2(1400, 764)
+position = Vector2(1151, 701)
 
 [node name="Marker2D2" type="Marker2D" parent="EnemySpawnPoints" unique_id=835950342]
-position = Vector2(1510, 936)
+position = Vector2(1316, 698)
 
 [node name="Marker2D3" type="Marker2D" parent="EnemySpawnPoints" unique_id=1005415996]
-position = Vector2(1642, 766)
+position = Vector2(1517, 701)
 
 [node name="Marker2D4" type="Marker2D" parent="EnemySpawnPoints" unique_id=914440911]
-position = Vector2(1768, 938)
+position = Vector2(1633, 701)
 
 [node name="Characters" type="Node" parent="." unique_id=322452111]
 
 [node name="Allies" type="Node2D" parent="Characters" unique_id=1347544150]
 
 [node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
-position = Vector2(531, 762)
+position = Vector2(743, 709)
 
 [node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
 
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
-position = Vector2(1401, 765)
+position = Vector2(1152, 701)
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
