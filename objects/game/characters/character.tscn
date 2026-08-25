@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
 [ext_resource type="Texture2D" uid="uid://dcw627c6y0ebt" path="res://assets/art/characters/character_sprite_placeholder.png" id="2_ko2tq"]
+[ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/components/equipment_component.tscn" id="4_g2flc"]
 [ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
 [ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="6_yogf4"]
 [ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="7_g2flc"]
@@ -25,6 +26,8 @@ polygon = PackedVector2Array(-84, -438, -55.756393, -479.99994, 80, -479.99997, 
 [node name="AbilitiesComponent" type="Node" parent="." unique_id=439284246]
 
 [node name="ActionsComponent" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
+
+[node name="EquipmentComponent" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
 
 [node name="StateComponent" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
 

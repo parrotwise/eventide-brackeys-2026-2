@@ -10,3 +10,5 @@ extends Resource
 @export var icon: Texture2D
 ## Implement the persistent effect of using this Equipment as a Status effect.
 @export var equipped_status: Status
+
+var owner: Character

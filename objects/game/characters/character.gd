@@ -10,11 +10,15 @@ var state_component: StateComponent:
 	get: return $StateComponent
 var actions_component: ActionsComponent:
 	get: return $ActionsComponent
+var equipment_component: EquipmentComponent:
+	get: return $EquipmentComponent
 var indicators_component: IndicatorsComponent:
 	get: return $IndicatorsComponent
 
 var actions: Array[Action]:
 	get: return actions_component.actions
+var equipment: Array[Equipment]:
+	get: return equipment_component.equipment
 
 var battle_group: StringName:
 	get:
@@ -37,7 +41,11 @@ func _ready() -> void:
 
 	actions_component.character = self
 	for action: Action in actions:
-		action.character = self
+		action.owner = self
+	
+	equipment_component.character = self
+	for item: Equipment in equipment:
+		item.owner = self
 	
 	indicators_component.character = self
 

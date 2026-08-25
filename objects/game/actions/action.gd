@@ -20,6 +20,8 @@ signal used(user: Character, target: Character)
 
 @export var range_type: Enums.RangeType = Enums.RangeType.MELEE
 
+var owner: Character
+
 
 func use(user: Character, target: Character) -> void:
 	used.emit(user, target)
