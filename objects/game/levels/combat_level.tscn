@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="2_fk5qa"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
+[ext_resource type="PackedScene" uid="uid://b3sabn1gkxocr" path="res://objects/game/components/status_tracker_component.tscn" id="5_f26kh"]
 [ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/backgrounds/bg_space_cloud.png" id="6_hyn1k"]
 [ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/backgrounds/space_dust_sheet.png" id="6_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
@@ -60,7 +61,7 @@ script = ExtResource("1_gn8s7")
 
 [node name="TurnTrackerComponent" parent="." unique_id=2074221435 instance=ExtResource("4_c7jmv")]
 
-[node name="StatusEffectTracker" type="Node" parent="." unique_id=96565409]
+[node name="StatusTrackerComponent" parent="." unique_id=1132919478 instance=ExtResource("5_f26kh")]
 
 [node name="Scenery" type="Control" parent="." unique_id=1569313103]
 layout_mode = 3

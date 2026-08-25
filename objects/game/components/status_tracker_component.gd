@@ -5,10 +5,10 @@ extends Node
 ## All active status effects in combat_level
 var _active_statuses: Array[Status] = []
 var active_statuses: Array[Status]:
-	get: return _active_statuses.duplicate()
+	get: return _active_statuses
 
 
-func start_tracking(status: Status) -> void:
+func track(status: Status) -> void:
 	if status == null:
 		return
 	
@@ -17,7 +17,8 @@ func start_tracking(status: Status) -> void:
 	
 	_active_statuses.append(status)
 
-func stop_tracking(status: Status) -> void:
+
+func untrack(status: Status) -> void:
 	if status == null:
 		return
 	
