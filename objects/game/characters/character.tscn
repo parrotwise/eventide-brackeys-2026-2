@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
-[ext_resource type="Texture2D" uid="uid://dcw627c6y0ebt" path="res://assets/art/characters/character_sprite_placeholder.png" id="2_ko2tq"]
+[ext_resource type="Texture2D" uid="uid://cjeefu4d6nftn" path="res://assets/art/characters/character_big_cat_placeholder.png" id="2_g2flc"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/components/equipment_component.tscn" id="4_g2flc"]
 [ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
 [ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="6_yogf4"]
@@ -14,14 +14,14 @@ script = ExtResource("1_4nnrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1833322172]
 position = Vector2(0, -240)
-texture = ExtResource("2_ko2tq")
+texture = ExtResource("2_g2flc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=628121818]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1528904343]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1579786761]
-polygon = PackedVector2Array(-84, -438, -55.756393, -479.99994, 80, -479.99997, 110, -417, 110, -25, -63, 0, -110, 0, -109.99999, -298.99606)
+polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1, -163, -223)
 
 [node name="AbilitiesComponent" type="Node" parent="." unique_id=439284246]
 

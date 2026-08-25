@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcw627c6y0ebt"
-path="res://.godot/imported/character_sprite_placeholder.png-9ed0fd7d7083f27654b06d29d4bc6afd.ctex"
+uid="uid://h53smehdpjr3"
+path="res://.godot/imported/character_gun_cat_placeholder.png-4b6fbe3099fe0c5c070a91e5448f5741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/character_sprite_placeholder.png"
-dest_files=["res://.godot/imported/character_sprite_placeholder.png-9ed0fd7d7083f27654b06d29d4bc6afd.ctex"]
+source_file="res://assets/art/characters/character_gun_cat_placeholder.png"
+dest_files=["res://.godot/imported/character_gun_cat_placeholder.png-4b6fbe3099fe0c5c070a91e5448f5741.ctex"]
 
 [params]
 
