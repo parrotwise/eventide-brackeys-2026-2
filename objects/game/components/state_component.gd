@@ -53,6 +53,18 @@ func heal(amount: int) -> void:
 	
 	current_health = mini(max_health, current_health + amount)
 	health_changed.emit(current_health, max_health)
+
+func add_max_health(amount: int) -> void:
+	if knocked_out:
+		return
+	
+	max_health = maxi(0, max_health + amount)
+	current_health = mini(max_health, current_health)
+	health_changed.emit(current_health, max_health)
+	
+	if current_health == 0:
+		knocked_out = true
+		knockout.emit()
 	
 func reset_health() -> void:
 	current_health = max_health
@@ -68,10 +80,6 @@ func apply_status(status_template: Status) -> void:
 	
 	_active_statuses.append(status)
 	
-	if status.max_health_adder != 0:
-		max_health += int(status.max_health_adder)
-		current_health = mini(current_health, max_health)
-	
 	status.apply_to(character)
 	
 	status_applied.emit(status)
@@ -83,10 +91,6 @@ func remove_status(status: Status) -> void:
 	
 	if status not in _active_statuses:
 		return
-	
-	if status.max_health_adder != 0:
-		max_health -= int(status.max_health_adder)
-		current_health = mini(current_health, max_health)
 	
 	status.remove_from()
 	_active_statuses.erase(status)

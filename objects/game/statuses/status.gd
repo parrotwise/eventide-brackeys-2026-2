@@ -19,11 +19,11 @@ signal status_triggered(character: Character, effects: Dictionary)
 
 @export_group("Effect Definition")
 ## Value to be added to the owner's damage. Negative values subtract damage.
-@export var damage_adder: float = 0
+@export var damage_adder: int = 0
 ## Value to be added to the owner's health. Negative values subtract health.
-@export var max_health_adder: float = 0
+@export var max_health_adder: int = 0
 ##Value to be added to the owner's healing. Negative values subtract healing.
-@export var healing_adder: float = 0
+@export var healing_adder: int = 0
 ## Allows the owner to attack twice in one turn.
 @export var can_attack_twice: bool = false
 
@@ -34,15 +34,24 @@ var character: Character:
 
 func apply_to(character: Character) -> void:
 	_character = character
+	
+	character.state_component.add_max_health(max_health_adder)
+
 	status_applied.emit(_character)
+
 
 func remove_from() -> void:
 	status_removed.emit(_character)
-	_character = null
 	
+	character.state_component.add_max_health(- max_health_adder)
+
+	_character = null
+
+
 func trigger(effects: Dictionary = {}) -> void:
 	status_triggered.emit(_character, effects)
-	
+
+
 func modify_action(action: Action, user: Character, target: Character, in_place: bool = true) -> Action:
 	var modified: Action = action if in_place else action.duplicate(true)
  
