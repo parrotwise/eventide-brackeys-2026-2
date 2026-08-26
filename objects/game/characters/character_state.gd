@@ -1,4 +1,4 @@
-class_name StateComponent
+class_name CharacterState
 extends Node
 
 

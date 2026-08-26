@@ -1,4 +1,4 @@
-class_name AudioComponent
+class_name CharacterAudio
 extends AudioStreamPlayer2D
 
 

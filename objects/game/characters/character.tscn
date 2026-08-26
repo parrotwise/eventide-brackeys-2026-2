@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://bjemghlr4x223"]
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
-[ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/components/actions_component.tscn" id="1_i7xxf"]
-[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
+[ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/characters/character_actions.tscn" id="1_i7xxf"]
+[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="1_iixya"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/shaders/character_sprite.gdshader" id="2_5lvk8"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/shaders/status_overlay_sloshed_overlay.png" id="3_3nt7m"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/shaders/shadow_gradient.png" id="3_meodt"]
-[ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/components/equipment_component.tscn" id="4_g2flc"]
-[ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
+[ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="4_g2flc"]
 [ext_resource type="Texture2D" uid="uid://cev2g60hken86" path="res://assets/art/characters/character_gun_cat_atlas.tres" id="5_meodt"]
-[ext_resource type="AnimationLibrary" uid="uid://bjardwh1c4m0p" path="res://assets/art/characters/character_gun_cat_anim.tres" id="6_cjrym"]
-[ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="6_yogf4"]
-[ext_resource type="Script" uid="uid://wjl7e54xt58c" path="res://objects/game/characters/character_animator.gd" id="7_263tf"]
-[ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="7_g2flc"]
+[ext_resource type="PackedScene" uid="uid://btawv8utacr3n" path="res://objects/game/characters/character_animator.tscn" id="6_cjrym"]
+[ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="10_3nt7m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -20,26 +17,6 @@ shader_parameter/shadow_gradient = ExtResource("3_meodt")
 shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("3_3nt7m")
 shader_parameter/status_sloshed_intensity = 0.5
-
-[sub_resource type="Animation" id="Animation_263tf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wshwh"]
-_data = {
-&"RESET": SubResource("Animation_263tf")
-}
 
 [node name="Character" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_4nnrl")
@@ -51,61 +28,17 @@ texture = ExtResource("5_meodt")
 hframes = 4
 region_rect = Rect2(0, 0, 480, 480)
 
-[node name="Animator" type="AnimationPlayer" parent="." unique_id=1344965467]
-libraries/ = SubResource("AnimationLibrary_wshwh")
-libraries/GunCat = ExtResource("6_cjrym")
-script = ExtResource("7_263tf")
+[node name="Animator" parent="." unique_id=1633728089 instance=ExtResource("6_cjrym")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=628121818]
+[node name="InputArea" type="Area2D" parent="." unique_id=1528904343]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1528904343]
-visible = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1579786761]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InputArea" unique_id=1579786761]
 polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1, -163, -223)
 
-[node name="AbilitiesComponent" type="Node" parent="." unique_id=439284246]
+[node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
 
-[node name="ActionsComponent" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
+[node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
 
-[node name="EquipmentComponent" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
+[node name="State" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
 
-[node name="StateComponent" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
-
-[node name="IndicatorsComponent" type="Control" parent="." unique_id=2046534940]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_glbma")
-
-[node name="HealthBar" type="TextureProgressBar" parent="IndicatorsComponent" unique_id=1427321058]
-layout_mode = 0
-offset_left = -64.0
-offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 48.0
-value = 60.0
-texture_under = ExtResource("6_yogf4")
-texture_progress = ExtResource("7_g2flc")
-
-[node name="StatusEffectIndicator" type="PanelContainer" parent="IndicatorsComponent" unique_id=957868128]
-layout_mode = 0
-offset_left = -64.0
-offset_top = 40.0
-offset_right = 64.0
-offset_bottom = 80.0
-
-[node name="TextureRect" type="TextureRect" parent="IndicatorsComponent/StatusEffectIndicator" unique_id=702871460]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="IndicatorsComponent/StatusEffectIndicator" unique_id=2064300795]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="IndicatorsComponent/StatusEffectIndicator/VBoxContainer" unique_id=622680735]
-layout_mode = 2
-text = "Status Effects"
-horizontal_alignment = 1
-
-[node name="StatusEffectSymbols" type="HBoxContainer" parent="IndicatorsComponent/StatusEffectIndicator/VBoxContainer" unique_id=1946498350]
-layout_mode = 2
+[node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("10_3nt7m")]

@@ -1,4 +1,4 @@
-class_name SelectorComponent
+class_name CombatSelector
 extends Node
 
 

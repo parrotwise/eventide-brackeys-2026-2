@@ -1,4 +1,4 @@
-class_name IndicatorsComponent
+class_name CharacterIndicators
 extends Control
 
 

@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cdulsr4pnewfm"]
-
-[ext_resource type="Script" uid="uid://c55dod6tid8hq" path="res://objects/game/components/selector_component.gd" id="1_2bdjh"]
-
-[node name="SelectorComponent" type="Node" unique_id=157429735]
-script = ExtResource("1_2bdjh")

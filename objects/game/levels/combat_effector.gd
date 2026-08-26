@@ -1,4 +1,4 @@
-class_name EffectorComponent
+class_name CombatEffector
 extends Node
 
 

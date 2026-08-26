@@ -1,4 +1,4 @@
-class_name EquipmentComponent
+class_name CharacterEquipment
 extends Node2D
 
 @export var equipment: Array[Equipment] = []

@@ -8,7 +8,7 @@ var sfx_volume: int
 var sfx_player_template: PackedScene = preload('res://objects/audio/sfx_player.tscn')
 var music_player_template: PackedScene = preload('res://objects/audio/music_player.tscn')
 
-var audio_components: Array[AudioComponent] = []
+var audio_components: Array[CharacterAudio] = []
 
 @onready var sfx_player: SFXPlayer = sfx_player_template.instantiate()
 @onready var music_player: MusicPlayer = music_player_template.instantiate()

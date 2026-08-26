@@ -1,78 +1,41 @@
-class_name GameLevel
+class_name CombatLevel
 extends Node
 
 
-var effector_component: EffectorComponent:
-	get:
-		return $EffectorComponent
-
-
-var preview_component: Node:
-	get:
-		return $PreviewComponent
-
-
-var selector_component: Node:
-	get:
-		return $SelectorComponent
-
-
-var status_tracker_component: StatusTrackerComponent:
-	get:
-		return $StatusTrackerComponent
-
-
-var turn_tracker_component: TurnTrackerComponent:
-	get:
-		return $TurnTrackerComponent
-
-var scenery: Node:
-	get:
-		return $Scenery
-
+var turn_tracker_component: CombatTurnTracker:
+	get: return $TurnTracker
+var status_tracker_component: CombatStatusTracker:
+	get: return $StatusTracker
+var selector_component: CombatSelector:
+	get: return $Selector
+var effector_component: CombatEffector:
+	get: return $Effector
+var preview_component: CombatPreview:
+	get: return $Preview
+var scenery: CombatScenery:
+	get: return $Scenery
+var camera: CombatCamera:
+	get: return $Camera
+var ui: CombatUI:
+	get: return $UI
 
 var characters_container: Node:
-	get:
-		return $Characters
-
-
+	get: return $Characters
 var ally_spawn_points: Node:
-	get:
-		return $AllySpawnPoints
-
-
+	get: return $AllySpawnPoints
 var enemy_spawn_points: Node:
-	get:
-		return $EnemySpawnPoints
-
-
-var ui: CanvasItem:
-	get:
-		return $UI
-
+	get: return $EnemySpawnPoints
 
 var allies: Array[Character]:
-	get:
-		return _get_characters_in_group(&"allies")
-
-
+	get: return _get_characters_in_group(&"allies")
 var enemies: Array[Character]:
-	get:
-		return _get_characters_in_group(&"enemies")
-
-
+	get: return _get_characters_in_group(&"enemies")
 var characters: Array[Character]:
-	get:
-		var result: Array[Character] = []
-		result.append_array(allies)
-		result.append_array(enemies)
-		return result
+	get: return allies + enemies
 
 
 func _ready() -> void:
 	Game.level = self
-
-	Game.start.emit()
 
 	effector_component.action_used.connect(
 		_on_action_used
@@ -113,6 +76,8 @@ func _ready() -> void:
 	)
 
 	turn_tracker_component.start_tracking(allies, enemies)
+
+	Game.start.emit()
 
 func _exit_tree() -> void:
 	if Game.level == self:

@@ -9,16 +9,16 @@ const ENEMIES_GROUP: StringName = &"enemies"
 
 var sprite: Sprite2D:
 	get: return $Sprite
-var animator: CharacterAnimator:
+var animator_component: CharacterAnimator:
 	get: return $Animator
-var state_component: StateComponent:
-	get: return $StateComponent
-var actions_component: ActionsComponent:
-	get: return $ActionsComponent
-var equipment_component: EquipmentComponent:
-	get: return $EquipmentComponent
-var indicators_component: IndicatorsComponent:
-	get: return $IndicatorsComponent
+var state_component: CharacterState:
+	get: return $State
+var actions_component: CharacterActions:
+	get: return $Actions
+var equipment_component: CharacterEquipment:
+	get: return $Equipment
+var indicators_component: CharacterIndicators:
+	get: return $Indicators
 
 var actions: Array[Action]:
 	get: return actions_component.actions
@@ -52,7 +52,7 @@ func _ready() -> void:
 	for item: Equipment in equipment:
 		item.owner = self
 	
-	animator.character = self
+	animator_component.character = self
 	state_component.character = self
 	indicators_component.character = self
 

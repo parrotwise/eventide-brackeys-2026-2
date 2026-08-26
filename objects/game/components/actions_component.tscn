@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://buqosmy4njdvg"]
-
-[ext_resource type="Script" uid="uid://c6lfqbeeycr0g" path="res://objects/game/components/actions_component.gd" id="1_ivssu"]
-
-[node name="ActionsComponent" type="Node2D" unique_id=1878263473]
-script = ExtResource("1_ivssu")

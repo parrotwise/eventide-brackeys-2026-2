@@ -1,4 +1,4 @@
-class_name InputComponent
+class_name CharacterInput
 extends Node
 
 ## Copied and modified from another project.

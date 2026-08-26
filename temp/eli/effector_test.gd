@@ -3,7 +3,7 @@ extends Node
 
 @onready var user: Character = $Allies/User
 @onready var target: Character = $Enemies/Target
-@onready var effector: EffectorComponent = $EffectorComponent
+@onready var effector: CombatEffector = $CombatEffector
 
 func _ready() -> void:
 	effector.action_used.connect(_on_action_used)

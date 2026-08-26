@@ -1,4 +1,4 @@
-class_name StatusTrackerComponent
+class_name CombatStatusTracker
 extends Node
 
 

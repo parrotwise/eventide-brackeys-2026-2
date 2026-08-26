@@ -1,4 +1,4 @@
-class_name TurnTrackerComponent
+class_name CombatTurnTracker
 extends Node
 
 

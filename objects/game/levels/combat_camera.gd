@@ -1,4 +1,4 @@
-class_name CameraComponent
+class_name CombatCamera
 extends Camera2D
 
 

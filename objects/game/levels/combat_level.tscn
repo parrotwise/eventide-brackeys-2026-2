@@ -2,32 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character.tscn" id="1_5ksr3"]
 [ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/combat_level.gd" id="1_gn8s7"]
-[ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/components/effector_component.tscn" id="2_aokjo"]
-[ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/components/turn_tracker_component.tscn" id="4_c7jmv"]
-[ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/components/selector_component.tscn" id="4_hyn1k"]
-[ext_resource type="PackedScene" uid="uid://b3sabn1gkxocr" path="res://objects/game/components/status_tracker_component.tscn" id="5_f26kh"]
-[ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/scenery.tscn" id="6_q682q"]
+[ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/levels/combat_effector.tscn" id="2_aokjo"]
+[ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/levels/combat_turn_tracker.tscn" id="4_c7jmv"]
+[ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/levels/combat_selector.tscn" id="4_hyn1k"]
+[ext_resource type="PackedScene" uid="uid://b3sabn1gkxocr" path="res://objects/game/levels/combat_status_tracker.tscn" id="5_f26kh"]
+[ext_resource type="PackedScene" uid="uid://cro1alfwfqtjo" path="res://objects/game/levels/combat_preview.tscn" id="6_hyn1k"]
+[ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_scenery.tscn" id="6_q682q"]
+[ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
-[ext_resource type="Script" uid="uid://dq4sipejvqpor" path="res://objects/game/levels/combat_camera.gd" id="11_m1tc0"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
 
-[node name="EffectorComponent" parent="." unique_id=755835823 instance=ExtResource("2_aokjo")]
+[node name="TurnTracker" parent="." unique_id=2074221435 instance=ExtResource("4_c7jmv")]
 
-[node name="PreviewComponent" type="Node" parent="." unique_id=946695866]
+[node name="StatusTracker" parent="." unique_id=1132919478 instance=ExtResource("5_f26kh")]
 
-[node name="SelectorComponent" parent="." unique_id=157429735 instance=ExtResource("4_hyn1k")]
+[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("4_hyn1k")]
 
-[node name="TurnTrackerComponent" parent="." unique_id=2074221435 instance=ExtResource("4_c7jmv")]
+[node name="Effector" parent="." unique_id=755835823 instance=ExtResource("2_aokjo")]
 
-[node name="StatusTrackerComponent" parent="." unique_id=1132919478 instance=ExtResource("5_f26kh")]
+[node name="Preview" parent="." unique_id=851398025 instance=ExtResource("6_hyn1k")]
 
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("6_q682q")]
 
-[node name="CombatCamera" type="Camera2D" parent="." unique_id=1200082938]
-position = Vector2(960, 540)
-script = ExtResource("11_m1tc0")
+[node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
 
 [node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
 

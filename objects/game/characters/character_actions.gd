@@ -1,4 +1,4 @@
-class_name ActionsComponent
+class_name CharacterActions
 extends Node
 
 
