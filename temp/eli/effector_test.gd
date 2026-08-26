@@ -6,7 +6,7 @@ extends Node
 @onready var effector: EffectorComponent = $EffectorComponent
 
 func _ready() -> void:
-	effector.action_effect_applied.connect(_on_action_effect_applied)
+	effector.action_used.connect(_on_action_used)
 
 	print("=== EFFECTOR TEST ===")
 
@@ -19,7 +19,7 @@ func _test_damage() -> void:
 
 	var before: int = target.state_component.current_health
 
-	effector.apply_action_effects(
+	effector.apply(
 		action,
 		user,
 		target
@@ -38,7 +38,7 @@ func _test_healing() -> void:
 
 	var before: int = target.state_component.current_health
 
-	effector.apply_action_effects(
+	effector.apply(
 		action,
 		user,
 		target
@@ -48,13 +48,13 @@ func _test_healing() -> void:
 
 	print("Healing test: ", before, " -> ", after)
 
-func _on_action_effect_applied(
+func _on_action_used(
 	action: Action,
 	user_character: Character,
 	target_character: Character
 ) -> void:
 	print(
-		"Action applied: ",
+		"Action used: ",
 		action,
 		" | User: ",
 		user_character.name,

@@ -74,8 +74,8 @@ func _ready() -> void:
 
 	Game.start.emit()
 
-	effector_component.action_effect_applied.connect(
-		_on_action_effect_applied
+	effector_component.action_used.connect(
+		_on_action_used
 	)
 
 	selector_component.targeting_requested.connect(
@@ -131,7 +131,7 @@ func _get_characters_in_group(group_name: StringName) -> Array[Character]:
 	return result
 
 
-func _on_action_effect_applied(
+func _on_action_used(
 	action: Action,
 	user: Character,
 	target: Character
@@ -158,7 +158,7 @@ func _on_target_selected(
 	user: Character,
 	target: Character
 ) -> void:
-	effector_component.apply_action_effects(
+	effector_component.apply(
 		action,
 		user,
 		target
