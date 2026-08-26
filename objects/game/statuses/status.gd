@@ -32,19 +32,27 @@ var owner: Character
 func apply_to(character: Character) -> void:
 	owner = character
 	
-	for spec: Trigger in triggers:
-		spec.effect = spec.effect.duplicate()
-		spec.effect.owner = character
+	for trigger: Trigger in triggers:
+		trigger.effect = trigger.effect.duplicate()
+		trigger.effect.owner = character
 	
 	owner.state_component.add_max_health(max_health_adder)
 
+	Game.level.status_tracker_component.track(self)
+	
 	applied.emit(owner)
+	
+	for trigger: Trigger in triggers:
+		if trigger.trigger_type == Enums.TriggerType.IMMEDIATE:
+			trigger.fire()
 
 
 func remove() -> void:
-	removed.emit(owner)
+	Game.level.status_tracker_component.untrack(self)
 	
 	owner.state_component.add_max_health(- max_health_adder)
+
+	removed.emit(owner)
 
 	owner = null
 

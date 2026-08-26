@@ -19,8 +19,10 @@ func apply(_bypass_queue: bool = false) -> void:
 		return
 	
 	## Immediate effects first
-	target.state_component.take_damage(damage)
-	target.state_component.heal(healing)
+	if damage:
+		target.state_component.take_damage(damage)
+	if healing:
+		target.state_component.heal(healing)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:

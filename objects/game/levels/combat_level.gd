@@ -95,14 +95,6 @@ func _ready() -> void:
 
 	for character: Character in enemies:
 		print("Enemy: ", character.name)
-	
-	for character: Character in characters:
-		character.state_component.status_applied.connect(
-			status_tracker_component.track
-		)
-		character.state_component.status_removed.connect(
-			status_tracker_component.untrack
-		)
 
 	turn_tracker_component.round_started.connect(
 		_on_round_started

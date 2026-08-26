@@ -15,9 +15,11 @@ enum RangeType {
 
 enum TargetType {
 	SELF,
-	MELEE,
+	NEAREST_ENEMY,
+	LAST_ATTACKER,
 }
 
 enum TriggerType {
 	IMMEDIATE,
+	DAMAGE_TAKEN,
 }

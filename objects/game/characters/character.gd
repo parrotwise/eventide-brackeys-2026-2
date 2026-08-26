@@ -2,9 +2,10 @@ class_name Character
 extends Node2D
 
 
+signal action_used()
+
 const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
-
 
 var state_component: StateComponent:
 	get: return $StateComponent
@@ -42,6 +43,7 @@ func _ready() -> void:
 	actions_component.character = self
 	for action: Action in actions:
 		action.owner = self
+		action.used.connect(action_used.emit)
 	
 	equipment_component.character = self
 	for item: Equipment in equipment:

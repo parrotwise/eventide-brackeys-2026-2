@@ -3,7 +3,8 @@ extends Node
 
 
 signal health_changed(current_health: int, max_health: int)
-signal knockout
+signal damage_taken()
+signal knockout()
 
 signal status_applied(status: Status)
 signal status_removed(status: Status)
@@ -42,7 +43,9 @@ func take_damage(damage: int) -> void:
 		return
 	
 	current_health = maxi(0, current_health - damage)
+
 	health_changed.emit(current_health, max_health)
+	damage_taken.emit()
 	
 	if current_health == 0:
 		knocked_out = true
@@ -84,9 +87,8 @@ func apply_status(status_template: Status) -> void:
 	
 	_active_statuses.append(status)
 	
+	status.applied.connect(func(_character): status_applied.emit(status))
 	status.apply_to(character)
-	
-	status_applied.emit(status)
 
 
 func remove_status(status: Status) -> void:
