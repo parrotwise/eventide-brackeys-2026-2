@@ -5,23 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/components/state_component.tscn" id="1_iixya"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/shaders/character_sprite.gdshader" id="2_5lvk8"]
 [ext_resource type="Texture2D" uid="uid://cjeefu4d6nftn" path="res://assets/art/characters/character_big_cat_placeholder.png" id="2_g2flc"]
-[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/shaders/status_overlay_sloshed_gradient.png" id="3_3nt7m"]
+[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/shaders/status_overlay_sloshed_overlay.png" id="3_3nt7m"]
+[ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/shaders/shadow_gradient.png" id="3_meodt"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/components/equipment_component.tscn" id="4_g2flc"]
 [ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/components/indicators_component.gd" id="4_glbma"]
 [ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="6_yogf4"]
 [ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="7_g2flc"]
 
-[sub_resource type="Gradient" id="Gradient_5lvk8"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5lvk8"]
-gradient = SubResource("Gradient_5lvk8")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0.71794873)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
-shader_parameter/shadow_gradient = SubResource("GradientTexture2D_5lvk8")
-shader_parameter/shadow_intensity = 0.8
+shader_parameter/shadow_gradient = ExtResource("3_meodt")
+shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("3_3nt7m")
 shader_parameter/status_sloshed_intensity = 0.5
 
@@ -36,6 +30,7 @@ texture = ExtResource("2_g2flc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=628121818]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1528904343]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1579786761]
 polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1, -163, -223)
