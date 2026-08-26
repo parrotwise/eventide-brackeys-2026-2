@@ -18,4 +18,7 @@ func fire(specific_target: Character = null) -> void:
 			Enums.TargetType.NEAREST_ENEMY:
 				effect.target = Game.level.allies[-1] if effect.owner in Game.level.enemies else Game.level.enemies[0]
 	
+	# Resource instance modified in-place
+	Game.level.status_tracker_component.modify_effect(effect)
+
 	effect.apply()

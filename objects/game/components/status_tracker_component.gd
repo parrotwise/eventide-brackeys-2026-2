@@ -62,3 +62,11 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 					trigger.fire()
 				Enums.TargetType.LAST_ATTACKER:
 					trigger.fire(cached_targets['last_attacker'])
+
+
+func modify_effect(effect: Effect) -> Effect:
+	for status: Status in active_statuses:
+		# Resource instance modified in-place
+		status.modify_effect(effect)
+	
+	return effect

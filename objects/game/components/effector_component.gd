@@ -23,6 +23,7 @@ func interpret(
 	if action.damage > 0:
 		if target not in effects:
 			effects[target] = Effect.new()
+			effects[target].owner = action.owner
 		
 		effects[target].damage = action.damage
 
@@ -31,6 +32,10 @@ func interpret(
 			effects[target] = Effect.new()
 		
 		effects[target].healing = action.healing
+	
+	for effect: Effect in effects.values():
+		# Resource instance modified in-place
+		Game.level.status_tracker_component.modify_effect(effect)
 
 	return effects
 

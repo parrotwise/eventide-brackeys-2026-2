@@ -56,7 +56,8 @@ func remove() -> void:
 
 
 func modify_effect(effect: Effect) -> Effect:
-	effect.damage += damage_adder
-	effect.healing += healing_adder
+	if owner == effect.owner:
+		effect.damage += damage_adder
+		effect.healing += healing_adder
  
 	return effect
