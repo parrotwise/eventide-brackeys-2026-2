@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckepfgow5p1xn"
-path="res://.godot/imported/star_icon_placeholder.webp-b49736e4f012b21f18fb4cdeeefe051c.ctex"
+uid="uid://cufuc1dbe2nrf"
+path="res://.godot/imported/Cloud_sheet.png-7eddff954c45964f3dad208c8722d4d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/star_icon_placeholder.webp"
-dest_files=["res://.godot/imported/star_icon_placeholder.webp-b49736e4f012b21f18fb4cdeeefe051c.ctex"]
+source_file="res://assets/art/backgrounds/Cloud_sheet.png"
+dest_files=["res://.godot/imported/Cloud_sheet.png-7eddff954c45964f3dad208c8722d4d3.ctex"]
 
 [params]
 

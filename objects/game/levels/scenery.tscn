@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bloiakskhop7d"]
+
+[ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_b106r"]
+[ext_resource type="Script" uid="uid://g23brjejw4jf" path="res://objects/game/levels/scenery.gd" id="1_mtt6l"]
+[ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/backgrounds/bg_space_cloud.png" id="2_mtt6l"]
+[ext_resource type="Texture2D" uid="uid://7rj35oktahiu" path="res://assets/art/backgrounds/BG_parallax_sprite_sheet.png" id="3_6c6dk"]
+[ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/backgrounds/space_dust_sheet.png" id="3_bj8y4"]
+[ext_resource type="Texture2D" uid="uid://be1e2tgc8pvqw" path="res://assets/art/backgrounds/Big Comet.png" id="4_6c6dk"]
+[ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="5_k6iuq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p4nv"]
+atlas = ExtResource("3_6c6dk")
+region = Rect2(862, 2917, 839, 502)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1whi2"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 240, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 100, 1)
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 19.0
+initial_velocity_max = 21.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_stt5f"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2500, 270, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 100, 1)
+angle_min = -4.9999895
+angle_max = 5.000011
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6iuq"]
+atlas = ExtResource("3_6c6dk")
+region = Rect2(671, 540, 280, 259)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bj8y4"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 240, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 240, 1)
+angle_min = -14.9999895
+angle_max = 15.0000105
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 24.0
+initial_velocity_max = 26.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1tc0"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(3, 4, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0i7f"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(1003, 4, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaoko"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(3, 644, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qx2x"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(1003, 644, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2va5h"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(3, 1284, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sivuo"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(1003, 1284, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoth1"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(3, 1924, 1000, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pll8h"]
+atlas = ExtResource("4_6c6dk")
+region = Rect2(1003, 1924, 1000, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5p4nv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1tc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0i7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaoko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qx2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2va5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sivuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoth1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pll8h")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hyn1k"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5p4nv"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2000, 270, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 270, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(-10, 0, 0)
+spread = 5.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+anim_offset_max = 1.0
+
+[node name="Scenery" type="Control" unique_id=1388419847]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mtt6l")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1560975777]
+layout_mode = 0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 2220.0
+offset_bottom = 1380.0
+texture = ExtResource("1_b106r")
+
+[node name="DistantParallax" type="Parallax2D" parent="." unique_id=239518672]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="BigSplatterEmitter" type="GPUParticles2D" parent="DistantParallax" unique_id=1254296861]
+amount = 3
+texture = SubResource("AtlasTexture_5p4nv")
+lifetime = 140.0
+preprocess = 80.0
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_1whi2")
+
+[node name="BigCloudEmitter" type="GPUParticles2D" parent="DistantParallax" unique_id=383496791]
+amount = 2
+texture = ExtResource("2_mtt6l")
+lifetime = 150.0
+preprocess = 80.0
+fixed_fps = 15
+visibility_rect = Rect2(0, 0, 1920, 1060)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_stt5f")
+
+[node name="MidParallax" type="Parallax2D" parent="." unique_id=1420827354]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="PlanetEmitter" type="GPUParticles2D" parent="MidParallax" unique_id=570364296]
+amount = 1
+texture = SubResource("AtlasTexture_k6iuq")
+lifetime = 100.0
+preprocess = 40.0
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_bj8y4")
+
+[node name="BigComet" type="AnimatedSprite2D" parent="MidParallax" unique_id=1295206345]
+position = Vector2(698, 120)
+sprite_frames = SubResource("SpriteFrames_5p4nv")
+frame = 7
+frame_progress = 1.0
+
+[node name="BigCometTimer" type="Timer" parent="MidParallax/BigComet" unique_id=1606916618]
+wait_time = 5.0
+autostart = true
+
+[node name="NearParallax" type="Parallax2D" parent="." unique_id=1838346190]
+
+[node name="DebrisEmitter" type="GPUParticles2D" parent="NearParallax" unique_id=1161285893]
+material = SubResource("CanvasItemMaterial_hyn1k")
+amount = 24
+texture = ExtResource("3_bj8y4")
+lifetime = 20.0
+preprocess = 30.0
+fixed_fps = 15
+visibility_rect = Rect2(0, 0, 1920, 1080)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_5p4nv")
+
+[node name="Foreground" type="TextureRect" parent="." unique_id=1619556345]
+layout_mode = 0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 2220.0
+offset_bottom = 1380.0
+texture = ExtResource("5_k6iuq")
+
+[connection signal="timeout" from="MidParallax/BigComet/BigCometTimer" to="." method="_on_big_comet_timer_timeout"]

@@ -32,10 +32,10 @@ var character: Character:
 	get: return _character
 
 
-func apply_to(character: Character) -> void:
-	_character = character
+func apply_to(affected_character: Character) -> void:
+	_character = affected_character
 	
-	character.state_component.add_max_health(max_health_adder)
+	affected_character.state_component.add_max_health(max_health_adder)
 
 	status_applied.emit(_character)
 
