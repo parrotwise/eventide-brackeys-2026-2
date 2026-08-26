@@ -17,8 +17,6 @@ signal removed(character: Character)
 @export_group("Effect Definition")
 ## Value to be added to the owner's damage. Negative values subtract damage.
 @export var damage_adder: int = 0
-## Value to be added to the owner's health. Negative values subtract health.
-@export var max_health_adder: int = 0
 ##Value to be added to the owner's healing. Negative values subtract healing.
 @export var healing_adder: int = 0
 ## Allows the owner to attack twice in one turn.
@@ -35,22 +33,22 @@ func apply_to(character: Character) -> void:
 	for trigger: Trigger in triggers:
 		trigger.effect = trigger.effect.duplicate()
 		trigger.effect.owner = character
-	
-	owner.state_component.add_max_health(max_health_adder)
 
-	Game.level.status_tracker_component.track(self)
-	
 	applied.emit(owner)
 	
+	Game.level.status_tracker_component.track(self)
+
 	for trigger: Trigger in triggers:
-		if trigger.trigger_type == Enums.TriggerType.IMMEDIATE:
+		if trigger.trigger_type == Enums.TriggerType.SOURCE_APPLIED:
 			trigger.fire()
 
 
 func remove() -> void:
-	Game.level.status_tracker_component.untrack(self)
+	for trigger: Trigger in triggers:
+		if trigger.trigger_type == Enums.TriggerType.SOURCE_REMOVED:
+			trigger.fire()
 	
-	owner.state_component.add_max_health(- max_health_adder)
+	Game.level.status_tracker_component.untrack(self)
 
 	removed.emit(owner)
 

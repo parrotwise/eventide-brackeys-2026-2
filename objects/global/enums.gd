@@ -20,6 +20,7 @@ enum TargetType {
 }
 
 enum TriggerType {
-	IMMEDIATE,
+	SOURCE_APPLIED,
+	SOURCE_REMOVED,
 	DAMAGE_TAKEN,
 }

@@ -8,6 +8,7 @@ signal applied()
 
 @export var damage: int = 0
 @export var healing: int = 0
+@export var add_max_health: int = 0
 @export var applied_statuses: Array[Status] = []
 
 var owner: Character
@@ -23,6 +24,8 @@ func apply(_bypass_queue: bool = false) -> void:
 		target.state_component.take_damage(damage)
 	if healing:
 		target.state_component.heal(healing)
+	if add_max_health:
+		target.state_component.add_max_health(add_max_health)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:
