@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_scenery.tscn" id="6_q682q"]
 [ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
+[ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -26,7 +27,7 @@ script = ExtResource("1_gn8s7")
 
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("6_q682q")]
 
-[node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
+[node name="CombatCamera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
 
 [node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
 
@@ -69,3 +70,6 @@ position = Vector2(743, 709)
 position = Vector2(1152, 701)
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
+
+[node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera") instance=ExtResource("11_f26kh")]
+combat_camera = NodePath("../CombatCamera")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bt630geujiome"]
+
+[ext_resource type="Script" uid="uid://bwmuj8ofdby62" path="res://objects/game/levels/debug_menu.gd" id="1_5f6c3"]
+
+[node name="DebugMenu" type="CanvasLayer" unique_id=403288196]
+script = ExtResource("1_5f6c3")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1580560713]
+offset_left = 1224.0
+offset_top = 329.0
+offset_right = 1346.0
+offset_bottom = 369.0
+
+[node name="ShakeScreenButton" type="Button" parent="PanelContainer" unique_id=2004456094]
+layout_mode = 2
+text = "shake_screen()"
+
+[connection signal="pressed" from="PanelContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]

@@ -2,9 +2,12 @@ class_name CombatCamera
 extends Camera2D
 
 
+var initial_position: Vector2
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	initial_position = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,4 +39,4 @@ func shake_screen() -> void:
 	
 	# Reset offset.
 	await shake_tween.finished
-	offset = Vector2.ZERO
+	position = initial_position
