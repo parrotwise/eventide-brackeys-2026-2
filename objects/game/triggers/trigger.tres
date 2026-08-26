@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://b746c0ar47v7j"]
+
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_kbb2c"]
+
+[resource]
+script = ExtResource("1_kbb2c")
+metadata/_custom_type_script = "uid://lvv535cj6j34"

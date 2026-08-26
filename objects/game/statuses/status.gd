@@ -2,11 +2,8 @@ class_name Status
 extends Resource
 
 
-signal status_applied(character: Character)
-signal status_removed(character: Character)
-## Emitted when a status effect applies an effect independent of an action
-## ex. Poison damage tick
-signal status_triggered(character: Character, effects: Dictionary)
+signal applied(character: Character)
+signal removed(character: Character)
 
 @export_group("Identifiers")
 ## A name to be exposed to the player.
@@ -27,43 +24,33 @@ signal status_triggered(character: Character, effects: Dictionary)
 ## Allows the owner to attack twice in one turn.
 @export var can_attack_twice: bool = false
 
-var _character: Character = null
-var character: Character:
-	get: return _character
+@export var triggers: Array[Trigger] = []
+
+var owner: Character
 
 
-func apply_to(affected_character: Character) -> void:
-	_character = affected_character
+func apply_to(character: Character) -> void:
+	owner = character
 	
-	affected_character.state_component.add_max_health(max_health_adder)
-
-	status_applied.emit(_character)
-
-
-func remove_from() -> void:
-	status_removed.emit(_character)
+	for spec: Trigger in triggers:
+		spec.effect = spec.effect.duplicate()
+		spec.effect.owner = character
 	
-	character.state_component.add_max_health(- max_health_adder)
+	owner.state_component.add_max_health(max_health_adder)
 
-	_character = null
-
-
-func trigger(effects: Dictionary = {}) -> void:
-	status_triggered.emit(_character, effects)
+	applied.emit(owner)
 
 
-func modify_action(action: Action, user: Character, target: Character, in_place: bool = true) -> Action:
-	var modified: Action = action if in_place else action.duplicate(true)
+func remove() -> void:
+	removed.emit(owner)
+	
+	owner.state_component.add_max_health(- max_health_adder)
+
+	owner = null
+
+
+func modify_effect(effect: Effect) -> Effect:
+	effect.damage += damage_adder
+	effect.healing += healing_adder
  
-	if _character == user:
-		if damage_adder != 0 and "damage" in modified:
-			modified.damage += damage_adder
-		if can_attack_twice and "can_attack_twice" in modified:
-			modified.can_attack_twice = true
-	
-	if _character == target:
-		if healing_adder != 0 and "healing" in modified:
-			modified.healing += healing_adder
-		
- 
-	return modified
+	return effect

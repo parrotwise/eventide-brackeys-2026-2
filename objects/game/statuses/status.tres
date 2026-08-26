@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://ci1h01guccnmg"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_d741v"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_0l2a1"]
 
 [resource]
 script = ExtResource("1_d741v")

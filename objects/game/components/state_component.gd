@@ -6,9 +6,7 @@ signal health_changed(current_health: int, max_health: int)
 signal knockout
 
 signal status_applied(status: Status)
-
 signal status_removed(status: Status)
-
 
 @export_group("Health")
 @export var max_health: int = 100
@@ -17,11 +15,9 @@ signal status_removed(status: Status)
 ## The Character's passive ability
 @export var passive_status: Status
 
-
 var character: Character
 var current_health: int
 var knocked_out: bool = false
-
 
 ## Status effects currently affecting this Character
 var _active_statuses: Array[Status] = []
@@ -32,9 +28,14 @@ var active_statuses: Array[Status]:
 
 func _ready() -> void:
 	current_health = max_health
-	
+
+	Game.start.connect(_on_combat_start)
+
+
+func _on_combat_start() -> void:
 	if passive_status != null:
 		apply_status(passive_status)
+
 
 func take_damage(damage: int) -> void:
 	if knocked_out:
@@ -46,13 +47,15 @@ func take_damage(damage: int) -> void:
 	if current_health == 0:
 		knocked_out = true
 		knockout.emit()
-		
+
+
 func heal(amount: int) -> void:
 	if knocked_out:
 		return
 	
 	current_health = mini(max_health, current_health + amount)
 	health_changed.emit(current_health, max_health)
+
 
 func add_max_health(amount: int) -> void:
 	if knocked_out:
@@ -65,7 +68,8 @@ func add_max_health(amount: int) -> void:
 	if current_health == 0:
 		knocked_out = true
 		knockout.emit()
-	
+
+
 func reset_health() -> void:
 	current_health = max_health
 	knocked_out = false
@@ -75,7 +79,7 @@ func reset_health() -> void:
 func apply_status(status_template: Status) -> void:
 	if status_template == null:
 		return
-	
+
 	var status: Status = status_template.duplicate(true)
 	
 	_active_statuses.append(status)
@@ -92,7 +96,7 @@ func remove_status(status: Status) -> void:
 	if status not in _active_statuses:
 		return
 	
-	status.remove_from()
+	status.remove()
 	_active_statuses.erase(status)
 	
 	status_removed.emit(status)

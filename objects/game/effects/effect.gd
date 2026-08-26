@@ -10,6 +10,7 @@ signal applied()
 @export var healing: int = 0
 @export var applied_statuses: Array[Status] = []
 
+var owner: Character
 var target: Character
 
 

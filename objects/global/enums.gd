@@ -10,5 +10,14 @@ enum Direction {
 enum RangeType {
 	MELEE,
 	RANGED,
-	ALLY
+	ALLY,
+}
+
+enum TargetType {
+	SELF,
+	MELEE,
+}
+
+enum TriggerType {
+	IMMEDIATE,
 }
