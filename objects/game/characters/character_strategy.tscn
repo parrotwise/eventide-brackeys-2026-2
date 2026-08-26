@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://fabk6s3d7xoe"]
+
+[ext_resource type="Script" uid="uid://cn7rribu70rol" path="res://objects/game/characters/character_strategy.gd" id="1_7v5gw"]
+
+[node name="Strategy" type="Node2D" unique_id=1036133476]
+script = ExtResource("1_7v5gw")

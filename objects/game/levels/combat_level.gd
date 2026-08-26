@@ -74,7 +74,7 @@ func _ready() -> void:
 	turn_tracker_component.turn_ended.connect(
 		_on_turn_ended
 	)
-
+	_connect_enemy_strategies()
 	turn_tracker_component.start_tracking(allies, enemies)
 
 	Game.start.emit()
@@ -94,7 +94,11 @@ func _get_characters_in_group(group_name: StringName) -> Array[Character]:
 			result.append(node as Character)
 
 	return result
-
+	
+func _connect_enemy_strategies() -> void:
+	for enemy: Character in enemies:
+		if enemy.strategy_component:
+			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
 
 func _on_action_used(
 	action: Action,
@@ -139,7 +143,13 @@ func _on_battle_group_started(group_name: StringName) -> void:
 
 func _on_turn_started(character: Character) -> void:
 	print("TURN STARTED: ", character.name)
-
+	if character.strategy_component:
+		character.strategy_component.take_turn()
 
 func _on_turn_ended(character: Character) -> void:
 	print("TURN ENDED: ", character.name)
+
+func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
+	if action != null and target != null:
+		effector_component.apply(action, user, target)
+	turn_tracker_component.end_current_turn()

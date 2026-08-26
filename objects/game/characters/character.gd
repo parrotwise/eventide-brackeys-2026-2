@@ -19,6 +19,8 @@ var equipment_component: CharacterEquipment:
 	get: return $Equipment
 var indicators_component: CharacterIndicators:
 	get: return $Indicators
+var strategy_component: StrategyComponent:
+	get: return get_node_or_null(^"Strategy") as StrategyComponent
 
 var actions: Array[Action]:
 	get: return actions_component.actions
@@ -55,6 +57,9 @@ func _ready() -> void:
 	animator_component.character = self
 	state_component.character = self
 	indicators_component.character = self
+
+	if strategy_component:
+		strategy_component.character = self
 
 
 func _register_battle_group() -> void:
