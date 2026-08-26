@@ -7,6 +7,10 @@ signal action_used()
 const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
+var sprite: Sprite2D:
+	get: return $Sprite
+var animator: CharacterAnimator:
+	get: return $Animator
 var state_component: StateComponent:
 	get: return $StateComponent
 var actions_component: ActionsComponent:
@@ -33,7 +37,6 @@ var battle_group: StringName:
 
 
 func _ready() -> void:
-	state_component.character = self
 	_register_battle_group()
 
 	print("Character: ", name)
@@ -49,6 +52,8 @@ func _ready() -> void:
 	for item: Equipment in equipment:
 		item.owner = self
 	
+	animator.character = self
+	state_component.character = self
 	indicators_component.character = self
 
 

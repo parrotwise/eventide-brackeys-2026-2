@@ -70,5 +70,3 @@ position = Vector2(743, 709)
 position = Vector2(1152, 701)
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
-
-[editable path="Characters/Allies/TestAlly"]

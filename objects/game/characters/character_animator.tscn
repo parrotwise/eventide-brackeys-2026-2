@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btawv8utacr3n"]
+
+[ext_resource type="AnimationLibrary" uid="uid://bjardwh1c4m0p" path="res://assets/art/characters/character_gun_cat_anim.tres" id="1_7s711"]
+[ext_resource type="Script" uid="uid://wjl7e54xt58c" path="res://objects/game/characters/character_animator.gd" id="2_tcj3x"]
+
+[sub_resource type="Animation" id="Animation_263tf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wshwh"]
+_data = {
+&"RESET": SubResource("Animation_263tf")
+}
+
+[node name="Animator" type="AnimationPlayer" unique_id=1633728089]
+libraries/ = SubResource("AnimationLibrary_wshwh")
+libraries/GunCat = ExtResource("1_7s711")
+script = ExtResource("2_tcj3x")

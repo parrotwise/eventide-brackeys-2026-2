@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cev2g60hken86"]
+
+[ext_resource type="Texture2D" uid="uid://vmgdwdbxqotl" path="res://assets/art/characters/character_gun_cat.png" id="1_x440j"]
+
+[resource]
+atlas = ExtResource("1_x440j")
+region = Rect2(4, 4, 1936, 480)
+margin = Rect2(2, 2, 0, 0)
