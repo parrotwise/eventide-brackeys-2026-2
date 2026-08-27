@@ -11,8 +11,16 @@ offset_top = 329.0
 offset_right = 1346.0
 offset_bottom = 369.0
 
-[node name="ShakeScreenButton" type="Button" parent="PanelContainer" unique_id=2004456094]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1294739171]
+layout_mode = 2
+
+[node name="ShakeScreenButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2004456094]
 layout_mode = 2
 text = "shake_screen()"
 
-[connection signal="pressed" from="PanelContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
+[node name="ZoomButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=67158399]
+layout_mode = 2
+text = "zoom"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]

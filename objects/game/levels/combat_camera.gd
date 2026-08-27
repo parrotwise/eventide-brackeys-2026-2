@@ -3,6 +3,7 @@ extends Camera2D
 
 
 var initial_position: Vector2
+var zoom_level: float = 1.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,17 +11,34 @@ func _ready() -> void:
 	initial_position = position
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func zoom_on_characters(chars: Array[Character]) -> void:
-	pass
+	var char_count: int = chars.size()
+	var char_sqr: float = 480
+	var avg_pos: Vector2 = Vector2.ZERO
+	
+	for character: Character in chars:
+		avg_pos += character.position
+		avg_pos /= char_count
+	avg_pos.y -= char_sqr / 4
+	
+	zoom_level= 0.8 * get_viewport_rect().size.x / (char_sqr * char_count)
+	var zoom_vector: Vector2 = Vector2(zoom_level, zoom_level)
+	
+	var zoom_tween = create_tween()
+	zoom_tween.tween_property(self, "zoom", zoom_vector, 0.5).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	zoom_tween.parallel().tween_property(self, "position", avg_pos, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+
+func zoom_to_full() -> void:
+	var zoom_tween = create_tween()
+	zoom_tween.tween_property(self, "zoom", Vector2.ONE, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	zoom_tween.parallel().tween_property(self, "position", initial_position, 0.5).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	
+	zoom_level = 1.0
 
 
 func shake_screen() -> void:
-	var intensity = Settings.screen_shake_intensity
+	var intensity = Settings.screen_shake_intensity / zoom_level
 	
 	# If the screen shake intensity is null or 0, skip the method.
 	if !intensity or intensity == 0:
@@ -39,4 +57,5 @@ func shake_screen() -> void:
 	
 	# Reset offset.
 	await shake_tween.finished
-	position = initial_position
+	if zoom_level == 1.0:
+		position = initial_position

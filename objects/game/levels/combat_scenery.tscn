@@ -1,12 +1,35 @@
 [gd_scene format=3 uid="uid://bloiakskhop7d"]
 
 [ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_b106r"]
-[ext_resource type="Script" uid="uid://g23brjejw4jf" path="res://objects/game/levels/scenery.gd" id="1_mtt6l"]
+[ext_resource type="Script" uid="uid://g23brjejw4jf" path="res://objects/game/levels/combat_scenery.gd" id="1_mtt6l"]
 [ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/backgrounds/bg_space_cloud.png" id="2_mtt6l"]
 [ext_resource type="Texture2D" uid="uid://7rj35oktahiu" path="res://assets/art/backgrounds/BG_parallax_sprite_sheet.png" id="3_6c6dk"]
 [ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/backgrounds/space_dust_sheet.png" id="3_bj8y4"]
 [ext_resource type="Texture2D" uid="uid://be1e2tgc8pvqw" path="res://assets/art/backgrounds/Big Comet.png" id="4_6c6dk"]
 [ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="5_k6iuq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpvd8"]
+load_path = "res://.godot/imported/BG_parallax_sprite_sheet.png-fbabf6e1c3c45abdeb2c05b4729db43c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne8bu"]
+atlas = SubResource("CompressedTexture2D_jpvd8")
+region = Rect2(670, 8, 990, 516)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwvcv"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 240, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 260, 1)
+angle_min = -9.9999895
+angle_max = 10.0000105
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 19.0
+initial_velocity_max = 21.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.050000023
+hue_variation_max = 0.049999975
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5p4nv"]
 atlas = ExtResource("3_6c6dk")
@@ -43,6 +66,26 @@ gravity = Vector3(0, 0, 0)
 hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sywex"]
+load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncmcp"]
+atlas = SubResource("CompressedTexture2D_sywex")
+region = Rect2(337, 922, 97, 85)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fms0n"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 260, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 200, 1)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_min = 80.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6iuq"]
 atlas = ExtResource("3_6c6dk")
 region = Rect2(671, 540, 280, 259)
@@ -60,8 +103,8 @@ initial_velocity_min = 24.0
 initial_velocity_max = 26.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.79999995
-hue_variation_min = -0.100000024
-hue_variation_max = 0.09999997
+hue_variation_min = -0.050000023
+hue_variation_max = 0.049999975
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1tc0"]
 atlas = ExtResource("4_6c6dk")
@@ -127,6 +170,56 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tthab"]
+load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh431"]
+atlas = SubResource("CompressedTexture2D_tthab")
+region = Rect2(4, 582, 325, 384)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rab3a"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 280, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 300, 1)
+angle_min = 85.000015
+angle_max = 95.000015
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 45.0
+initial_velocity_max = 55.0
+angular_velocity_min = -0.2000161
+angular_velocity_max = 0.1999839
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.049999975
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xukqx"]
+load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53vu4"]
+atlas = SubResource("CompressedTexture2D_xukqx")
+region = Rect2(337, 752, 136, 162)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y7ltd"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(2400, 260, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 200, 1)
+angle_min = 85.000015
+angle_max = 95.000015
+direction = Vector3(-1, 0, 0)
+spread = 2.0
+initial_velocity_min = 65.0
+initial_velocity_max = 80.0
+angular_velocity_min = -0.2000161
+angular_velocity_max = 0.1999839
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+hue_variation_min = -0.100000024
+hue_variation_max = 0.049999975
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hyn1k"]
 particles_animation = true
 particles_anim_h_frames = 3
@@ -155,34 +248,51 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mtt6l")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1560975777]
-layout_mode = 0
+[node name="DistantParallax" type="Parallax2D" parent="." unique_id=239518672]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="TextureRect" parent="DistantParallax" unique_id=1560975777]
 offset_left = -300.0
 offset_top = -300.0
 offset_right = 2220.0
 offset_bottom = 1380.0
 texture = ExtResource("1_b106r")
 
-[node name="DistantParallax" type="Parallax2D" parent="." unique_id=239518672]
-scroll_scale = Vector2(0.5, 0.5)
+[node name="BigCloudEmitter2" type="GPUParticles2D" parent="DistantParallax" unique_id=1360380948]
+amount = 1
+texture = SubResource("AtlasTexture_ne8bu")
+lifetime = 150.0
+preprocess = 100.0
+fixed_fps = 15
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_pwvcv")
 
 [node name="BigSplatterEmitter" type="GPUParticles2D" parent="DistantParallax" unique_id=1254296861]
 amount = 3
 texture = SubResource("AtlasTexture_5p4nv")
 lifetime = 140.0
 preprocess = 80.0
+fixed_fps = 15
 visibility_rect = Rect2(0, 0, 1920, 1080)
 process_material = SubResource("ParticleProcessMaterial_1whi2")
 
 [node name="BigCloudEmitter" type="GPUParticles2D" parent="DistantParallax" unique_id=383496791]
 amount = 2
 texture = ExtResource("2_mtt6l")
-lifetime = 150.0
+lifetime = 160.0
 preprocess = 80.0
 fixed_fps = 15
 visibility_rect = Rect2(0, 0, 1920, 1060)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_stt5f")
+
+[node name="StarEmitter" type="GPUParticles2D" parent="DistantParallax" unique_id=1636939827]
+amount = 20
+texture = SubResource("AtlasTexture_ncmcp")
+lifetime = 35.0
+preprocess = 25.0
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_fms0n")
 
 [node name="MidParallax" type="Parallax2D" parent="." unique_id=1420827354]
 scroll_scale = Vector2(0.8, 0.8)
@@ -190,7 +300,7 @@ scroll_scale = Vector2(0.8, 0.8)
 [node name="PlanetEmitter" type="GPUParticles2D" parent="MidParallax" unique_id=570364296]
 amount = 1
 texture = SubResource("AtlasTexture_k6iuq")
-lifetime = 100.0
+lifetime = 110.0
 preprocess = 40.0
 visibility_rect = Rect2(0, 0, 1920, 1080)
 process_material = SubResource("ParticleProcessMaterial_bj8y4")
@@ -206,6 +316,22 @@ wait_time = 5.0
 autostart = true
 
 [node name="NearParallax" type="Parallax2D" parent="." unique_id=1838346190]
+
+[node name="AstroidEmitter" type="GPUParticles2D" parent="NearParallax" unique_id=1030885657]
+amount = 1
+texture = SubResource("AtlasTexture_uh431")
+lifetime = 90.0
+preprocess = 40.0
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_rab3a")
+
+[node name="AstroidEmitter2" type="GPUParticles2D" parent="NearParallax" unique_id=439370192]
+amount = 1
+texture = SubResource("AtlasTexture_53vu4")
+lifetime = 75.0
+preprocess = 40.0
+visibility_rect = Rect2(0, 0, 1920, 1080)
+process_material = SubResource("ParticleProcessMaterial_y7ltd")
 
 [node name="DebrisEmitter" type="GPUParticles2D" parent="NearParallax" unique_id=1161285893]
 material = SubResource("CanvasItemMaterial_hyn1k")
