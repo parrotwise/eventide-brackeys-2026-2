@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://bixdvlydnvhu1"]
 
 [ext_resource type="Script" uid="uid://t0vajahmyuku" path="res://objects/game/characters/character_indicators.gd" id="1_l5r23"]
-[ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="2_dnn08"]
-[ext_resource type="Script" uid="uid://bi47chqxgwtnx" path="res://objects/game/characters/health_bar.gd" id="2_losrt"]
-[ext_resource type="PackedScene" uid="uid://b1grrjef2vsyt" path="res://objects/game/symbols/test_symbol.tscn" id="2_tud5c"]
 [ext_resource type="Texture2D" uid="uid://dpnvx1fb5rdsf" path="res://assets/art/icons/stun_icon_placeholder.png" id="3_kwy1m"]
-[ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="3_lqcs1"]
 [ext_resource type="AnimationLibrary" uid="uid://dslinwcex5qo7" path="res://assets/art/icons/stun_icon_anim.tres" id="4_1cxyt"]
+[ext_resource type="PackedScene" uid="uid://dxjf4cxcdt8nx" path="res://objects/game/characters/health_bar.tscn" id="4_33amg"]
 [ext_resource type="Texture2D" uid="uid://27b8o11da8bb" path="res://assets/art/particles/bubble_particle.png" id="6_wrh48"]
 [ext_resource type="Material" uid="uid://cfdoon4fllx7j" path="res://assets/art/particles/bubble_particle_material.tres" id="7_2f26l"]
 [ext_resource type="Material" uid="uid://ce0inw36sd7cn" path="res://assets/art/particles/green_drop_particle_material.tres" id="8_33amg"]
@@ -44,7 +41,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_l5r23")
-symbol_icon_scene = ExtResource("2_tud5c")
 
 [node name="StunIcon" type="Sprite2D" parent="." unique_id=788883167]
 visible = false
@@ -56,31 +52,8 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_1cxyt")
 libraries/Stun = ExtResource("4_1cxyt")
 
-[node name="HealthBar" type="Control" parent="." unique_id=1743364708]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_losrt")
-
-[node name="BottomBar" type="TextureProgressBar" parent="HealthBar" unique_id=2138471216]
+[node name="HealthBar" parent="." unique_id=537244635 instance=ExtResource("4_33amg")]
 layout_mode = 0
-offset_left = -64.0
-offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 48.0
-value = 60.0
-texture_under = ExtResource("2_dnn08")
-texture_progress = ExtResource("3_lqcs1")
-
-[node name="TopBar" type="TextureProgressBar" parent="HealthBar" unique_id=848309530]
-layout_mode = 0
-offset_left = -64.0
-offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 48.0
-value = 60.0
-texture_under = ExtResource("2_dnn08")
-texture_progress = ExtResource("3_lqcs1")
 
 [node name="StatusEffectIndicator" type="PanelContainer" parent="." unique_id=83446901]
 layout_mode = 0
@@ -101,7 +74,7 @@ layout_mode = 2
 text = "Status Effects"
 horizontal_alignment = 1
 
-[node name="StatusEffectSymbols" type="HBoxContainer" parent="StatusEffectIndicator/VBoxContainer" unique_id=200065496]
+[node name="StatusIcons" type="HBoxContainer" parent="StatusEffectIndicator/VBoxContainer" unique_id=200065496]
 layout_mode = 2
 
 [node name="BubbleEmitter" type="GPUParticles2D" parent="." unique_id=969967582]

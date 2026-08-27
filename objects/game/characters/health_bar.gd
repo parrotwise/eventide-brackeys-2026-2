@@ -1,9 +1,9 @@
 class_name HealthBar
 extends Control
 
-@export var tween_duration: float = 0.6
+@export var tween_duration: float = 0.9
 @export var tween_transition: Tween.TransitionType = Tween.TRANS_CUBIC
-@export var tween_ease: Tween.EaseType = Tween.EASE_OUT
+@export var tween_ease: Tween.EaseType = Tween.EASE_IN_OUT
 
 @onready var _top_bar: TextureProgressBar = $TopBar
 @onready var _bottom_bar: TextureProgressBar = $BottomBar
@@ -19,8 +19,6 @@ func set_health(current_health: int, max_health: int) -> void:
 	var trail_bar: TextureProgressBar = _bottom_bar if losing_health else _top_bar
 
 	lead_bar.value = current_health
-
-	move_child(trail_bar, get_child_count() - 1)
 
 	if _tween != null and _tween.is_running():
 		_tween.kill()

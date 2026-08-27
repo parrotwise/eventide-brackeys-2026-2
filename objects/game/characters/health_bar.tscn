@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dxjf4cxcdt8nx"]
+
+[ext_resource type="Script" uid="uid://bi47chqxgwtnx" path="res://objects/game/characters/health_bar.gd" id="1_ye42u"]
+[ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_grey_placeholder.png" id="2_itfdc"]
+[ext_resource type="Texture2D" uid="uid://bvsf3tvsjx5bq" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="3_agnhr"]
+[ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="4_vj4jm"]
+
+[node name="HealthBar" type="Control" unique_id=537244635]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ye42u")
+
+[node name="Frame" type="TextureRect" parent="." unique_id=413185062]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -68.0
+offset_right = 68.0
+offset_bottom = 16.0
+texture = ExtResource("3_agnhr")
+
+[node name="BottomBar" type="TextureProgressBar" parent="." unique_id=799724466]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 5.0
+offset_right = 64.0
+offset_bottom = 11.0
+value = 100.0
+texture_progress = ExtResource("2_itfdc")
+
+[node name="TopBar" type="TextureProgressBar" parent="." unique_id=1735290543]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 5.0
+offset_right = 64.0
+offset_bottom = 11.0
+value = 60.0
+texture_progress = ExtResource("4_vj4jm")

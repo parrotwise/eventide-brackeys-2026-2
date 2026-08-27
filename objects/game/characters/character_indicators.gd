@@ -7,7 +7,7 @@ extends Control
 
 var stun_icon: Sprite2D:
 	get: return $StunIcon
-var health_bar: Node:
+var health_bar: HealthBar:
 	get: return $HealthBar
 var status_icons: HBoxContainer:
 	get: return $StatusEffectIndicator/VBoxContainer/StatusIcons
