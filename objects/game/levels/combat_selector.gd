@@ -29,6 +29,10 @@ var current_user: Character = null
 var is_targeting: bool = false
 
 
+func _ready() -> void:
+	Game.start.connect(reset)
+
+
 func select_action(action: Action) -> void:
 	if not is_instance_valid(action):
 		return
@@ -73,7 +77,6 @@ func select_ally(ally: Character) -> void:
 
 
 func select_target(target: Character) -> void:
-	Debug.warning('SELECT')
 	if not is_targeting:
 		return
 
@@ -99,7 +102,6 @@ func select_target(target: Character) -> void:
 
 
 func submit_target() -> void:
-	Debug.warning('SUBMIT')
 	if current_action == null or current_user == null or current_target == null:
 		return
 
@@ -108,8 +110,6 @@ func submit_target() -> void:
 			"%s is not a valid target." % current_target.name
 		)
 		return
-	
-	current_action.use(current_user, current_target)
 
 	target_submitted.emit(
 		current_action,
@@ -117,32 +117,39 @@ func submit_target() -> void:
 		current_target
 	)
 	
-	cancel_action()
+	current_action.use(current_user, current_target)
+	
+	cycle_through_allies()
 
 
-func cycle_through_characters(direction: Enums.Direction) -> void:
+func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 	if is_targeting:
 		cycle_through_targets(direction)
 	else:
 		cycle_through_allies(direction)
 
 
-func cycle_through_allies(direction: Enums.Direction) -> void:
+func cycle_through_allies(direction := Enums.Direction.RIGHT) -> void:
+	var free_allies: Array[Character] = Game.level.characters.free_allies
+
+	if not free_allies:
+		return
+	
 	if not current_user:
-		select_ally(Game.level.characters.free_allies[0])
+		select_ally(free_allies[0])
 	
 	else:
-		var index: int = Game.level.characters.free_allies.find(current_user)
+		var index: int = free_allies.find(current_user)
 
 		if direction == Enums.Direction.RIGHT:
-			index = (index + 1) % Game.level.characters.free_allies.size()
+			index = (index + 1) % free_allies.size()
 		elif direction == Enums.Direction.LEFT:
-			index = (index - 1) % Game.level.characters.free_allies.size()
+			index = (index - 1) % free_allies.size()
 		
-		select_ally(Game.level.characters.free_allies[index])
+		select_ally(free_allies[index])
 
 
-func cycle_through_targets(direction: Enums.Direction) -> void:
+func cycle_through_targets(direction := Enums.Direction.RIGHT) -> void:
 	if not current_action:
 		return
 	
@@ -171,6 +178,7 @@ func cancel_action() -> void:
 func reset() -> void:
 	cancel_action()
 	current_user = null
+	cycle_through_allies()
 
 
 func _unhandled_input(event: InputEvent) -> void:

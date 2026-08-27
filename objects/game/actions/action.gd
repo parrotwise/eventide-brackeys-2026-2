@@ -25,6 +25,7 @@ var owner: Character
 
 
 func use(user: Character, target: Character) -> void:
+	Game.level.effector_component.apply(self, user, target)
 	used.emit(user, target)
 
 

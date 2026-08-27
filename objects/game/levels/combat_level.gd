@@ -105,6 +105,7 @@ func _on_action_used(
 			target.name
 		]
 	)
+	turn_tracker_component.end_current_turn()
 	
 	
 func _on_action_selected(action: Action) -> void:
@@ -130,12 +131,7 @@ func _on_target_submitted(
 	user: Character,
 	target: Character
 ) -> void:
-	effector_component.apply(
-		action,
-		user,
-		target
-	)
-	turn_tracker_component.end_current_turn()
+	pass
 	
 func _on_round_started(round_number: int) -> void:
 	print("ROUND ", round_number)
@@ -152,8 +148,9 @@ func _on_turn_started(character: Character) -> void:
 
 func _on_turn_ended(character: Character) -> void:
 	print("TURN ENDED: ", character.name)
-	ui.reset_action_panel()
-	selector_component.reset()
+	if character in characters.allies and not characters.free_allies:
+		ui.reset_action_panel()
+		selector_component.reset()
 
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:

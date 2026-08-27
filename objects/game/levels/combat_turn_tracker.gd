@@ -68,9 +68,6 @@ func start_ally_turn(character: Character) -> bool:
 	if character in acted_allies:
 		return false
 
-	if current_character != null:
-		return false
-
 	current_character = character
 	turn_started.emit(current_character)
 
