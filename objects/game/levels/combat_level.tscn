@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
+[ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -68,6 +69,8 @@ position = Vector2(743, 709)
 
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
 position = Vector2(1152, 701)
+
+[node name="Strategy" parent="Characters/Enemies/TestEnemy" unique_id=1036133476 instance=ExtResource("10_f26kh")]
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
