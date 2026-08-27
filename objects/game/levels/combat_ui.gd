@@ -40,3 +40,8 @@ func set_action_buttons(character: Character) -> void:
 			button.pressed.disconnect(connection['callable'])
 		
 		button.pressed.connect(Game.level.selector_component.select_action.bind(action))
+
+
+func reset_action_panel() -> void:
+	for button: ActionButton in action_buttons:
+		button.hide()

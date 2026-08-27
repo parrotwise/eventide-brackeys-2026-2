@@ -85,6 +85,9 @@ actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
 position = Vector2(1152, 701)
 
+[node name="Actions" parent="Characters/Enemies/TestEnemy" index="3" unique_id=1878263473]
+actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
+
 [node name="Strategy" parent="Characters/Enemies/TestEnemy" unique_id=1036133476 instance=ExtResource("10_f26kh")]
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
@@ -96,3 +99,5 @@ test_status = ExtResource("13_m1tc0")
 
 [editable path="Characters/Allies/TestAlly"]
 [editable path="Characters/Allies/TestAlly/Indicators"]
+[editable path="Characters/Enemies/TestEnemy"]
+[editable path="Characters/Enemies/TestEnemy/Indicators"]

@@ -43,6 +43,9 @@ func _ready() -> void:
 	)
 
 	selector_component.ally_selected.connect(
+		turn_tracker_component.start_ally_turn
+	)
+	selector_component.ally_selected.connect(
 		ui.set_action_buttons
 	)
 
@@ -119,6 +122,7 @@ func _on_target_selected(
 		user,
 		target
 	)
+	turn_tracker_component.end_current_turn()
 	
 func _on_round_started(round_number: int) -> void:
 	print("ROUND ", round_number)
@@ -135,6 +139,8 @@ func _on_turn_started(character: Character) -> void:
 
 func _on_turn_ended(character: Character) -> void:
 	print("TURN ENDED: ", character.name)
+	ui.reset_action_panel()
+	selector_component.reset()
 
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:

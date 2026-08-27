@@ -81,13 +81,13 @@ func select_target(target: Character) -> void:
 		)
 		return
 
+	current_action.use(current_user, target)
+
 	target_selected.emit(
 		current_action,
 		current_user,
 		target
 	)
-
-	current_action.use(current_user, target)
 	
 	cancel_action()
 
@@ -95,3 +95,8 @@ func select_target(target: Character) -> void:
 func cancel_action() -> void:
 	current_action = null
 	is_targeting = false
+
+
+func reset() -> void:
+	cancel_action()
+	current_user = null
