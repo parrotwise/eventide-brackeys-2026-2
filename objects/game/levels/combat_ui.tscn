@@ -29,10 +29,10 @@ grow_vertical = 0
 layout_mode = 2
 texture = ExtResource("2_3y8ts")
 
-[node name="BottomPanel" type="HBoxContainer" parent="BottomPanel" unique_id=1732133601]
+[node name="ButtonGroups" type="HBoxContainer" parent="BottomPanel" unique_id=1732133601]
 layout_mode = 2
 
-[node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/BottomPanel" unique_id=1993286851]
+[node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/ButtonGroups" unique_id=1993286851]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -40,25 +40,25 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="ActionButton1" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton1" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton2" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton2" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton3" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=726179824 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton3" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=726179824 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton4" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton4" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="PassiveBG" type="TextureRect" parent="BottomPanel/BottomPanel" unique_id=1155250975]
+[node name="PassiveBG" type="TextureRect" parent="BottomPanel/ButtonGroups" unique_id=1155250975]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_v4pvi")
 
-[node name="PassiveIcon" type="TextureRect" parent="BottomPanel/BottomPanel/PassiveBG" unique_id=1709889876]
+[node name="PassiveIcon" type="TextureRect" parent="BottomPanel/ButtonGroups/PassiveBG" unique_id=1709889876]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -66,7 +66,7 @@ anchor_bottom = 1.0
 texture = ExtResource("4_xuj1j")
 stretch_mode = 3
 
-[node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/BottomPanel" unique_id=672581597]
+[node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/ButtonGroups" unique_id=672581597]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -74,13 +74,13 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="Equipment1" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=1282407045]
+[node name="Equipment1" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1282407045]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment1" unique_id=765497082]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment1" unique_id=765497082]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -88,13 +88,13 @@ anchor_bottom = 1.0
 texture = ExtResource("4_xuj1j")
 stretch_mode = 3
 
-[node name="Equipment2" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=701891551]
+[node name="Equipment2" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=701891551]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment2" unique_id=1639446732]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment2" unique_id=1639446732]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -102,13 +102,13 @@ anchor_bottom = 1.0
 texture = ExtResource("4_xuj1j")
 stretch_mode = 3
 
-[node name="Equipment3" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=2062073495]
+[node name="Equipment3" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=2062073495]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment3" unique_id=278954018]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment3" unique_id=278954018]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -116,14 +116,14 @@ anchor_bottom = 1.0
 texture = ExtResource("4_xuj1j")
 stretch_mode = 3
 
-[node name="Equipment4" type="TextureButton" parent="BottomPanel/BottomPanel/EquipmentButtons" unique_id=1340092485]
+[node name="Equipment4" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1340092485]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/EquipmentButtons/Equipment4" unique_id=1165131882]
+[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment4" unique_id=1165131882]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
