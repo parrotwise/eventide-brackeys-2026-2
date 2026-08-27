@@ -12,8 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
 [ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_characters.gd" id="9_s0i7f"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="11_7qx2x"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
+[ext_resource type="Texture2D" uid="uid://cklahbcbv30qa" path="res://assets/art/icons/icon_godot.svg" id="12_2va5h"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/sloshed.tres" id="13_m1tc0"]
+
+[sub_resource type="Resource" id="Resource_5f6c3"]
+script = ExtResource("11_7qx2x")
+name = "ThrowawayAction"
+icon = ExtResource("12_2va5h")
+damage = 40
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -68,6 +77,9 @@ script = ExtResource("9_s0i7f")
 [node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
 position = Vector2(743, 709)
 
+[node name="Actions" parent="Characters/Allies/TestAlly" index="4" unique_id=1878263473]
+actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
+
 [node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
 
 [node name="TestEnemy" parent="Characters/Enemies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
@@ -81,3 +93,6 @@ position = Vector2(1152, 701)
 combat_camera = NodePath("../CombatCamera")
 target_character = NodePath("../Characters/Allies/TestAlly")
 test_status = ExtResource("13_m1tc0")
+
+[editable path="Characters/Allies/TestAlly"]
+[editable path="Characters/Allies/TestAlly/Indicators"]

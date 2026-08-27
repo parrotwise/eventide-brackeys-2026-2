@@ -39,9 +39,24 @@ layout_mode = 2
 text = "Remove Sloshed
 "
 
+[node name="SelectCharacter" type="Button" parent="PanelContainer/VBoxContainer" unique_id=897695493]
+layout_mode = 2
+text = "Select Character"
+
+[node name="SelectAction" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1659901342]
+layout_mode = 2
+text = "Select Action"
+
+[node name="SelectTarget" type="Button" parent="PanelContainer/VBoxContainer" unique_id=526699504]
+layout_mode = 2
+text = "Select Target"
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TakeDamageButton" to="." method="_on_take_damage_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ApplySloshed" to="." method="_on_apply_status_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/RemoveSloshed" to="." method="_on_remove_status_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectCharacter" to="." method="_on_select_character_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectAction" to="." method="_on_select_action_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectTarget" to="." method="_on_select_target_pressed"]

@@ -34,12 +34,16 @@ func _ready() -> void:
 		_on_action_used
 	)
 
-	selector_component.targeting_requested.connect(
-		_on_targeting_requested
+	selector_component.action_selected.connect(
+		_on_action_selected
 	)
 
 	selector_component.target_selected.connect(
 		_on_target_selected
+	)
+
+	selector_component.ally_selected.connect(
+		ui.set_action_buttons
 	)
 
 	print("=== GAME LEVEL TEST ===")
@@ -96,12 +100,12 @@ func _on_action_used(
 	)
 	
 	
-func _on_targeting_requested(
-	action: Action,
-	user: Character
-) -> void:
+func _on_action_selected(action: Action) -> void:
 	Debug.info(
-		"%s is selecting a target." % user.name
+		"%s has selected %s, targeting requested." % [
+			selector_component.current_user.name,
+			action,
+		]
 	)
 
 

@@ -16,19 +16,6 @@ func _ready() -> void:
 	Game.start.connect(_on_combat_start)
 
 
-func _on_combat_start() -> void:
-	# Cache targets first
-	for character: Character in Game.level.characters.all:
-		# Can't bind callables here due to 'key' in dict / 'method' in dict ambiguity
-		character.action_used.connect(func(): cached_targets['last_attacker'] = character)
-
-	# Trigger effects after
-	for character: Character in Game.level.characters.all:
-		character.state_component.damage_taken.connect(
-			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
-		)
-
-
 func track(status: Status) -> void:
 	if status == null:
 		return
@@ -70,3 +57,18 @@ func modify_effect(effect: Effect) -> Effect:
 		status.modify_effect(effect)
 	
 	return effect
+
+
+func _on_combat_start() -> void:
+	# Cache targets first
+	Game.level.effector_component.action_used.connect(_on_action_used)
+
+	# Trigger effects after
+	for character: Character in Game.level.characters.all:
+		character.state_component.damage_taken.connect(
+			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
+		)
+
+
+func _on_action_used(_action: Action, user: Character, _target: Character) -> void:
+	cached_targets['last_attacker'] = user

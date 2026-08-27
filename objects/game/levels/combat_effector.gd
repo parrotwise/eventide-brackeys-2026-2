@@ -23,7 +23,7 @@ func interpret(
 	if action.damage > 0:
 		if target not in effects:
 			effects[target] = Effect.new()
-			effects[target].owner = action.owner
+			effects[target].owner = user
 		
 		effects[target].damage = action.damage
 
@@ -42,9 +42,10 @@ func interpret(
 
 func apply(action: Action, user: Character, target: Character) -> void:
 	var effects: Dictionary[Character, Effect] = interpret(action, user, target)
-
+	
 	for affected: Character in effects:
 		var effect: Effect = effects[affected]
+		effect.target = affected
 		
 		effect.applied.connect(effect_applied.emit.bind(effect, affected))
 		effect.apply()

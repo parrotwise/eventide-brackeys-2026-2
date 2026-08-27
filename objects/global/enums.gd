@@ -8,9 +8,14 @@ enum Direction {
 }
 
 enum RangeType {
+	ANY,
 	MELEE,
-	RANGED,
-	ALLY,
+}
+
+enum BattleGroupType {
+	ANY,
+	OWN_GROUP,
+	OTHER_GROUP,
 }
 
 enum TargetType {

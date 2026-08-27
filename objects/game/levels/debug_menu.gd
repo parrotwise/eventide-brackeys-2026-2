@@ -53,3 +53,21 @@ func _on_remove_status_pressed() -> void:
 		if status.name == test_status.name:
 			target_character.state_component.remove_status(status)
 			return
+
+
+func _on_select_character_pressed() -> void:
+	Game.level.selector_component.select_ally(
+		Random.randsample(Game.level.characters.allies)
+	)
+
+
+func _on_select_action_pressed() -> void:
+	Game.level.selector_component.select_action(
+		Random.randsample(Game.level.selector_component.current_user.actions)
+	)
+
+
+func _on_select_target_pressed() -> void:
+	Game.level.selector_component.select_target(
+		Random.randsample(Game.level.selector_component.current_action.valid_targets())
+	)

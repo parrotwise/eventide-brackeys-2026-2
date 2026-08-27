@@ -2,9 +2,12 @@ class_name CombatSelector
 extends Node
 
 
-signal targeting_requested(
-	action: Action,
-	user: Character
+signal action_selected(
+	action: Action
+)
+
+signal ally_selected(
+	ally: Character
 )
 
 signal target_selected(
@@ -19,21 +22,37 @@ var current_user: Character = null
 var is_targeting: bool = false
 
 
-func request_targeting(
-	action: Action,
-	user: Character
-) -> void:
-	if action == null or user == null:
+func select_action(action: Action) -> void:
+	if not is_instance_valid(action):
+		return
+	
+	if current_action == action:
 		return
 
 	current_action = action
-	current_user = user
 	is_targeting = true
 
-	targeting_requested.emit(
-		current_action,
-		current_user
-	)
+	action_selected.emit(current_action)
+
+
+func select_ally(ally: Character) -> void:
+	if not is_instance_valid(ally):
+		return
+	
+	if current_user == ally:
+		return
+	
+	if ally.battle_group != ally.ALLIES_GROUP:
+		return
+
+	if ally in Game.level.turn_tracker_component.acted_allies:
+		return
+	
+	cancel_action()
+
+	current_user = ally
+
+	ally_selected.emit(current_user)
 
 
 func select_target(target: Character) -> void:
@@ -48,7 +67,7 @@ func select_target(target: Character) -> void:
 
 	if not current_action.can_target(target):
 		Debug.info(
-			"%s is out of range." % target.name
+			"%s is not a valid target." % target.name
 		)
 		return
 
@@ -58,14 +77,11 @@ func select_target(target: Character) -> void:
 		target
 	)
 
-	_clear_targeting()
+	current_action.use(current_user, target)
+	
+	cancel_action()
 
 
-func cancel_targeting() -> void:
-	_clear_targeting()
-
-
-func _clear_targeting() -> void:
+func cancel_action() -> void:
 	current_action = null
-	current_user = null
 	is_targeting = false

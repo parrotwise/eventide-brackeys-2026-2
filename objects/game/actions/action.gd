@@ -18,7 +18,8 @@ signal used(user: Character, target: Character)
 
 @export_category("Targeting")
 
-@export var range_type: Enums.RangeType = Enums.RangeType.MELEE
+@export var range_type: Enums.RangeType = Enums.RangeType.ANY
+@export var target_group: Enums.BattleGroupType = Enums.BattleGroupType.OTHER_GROUP
 
 var owner: Character
 
@@ -33,12 +34,19 @@ func can_target(target: Character) -> bool:
 
 	var target_is_valid: bool = true
 
+	var own_group: StringName = owner.battle_group
+	var other_group: StringName = Character.ALLIES_GROUP if own_group == Character.ENEMIES_GROUP else Character.ENEMIES_GROUP
+
 	match range_type:
-		Enums.RangeType.ALLY:
-			target_is_valid = target_is_valid and owner.battle_group == target.battle_group
 		Enums.RangeType.MELEE:
 			target_is_valid = target_is_valid and owner.is_in_melee() and target.is_in_melee()
-
+	
+	match target_group:
+		Enums.BattleGroupType.OWN_GROUP:
+			target_is_valid = target_is_valid and target.battle_group == own_group
+		Enums.BattleGroupType.OTHER_GROUP:
+			target_is_valid = target_is_valid and target.battle_group == other_group
+	
 	return target_is_valid
 
 
