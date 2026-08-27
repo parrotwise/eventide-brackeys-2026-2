@@ -35,6 +35,16 @@ func select_action(action: Action) -> void:
 	action_selected.emit(current_action)
 
 
+func select_character(character: Character) -> void:
+	if not is_instance_valid(character):
+		return
+	
+	if is_targeting:
+		select_target(character)
+	else:
+		select_ally(character)
+
+
 func select_ally(ally: Character) -> void:
 	if not is_instance_valid(ally):
 		return

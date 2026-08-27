@@ -27,6 +27,7 @@ func set_action_buttons(character: Character) -> void:
 		Debug.error("Character '%s' has too many actions (more than 4)." % character.name, Debug.Verbosity.CALLER)
 	
 	for action_index: int in character.actions.size():
+		var action: Action = character.actions[action_index]
 		var button: ActionButton = action_buttons[action_index]
 		
 		button.show()
@@ -34,3 +35,8 @@ func set_action_buttons(character: Character) -> void:
 		
 		var action_tooltip: String = character.actions[action_index].name + "\n" + character.actions[action_index].description
 		button.button.tooltip_text = action_tooltip
+
+		for connection: Dictionary in button.pressed.get_connections():
+			button.pressed.disconnect(connection['callable'])
+		
+		button.pressed.connect(Game.level.selector_component.select_action.bind(action))

@@ -246,6 +246,7 @@ anim_offset_max = 1.0
 [node name="Scenery" type="Control" unique_id=1388419847]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_mtt6l")
 
 [node name="DistantParallax" type="Parallax2D" parent="." unique_id=239518672]
@@ -256,6 +257,7 @@ offset_left = -300.0
 offset_top = -300.0
 offset_right = 2220.0
 offset_bottom = 1380.0
+mouse_filter = 2
 texture = ExtResource("1_b106r")
 
 [node name="BigCloudEmitter2" type="GPUParticles2D" parent="DistantParallax" unique_id=1360380948]
@@ -350,6 +352,7 @@ offset_left = -300.0
 offset_top = -300.0
 offset_right = 2220.0
 offset_bottom = 1380.0
+mouse_filter = 2
 texture = ExtResource("5_k6iuq")
 
 [connection signal="timeout" from="MidParallax/BigComet/BigCometTimer" to="." method="_on_big_comet_timer_timeout"]

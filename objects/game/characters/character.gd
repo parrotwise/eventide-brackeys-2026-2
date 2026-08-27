@@ -9,6 +9,8 @@ var sprite: Sprite2D:
 	get: return $Sprite
 var animator_component: CharacterAnimator:
 	get: return $Animator
+var input_component: CharacterInput:
+	get: return $Input
 var state_component: CharacterState:
 	get: return $State
 var actions_component: CharacterActions:
@@ -37,6 +39,8 @@ var battle_group: StringName:
 
 
 func _ready() -> void:
+	Game.start.connect(_on_combat_start)
+
 	_register_battle_group()
 
 	print("Character: ", name)
@@ -57,6 +61,10 @@ func _ready() -> void:
 
 	if strategy_component:
 		strategy_component.character = self
+
+
+func _on_combat_start() -> void:
+	input_component.selected.connect(Game.level.selector_component.select_character.bind(self))
 
 
 func _register_battle_group() -> void:

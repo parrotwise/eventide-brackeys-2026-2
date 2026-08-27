@@ -39,7 +39,7 @@ script = ExtResource("1_gn8s7")
 
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("6_q682q")]
 
-[node name="CombatCamera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
+[node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
 
 [node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
 
@@ -77,7 +77,7 @@ script = ExtResource("9_s0i7f")
 [node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
 position = Vector2(743, 709)
 
-[node name="Actions" parent="Characters/Allies/TestAlly" index="4" unique_id=1878263473]
+[node name="Actions" parent="Characters/Allies/TestAlly" index="3" unique_id=1878263473]
 actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
 
 [node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
@@ -90,7 +90,7 @@ position = Vector2(1152, 701)
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
 [node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera", "target_character") instance=ExtResource("11_f26kh")]
-combat_camera = NodePath("../CombatCamera")
+combat_camera = NodePath("../Camera")
 target_character = NodePath("../Characters/Allies/TestAlly")
 test_status = ExtResource("13_m1tc0")
 
