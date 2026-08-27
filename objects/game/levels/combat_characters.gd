@@ -4,6 +4,11 @@ extends Node
 
 var allies: Array[Character]:
 	get: return _get_characters_in_group(&"allies")
+var free_allies: Array[Character]:
+	get: return Array(
+		allies.filter(func(ally: Character): return ally not in Game.level.turn_tracker_component.acted_allies),
+		TYPE_OBJECT, &'Node2D', Character
+	)
 var enemies: Array[Character]:
 	get: return _get_characters_in_group(&"enemies")
 var all: Array[Character]:

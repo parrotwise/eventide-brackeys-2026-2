@@ -42,6 +42,10 @@ func _ready() -> void:
 		_on_target_selected
 	)
 
+	selector_component.target_submitted.connect(
+		_on_target_submitted
+	)
+
 	selector_component.ally_selected.connect(
 		turn_tracker_component.start_ally_turn
 	)
@@ -113,6 +117,15 @@ func _on_action_selected(action: Action) -> void:
 
 
 func _on_target_selected(
+	action: Action,
+	user: Character,
+	target: Character
+) -> void:
+	pass
+	# TODO: preview_component.preview(action, user, target)
+
+
+func _on_target_submitted(
 	action: Action,
 	user: Character,
 	target: Character

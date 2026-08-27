@@ -65,6 +65,7 @@ func _ready() -> void:
 
 func _on_combat_start() -> void:
 	input_component.selected.connect(Game.level.selector_component.select_character.bind(self))
+	input_component.submitted.connect(Game.level.selector_component.submit_target)
 
 
 func _register_battle_group() -> void:

@@ -16,8 +16,15 @@ signal target_selected(
 	target: Character
 )
 
+signal target_submitted(
+	action: Action,
+	user: Character,
+	target: Character
+)
+
 
 var current_action: Action = null
+var current_target: Character = null
 var current_user: Character = null
 var is_targeting: bool = false
 
@@ -66,6 +73,7 @@ func select_ally(ally: Character) -> void:
 
 
 func select_target(target: Character) -> void:
+	Debug.warning('SELECT')
 	if not is_targeting:
 		return
 
@@ -81,18 +89,81 @@ func select_target(target: Character) -> void:
 		)
 		return
 
-	current_action.use(current_user, target)
+	current_target = target
 
 	target_selected.emit(
 		current_action,
 		current_user,
-		target
+		current_target
+	)
+
+
+func submit_target() -> void:
+	Debug.warning('SUBMIT')
+	if current_action == null or current_user == null or current_target == null:
+		return
+
+	if not current_action.can_target(current_target):
+		Debug.info(
+			"%s is not a valid target." % current_target.name
+		)
+		return
+	
+	current_action.use(current_user, current_target)
+
+	target_submitted.emit(
+		current_action,
+		current_user,
+		current_target
 	)
 	
 	cancel_action()
 
 
+func cycle_through_characters(direction: Enums.Direction) -> void:
+	if is_targeting:
+		cycle_through_targets(direction)
+	else:
+		cycle_through_allies(direction)
+
+
+func cycle_through_allies(direction: Enums.Direction) -> void:
+	if not current_user:
+		select_ally(Game.level.characters.free_allies[0])
+	
+	else:
+		var index: int = Game.level.characters.free_allies.find(current_user)
+
+		if direction == Enums.Direction.RIGHT:
+			index = (index + 1) % Game.level.characters.free_allies.size()
+		elif direction == Enums.Direction.LEFT:
+			index = (index - 1) % Game.level.characters.free_allies.size()
+		
+		select_ally(Game.level.characters.free_allies[index])
+
+
+func cycle_through_targets(direction: Enums.Direction) -> void:
+	if not current_action:
+		return
+	
+	var valid_targets: Array[Character] = current_action.valid_targets()
+
+	if not current_target:
+		select_target(valid_targets[0])
+	
+	else:
+		var index: int = valid_targets.find(current_user)
+
+		if direction == Enums.Direction.RIGHT:
+			index = (index + 1) % valid_targets.size()
+		elif direction == Enums.Direction.LEFT:
+			index = (index - 1) % valid_targets.size()
+		
+		select_target(valid_targets[index])
+
+
 func cancel_action() -> void:
+	current_target = null
 	current_action = null
 	is_targeting = false
 
@@ -100,3 +171,10 @@ func cancel_action() -> void:
 func reset() -> void:
 	cancel_action()
 	current_user = null
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&'cycle_characters_right'):
+		cycle_through_characters(Enums.Direction.RIGHT)
+	if event.is_action_pressed(&'cycle_characters_left'):
+		cycle_through_characters(Enums.Direction.LEFT)
