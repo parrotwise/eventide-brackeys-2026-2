@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_scenery.tscn" id="6_q682q"]
 [ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
+[ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_characters.gd" id="9_s0i7f"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/sloshed.tres" id="13_m1tc0"]
@@ -60,6 +61,7 @@ position = Vector2(1517, 701)
 position = Vector2(1633, 701)
 
 [node name="Characters" type="Node" parent="." unique_id=322452111]
+script = ExtResource("9_s0i7f")
 
 [node name="Allies" type="Node2D" parent="Characters" unique_id=1347544150]
 

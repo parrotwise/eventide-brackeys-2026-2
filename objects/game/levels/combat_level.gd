@@ -16,22 +16,15 @@ var scenery: CombatScenery:
 	get: return $Scenery
 var camera: CombatCamera:
 	get: return $Camera
+var characters: CombatCharacters:
+	get: return $Characters
 var ui: CombatUI:
 	get: return $UI
 
-var characters_container: Node:
-	get: return $Characters
 var ally_spawn_points: Node:
 	get: return $AllySpawnPoints
 var enemy_spawn_points: Node:
 	get: return $EnemySpawnPoints
-
-var allies: Array[Character]:
-	get: return _get_characters_in_group(&"allies")
-var enemies: Array[Character]:
-	get: return _get_characters_in_group(&"enemies")
-var characters: Array[Character]:
-	get: return allies + enemies
 
 
 func _ready() -> void:
@@ -50,13 +43,13 @@ func _ready() -> void:
 	)
 
 	print("=== GAME LEVEL TEST ===")
-	print("Allies: ", allies.size())
-	print("Enemies: ", enemies.size())
+	print("Allies: ", characters.allies.size())
+	print("Enemies: ", characters.enemies.size())
 
-	for character: Character in allies:
+	for character: Character in characters.allies:
 		print("Ally: ", character.name)
 
-	for character: Character in enemies:
+	for character: Character in characters.enemies:
 		print("Enemy: ", character.name)
 
 	turn_tracker_component.round_started.connect(
@@ -75,7 +68,7 @@ func _ready() -> void:
 		_on_turn_ended
 	)
 	_connect_enemy_strategies()
-	turn_tracker_component.start_tracking(allies, enemies)
+	turn_tracker_component.start_tracking()
 
 	Game.start.emit()
 
@@ -84,19 +77,9 @@ func _exit_tree() -> void:
 		Game.level = null
 
 	Game.end.emit()
-
-
-func _get_characters_in_group(group_name: StringName) -> Array[Character]:
-	var result: Array[Character] = []
-
-	for node: Node in get_tree().get_nodes_in_group(group_name):
-		if node is Character and characters_container.is_ancestor_of(node):
-			result.append(node as Character)
-
-	return result
 	
 func _connect_enemy_strategies() -> void:
-	for enemy: Character in enemies:
+	for enemy: Character in characters.enemies:
 		if enemy.strategy_component:
 			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
 

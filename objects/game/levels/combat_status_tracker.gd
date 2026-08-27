@@ -18,12 +18,12 @@ func _ready() -> void:
 
 func _on_combat_start() -> void:
 	# Cache targets first
-	for character: Character in Game.level.characters:
+	for character: Character in Game.level.characters.all:
 		# Can't bind callables here due to 'key' in dict / 'method' in dict ambiguity
 		character.action_used.connect(func(): cached_targets['last_attacker'] = character)
 
 	# Trigger effects after
-	for character: Character in Game.level.characters:
+	for character: Character in Game.level.characters.all:
 		character.state_component.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
 		)

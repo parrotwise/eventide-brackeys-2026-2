@@ -12,13 +12,15 @@ const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
 
+var allies: Array[Character]:
+	get: return Game.level.characters.allies
+var enemies: Array[Character]:
+	get: return Game.level.characters.enemies
+
 var round_number: int = 0
 var active_group: StringName = &""
 
 var current_character: Character = null
-
-var allies: Array[Character] = []
-var enemies: Array[Character] = []
 
 var acted_allies: Array[Character] = []
 var enemy_turn_index: int = 0
@@ -26,13 +28,7 @@ var enemy_turn_index: int = 0
 var is_tracking: bool = false
 
 
-func start_tracking(
-	battle_allies: Array[Character],
-	battle_enemies: Array[Character]
-) -> void:
-	allies = battle_allies
-	enemies = battle_enemies
-
+func start_tracking() -> void:
 	acted_allies.clear()
 	enemy_turn_index = 0
 	current_character = null
