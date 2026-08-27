@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_ui.gd" id="1_mhon3"]
 [ext_resource type="Texture2D" uid="uid://c45diplw41fq6" path="res://assets/art/UI/bottom_bar_placeholder.png" id="2_3y8ts"]
-[ext_resource type="Texture2D" uid="uid://jusn54qetgwm" path="res://assets/art/UI/button_icon_placeholder_90px.png" id="3_v4pvi"]
+[ext_resource type="Texture2D" uid="uid://jusn54qetgwm" path="res://assets/art/UI/buttons/button_icon_placeholder_90px.png" id="3_v4pvi"]
+[ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://bnqox8pqjypqe" path="res://assets/art/icons/status_icon_placeholder.png" id="4_xuj1j"]
 
 [node name="UI" type="CanvasLayer" unique_id=1657674242]
@@ -39,61 +40,17 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="Action1" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1638952832]
+[node name="ActionButton1" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action1" unique_id=330167914]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Action2" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=598201936]
+[node name="ActionButton2" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action2" unique_id=450774057]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Action3" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=290088071]
+[node name="ActionButton3" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=726179824 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action3" unique_id=1959144522]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Action4" type="TextureButton" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=777913158]
+[node name="ActionButton4" parent="BottomPanel/BottomPanel/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
-
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/BottomPanel/ActionButtons/Action4" unique_id=1988419114]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
 
 [node name="PassiveBG" type="TextureRect" parent="BottomPanel/BottomPanel" unique_id=1155250975]
 layout_mode = 2
