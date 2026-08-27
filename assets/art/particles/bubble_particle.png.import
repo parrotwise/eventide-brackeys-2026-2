@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7rwmud3xboqs"
-path="res://.godot/imported/status_overlay_sloshed_overlay.png-cf1fb0ef9571d8ba779c3987475f6ad5.ctex"
+uid="uid://27b8o11da8bb"
+path="res://.godot/imported/bubble_particle.png-f584747555a6d5f0a3d9306ba583ad73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shaders/status_overlay_sloshed_overlay.png"
-dest_files=["res://.godot/imported/status_overlay_sloshed_overlay.png-cf1fb0ef9571d8ba779c3987475f6ad5.ctex"]
+source_file="res://assets/art/particles/bubble_particle.png"
+dest_files=["res://.godot/imported/bubble_particle.png-f584747555a6d5f0a3d9306ba583ad73.ctex"]
 
 [params]
 

@@ -4,7 +4,39 @@
 [ext_resource type="Texture2D" uid="uid://bpenfqhjjpl35" path="res://assets/art/UI/hp_bar_bg_placeholder.png" id="2_dnn08"]
 [ext_resource type="Script" uid="uid://bi47chqxgwtnx" path="res://objects/game/characters/health_bar.gd" id="2_losrt"]
 [ext_resource type="PackedScene" uid="uid://b1grrjef2vsyt" path="res://objects/game/symbols/test_symbol.tscn" id="2_tud5c"]
+[ext_resource type="Texture2D" uid="uid://dpnvx1fb5rdsf" path="res://assets/art/icons/stun_icon_placeholder.png" id="3_kwy1m"]
 [ext_resource type="Texture2D" uid="uid://v8w7c3yr6seh" path="res://assets/art/UI/hp_bar_placeholder.png" id="3_lqcs1"]
+[ext_resource type="AnimationLibrary" uid="uid://dslinwcex5qo7" path="res://assets/art/icons/stun_icon_anim.tres" id="4_1cxyt"]
+[ext_resource type="Texture2D" uid="uid://27b8o11da8bb" path="res://assets/art/particles/bubble_particle.png" id="6_wrh48"]
+[ext_resource type="Material" uid="uid://cfdoon4fllx7j" path="res://assets/art/particles/bubble_particle_material.tres" id="7_2f26l"]
+[ext_resource type="Material" uid="uid://ce0inw36sd7cn" path="res://assets/art/particles/green_drop_particle_material.tres" id="8_33amg"]
+[ext_resource type="Texture2D" uid="uid://cwwnaj7njfnyk" path="res://assets/art/particles/green_drop_particle.png" id="8_fpu1i"]
+
+[sub_resource type="Animation" id="Animation_kwy1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StunIcon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cxyt"]
+_data = {
+&"RESET": SubResource("Animation_kwy1m")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2f26l"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [node name="Indicators" type="Control" unique_id=481135339]
 layout_mode = 3
@@ -13,6 +45,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_l5r23")
 symbol_icon_scene = ExtResource("2_tud5c")
+
+[node name="StunIcon" type="Sprite2D" parent="." unique_id=788883167]
+visible = false
+position = Vector2(0, -180)
+texture = ExtResource("3_kwy1m")
+
+[node name="Animator" type="AnimationPlayer" parent="StunIcon" unique_id=338847884]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_1cxyt")
+libraries/Stun = ExtResource("4_1cxyt")
 
 [node name="HealthBar" type="Control" parent="." unique_id=1743364708]
 anchors_preset = 0
@@ -61,3 +103,21 @@ horizontal_alignment = 1
 
 [node name="StatusEffectSymbols" type="HBoxContainer" parent="StatusEffectIndicator/VBoxContainer" unique_id=200065496]
 layout_mode = 2
+
+[node name="BubbleEmitter" type="GPUParticles2D" parent="." unique_id=969967582]
+material = SubResource("CanvasItemMaterial_2f26l")
+position = Vector2(0, -180)
+emitting = false
+amount = 6
+texture = ExtResource("6_wrh48")
+lifetime = 7.0
+process_material = ExtResource("7_2f26l")
+
+[node name="GreenDropEmitter" type="GPUParticles2D" parent="." unique_id=916138256]
+material = SubResource("CanvasItemMaterial_2f26l")
+position = Vector2(0, -180)
+emitting = false
+amount = 6
+texture = ExtResource("8_fpu1i")
+lifetime = 7.0
+process_material = ExtResource("8_33amg")

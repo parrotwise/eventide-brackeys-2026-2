@@ -2,82 +2,87 @@ class_name CharacterIndicators
 extends Control
 
 
-@export_group("Status Effects")
+# @export_group("Status Effects")
+@export var status_icon_template: PackedScene
 
-@export var symbol_icon_scene: PackedScene
-@onready var _sloshed_particles: GPUParticles2D = $"../BubbleEmitter"
-
-@onready var _health_bar: Node = $HealthBar
-
-@onready var _status_texture: TextureRect = $StatusEffectIndicator/TextureRect
-@onready var _status_label: Label = $StatusEffectIndicator/VBoxContainer/Label
-@onready var _status_symbols: Container = $StatusEffectIndicator/VBoxContainer/StatusEffectSymbols
-
+var stun_icon: Sprite2D:
+	get: return $StunIcon
+var health_bar: Node:
+	get: return $HealthBar
+var status_icons: HBoxContainer:
+	get: return $StatusEffectIndicator/VBoxContainer/StatusIcons
+var sloshed_particles: GPUParticles2D:
+	get: return $BubbleEmitter
+var poison_particles: GPUParticles2D:
+	get: return $GreenDropEmitter
 
 var character: Character:
 	set(value):
 		character = value
 		_on_character_set()
 
-var _status_symbol_nodes: Dictionary = {}
+var _status_icons: Dictionary = {}
+
 
 func _on_character_set() -> void:
 	if character == null:
 		return
 
 	var state: CharacterState = character.state_component
-	state.health_changed.connect(update_health_bar)
+	state.health_changed.connect(_update_health_bar)
 	state.status_applied.connect(_on_status_applied)
 	state.status_removed.connect(_on_status_removed)
 	
-	update_health_bar(state.current_health, state.max_health)
+	_update_health_bar(state.current_health, state.max_health)
+	_update_status_indicators()
 
 	for status: Status in state.active_statuses:
-		_add_status_symbol(status)
-	_update_sloshed_indicator()
+		_add_status_icon(status)
 
 
-func update_health_bar(current_health: int, max_health: int) -> void:
-	_health_bar.set_health(current_health, max_health)
-	
+func _update_health_bar(current_health: int, max_health: int) -> void:
+	health_bar.set_health(current_health, max_health)
+
+
 func _on_status_applied(status: Status) -> void:
-	_add_status_symbol(status)
-	_update_sloshed_indicator()
+	_add_status_icon(status)
+	_update_status_indicators()
 
 
 func _on_status_removed(status: Status) -> void:
-	_remove_status_symbol(status)
-	_update_sloshed_indicator()
+	_remove_status_icon(status)
+	_update_status_indicators()
 
-func _add_status_symbol(status: Status) -> void:
-	if status in _status_symbol_nodes or symbol_icon_scene == null:
+
+func _update_status_indicators() -> void:
+	stun_icon.visible = character.state_component.active_statuses.any(
+		func(status): return status.name == "Stunned"
+	)
+	sloshed_particles.emitting = character.state_component.active_statuses.any(
+		func(status): return status.name == "Sloshed"
+	)
+	poison_particles.emitting = character.state_component.active_statuses.any(
+		func(status): return status.name == "Poisoned"
+	)
+
+
+func _add_status_icon(status: Status) -> void:
+	if status in _status_icons or status_icon_template == null:
 		return
 
-	var symbol: Control = symbol_icon_scene.instantiate()
+	var symbol: Control = status_icon_template.instantiate()
 	var icon_rect: TextureRect = symbol.get_node_or_null(^"TextureRect") as TextureRect
 	if icon_rect:
 		icon_rect.texture = status.icon
 
-	_status_symbols.add_child(symbol)
-	_status_symbol_nodes[status] = symbol
+	status_icons.add_child(symbol)
+	_status_icons[status] = symbol
 
 
-func _remove_status_symbol(status: Status) -> void:
-	var symbol: Node = _status_symbol_nodes.get(status)
-	if symbol == null:
+func _remove_status_icon(status: Status) -> void:
+	var status_icon: Node = _status_icons.get(status)
+	if status_icon == null:
 		return
 
-	symbol.queue_free()
-	_status_symbol_nodes.erase(status)
-	
-func _update_sloshed_indicator() -> void:
-	var is_sloshed := false
-
-	for status: Status in character.state_component.active_statuses:
-		if status.name == "Sloshed":
-			is_sloshed = true
-			break
-			
-	print("Is sloshed: ", is_sloshed)
-
-	_sloshed_particles.emitting = is_sloshed
+	status_icon.queue_free()
+	_status_icons.erase(status)

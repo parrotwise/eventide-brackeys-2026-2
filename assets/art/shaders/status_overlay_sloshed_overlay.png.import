@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctdwg2ax4em5c"
-path="res://.godot/imported/shadow_gradient.png-eef69e24474e7f4ef3e724a67e9149e9.ctex"
+uid="uid://7rwmud3xboqs"
+path="res://.godot/imported/status_overlay_sloshed_overlay.png-4b4c57413eadf8a25948811470fdfb89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shaders/shadow_gradient.png"
-dest_files=["res://.godot/imported/shadow_gradient.png-eef69e24474e7f4ef3e724a67e9149e9.ctex"]
+source_file="res://assets/art/shaders/status_overlay_sloshed_overlay.png"
+dest_files=["res://.godot/imported/status_overlay_sloshed_overlay.png-4b4c57413eadf8a25948811470fdfb89.ctex"]
 
 [params]
 

@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_4nnrl"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/characters/character_actions.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="1_iixya"]
-[ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/shaders/character_sprite.gdshader" id="2_5lvk8"]
-[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/shaders/status_overlay_sloshed_overlay.png" id="3_3nt7m"]
-[ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/shaders/shadow_gradient.png" id="3_meodt"]
+[ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="2_5lvk8"]
+[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="3_3nt7m"]
+[ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="3_meodt"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="4_g2flc"]
 [ext_resource type="Texture2D" uid="uid://cev2g60hken86" path="res://assets/art/characters/character_gun_cat_atlas.tres" id="5_meodt"]
 [ext_resource type="PackedScene" uid="uid://btawv8utacr3n" path="res://objects/game/characters/character_animator.tscn" id="6_cjrym"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="10_3nt7m"]
-[ext_resource type="Texture2D" uid="uid://27b8o11da8bb" path="res://assets/art/characters/vfx_bubble.png" id="11_meodt"]
+[ext_resource type="Texture2D" uid="uid://27b8o11da8bb" path="res://assets/art/particles/bubble_particle.png" id="11_meodt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -83,3 +83,5 @@ polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("10_3nt7m")]
+
+[editable path="Indicators"]
