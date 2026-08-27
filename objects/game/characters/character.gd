@@ -19,8 +19,8 @@ var equipment_component: CharacterEquipment:
 	get: return $Equipment
 var indicators_component: CharacterIndicators:
 	get: return $Indicators
-var strategy_component: StrategyComponent:
-	get: return get_node_or_null(^"Strategy") as StrategyComponent
+var strategy_component: CharacterStrategy:
+	get: return get_node_or_null(^"Strategy") as CharacterStrategy
 
 var actions: Array[Action]:
 	get: return actions_component.actions

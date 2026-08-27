@@ -3,7 +3,6 @@ extends CanvasLayer
 
 @export var combat_camera: CombatCamera
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -21,3 +20,4 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _on_shake_screen_button_pressed() -> void:
 	combat_camera.shake_screen()
+	

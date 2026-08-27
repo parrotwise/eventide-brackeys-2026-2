@@ -1,4 +1,4 @@
-class_name StrategyComponent
+class_name CharacterStrategy
 extends Node
 
 signal action_chosen(action: Action, user: Character, target: Character)
