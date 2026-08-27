@@ -2,6 +2,9 @@ extends CanvasLayer
 
 
 @export var combat_camera: CombatCamera
+@export var target_character: Character
+
+var is_camera_zoomed: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +24,12 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _on_shake_screen_button_pressed() -> void:
 	combat_camera.shake_screen()
+
+
+func _on_zoom_button_pressed() -> void:
+	if !is_camera_zoomed:
+		combat_camera.zoom_on_characters([target_character])
+		is_camera_zoomed = true
+	else:
+		combat_camera.zoom_to_full()
+		is_camera_zoomed = false
