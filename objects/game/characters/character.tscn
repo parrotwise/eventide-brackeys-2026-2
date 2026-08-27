@@ -64,8 +64,8 @@ region_rect = Rect2(0, 0, 480, 480)
 [node name="Animator" parent="." unique_id=1633728089 instance=ExtResource("6_cjrym")]
 
 [node name="BubbleEmitter" type="GPUParticles2D" parent="." unique_id=786386610]
-visible = false
 material = SubResource("CanvasItemMaterial_1whi2")
+emitting = false
 amount = 6
 texture = ExtResource("11_meodt")
 lifetime = 7.0

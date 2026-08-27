@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
+[ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/sloshed.tres" id="13_m1tc0"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -77,3 +78,4 @@ position = Vector2(1152, 701)
 [node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera", "target_character") instance=ExtResource("11_f26kh")]
 combat_camera = NodePath("../CombatCamera")
 target_character = NodePath("../Characters/Allies/TestAlly")
+test_status = ExtResource("13_m1tc0")

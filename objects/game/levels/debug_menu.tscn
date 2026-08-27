@@ -22,5 +22,26 @@ text = "shake_screen()"
 layout_mode = 2
 text = "zoom"
 
+[node name="TakeDamageButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=177673395]
+layout_mode = 2
+text = "TakeDamage"
+
+[node name="HealButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=5474275]
+layout_mode = 2
+text = "Heal"
+
+[node name="ApplySloshed" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1179330753]
+layout_mode = 2
+text = "Apply Sloshed"
+
+[node name="RemoveSloshed" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1021602925]
+layout_mode = 2
+text = "Remove Sloshed
+"
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TakeDamageButton" to="." method="_on_take_damage_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ApplySloshed" to="." method="_on_apply_status_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RemoveSloshed" to="." method="_on_remove_status_pressed"]

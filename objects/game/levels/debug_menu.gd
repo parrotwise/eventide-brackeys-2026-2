@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @export var combat_camera: CombatCamera
 @export var target_character: Character
+@export var test_status: Status
 
 var is_camera_zoomed: bool = false
 
@@ -33,3 +34,22 @@ func _on_zoom_button_pressed() -> void:
 	else:
 		combat_camera.zoom_to_full()
 		is_camera_zoomed = false
+
+
+func _on_take_damage_button_pressed() -> void:
+	target_character.state_component.take_damage(25)
+
+
+func _on_heal_button_pressed() -> void:
+	target_character.state_component.heal(25)
+
+
+func _on_apply_status_pressed() -> void:
+	target_character.state_component.apply_status(test_status)
+
+
+func _on_remove_status_pressed() -> void:
+	for status: Status in target_character.state_component.active_statuses:
+		if status.name == test_status.name:
+			target_character.state_component.remove_status(status)
+			return
