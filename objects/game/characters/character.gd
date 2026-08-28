@@ -29,10 +29,10 @@ var equipment: Array[Equipment]:
 
 var battle_group: StringName:
 	get:
-		if is_in_group(ALLIES_GROUP):
+		if self in Game.level.characters.allies:
 			return ALLIES_GROUP
 
-		if is_in_group(ENEMIES_GROUP):
+		if self in Game.level.characters.enemies:
 			return ENEMIES_GROUP
 
 		return &""
@@ -40,12 +40,6 @@ var battle_group: StringName:
 
 func _ready() -> void:
 	Game.start.connect(_on_combat_start)
-
-	_register_battle_group()
-
-	print("Character: ", name)
-	print("Parent: ", get_parent().name)
-	print("Battle group: ", battle_group)
 
 	actions_component.character = self
 	for action: Action in actions:
@@ -63,19 +57,13 @@ func _ready() -> void:
 		strategy_component.character = self
 
 
+func _process(delta: float) -> void:
+	position = lerp(
+		position, Game.level.characters.target_position(self),
+		exp(-delta / Game.level.character_positioning_acceleration)
+	)
+
+
 func _on_combat_start() -> void:
 	input_component.selected.connect(Game.level.selector_component.select_character.bind(self))
 	input_component.submitted.connect(Game.level.selector_component.submit_target)
-
-
-func _register_battle_group() -> void:
-	var parent_node: Node = get_parent()
-
-	if parent_node == null:
-		return
-
-	if parent_node.name == &"Allies":
-		add_to_group(ALLIES_GROUP)
-	elif parent_node.name == &"Enemies":
-		add_to_group(ENEMIES_GROUP)
-		sprite.flip_h = true

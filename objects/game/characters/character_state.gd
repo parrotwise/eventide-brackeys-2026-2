@@ -9,12 +9,13 @@ signal knockout()
 signal status_applied(status: Status)
 signal status_removed(status: Status)
 
-@export_group("Health")
+@export var base_power: int = 10
 @export var max_health: int = 100
-
-@export_group("Status Effects")
-## The Character's passive ability
 @export var passive_status: Status
+
+## TODO: Power modified by persistent effects
+var power: int:
+	get: return base_power
 
 var character: Character
 var current_health: int

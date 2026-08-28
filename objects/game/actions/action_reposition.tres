@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://c541hasg75v4s"]
+
+[ext_resource type="Texture2D" uid="uid://bnqox8pqjypqe" path="res://assets/art/icons/status_icon_placeholder.png" id="1_0utaq"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_t141p"]
+
+[resource]
+script = ExtResource("1_t141p")
+name = "Reposition"
+description = "Swap places with an adjacent ally."
+icon = ExtResource("1_0utaq")
+swap_places = true
+range_type = 2
+target_group = 1
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

@@ -10,6 +10,7 @@ enum Direction {
 enum RangeType {
 	ANY,
 	MELEE,
+	ADJACENT_ALLY,
 }
 
 enum BattleGroupType {

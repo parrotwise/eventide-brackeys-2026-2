@@ -2,6 +2,8 @@ class_name CombatLevel
 extends Node
 
 
+@export_range(0.005, 0.15, 0.001) var character_positioning_acceleration: float = 0.007
+
 var queue: CombatQueue:
 	get: return $Queue
 var turn_tracker_component: CombatTurnTracker:
@@ -127,7 +129,7 @@ func _on_action_selected(action: Action) -> void:
 	Debug.debug(
 		"%s has selected %s, targeting requested." % [
 			selector_component.current_user.name,
-			action,
+			action.name,
 		]
 	)
 
@@ -137,7 +139,13 @@ func _on_target_selected(
 	user: Character,
 	target: Character
 ) -> void:
-	pass
+	Debug.debug(
+		"%s has selected %s as the target for %s." % [
+			user.name,
+			target.name,
+			action.name,
+		]
+	)
 	# TODO: preview_component.preview(action, user, target)
 
 

@@ -17,6 +17,13 @@ signal used(user: Character, target: Character)
 @export var splash_damage: int = 0
 @export var target_healing: int = 0
 
+@export var power_as_target_damage: bool = false
+@export var power_as_target_healing: bool = false
+
+@export var swap_places: bool = false
+@export var knockback: bool = false
+@export var pull: bool = false
+
 @export_category("Targeting")
 
 @export var range_type: Enums.RangeType = Enums.RangeType.ANY
@@ -42,6 +49,8 @@ func can_target(target: Character) -> bool:
 	match range_type:
 		Enums.RangeType.MELEE:
 			target_is_valid = target_is_valid and owner.is_in_melee() and target.is_in_melee()
+		Enums.RangeType.ADJACENT_ALLY:
+			target_is_valid = target_is_valid and target in Game.level.characters.get_adjacent_to(owner)
 	
 	match target_group:
 		Enums.BattleGroupType.OWN_GROUP:
