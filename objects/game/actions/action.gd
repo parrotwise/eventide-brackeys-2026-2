@@ -13,8 +13,9 @@ signal used(user: Character, target: Character)
 
 @export_group("Effect Definition")
 
-@export var damage: int = 0
-@export var healing: int = 0
+@export var target_damage: int = 0
+@export var splash_damage: int = 0
+@export var target_healing: int = 0
 
 @export_category("Targeting")
 

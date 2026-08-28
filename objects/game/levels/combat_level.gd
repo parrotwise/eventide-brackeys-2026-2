@@ -100,8 +100,9 @@ func _on_action_used(
 	target: Character
 ) -> void:
 	Debug.info(
-		"%s used an action on %s." % [
+		"%s used %s on %s." % [
 			user.name,
+			action.name,
 			target.name
 		]
 	)

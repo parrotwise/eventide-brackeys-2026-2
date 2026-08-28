@@ -24,6 +24,22 @@ func is_in_melee(character: Character) -> bool:
 	return character in [ally_melee, enemy_melee]
 
 
+func get_adjacent_to(character: Character) -> Array[Character]:
+	if character not in all:
+		return []
+	
+	var adjacent: Array[Character] = []
+	var frendos: Array[Character] = allies if character in allies else enemies
+	var index: int = frendos.find(character)
+
+	if index >= 1:
+		adjacent.append(frendos[index - 1])
+	if (index + 1) < frendos.size():
+		adjacent.append(frendos[index + 1])
+	
+	return adjacent
+
+
 func _get_characters_in_group(group_name: StringName) -> Array[Character]:
 	var result: Array[Character] = []
 

@@ -20,17 +20,24 @@ func interpret(
 	if user == null or target == null:
 		return effects
 
-	if action.damage > 0:
+	if action.target_damage > 0:
 		if target not in effects:
 			effects[target] = _new_effect(user, action)
 		
-		effects[target].damage = action.damage
+		effects[target].damage = action.target_damage
 
-	if action.healing > 0:
+	if action.splash_damage > 0:
+		for adjacent: Character in Game.level.characters.get_adjacent_to(target):
+			if adjacent not in effects:
+				effects[adjacent] = _new_effect(user, action)
+			
+			effects[adjacent].damage = action.splash_damage
+
+	if action.target_healing > 0:
 		if target not in effects:
 			effects[target] = _new_effect(user, action)
 		
-		effects[target].healing = action.healing
+		effects[target].healing = action.target_healing
 	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place

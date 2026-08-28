@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _test_damage() -> void:
 	var action := Action.new()
-	action.damage = 25
+	action.target_damage = 25
 
 	var before: int = target.state_component.current_health
 
@@ -34,7 +34,7 @@ func _test_healing() -> void:
 	target.state_component.take_damage(50)
 
 	var action := Action.new()
-	action.healing = 20
+	action.target_healing = 20
 
 	var before: int = target.state_component.current_health
 

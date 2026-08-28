@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cev2g60hken86" path="res://assets/art/characters/character_gun_cat_atlas.tres" id="5_meodt"]
 [ext_resource type="PackedScene" uid="uid://btawv8utacr3n" path="res://objects/game/characters/character_animator.tscn" id="6_cjrym"]
 [ext_resource type="Script" uid="uid://cskhgupgayaci" path="res://objects/game/characters/character_input.gd" id="7_meodt"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="9_263tf"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="10_3nt7m"]
+[ext_resource type="Resource" uid="uid://ciin03n82b3yr" path="res://objects/game/actions/action_test_splash.tres" id="10_wshwh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -38,6 +40,7 @@ script = ExtResource("7_meodt")
 polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1, -163, -223)
 
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
+actions = Array[ExtResource("9_263tf")]([ExtResource("10_wshwh")])
 
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
 
