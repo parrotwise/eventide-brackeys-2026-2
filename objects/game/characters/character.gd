@@ -78,3 +78,4 @@ func _register_battle_group() -> void:
 		add_to_group(ALLIES_GROUP)
 	elif parent_node.name == &"Enemies":
 		add_to_group(ENEMIES_GROUP)
+		sprite.flip_h = true

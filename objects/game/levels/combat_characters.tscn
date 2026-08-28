@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dvkf3pae2axej"]
+
+[ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_characters.gd" id="1_l7eby"]
+
+[node name="Characters" type="Node2D" unique_id=651192194]
+script = ExtResource("1_l7eby")
+
+[node name="Allies" type="Node2D" parent="." unique_id=266524114]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=832781667]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1595301038]
+
+[node name="AllyFront" type="Marker2D" parent="SpawnPoints" unique_id=531002664]
+position = Vector2(740, 707)
+
+[node name="AllyCenterFront" type="Marker2D" parent="SpawnPoints" unique_id=1498937753]
+position = Vector2(572, 707)
+
+[node name="AllyCenterRear" type="Marker2D" parent="SpawnPoints" unique_id=6367615]
+position = Vector2(389, 708)
+
+[node name="AllyRear" type="Marker2D" parent="SpawnPoints" unique_id=1680131158]
+position = Vector2(219, 709)
+
+[node name="EnemyFront" type="Marker2D" parent="SpawnPoints" unique_id=1258210996]
+position = Vector2(1151, 701)
+
+[node name="EnemyCenterFront" type="Marker2D" parent="SpawnPoints" unique_id=138135697]
+position = Vector2(1316, 698)
+
+[node name="EnemyCenterRear" type="Marker2D" parent="SpawnPoints" unique_id=1148154445]
+position = Vector2(1517, 701)
+
+[node name="EnemyRear" type="Marker2D" parent="SpawnPoints" unique_id=24979694]
+position = Vector2(1633, 701)

@@ -10,27 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_scenery.tscn" id="6_q682q"]
 [ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_ui.tscn" id="8_c7jmv"]
-[ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_characters.gd" id="9_s0i7f"]
-[ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
-[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="11_7qx2x"]
+[ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_characters.tscn" id="9_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/debug_menu.tscn" id="11_f26kh"]
-[ext_resource type="Texture2D" uid="uid://cklahbcbv30qa" path="res://assets/art/icons/icon_godot.svg" id="12_2va5h"]
-[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="13_2va5h"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/sloshed.tres" id="13_m1tc0"]
-
-[sub_resource type="Resource" id="Resource_5f6c3"]
-script = ExtResource("11_7qx2x")
-name = "ThrowawayAction"
-icon = ExtResource("12_2va5h")
-damage = 40
-metadata/_custom_type_script = "uid://b3ummvu47lsv6"
-
-[sub_resource type="Resource" id="Resource_7qx2x"]
-script = ExtResource("11_7qx2x")
-icon = ExtResource("13_2va5h")
-healing = 20
-target_group = 1
-metadata/_custom_type_script = "uid://b3ummvu47lsv6"
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -49,71 +31,36 @@ script = ExtResource("1_gn8s7")
 
 [node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
 
-[node name="AllySpawnPoints" type="Node2D" parent="." unique_id=128332789]
+[node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
 
-[node name="Marker2D" type="Marker2D" parent="AllySpawnPoints" unique_id=961468435]
+[node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
 position = Vector2(740, 707)
 
-[node name="Marker2D2" type="Marker2D" parent="AllySpawnPoints" unique_id=740332740]
+[node name="AllyCenterFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="1" unique_id=1867423470 instance=ExtResource("1_5ksr3")]
 position = Vector2(572, 707)
 
-[node name="Marker2D3" type="Marker2D" parent="AllySpawnPoints" unique_id=457803474]
+[node name="AllyCenterRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="2" unique_id=994921613 instance=ExtResource("1_5ksr3")]
 position = Vector2(389, 708)
 
-[node name="Marker2D4" type="Marker2D" parent="AllySpawnPoints" unique_id=660916843]
+[node name="AllyRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="3" unique_id=12795219 instance=ExtResource("1_5ksr3")]
 position = Vector2(219, 709)
 
-[node name="EnemySpawnPoints" type="Node2D" parent="." unique_id=151942005]
-
-[node name="Marker2D" type="Marker2D" parent="EnemySpawnPoints" unique_id=399747414]
+[node name="EnemyFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="0" unique_id=244185755 instance=ExtResource("1_5ksr3")]
 position = Vector2(1151, 701)
 
-[node name="Marker2D2" type="Marker2D" parent="EnemySpawnPoints" unique_id=835950342]
+[node name="EnemyCenterFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="1" unique_id=624172570 instance=ExtResource("1_5ksr3")]
 position = Vector2(1316, 698)
 
-[node name="Marker2D3" type="Marker2D" parent="EnemySpawnPoints" unique_id=1005415996]
+[node name="EnemyCenterRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="2" unique_id=1516732607 instance=ExtResource("1_5ksr3")]
 position = Vector2(1517, 701)
 
-[node name="Marker2D4" type="Marker2D" parent="EnemySpawnPoints" unique_id=914440911]
+[node name="EnemyRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="3" unique_id=1891047797 instance=ExtResource("1_5ksr3")]
 position = Vector2(1633, 701)
-
-[node name="Characters" type="Node" parent="." unique_id=322452111]
-script = ExtResource("9_s0i7f")
-
-[node name="Allies" type="Node2D" parent="Characters" unique_id=1347544150]
-
-[node name="TestAlly" parent="Characters/Allies" unique_id=1946526679 instance=ExtResource("1_5ksr3")]
-position = Vector2(743, 709)
-
-[node name="Actions" parent="Characters/Allies/TestAlly" index="3" unique_id=1878263473]
-actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
-
-[node name="TestAlly2" parent="Characters/Allies" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
-position = Vector2(383, 709)
-
-[node name="Actions" parent="Characters/Allies/TestAlly2" index="3" unique_id=1878263473]
-actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3"), SubResource("Resource_7qx2x")])
-
-[node name="Enemies" type="Node2D" parent="Characters" unique_id=435172255]
-
-[node name="TestEnemy" parent="Characters/Enemies" unique_id=2123072055 instance=ExtResource("1_5ksr3")]
-position = Vector2(1152, 701)
-
-[node name="Actions" parent="Characters/Enemies/TestEnemy" index="3" unique_id=1878263473]
-actions = Array[ExtResource("11_7qx2x")]([SubResource("Resource_5f6c3")])
-
-[node name="Strategy" parent="Characters/Enemies/TestEnemy" unique_id=1036133476 instance=ExtResource("10_f26kh")]
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
-[node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera", "target_character") instance=ExtResource("11_f26kh")]
+[node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera") instance=ExtResource("11_f26kh")]
 combat_camera = NodePath("../Camera")
-target_character = NodePath("../Characters/Allies/TestAlly")
 test_status = ExtResource("13_m1tc0")
 
-[editable path="Characters/Allies/TestAlly"]
-[editable path="Characters/Allies/TestAlly/Indicators"]
-[editable path="Characters/Allies/TestAlly2"]
-[editable path="Characters/Allies/TestAlly2/Indicators"]
-[editable path="Characters/Enemies/TestEnemy"]
-[editable path="Characters/Enemies/TestEnemy/Indicators"]
+[editable path="Characters"]
