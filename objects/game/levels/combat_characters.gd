@@ -81,7 +81,6 @@ func swap_places(char1: Character, char2: Character) -> void:
 	
 	var index1: int = index_of(char1)
 	var index2: int = index_of(char2)
-	Debug.error('index1 %d | index2 %d' % [index_of(char1), index_of(char2)])
 
 	if index1 < index2:
 		char2.get_parent().move_child(char2, index1)
@@ -89,7 +88,6 @@ func swap_places(char1: Character, char2: Character) -> void:
 	else:
 		char1.get_parent().move_child(char1, index2)
 		char2.get_parent().move_child(char2, index1)
-	Debug.error('index1 %d | index2 %d' % [index_of(char1), index_of(char2)])
 
 
 func move_forward(character: Character) -> void:
