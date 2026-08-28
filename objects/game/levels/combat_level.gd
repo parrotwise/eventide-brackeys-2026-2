@@ -55,19 +55,10 @@ func _ready() -> void:
 	selector_component.ally_selected.connect(
 		turn_tracker_component.start_ally_turn
 	)
+	
 	selector_component.ally_selected.connect(
 		ui.set_action_buttons
 	)
-
-	print("=== GAME LEVEL TEST ===")
-	print("Allies: ", characters.allies.size())
-	print("Enemies: ", characters.enemies.size())
-
-	for character: Character in characters.allies:
-		print("Ally: ", character.name)
-
-	for character: Character in characters.enemies:
-		print("Enemy: ", character.name)
 
 	turn_tracker_component.round_started.connect(
 		_on_round_started
@@ -89,23 +80,26 @@ func _ready() -> void:
 
 	Game.start.emit()
 
+
 func _exit_tree() -> void:
 	if Game.level == self:
 		Game.level = null
 
 	Game.end.emit()
-	
+
+
 func _connect_enemy_strategies() -> void:
 	for enemy: Character in characters.enemies:
 		if enemy.strategy_component:
 			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
+
 
 func _on_action_used(
 	action: Action,
 	user: Character,
 	target: Character
 ) -> void:
-	Debug.info(
+	Debug.debug(
 		"%s used %s on %s." % [
 			user.name,
 			action.name,
@@ -130,7 +124,7 @@ func _on_action_finished(
 	
 	
 func _on_action_selected(action: Action) -> void:
-	Debug.info(
+	Debug.debug(
 		"%s has selected %s, targeting requested." % [
 			selector_component.current_user.name,
 			action,
@@ -152,28 +146,38 @@ func _on_target_submitted(
 	user: Character,
 	target: Character
 ) -> void:
-	pass
-	
+	selector_component.pause()
+
+
 func _on_round_started(round_number: int) -> void:
-	print("ROUND ", round_number)
+	Debug.debug("-- ROUND %d --" % round_number)
 
 
 func _on_battle_group_started(group_name: StringName) -> void:
-	print("PHASE: ", group_name)
+	Debug.debug("-- %s phase!" % group_name)
 
 
 func _on_turn_started(character: Character) -> void:
-	print("TURN STARTED: ", character.name)
+	Debug.debug("%s's turn started." % character.name)
+	if character in characters.allies:
+		selector_component.resume()
 	if character.strategy_component:
 		character.strategy_component.take_turn()
 
+
 func _on_turn_ended(character: Character) -> void:
-	print("TURN ENDED: ", character.name)
-	if character in characters.allies and not characters.free_allies:
-		ui.reset_action_panel()
+	Debug.debug("%s's turn ended." % character.name)
+
+	if character not in characters.allies:
+		return
+	
+	if characters.free_allies:
+		selector_component.cycle_through_allies(Enums.Direction.RIGHT, false)
+	else:
 		selector_component.reset()
+		ui.reset_action_panel()
+
 
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:
 		effector_component.apply(action, user, target)
-	turn_tracker_component.end_current_turn()

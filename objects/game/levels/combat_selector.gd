@@ -27,13 +27,17 @@ var current_action: Action = null
 var current_target: Character = null
 var current_user: Character = null
 var is_targeting: bool = false
+var _responsive: bool = true
 
 
 func _ready() -> void:
 	Game.start.connect(reset)
 
 
-func select_action(action: Action) -> void:
+func select_action(action: Action, player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
 	if not is_instance_valid(action):
 		return
 	
@@ -46,7 +50,10 @@ func select_action(action: Action) -> void:
 	action_selected.emit(current_action)
 
 
-func select_character(character: Character) -> void:
+func select_character(character: Character, player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
 	if not is_instance_valid(character):
 		return
 	
@@ -56,7 +63,10 @@ func select_character(character: Character) -> void:
 		select_ally(character)
 
 
-func select_ally(ally: Character) -> void:
+func select_ally(ally: Character, player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
 	if not is_instance_valid(ally):
 		return
 	
@@ -76,7 +86,10 @@ func select_ally(ally: Character) -> void:
 	ally_selected.emit(current_user)
 
 
-func select_target(target: Character) -> void:
+func select_target(target: Character, player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
 	if not is_targeting:
 		return
 
@@ -101,7 +114,10 @@ func select_target(target: Character) -> void:
 	)
 
 
-func submit_target() -> void:
+func submit_target(player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
 	if current_action == null or current_user == null or current_target == null:
 		return
 
@@ -118,45 +134,43 @@ func submit_target() -> void:
 	)
 	
 	current_action.use(current_user, current_target)
-	
-	cycle_through_allies()
 
 
-func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
+func cycle_through_characters(direction := Enums.Direction.RIGHT, player_input: bool = true) -> void:
 	if is_targeting:
-		cycle_through_targets(direction)
+		cycle_through_targets(direction, player_input)
 	else:
-		cycle_through_allies(direction)
+		cycle_through_allies(direction, player_input)
 
 
-func cycle_through_allies(direction := Enums.Direction.RIGHT) -> void:
+func cycle_through_allies(direction := Enums.Direction.RIGHT, player_input: bool = true) -> void:
 	var free_allies: Array[Character] = Game.level.characters.free_allies
 
 	if not free_allies:
 		return
 	
 	if not current_user:
-		select_ally(free_allies[0])
+		select_ally(free_allies[0], player_input)
 	
 	else:
 		var index: int = free_allies.find(current_user)
 
 		if direction == Enums.Direction.RIGHT:
-			index = (index + 1) % free_allies.size()
-		elif direction == Enums.Direction.LEFT:
 			index = (index - 1) % free_allies.size()
+		elif direction == Enums.Direction.LEFT:
+			index = (index + 1) % free_allies.size()
 		
-		select_ally(free_allies[index])
+		select_ally(free_allies[index], player_input)
 
 
-func cycle_through_targets(direction := Enums.Direction.RIGHT) -> void:
+func cycle_through_targets(direction := Enums.Direction.RIGHT, player_input: bool = true) -> void:
 	if not current_action:
 		return
 	
 	var valid_targets: Array[Character] = current_action.valid_targets()
 
 	if not current_target:
-		select_target(valid_targets[0])
+		select_target(valid_targets[0], player_input)
 	
 	else:
 		var index: int = valid_targets.find(current_user)
@@ -166,7 +180,7 @@ func cycle_through_targets(direction := Enums.Direction.RIGHT) -> void:
 		elif direction == Enums.Direction.LEFT:
 			index = (index - 1) % valid_targets.size()
 		
-		select_target(valid_targets[index])
+		select_target(valid_targets[index], player_input)
 
 
 func cancel_action() -> void:
@@ -178,7 +192,15 @@ func cancel_action() -> void:
 func reset() -> void:
 	cancel_action()
 	current_user = null
-	cycle_through_allies()
+	cycle_through_allies(Enums.Direction.RIGHT, false)
+
+
+func pause() -> void:
+	_responsive = false
+
+
+func resume() -> void:
+	_responsive = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
