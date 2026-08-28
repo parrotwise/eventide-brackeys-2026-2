@@ -3,45 +3,67 @@
 [ext_resource type="Script" uid="uid://cnkrridbyd328" path="res://objects/ui/tooltip.gd" id="1_owh4x"]
 [ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/UI/tooltip_placeholder.png" id="2_owh4x"]
 
-[node name="NinePatchRect" type="NinePatchRect" unique_id=647096474]
-propagate_maximum_size = true
-offset_right = 400.0
-offset_bottom = 329.0
-texture = ExtResource("2_owh4x")
-patch_margin_left = 45
-patch_margin_top = 40
-patch_margin_right = 45
-patch_margin_bottom = 40
+[node name="HoverDetection" type="Control" unique_id=1654022007]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 446.0
+offset_bottom = 251.0
+mouse_filter = 1
 script = ExtResource("1_owh4x")
-growth_direction = "NW"
+header = "Lorem Ipsum"
+description = "But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=70032743]
+[node name="HoverTimer" type="Timer" parent="." unique_id=1227947597]
+one_shot = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=647096474]
+propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_owh4x")
+patch_margin_left = 45
+patch_margin_top = 40
+patch_margin_right = 45
+patch_margin_bottom = 40
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=70032743]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 222.0
+grow_horizontal = 2
 theme_override_constants/margin_left = 45
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 45
 theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1733697061]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1733697061]
 layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=560910415]
+[node name="NameLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=560910415]
 layout_mode = 2
+mouse_filter = 2
 text = "Lorem Ipsum"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 shortcut_keys_enabled = false
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=906544854]
+[node name="DescriptionLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=906544854]
 layout_mode = 2
+mouse_filter = 2
 text = "But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 shortcut_keys_enabled = false
+
+[connection signal="mouse_entered" from="." to="." method="_on_hover_detection_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_hover_detection_mouse_exited"]
+[connection signal="timeout" from="HoverTimer" to="." method="_on_hover_timer_timeout"]
