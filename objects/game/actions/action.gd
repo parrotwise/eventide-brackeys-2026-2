@@ -25,6 +25,7 @@ signal used(user: Character, target: Character)
 @export var knockback_to_rear: bool = false
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
+@export var applied_statuses: Array[Status] = []
 
 @export_category("Targeting")
 

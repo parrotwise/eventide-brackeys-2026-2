@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://b7h1k6y33lnsm"]
+
+[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="1_2y5tc"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_ki5pl"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_2y5tc"]
+
+[resource]
+script = ExtResource("1_ki5pl")
+name = "Damage Boost"
+description = "Multiplys Damage by 40%"
+icon = ExtResource("1_2y5tc")
+damage_multiplier = 1.4

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://d4lhwyirvsffd"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_4evt0"]
+[ext_resource type="Texture2D" uid="uid://b8b8scf41oowk" path="res://assets/art/UI/buttons/skill_icon_rc.png" id="2_hu5c3"]
+[ext_resource type="Resource" uid="uid://d4ddtiwby7xkh" path="res://objects/game/statuses/flammable.tres" id="2_vgcrm"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_hv8rv"]
+[ext_resource type="Resource" uid="uid://c573o6hrfas5b" path="res://objects/game/statuses/smashed.tres" id="3_sophx"]
+[ext_resource type="Resource" uid="uid://b7h1k6y33lnsm" path="res://objects/game/statuses/damage_boost.tres" id="4_fkeyt"]
+
+[resource]
+script = ExtResource("3_hv8rv")
+name = "Mug Toss"
+description = "Throw a mug of rum at any cat in the game (Ally or enemy). Target receives a permanent +40% damage bonus and a stack of “Smashed”, which makes them miss their next attack or damaging skill. Target also becomes Flammable."
+icon = ExtResource("2_hu5c3")
+applied_statuses = Array[ExtResource("1_4evt0")]([ExtResource("2_vgcrm"), ExtResource("3_sophx"), ExtResource("4_fkeyt")])
+target_group = 0

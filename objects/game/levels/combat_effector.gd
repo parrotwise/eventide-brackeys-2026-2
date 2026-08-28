@@ -82,6 +82,12 @@ func interpret(
 		
 		effects[target].pull_to_front = true
 	
+	if action.applied_statuses.size() > 0:                      # <-- new block
+		if target not in effects:
+			effects[target] = _new_effect(user, action)
+		
+		effects[target].applied_statuses.append_array(action.applied_statuses)
+	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place
 		Game.level.status_tracker_component.modify_effect(effect)
