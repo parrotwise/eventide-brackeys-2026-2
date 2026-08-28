@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnkrridbyd328" path="res://objects/ui/tooltip.gd" id="1_owh4x"]
 [ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/UI/tooltip_placeholder.png" id="2_owh4x"]
 
-[node name="HoverDetection" type="Control" unique_id=1654022007]
+[node name="Tooltip" type="Control" unique_id=1654022007]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 446.0
