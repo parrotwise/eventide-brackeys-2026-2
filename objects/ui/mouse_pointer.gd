@@ -1,5 +1,5 @@
 class_name MousePointer
-extends Node2D
+extends Control
 
 
 @onready var _sprite_map: Dictionary[Enums.PointerType, Sprite2D] = {
@@ -33,4 +33,21 @@ func hide_all() -> void:
 
 
 func _process(_delta: float) -> void:
+	var mouse_pressed: bool = (
+		Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+		or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
+	)
+
+	if mouse_pressed:
+		if type == Enums.PointerType.DEFAULT:
+			switch_to(Enums.PointerType.PRESSING)
+		elif type == Enums.PointerType.CLICKABLE:
+			switch_to(Enums.PointerType.CLICKING)
+	
+	else:
+		if type == Enums.PointerType.PRESSING:
+			switch_to(Enums.PointerType.DEFAULT)
+		elif type == Enums.PointerType.CLICKING:
+			switch_to(Enums.PointerType.CLICKABLE)
+	
 	global_position = get_global_mouse_position()

@@ -9,8 +9,9 @@ var pointer: MousePointer
 
 
 func _ready() -> void:
-	pointer = load('res://objects/ui/mouse_pointer.tscn').instantiate() as MousePointer
-	add_child(pointer)
+	var pointer_layer: CanvasLayer = load('res://objects/ui/mouse_pointer.tscn').instantiate()
+	get_tree().root.add_child.call_deferred(pointer_layer)
+	pointer = pointer_layer.get_child(0) as MousePointer
 
 	start.connect(Debug.info.bind('Game started.'))
 	end.connect(Debug.info.bind('Game ended.'))

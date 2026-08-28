@@ -11,60 +11,65 @@
 [ext_resource type="Texture2D" uid="uid://biqrbkotdu48q" path="res://assets/art/UI/cursors/cursor_slop_placeholder.png" id="9_fhu5n"]
 [ext_resource type="Texture2D" uid="uid://caphrwo8myv17" path="res://assets/art/UI/cursors/cursor_swap_placeholder.png" id="10_stjq0"]
 
-[node name="MousePointer" type="Node2D" unique_id=370141032]
-z_index = 4096
-z_as_relative = false
+[node name="MousePointerLayer" type="CanvasLayer" unique_id=149963576]
+layer = 2147483647
+
+[node name="MousePointer" type="Control" parent="." unique_id=1335193735]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_csbsw")
 
-[node name="Default" type="Sprite2D" parent="." unique_id=1974215361]
+[node name="Default" type="Sprite2D" parent="MousePointer" unique_id=1974215361]
 visible = false
 position = Vector2(-14, -1)
 texture = ExtResource("2_8q2q6")
 centered = false
 
-[node name="Pressing" type="Sprite2D" parent="." unique_id=790326743]
+[node name="Pressing" type="Sprite2D" parent="MousePointer" unique_id=790326743]
 visible = false
 position = Vector2(-14, -2)
 texture = ExtResource("8_5npaa")
 centered = false
 
-[node name="Clickable" type="Sprite2D" parent="." unique_id=1593147570]
+[node name="Clickable" type="Sprite2D" parent="MousePointer" unique_id=1593147570]
 visible = false
 position = Vector2(-15, -9)
 texture = ExtResource("4_na3et")
 centered = false
 
-[node name="Clicking" type="Sprite2D" parent="." unique_id=1960152167]
+[node name="Clicking" type="Sprite2D" parent="MousePointer" unique_id=1960152167]
 visible = false
 position = Vector2(-14, -8)
 texture = ExtResource("5_p538m")
 centered = false
 
-[node name="Target" type="Sprite2D" parent="." unique_id=390582527]
+[node name="Target" type="Sprite2D" parent="MousePointer" unique_id=390582527]
 visible = false
 position = Vector2(-26, -26)
 texture = ExtResource("7_efkq1")
 centered = false
 
-[node name="Attack" type="Sprite2D" parent="." unique_id=435690559]
+[node name="Attack" type="Sprite2D" parent="MousePointer" unique_id=435690559]
 visible = false
 position = Vector2(-13, 0)
 texture = ExtResource("3_a1e4b")
 centered = false
 
-[node name="Slop" type="Sprite2D" parent="." unique_id=1372051138]
+[node name="Slop" type="Sprite2D" parent="MousePointer" unique_id=1372051138]
 visible = false
 position = Vector2(-27, -27)
 texture = ExtResource("9_fhu5n")
 centered = false
 
-[node name="Swap" type="Sprite2D" parent="." unique_id=1801409387]
+[node name="Swap" type="Sprite2D" parent="MousePointer" unique_id=1801409387]
 visible = false
 position = Vector2(-26, -26)
 texture = ExtResource("10_stjq0")
 centered = false
 
-[node name="Disabled" type="Sprite2D" parent="." unique_id=1112754931]
+[node name="Disabled" type="Sprite2D" parent="MousePointer" unique_id=1112754931]
 visible = false
 texture = ExtResource("6_wx6ve")
 centered = false

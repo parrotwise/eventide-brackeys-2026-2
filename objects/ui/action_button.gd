@@ -34,9 +34,11 @@ func _ready() -> void:
 	button.button_up.connect(button_up.emit)
 	button.pressed.connect(pressed.emit)
 	button.toggled.connect(toggled.emit)
-	
+
 	button.mouse_entered.connect(show_tooltip)
+	button.mouse_entered.connect(Game.pointer.switch_to.bind(Enums.PointerType.CLICKABLE))
 	button.mouse_exited.connect(hide_tooltip)
+	button.mouse_exited.connect(Game.pointer.switch_to.bind(Enums.PointerType.DEFAULT))
 
 	icon.texture = icon_texture
 	frame.texture = frame_texture
