@@ -6,6 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://bnqox8pqjypqe" path="res://assets/art/icons/status_icon_placeholder.png" id="4_xuj1j"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuj1j"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.7529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.2509804)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="UI" type="CanvasLayer" unique_id=1657674242]
 script = ExtResource("1_mhon3")
 
@@ -130,6 +146,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource("4_xuj1j")
 stretch_mode = 3
+
+[node name="KeyboardReference" type="Panel" parent="." unique_id=339132650]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = 120.0
+offset_right = -360.0
+offset_bottom = -284.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xuj1j")
+
+[node name="MarginContainer" type="MarginContainer" parent="KeyboardReference" unique_id=137726747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyboardReference/MarginContainer" unique_id=2066657056]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.8156863)
+theme_override_constants/outline_size = 6
+bbcode_enabled = true
+text = "[font_size=48px]Keyboard Reference[/font_size]
+[hr][font_size=32px][left][indent][indent][indent][indent][indent][table=2]
+[cell]Tab  [/cell]
+[cell]Keyboard reference[/cell]
+[cell]1–8  [/cell]
+[cell]Select action[/cell]
+[cell]ESC  [/cell]
+[cell]Deselect action, toggle menu on/off[/cell]
+[cell]Enter  [/cell]
+[cell]Submit menu item, action target[/cell]
+[cell]Q←↑  [/cell]
+[cell]Cycle menu buttons, ally turns, valid targets left[/cell]
+[cell]E→↓  [/cell]
+[cell]Cycle menu buttons, ally turns, valid targets right[/cell]
+[/table]"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PauseMenu" type="Control" parent="." unique_id=253626098]
 visible = false

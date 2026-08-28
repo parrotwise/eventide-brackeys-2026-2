@@ -15,6 +15,8 @@ var action_buttons: Array[ActionButton]:
 		$BottomPanel/ButtonGroups/ActionButtons.get_children(),
 		TYPE_OBJECT, &'Control', ActionButton
 	)
+var keyboard_reference: Panel:
+	get: return $KeyboardReference
 var pause_menu: Control:
 	get: return $PauseMenu
 
@@ -45,3 +47,16 @@ func set_action_buttons(character: Character) -> void:
 func reset_action_panel() -> void:
 	for button: ActionButton in action_buttons:
 		button.hide()
+
+
+func show_keyboard_reference() -> void:
+	keyboard_reference.show()
+
+
+func hide_keyboard_reference() -> void:
+	keyboard_reference.hide()
+
+
+func hide_tooltips() -> void:
+	for button: ActionButton in action_buttons:
+		button.hide_tooltip()

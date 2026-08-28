@@ -34,6 +34,9 @@ func _ready() -> void:
 	button.button_up.connect(button_up.emit)
 	button.pressed.connect(pressed.emit)
 	button.toggled.connect(toggled.emit)
+	
+	button.mouse_entered.connect(show_tooltip)
+	button.mouse_exited.connect(hide_tooltip)
 
 	icon.texture = icon_texture
 	frame.texture = frame_texture
@@ -53,3 +56,13 @@ func set_selected(selected: bool = false):
 		button.texture_hover = inner_texture_hover
 	
 	button.texture_disabled = inner_texture_disabled
+
+
+## TODO: implement!
+func show_tooltip() -> void:
+	pass
+
+
+## TODO: implement!
+func hide_tooltip() -> void:
+	pass
