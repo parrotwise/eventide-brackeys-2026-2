@@ -22,14 +22,13 @@ func interpret(
 
 	if action.damage > 0:
 		if target not in effects:
-			effects[target] = Effect.new()
-			effects[target].owner = user
+			effects[target] = _new_effect(user, action)
 		
 		effects[target].damage = action.damage
 
 	if action.healing > 0:
 		if target not in effects:
-			effects[target] = Effect.new()
+			effects[target] = _new_effect(user, action)
 		
 		effects[target].healing = action.healing
 	
@@ -51,3 +50,10 @@ func apply(action: Action, user: Character, target: Character) -> void:
 		effect.apply()
 
 	action_used.emit(action, user, target)
+
+
+func _new_effect(user: Character, source: Variant) -> Effect:
+	var effect := Effect.new()
+	effect.owner = user
+	effect.source = source
+	return effect

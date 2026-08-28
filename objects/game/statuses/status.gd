@@ -33,6 +33,7 @@ func apply_to(character: Character) -> void:
 	for trigger: Trigger in triggers:
 		trigger.effect = trigger.effect.duplicate()
 		trigger.effect.owner = character
+		trigger.effect.source = self
 
 	applied.emit(owner)
 	
