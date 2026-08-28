@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://br7xrv4die1qn"]
 
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_axnhv"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_vnlhm"]
 [ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/UI/buttons/action_button_icon_placeholder.png" id="1_y1vx4"]
 

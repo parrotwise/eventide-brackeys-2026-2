@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://d4ddtiwby7xkh"]
+
+[ext_resource type="Texture2D" uid="uid://cs8drrasw0aco" path="res://assets/art/UI/status_effect_icons/RC FLAMMABLE.png" id="1_8u5e6"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_5c7as"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_b23j4"]
+
+[resource]
+script = ExtResource("2_5c7as")
+name = "Flammable"
+description = "Next instance of sparking damage ignites target, dealing damage and stunning it."
+icon = ExtResource("1_8u5e6")
