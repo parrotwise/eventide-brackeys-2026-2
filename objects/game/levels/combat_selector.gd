@@ -173,7 +173,7 @@ func cycle_through_targets(direction := Enums.Direction.RIGHT, player_input: boo
 		select_target(valid_targets[0], player_input)
 	
 	else:
-		var index: int = valid_targets.find(current_user)
+		var index: int = valid_targets.find(current_target)
 
 		if direction == Enums.Direction.RIGHT:
 			index = (index + 1) % valid_targets.size()
