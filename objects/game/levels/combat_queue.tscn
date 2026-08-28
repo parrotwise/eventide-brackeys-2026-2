@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1a0rg1vrosrn"]
+
+[ext_resource type="Script" uid="uid://bnce3rlm6muk4" path="res://objects/game/levels/combat_queue.gd" id="1_x58xp"]
+
+[node name="Queue" type="Node" unique_id=224857673]
+script = ExtResource("1_x58xp")

@@ -16,8 +16,12 @@ var owner: Character
 var target: Character
 
 
-func apply(_bypass_queue: bool = false) -> void:
+func apply(bypass_queue: bool = false) -> void:
 	if not target:
+		return
+	
+	if not bypass_queue:
+		Game.level.queue.push_effect(self)
 		return
 	
 	## Immediate effects first

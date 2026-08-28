@@ -2,6 +2,8 @@ class_name CombatLevel
 extends Node
 
 
+var queue: CombatQueue:
+	get: return $Queue
 var turn_tracker_component: CombatTurnTracker:
 	get: return $TurnTracker
 var status_tracker_component: CombatStatusTracker:
@@ -32,6 +34,10 @@ func _ready() -> void:
 
 	effector_component.action_used.connect(
 		_on_action_used
+	)
+
+	effector_component.action_finished.connect(
+		_on_action_finished
 	)
 
 	selector_component.action_selected.connect(
@@ -101,6 +107,20 @@ func _on_action_used(
 ) -> void:
 	Debug.info(
 		"%s used %s on %s." % [
+			user.name,
+			action.name,
+			target.name
+		]
+	)
+	
+
+func _on_action_finished(
+	action: Action,
+	user: Character,
+	target: Character
+) -> void:
+	Debug.debug(
+		"%s finished using %s on %s." % [
 			user.name,
 			action.name,
 			target.name

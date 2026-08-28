@@ -3,6 +3,7 @@ extends Node
 
 
 signal action_used(action: Action, user: Character, target: Character)
+signal action_finished(action: Action, user: Character, target: Character)
 signal effect_applied(effect: Effect, affected: Character)
 
 
@@ -48,15 +49,24 @@ func interpret(
 
 func apply(action: Action, user: Character, target: Character) -> void:
 	var effects: Dictionary[Character, Effect] = interpret(action, user, target)
+	var enqueued: Array[Effect] = []
 	
 	for affected: Character in effects:
 		var effect: Effect = effects[affected]
 		effect.target = affected
+
+		enqueued.append(effect)
 		
 		effect.applied.connect(effect_applied.emit.bind(effect, affected))
+		effect.applied.connect(enqueued.erase.bind(effect))
 		effect.apply()
-
+	
 	action_used.emit(action, user, target)
+	
+	while enqueued:
+		await get_tree().create_timer(0.2).timeout
+	
+	action_finished.emit(action, user, target)
 
 
 func _new_effect(user: Character, source: Variant) -> Effect:
