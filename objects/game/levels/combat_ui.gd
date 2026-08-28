@@ -12,7 +12,7 @@ var equipment_buttons_grid: HFlowContainer:
 	get: return $BottomPanel/BottomPanel/EquipmentButtons
 var action_buttons: Array[ActionButton]:
 	get: return Array(
-		$BottomPanel/ButtonGroups/ActionButtons.get_children(),
+		$BottomPanel/MarginContainer/ButtonGroups/ActionButtons.get_children(),
 		TYPE_OBJECT, &'Control', ActionButton
 	)
 var keyboard_reference: Panel:

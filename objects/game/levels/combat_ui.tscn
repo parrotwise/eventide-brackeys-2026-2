@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2q6"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuj1j"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -40,15 +42,21 @@ offset_top = -244.0
 offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8q2q6")
 
 [node name="PanelBG" type="TextureRect" parent="BottomPanel" unique_id=598273827]
 layout_mode = 2
 texture = ExtResource("2_3y8ts")
 
-[node name="ButtonGroups" type="HBoxContainer" parent="BottomPanel" unique_id=1732133601]
+[node name="MarginContainer" type="MarginContainer" parent="BottomPanel" unique_id=647129931]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ButtonGroups" type="HBoxContainer" parent="BottomPanel/MarginContainer" unique_id=1732133601]
 layout_mode = 2
 
-[node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/ButtonGroups" unique_id=1993286851]
+[node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/MarginContainer/ButtonGroups" unique_id=1993286851]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -56,19 +64,19 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="ActionButton1" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton1" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton2" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton2" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton3" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=726179824 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton3" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=726179824 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="ActionButton4" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton4" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="PassiveButton" parent="BottomPanel/ButtonGroups" unique_id=1860539444 instance=ExtResource("6_df5b6")]
+[node name="PassiveButton" parent="BottomPanel/MarginContainer/ButtonGroups" unique_id=1860539444 instance=ExtResource("6_df5b6")]
 custom_minimum_size = Vector2(142, 214)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -78,7 +86,7 @@ frame_texture = null
 inner_texture_hover = null
 background_texture = null
 
-[node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/ButtonGroups" unique_id=672581597]
+[node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/MarginContainer/ButtonGroups" unique_id=672581597]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -86,13 +94,13 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="PassiveButton1" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
+[node name="PassiveButton1" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
 layout_mode = 2
 
-[node name="ActionButton5" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton5" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="PassiveButton2" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
+[node name="PassiveButton2" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
 layout_mode = 2
 
 [node name="KeyboardReference" type="Panel" parent="." unique_id=339132650]
