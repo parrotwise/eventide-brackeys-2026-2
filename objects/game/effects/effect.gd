@@ -11,6 +11,7 @@ signal applied()
 @export var add_max_health: int = 0
 @export var applied_statuses: Array[Status] = []
 
+var source: Variant  # The parent Action or Status
 var owner: Character
 var target: Character
 

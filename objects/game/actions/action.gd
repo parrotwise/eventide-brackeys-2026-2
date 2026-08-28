@@ -22,7 +22,6 @@ signal used(user: Character, target: Character)
 @export var target_group: Enums.BattleGroupType = Enums.BattleGroupType.OTHER_GROUP
 
 var owner: Character
-var source: Variant  # The parent Action or Status
 
 
 func use(user: Character, target: Character) -> void:
