@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://08fq1lonjlys"]
+
+[ext_resource type="Script" uid="uid://mxjsw4qxiu56" path="res://temp/agecaf/menu_test.gd" id="1_nfnsm"]
+
+[node name="MenuTest" type="Control" unique_id=1042419517]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfnsm")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1683680905]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CenterContainer" unique_id=715042640]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Play!"
