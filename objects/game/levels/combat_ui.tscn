@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_ui.gd" id="1_mhon3"]
 [ext_resource type="Texture2D" uid="uid://c45diplw41fq6" path="res://assets/art/UI/bottom_bar_placeholder.png" id="2_3y8ts"]
-[ext_resource type="Texture2D" uid="uid://jusn54qetgwm" path="res://assets/art/UI/buttons/button_icon_placeholder_90px.png" id="3_v4pvi"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
-[ext_resource type="Texture2D" uid="uid://bnqox8pqjypqe" path="res://assets/art/icons/status_icon_placeholder.png" id="4_xuj1j"]
+[ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuj1j"]
@@ -69,19 +68,15 @@ layout_mode = 2
 [node name="ActionButton4" parent="BottomPanel/ButtonGroups/ActionButtons" unique_id=479180804 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="PassiveBG" type="TextureRect" parent="BottomPanel/ButtonGroups" unique_id=1155250975]
+[node name="PassiveButton" parent="BottomPanel/ButtonGroups" unique_id=1860539444 instance=ExtResource("6_df5b6")]
+custom_minimum_size = Vector2(142, 214)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_v4pvi")
-
-[node name="PassiveIcon" type="TextureRect" parent="BottomPanel/ButtonGroups/PassiveBG" unique_id=1709889876]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
+icon_texture = ExtResource("5_xuj1j")
+frame_texture = null
+inner_texture_hover = null
+background_texture = null
 
 [node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/ButtonGroups" unique_id=672581597]
 layout_mode = 2
@@ -91,7 +86,7 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="PassiveButton1" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1860539444 instance=ExtResource("6_df5b6")]
+[node name="PassiveButton1" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
 layout_mode = 2
 
 [node name="ActionButton5" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
