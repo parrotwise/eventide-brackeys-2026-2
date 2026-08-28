@@ -58,17 +58,29 @@ func interpret(
 		
 		effects[target].swap_places = true
 
-	if action.knockback:
+	if action.knockback_once:
 		if target not in effects:
 			effects[target] = _new_effect(user, action)
 		
-		effects[target].knockback = true
+		effects[target].knockback_once = true
 
-	if action.pull:
+	if action.knockback_to_rear:
 		if target not in effects:
 			effects[target] = _new_effect(user, action)
 		
-		effects[target].pull = true
+		effects[target].knockback_to_rear = true
+
+	if action.pull_once:
+		if target not in effects:
+			effects[target] = _new_effect(user, action)
+		
+		effects[target].pull_once = true
+
+	if action.pull_to_front:
+		if target not in effects:
+			effects[target] = _new_effect(user, action)
+		
+		effects[target].pull_to_front = true
 	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place

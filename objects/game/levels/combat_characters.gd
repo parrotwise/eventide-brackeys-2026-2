@@ -15,9 +15,13 @@ var all: Array[Character]:
 	get: return allies + enemies
 
 var ally_melee: Character:
+	get: return allies[0]
+var ally_rear: Character:
 	get: return allies[-1]
 var enemy_melee: Character:
 	get: return enemies[0]
+var enemy_rear: Character:
+	get: return enemies[-1]
 
 
 func target_position(character: Character) -> Vector2:
@@ -34,6 +38,10 @@ func target_position(character: Character) -> Vector2:
 
 func is_in_melee(character: Character) -> bool:
 	return character in [ally_melee, enemy_melee]
+
+
+func is_at_rear(character: Character) -> bool:
+	return character in [ally_rear, enemy_rear]
 
 
 func get_adjacent_to(character: Character) -> Array[Character]:

@@ -21,8 +21,10 @@ signal used(user: Character, target: Character)
 @export var power_as_target_healing: bool = false
 
 @export var swap_places: bool = false
-@export var knockback: bool = false
-@export var pull: bool = false
+@export var knockback_once: bool = false
+@export var knockback_to_rear: bool = false
+@export var pull_once: bool = false
+@export var pull_to_front: bool = false
 
 @export_category("Targeting")
 
@@ -45,7 +47,7 @@ func can_target(target: Character) -> bool:
 
 	var own_group: StringName = owner.battle_group
 	var other_group: StringName = Character.ALLIES_GROUP if own_group == Character.ENEMIES_GROUP else Character.ENEMIES_GROUP
-
+	
 	match range_type:
 		Enums.RangeType.MELEE:
 			target_is_valid = target_is_valid and owner.is_in_melee() and target.is_in_melee()

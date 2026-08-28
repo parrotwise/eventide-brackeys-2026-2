@@ -11,8 +11,10 @@ signal applied()
 @export var add_max_health: int = 0
 
 @export var swap_places: bool = false
-@export var knockback: bool = false
-@export var pull: bool = false
+@export var knockback_once: bool = false
+@export var knockback_to_rear: bool = false
+@export var pull_once: bool = false
+@export var pull_to_front: bool = false
 
 @export var applied_statuses: Array[Status] = []
 
@@ -38,10 +40,16 @@ func apply(bypass_queue: bool = false) -> void:
 		target.state_component.add_max_health(add_max_health)
 	if swap_places:
 		Game.level.characters.swap_places(owner, target)
-	if knockback:
+	if knockback_once:
 		Game.level.characters.move_backward(target)
-	if pull:
+	if knockback_to_rear:
+		while not Game.level.characters.is_in_rear(target):
+			Game.level.characters.move_backward(target)
+	if pull_once:
 		Game.level.characters.move_forward(target)
+	if pull_to_front:
+		while not Game.level.characters.is_in_melee(target):
+			Game.level.characters.move_forward(target)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:
