@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://uqi7f4acx6rf" path="res://assets/art/UI/buttons/action_button_state_active_hover_click.png" id="8_53u8l"]
 [ext_resource type="Texture2D" uid="uid://cqx1cc5ue868s" path="res://assets/art/UI/buttons/action_button_state_active_hover.png" id="9_smof5"]
 [ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/UI/buttons/action_button_bg.png" id="10_i5qa0"]
+[ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="11_swtmx"]
 
 [node name="ActionButton" type="Control" unique_id=1397875926]
 custom_minimum_size = Vector2(90, 90)
@@ -63,3 +64,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="NinePatchRect" parent="." unique_id=647096474 instance=ExtResource("11_swtmx")]
+layout_mode = 0
