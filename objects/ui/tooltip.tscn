@@ -17,6 +17,7 @@ description = "But who has any right to find fault with a man who chooses to enj
 one_shot = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=647096474]
+visible = false
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 15

@@ -14,27 +14,27 @@ script = ExtResource("1_l7eby")
 [node name="Allies" type="Node2D" parent="SpawnPoints" unique_id=1075970252]
 
 [node name="AllyFront" type="Marker2D" parent="SpawnPoints/Allies" unique_id=531002664]
-position = Vector2(740, 707)
+position = Vector2(740, 700)
 
 [node name="AllyCenterFront" type="Marker2D" parent="SpawnPoints/Allies" unique_id=1498937753]
-position = Vector2(572, 707)
+position = Vector2(555, 700)
 
 [node name="AllyCenterRear" type="Marker2D" parent="SpawnPoints/Allies" unique_id=6367615]
-position = Vector2(389, 708)
+position = Vector2(370, 700)
 
 [node name="AllyRear" type="Marker2D" parent="SpawnPoints/Allies" unique_id=1680131158]
-position = Vector2(219, 709)
+position = Vector2(185, 700)
 
 [node name="Enemies" type="Node2D" parent="SpawnPoints" unique_id=1509586787]
 
 [node name="EnemyFront" type="Marker2D" parent="SpawnPoints/Enemies" unique_id=1258210996]
-position = Vector2(1151, 701)
+position = Vector2(1180, 700)
 
 [node name="EnemyCenterFront" type="Marker2D" parent="SpawnPoints/Enemies" unique_id=138135697]
-position = Vector2(1316, 698)
+position = Vector2(1365, 700)
 
 [node name="EnemyCenterRear" type="Marker2D" parent="SpawnPoints/Enemies" unique_id=1148154445]
-position = Vector2(1517, 701)
+position = Vector2(1550, 700)
 
 [node name="EnemyRear" type="Marker2D" parent="SpawnPoints/Enemies" unique_id=24979694]
-position = Vector2(1633, 701)
+position = Vector2(1735, 700)
