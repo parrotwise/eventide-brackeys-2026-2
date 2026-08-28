@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jusn54qetgwm" path="res://assets/art/UI/buttons/button_icon_placeholder_90px.png" id="3_v4pvi"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://bnqox8pqjypqe" path="res://assets/art/icons/status_icon_placeholder.png" id="4_xuj1j"]
+[ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuj1j"]
 content_margin_left = 0.0
@@ -90,62 +91,14 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="Equipment1" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1282407045]
+[node name="PassiveButton1" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1860539444 instance=ExtResource("6_df5b6")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment1" unique_id=765497082]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Equipment2" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=701891551]
+[node name="ActionButton5" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
 
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment2" unique_id=1639446732]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Equipment3" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=2062073495]
+[node name="PassiveButton2" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
-
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment3" unique_id=278954018]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
-
-[node name="Equipment4" type="TextureButton" parent="BottomPanel/ButtonGroups/EquipmentButtons" unique_id=1340092485]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("3_v4pvi")
-
-[node name="IconTexture" type="TextureRect" parent="BottomPanel/ButtonGroups/EquipmentButtons/Equipment4" unique_id=1165131882]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4_xuj1j")
-stretch_mode = 3
 
 [node name="KeyboardReference" type="Panel" parent="." unique_id=339132650]
 visible = false

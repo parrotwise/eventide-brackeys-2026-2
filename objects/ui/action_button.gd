@@ -44,7 +44,7 @@ func _ready() -> void:
 	frame.texture = frame_texture
 	background.texture = background_texture
 
-	set_selected(true)
+	set_selected(false)
 
 
 func set_selected(selected: bool = false):
