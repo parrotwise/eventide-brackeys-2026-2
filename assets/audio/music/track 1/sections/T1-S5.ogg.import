@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnpmkk0ok8ihk"
+path="res://.godot/imported/T1-S5.ogg-eed9752bbf1bc5a8a4ca158b0f993453.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/track 1/sections/T1-S5.ogg"
+dest_files=["res://.godot/imported/T1-S5.ogg-eed9752bbf1bc5a8a4ca158b0f993453.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=130.0
+beat_count=0
+bar_beats=4

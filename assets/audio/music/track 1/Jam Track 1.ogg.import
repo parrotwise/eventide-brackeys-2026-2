@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi57d1s7yqx3s"
+path="res://.godot/imported/Jam Track 1.ogg-87eff5209a62774ce49b2c20f0fecb3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/track 1/Jam Track 1.ogg"
+dest_files=["res://.godot/imported/Jam Track 1.ogg-87eff5209a62774ce49b2c20f0fecb3c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
