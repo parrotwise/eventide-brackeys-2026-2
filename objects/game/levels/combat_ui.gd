@@ -33,7 +33,7 @@ func set_action_buttons(character: Character) -> void:
 		var button: ActionButton = action_buttons[action_index]
 		
 		button.show()
-		button.icon_texture = character.actions[action_index].icon
+		button.icon.texture = character.actions[action_index].icon
 		
 		var action_tooltip: String = character.actions[action_index].name + "\n" + character.actions[action_index].description
 		button.button.tooltip_text = action_tooltip

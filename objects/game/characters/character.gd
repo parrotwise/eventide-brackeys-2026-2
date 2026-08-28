@@ -41,16 +41,10 @@ var battle_group: StringName:
 func _ready() -> void:
 	Game.start.connect(_on_combat_start)
 
-	actions_component.character = self
-	for action: Action in actions:
-		action.owner = self
-	
-	equipment_component.character = self
-	for item: Equipment in equipment:
-		item.owner = self
-	
 	animator_component.character = self
 	state_component.character = self
+	actions_component.character = self
+	equipment_component.character = self
 	indicators_component.character = self
 
 	if strategy_component:
