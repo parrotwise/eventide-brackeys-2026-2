@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chca5i32ykp0f"
-path="res://.godot/imported/default_placeholder.png-e6e5272052259a70252e71fac6693503.ctex"
+uid="uid://caphrwo8myv17"
+path="res://.godot/imported/cursor_swap_placeholder.png-9834a2250ba0b1f0ec515e36323fa6df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/cursors/default_placeholder.png"
-dest_files=["res://.godot/imported/default_placeholder.png-e6e5272052259a70252e71fac6693503.ctex"]
+source_file="res://assets/art/UI/cursors/cursor_swap_placeholder.png"
+dest_files=["res://.godot/imported/cursor_swap_placeholder.png-9834a2250ba0b1f0ec515e36323fa6df.ctex"]
 
 [params]
 

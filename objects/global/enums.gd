@@ -30,3 +30,15 @@ enum TriggerType {
 	SOURCE_REMOVED,
 	DAMAGE_TAKEN,
 }
+
+enum PointerType {
+	DEFAULT,
+	PRESSING,
+	CLICKABLE,
+	CLICKING,
+	TARGET,
+	ATTACK,
+	SLOP,
+	SWAP,
+	DISABLED,
+}
