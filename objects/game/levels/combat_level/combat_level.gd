@@ -49,6 +49,10 @@ func _ready() -> void:
 	selector_component.target_selected.connect(
 		_on_target_selected
 	)
+	
+	selector_component.target_selected.connect(
+		characters.move_enemy_targeted_indicator
+	)
 
 	selector_component.target_submitted.connect(
 		_on_target_submitted
@@ -56,6 +60,10 @@ func _ready() -> void:
 
 	selector_component.ally_selected.connect(
 		turn_tracker_component.start_ally_turn
+	)
+	
+	selector_component.ally_selected.connect(
+		characters.move_ally_selected_indicator
 	)
 	
 	selector_component.ally_selected.connect(

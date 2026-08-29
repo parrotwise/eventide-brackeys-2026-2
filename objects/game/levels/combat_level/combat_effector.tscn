@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" uid="uid://ty17mm6pxof7" path="res://objects/game/levels/combat_level/combat_effector.gd" id="1_3pwkr"]
 
-
-[node name="Effector" type="Node2D" unique_id=755835823]
+[node name="Effector" type="Node" unique_id=1928156367]
 script = ExtResource("1_3pwkr")

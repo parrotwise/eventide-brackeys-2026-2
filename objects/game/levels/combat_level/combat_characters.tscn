@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvkf3pae2axej"]
 
 [ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_level/combat_characters.gd" id="1_l7eby"]
+[ext_resource type="Texture2D" uid="uid://ooj4qf6fxnm7" path="res://assets/art/UI/targetindicator_placeholder.png" id="2_qkgxt"]
 
 [node name="Characters" type="Node2D" unique_id=651192194]
 script = ExtResource("1_l7eby")
@@ -38,3 +39,9 @@ position = Vector2(1550, 700)
 
 [node name="EnemyRear" type="Marker2D" parent="SpawnPoints/Enemies" unique_id=24979694]
 position = Vector2(1735, 700)
+
+[node name="AllySelectedIndicator" type="Sprite2D" parent="." unique_id=1461424236]
+texture = ExtResource("2_qkgxt")
+
+[node name="EnemyTargetedIndicator" type="Sprite2D" parent="." unique_id=2042609096]
+texture = ExtResource("2_qkgxt")

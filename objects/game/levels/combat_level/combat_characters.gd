@@ -24,6 +24,12 @@ var enemy_rear: Character:
 	get: return enemies[-1]
 
 
+var ally_selected_indicator: Sprite2D:
+	get: return $AllySelectedIndicator
+var enemy_targeted_indicator: Sprite2D:
+	get: return $EnemyTargetedIndicator
+
+
 func target_position(character: Character) -> Vector2:
 	if character not in all:
 		return Vector2.ZERO
@@ -116,3 +122,11 @@ func _move_by(steps: int, character: Character) -> void:
 
 	if new_index >= 0 and new_index < frendos.size():
 		character.get_parent().move_child(character, new_index)
+
+
+func move_ally_selected_indicator(ally: Character) -> void:
+	ally_selected_indicator.position = ally.position + Vector2(0, -480)
+
+
+func move_enemy_targeted_indicator(enemy: Character) -> void:
+	enemy_targeted_indicator.position = enemy.position + Vector2(0, -480)

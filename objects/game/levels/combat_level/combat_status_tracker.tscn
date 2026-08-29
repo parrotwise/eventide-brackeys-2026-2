@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" uid="uid://df6xh61thiktx" path="res://objects/game/levels/combat_level/combat_status_tracker.gd" id="1_2dqdh"]
 
-
-[node name="StatusTracker" type="Node2D" unique_id=1132919478]
+[node name="StatusTracker" type="Node" unique_id=1615019915]
 script = ExtResource("1_2dqdh")
