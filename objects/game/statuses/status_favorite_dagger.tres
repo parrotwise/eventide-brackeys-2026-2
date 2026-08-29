@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://cmvmhhnqr5eyh"]
+
+[ext_resource type="Texture2D" uid="uid://bpjceobo8ovce" path="res://assets/art/UI/equipment_icons/FAVO DAGGER.png" id="1_8nf6m"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_4duru"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_s1wnl"]
+
+[resource]
+script = ExtResource("2_4duru")
+name = "Favorite Dagger"
+description = "You can’t use your basic attack anymore, you can only use your Skill."
+icon = ExtResource("1_8nf6m")
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

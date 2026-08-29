@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bqe1vub0nhrvb"]
+
+[ext_resource type="Texture2D" uid="uid://ddmqhnrfscrur" path="res://assets/art/UI/equipment_icons/CANNONBALL NECKLACE.png" id="1_gyje5"]
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_hvao1"]
+[ext_resource type="Resource" uid="uid://d2c8t6nobhbcd" path="res://objects/game/statuses/status_cannonball_necklace.tres" id="1_v0m3l"]
+
+[resource]
+script = ExtResource("1_hvao1")
+name = "Cannonball Necklace"
+description = "You can’t be moved, either by yourself or forcefully."
+icon = ExtResource("1_gyje5")
+equipped_status = ExtResource("1_v0m3l")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

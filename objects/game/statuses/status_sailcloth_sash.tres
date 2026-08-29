@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://b3rx2xffk022e"]
+
+[ext_resource type="Texture2D" uid="uid://jjux6i6t56pa" path="res://assets/art/UI/equipment_icons/SAILCLOTH SASH.png" id="1_q8bwu"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_v4lam"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_dgkay"]
+
+[resource]
+script = ExtResource("2_v4lam")
+name = "Sailcloth Sash"
+description = "Your HP is increased by 40%."
+icon = ExtResource("1_q8bwu")
+max_health_multiplier = 1.4
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

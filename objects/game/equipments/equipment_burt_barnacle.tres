@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://e4emdjj3bdot"]
+
+[ext_resource type="Resource" uid="uid://dml3y6jrbatlh" path="res://objects/game/statuses/status_burt_barnacle.tres" id="1_4vr31"]
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_vos1o"]
+[ext_resource type="Texture2D" uid="uid://dd5osegvwfajq" path="res://assets/art/UI/equipment_icons/BURT.png" id="2_1fo60"]
+
+[resource]
+script = ExtResource("1_vos1o")
+name = "Burt the Barnacle"
+description = "Damage you deal inflicts Nasty Cuts. You get a stack of Nasty Cuts at the end of every turn."
+icon = ExtResource("2_1fo60")
+equipped_status = ExtResource("1_4vr31")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

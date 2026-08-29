@@ -20,6 +20,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
+shader_parameter/uv_shift = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(0, 0)
 shader_parameter/shadow_gradient = ExtResource("3_meodt")
 shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("3_3nt7m")

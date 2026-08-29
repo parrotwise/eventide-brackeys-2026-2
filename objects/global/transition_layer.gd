@@ -3,7 +3,7 @@ extends CanvasLayer
 
 #const intro_narrative: String = ""
 #const betrayal_narrative: String = ""
-#const loot_level: String = ""
+const equipment_level: String = "res://objects/game/levels/equipment_level/equipment_level.tscn"
 const combat_level: String = "res://objects/game/levels/combat_level/combat_level.tscn"
 
 var blindfold: ColorRect:

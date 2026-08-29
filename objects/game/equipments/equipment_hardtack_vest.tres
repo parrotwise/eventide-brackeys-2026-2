@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cgsibsmdyyvuk"]
+
+[ext_resource type="Resource" uid="uid://dejkxmfb4gmbh" path="res://objects/game/statuses/status_hardtack_vest.tres" id="1_46wyx"]
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_umts2"]
+[ext_resource type="Texture2D" uid="uid://wpgme1rvakm1" path="res://assets/art/UI/equipment_icons/HARDTACK VEST.png" id="2_bcanl"]
+
+[resource]
+script = ExtResource("1_umts2")
+name = "Hardtack Vest"
+description = "First three instances of damage in a fight are negated. After the third hit, the vest cracks and you’re stunned for a turn."
+icon = ExtResource("2_bcanl")
+equipped_status = ExtResource("1_46wyx")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

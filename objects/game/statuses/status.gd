@@ -15,15 +15,26 @@ signal removed(character: Character)
 @export var vfx: PackedScene
 
 @export_group("Effect")
+## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.
+@export_range(0, 1, 0.01) var likelihood: float = 1
+@export_subgroup("Adders")
 @export var damage_dealt_adder: int = 0
 @export var damage_taken_adder: int = 0
 @export var healing_applied_adder: int = 0
 @export var healing_received_adder: int = 0
+@export var max_health_adder: int = 0
+@export_subgroup("Multipliers")
 @export var damage_dealt_multiplier: float = 1.0 
 @export var damage_taken_multiplier: float = 1.0 
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
+@export var max_health_multiplier: float = 1.0
+@export_subgroup("Flags")
 @export var can_attack_twice: bool = false
+@export var can_be_healed: bool = true
+## Cannot move or be moved by force.
+@export var can_be_moved: bool = true
+@export var movement_is_free: bool = false
 
 @export_group("Triggers")
 @export var triggers: Array[Trigger] = []
@@ -75,6 +86,9 @@ func remove_trigger(trigger: Trigger) -> void:
 
 
 func modify_effect(effect: Effect) -> Effect:
+	if randf() > likelihood:
+		return
+	
 	if owner == effect.owner:
 		effect.damage = floori(effect.damage * damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
@@ -82,6 +96,8 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.damage_explosive += damage_dealt_adder
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
+		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
+		effect.add_max_health += max_health_adder
 	
 	if owner == effect.target:
 		effect.damage = floori(effect.damage * damage_taken_multiplier)
@@ -90,5 +106,7 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.damage_explosive += damage_taken_adder
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
+		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
+		effect.add_max_health += max_health_adder
 	
 	return effect

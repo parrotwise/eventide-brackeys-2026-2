@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cw3wtakxpmrne"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_3asfd"]
+[ext_resource type="Resource" uid="uid://buopl8llbqqpu" path="res://objects/game/statuses/status_mended_boot.tres" id="1_vxkal"]
+[ext_resource type="Texture2D" uid="uid://ceioeconir2l1" path="res://assets/art/UI/equipment_icons/MENDED BOOT.png" id="2_ufpvt"]
+
+[resource]
+script = ExtResource("1_3asfd")
+name = "Mended Boot"
+description = "Moving is now a free action."
+icon = ExtResource("2_ufpvt")
+equipped_status = ExtResource("1_vxkal")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

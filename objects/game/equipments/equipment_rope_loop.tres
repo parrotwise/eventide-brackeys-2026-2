@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://c1lcnv8g58ibe"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_7b31s"]
+[ext_resource type="Resource" uid="uid://w3pjsqf6gbt4" path="res://objects/game/statuses/status_rope_loop.tres" id="1_hmgpi"]
+[ext_resource type="Texture2D" uid="uid://dt71ngf0w253i" path="res://assets/art/UI/equipment_icons/LOOP OF ROPE.png" id="1_ib1t4"]
+
+[resource]
+script = ExtResource("1_7b31s")
+name = "Rope Loop"
+description = "Your Attacks make the target unable to move by itself until your next turn."
+icon = ExtResource("1_ib1t4")
+equipped_status = ExtResource("1_hmgpi")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

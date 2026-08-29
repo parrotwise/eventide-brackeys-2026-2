@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://fwbhbnen4cal"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_1tr7m"]
+[ext_resource type="Texture2D" uid="uid://bajw4yq3v8cm2" path="res://assets/art/UI/equipment_icons/COIN WITH A BULLET HOLE.png" id="1_hnm2w"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_hnm2w"]
+
+[resource]
+script = ExtResource("1_1tr7m")
+name = "Shot Coin"
+description = "Damage you deal and receive has 30% chance to deal +50% damage."
+icon = ExtResource("1_hnm2w")
+likelihood = 0.3
+damage_dealt_multiplier = 1.5
+damage_taken_multiplier = 1.5
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

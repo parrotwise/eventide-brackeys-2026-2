@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://dvicjyo12mk6w"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_7yh0c"]
+[ext_resource type="Resource" uid="uid://csfb247kcm2pb" path="res://objects/game/statuses/status_gullbone_shiv.tres" id="1_s4ksf"]
+[ext_resource type="Texture2D" uid="uid://41xbllqs6gxr" path="res://assets/art/UI/equipment_icons/GULLBONE SHIV.png" id="2_q85wo"]
+
+[resource]
+script = ExtResource("1_7yh0c")
+name = "Gullbone Shiv"
+description = "Every time you Attack, you deal flat extra +4 damage."
+icon = ExtResource("2_q85wo")
+equipped_status = ExtResource("1_s4ksf")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

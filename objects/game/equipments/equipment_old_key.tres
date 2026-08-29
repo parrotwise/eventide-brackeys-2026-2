@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://c7iumuaf13m6c"]
+
+[ext_resource type="Resource" uid="uid://bgmu6v0to371q" path="res://objects/game/statuses/status_old_key.tres" id="1_4phlh"]
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_eq07s"]
+[ext_resource type="Texture2D" uid="uid://dta3xjtlemk2h" path="res://assets/art/UI/equipment_icons/OLD KEY.png" id="2_hdt28"]
+
+[resource]
+script = ExtResource("1_eq07s")
+name = "Old Key"
+description = "Your ability gains a cooldown of 1 turn. After using the ability, attack is temporarily stronger."
+icon = ExtResource("2_hdt28")
+equipped_status = ExtResource("1_4phlh")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"
