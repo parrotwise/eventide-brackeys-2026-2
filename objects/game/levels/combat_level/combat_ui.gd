@@ -19,6 +19,17 @@ var keyboard_reference: Panel:
 	get: return $KeyboardReference
 var pause_menu: Control:
 	get: return $PauseMenu
+var settings_menu: Control:
+	get: return $SettingsMenu
+var open_settings_button: ActionButton:
+	get: return %OpenSettingsButton
+var close_settings_button: ActionButton:
+	get: return $SettingsMenu/%CloseSettingsButton
+
+
+func _ready() -> void:
+	open_settings_button.pressed.connect(open_settings)
+	close_settings_button.pressed.connect(close_settings)
 
 
 func set_action_buttons(character: Character) -> void:
@@ -60,3 +71,10 @@ func hide_keyboard_reference() -> void:
 func hide_tooltips() -> void:
 	for button: ActionButton in action_buttons:
 		button.hide_tooltip()
+
+
+func close_settings() -> void:
+	settings_menu.hide()
+
+func open_settings() -> void:
+	settings_menu.show()
