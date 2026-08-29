@@ -244,6 +244,7 @@ hue_variation_max = 0.09999997
 anim_offset_max = 1.0
 
 [node name="Scenery" type="Control" unique_id=1388419847]
+z_index = -100
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2

@@ -53,6 +53,8 @@ func take_damage(damage: int) -> void:
 		knocked_out = true
 		knockout.emit()
 
+		Game.level.characters.remove(character)
+
 
 func heal(amount: int) -> void:
 	if knocked_out:

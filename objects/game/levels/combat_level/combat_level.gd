@@ -2,7 +2,7 @@ class_name CombatLevel
 extends Node
 
 
-@export_range(0.005, 0.15, 0.001) var character_positioning_acceleration: float = 0.007
+@export_range(0.005, 0.15, 0.001) var positioning_acceleration: float = 0.007
 
 var queue: CombatQueue:
 	get: return $Queue
@@ -22,6 +22,8 @@ var camera: CombatCamera:
 	get: return $Camera
 var characters: CombatCharacters:
 	get: return $Characters
+var ground_objects: CombatGroundObjects:
+	get: return $GroundObjects
 var ui: CombatUI:
 	get: return $UI
 

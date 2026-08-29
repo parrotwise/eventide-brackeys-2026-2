@@ -51,6 +51,22 @@ text = "Select Action"
 layout_mode = 2
 text = "Select Target"
 
+[node name="SpawnCauldron" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1685016993]
+layout_mode = 2
+text = "Spawn Cauldron"
+
+[node name="DespawnCauldron" type="Button" parent="PanelContainer/VBoxContainer" unique_id=904028744]
+layout_mode = 2
+text = "Despawn Cauldron"
+
+[node name="MoveCauldronDude" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1873139050]
+layout_mode = 2
+text = "Move Cauldron Dude"
+
+[node name="KillCauldronDude" type="Button" parent="PanelContainer/VBoxContainer" unique_id=613030782]
+layout_mode = 2
+text = "Kill Cauldron Dude"
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TakeDamageButton" to="." method="_on_take_damage_button_pressed"]
@@ -60,3 +76,7 @@ text = "Select Target"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/SelectCharacter" to="." method="_on_select_character_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/SelectAction" to="." method="_on_select_action_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/SelectTarget" to="." method="_on_select_target_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/SpawnCauldron" to="." method="_on_spawn_cauldron"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/DespawnCauldron" to="." method="_on_despawn_cauldron"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MoveCauldronDude" to="." method="_on_move_cauldron_dude"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/KillCauldronDude" to="." method="_on_kill_cauldron_dude"]

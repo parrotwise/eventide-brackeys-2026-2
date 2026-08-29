@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cywd1kqbrehsb"]
+
+[ext_resource type="Script" uid="uid://ciquf3uklq0hu" path="res://objects/game/levels/combat_level/combat_ground_objects.gd" id="1_0kv5w"]
+
+[node name="GroundObjects" type="Node2D" unique_id=651192194]
+script = ExtResource("1_0kv5w")

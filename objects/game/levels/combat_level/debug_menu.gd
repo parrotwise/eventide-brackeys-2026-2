@@ -71,3 +71,27 @@ func _on_select_target_pressed() -> void:
 	Game.level.selector_component.select_target(
 		Random.randsample(Game.level.selector_component.current_action.valid_targets())
 	)
+
+
+func _on_spawn_cauldron() -> void:
+	Game.level.ground_objects.spawn(
+		load('res://objects/game/ground_objects/cauldron.tscn'),
+		Game.level.characters.allies[1]
+	)
+
+
+func _on_despawn_cauldron() -> void:
+	Random.randsample(Game.level.ground_objects.objects).despawn()
+
+
+func _on_move_cauldron_dude() -> void:
+	Game.level.characters._move_by(
+		Random.randint(0, 1) * 2 - 1,
+		Random.randsample(Game.level.ground_objects.objects).character
+	)
+
+
+func _on_kill_cauldron_dude() -> void:
+	Game.level.characters.remove(
+		Random.randsample(Game.level.ground_objects.objects).character
+	)

@@ -56,7 +56,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = lerp(
 		position, Game.level.characters.target_position(self),
-		exp(-delta / Game.level.character_positioning_acceleration)
+		exp(-delta / Game.level.positioning_acceleration)
 	)
 
 

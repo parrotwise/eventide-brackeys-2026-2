@@ -2,6 +2,10 @@ class_name CombatCharacters
 extends Node
 
 
+signal character_removed(character: Character)
+signal characters_repositioned(char1: Character, char2: Character)
+
+
 var allies: Array[Character]:
 	get: return Array($Allies.get_children(), TYPE_OBJECT, &'Node2D', Character)
 var free_allies: Array[Character]:
@@ -34,6 +38,11 @@ func _process(_delta: float) -> void:
 	for character: Character in all:
 		character.sprite.flip_h = character in enemies
 		character.input_component.set_flip(character in enemies)
+
+
+func remove(character: Character) -> void:
+	character_removed.emit(character)
+	character.queue_free()
 
 
 func target_position(character: Character) -> Vector2:
@@ -73,19 +82,11 @@ func get_adjacent_to(character: Character) -> Array[Character]:
 
 
 func get_ahead_of(character: Character) -> Character:
-	if character not in all:
-		return null
-	
-	if character == ally_melee:
-		return enemy_melee
-	
-	if character == enemy_melee:
-		return ally_melee
+	return _get_character_at_offset(-1, character)
 
-	var frendos: Array[Character] = allies if character in allies else enemies
-	var index: int = frendos.find(character)
 
-	return frendos[index - 1]
+func get_behind(character: Character) -> Character:
+	return _get_character_at_offset(+1, character)
 
 
 func index_of(character: Character) -> int:
@@ -118,12 +119,12 @@ func swap_places(char1: Character, char2: Character) -> void:
 	var index1: int = index_of(char1)
 	var index2: int = index_of(char2)
 
-	if index1 < index2:
-		char2.get_parent().move_child(char2, index1)
-		char1.get_parent().move_child(char1, index2)
+	if index1 > index2:
+		while index_of(char1) == index2:
+			move_forward(char1)
 	else:
-		char1.get_parent().move_child(char1, index2)
-		char2.get_parent().move_child(char2, index1)
+		while index_of(char2) == index1:
+			move_forward(char2)
 
 
 func move_forward(character: Character) -> void:
@@ -134,6 +135,26 @@ func move_backward(character: Character) -> void:
 	_move_by(+1, character)
 
 
+func _get_character_at_offset(offset: int, character: Character) -> Character:
+	if character not in all:
+		return null
+	
+	if character == ally_melee:
+		return enemy_melee
+	
+	if character == enemy_melee:
+		return ally_melee
+
+	var frendos: Array[Character] = allies if character in allies else enemies
+	var index: int = frendos.find(character)
+	var offset_index: int = index + offset
+
+	if offset_index >= 0 and offset_index < frendos.size():
+		return frendos[offset_index]
+	
+	return null
+
+
 func _move_by(steps: int, character: Character) -> void:
 	if character not in all:
 		return
@@ -141,6 +162,13 @@ func _move_by(steps: int, character: Character) -> void:
 	var frendos: Array[Character] = allies if character in allies else enemies
 	var current_index: int = frendos.find(character)
 	var new_index: int = current_index + steps
-
+	
 	if new_index >= 0 and new_index < frendos.size():
+		if steps > 0:
+			for i: int in range(current_index, new_index):
+				characters_repositioned.emit(frendos[i], frendos[i + 1])
+		elif steps < 0:
+			for i: int in range(new_index, current_index):
+				characters_repositioned.emit(frendos[i], frendos[i + 1])
+
 		character.get_parent().move_child(character, new_index)

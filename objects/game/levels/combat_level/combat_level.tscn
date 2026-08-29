@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
+[ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
@@ -90,6 +91,8 @@ position = Vector2(1580, 700)
 
 [node name="EnemyRear" parent="Characters/SpawnPoints/Enemies" parent_id_path=PackedInt32Array(726374269, 1509586787) index="3" unique_id=24979694]
 position = Vector2(1780, 700)
+
+[node name="GroundObjects" parent="." unique_id=651192194 instance=ExtResource("15_ymi32")]
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
