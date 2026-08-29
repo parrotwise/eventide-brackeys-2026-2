@@ -35,10 +35,13 @@ func do_action_as_target(action: Action):
 	hurt()
 
 
-# Target functions!
+# Animation functions!
 func hurt_target() -> void:
 	if target == null: return
 	target.actor.hurt()
+
+func launch_ground_object() -> void:
+	Game.level.ground_objects.launch(global_position + Vector2(0.0, -400.0))
 
 
 #
