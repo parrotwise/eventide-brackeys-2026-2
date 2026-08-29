@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://unylgee48yxh"
+path="res://.godot/imported/EC_Attack_Var2 (no_fuse).wav-d047679627e34cf332a089f5eccd3c1f.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/attacks/explodey cat/EC_Attack_Var2 (no_fuse).wav"
+dest_files=["res://.godot/imported/EC_Attack_Var2 (no_fuse).wav-d047679627e34cf332a089f5eccd3c1f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
