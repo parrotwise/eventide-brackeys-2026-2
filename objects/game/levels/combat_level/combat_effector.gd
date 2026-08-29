@@ -99,6 +99,12 @@ func interpret(
 		
 		effects[target].pull_to_front = true
 
+	if action.crunch_peanuts:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].crunch_peanuts = true
+
 	if action.reattach_sootgut:
 		if target not in effects:
 			effects[target] = _new_effect(action, user, target)

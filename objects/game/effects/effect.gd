@@ -17,6 +17,7 @@ signal applied()
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
 
+@export var crunch_peanuts: bool = false
 @export var reattach_sootgut: bool = false
 
 @export var cause_miss_action: bool = false
@@ -42,6 +43,7 @@ func merge_with(other: Effect) -> Effect:
 	pull_once = pull_once or other.pull_once
 	pull_to_front = pull_to_front or other.pull_to_front
 
+	crunch_peanuts = crunch_peanuts or other.crunch_peanuts
 	reattach_sootgut = reattach_sootgut or other.reattach_sootgut
 
 	cause_miss_action = cause_miss_action or other.cause_miss_action
@@ -79,6 +81,10 @@ func apply(bypass_queue: bool = false) -> void:
 	if pull_to_front:
 		while not Game.level.characters.is_in_melee(target):
 			Game.level.characters.move_forward(target)
+	if crunch_peanuts:
+		for object: GroundObject in Game.level.ground_objects.objects:
+			if object.name == &'Peanuts' and object.character == owner:
+				object.despawn()
 	if reattach_sootgut:
 		for object: GroundObject in Game.level.ground_objects.objects:
 			if object.name == &'Sootgut':

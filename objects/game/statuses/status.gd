@@ -24,6 +24,7 @@ signal removed(character: Character)
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
 @export var can_attack_twice: bool = false
+@export var granted_actions: Array[Action] = []
 
 @export_group("Triggers")
 @export var triggers: Array[Trigger] = []
@@ -41,6 +42,10 @@ var owner: Character
 func apply_to(character: Character) -> void:
 	owner = character
 	
+	for i: int in granted_actions.size():
+		granted_actions[i] = granted_actions[i].duplicate()
+		granted_actions[i].owner = character
+
 	for i: int in triggers.size():
 		triggers[i] = triggers[i].duplicate()
 	

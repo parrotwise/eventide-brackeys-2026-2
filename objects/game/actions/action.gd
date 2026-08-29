@@ -28,6 +28,7 @@ signal used(user: Character, target: Character)
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
 
+@export var crunch_peanuts: bool = false
 @export var reattach_sootgut: bool = false
 
 @export var cause_miss_action: bool = false
@@ -53,7 +54,7 @@ func use(user: Character, target: Character) -> void:
 func can_target(target: Character) -> bool:
 	if not is_instance_valid(owner) or not is_instance_valid(target):
 		return false
-
+	
 	var target_is_valid: bool = true
 
 	var own_group: StringName = owner.battle_group

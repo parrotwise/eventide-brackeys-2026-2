@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://c1poy7ehs8625"]
 
 [ext_resource type="Texture2D" uid="uid://cs8drrasw0aco" path="res://assets/art/UI/status_effect_icons/RC FLAMMABLE.png" id="1_bqgyd"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_tn4bs"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_5el8q"]
+[ext_resource type="Resource" uid="uid://myx03h5t4cun" path="res://objects/game/actions/action_crunch_peanuts.tres" id="2_64wkf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_5qpqx"]
 [ext_resource type="Resource" uid="uid://ck366ouckgy4n" path="res://objects/game/triggers/trigger_peanuts.tres" id="4_5el8q"]
 
@@ -10,5 +12,6 @@ script = ExtResource("2_5el8q")
 name = "Peanuts"
 description = "There are peanuts on the ground! If not Picked Up & Crunched this turn, a flock of seagulls will swoop in to fight for them, dealing 20 damage and applying 1 Nasty Cuts stack."
 icon = ExtResource("1_bqgyd")
+granted_actions = Array[ExtResource("1_tn4bs")]([ExtResource("2_64wkf")])
 triggers = Array[ExtResource("3_5qpqx")]([ExtResource("4_5el8q")])
 trigger_uses = 1
