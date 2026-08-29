@@ -50,24 +50,12 @@ func _ready() -> void:
 		_on_target_selected
 	)
 	
-	selector_component.target_selected.connect(
-		characters.move_enemy_targeted_indicator
+	selector_component.ally_selected.connect(
+		_on_ally_selected
 	)
 
 	selector_component.target_submitted.connect(
 		_on_target_submitted
-	)
-
-	selector_component.ally_selected.connect(
-		turn_tracker_component.start_ally_turn
-	)
-	
-	selector_component.ally_selected.connect(
-		characters.move_ally_selected_indicator
-	)
-	
-	selector_component.ally_selected.connect(
-		ui.set_action_buttons
 	)
 
 	turn_tracker_component.round_started.connect(
@@ -154,6 +142,11 @@ func _on_target_selected(
 			action.name,
 		]
 	)
+
+	for other: Character in characters.all:
+		other.indicators_component.hide_target_indicator()
+	target.indicators_component.show_target_indicator()
+
 	# TODO: preview_component.preview(action, user, target)
 
 
@@ -163,6 +156,16 @@ func _on_target_submitted(
 	target: Character
 ) -> void:
 	selector_component.pause()
+
+
+func _on_ally_selected(ally: Character):
+	ui.set_action_buttons(ally)
+
+	for other: Character in characters.allies:
+		other.indicators_component.hide_selection_indicator()
+	ally.indicators_component.show_selection_indicator()
+	
+	turn_tracker_component.start_ally_turn(ally)
 
 
 func _on_round_started(round_number: int) -> void:

@@ -122,11 +122,3 @@ func _move_by(steps: int, character: Character) -> void:
 
 	if new_index >= 0 and new_index < frendos.size():
 		character.get_parent().move_child(character, new_index)
-
-
-func move_ally_selected_indicator(ally: Character) -> void:
-	ally_selected_indicator.position = ally.position + Vector2(0, -480)
-
-
-func move_enemy_targeted_indicator(enemy: Character) -> void:
-	enemy_targeted_indicator.position = enemy.position + Vector2(0, -480)

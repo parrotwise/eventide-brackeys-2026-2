@@ -15,6 +15,10 @@ var sloshed_particles: GPUParticles2D:
 	get: return $BubbleEmitter
 var poison_particles: GPUParticles2D:
 	get: return $GreenDropEmitter
+var selection_indicator: Sprite2D:
+	get: return $SelectionIndicator
+var target_indicator: Sprite2D:
+	get: return $TargetIndicator
 
 var character: Character:
 	set(value):
@@ -22,6 +26,22 @@ var character: Character:
 		_on_character_set()
 
 var _status_icons: Dictionary = {}
+
+
+func hide_target_indicator() -> void:
+	target_indicator.hide()
+
+
+func show_target_indicator() -> void:
+	target_indicator.show()
+
+
+func hide_selection_indicator() -> void:
+	selection_indicator.hide()
+
+
+func show_selection_indicator() -> void:
+	selection_indicator.show()
 
 
 func _on_character_set() -> void:
