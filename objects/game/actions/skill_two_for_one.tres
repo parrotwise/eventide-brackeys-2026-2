@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://ci8dphj5nsigv"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_oan5t"]
+[ext_resource type="Texture2D" uid="uid://c675p3853mq1g" path="res://assets/art/UI/buttons/skill_icon_sc.png" id="3_oan5t"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="4_8rds7"]
+
+[resource]
+script = ExtResource("4_8rds7")
+name = "Two for One"
+description = "Perform a basic attack, with another basic attack being shot at a random enemy."
+icon = ExtResource("3_oan5t")
+power_as_target_damage = true
+repeat_on_random_target = true
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

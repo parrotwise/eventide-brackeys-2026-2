@@ -26,6 +26,25 @@ var owner: Character
 var target: Character
 
 
+func merge_with(other: Effect) -> Effect:
+	damage += other.damage
+	healing += other.healing
+	add_max_health += other.add_max_health
+
+	swap_places = swap_places or other.swap_places
+	knockback_once = knockback_once or other.knockback_once
+	knockback_to_rear = knockback_to_rear or other.knockback_to_rear
+	pull_once = pull_once or other.pull_once
+	pull_to_front = pull_to_front or other.pull_to_front
+
+	cause_miss_action = cause_miss_action or other.cause_miss_action
+	remove_source_status = remove_source_status or other.remove_source_status
+
+	applied_statuses.append_array(other.applied_statuses)
+
+	return self
+
+
 func apply(bypass_queue: bool = false) -> void:
 	if not target:
 		return

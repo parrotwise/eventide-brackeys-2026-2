@@ -105,6 +105,22 @@ func interpret(
 		
 		effects[target].applied_statuses.append_array(action.applied_statuses)
 	
+	if action.repeat_on_random_target:
+		var repeat: Action = action.duplicate()
+		repeat.owner = action.owner
+		repeat.repeat_on_random_target = false
+
+		var random_target: Character = Random.randsample(repeat.valid_targets())
+		var repeat_effects: Dictionary[Character, Effect] = interpret(repeat, user, random_target)
+
+		for repeat_affected: Character in repeat_effects:
+			var repeat_effect: Effect = repeat_effects[repeat_affected]
+
+			if repeat_affected not in effects:
+				effects[repeat_affected] = repeat_effect
+			else:
+				effects[repeat_affected].merge_with(repeat_effect)
+	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place
 		Game.level.status_tracker_component.modify_effect(effect)
