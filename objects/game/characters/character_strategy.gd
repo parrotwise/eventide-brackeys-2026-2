@@ -8,12 +8,31 @@ var character: Character
  
 
 func take_turn() -> void:
-	var action: Action = Random.randsample(
-		character.actions_component.skills + Array(
-			[character.actions_component.basic_attack],
-			TYPE_OBJECT, &'Resource', Action
-		)
-	)
+	var action: Action = character.actions_component.basic_attack
+
+	for skill: Action in character.actions_component.skills:
+		match skill.name:
+			&'Pick Up & Cronch':
+				if Random.randfloat() < 0.70: action = skill
+			&'Jaw Cruncher':
+				if Random.randfloat() < 0.50: action = skill
+			&'Powder Satchel':
+				if Random.randfloat() < 0.50: action = skill
+			&'Mug Toss':
+				if Random.randfloat() < 0.65: action = skill
+			&'Two for One':
+				if Random.randfloat() < 0.70: action = skill
+			&'Peanut Scatter':
+				if Random.randfloat() < 0.50: action = skill
+			&'Keelhaul Tug':
+				if Random.randfloat() < 0.50: action = skill
+			&'Roll the Pot':
+				if Random.randfloat() < 0.30: action = skill
+			&'Laser-Focused':
+				if Random.randfloat() < 0.75: action = skill
+			_:
+				if Random.randfloat() < 0.50: action = skill
+
 	if action == null:
 		action_chosen.emit(null, character, null)
 		return
