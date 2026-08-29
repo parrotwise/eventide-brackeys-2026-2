@@ -12,8 +12,7 @@
 [ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="10_n1fd4"]
 [ext_resource type="Resource" uid="uid://c541hasg75v4s" path="res://objects/game/actions/action_reposition.tres" id="11_r13gu"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="12_qs10e"]
-[ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="13_x8252"]
-[ext_resource type="Resource" uid="uid://d4lhwyirvsffd" path="res://objects/game/actions/skill_mug_toss.tres" id="14_4gp3l"]
+[ext_resource type="Resource" uid="uid://ci8dphj5nsigv" path="res://objects/game/actions/skill_two_for_one.tres" id="13_57mk0"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="15_y8t4a"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
@@ -51,7 +50,7 @@ polygon = PackedVector2Array(-100, -300, 100, -300, 100, 0, -100, 0)
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("9_7e32w")]
 basic_attack = ExtResource("10_n1fd4")
 reposition = ExtResource("11_r13gu")
-skills = Array[ExtResource("12_qs10e")]([ExtResource("13_x8252"), ExtResource("14_4gp3l")])
+skills = Array[ExtResource("12_qs10e")]([ExtResource("13_57mk0")])
 
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("15_y8t4a")]
 
