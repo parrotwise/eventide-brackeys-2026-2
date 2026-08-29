@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://bw34e7j22kxfd"]
+
+[ext_resource type="Script" uid="uid://bgolqtjxj7ii2" path="res://objects/game/actors/actor.gd" id="1_sb1fs"]
+[ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="2_vyerm"]
+[ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="3_84u3h"]
+[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="4_8sean"]
+[ext_resource type="Texture2D" uid="uid://nwwfj1xiajxo" path="res://assets/art/characters/animations/character_big_cat_anim_480.png" id="5_k0pvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6t4p"]
+shader = ExtResource("2_vyerm")
+shader_parameter/shadow_gradient = ExtResource("3_84u3h")
+shader_parameter/shadow_intensity = 0.5
+shader_parameter/status_sloshed_overlay = ExtResource("4_8sean")
+shader_parameter/status_sloshed_intensity = 0.5
+
+[sub_resource type="Animation" id="Animation_sb1fs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_84u3h"]
+resource_name = "basic_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 4, 2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.46666667, 0.9410479),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(141, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 0.25051138, 0.47878316, 0.9329702),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.24, 1.24), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8sean"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 4, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.2, 0.2811903, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-156, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyerm"]
+resource_name = "idle"
+length = 2.4000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.76666665, 1.1666666, 1.5333333, 1.8666667, 2.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 2, 3, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38ras"]
+_data = {
+&"RESET": SubResource("Animation_sb1fs"),
+&"basic_attack": SubResource("Animation_84u3h"),
+&"hurt": SubResource("Animation_8sean"),
+&"idle": SubResource("Animation_vyerm")
+}
+
+[node name="Actor" type="Node2D" unique_id=782497136]
+script = ExtResource("1_sb1fs")
+
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=1080919856]
+material = SubResource("ShaderMaterial_m6t4p")
+texture = ExtResource("5_k0pvr")
+offset = Vector2(-1, -231)
+hframes = 4
+vframes = 2
+region_rect = Rect2(0, 0, 480, 480)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=498777441]
+libraries/ = SubResource("AnimationLibrary_38ras")

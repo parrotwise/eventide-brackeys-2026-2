@@ -5,6 +5,8 @@ extends Node2D
 const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
+var actor: Actor:
+	get: return $Actor
 var sprite: Sprite2D:
 	get: return $Sprite
 var animator_component: CharacterAnimator:
