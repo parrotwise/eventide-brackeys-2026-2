@@ -5,9 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="3_38ras"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="4_2t3wp"]
 [ext_resource type="Texture2D" uid="uid://be5qokhgffe0j" path="res://assets/art/characters/animations/character_gun_cat_anim_488.png" id="5_m6t4p"]
+[ext_resource type="Script" uid="uid://dpkwnkwpe21m4" path="res://objects/game/actors/character_sprite.gd" id="6_52jjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m6t4p"]
 shader = ExtResource("2_koxxc")
+shader_parameter/uv_shift = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(0, 0)
 shader_parameter/shadow_gradient = ExtResource("3_38ras")
 shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("4_2t3wp")
@@ -26,6 +29,7 @@ offset = Vector2(-1, -231)
 hframes = 4
 vframes = 2
 region_rect = Rect2(0, 0, 480, 480)
+script = ExtResource("6_52jjo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=498777441]
 libraries/ = SubResource("AnimationLibrary_38ras")

@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
-
+uniform vec2 uv_shift;
+uniform vec2 uv_scale;
 uniform sampler2D shadow_gradient;
 uniform float shadow_intensity;
 uniform sampler2D status_sloshed_overlay;
@@ -24,17 +25,18 @@ vec3 overlay(vec3 base, vec3 blend){
 
 void fragment() {
 	vec4 color = texture(TEXTURE, UV);
+	vec2 UV_base = UV * uv_scale - uv_shift;
 	
 	color.rgb = mix(
 		color.rgb,
-		multiply(color.rgb, texture(shadow_gradient, UV).rgb),
+		multiply(color.rgb, texture(shadow_gradient, UV_base).rgb),
 		shadow_intensity
 	);
 	
 	if (status_overlay_sloshed_enabled) {
 		color.rgb = mix(
 			color.rgb,
-			overlay(color.rgb, texture(status_sloshed_overlay, UV).rgb),
+			overlay(color.rgb, texture(status_sloshed_overlay, UV_base).rgb),
 			status_sloshed_intensity
 		);
 	}
