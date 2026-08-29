@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://dhwjf1upqvwft"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_0ymo3"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="3_b2jvr"]
+
+[resource]
+script = ExtResource("3_b2jvr")
+damage_explosive = 25
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

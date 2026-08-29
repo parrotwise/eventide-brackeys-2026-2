@@ -3,6 +3,7 @@ extends Node2D
 
 
 @export var granted_status: Status
+@export var despawn_on_status_removed: bool = false
 
 var character: Character
 
@@ -36,11 +37,16 @@ func detach() -> void:
 func attach_to(new_character: Character) -> void:
 	detach()
 	character = new_character
-	character.state_component.apply_status(granted_status)
+
+	var applied_copy: Status = character.state_component.apply_status(granted_status)
+	if despawn_on_status_removed:
+		applied_copy.removed.connect(func(_c): despawn(true))
 
 
-func despawn() -> void:
-	detach()
+func despawn(bypass_detach: bool = false) -> void:
+	if not bypass_detach:
+		detach()
+	
 	queue_free()
 
 

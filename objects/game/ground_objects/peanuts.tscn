@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqi7s5jn7r3xl"]
+
+[ext_resource type="Script" uid="uid://waknecaedevy" path="res://objects/game/ground_objects/ground_object.gd" id="1_rshom"]
+[ext_resource type="Resource" uid="uid://c1poy7ehs8625" path="res://objects/game/statuses/status_peanuts.tres" id="2_vf8w0"]
+[ext_resource type="Texture2D" uid="uid://dml2n4jcm7dxn" path="res://assets/art/ground_objects/peanuts_placeholder.png" id="3_rshom"]
+
+[node name="Peanuts" type="Node2D" unique_id=1307450514]
+z_index = -10
+script = ExtResource("1_rshom")
+granted_status = ExtResource("2_vf8w0")
+despawn_on_status_removed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_rshom")
+offset = Vector2(0, -224)

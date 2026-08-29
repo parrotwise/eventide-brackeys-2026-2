@@ -14,10 +14,12 @@ signal used(user: Character, target: Character)
 @export_group("Effect Definition")
 
 @export var target_damage: int = 0
+@export var target_damage_explosive: int = 0
 @export var splash_damage: int = 0
 @export var target_healing: int = 0
 
 @export var power_as_target_damage: bool = false
+@export var power_as_target_damage_explosive: bool = false
 @export var power_as_target_healing: bool = false
 
 @export var swap_places: bool = false

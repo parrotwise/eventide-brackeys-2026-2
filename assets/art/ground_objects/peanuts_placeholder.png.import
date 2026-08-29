@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1copvfunrsv"
-path="res://.godot/imported/character_cook_cauldron_placeholder.png-fb14ad5df896b74e267debc28904cfe9.ctex"
+uid="uid://dml2n4jcm7dxn"
+path="res://.godot/imported/peanuts_placeholder.png-75fad2f3354cd5df074f0db31178cd00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/character_cook_cauldron_placeholder.png"
-dest_files=["res://.godot/imported/character_cook_cauldron_placeholder.png-fb14ad5df896b74e267debc28904cfe9.ctex"]
+source_file="res://assets/art/ground_objects/peanuts_placeholder.png"
+dest_files=["res://.godot/imported/peanuts_placeholder.png-75fad2f3354cd5df074f0db31178cd00.ctex"]
 
 [params]
 

@@ -139,11 +139,13 @@ func _get_character_at_offset(offset: int, character: Character) -> Character:
 	if character not in all:
 		return null
 	
-	if character == ally_melee:
-		return enemy_melee
+	if character == ally_melee and offset < 0:
+		# Hacky solution, only works because our largest splash radius is 1
+		return enemy_melee if offset == -1 else null
 	
-	if character == enemy_melee:
-		return ally_melee
+	if character == enemy_melee and offset < 0:
+		# Hacky solution, only works because our largest splash radius is 1
+		return ally_melee if offset == -1 else null
 
 	var frendos: Array[Character] = allies if character in allies else enemies
 	var index: int = frendos.find(character)
@@ -162,7 +164,7 @@ func _move_by(steps: int, character: Character) -> void:
 	var frendos: Array[Character] = allies if character in allies else enemies
 	var current_index: int = frendos.find(character)
 	var new_index: int = current_index + steps
-	
+
 	if new_index >= 0 and new_index < frendos.size():
 		if steps > 0:
 			for i: int in range(current_index, new_index):

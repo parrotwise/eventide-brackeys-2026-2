@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://rd4i5tbe7gna"]
+
+[ext_resource type="Resource" uid="uid://cnirciuh7mdto" path="res://objects/game/effects/effect_trigger_powder_satchel_splash.tres" id="1_r1gpo"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_ro6o8"]
+
+[resource]
+script = ExtResource("2_ro6o8")
+effect = ExtResource("1_r1gpo")
+target_type = 1
+trigger_type = 3
+metadata/_custom_type_script = "uid://lvv535cj6j34"

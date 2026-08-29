@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://ck366ouckgy4n"]
+
+[ext_resource type="Resource" uid="uid://cxpwjxgam4k8w" path="res://objects/game/effects/effect_trigger_peanuts.tres" id="1_bf5jc"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_v3dqp"]
+
+[resource]
+script = ExtResource("2_v3dqp")
+effect = ExtResource("1_bf5jc")
+trigger_type = 7
+metadata/_custom_type_script = "uid://lvv535cj6j34"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://b8yxf5k63yrsj"]
+
+[ext_resource type="Resource" uid="uid://dhwjf1upqvwft" path="res://objects/game/effects/effect_trigger_powder_satchel.tres" id="1_fa3yb"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_6jr0b"]
+
+[resource]
+script = ExtResource("2_6jr0b")
+effect = ExtResource("1_fa3yb")
+trigger_type = 3
+metadata/_custom_type_script = "uid://lvv535cj6j34"

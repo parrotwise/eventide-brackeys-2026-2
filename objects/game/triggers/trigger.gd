@@ -16,6 +16,10 @@ func fire(specific_target: Character = null) -> void:
 		match target_type:
 			Enums.TargetType.SELF:
 				effect.target = effect.owner
+			Enums.TargetType.ALLY_AHEAD:
+				effect.target = Game.level.characters.get_ahead_of(effect.owner)
+			Enums.TargetType.ALLY_BEHIND:
+				effect.target = Game.level.characters.get_behind(effect.owner)
 			Enums.TargetType.NEAREST_ENEMY:
 				effect.target = (
 					Game.level.characters.ally_melee

@@ -31,6 +31,12 @@ func interpret(
 			effects[target] = _new_effect(action, user, target)
 		
 		effects[target].damage += action.target_damage
+	
+	if action.target_damage_explosive > 0:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].damage_explosive += action.target_damage_explosive
 
 	if action.splash_damage > 0:
 		for adjacent: Character in Game.level.characters.get_adjacent_to(target):
@@ -50,6 +56,12 @@ func interpret(
 			effects[target] = _new_effect(action, user, target)
 		
 		effects[target].damage += user.state_component.power
+
+	if action.power_as_target_damage_explosive:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].damage_explosive += user.state_component.power
 
 	if action.power_as_target_healing:
 		if target not in effects:

@@ -4,6 +4,7 @@ extends Node
 
 signal health_changed(current_health: int, max_health: int)
 signal damage_taken()
+signal explosive_damage_taken()
 signal healing_received()
 signal knockout()
 
@@ -40,14 +41,17 @@ func _on_combat_start() -> void:
 		apply_status(passive_status)
 
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, explosive: bool = false) -> void:
 	if knocked_out:
 		return
 	
 	current_health = maxi(0, current_health - damage)
 
 	health_changed.emit(current_health, max_health)
+
 	damage_taken.emit()
+	if explosive:
+		explosive_damage_taken.emit()
 	
 	if current_health == 0:
 		knocked_out = true
@@ -84,19 +88,19 @@ func reset_health() -> void:
 	health_changed.emit(current_health, max_health)
 
 
-func apply_status(status_template: Status) -> void:
+func apply_status(status_template: Status) -> Status:
 	if status_template == null:
-		return
+		return null
 	
 	match status_template.stacking_type:
 		Enums.StackingType.UNIQUE:
 			if _active_statuses.any(func(s): return s.name == status_template.name):
-				return
+				return null
 		Enums.StackingType.STACKING:
 			for status: Status in active_statuses:
 				if status.name == status_template.name:
 					status.stack += 1
-					return
+					return null
 
 	var status: Status = status_template.duplicate(true)
 	
@@ -104,6 +108,8 @@ func apply_status(status_template: Status) -> void:
 	
 	status.applied.connect(func(_character): status_applied.emit(status))
 	status.apply_to(character)
+
+	return status
 
 
 func remove_status(status: Status) -> void:

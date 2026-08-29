@@ -78,12 +78,16 @@ func modify_effect(effect: Effect) -> Effect:
 	if owner == effect.owner:
 		effect.damage = floori(effect.damage * damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
+		effect.damage_explosive = floori(effect.damage_explosive * damage_dealt_multiplier)
+		effect.damage_explosive += damage_dealt_adder
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
 	
 	if owner == effect.target:
 		effect.damage = floori(effect.damage * damage_taken_multiplier)
 		effect.damage += damage_taken_adder
+		effect.damage_explosive = floori(effect.damage_explosive * damage_taken_multiplier)
+		effect.damage_explosive += damage_taken_adder
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 	

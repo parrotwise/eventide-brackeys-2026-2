@@ -7,6 +7,7 @@ signal applied()
 @export_group("Effect Definition")
 
 @export var damage: int = 0
+@export var damage_explosive: int = 0
 @export var healing: int = 0
 @export var add_max_health: int = 0
 
@@ -31,6 +32,7 @@ var target: Character
 
 func merge_with(other: Effect) -> Effect:
 	damage += other.damage
+	damage_explosive += other.damage_explosive
 	healing += other.healing
 	add_max_health += other.add_max_health
 
@@ -39,6 +41,8 @@ func merge_with(other: Effect) -> Effect:
 	knockback_to_rear = knockback_to_rear or other.knockback_to_rear
 	pull_once = pull_once or other.pull_once
 	pull_to_front = pull_to_front or other.pull_to_front
+
+	reattach_sootgut = reattach_sootgut or other.reattach_sootgut
 
 	cause_miss_action = cause_miss_action or other.cause_miss_action
 	remove_source_status = remove_source_status or other.remove_source_status
@@ -57,8 +61,8 @@ func apply(bypass_queue: bool = false) -> void:
 		return
 	
 	## Immediate effects first
-	if damage:
-		target.state_component.take_damage(damage)
+	if damage or damage_explosive:
+		target.state_component.take_damage(damage + damage_explosive, damage_explosive > 0)
 	if healing:
 		target.state_component.heal(healing)
 	if add_max_health:

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://bplykso0212sj"]
+
+[ext_resource type="Texture2D" uid="uid://crda1f8dc2arp" path="res://assets/art/UI/status_effect_icons/NASTY CUTS.png" id="1_ptmg2"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_6cqdn"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_6vh4o"]
+[ext_resource type="Resource" uid="uid://yw3812psam31" path="res://objects/game/triggers/trigger_nasty_cuts.tres" id="4_ptmg2"]
+
+[resource]
+script = ExtResource("2_6cqdn")
+name = "Nasty Cuts"
+description = "Every stack of Nasty Cuts deals 5 damage to you at the beginning of your turn. Can’t be removed."
+icon = ExtResource("1_ptmg2")
+triggers = Array[ExtResource("3_6vh4o")]([ExtResource("4_ptmg2")])
+stacking_type = 1

@@ -43,7 +43,7 @@ func untrack(status: Status) -> void:
 	status_removed.emit(status)
 
 
-func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null) -> void:
+func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null, specific_source_owner: Character = null) -> void:
 	for status: Status in active_statuses:
 		if specific_owner not in [null, status.owner]:
 			continue
@@ -56,6 +56,12 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 			
 			match trigger.target_type:
 				Enums.TargetType.SELF: # Auto-detected
+					trigger.fire()
+					fired.append(trigger)
+				Enums.TargetType.ALLY_AHEAD: # Auto-detected
+					trigger.fire()
+					fired.append(trigger)
+				Enums.TargetType.ALLY_BEHIND: # Auto-detected
 					trigger.fire()
 					fired.append(trigger)
 				Enums.TargetType.NEAREST_ENEMY: # Auto-detected
@@ -73,10 +79,10 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 
 			if status.trigger_uses > 0:
 				status.trigger_uses -= 1
-
+				
 				if not status.trigger_uses:
 					status.remove_trigger(trigger)
-
+					
 					if status.remove_when_triggers_used_up:
 						status.owner.state_component.remove_status(status)
 
@@ -100,6 +106,11 @@ func _on_combat_start() -> void:
 		)
 	
 	for character: Character in Game.level.characters.all:
+		character.state_component.explosive_damage_taken.connect(
+			fire_triggers.bind(Enums.TriggerType.EXPLOSIVE_DAMAGE_TAKEN, character)
+		)
+	
+	for character: Character in Game.level.characters.all:
 		character.state_component.healing_received.connect(
 			fire_triggers.bind(Enums.TriggerType.HEALING_RECEIVED, character)
 		)
@@ -116,9 +127,15 @@ func _on_combat_start() -> void:
 	)
 
 	Game.level.turn_tracker_component.round_started.connect(
-		func(_round_number):
+		func (_round_number: int):
 			for character in Game.level.characters.allies:
 				fire_triggers(Enums.TriggerType.START_TURN, character)
+	)
+
+	Game.level.turn_tracker_component.turn_ended.connect(
+		func (character: Character):
+			if character in Game.level.characters.all:
+				fire_triggers(Enums.TriggerType.END_TURN, character)
 	)
 
 
