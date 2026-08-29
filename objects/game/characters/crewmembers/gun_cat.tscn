@@ -20,6 +20,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("3_xcks8")
+shader_parameter/uv_shift = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(0, 0)
 shader_parameter/shadow_gradient = ExtResource("4_opj0v")
 shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("5_yyv4h")
@@ -54,6 +56,7 @@ skills = Array[ExtResource("12_qs10e")]([ExtResource("13_x8252"), ExtResource("1
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("15_y8t4a")]
 
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
+max_health = 85
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
 
