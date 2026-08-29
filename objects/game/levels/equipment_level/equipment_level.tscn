@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="3_2wmpb"]
 [ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="4_jx2we"]
 [ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="5_lki8f"]
-[ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/UI/tooltip_bg.png" id="6_qb0y3"]
+[ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/UI/equipment_panel_bg.png" id="6_qb0y3"]
 [ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/UI/buttons/action_button_bg.png" id="7_lki8f"]
 [ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/game/levels/equipment_level/equipment_button.tscn" id="7_qb0y3"]
 [ext_resource type="Texture2D" uid="uid://dvtvuqeg0ndex" path="res://assets/art/UI/buttons/action_button_state_hover_click.png" id="8_qb0y3"]
@@ -109,10 +109,10 @@ layout_mode = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1090526003]
 layout_mode = 2
 texture = ExtResource("6_qb0y3")
-patch_margin_left = 45
-patch_margin_top = 40
-patch_margin_right = 45
-patch_margin_bottom = 40
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
 
 [node name="NameLabel" type="RichTextLabel" parent="EquipmentUI/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1762530120]
 layout_mode = 2
@@ -125,63 +125,74 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=1278958683]
+[node name="EquipmentSelection" type="Control" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=378693138]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("6_qb0y3")
-patch_margin_left = 45
-patch_margin_top = 40
-patch_margin_right = 45
-patch_margin_bottom = 40
 
-[node name="EquipmentLineup" type="VBoxContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect" unique_id=1955919361]
-layout_mode = 0
-offset_left = 4.0
-offset_right = 892.0
-offset_bottom = 100.0
+[node name="NinePatchRect" type="NinePatchRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1278958683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_qb0y3")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="EquipmentLineup" type="VBoxContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1955919361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 
-[node name="GridContainer" type="GridContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup" unique_id=1530348305]
+[node name="GridContainer" type="GridContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup" unique_id=1530348305]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 4
 
-[node name="EquipmentButton" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1720045075 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=1720045075 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton2" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1770892312 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton2" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=1770892312 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton3" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=822442675 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton3" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=822442675 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton4" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1641624075 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton4" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=1641624075 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton5" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1155204005 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton5" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=1155204005 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton6" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=812728704 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton6" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=812728704 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton7" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=696158863 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton7" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=696158863 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentButton8" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1884845518 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton8" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/EquipmentLineup/GridContainer" unique_id=1884845518 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

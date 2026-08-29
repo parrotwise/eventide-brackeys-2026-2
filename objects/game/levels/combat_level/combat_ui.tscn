@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_level/combat_ui.gd" id="1_mhon3"]
 [ext_resource type="Texture2D" uid="uid://cunhwgecy14kl" path="res://temp/chase/bottom_bar_particle1.png" id="2_df5b6"]
+[ext_resource type="Texture2D" uid="uid://ccqagvrjnsn86" path="res://assets/art/UI/bounding bar top.png" id="2_jbiga"]
 [ext_resource type="Texture2D" uid="uid://ty7icd4jprp3" path="res://assets/art/UI/bounding bar bottom.png" id="2_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 [ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/menu/settings/settings_menu.tscn" id="7_wfv58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p4nv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2q6"]
 
@@ -58,6 +61,11 @@ script = ExtResource("1_mhon3")
 [node name="TopPanel" type="PanelContainer" parent="." unique_id=1366081002]
 offset_right = 1920.0
 offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5p4nv")
+
+[node name="TextureRect" type="TextureRect" parent="TopPanel" unique_id=1408344608]
+layout_mode = 2
+texture = ExtResource("2_jbiga")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopPanel" unique_id=1493146712]
 layout_mode = 2
@@ -66,6 +74,8 @@ alignment = 2
 [node name="OpenSettingsButton" parent="TopPanel/HBoxContainer" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
 [node name="BottomPanel" type="PanelContainer" parent="." unique_id=1035039101]
 anchors_preset = -1
