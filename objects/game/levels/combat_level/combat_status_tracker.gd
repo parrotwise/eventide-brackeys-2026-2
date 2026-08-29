@@ -5,14 +5,16 @@ extends Node
 
 signal status_applied(status: Status)
 signal status_removed(status: Status)
+signal trigger_fired(trigger: Trigger)
 
 ## All active status effects in combat_level
 var _active_statuses: Array[Status] = []
 var active_statuses: Array[Status]:
 	get: return _active_statuses
 
-var cached_targets: Dictionary[String, Character] = {
-	'last_attacker': null
+var cached: Dictionary[String, Variant] = {
+	'last_action': null,
+	'last_attacker': null,
 }
 
 
@@ -53,10 +55,13 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 			match trigger.target_type:
 				Enums.TargetType.SELF: # Auto-detected
 					trigger.fire()
+					trigger_fired.emit(trigger)
 				Enums.TargetType.NEAREST_ENEMY: # Auto-detected
 					trigger.fire()
+					trigger_fired.emit(trigger)
 				Enums.TargetType.LAST_ATTACKER:
-					trigger.fire(cached_targets['last_attacker'])
+					trigger.fire(cached['last_attacker'])
+					trigger_fired.emit(trigger)
 
 
 func modify_effect(effect: Effect) -> Effect:
@@ -69,14 +74,20 @@ func modify_effect(effect: Effect) -> Effect:
 
 func _on_combat_start() -> void:
 	# Cache targets first
-	Game.level.effector_component.action_used.connect(_on_action_used)
+	Game.level.effector_component.action_submitted.connect(_on_action_submitted)
 
 	# Trigger effects after
 	for character: Character in Game.level.characters.all:
 		character.state_component.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
 		)
+	
+	Game.level.effector_component.action_submitted.connect(
+		func (_action: Action, user: Character, _target: Character):
+			fire_triggers(Enums.TriggerType.USING_ACTION, user)
+	)
 
 
-func _on_action_used(_action: Action, user: Character, _target: Character) -> void:
-	cached_targets['last_attacker'] = user
+func _on_action_submitted(action: Action, user: Character, _target: Character) -> void:
+	cached['last_action'] = action
+	cached['last_attacker'] = user

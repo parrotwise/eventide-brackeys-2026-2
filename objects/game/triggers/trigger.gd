@@ -5,6 +5,7 @@ extends Resource
 @export var effect: Effect
 @export var target_type: Enums.TargetType
 @export var trigger_type: Enums.TriggerType
+@export var bypass_queue: bool = false
 
 
 func fire(specific_target: Character = null) -> void:
@@ -25,4 +26,4 @@ func fire(specific_target: Character = null) -> void:
 	# Resource instance modified in-place
 	Game.level.status_tracker_component.modify_effect(effect)
 
-	effect.apply()
+	effect.apply(bypass_queue)

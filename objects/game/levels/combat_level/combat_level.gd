@@ -38,6 +38,10 @@ func _ready() -> void:
 		_on_action_used
 	)
 
+	effector_component.action_missed.connect(
+		_on_action_missed
+	)
+
 	effector_component.action_finished.connect(
 		_on_action_finished
 	)
@@ -48,6 +52,10 @@ func _ready() -> void:
 
 	status_tracker_component.status_removed.connect(
 		_on_status_removed
+	)
+
+	status_tracker_component.trigger_fired.connect(
+		_on_trigger_fired
 	)
 
 	selector_component.action_selected.connect(
@@ -114,6 +122,18 @@ func _on_action_used(
 	)
 	
 
+func _on_action_missed(
+	action: Action,
+	_user: Character,
+	_target: Character
+) -> void:
+	Debug.debug(
+		"%s missed!" % [
+			action.name,
+		]
+	)
+	
+
 func _on_action_finished(
 	action: Action,
 	user: Character,
@@ -152,6 +172,14 @@ func _on_status_removed(status: Status) -> void:
 		"%s lost %s." % [
 			status.owner.name,
 			status.name
+		]
+	)
+
+
+func _on_trigger_fired(trigger: Trigger) -> void:
+	Debug.debug(
+		"Triggered effect fired by %s!" % [
+			trigger.effect.source.name
 		]
 	)
 

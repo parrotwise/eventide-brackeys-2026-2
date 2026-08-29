@@ -22,10 +22,11 @@ signal removed(character: Character)
 @export var damage_multiplier: float = 1.0 
 ## Allows the owner to attack twice in one turn.
 @export var can_attack_twice: bool = false
-@export var causes_miss_next_action: bool = false   
-@export var consume_on_use: bool = false   
 
+@export var stacking_type: Enums.StackingType
 @export var triggers: Array[Trigger] = []
+
+var stack: int = 1
 
 var owner: Character
 
@@ -61,14 +62,7 @@ func remove() -> void:
 
 func modify_effect(effect: Effect) -> Effect:
 	if owner == effect.owner:
-		if causes_miss_next_action:
-			effect.damage = 0
-			effect.healing = 0
-			
-			if consume_on_use:
-				owner.state_component.remove_status(self)
-		
 		effect.damage += damage_adder
 		effect.healing += healing_adder
-		effect.damage = int(effect.damage * damage_multiplier)
+		effect.damage = floori(effect.damage * damage_multiplier)
 	return effect

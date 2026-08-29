@@ -25,6 +25,10 @@ signal used(user: Character, target: Character)
 @export var knockback_to_rear: bool = false
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
+
+@export var cause_miss_action: bool = false
+@export var remove_source_status: bool = false
+
 @export var applied_statuses: Array[Status] = []
 
 @export_category("Targeting")
@@ -50,8 +54,10 @@ func can_target(target: Character) -> bool:
 	var other_group: StringName = Character.ALLIES_GROUP if own_group == Character.ENEMIES_GROUP else Character.ENEMIES_GROUP
 	
 	match range_type:
+		Enums.RangeType.SELF:
+			target_is_valid = target_is_valid and owner == target
 		Enums.RangeType.MELEE:
-			target_is_valid = target_is_valid and owner.is_in_melee() and target.is_in_melee()
+			target_is_valid = target_is_valid and Game.level.characters.is_in_melee(owner) and Game.level.characters.is_in_melee(target)
 		Enums.RangeType.ADJACENT_ALLY:
 			target_is_valid = target_is_valid and target in Game.level.characters.get_adjacent_to(owner)
 	

@@ -83,6 +83,16 @@ func reset_health() -> void:
 func apply_status(status_template: Status) -> void:
 	if status_template == null:
 		return
+	
+	match status_template.stacking_type:
+		Enums.StackingType.UNIQUE:
+			if _active_statuses.any(func(s): return s.name == status_template.name):
+				return
+		Enums.StackingType.STACKING:
+			for status: Status in active_statuses:
+				if status.name == status_template.name:
+					status.stack += 1
+					return
 
 	var status: Status = status_template.duplicate(true)
 	

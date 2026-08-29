@@ -2,9 +2,14 @@ class_name CombatEffector
 extends Node
 
 
+signal action_submitted(action: Action, user: Character, target: Character)
+signal action_missed(action: Action, user: Character, target: Character)
 signal action_used(action: Action, user: Character, target: Character)
 signal action_finished(action: Action, user: Character, target: Character)
 signal effect_applied(effect: Effect, affected: Character)
+
+
+var missed_actions: Array[Action] = []
 
 
 func interpret(
@@ -81,6 +86,18 @@ func interpret(
 			effects[target] = _new_effect(user, action)
 		
 		effects[target].pull_to_front = true
+
+	if action.cause_miss_action:
+		if target not in effects:
+			effects[target] = _new_effect(user, action)
+		
+		effects[target].cause_miss_action = true
+
+	if action.remove_source_status:
+		if target not in effects:
+			effects[target] = _new_effect(user, action)
+		
+		effects[target].remove_source_status = true
 	
 	if action.applied_statuses.size() > 0:                      # <-- new block
 		if target not in effects:
@@ -99,15 +116,22 @@ func apply(action: Action, user: Character, target: Character) -> void:
 	var effects: Dictionary[Character, Effect] = interpret(action, user, target)
 	var enqueued: Array[Effect] = []
 	
-	for affected: Character in effects:
-		var effect: Effect = effects[affected]
-		effect.target = affected
+	action_submitted.emit(action, user, target)
 
-		enqueued.append(effect)
-		
-		effect.applied.connect(effect_applied.emit.bind(effect, affected))
-		effect.applied.connect(enqueued.erase.bind(effect))
-		effect.apply()
+	if action in missed_actions:
+		action_missed.emit(action, user, target)
+		missed_actions.erase(action)
+
+	else:
+		for affected: Character in effects:
+			var effect: Effect = effects[affected]
+			effect.target = affected
+
+			enqueued.append(effect)
+			
+			effect.applied.connect(effect_applied.emit.bind(effect, affected))
+			effect.applied.connect(enqueued.erase.bind(effect))
+			effect.apply()
 	
 	action_used.emit(action, user, target)
 	

@@ -16,6 +16,9 @@ signal applied()
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
 
+@export var cause_miss_action: bool = false
+@export var remove_source_status: bool = false
+
 @export var applied_statuses: Array[Status] = []
 
 var source: Variant  # The parent Action or Status
@@ -50,9 +53,16 @@ func apply(bypass_queue: bool = false) -> void:
 	if pull_to_front:
 		while not Game.level.characters.is_in_melee(target):
 			Game.level.characters.move_forward(target)
+	if cause_miss_action:
+		Game.level.effector_component.missed_actions.append(
+			Game.level.status_tracker_component.cached['last_action']
+		)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:
 		target.state_component.apply_status(status)
+	
+	if remove_source_status:
+		source.owner.state_component.remove_status(source)
 	
 	applied.emit()

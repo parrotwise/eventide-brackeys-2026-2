@@ -9,6 +9,7 @@ enum Direction {
 
 enum RangeType {
 	ANY,
+	SELF,
 	MELEE,
 	ADJACENT_ALLY,
 }
@@ -29,6 +30,13 @@ enum TriggerType {
 	SOURCE_APPLIED,
 	SOURCE_REMOVED,
 	DAMAGE_TAKEN,
+	USING_ACTION,
+}
+
+enum StackingType {
+	UNIQUE,
+	NON_STACKING,
+	STACKING,
 }
 
 enum PointerType {
