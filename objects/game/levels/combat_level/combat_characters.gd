@@ -111,11 +111,11 @@ func swap_places(char1: Character, char2: Character) -> void:
 
 
 func move_forward(character: Character) -> void:
-	_move_by(+1, character)
+	_move_by(-1, character)
 
 
 func move_backward(character: Character) -> void:
-	_move_by(-1, character)
+	_move_by(+1, character)
 
 
 func _move_by(steps: int, character: Character) -> void:
