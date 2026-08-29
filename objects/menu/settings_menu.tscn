@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dyaa4eux5g17d"]
+
+[ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="1_0mgw2"]
+[ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="2_2muxl"]
+[ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/UI/tooltip_placeholder.png" id="2_36ubh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kafe6"]
+texture = ExtResource("2_36ubh")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="SettingsMenu" type="Control" unique_id=233459091]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1594288756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1622359892]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=578365434]
+layout_mode = 2
+alignment = 2
+
+[node name="ActionButton" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1397875926 instance=ExtResource("1_0mgw2")]
+z_index = 5
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(50, 50)
+offset_transform_visual_only = false
+icon_texture = ExtResource("2_2muxl")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=200103709]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kafe6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer" unique_id=1348160312]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=31463956]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=313815543]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
+layout_mode = 2
+text = "Quit Game"
