@@ -19,7 +19,7 @@ extends Control
 
 @export_group("")
 @export_enum("NE", "SE", "SW", "NW") var growth_direction: String = "NE"
-@export var popup_delay_time: float = 1.0
+@export var popup_delay_time: float = 0.4
 
 const open_close_margin: int = 2
 const full_margin: int = 38

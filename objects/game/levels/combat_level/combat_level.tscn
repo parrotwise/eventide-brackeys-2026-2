@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_level/combat_characters.tscn" id="9_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
+[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="12_vqmb0"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
 
@@ -42,7 +43,7 @@ script = ExtResource("2_7qx2x")
 
 [node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
 
-[node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
+[node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("12_vqmb0")]
 position = Vector2(740, 700)
 
 [node name="AllyCenterFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="1" unique_id=1867423470 instance=ExtResource("1_5ksr3")]

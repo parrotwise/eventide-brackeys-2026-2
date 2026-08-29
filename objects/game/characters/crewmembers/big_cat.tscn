@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cdlfmt6nsjjhc"]
+
+[ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
+[ext_resource type="PackedScene" uid="uid://bw34e7j22kxfd" path="res://objects/game/actors/crewmembers/big_cat_actor.tscn" id="2_20li0"]
+[ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
+[ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
+[ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
+[ext_resource type="Texture2D" uid="uid://cev2g60hken86" path="res://assets/art/characters/character_gun_cat_atlas.tres" id="6_epxrs"]
+[ext_resource type="PackedScene" uid="uid://btawv8utacr3n" path="res://objects/game/characters/character_animator.tscn" id="7_warpo"]
+[ext_resource type="Script" uid="uid://cskhgupgayaci" path="res://objects/game/characters/character_input.gd" id="8_v3xvm"]
+[ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/characters/character_actions.tscn" id="9_7e32w"]
+[ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="10_n1fd4"]
+[ext_resource type="Resource" uid="uid://c541hasg75v4s" path="res://objects/game/actions/action_reposition.tres" id="11_r13gu"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="12_qs10e"]
+[ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="13_x8252"]
+[ext_resource type="Resource" uid="uid://d4lhwyirvsffd" path="res://objects/game/actions/skill_mug_toss.tres" id="14_4gp3l"]
+[ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="15_y8t4a"]
+[ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
+[ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
+shader = ExtResource("3_xcks8")
+shader_parameter/shadow_gradient = ExtResource("4_opj0v")
+shader_parameter/shadow_intensity = 0.5
+shader_parameter/status_sloshed_overlay = ExtResource("5_yyv4h")
+shader_parameter/status_sloshed_intensity = 0.5
+
+[node name="Character" type="Node2D" unique_id=1172588862]
+script = ExtResource("1_p4kuh")
+
+[node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_20li0")]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1833322172]
+visible = false
+material = SubResource("ShaderMaterial_m1tc0")
+position = Vector2(0, -240)
+texture = ExtResource("6_epxrs")
+hframes = 4
+region_rect = Rect2(0, 0, 480, 480)
+
+[node name="Animator" parent="." unique_id=1633728089 instance=ExtResource("7_warpo")]
+
+[node name="Input" type="Area2D" parent="." unique_id=1528904343]
+script = ExtResource("8_v3xvm")
+
+[node name="InputArea" type="CollisionPolygon2D" parent="Input" unique_id=1579786761]
+polygon = PackedVector2Array(-100, -300, 100, -300, 100, 0, -100, 0)
+
+[node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("9_7e32w")]
+basic_attack = ExtResource("10_n1fd4")
+reposition = ExtResource("11_r13gu")
+skills = Array[ExtResource("12_qs10e")]([ExtResource("13_x8252"), ExtResource("14_4gp3l")])
+
+[node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("15_y8t4a")]
+
+[node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
+
+[node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
+
+[editable path="Indicators"]
