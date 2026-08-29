@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cdlfmt6nsjjhc"]
+[gd_scene format=3 uid="uid://cawn1xvp1vpu5"]
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
-[ext_resource type="PackedScene" uid="uid://bw34e7j22kxfd" path="res://objects/game/actors/crewmembers/big_cat_actor.tscn" id="2_20li0"]
+[ext_resource type="PackedScene" uid="uid://dyswgjme1uv88" path="res://objects/game/actors/crewmembers/cook_cat_actor.tscn" id="2_f837q"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
@@ -28,7 +28,7 @@ shader_parameter/status_sloshed_intensity = 0.5
 [node name="Character" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
 
-[node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_20li0")]
+[node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_f837q")]
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1833322172]
 visible = false

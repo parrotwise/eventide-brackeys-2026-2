@@ -32,6 +32,8 @@ func hurt() -> void:
 func dead() -> void:
 	pass
 
+func heal() -> void:
+	pass
 
 
 func _ready() -> void:

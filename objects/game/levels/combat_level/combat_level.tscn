@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_level/combat_characters.tscn" id="9_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
-[ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="12_vqmb0"]
+[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="12_vqmb0"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
