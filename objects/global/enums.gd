@@ -23,6 +23,7 @@ enum BattleGroupType {
 enum TargetType {
 	SELF,
 	NEAREST_ENEMY,
+	CHARACTER_AHEAD,
 	LAST_ATTACKER,
 }
 
@@ -31,6 +32,7 @@ enum TriggerType {
 	SOURCE_REMOVED,
 	DAMAGE_TAKEN,
 	USING_ACTION,
+	START_TURN,
 }
 
 enum StackingType {

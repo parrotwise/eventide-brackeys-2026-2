@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://bm3ds1h46kbxl"]
+
+[ext_resource type="Resource" uid="uid://c2jwefvd8oyyd" path="res://objects/game/effects/effect_trigger_jaw_cruncher.tres" id="1_a6nyn"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_r0n2k"]
+
+[resource]
+script = ExtResource("2_r0n2k")
+effect = ExtResource("1_a6nyn")
+target_type = 2
+trigger_type = 4
+metadata/_custom_type_script = "uid://lvv535cj6j34"

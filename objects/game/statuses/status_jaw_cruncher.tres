@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://ckwd5ffet8oka"]
+
+[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="1_t24yc"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_s5yat"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_nvgkg"]
+[ext_resource type="Resource" uid="uid://bm3ds1h46kbxl" path="res://objects/game/triggers/trigger_jaw_cruncher.tres" id="4_s5yat"]
+
+[resource]
+script = ExtResource("2_s5yat")
+name = "Jaw Cruncher"
+description = "At the beginning of your team's next turn, deliver a devastating 40-damage punch in front of you."
+icon = ExtResource("1_t24yc")
+triggers = Array[ExtResource("3_nvgkg")]([ExtResource("4_s5yat")])

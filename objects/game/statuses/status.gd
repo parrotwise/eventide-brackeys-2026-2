@@ -34,11 +34,14 @@ var owner: Character
 func apply_to(character: Character) -> void:
 	owner = character
 	
+	for i: int in triggers.size():
+		triggers[i] = triggers[i].duplicate()
+	
 	for trigger: Trigger in triggers:
 		trigger.effect = trigger.effect.duplicate()
 		trigger.effect.owner = character
 		trigger.effect.source = self
-
+	
 	applied.emit(owner)
 	
 	Game.level.status_tracker_component.track(self)

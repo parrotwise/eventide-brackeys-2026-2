@@ -59,6 +59,9 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 				Enums.TargetType.NEAREST_ENEMY: # Auto-detected
 					trigger.fire()
 					trigger_fired.emit(trigger)
+				Enums.TargetType.CHARACTER_AHEAD:
+					trigger.fire(Game.level.characters.get_ahead_of(status.owner))
+					trigger_fired.emit(trigger)
 				Enums.TargetType.LAST_ATTACKER:
 					trigger.fire(cached['last_attacker'])
 					trigger_fired.emit(trigger)
@@ -85,6 +88,18 @@ func _on_combat_start() -> void:
 	Game.level.effector_component.action_submitted.connect(
 		func (_action: Action, user: Character, _target: Character):
 			fire_triggers(Enums.TriggerType.USING_ACTION, user)
+	)
+
+	Game.level.turn_tracker_component.turn_started.connect(
+		func (character: Character):
+			if character in Game.level.characters.enemies:
+				fire_triggers(Enums.TriggerType.START_TURN, character)
+	)
+
+	Game.level.turn_tracker_component.round_started.connect(
+		func(_round_number):
+			for character in Game.level.characters.allies:
+				fire_triggers(Enums.TriggerType.START_TURN, character)
 	)
 
 

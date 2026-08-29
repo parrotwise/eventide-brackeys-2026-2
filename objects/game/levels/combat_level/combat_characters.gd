@@ -72,6 +72,22 @@ func get_adjacent_to(character: Character) -> Array[Character]:
 	return adjacent
 
 
+func get_ahead_of(character: Character) -> Character:
+	if character not in all:
+		return null
+	
+	if character == ally_melee:
+		return enemy_melee
+	
+	if character == enemy_melee:
+		return ally_melee
+
+	var frendos: Array[Character] = allies if character in allies else enemies
+	var index: int = frendos.find(character)
+
+	return frendos[index - 1]
+
+
 func index_of(character: Character) -> int:
 	if character not in all:
 		return -1

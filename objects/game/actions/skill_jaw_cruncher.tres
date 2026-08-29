@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://c7foc0hqmslik"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_bnbmo"]
+[ext_resource type="Texture2D" uid="uid://bte6o5p05bf7s" path="res://assets/art/UI/buttons/skill_icon_bc.png" id="2_bnbmo"]
+[ext_resource type="Resource" uid="uid://ckwd5ffet8oka" path="res://objects/game/statuses/status_jaw_cruncher.tres" id="2_qg2j7"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_rekjr"]
+
+[resource]
+script = ExtResource("3_rekjr")
+name = "Jaw Cruncher"
+description = "Take a charging stance. At the beginning of your team’s next turn, deliver a devastating 40-damage punch in front of you."
+icon = ExtResource("2_bnbmo")
+applied_statuses = Array[ExtResource("1_bnbmo")]([ExtResource("2_qg2j7")])
+range_type = 1
+target_group = 1
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"
