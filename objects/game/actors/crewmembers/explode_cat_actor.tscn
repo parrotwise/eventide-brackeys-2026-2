@@ -200,12 +200,64 @@ tracks/0/keys = {
 "values": [1, 0, 2, 3, 2, 0]
 }
 
+[sub_resource type="Animation" id="Animation_ejuhr"]
+resource_name = "special"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.5134782, 0.6147861, 0.7, 0.8021363, 0.9131586),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 6, 0, 2, 3, 2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1697746, 0.40234256, 0.8186392),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(-34, 0), Vector2(47, -2.0000005), Vector2(0, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 0.18140301, 0.43333334, 0.56666666, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.38222710618675776, 0.19198621771937624, -0.1308996938995747, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1, 0.20931116, 0.31396675, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.29, 1.29), Vector2(1.29, 1.29), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38ras"]
 _data = {
 &"RESET": SubResource("Animation_7b0av"),
 &"basic_attack": SubResource("Animation_hqpwr"),
 &"hurt": SubResource("Animation_o4oms"),
-&"idle": SubResource("Animation_nvmwg")
+&"idle": SubResource("Animation_nvmwg"),
+&"special": SubResource("Animation_ejuhr")
 }
 
 [node name="Actor" type="Node2D" unique_id=782497136]

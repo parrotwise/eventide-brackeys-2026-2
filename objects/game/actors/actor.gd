@@ -19,6 +19,7 @@ func do_action_as_user(action: Action, _target: Character):
 	# Special abilities
 	if action.name in [
 		&"Roll the Pot",
+		&"Powder Satchel",
 	]:
 		special()
 	
