@@ -42,36 +42,54 @@ script = ExtResource("2_7qx2x")
 [node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
 
 [node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("1_5ksr3")]
-position = Vector2(740, 707)
+position = Vector2(740, 700)
 
 [node name="AllyCenterFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="1" unique_id=1867423470 instance=ExtResource("1_5ksr3")]
-position = Vector2(572, 707)
+position = Vector2(540, 700)
 
 [node name="AllyCenterRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="2" unique_id=994921613 instance=ExtResource("1_5ksr3")]
-position = Vector2(389, 708)
+position = Vector2(340, 700)
 
 [node name="AllyRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="3" unique_id=12795219 instance=ExtResource("1_5ksr3")]
-position = Vector2(219, 709)
+position = Vector2(140, 700)
 
 [node name="EnemyFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="0" unique_id=244185755 instance=ExtResource("1_5ksr3")]
-position = Vector2(1151, 701)
+position = Vector2(1180, 700)
 
 [node name="Strategy" parent="Characters/Enemies/EnemyFront" unique_id=1036133476 instance=ExtResource("10_f26kh")]
 
 [node name="EnemyCenterFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="1" unique_id=624172570 instance=ExtResource("1_5ksr3")]
-position = Vector2(1316, 698)
+position = Vector2(1380, 700)
 
 [node name="Strategy" parent="Characters/Enemies/EnemyCenterFront" unique_id=1577283940 instance=ExtResource("10_f26kh")]
 
 [node name="EnemyCenterRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="2" unique_id=1516732607 instance=ExtResource("1_5ksr3")]
-position = Vector2(1517, 701)
+position = Vector2(1580, 700)
 
 [node name="Strategy" parent="Characters/Enemies/EnemyCenterRear" unique_id=1855582384 instance=ExtResource("10_f26kh")]
 
 [node name="EnemyRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="3" unique_id=1891047797 instance=ExtResource("1_5ksr3")]
-position = Vector2(1633, 701)
+position = Vector2(1780, 700)
 
 [node name="Strategy" parent="Characters/Enemies/EnemyRear" unique_id=1071279034 instance=ExtResource("10_f26kh")]
+
+[node name="AllyCenterFront" parent="Characters/SpawnPoints/Allies" parent_id_path=PackedInt32Array(726374269, 1075970252) index="1" unique_id=1498937753]
+position = Vector2(540, 700)
+
+[node name="AllyCenterRear" parent="Characters/SpawnPoints/Allies" parent_id_path=PackedInt32Array(726374269, 1075970252) index="2" unique_id=6367615]
+position = Vector2(340, 700)
+
+[node name="AllyRear" parent="Characters/SpawnPoints/Allies" parent_id_path=PackedInt32Array(726374269, 1075970252) index="3" unique_id=1680131158]
+position = Vector2(140, 700)
+
+[node name="EnemyCenterFront" parent="Characters/SpawnPoints/Enemies" parent_id_path=PackedInt32Array(726374269, 1509586787) index="1" unique_id=138135697]
+position = Vector2(1380, 700)
+
+[node name="EnemyCenterRear" parent="Characters/SpawnPoints/Enemies" parent_id_path=PackedInt32Array(726374269, 1509586787) index="2" unique_id=1148154445]
+position = Vector2(1580, 700)
+
+[node name="EnemyRear" parent="Characters/SpawnPoints/Enemies" parent_id_path=PackedInt32Array(726374269, 1509586787) index="3" unique_id=24979694]
+position = Vector2(1780, 700)
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
