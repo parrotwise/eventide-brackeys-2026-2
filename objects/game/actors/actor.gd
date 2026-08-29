@@ -21,6 +21,7 @@ func do_action_as_user(action: Action, _target: Character):
 		&"Roll the Pot",
 		&"Powder Satchel",
 		&"Two for One",
+		&"Keelhaul Tug",
 	]:
 		special()
 	
