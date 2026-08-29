@@ -15,6 +15,14 @@ func do_action_as_user(action: Action, _target: Character):
 	# Basic attack
 	if action.name == &"Basic Attack":
 		basic_attack()
+	
+	# Special abilities
+	if action.name in [
+		&"Roll the Pot",
+	]:
+		special()
+	
+	
 	# basic_attack()
 
 
@@ -44,6 +52,12 @@ func basic_attack() -> void:
 func hurt() -> void:
 	if animation_player.has_animation(&"hurt"):
 		animation_player.play(&"hurt")
+	if animation_player.has_animation(&"idle"):
+		animation_player.queue(&"idle")
+
+func special() -> void:
+	if animation_player.has_animation(&"special"):
+		animation_player.play(&"special")
 	if animation_player.has_animation(&"idle"):
 		animation_player.queue(&"idle")
 
