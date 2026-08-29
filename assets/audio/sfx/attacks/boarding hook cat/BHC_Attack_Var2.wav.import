@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dad1t1vkswc66"
+path="res://.godot/imported/BHC_Attack_Var2.wav-f4503636dfdc7b46ce37cb99667aee4e.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/attacks/boarding hook cat/BHC_Attack_Var2.wav"
+dest_files=["res://.godot/imported/BHC_Attack_Var2.wav-f4503636dfdc7b46ce37cb99667aee4e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be0f2qg12hcqh"
+path="res://.godot/imported/PC_Attack_Var1.wav-e286f5936b8bf6507c59bc057b276fb7.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/attacks/peanut cat/PC_Attack_Var1.wav"
+dest_files=["res://.godot/imported/PC_Attack_Var1.wav-e286f5936b8bf6507c59bc057b276fb7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
