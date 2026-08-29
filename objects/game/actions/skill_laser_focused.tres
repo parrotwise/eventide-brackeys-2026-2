@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://cndtqnl5hjloe"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_uhf0r"]
+[ext_resource type="Resource" uid="uid://c8s0imcnukd2x" path="res://objects/game/statuses/status_laser_focused.tres" id="2_uhf0r"]
+[ext_resource type="Texture2D" uid="uid://db8e1t3hl1jcr" path="res://assets/art/UI/buttons/skill_icon_nc.png" id="3_f0gmg"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="4_s8wl1"]
+
+[resource]
+script = ExtResource("4_s8wl1")
+name = "Laser-Focused"
+description = "Look through the spyglass at a target. Shoot a beam of lens-focused energy, dealing 5 damage and doubling heal or damage received by the target in the next 3 instances."
+icon = ExtResource("3_f0gmg")
+target_damage = 5
+applied_statuses = Array[ExtResource("1_uhf0r")]([ExtResource("2_uhf0r")])
+target_group = 0
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

@@ -4,6 +4,7 @@ extends Node
 
 signal health_changed(current_health: int, max_health: int)
 signal damage_taken()
+signal healing_received()
 signal knockout()
 
 signal status_applied(status: Status)
@@ -59,6 +60,7 @@ func heal(amount: int) -> void:
 	
 	current_health = mini(max_health, current_health + amount)
 	health_changed.emit(current_health, max_health)
+	healing_received.emit()
 
 
 func add_max_health(amount: int) -> void:

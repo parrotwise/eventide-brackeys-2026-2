@@ -48,6 +48,8 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 		if specific_owner not in [null, status.owner]:
 			continue
 		
+		var fired: Array[Trigger] = []
+
 		for trigger: Trigger in status.triggers:
 			if trigger_type != trigger.trigger_type:
 				continue
@@ -55,16 +57,28 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 			match trigger.target_type:
 				Enums.TargetType.SELF: # Auto-detected
 					trigger.fire()
-					trigger_fired.emit(trigger)
+					fired.append(trigger)
 				Enums.TargetType.NEAREST_ENEMY: # Auto-detected
 					trigger.fire()
-					trigger_fired.emit(trigger)
+					fired.append(trigger)
 				Enums.TargetType.CHARACTER_AHEAD:
 					trigger.fire(Game.level.characters.get_ahead_of(status.owner))
-					trigger_fired.emit(trigger)
+					fired.append(trigger)
 				Enums.TargetType.LAST_ATTACKER:
 					trigger.fire(cached['last_attacker'])
-					trigger_fired.emit(trigger)
+					fired.append(trigger)
+		
+		for trigger: Trigger in fired:
+			trigger_fired.emit(trigger)
+
+			if status.trigger_uses > 0:
+				status.trigger_uses -= 1
+
+				if not status.trigger_uses:
+					status.remove_trigger(trigger)
+
+					if status.remove_when_triggers_used_up:
+						status.owner.state_component.remove_status(status)
 
 
 func modify_effect(effect: Effect) -> Effect:
@@ -83,6 +97,11 @@ func _on_combat_start() -> void:
 	for character: Character in Game.level.characters.all:
 		character.state_component.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
+		)
+	
+	for character: Character in Game.level.characters.all:
+		character.state_component.healing_received.connect(
+			fire_triggers.bind(Enums.TriggerType.HEALING_RECEIVED, character)
 		)
 	
 	Game.level.effector_component.action_submitted.connect(

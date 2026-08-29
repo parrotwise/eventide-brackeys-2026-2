@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://c8s0imcnukd2x"]
+
+[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="1_8re6y"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_j1b5n"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_aglnt"]
+[ext_resource type="Resource" uid="uid://bxm58jwr1sbhc" path="res://objects/game/triggers/trigger_laser_focused_damage.tres" id="4_j1b5n"]
+[ext_resource type="Resource" uid="uid://djnvrqhxgsh5g" path="res://objects/game/triggers/trigger_laser_focused_heal.tres" id="5_aglnt"]
+
+[resource]
+script = ExtResource("2_j1b5n")
+name = "Laser-Focused"
+description = "Damage and healing received doubled in the next 3 instances."
+icon = ExtResource("1_8re6y")
+damage_taken_multiplier = 2.0
+healing_received_multiplier = 2.0
+triggers = Array[ExtResource("3_aglnt")]([ExtResource("4_j1b5n"), ExtResource("5_aglnt")])
+trigger_uses = 3

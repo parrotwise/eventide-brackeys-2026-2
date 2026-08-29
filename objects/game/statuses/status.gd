@@ -14,17 +14,24 @@ signal removed(character: Character)
 @export var icon: Texture
 @export var vfx: PackedScene
 
-@export_group("Effect Definition")
-## Value to be added to the owner's damage. Negative values subtract damage.
-@export var damage_adder: int = 0
-##Value to be added to the owner's healing. Negative values subtract healing.
-@export var healing_adder: int = 0
-@export var damage_multiplier: float = 1.0 
-## Allows the owner to attack twice in one turn.
+@export_group("Effect")
+@export var damage_dealt_adder: int = 0
+@export var damage_taken_adder: int = 0
+@export var healing_applied_adder: int = 0
+@export var healing_received_adder: int = 0
+@export var damage_dealt_multiplier: float = 1.0 
+@export var damage_taken_multiplier: float = 1.0 
+@export var healing_applied_multiplier: float = 1.0
+@export var healing_received_multiplier: float = 1.0
 @export var can_attack_twice: bool = false
 
-@export var stacking_type: Enums.StackingType
+@export_group("Triggers")
 @export var triggers: Array[Trigger] = []
+@export var trigger_uses: int = -1
+@export var remove_when_triggers_used_up: bool = true
+
+@export_group("")
+@export var stacking_type: Enums.StackingType
 
 var stack: int = 1
 
@@ -41,7 +48,7 @@ func apply_to(character: Character) -> void:
 		trigger.effect = trigger.effect.duplicate()
 		trigger.effect.owner = character
 		trigger.effect.source = self
-	
+
 	applied.emit(owner)
 	
 	Game.level.status_tracker_component.track(self)
@@ -63,9 +70,21 @@ func remove() -> void:
 	owner = null
 
 
+func remove_trigger(trigger: Trigger) -> void:
+	triggers.erase(trigger)
+
+
 func modify_effect(effect: Effect) -> Effect:
 	if owner == effect.owner:
-		effect.damage += damage_adder
-		effect.healing += healing_adder
-		effect.damage = floori(effect.damage * damage_multiplier)
+		effect.damage = floori(effect.damage * damage_dealt_multiplier)
+		effect.damage += damage_dealt_adder
+		effect.healing = floori(effect.healing * healing_applied_multiplier)
+		effect.healing += healing_applied_adder
+	
+	if owner == effect.target:
+		effect.damage = floori(effect.damage * damage_taken_multiplier)
+		effect.damage += damage_taken_adder
+		effect.healing = floori(effect.healing * healing_received_multiplier)
+		effect.healing += healing_received_adder
+	
 	return effect
