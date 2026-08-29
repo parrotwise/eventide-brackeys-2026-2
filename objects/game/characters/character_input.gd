@@ -5,12 +5,19 @@ extends Area2D
 signal selected()
 signal submitted()
 
+var input_area: CollisionPolygon2D:
+	get: return $InputArea
+
 var character: Character
 
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	input_event.connect(_on_input_event)
+
+
+func set_flip(flip: bool = true) -> void:
+	input_area.scale = Vector2(-1, 1) if flip else Vector2.ONE
 
 
 func _on_mouse_entered() -> void:

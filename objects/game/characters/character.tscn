@@ -39,7 +39,7 @@ region_rect = Rect2(0, 0, 480, 480)
 [node name="Input" type="Area2D" parent="." unique_id=1528904343]
 script = ExtResource("7_meodt")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Input" unique_id=1579786761]
+[node name="InputArea" type="CollisionPolygon2D" parent="Input" unique_id=1579786761]
 polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1, -163, -223)
 
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]

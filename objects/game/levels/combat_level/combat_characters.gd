@@ -30,6 +30,12 @@ var enemy_targeted_indicator: Sprite2D:
 	get: return $EnemyTargetedIndicator
 
 
+func _process(_delta: float) -> void:
+	for character: Character in all:
+		character.sprite.flip_h = character in enemies
+		character.input_component.set_flip(character in enemies)
+
+
 func target_position(character: Character) -> Vector2:
 	if character not in all:
 		return Vector2.ZERO
