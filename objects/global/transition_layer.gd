@@ -19,9 +19,10 @@ func simple_fade(scene_path: String) -> void:
 	transition_tween.tween_property(blindfold, "modulate:a", 1, 0.2)
 	
 	await transition_tween.finished
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file(scene_path)
 	
 	await get_tree().scene_changed
-	transition_tween.stop()	# idk why you have to stop() it first, but you do.
-	transition_tween.tween_property(blindfold, "modulate:a", 0, 0.2)
-	transition_tween.play()
+	await get_tree().create_timer(0.1).timeout
+	var new_transition_tween = create_tween()
+	new_transition_tween.tween_property(blindfold, "modulate:a", 0, 0.2)
