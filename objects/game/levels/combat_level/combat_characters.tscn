@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dvkf3pae2axej"]
 
 [ext_resource type="Script" uid="uid://blsr2jhdaluj" path="res://objects/game/levels/combat_level/combat_characters.gd" id="1_l7eby"]
+[ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="2_lyr0r"]
+[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="3_3ts0b"]
+[ext_resource type="PackedScene" uid="uid://cnrqlgxush8bk" path="res://objects/game/characters/crewmembers/explode_cat.tscn" id="4_cm1mk"]
+[ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="5_bcwhw"]
+[ext_resource type="PackedScene" uid="uid://c7ar3gk6444vb" path="res://objects/game/characters/crewmembers/hook_cat.tscn" id="6_ic7m8"]
+[ext_resource type="PackedScene" uid="uid://d4ae73fjjv1vv" path="res://objects/game/characters/crewmembers/nav_cat.tscn" id="7_sqw3q"]
+[ext_resource type="PackedScene" uid="uid://bg02w4miu8a8o" path="res://objects/game/characters/crewmembers/peanut_cat.tscn" id="8_y4ddo"]
+[ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="9_lj4iy"]
 
 [node name="Characters" type="Node2D" unique_id=651192194]
 script = ExtResource("1_l7eby")
+character_crewmembers = Array[PackedScene]([ExtResource("2_lyr0r"), ExtResource("3_3ts0b"), ExtResource("4_cm1mk"), ExtResource("5_bcwhw"), ExtResource("6_ic7m8"), ExtResource("7_sqw3q"), ExtResource("8_y4ddo"), ExtResource("9_lj4iy")])
 
 [node name="Allies" type="Node2D" parent="." unique_id=266524114]
 

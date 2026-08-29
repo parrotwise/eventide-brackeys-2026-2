@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://iocsq4dy46kl"]
 
-[ext_resource type="PackedScene" uid="uid://bjemghlr4x223" path="res://objects/game/characters/character.tscn" id="1_5ksr3"]
 [ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/combat_level/combat_level.gd" id="1_gn8s7"]
 [ext_resource type="Script" uid="uid://ouwu68nmyhkv" path="res://objects/game/levels/combat_level/combat_input.gd" id="2_7qx2x"]
 [ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/levels/combat_level/combat_effector.tscn" id="2_aokjo"]
@@ -15,12 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_level/combat_characters.tscn" id="9_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
-[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="12_vqmb0"]
-[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="13_2btfv"]
-[ext_resource type="Resource" uid="uid://d2ho2uk0areot" path="res://objects/game/statuses/passive_galley_cat.tres" id="13_5g224"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
-[ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="14_rujrp"]
-[ext_resource type="Resource" uid="uid://c67tb1meupkio" path="res://objects/game/actions/skill_roll_the_pot.tres" id="15_o8mfa"]
 [ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
@@ -46,44 +40,7 @@ script = ExtResource("2_7qx2x")
 [node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
 
 [node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
-
-[node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("12_vqmb0")]
-position = Vector2(740, 700)
-
-[node name="Actions" parent="Characters/Allies/AllyFront" index="4" unique_id=1878263473]
-skills = Array[ExtResource("13_2btfv")]([ExtResource("14_rujrp"), ExtResource("15_o8mfa")])
-
-[node name="State" parent="Characters/Allies/AllyFront" index="6" unique_id=1290732730]
-passive_status = ExtResource("13_5g224")
-
-[node name="AllyCenterFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="1" unique_id=1867423470 instance=ExtResource("1_5ksr3")]
-position = Vector2(540, 700)
-
-[node name="AllyCenterRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="2" unique_id=994921613 instance=ExtResource("1_5ksr3")]
-position = Vector2(340, 700)
-
-[node name="AllyRear" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="3" unique_id=12795219 instance=ExtResource("1_5ksr3")]
-position = Vector2(140, 700)
-
-[node name="EnemyFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="0" unique_id=244185755 instance=ExtResource("1_5ksr3")]
-position = Vector2(1180, 700)
-
-[node name="Strategy" parent="Characters/Enemies/EnemyFront" unique_id=1036133476 instance=ExtResource("10_f26kh")]
-
-[node name="EnemyCenterFront" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="1" unique_id=624172570 instance=ExtResource("1_5ksr3")]
-position = Vector2(1380, 700)
-
-[node name="Strategy" parent="Characters/Enemies/EnemyCenterFront" unique_id=1577283940 instance=ExtResource("10_f26kh")]
-
-[node name="EnemyCenterRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="2" unique_id=1516732607 instance=ExtResource("1_5ksr3")]
-position = Vector2(1580, 700)
-
-[node name="Strategy" parent="Characters/Enemies/EnemyCenterRear" unique_id=1855582384 instance=ExtResource("10_f26kh")]
-
-[node name="EnemyRear" parent="Characters/Enemies" parent_id_path=PackedInt32Array(726374269, 832781667) index="3" unique_id=1891047797 instance=ExtResource("1_5ksr3")]
-position = Vector2(1780, 700)
-
-[node name="Strategy" parent="Characters/Enemies/EnemyRear" unique_id=1071279034 instance=ExtResource("10_f26kh")]
+strategy_scene = ExtResource("10_f26kh")
 
 [node name="AllyCenterFront" parent="Characters/SpawnPoints/Allies" parent_id_path=PackedInt32Array(726374269, 1075970252) index="1" unique_id=1498937753]
 position = Vector2(540, 700)
@@ -112,5 +69,3 @@ combat_camera = NodePath("../Camera")
 test_status = ExtResource("13_m1tc0")
 
 [editable path="Characters"]
-[editable path="Characters/Allies/AllyFront"]
-[editable path="Characters/Allies/AllyFront/Indicators"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgfvw8ipnvn7c"]
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
-[ext_resource type="PackedScene" uid="uid://b0r5moppdnujn" path="res://objects/game/actors/crewmembers/rum_cat.tscn" id="2_hvwc7"]
+[ext_resource type="PackedScene" uid="uid://b0r5moppdnujn" path="res://objects/game/actors/crewmembers/rum_cat_actor.tscn" id="2_hvwc7"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
