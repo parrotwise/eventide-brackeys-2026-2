@@ -23,6 +23,7 @@ func do_action_as_user(action: Action, _target: Character):
 		&"Two for One",
 		&"Keelhaul Tug",
 		&"Laser-Focused",
+		&"Peanut Scatter",
 	]:
 		special()
 	
