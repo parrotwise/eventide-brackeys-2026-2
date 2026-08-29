@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/characters/character_actions.tscn" id="1_i7xxf"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="1_iixya"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="2_5lvk8"]
+[ext_resource type="PackedScene" uid="uid://b1ki1c4durqa5" path="res://objects/game/actors/actor_template.tscn" id="2_tf1ea"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="3_3nt7m"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="3_meodt"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="4_g2flc"]
@@ -27,7 +28,10 @@ shader_parameter/status_sloshed_intensity = 0.5
 [node name="Character" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_4nnrl")
 
+[node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_tf1ea")]
+
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1833322172]
+visible = false
 material = SubResource("ShaderMaterial_m1tc0")
 position = Vector2(0, -240)
 texture = ExtResource("5_meodt")
