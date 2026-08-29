@@ -20,6 +20,7 @@ func do_action_as_user(action: Action, _target: Character):
 	if action.name in [
 		&"Roll the Pot",
 		&"Powder Satchel",
+		&"Two for One",
 	]:
 		special()
 	
@@ -39,6 +40,12 @@ func do_action_as_target(action: Action):
 func hurt_target() -> void:
 	if target == null: return
 	target.actor.hurt()
+
+
+func hurt_random_target() -> void:
+	var random_target: Character = Game.level.effector_component.last_random_target
+	if random_target == null: return
+	random_target.actor.hurt()
 
 func launch_ground_object() -> void:
 	Game.level.ground_objects.launch(global_position + Vector2(0.0, -400.0))

@@ -10,7 +10,7 @@ signal effect_applied(effect: Effect, affected: Character)
 
 
 var missed_actions: Array[Action] = []
-
+var last_random_target: Character = null
 
 func interpret(
 	action: Action,
@@ -141,6 +141,7 @@ func interpret(
 		repeat.repeat_on_random_target = false
 
 		var random_target: Character = Random.randsample(repeat.valid_targets())
+		last_random_target = random_target
 		var repeat_effects: Dictionary[Character, Effect] = interpret(repeat, user, random_target)
 
 		for repeat_affected: Character in repeat_effects:
