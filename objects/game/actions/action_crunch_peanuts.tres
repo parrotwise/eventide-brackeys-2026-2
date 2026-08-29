@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://myx03h5t4cun"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_gyu3l"]
+[ext_resource type="Texture2D" uid="uid://dnlwevpwse270" path="res://assets/art/UI/buttons/skill_icon_pc2.png" id="2_gyu3l"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_kxjon"]
+
+[resource]
+script = ExtResource("3_kxjon")
+name = "Pick Up & Crunch"
+description = "Crunch on the peanuts, leaving none for the seagulls to fight over, and getting healed for 10 HP."
+icon = ExtResource("2_gyu3l")
+target_healing = 10
+crunch_peanuts = true
+range_type = 1
+target_group = 1
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

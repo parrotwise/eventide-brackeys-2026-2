@@ -122,8 +122,8 @@ func _on_action_used(
 			target.name
 		]
 	)
-	user.actor.do_action_as_user(action)
-	target.actor.do_action_as_target(action)
+	user.actor.do_action_as_user(action, target)
+	# target.actor.do_action_as_target(action)
 
 func _on_action_missed(
 	action: Action,
@@ -149,6 +149,7 @@ func _on_action_finished(
 			target.name
 		]
 	)
+	selector_component.cancel_action()
 	turn_tracker_component.end_current_turn()
 	
 	
@@ -231,6 +232,8 @@ func _on_round_started(round_number: int) -> void:
 
 func _on_battle_group_started(group_name: StringName) -> void:
 	Debug.debug("-- %s phase!" % group_name)
+	if group_name == turn_tracker_component.ALLIES_GROUP:
+		selector_component.select_ally(characters.ally_melee, false)
 
 
 func _on_turn_started(character: Character) -> void:

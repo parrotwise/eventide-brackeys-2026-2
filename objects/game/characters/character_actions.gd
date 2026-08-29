@@ -7,7 +7,12 @@ extends Node
 @export var skills: Array[Action] = []
 
 var actions: Array[Action]:
-	get: return Array([basic_attack, reposition], TYPE_OBJECT, &'Resource', Action) + skills
+	get: return Array([basic_attack, reposition], TYPE_OBJECT, &'Resource', Action) + skills + granted_actions
+var granted_actions: Array[Action]:
+	get: return Array(
+		character.state_component.active_statuses.reduce(func(accum, s): return accum + s.granted_actions, []),
+		TYPE_OBJECT, &'Resource', Action
+	)
 
 var character: Character
 
