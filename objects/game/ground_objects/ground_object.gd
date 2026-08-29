@@ -48,13 +48,11 @@ func _on_character_removed(removed_character: Character) -> void:
 	if character == removed_character:
 		var behind: Character = Game.level.characters.get_behind(character)
 		if is_instance_valid(behind):
-			Debug.error('BEHIUDN')
 			attach_to(behind)
 			return
 
 		var ahead: Character = Game.level.characters.get_ahead_of(character)
 		if is_instance_valid(ahead):
-			Debug.error('AHAED')
 			attach_to(ahead)
 			return
 		
