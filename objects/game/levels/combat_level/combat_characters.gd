@@ -127,10 +127,10 @@ func swap_places(char1: Character, char2: Character) -> void:
 	var index2: int = index_of(char2)
 
 	if index1 > index2:
-		while index_of(char1) == index2:
+		while index_of(char1) != index2:
 			move_forward(char1)
-	else:
-		while index_of(char2) == index1:
+	elif index1 < index2:
+		while index_of(char2) != index1:
 			move_forward(char2)
 
 
