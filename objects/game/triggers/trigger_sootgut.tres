@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://cy5iu4pd7cty"]
+
+[ext_resource type="Resource" uid="uid://b2ioqxt13grts" path="res://objects/game/effects/effect_trigger_sootgut.tres" id="1_b6nkm"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_b3hhw"]
+
+[resource]
+script = ExtResource("2_b3hhw")
+effect = ExtResource("1_b6nkm")
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

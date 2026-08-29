@@ -26,11 +26,14 @@ signal used(user: Character, target: Character)
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
 
+@export var reattach_sootgut: bool = false
+
 @export var cause_miss_action: bool = false
 @export var remove_source_status: bool = false
 @export var repeat_on_random_target: bool = false
 
 @export var applied_statuses: Array[Status] = []
+@export var created_objects: Array[PackedScene] = []
 
 @export_category("Targeting")
 

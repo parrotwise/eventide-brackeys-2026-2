@@ -16,10 +16,13 @@ signal applied()
 @export var pull_once: bool = false
 @export var pull_to_front: bool = false
 
+@export var reattach_sootgut: bool = false
+
 @export var cause_miss_action: bool = false
 @export var remove_source_status: bool = false
 
 @export var applied_statuses: Array[Status] = []
+@export var created_objects: Array[PackedScene] = []
 
 var source: Variant  # The parent Action or Status
 var owner: Character
@@ -72,6 +75,10 @@ func apply(bypass_queue: bool = false) -> void:
 	if pull_to_front:
 		while not Game.level.characters.is_in_melee(target):
 			Game.level.characters.move_forward(target)
+	if reattach_sootgut:
+		for object: GroundObject in Game.level.ground_objects.objects:
+			if object.name == &'Sootgut':
+				object.attach_to(target)
 	if cause_miss_action:
 		Game.level.effector_component.missed_actions.append(
 			Game.level.status_tracker_component.cached['last_action']
@@ -80,6 +87,8 @@ func apply(bypass_queue: bool = false) -> void:
 	## Persistent effects next
 	for status: Status in applied_statuses:
 		target.state_component.apply_status(status)
+	for object: PackedScene in created_objects:
+		Game.level.ground_objects.spawn(object, target)
 	
 	if remove_source_status:
 		source.owner.state_component.remove_status(source)

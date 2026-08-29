@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://hy5ygvykkm80"]
 
 [ext_resource type="Script" uid="uid://waknecaedevy" path="res://objects/game/ground_objects/ground_object.gd" id="1_ol3wm"]
-[ext_resource type="Resource" uid="uid://c573o6hrfas5b" path="res://objects/game/statuses/status_smashed.tres" id="2_0um3g"]
+[ext_resource type="Resource" uid="uid://dcrtsgkn70lf4" path="res://objects/game/statuses/status_sootgut.tres" id="2_l0njl"]
 [ext_resource type="Texture2D" uid="uid://dc1copvfunrsv" path="res://assets/art/characters/character_cook_cauldron_placeholder.png" id="2_m3x8b"]
 
-[node name="Cauldron" type="Node2D" unique_id=1307450514]
+[node name="Sootgut" type="Node2D" unique_id=1307450514]
 z_index = -10
 script = ExtResource("1_ol3wm")
-granted_status = ExtResource("2_0um3g")
+granted_status = ExtResource("2_l0njl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
 texture = ExtResource("2_m3x8b")

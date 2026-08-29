@@ -87,6 +87,12 @@ func interpret(
 		
 		effects[target].pull_to_front = true
 
+	if action.reattach_sootgut:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].reattach_sootgut = true
+
 	if action.cause_miss_action:
 		if target not in effects:
 			effects[target] = _new_effect(action, user, target)
@@ -99,11 +105,17 @@ func interpret(
 		
 		effects[target].remove_source_status = true
 	
-	if action.applied_statuses.size() > 0:                      # <-- new block
+	if action.applied_statuses:
 		if target not in effects:
 			effects[target] = _new_effect(action, user, target)
 		
 		effects[target].applied_statuses.append_array(action.applied_statuses)
+	
+	if action.created_objects:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].created_objects.append_array(action.created_objects)
 	
 	if action.repeat_on_random_target:
 		var repeat: Action = action.duplicate()

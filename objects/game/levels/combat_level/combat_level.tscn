@@ -16,7 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
 [ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="12_vqmb0"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="13_2btfv"]
+[ext_resource type="Resource" uid="uid://d2ho2uk0areot" path="res://objects/game/statuses/passive_galley_cat.tres" id="13_5g224"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
+[ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="14_rujrp"]
+[ext_resource type="Resource" uid="uid://c67tb1meupkio" path="res://objects/game/actions/skill_roll_the_pot.tres" id="15_o8mfa"]
 [ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
@@ -45,6 +49,12 @@ script = ExtResource("2_7qx2x")
 
 [node name="AllyFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="0" unique_id=1172588862 instance=ExtResource("12_vqmb0")]
 position = Vector2(740, 700)
+
+[node name="Actions" parent="Characters/Allies/AllyFront" index="4" unique_id=1878263473]
+skills = Array[ExtResource("13_2btfv")]([ExtResource("14_rujrp"), ExtResource("15_o8mfa")])
+
+[node name="State" parent="Characters/Allies/AllyFront" index="6" unique_id=1290732730]
+passive_status = ExtResource("13_5g224")
 
 [node name="AllyCenterFront" parent="Characters/Allies" parent_id_path=PackedInt32Array(726374269, 266524114) index="1" unique_id=1867423470 instance=ExtResource("1_5ksr3")]
 position = Vector2(540, 700)
@@ -102,3 +112,5 @@ combat_camera = NodePath("../Camera")
 test_status = ExtResource("13_m1tc0")
 
 [editable path="Characters"]
+[editable path="Characters/Allies/AllyFront"]
+[editable path="Characters/Allies/AllyFront/Indicators"]
