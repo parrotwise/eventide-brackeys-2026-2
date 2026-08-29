@@ -7,8 +7,6 @@ var target: Character = null
 
 
 func do_action_as_user(action: Action, _target: Character):
-	print(action.name)
-	
 	# Recall target
 	target = _target
 	
@@ -24,6 +22,7 @@ func do_action_as_user(action: Action, _target: Character):
 		&"Keelhaul Tug",
 		&"Laser-Focused",
 		&"Peanut Scatter",
+		&"Mug Toss",
 	]:
 		special()
 	
