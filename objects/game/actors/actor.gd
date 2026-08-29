@@ -3,13 +3,15 @@ class_name Actor extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-#
-# Main Action receiver
-#
+
 func do_action_as_user(action: Action):
+	if action.name == &"basic_attack":
+		pass
 	basic_attack()
 
 func do_action_as_target(action: Action):
+	if action.name == &"basic_attack":
+		pass
 	await get_tree().create_timer(0.6).timeout
 	hurt()
 

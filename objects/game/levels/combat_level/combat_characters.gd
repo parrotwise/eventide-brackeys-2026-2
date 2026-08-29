@@ -1,6 +1,8 @@
 class_name CombatCharacters
 extends Node
 
+@export var character_crewmembers: Array[PackedScene]
+@export var strategy_scene: PackedScene
 
 signal character_removed(character: Character)
 signal characters_repositioned(char1: Character, char2: Character)
@@ -32,6 +34,11 @@ var ally_selected_indicator: Sprite2D:
 	get: return $AllySelectedIndicator
 var enemy_targeted_indicator: Sprite2D:
 	get: return $EnemyTargetedIndicator
+
+
+func _ready() -> void:
+	first_round_crew_select()
+
 
 
 func _process(_delta: float) -> void:
@@ -174,3 +181,29 @@ func _move_by(steps: int, character: Character) -> void:
 				characters_repositioned.emit(frendos[i], frendos[i + 1])
 
 		character.get_parent().move_child(character, new_index)
+
+
+
+func first_round_crew_select() -> void:
+	character_crewmembers.shuffle()
+	for idx in len(character_crewmembers):
+		var character: Character = character_crewmembers[idx].instantiate()
+		character.name = [
+			"AllyFront",
+			"AllyCenterFront",
+			"AllyCenterRear",
+			"AllyRear",
+			"EnemyFront",
+			"EnemyCenterFront",
+			"EnemyCenterRear",
+			"EnemyRear",
+		][idx]
+		print(character.name)
+		if idx < 4:
+			$Allies.add_child(character)
+		else:
+			character.add_child(strategy_scene.instantiate())
+			$Enemies.add_child(character)
+	
+	for character in allies: character.position = target_position(character)
+	for character in enemies: character.position = target_position(character)
