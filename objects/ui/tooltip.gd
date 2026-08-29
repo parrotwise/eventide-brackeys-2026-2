@@ -13,7 +13,7 @@ extends Control
 @export var margin_top: int = 40
 @export var margin_right: int = 45
 @export var margin_bottom: int = 40
-@export var tooltip_size: Vector2 = Vector2(480, 280)
+@export var tooltip_rect_size: Vector2 = Vector2(480, 280)
 
 @export_group("")
 @export_enum("NE", "SE", "SW", "NW") var growth_direction: String = "NE"
@@ -181,4 +181,4 @@ func _on_hover_detection_mouse_exited() -> void:
 
 
 func _on_hover_timer_timeout() -> void:
-	grow_tooltip(tooltip_size)
+	grow_tooltip(tooltip_rect_size)

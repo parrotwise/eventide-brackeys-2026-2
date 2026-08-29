@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cg67efp7rslcw"]
 
-[ext_resource type="Script" uid="uid://ty17mm6pxof7" path="res://objects/game/levels/combat_effector.gd" id="1_3pwkr"]
+[ext_resource type="Script" uid="uid://ty17mm6pxof7" path="res://objects/game/levels/combat_level/combat_effector.gd" id="1_3pwkr"]
+
 
 [node name="Effector" type="Node2D" unique_id=755835823]
 script = ExtResource("1_3pwkr")

@@ -1,12 +1,39 @@
 [gd_scene format=3 uid="uid://ny1jdimt2uae"]
 
-[ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_ui.gd" id="1_mhon3"]
-[ext_resource type="Texture2D" uid="uid://c45diplw41fq6" path="res://assets/art/UI/bottom_bar_placeholder.png" id="2_3y8ts"]
+[ext_resource type="Script" uid="uid://p7i8kt3xpbb" path="res://objects/game/levels/combat_level/combat_ui.gd" id="1_mhon3"]
+[ext_resource type="Texture2D" uid="uid://cunhwgecy14kl" path="res://temp/chase/bottom_bar_particle1.png" id="2_df5b6"]
+[ext_resource type="Texture2D" uid="uid://ty7icd4jprp3" path="res://assets/art/UI/bounding bar bottom.png" id="2_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2q6"]
+
+[sub_resource type="Curve" id="Curve_1whi2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.87765956, 0.70786524), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_stt5f"]
+curve = SubResource("Curve_1whi2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5p4nv"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(960, 356, 0)
+emission_shape_scale = Vector3(960, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(0, -1, 0)
+spread = 2.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_stt5f")
+alpha_curve = SubResource("CurveTexture_stt5f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuj1j"]
 content_margin_left = 0.0
@@ -44,14 +71,22 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8q2q6")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="BottomPanel" unique_id=1905378653]
+amount = 48
+texture = ExtResource("2_df5b6")
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_5p4nv")
+
 [node name="PanelBG" type="TextureRect" parent="BottomPanel" unique_id=598273827]
 layout_mode = 2
-texture = ExtResource("2_3y8ts")
+texture = ExtResource("2_xuj1j")
 
 [node name="MarginContainer" type="MarginContainer" parent="BottomPanel" unique_id=647129931]
 layout_mode = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_right = 64
+theme_override_constants/margin_left = 676
+theme_override_constants/margin_top = 88
+theme_override_constants/margin_right = 676
 
 [node name="ButtonGroups" type="HBoxContainer" parent="BottomPanel/MarginContainer" unique_id=1732133601]
 layout_mode = 2

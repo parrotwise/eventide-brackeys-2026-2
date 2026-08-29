@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bt630geujiome"]
 
-[ext_resource type="Script" uid="uid://bwmuj8ofdby62" path="res://objects/game/levels/debug_menu.gd" id="1_5f6c3"]
+[ext_resource type="Script" uid="uid://bwmuj8ofdby62" path="res://objects/game/levels/combat_level/debug_menu.gd" id="1_5f6c3"]
 
 [node name="DebugMenu" type="CanvasLayer" unique_id=403288196]
 script = ExtResource("1_5f6c3")

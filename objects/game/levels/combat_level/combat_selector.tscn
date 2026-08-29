@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdulsr4pnewfm"]
 
-[ext_resource type="Script" uid="uid://c55dod6tid8hq" path="res://objects/game/levels/combat_selector.gd" id="1_2bdjh"]
+[ext_resource type="Script" uid="uid://c55dod6tid8hq" path="res://objects/game/levels/combat_level/combat_selector.gd" id="1_2bdjh"]
+
 
 [node name="Selector" type="Node" unique_id=157429735]
 script = ExtResource("1_2bdjh")

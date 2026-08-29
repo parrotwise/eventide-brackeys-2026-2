@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cro1alfwfqtjo"]
 
-[ext_resource type="Script" uid="uid://c02enhed1rulw" path="res://objects/game/levels/combat_preview.gd" id="1_7e448"]
+[ext_resource type="Script" uid="uid://c02enhed1rulw" path="res://objects/game/levels/combat_level/combat_preview.gd" id="1_7e448"]
+
 
 [node name="Preview" type="Node" unique_id=851398025]
 script = ExtResource("1_7e448")

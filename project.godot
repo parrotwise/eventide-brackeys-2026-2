@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Eventide Brackeys 2026.2"
-run/main_scene="uid://iocsq4dy46kl"
+run/main_scene="uid://ggq83ixkenly"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://cukbrwhqq3j4y"
 
@@ -30,7 +30,7 @@ Debug="*uid://cinaakpe340f0"
 Enums="*uid://mxuycahcqgn1"
 Game="*uid://dbyjtgtfj3gux"
 Settings="*uid://dkvas51q14o1f"
-Transition="*uid://chihi6xfv24vh"
+TransitionLayer="*uid://0sve2hke8hsn"
 
 [display]
 

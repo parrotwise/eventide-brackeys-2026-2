@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3sabn1gkxocr"]
 
-[ext_resource type="Script" uid="uid://df6xh61thiktx" path="res://objects/game/levels/combat_status_tracker.gd" id="1_2dqdh"]
+[ext_resource type="Script" uid="uid://df6xh61thiktx" path="res://objects/game/levels/combat_level/combat_status_tracker.gd" id="1_2dqdh"]
+
 
 [node name="StatusTracker" type="Node2D" unique_id=1132919478]
 script = ExtResource("1_2dqdh")
