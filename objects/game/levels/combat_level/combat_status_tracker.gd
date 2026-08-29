@@ -2,6 +2,10 @@ class_name CombatStatusTracker
 extends Node
 
 
+
+signal status_applied(status: Status)
+signal status_removed(status: Status)
+
 ## All active status effects in combat_level
 var _active_statuses: Array[Status] = []
 var active_statuses: Array[Status]:
@@ -25,12 +29,16 @@ func track(status: Status) -> void:
 	
 	_active_statuses.append(status)
 
+	status_applied.emit(status)
+
 
 func untrack(status: Status) -> void:
 	if status == null:
 		return
 	
 	_active_statuses.erase(status)
+
+	status_removed.emit(status)
 
 
 func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null) -> void:

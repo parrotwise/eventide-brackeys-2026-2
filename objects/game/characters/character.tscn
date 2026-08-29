@@ -14,8 +14,8 @@
 [ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="9_wshwh"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="10_3nt7m"]
 [ext_resource type="Resource" uid="uid://c541hasg75v4s" path="res://objects/game/actions/action_reposition.tres" id="10_5yqpb"]
-[ext_resource type="Resource" uid="uid://ciin03n82b3yr" path="res://objects/game/actions/action_test_splash.tres" id="10_wshwh"]
 [ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="12_nw1x3"]
+[ext_resource type="Resource" uid="uid://d4lhwyirvsffd" path="res://objects/game/actions/skill_mug_toss.tres" id="13_nw1x3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -45,7 +45,7 @@ polygon = PackedVector2Array(-102, -383, 109, -384, 189, -102, 185, -1, -200, -1
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
 basic_attack = ExtResource("9_wshwh")
 reposition = ExtResource("10_5yqpb")
-skills = Array[ExtResource("9_263tf")]([ExtResource("12_nw1x3"), ExtResource("10_wshwh")])
+skills = Array[ExtResource("9_263tf")]([ExtResource("12_nw1x3"), ExtResource("13_nw1x3")])
 
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
 

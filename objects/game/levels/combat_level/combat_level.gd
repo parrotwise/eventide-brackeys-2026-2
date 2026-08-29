@@ -42,6 +42,14 @@ func _ready() -> void:
 		_on_action_finished
 	)
 
+	status_tracker_component.status_applied.connect(
+		_on_status_applied
+	)
+
+	status_tracker_component.status_removed.connect(
+		_on_status_removed
+	)
+
 	selector_component.action_selected.connect(
 		_on_action_selected
 	)
@@ -126,6 +134,24 @@ func _on_action_selected(action: Action) -> void:
 		"%s has selected %s, targeting requested." % [
 			selector_component.current_user.name,
 			action.name,
+		]
+	)
+
+
+func _on_status_applied(status: Status) -> void:
+	Debug.debug(
+		"%s gained %s." % [
+			status.owner.name,
+			status.name
+		]
+	)
+
+
+func _on_status_removed(status: Status) -> void:
+	Debug.debug(
+		"%s lost %s." % [
+			status.owner.name,
+			status.name
 		]
 	)
 
