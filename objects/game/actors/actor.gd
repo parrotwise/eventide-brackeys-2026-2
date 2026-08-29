@@ -3,17 +3,33 @@ class_name Actor extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var target: Character = null
 
-func do_action_as_user(action: Action):
-	if action.name == &"basic_attack":
-		pass
-	basic_attack()
 
+func do_action_as_user(action: Action, _target: Character):
+	print(action.name)
+	
+	# Recall target
+	target = _target
+	
+	# Basic attack
+	if action.name == &"Basic Attack":
+		basic_attack()
+	# basic_attack()
+
+
+# No longer used.
 func do_action_as_target(action: Action):
 	if action.name == &"basic_attack":
 		pass
 	await get_tree().create_timer(0.6).timeout
 	hurt()
+
+
+# Target functions!
+func hurt_target() -> void:
+	if target == null: return
+	target.actor.hurt()
 
 
 #
