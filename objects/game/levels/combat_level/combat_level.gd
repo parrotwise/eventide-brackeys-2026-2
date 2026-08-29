@@ -120,7 +120,8 @@ func _on_action_used(
 			target.name
 		]
 	)
-	
+	user.actor.do_action_as_user(action)
+	target.actor.do_action_as_target(action)
 
 func _on_action_missed(
 	action: Action,
