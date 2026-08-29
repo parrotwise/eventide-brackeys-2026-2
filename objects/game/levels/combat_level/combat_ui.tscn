@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
 [ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
+[ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/menu/settings/settings_menu.tscn" id="7_wfv58"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2q6"]
 
@@ -58,6 +59,14 @@ script = ExtResource("1_mhon3")
 offset_right = 1920.0
 offset_bottom = 80.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="TopPanel" unique_id=1493146712]
+layout_mode = 2
+alignment = 2
+
+[node name="OpenSettingsButton" parent="TopPanel/HBoxContainer" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="BottomPanel" type="PanelContainer" parent="." unique_id=1035039101]
 anchors_preset = -1
 anchor_left = 0.5
@@ -100,7 +109,7 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="ActionButton1" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
+[node name="ActionButton1" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=850704800 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
 [node name="ActionButton2" parent="BottomPanel/MarginContainer/ButtonGroups/ActionButtons" unique_id=1133580714 instance=ExtResource("3_xuj1j")]
@@ -195,3 +204,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="SettingsMenu" parent="." unique_id=233459091 instance=ExtResource("7_wfv58")]
+visible = false
