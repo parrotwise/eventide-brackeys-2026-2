@@ -1,5 +1,7 @@
 extends Control
 
+@export var hover_area_control: Control
+
 @export_group("Text")
 @export var header: String
 @export_multiline() var description: String
@@ -49,6 +51,10 @@ func _ready() -> void:
 	
 	hide_components()
 	shrink_tooltip()
+	
+	if is_instance_valid(hover_area_control):
+		hover_area_control.mouse_entered.connect(_on_hover_detection_mouse_entered)
+		hover_area_control.mouse_exited.connect(_on_hover_detection_mouse_exited)
 	
 	hover_detection.size = parent.size
 	hover_timer.wait_time = popup_delay_time
