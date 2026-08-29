@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cnvdwcpltliaq"]
+
+[ext_resource type="Texture2D" uid="uid://b3d1gqjcwdri3" path="res://assets/art/UI/buttons/EQ BG.png" id="1_ahppr"]
+[ext_resource type="Texture2D" uid="uid://d0ua4bk70ltyo" path="res://assets/art/UI/buttons/EQ STATE_HOVER_CLICK.png" id="2_2145i"]
+[ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/UI/buttons/EQ STATE_HOVER.png" id="3_uu5am"]
+[ext_resource type="Texture2D" uid="uid://cysiryweubwqj" path="res://assets/art/UI/buttons/EQ FRAME.png" id="4_mom4l"]
+
+[node name="EquipmentButton" type="Control" unique_id=1720045075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonBG" type="TextureRect" parent="." unique_id=2007978541]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ahppr")
+
+[node name="TextureButton" type="TextureButton" parent="ButtonBG" unique_id=1885203549]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+texture_pressed = ExtResource("2_2145i")
+texture_hover = ExtResource("3_uu5am")
+
+[node name="ButtonFrame" type="TextureRect" parent="ButtonBG/TextureButton" unique_id=1877140784]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_mom4l")

@@ -31,6 +31,9 @@ var equipment: Array[Equipment]:
 
 var battle_group: StringName:
 	get:
+		if Game.level is not CombatLevel:
+			return ""
+		
 		if self in Game.level.characters.allies:
 			return ALLIES_GROUP
 
@@ -54,6 +57,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if Game.level is not CombatLevel:
+		return
+	
 	position = lerp(
 		position, Game.level.characters.target_position(self),
 		exp(-delta / Game.level.positioning_acceleration)

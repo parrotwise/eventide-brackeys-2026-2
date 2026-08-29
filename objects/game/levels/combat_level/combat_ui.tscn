@@ -85,6 +85,7 @@ amount = 48
 texture = ExtResource("2_df5b6")
 lifetime = 10.0
 preprocess = 10.0
+visibility_rect = Rect2(0, 0, 1920, 332)
 process_material = SubResource("ParticleProcessMaterial_5p4nv")
 
 [node name="PanelBG" type="TextureRect" parent="BottomPanel" unique_id=598273827]
@@ -139,13 +140,13 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="PassiveButton1" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
+[node name="EquipmentButton1" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
 layout_mode = 2
 
-[node name="ActionButton5" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
+[node name="EquipmentButton2" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
 layout_mode = 2
 
-[node name="PassiveButton2" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
+[node name="EquipmentButton3" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
 layout_mode = 2
 
 [node name="KeyboardReference" type="Panel" parent="." unique_id=339132650]

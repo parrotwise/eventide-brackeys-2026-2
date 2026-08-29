@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://5luk7pogr2hh"]
+
+[ext_resource type="Script" uid="uid://b2ekcq0ipf8om" path="res://objects/game/levels/equipment_level/equipment_level.gd" id="1_62xg3"]
+[ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/levels/combat_level/combat_selector.tscn" id="2_np0m2"]
+[ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="3_2wmpb"]
+[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="4_jx2we"]
+[ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="5_lki8f"]
+[ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/UI/tooltip_bg.png" id="6_qb0y3"]
+[ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/UI/buttons/action_button_bg.png" id="7_lki8f"]
+[ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/game/levels/equipment_level/equipment_button.tscn" id="7_qb0y3"]
+[ext_resource type="Texture2D" uid="uid://dvtvuqeg0ndex" path="res://assets/art/UI/buttons/action_button_state_hover_click.png" id="8_qb0y3"]
+[ext_resource type="Texture2D" uid="uid://imec5cigcf2t" path="res://assets/art/UI/buttons/action_button_frame.png" id="9_6ns6a"]
+
+[node name="EquipmentLevel" type="Node" unique_id=880102905]
+script = ExtResource("1_62xg3")
+
+[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_np0m2")]
+
+[node name="EquipmentUI" type="MarginContainer" parent="." unique_id=1158778040]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EquipmentUI" unique_id=1028307735]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="EquipmentUI/VBoxContainer" unique_id=1261341369]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 240
+
+[node name="CharacterLineup" type="HBoxContainer" parent="EquipmentUI/VBoxContainer/MarginContainer" unique_id=53195818]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EmptyMargin" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1040880111]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1358147867]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BigCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control" unique_id=1172588862 instance=ExtResource("3_2wmpb")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control2" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2001128688]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CookCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2" unique_id=1419386760 instance=ExtResource("4_jx2we")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control3" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1672219295]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3" unique_id=71019310 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control4" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1582122687]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4" unique_id=113403815 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control5" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=156658063]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5" unique_id=1635155941 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control6" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2065675409]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6" unique_id=157295870 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control7" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1667605264]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7" unique_id=1706409567 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Control8" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2056705033]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=1251105226 instance=ExtResource("5_lki8f")]
+scale = Vector2(0.6, 0.6)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="EquipmentUI/VBoxContainer" unique_id=453894118]
+layout_mode = 2
+
+[node name="CharDetails" type="MarginContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=2080650798]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1090526003]
+layout_mode = 2
+texture = ExtResource("6_qb0y3")
+patch_margin_left = 45
+patch_margin_top = 40
+patch_margin_right = 45
+patch_margin_bottom = 40
+
+[node name="NameLabel" type="RichTextLabel" parent="EquipmentUI/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1762530120]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="EquipmentUI/VBoxContainer/HBoxContainer2/CharDetails" unique_id=528470031]
+layout_mode = 2
+
+[node name="CenterStage" type="TextureRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=1234171814]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=1278958683]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_qb0y3")
+patch_margin_left = 45
+patch_margin_top = 40
+patch_margin_right = 45
+patch_margin_bottom = 40
+
+[node name="EquipmentLineup" type="VBoxContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect" unique_id=1955919361]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 892.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup" unique_id=1530348305]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="EquipmentButton" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1720045075 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton2" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1770892312 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton3" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=822442675 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton4" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1641624075 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton5" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1155204005 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton6" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=812728704 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton7" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=696158863 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EquipmentButton8" parent="EquipmentUI/VBoxContainer/HBoxContainer2/NinePatchRect/EquipmentLineup/GridContainer" unique_id=1884845518 instance=ExtResource("7_qb0y3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EmbarkBG" type="TextureRect" parent="." unique_id=1927924728]
+offset_left = 1345.0
+offset_top = 809.0
+offset_right = 1825.0
+offset_bottom = 989.0
+texture = ExtResource("7_lki8f")
+expand_mode = 1
+
+[node name="EmbarkButton" type="TextureButton" parent="EmbarkBG" unique_id=1178872426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_qb0y3")
+stretch_mode = 0
+
+[node name="Frame" type="TextureRect" parent="EmbarkBG/EmbarkButton" unique_id=660010874]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_6ns6a")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EmbarkBG/EmbarkButton" unique_id=1357070693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Embark"
+
+[connection signal="pressed" from="EmbarkBG/EmbarkButton" to="." method="_on_embark_button_pressed"]
