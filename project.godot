@@ -57,6 +57,7 @@ folder_colors={
 "res://objects/audio/": "green",
 "res://objects/game/": "orange",
 "res://objects/global/": "yellow",
+"res://objects/menu/": "teal",
 "res://objects/ui/": "pink",
 "res://temp/": "gray"
 }
