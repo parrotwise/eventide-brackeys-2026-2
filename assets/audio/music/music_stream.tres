@@ -1,3 +1,15 @@
 [gd_resource type="AudioStreamInteractive" format=3 uid="uid://bixgnuaaopfj1"]
 
+[ext_resource type="AudioStream" uid="uid://bi57d1s7yqx3s" path="res://assets/audio/music/track 1/Jam Track 1.ogg" id="1_jnr33"]
+[ext_resource type="AudioStream" uid="uid://l7urmpdrc23g" path="res://assets/audio/music/track 1/Jam Track 2.ogg" id="2_7637m"]
+
 [resource]
+clip_count = 2
+clip_0/name = &"Track 1"
+clip_0/stream = ExtResource("1_jnr33")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Track 2"
+clip_1/stream = ExtResource("2_7637m")
+clip_1/auto_advance = 1
+clip_1/next_clip = 0

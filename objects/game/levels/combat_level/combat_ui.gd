@@ -28,7 +28,9 @@ var close_settings_button: ActionButton:
 
 
 func _ready() -> void:
+	open_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	open_settings_button.pressed.connect(open_settings)
+	close_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	close_settings_button.pressed.connect(close_settings)
 
 
@@ -52,6 +54,7 @@ func set_action_buttons(character: Character) -> void:
 		for connection: Dictionary in button.pressed.get_connections():
 			button.pressed.disconnect(connection['callable'])
 		
+		button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 		button.pressed.connect(Game.level.selector_component.select_action.bind(action))
 
 

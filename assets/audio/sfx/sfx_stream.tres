@@ -8,8 +8,11 @@
 [ext_resource type="AudioStream" uid="uid://unylgee48yxh" path="res://assets/audio/sfx/attacks/explodey cat/EC_Attack_Var2 (no_fuse).wav" id="6_hcwfc"]
 [ext_resource type="AudioStream" uid="uid://bbgttxmvwr6nh" path="res://assets/audio/sfx/attacks/explodey cat/EC_Attack_Var2.wav" id="7_1tp0o"]
 [ext_resource type="AudioStream" uid="uid://bexpmgr7xhe2v" path="res://assets/audio/sfx/attacks/galley cat/GC_Attack_Var1.wav" id="8_5l3w7"]
+[ext_resource type="AudioStream" uid="uid://bfiwpvlu5m1jt" path="res://assets/audio/sfx/Eat_Crunch.wav" id="9_4dtmp"]
 [ext_resource type="AudioStream" uid="uid://6p2qnfjalob" path="res://assets/audio/sfx/attacks/galley cat/GC_Attack_Var2.wav" id="9_bth2q"]
 [ext_resource type="AudioStream" uid="uid://be0f2qg12hcqh" path="res://assets/audio/sfx/attacks/peanut cat/PC_Attack_Var1.wav" id="10_f0td4"]
+[ext_resource type="AudioStream" uid="uid://diju0amhobj2g" path="res://assets/audio/sfx/ui/UI_TestClick2.wav" id="10_l8bhl"]
+[ext_resource type="AudioStream" uid="uid://d2lo8bwfmif2m" path="res://assets/audio/sfx/ui/UI_TestClick.wav" id="11_iiq30"]
 [ext_resource type="AudioStream" uid="uid://x2k2c26tbnt4" path="res://assets/audio/sfx/attacks/peanut cat/PC_Attack_Var2.wav" id="11_swhgg"]
 [ext_resource type="AudioStream" uid="uid://cmeq8elgbaggc" path="res://assets/audio/sfx/attacks/rum cat/RC_Attack.wav" id="12_w4s2b"]
 [ext_resource type="AudioStream" uid="uid://b4mw40ol7hkcw" path="res://assets/audio/sfx/abilities/navigator cat/NC_Ability.wav" id="13_bbl3q"]
@@ -25,82 +28,93 @@
 [ext_resource type="AudioStream" uid="uid://bfva1kj00emhv" path="res://assets/audio/sfx/attacks/boarding hook cat/BHC_Attack_Var1.wav" id="23_vd543"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2jk48"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 1
 stream_0/stream = ExtResource("1_yksdq")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bvsir"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 1
 stream_0/stream = ExtResource("2_4dtmp")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6elbl"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("10_f0td4")
 stream_1/stream = ExtResource("11_swhgg")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gjr4y"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 1
 stream_0/stream = ExtResource("12_w4s2b")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bs88b"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 3
 stream_0/stream = ExtResource("14_8vbmb")
 stream_1/stream = ExtResource("15_i14qi")
 stream_2/stream = ExtResource("16_e6lix")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_exftr"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r64lq"]
+random_pitch = 1.1892071
+streams_count = 1
+stream_0/stream = ExtResource("9_4dtmp")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4krdr"]
 random_pitch = 1.122462
+streams_count = 2
+stream_0/stream = ExtResource("10_l8bhl")
+stream_1/stream = ExtResource("11_iiq30")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_exftr"]
+random_pitch = 1.1892071
 streams_count = 1
 stream_0/stream = ExtResource("13_bbl3q")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_05brr"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 1
 stream_0/stream = ExtResource("17_3m4ea")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qx7ml"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("18_2rb3v")
 stream_1/stream = ExtResource("19_4wyj2")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sbx13"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 3
 stream_0/stream = ExtResource("20_n4vkk")
 stream_1/stream = ExtResource("21_q58im")
 stream_2/stream = ExtResource("22_fc4ej")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oynfw"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("23_vd543")
 stream_1/stream = ExtResource("3_fft4r")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7qj84"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("4_l8bhl")
 stream_1/stream = ExtResource("6_hcwfc")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h74e6"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("5_iiq30")
 stream_1/stream = ExtResource("7_1tp0o")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t2v6l"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 streams_count = 2
 stream_0/stream = ExtResource("8_5l3w7")
 stream_1/stream = ExtResource("9_bth2q")
 
 [resource]
-clip_count = 13
+clip_count = 15
 clip_0/name = &"BC Ability Charge"
 clip_0/stream = SubResource("AudioStreamRandomizer_2jk48")
 clip_0/auto_advance = 0
@@ -140,4 +154,10 @@ clip_11/auto_advance = 0
 clip_12/name = &"SC Attack"
 clip_12/stream = SubResource("AudioStreamRandomizer_bs88b")
 clip_12/auto_advance = 0
+clip_13/name = &"Eat Crunch"
+clip_13/stream = SubResource("AudioStreamRandomizer_r64lq")
+clip_13/auto_advance = 0
+clip_14/name = &"UI Button"
+clip_14/stream = SubResource("AudioStreamRandomizer_4krdr")
+clip_14/auto_advance = 0
 initial_clip = 12

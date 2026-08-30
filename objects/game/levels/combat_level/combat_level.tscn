@@ -19,6 +19,7 @@
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
+positioning_acceleration = null
 
 [node name="Input" type="Node" parent="." unique_id=1408138918]
 script = ExtResource("2_7qx2x")

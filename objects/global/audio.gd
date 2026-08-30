@@ -16,6 +16,13 @@ enum Clip {
 	SC_ATTACK,
 	SC_ABILITY,
 	NC_ABILITY,
+	EAT_CRUNCH,
+	UI_BUTTON,
+}
+
+enum Track {
+	TRACK1,
+	TRACK2,
 }
 
 var master_volume: int
@@ -45,8 +52,10 @@ func play_sfx(clip: Clip, volume: float = 0.5) -> void:
 		sfx_player.play_clip(clip_name, volume)
 
 
-func play_music(clip_name: StringName, volume: float = 0.5) -> void:
-	music_player.play_clip(clip_name, volume)
+func play_music(track: Track, volume: float = 0.5) -> void:
+	var track_name: StringName = _pick_track(track)
+	if track_name:
+		music_player.play_clip(track_name, volume)
 
 
 func stop_music() -> void:
@@ -81,5 +90,19 @@ func _pick_clip(clip: Clip) -> StringName:
 			return &'SC Ability'
 		Clip.NC_ABILITY:
 			return &'NC Ability'
+		Clip.EAT_CRUNCH:
+			return &'Eat Crunch'
+		Clip.UI_BUTTON:
+			return &'UI Button'
+	
+	return &''
+
+
+func _pick_track(track: Track) -> StringName:
+	match track:
+		Track.TRACK1:
+			return &'Track 1'
+		Track.TRACK2:
+			return &'Track 2'
 	
 	return &''
