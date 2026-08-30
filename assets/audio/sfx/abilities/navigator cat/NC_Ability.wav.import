@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b4mw40ol7hkcw"
-path="res://.godot/imported/NC_Attack.wav-ce8ccbe849fb993c060024dd55bbd40a.sample"
+path="res://.godot/imported/NC_Ability.wav-58ceecf146d1a47448b17ee08810b292.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/attacks/navigator cat/NC_Attack.wav"
-dest_files=["res://.godot/imported/NC_Attack.wav-ce8ccbe849fb993c060024dd55bbd40a.sample"]
+source_file="res://assets/audio/sfx/abilities/navigator cat/NC_Ability.wav"
+dest_files=["res://.godot/imported/NC_Ability.wav-58ceecf146d1a47448b17ee08810b292.sample"]
 
 [params]
 
