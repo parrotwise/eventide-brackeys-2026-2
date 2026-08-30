@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c8l523x6hx5ok"]
+
+[ext_resource type="Script" uid="uid://dl2cqklg84u3c" path="res://objects/game/levels/cutscenes/cutscene_1.gd" id="1_3q0aq"]
+[ext_resource type="Texture2D" uid="uid://dxf6p4afwcyje" path="res://assets/art/narrative/cutscene_1_1.png" id="1_d3nk7"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_3q0aq"]
+[ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/UI/buttons/BIG BUTTON.png" id="3_7n60t"]
+[ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/UI/buttons/BIG BUTTON_HOVER.png" id="4_dy3c4"]
+[ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/UI/buttons/BIG BUTTON_MAP.bmp" id="5_rtp05"]
+
+[node name="Cutscene1" type="Control" unique_id=2001640636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3q0aq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1243475206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d3nk7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1042541063]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 73.0
+offset_right = 994.0
+offset_bottom = 584.0
+theme_override_colors/default_color = Color(0.101960786, 0.03529412, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3q0aq")
+theme_override_font_sizes/normal_font_size = 32
+text = "You are a rich, bored heir of an expansive(ly dilapidated) family, whose vaults are running dry. Dwindling gold supply wouldn't stop you from pursuing your latest foolish whim.
+Space-faring Buccaneering.
+
+Every dingy moon bursts with gold, undiscovered species and titillating substances to bring back and sell, or so you heard. And all it takes is a ship and a crew to prance your way to the prize and escort the bulging treasure chests back with you."
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=906150599]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 561.0
+offset_right = 718.0
+offset_bottom = 861.0
+texture_normal = ExtResource("3_7n60t")
+texture_hover = ExtResource("4_dy3c4")
+texture_click_mask = ExtResource("5_rtp05")
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton" unique_id=232847550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = 12.0
+offset_right = -80.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_fonts/normal_font = ExtResource("2_3q0aq")
+theme_override_font_sizes/normal_font_size = 48
+text = "Begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

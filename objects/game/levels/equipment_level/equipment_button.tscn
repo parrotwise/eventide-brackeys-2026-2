@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cnvdwcpltliaq"]
 
+[ext_resource type="Script" uid="uid://du4c7macge3em" path="res://objects/game/levels/equipment_level/equipment_button.gd" id="1_2145i"]
 [ext_resource type="Texture2D" uid="uid://b3d1gqjcwdri3" path="res://assets/art/UI/buttons/EQ BG.png" id="1_ahppr"]
 [ext_resource type="Texture2D" uid="uid://d0ua4bk70ltyo" path="res://assets/art/UI/buttons/EQ STATE_HOVER_CLICK.png" id="2_2145i"]
 [ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/UI/buttons/EQ STATE_HOVER.png" id="3_uu5am"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2145i")
 
 [node name="ButtonBG" type="TextureRect" parent="." unique_id=2007978541]
 layout_mode = 0
@@ -25,6 +27,22 @@ offset_right = 90.0
 offset_bottom = 90.0
 texture_pressed = ExtResource("2_2145i")
 texture_hover = ExtResource("3_uu5am")
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonBG/TextureButton" unique_id=921321203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Icon" type="TextureRect" parent="ButtonBG/TextureButton/MarginContainer" unique_id=1801949822]
+layout_mode = 2
+expand_mode = 3
 
 [node name="ButtonFrame" type="TextureRect" parent="ButtonBG/TextureButton" unique_id=1877140784]
 layout_mode = 0

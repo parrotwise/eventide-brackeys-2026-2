@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Eventide Brackeys 2026.2"
-run/main_scene="uid://ggq83ixkenly"
+run/main_scene="uid://c8l523x6hx5ok"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://cukbrwhqq3j4y"
 

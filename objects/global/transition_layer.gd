@@ -4,11 +4,16 @@ extends CanvasLayer
 signal transition_finished()
 
 
-#const intro_narrative: String = ""
-#const betrayal_narrative: String = ""
+const cutscene_1: String = ""
 const equipment_level: String = "res://objects/game/levels/equipment_level/equipment_level.tscn"
-const cutscene_3: String = "res://objects/game/levels/cutscenes/cutscene3.tscn"
+const cutscene_3: String = "res://objects/game/levels/cutscenes/cutscene_3.tscn"
+const cutscene_4: String = "res://objects/game/levels/cutscenes/cutscene_4.tscn"
 const combat_level: String = "res://objects/game/levels/combat_level/combat_level.tscn"
+const cutscene_6: String = ""
+const cutscene_7: String = ""
+const cutscene_9: String = ""
+const cutscene_10: String = ""
+const cutscene_11: String = ""
 
 var blindfold: ColorRect:
 	get: return $ColorRect
