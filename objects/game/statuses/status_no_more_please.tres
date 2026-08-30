@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://cjhb3if5mheih"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_ehhs1"]
+[ext_resource type="Texture2D" uid="uid://dy66vsxc6fux6" path="res://assets/art/UI/status_effect_icons/GC NO MORE PLEASE.png" id="2_ehhs1"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_2snhk"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_53x2u"]
+[ext_resource type="Resource" uid="uid://o17och1yx3qh" path="res://objects/game/triggers/trigger_no_more_please.tres" id="5_ehhs1"]
+
+[resource]
+script = ExtResource("3_2snhk")
+name = "No More Please"
+description = "For the next two turns, if you are hit by slung slop, you become stunned and lose your turn."
+icon = ExtResource("2_ehhs1")
+no_more_please = true
+triggers = Array[ExtResource("4_53x2u")]([ExtResource("5_ehhs1")])
+trigger_uses = 2

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://bgblpcgp7btdn"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_epcpq"]
+[ext_resource type="Resource" uid="uid://cjhb3if5mheih" path="res://objects/game/statuses/status_no_more_please.tres" id="2_6po1l"]
+[ext_resource type="Texture2D" uid="uid://dy66vsxc6fux6" path="res://assets/art/UI/status_effect_icons/GC NO MORE PLEASE.png" id="2_epcpq"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_4cw82"]
+
+[resource]
+script = ExtResource("3_4cw82")
+name = "Sling Slop"
+description = "Your Attack heals instead of dealing damage. Whenever a target is hit by slung slop, it receives a “No more, please” status that lasts for two turns."
+icon = ExtResource("2_epcpq")
+power_as_target_healing = true
+applied_statuses = Array[ExtResource("1_epcpq")]([ExtResource("2_6po1l")])
+target_group = 0
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

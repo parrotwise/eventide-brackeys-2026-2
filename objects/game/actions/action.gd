@@ -32,6 +32,7 @@ signal used(user: Character, target: Character)
 @export var reattach_sootgut: bool = false
 
 @export var cause_miss_action: bool = false
+@export var cause_lose_turn: bool = false
 @export var remove_source_status: bool = false
 @export var repeat_on_random_target: bool = false
 

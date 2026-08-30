@@ -132,6 +132,12 @@ func _on_combat_start() -> void:
 				fire_triggers(Enums.TriggerType.START_TURN, character)
 	)
 
+	Game.level.turn_tracker_component.turn_lost.connect(
+		func (character: Character):
+			if character in Game.level.characters.all:
+				fire_triggers(Enums.TriggerType.LOSE_TURN, character)
+	)
+
 	Game.level.turn_tracker_component.turn_ended.connect(
 		func (character: Character):
 			if character in Game.level.characters.all:

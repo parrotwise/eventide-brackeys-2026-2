@@ -117,6 +117,12 @@ func interpret(
 		
 		effects[target].cause_miss_action = true
 
+	if action.cause_lose_turn:
+		if target not in effects:
+			effects[target] = _new_effect(action, user, target)
+		
+		effects[target].cause_lose_turn = true
+
 	if action.remove_source_status:
 		if target not in effects:
 			effects[target] = _new_effect(action, user, target)

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://boew8mgia6e14"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_lonut"]
+[ext_resource type="Texture2D" uid="uid://h7c3x26e8jj6" path="res://assets/art/UI/status_effect_icons/STUNNED.png" id="2_lonut"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_1au8w"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_cd66i"]
+[ext_resource type="Resource" uid="uid://bumlgdpx5ft1b" path="res://objects/game/triggers/trigger_stunned.tres" id="5_twlg0"]
+
+[resource]
+script = ExtResource("3_1au8w")
+name = "Stunned"
+description = "You lose your next turn."
+icon = ExtResource("2_lonut")
+triggers = Array[ExtResource("4_cd66i")]([ExtResource("5_twlg0")])
+trigger_uses = 1

@@ -37,6 +37,7 @@ enum TriggerType {
 	HEALING_RECEIVED,
 	USING_ACTION,
 	START_TURN,
+	LOSE_TURN,
 	END_TURN,
 }
 

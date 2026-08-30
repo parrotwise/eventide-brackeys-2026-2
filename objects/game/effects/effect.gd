@@ -21,6 +21,7 @@ signal applied()
 @export var reattach_sootgut: bool = false
 
 @export var cause_miss_action: bool = false
+@export var cause_lose_turn: bool = false
 @export var remove_source_status: bool = false
 
 @export var applied_statuses: Array[Status] = []
@@ -93,6 +94,8 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.level.effector_component.missed_actions.append(
 			Game.level.status_tracker_component.cached['last_action']
 		)
+	if cause_lose_turn:
+		Game.level.turn_tracker_component.lose_turn(target)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:

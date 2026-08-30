@@ -9,11 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://btawv8utacr3n" path="res://objects/game/characters/character_animator.tscn" id="7_warpo"]
 [ext_resource type="Script" uid="uid://cskhgupgayaci" path="res://objects/game/characters/character_input.gd" id="8_v3xvm"]
 [ext_resource type="PackedScene" uid="uid://buqosmy4njdvg" path="res://objects/game/characters/character_actions.tscn" id="9_7e32w"]
-[ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="10_n1fd4"]
+[ext_resource type="Resource" uid="uid://bgblpcgp7btdn" path="res://objects/game/actions/action_sling_slop.tres" id="10_3og5f"]
 [ext_resource type="Resource" uid="uid://c541hasg75v4s" path="res://objects/game/actions/action_reposition.tres" id="11_r13gu"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="12_qs10e"]
 [ext_resource type="Resource" uid="uid://c67tb1meupkio" path="res://objects/game/actions/skill_roll_the_pot.tres" id="13_3og5f"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="15_y8t4a"]
+[ext_resource type="Resource" uid="uid://d2ho2uk0areot" path="res://objects/game/statuses/passive_galley_cat.tres" id="16_f837q"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
 
@@ -48,7 +49,7 @@ script = ExtResource("8_v3xvm")
 polygon = PackedVector2Array(-100, -300, 100, -300, 100, 0, -100, 0)
 
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("9_7e32w")]
-basic_attack = ExtResource("10_n1fd4")
+basic_attack = ExtResource("10_3og5f")
 reposition = ExtResource("11_r13gu")
 skills = Array[ExtResource("12_qs10e")]([ExtResource("13_3og5f")])
 
@@ -57,6 +58,7 @@ skills = Array[ExtResource("12_qs10e")]([ExtResource("13_3og5f")])
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
 base_power = 11
 max_health = 110
+passive_status = ExtResource("16_f837q")
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
 

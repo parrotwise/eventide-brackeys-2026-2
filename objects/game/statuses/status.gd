@@ -24,6 +24,7 @@ signal removed(character: Character)
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
 @export var can_attack_twice: bool = false
+@export var no_more_please: bool = false
 @export var granted_actions: Array[Action] = []
 
 @export_group("Triggers")
@@ -80,6 +81,9 @@ func remove_trigger(trigger: Trigger) -> void:
 
 
 func modify_effect(effect: Effect) -> Effect:
+	if effect.source.name == &'Sling Slop' and no_more_please:
+		effect.cause_lose_turn = true
+	
 	if owner == effect.owner:
 		effect.damage = floori(effect.damage * damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder

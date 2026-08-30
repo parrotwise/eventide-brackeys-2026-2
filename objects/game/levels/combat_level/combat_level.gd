@@ -88,6 +88,10 @@ func _ready() -> void:
 		_on_turn_started
 	)
 
+	turn_tracker_component.turn_lost.connect(
+		_on_turn_lost
+	)
+
 	turn_tracker_component.turn_ended.connect(
 		_on_turn_ended
 	)
@@ -242,6 +246,10 @@ func _on_turn_started(character: Character) -> void:
 		selector_component.resume()
 	if character.strategy_component:
 		character.strategy_component.take_turn()
+
+
+func _on_turn_lost(character: Character) -> void:
+	Debug.debug("%s's turn was lost!" % character.name)
 
 
 func _on_turn_ended(character: Character) -> void:
