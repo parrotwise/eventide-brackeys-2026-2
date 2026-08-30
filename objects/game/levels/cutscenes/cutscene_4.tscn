@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cnl6mnexrfvoq"]
 
+[ext_resource type="Script" uid="uid://c6xt1bgtye3jx" path="res://objects/game/levels/cutscenes/cutscene_4.gd" id="1_2ukia"]
 [ext_resource type="Texture2D" uid="uid://c5mpwawvyo5na" path="res://assets/art/narrative/cutscene_4_1.png" id="1_q5j6p"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_xfnc4"]
 
 [node name="Cutscene4" type="Control" unique_id=38669092]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ukia")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1431666020]
 layout_mode = 1
@@ -19,3 +22,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_q5j6p")
 expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=460549657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 512
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer" unique_id=1552977941]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("2_xfnc4")
+theme_override_font_sizes/normal_font_size = 38
+text = "For you hired, from odds and ends, the most backstab-happy, scheming crew of bastards in this stellar cluster. They don't trust you, and they don't trust each other. You'd best hope that, when their inevitable mutiny happens, at least some of them will be willing to stay by your side."
+horizontal_alignment = 1
+vertical_alignment = 2

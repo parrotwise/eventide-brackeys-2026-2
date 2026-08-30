@@ -9,7 +9,6 @@ script = ExtResource("4_uddav")
 name = "Roll the Pot"
 description = "Reposition the big pot (called Sootgut) onto any other position. While on the spot with Sootgut, a cat receives a 50% reduction to all incoming attack damage."
 icon = ExtResource("2_ljms8")
-sfx = 7
 reattach_sootgut = true
 target_group = 1
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ducfs0a8wbm8k" path="res://objects/game/levels/cutscenes/cutscene_3.gd" id="1_enfca"]
 [ext_resource type="Texture2D" uid="uid://pvvy6bg04vcv" path="res://assets/art/narrative/cutscene_3_1.png" id="2_uxxsw"]
 [ext_resource type="Texture2D" uid="uid://c7tmtdew48mb0" path="res://assets/art/narrative/cutscene_3_2.png" id="3_5hyj3"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_uxxsw"]
 [ext_resource type="Texture2D" uid="uid://dsbbrf2kdfbq4" path="res://assets/art/narrative/cutscene_3_3.png" id="4_6k1m2"]
 
 [node name="Cutscene3" type="Control" unique_id=146561386]
@@ -37,17 +38,71 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(-1000, 0)
 texture = ExtResource("2_uxxsw")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/Panel1" unique_id=1332837226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_uxxsw")
+theme_override_font_sizes/normal_font_size = 32
+text = "You have overpayed greatly for every trinket, tool, crew member, and the eagerly-sold ship, Mendacity."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Panel2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2008527534]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(1000, -500)
 texture = ExtResource("3_5hyj3")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/Panel2" unique_id=1244387528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_uxxsw")
+theme_override_font_sizes/normal_font_size = 32
+text = "You hope that was enough to earn their loyalty and camaraderie."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Panel3" type="TextureRect" parent="VBoxContainer" unique_id=380019002]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 550)
 texture = ExtResource("4_6k1m2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel3" unique_id=1046466993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("3_uxxsw")
+theme_override_font_sizes/normal_font_size = 32
+text = "It was not."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Borders" type="Control" parent="." unique_id=103509093]
 anchors_preset = 0

@@ -10,7 +10,6 @@ script = ExtResource("3_rekjr")
 name = "Jaw Cruncher"
 description = "Take a charging stance. At the beginning of your team’s next turn, deliver a devastating 40-damage punch in front of you."
 icon = ExtResource("2_bnbmo")
-sfx = 2
 applied_statuses = Array[ExtResource("1_bnbmo")]([ExtResource("2_qg2j7")])
 range_type = 1
 target_group = 1
