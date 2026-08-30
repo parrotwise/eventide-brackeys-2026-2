@@ -13,6 +13,7 @@ var character: Character
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	input_event.connect(_on_input_event)
 
 
@@ -22,6 +23,11 @@ func set_flip(flip: bool = true) -> void:
 
 func _on_mouse_entered() -> void:
 	selected.emit()
+	character.label.show()
+
+
+func _on_mouse_exited() -> void:
+	character.label.hide()
 
 
 func _on_input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:

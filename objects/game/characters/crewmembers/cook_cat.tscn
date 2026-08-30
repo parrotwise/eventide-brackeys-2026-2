@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://d2ho2uk0areot" path="res://objects/game/statuses/passive_galley_cat.tres" id="16_f837q"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="17_o6av3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("3_xcks8")
@@ -59,6 +60,24 @@ skills = Array[ExtResource("12_qs10e")]([ExtResource("13_3og5f")])
 base_power = 11
 max_health = 110
 passive_status = ExtResource("16_f837q")
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=270804895]
+visible = false
+anchors_preset = -1
+offset_left = -120.0
+offset_top = -360.0
+offset_right = 120.0
+offset_bottom = -320.0
+theme_override_colors/default_color = Color(1, 0.78466666, 0.32, 0.8156863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("17_o6av3")
+theme_override_font_sizes/normal_font_size = 24
+text = "Scuttler O’Riley"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
 

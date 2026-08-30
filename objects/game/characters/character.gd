@@ -9,6 +9,8 @@ var actor: Actor:
 	get: return $Actor
 var sprite: Sprite2D:
 	get: return $Sprite
+var label: RichTextLabel:
+	get: return $Name
 var animator_component: CharacterAnimator:
 	get: return $Animator
 var input_component: CharacterInput:
@@ -47,6 +49,7 @@ func _ready() -> void:
 	Game.start.connect(_on_combat_start)
 
 	animator_component.character = self
+	input_component.character = self
 	state_component.character = self
 	actions_component.character = self
 	equipment_component.character = self

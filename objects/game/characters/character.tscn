@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://c541hasg75v4s" path="res://objects/game/actions/action_reposition.tres" id="10_5yqpb"]
 [ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="12_nw1x3"]
 [ext_resource type="Resource" uid="uid://d4lhwyirvsffd" path="res://objects/game/actions/skill_mug_toss.tres" id="13_nw1x3"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="17_o0fxq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -56,6 +57,24 @@ skills = Array[ExtResource("9_263tf")]([ExtResource("12_nw1x3"), ExtResource("13
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
 
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=851659538]
+visible = false
+anchors_preset = -1
+offset_left = -120.0
+offset_top = -360.0
+offset_right = 120.0
+offset_bottom = -320.0
+theme_override_colors/default_color = Color(1, 0.78466666, 0.32, 0.8156863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("17_o0fxq")
+theme_override_font_sizes/normal_font_size = 24
+text = "Gut-you Gutierrez"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("10_3nt7m")]
 
