@@ -10,6 +10,6 @@ name = "Reposition"
 description = "Swap places with an adjacent ally."
 icon = ExtResource("1_0utaq")
 swap_places = true
-range_type = 3
+range_type = 4
 target_group = 1
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"
