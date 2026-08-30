@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
 [ext_resource type="Texture2D" uid="uid://q2qoyq731rw1" path="res://assets/art/UI/menu_close_hover.png" id="6_m7apa"]
 [ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/menu/settings/settings_menu.tscn" id="7_wfv58"]
+[ext_resource type="Texture2D" uid="uid://c70csi33cgy8k" path="res://assets/art/UI/buttons/passive_icon_sc_hover.png" id="11_u1is4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p4nv"]
 
@@ -153,9 +154,10 @@ custom_minimum_size = Vector2(142, 214)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-icon_texture = ExtResource("5_xuj1j")
+icon_texture = null
 frame_texture = null
-inner_texture_hover = null
+inner_texture_normal = ExtResource("5_xuj1j")
+inner_texture_hover = ExtResource("11_u1is4")
 background_texture = null
 
 [node name="EquipmentButtons" type="HFlowContainer" parent="BottomPanel/MarginContainer/ButtonGroups" unique_id=672581597]
