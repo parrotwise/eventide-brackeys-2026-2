@@ -19,7 +19,6 @@ run/main_scene="uid://c8l523x6hx5ok"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
 boot_splash/image="uid://dkxav8844g5e0"
-config/icon="uid://cukbrwhqq3j4y"
 
 [audio]
 
@@ -42,14 +41,9 @@ window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://b5tem4r0krdw6"
 mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg")
-
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray",
 "res://assets/": "gray",
 "res://assets/art/": "blue",
 "res://assets/art/shaders/": "blue",
