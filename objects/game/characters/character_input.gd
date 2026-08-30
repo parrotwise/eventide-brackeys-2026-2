@@ -28,8 +28,6 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	character.label.hide()
-
-func _on_mouse_exited() -> void:
 	Game.pointer.return_to_previous()
 
 func _on_input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
