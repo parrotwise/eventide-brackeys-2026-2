@@ -25,6 +25,7 @@ texture = ExtResource("1_ahppr")
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 90.0
+disabled = true
 toggle_mode = true
 texture_pressed = ExtResource("2_2145i")
 texture_hover = ExtResource("3_uu5am")
@@ -50,3 +51,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_mom4l")
+
+[connection signal="toggled" from="ButtonBG/TextureButton" to="." method="_on_texture_button_toggled"]

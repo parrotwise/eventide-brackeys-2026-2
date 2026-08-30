@@ -1,7 +1,17 @@
+class_name EquipmentButton
 extends Control
 
 
+signal equipment_selected(equipment: Equipment, is_equipped: bool)
+
 @export var equipment: Equipment
+
+var disabled: bool:
+	set(state):
+		button.disabled = state
+
+var button: TextureButton:
+	get: return $ButtonBG/TextureButton
 
 var eq_icon: TextureRect:
 	get: return $ButtonBG/TextureButton/MarginContainer/Icon
@@ -15,3 +25,7 @@ func _ready() -> void:
 		return
 	
 	eq_icon.texture = equipment.icon
+
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	equipment_selected.emit(equipment, toggled_on)
