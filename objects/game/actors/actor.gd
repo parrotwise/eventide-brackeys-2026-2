@@ -4,7 +4,7 @@ class_name Actor extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var target: Character = null
-
+var in_stance: bool = false
 
 func do_action_as_user(action: Action, _target: Character):
 	# Recall target
@@ -26,8 +26,20 @@ func do_action_as_user(action: Action, _target: Character):
 	]:
 		special()
 	
+	if action.name == &"Jaw Cruncher":
+		in_stance = true
+		enter_stance()
+	
 	
 	# basic_attack()
+
+
+func fire_effect(effect: Effect) -> void:
+	print(effect.name)
+	target = effect.target
+	
+	if effect.name == &"Jaw Cruncher":
+		special()
 
 
 # No longer used.
@@ -65,14 +77,25 @@ func basic_attack() -> void:
 func hurt() -> void:
 	if animation_player.has_animation(&"hurt"):
 		animation_player.play(&"hurt")
-	if animation_player.has_animation(&"idle"):
-		animation_player.queue(&"idle")
+	if in_stance:
+		if animation_player.has_animation(&"stance"):
+			animation_player.queue(&"stance")
+	else:
+		if animation_player.has_animation(&"idle"):
+			animation_player.queue(&"idle")
 
 func special() -> void:
 	if animation_player.has_animation(&"special"):
 		animation_player.play(&"special")
 	if animation_player.has_animation(&"idle"):
 		animation_player.queue(&"idle")
+	in_stance = false
+
+func enter_stance() -> void:
+	if animation_player.has_animation(&"enter_stance"):
+		animation_player.play(&"enter_stance")
+	if animation_player.has_animation(&"stance"):
+		animation_player.queue(&"stance")
 
 func dead() -> void:
 	pass

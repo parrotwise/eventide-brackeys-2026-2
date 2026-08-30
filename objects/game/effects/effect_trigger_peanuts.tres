@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_18ka0")
+name = "Peanuts"
 damage = 20
 applied_statuses = Array[ExtResource("1_567w6")]([ExtResource("2_7issn")])
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"
