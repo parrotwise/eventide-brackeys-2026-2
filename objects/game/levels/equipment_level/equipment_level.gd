@@ -34,4 +34,4 @@ func save_equipment_selection() -> void:
 
 
 func _on_embark_button_pressed() -> void:
-	TransitionLayer.simple_fade(TransitionLayer.combat_level)
+	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
