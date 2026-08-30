@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://cfdoon4fllx7j" path="res://assets/art/particles/bubble_particle_material.tres" id="7_2f26l"]
 [ext_resource type="Material" uid="uid://ce0inw36sd7cn" path="res://assets/art/particles/green_drop_particle_material.tres" id="8_33amg"]
 [ext_resource type="Texture2D" uid="uid://cwwnaj7njfnyk" path="res://assets/art/particles/green_drop_particle.png" id="8_fpu1i"]
-[ext_resource type="Texture2D" uid="uid://ooj4qf6fxnm7" path="res://assets/art/UI/targetindicator_placeholder.png" id="9_fpu1i"]
+[ext_resource type="Texture2D" uid="uid://b534bd8x5bleb" path="res://assets/art/UI/target_indicator.png" id="10_jx2bi"]
 
 [sub_resource type="Animation" id="Animation_kwy1m"]
 length = 0.001
@@ -98,10 +98,11 @@ process_material = ExtResource("8_33amg")
 
 [node name="SelectionIndicator" type="Sprite2D" parent="." unique_id=1354094930]
 visible = false
+modulate = Color(0.96583325, 0.59000003, 1, 1)
 position = Vector2(0, -480)
-texture = ExtResource("9_fpu1i")
+texture = ExtResource("10_jx2bi")
 
 [node name="TargetIndicator" type="Sprite2D" parent="." unique_id=404935642]
 visible = false
 position = Vector2(0, -480)
-texture = ExtResource("9_fpu1i")
+texture = ExtResource("10_jx2bi")
