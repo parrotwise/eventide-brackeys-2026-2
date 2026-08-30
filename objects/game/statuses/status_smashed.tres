@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://c573o6hrfas5b"]
 
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_27nap"]
 [ext_resource type="Texture2D" uid="uid://bgx0iyq51unra" path="res://assets/art/UI/status_effect_icons/RC SMASHED.png" id="1_vqiby"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_cci3m"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_27nap"]

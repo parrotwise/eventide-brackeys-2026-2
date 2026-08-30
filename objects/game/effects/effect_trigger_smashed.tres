@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_84dt8")
+name = "Smashed"
 cause_miss_action = true
 remove_source_status = true
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

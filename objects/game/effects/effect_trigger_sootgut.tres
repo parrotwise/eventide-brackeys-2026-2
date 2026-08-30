@@ -6,5 +6,6 @@
 
 [resource]
 script = ExtResource("2_ks341")
+name = "Sootgut"
 created_objects = Array[PackedScene]([ExtResource("2_56if4")])
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

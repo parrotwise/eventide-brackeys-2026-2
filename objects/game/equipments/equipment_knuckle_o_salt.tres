@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cmpd8bm3e6f4b"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_hj5t0"]
+[ext_resource type="Resource" uid="uid://c2l6765qnv65m" path="res://objects/game/statuses/status_knuckle_o_salt.tres" id="1_j60rd"]
+[ext_resource type="Texture2D" uid="uid://cw6xwbq0dhaqp" path="res://assets/art/UI/equipment_icons/KNUCKLEOSALT.png" id="2_5omi3"]
+
+[resource]
+script = ExtResource("1_hj5t0")
+name = "Knockle'O'Salt"
+description = "Your Attacks make the target move backwards."
+icon = ExtResource("2_5omi3")
+equipped_status = ExtResource("1_j60rd")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

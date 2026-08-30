@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://crf51q2xavihq"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_ebwul"]
+[ext_resource type="Resource" uid="uid://d3qb0plalw5l1" path="res://objects/game/statuses/status_eelskin.tres" id="1_t81w4"]
+[ext_resource type="Texture2D" uid="uid://cs0mj1hfkft30" path="res://assets/art/UI/equipment_icons/EELSKIN.png" id="2_8khro"]
+
+[resource]
+script = ExtResource("1_ebwul")
+name = "Eelskin"
+description = "You reflect 30% of the incoming damage onto an adjacent ally."
+icon = ExtResource("2_8khro")
+equipped_status = ExtResource("1_t81w4")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -6,6 +6,8 @@ signal applied()
 
 @export_group("Effect Definition")
 
+@export var name: String = ""
+
 @export var damage: int = 0
 @export var damage_explosive: int = 0
 @export var healing: int = 0

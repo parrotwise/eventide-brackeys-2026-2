@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://p66q3h0sfvma"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_g2jjb"]
+[ext_resource type="Resource" uid="uid://bemjfmlcmr14e" path="res://objects/game/statuses/status_crusty_smoking_pipe.tres" id="1_ksdpv"]
+[ext_resource type="Texture2D" uid="uid://crbohdv30xsr8" path="res://assets/art/UI/equipment_icons/CRUSTY SMOKING PIPE.png" id="2_kxpjp"]
+
+[resource]
+script = ExtResource("1_g2jjb")
+name = "Crusty Smoking Pipe"
+description = "Your HP is reduced by 40%. "
+icon = ExtResource("2_kxpjp")
+equipped_status = ExtResource("1_ksdpv")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

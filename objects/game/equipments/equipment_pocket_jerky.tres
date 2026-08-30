@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cvrp3m2dh8si7"]
+
+[ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_bo3jw"]
+[ext_resource type="Texture2D" uid="uid://cguamxewcgph5" path="res://assets/art/UI/equipment_icons/POCKET OF JERKY.png" id="1_ksh4x"]
+[ext_resource type="Resource" uid="uid://cn58ywj1ko5lp" path="res://objects/game/statuses/status_pocket_jerky.tres" id="1_nw7lx"]
+
+[resource]
+script = ExtResource("1_bo3jw")
+name = "Pocket of Jerky"
+description = "When receiving damage, you heal adjacent teammates for 5 HP."
+icon = ExtResource("1_ksh4x")
+equipped_status = ExtResource("1_nw7lx")
+metadata/_custom_type_script = "uid://bdnm15wvsdye"

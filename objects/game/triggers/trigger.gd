@@ -26,8 +26,13 @@ func fire(specific_target: Character = null) -> void:
 					if effect.owner in Game.level.characters.enemies else
 					Game.level.characters.enemy_melee
 				)
+			Enums.TargetType.CHARACTER_AHEAD:
+				effect.target = Game.level.characters.get_ahead_of(effect.owner)
 	
 	# Resource instance modified in-place
 	Game.level.status_tracker_component.modify_effect(effect)
-
+	
 	effect.apply(bypass_queue)
+	
+	# Let the actor know of a triggered effect
+	effect.owner.actor.fire_effect(effect)
