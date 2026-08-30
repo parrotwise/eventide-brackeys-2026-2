@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Action" format=3 uid="uid://b320v74t8cub1"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_se75s"]
+[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/UI/status_effect_icons/PC PEANUTS.png" id="2_se75s"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_xwicr"]
+
+[resource]
+script = ExtResource("3_xwicr")
+name = "Throw Hardtack"
+description = "Deal damage, then heal for the same amount."
+icon = ExtResource("2_se75s")
+power_as_target_damage = true
+power_as_target_healing = true
+free_action = true
+metadata/_custom_type_script = "uid://b3ummvu47lsv6"

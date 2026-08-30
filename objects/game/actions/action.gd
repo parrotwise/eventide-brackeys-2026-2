@@ -38,6 +38,7 @@ signal used(user: Character, target: Character)
 
 @export var applied_statuses: Array[Status] = []
 @export var created_objects: Array[PackedScene] = []
+@export var free_action: bool = false
 
 @export_category("Targeting")
 

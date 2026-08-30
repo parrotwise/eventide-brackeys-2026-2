@@ -154,7 +154,12 @@ func _on_action_finished(
 		]
 	)
 	selector_component.cancel_action()
-	turn_tracker_component.end_current_turn()
+
+	if action.free_action:
+		selector_component.resume()
+	else:
+		turn_tracker_component.end_current_turn()
+	
 	
 	
 func _on_action_selected(action: Action) -> void:
