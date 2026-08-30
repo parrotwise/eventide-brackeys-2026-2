@@ -3,7 +3,7 @@ extends Area2D
 
 
 signal selected()
-signal submitted()
+signal submitted(character: Character)
 
 var input_area: CollisionPolygon2D:
 	get: return $InputArea
@@ -33,7 +33,7 @@ func _on_mouse_exited() -> void:
 func _on_input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed(&'left_click'):
 		# TODO: If no action selected, and target valid for basic attack XOR reposition, select that action first
-		submitted.emit()
+		submitted.emit(character)
 	elif event.is_action_pressed(&'right_click'):
 		# TODO: If no action selected, and target valid for basic attack AND reposition, select reposition then submit as above
 		viewport.set_input_as_handled()

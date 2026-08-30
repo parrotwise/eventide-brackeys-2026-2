@@ -9,7 +9,6 @@ script = ExtResource("1_rsfff")
 name = "Keelhaul Tug"
 description = "Drag an enemy cat to the front of its party, no matter the position, dealing 10 damage to it in the process."
 icon = ExtResource("1_bk00b")
-sfx = 4
 target_damage = 10
 pull_to_front = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

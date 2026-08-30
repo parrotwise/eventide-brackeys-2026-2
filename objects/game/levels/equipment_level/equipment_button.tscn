@@ -25,6 +25,7 @@ texture = ExtResource("1_ahppr")
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 90.0
+toggle_mode = true
 texture_pressed = ExtResource("2_2145i")
 texture_hover = ExtResource("3_uu5am")
 

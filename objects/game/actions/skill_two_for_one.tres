@@ -9,7 +9,6 @@ script = ExtResource("4_8rds7")
 name = "Two for One"
 description = "Perform a basic attack, with another basic attack being shot at a random enemy."
 icon = ExtResource("3_oan5t")
-sfx = 12
 power_as_target_damage = true
 repeat_on_random_target = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

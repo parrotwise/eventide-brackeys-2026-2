@@ -7,7 +7,7 @@ var inventories: Dictionary:
 	get: return Game.inventories
 var character_lineup: HBoxContainer:
 	get: return %CharacterLineup
-var center_stage: TextureRect:
+var center_stage: Control:
 	get: return %CenterStage
 
 var selected_character: Character
@@ -35,3 +35,11 @@ func save_equipment_selection() -> void:
 
 func _on_embark_button_pressed() -> void:
 	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
+
+
+func _on_character_selected(char: Character) -> void:
+	var selected_ally: Character = char.duplicate()
+	selected_ally.scale = 1.5 * Vector2.ONE
+	for child in center_stage.get_children():
+		child.queue_free()
+	center_stage.add_child(selected_ally)

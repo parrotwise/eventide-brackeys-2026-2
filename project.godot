@@ -17,6 +17,8 @@ warnings/check_invalid_track_paths=false
 config/name="Eventide Brackeys 2026.2"
 run/main_scene="uid://c8l523x6hx5ok"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/stretch_mode=0
+boot_splash/image="uid://dkxav8844g5e0"
 config/icon="uid://cukbrwhqq3j4y"
 
 [audio]

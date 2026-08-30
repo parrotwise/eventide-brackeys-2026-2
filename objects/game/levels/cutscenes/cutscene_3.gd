@@ -19,7 +19,7 @@ func _ready() -> void:
 	get_panel_3()
 	
 	await get_tree().create_timer(3).timeout
-	TransitionLayer.transition_betrayal(TransitionLayer.combat_level)
+	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_4)
 
 
 func get_panel_1() -> void:
