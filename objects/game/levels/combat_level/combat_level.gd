@@ -98,7 +98,7 @@ func _ready() -> void:
 	_connect_enemy_strategies()
 	turn_tracker_component.start_tracking()
 
-	Audio.play_music(Audio.Track.TRACK1)
+	# Audio.play_music(Audio.Track.TRACK1)
 	Game.start.emit()
 
 
