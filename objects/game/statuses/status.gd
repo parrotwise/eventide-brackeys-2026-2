@@ -25,6 +25,7 @@ signal removed(character: Character)
 @export var max_health_adder: int = 0
 @export_subgroup("Multipliers")
 @export var damage_dealt_multiplier: float = 1.0 
+@export var missing_hp_to_dmg_dealt_mult: float = 0.0
 @export var damage_taken_multiplier: float = 1.0 
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
@@ -102,10 +103,13 @@ func modify_effect(effect: Effect) -> Effect:
 	if effect.source.name == &'Sling Slop' and no_more_please:
 		effect.cause_lose_turn = true
 	
+	var missing_health_ratio: float = 1.0 - (float(owner.state_component.current_health) / owner.state_component.max_health)
+	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * missing_health_ratio
+
 	if owner == effect.owner:
-		effect.damage = floori(effect.damage * damage_dealt_multiplier)
+		effect.damage = floori(effect.damage * final_damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
-		effect.damage_explosive = floori(effect.damage_explosive * damage_dealt_multiplier)
+		effect.damage_explosive = floori(effect.damage_explosive * final_damage_dealt_multiplier)
 		effect.damage_explosive += damage_dealt_adder
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder

@@ -67,6 +67,8 @@ func can_target(target: Character) -> bool:
 			target_is_valid = target_is_valid and owner == target
 		Enums.RangeType.MELEE:
 			target_is_valid = target_is_valid and Game.level.characters.is_in_melee(owner) and Game.level.characters.is_in_melee(target)
+		Enums.RangeType.CHARACTER_AHEAD:
+			target_is_valid = target_is_valid and target == Game.level.characters.get_ahead_of(owner)
 		Enums.RangeType.ADJACENT_ALLY:
 			target_is_valid = target_is_valid and target in Game.level.characters.get_adjacent_to(owner)
 	

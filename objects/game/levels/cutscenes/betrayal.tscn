@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_qxhjl")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=926522790]
@@ -22,25 +23,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1078454485]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="LeftBG" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=412933903]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_qahcn")
 
 [node name="RightBG" type="TextureRect" parent="CenterContainer/HBoxContainer" unique_id=160867635]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_qxhjl")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer" unique_id=994975744]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="BETR" type="TextureRect" parent="CenterContainer/HBoxContainer2" unique_id=1897228009]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_1gg3p")
 
 [node name="AYAL" type="TextureRect" parent="CenterContainer/HBoxContainer2" unique_id=48253623]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_vps30")

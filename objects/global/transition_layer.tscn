@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chihi6xfv24vh" path="res://objects/global/transition_layer.gd" id="1_trhop"]
 [ext_resource type="Texture2D" uid="uid://cc8ju4jeli6vs" path="res://temp/chase/transition_placeholder.png" id="2_4y4s6"]
+[ext_resource type="PackedScene" uid="uid://c0y28t3efycf0" path="res://objects/game/levels/cutscenes/betrayal.tscn" id="3_4y4s6"]
 
 [node name="TransitionLayer" type="CanvasLayer" unique_id=631058850]
 layer = 255
@@ -17,6 +18,7 @@ mouse_filter = 2
 color = Color(0.22352941, 0.07058824, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1064986285]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -24,3 +26,5 @@ mouse_filter = 2
 texture = ExtResource("2_4y4s6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=826162245]
+
+[node name="Betrayal" parent="." unique_id=1339346911 instance=ExtResource("3_4y4s6")]

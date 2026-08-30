@@ -11,7 +11,11 @@ func do_action_as_user(action: Action, _target: Character):
 	target = _target
 	
 	# Basic attack
-	if action.name == &"Basic Attack":
+	if action.name in [
+		&"Basic Attack",
+		&"Throw Hardtack",
+		&"Sling Slop",
+	]:
 		basic_attack()
 	
 	# Special abilities
@@ -30,7 +34,8 @@ func do_action_as_user(action: Action, _target: Character):
 		in_stance = true
 		enter_stance()
 	
-	
+	if action.name == &"Pick Up & Crunch":
+		heal()
 	# basic_attack()
 
 
@@ -54,6 +59,10 @@ func do_action_as_target(action: Action):
 func hurt_target() -> void:
 	if target == null: return
 	target.actor.hurt()
+
+func heal_target() -> void:
+	if target == null: return
+	target.actor.heal()
 
 
 func hurt_random_target() -> void:
@@ -101,7 +110,11 @@ func dead() -> void:
 	pass
 
 func heal() -> void:
-	pass
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", Vector2(0.0, -100.0), 0.15)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "position", Vector2(0.0, 0.0), 0.25)
 
 
 func _ready() -> void:
