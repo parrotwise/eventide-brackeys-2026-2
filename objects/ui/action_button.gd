@@ -35,9 +35,7 @@ func _ready() -> void:
 	button.pressed.connect(pressed.emit)
 	button.toggled.connect(toggled.emit)
 
-	# button.mouse_entered.connect(show_tooltip)
 	button.mouse_entered.connect(_on_mouse_enter)
-	# button.mouse_exited.connect(hide_tooltip)
 	button.mouse_exited.connect(_on_mouse_exit)
 
 	icon.texture = icon_texture
@@ -67,13 +65,3 @@ func _on_mouse_enter() -> void:
 func _on_mouse_exit() -> void:
 	if Game.pointer.type in [Enums.PointerType.CLICKABLE, Enums.PointerType.CLICKING]:
 		Game.pointer.switch_to(Enums.PointerType.DEFAULT)
-
-
-## old to do implement! use _on_mouse_enter instead
-#func show_tooltip() -> void:
-#	pass
-
-
-## old to do implement! use _on_mouse_exit instead
-#func hide_tooltip() -> void:
-#	pass
