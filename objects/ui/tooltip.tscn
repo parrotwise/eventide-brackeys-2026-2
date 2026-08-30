@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnkrridbyd328" path="res://objects/ui/tooltip.gd" id="1_owh4x"]
 [ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/UI/tooltip_bg.png" id="2_owh4x"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_ltgoe"]
 
 [node name="Tooltip" type="Control" unique_id=1654022007]
 layout_mode = 3
@@ -59,6 +60,10 @@ shortcut_keys_enabled = false
 [node name="DescriptionLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=906544854]
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.78431374, 0.32156864, 0.8156863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
+theme_override_fonts/normal_font = ExtResource("3_ltgoe")
+theme_override_font_sizes/normal_font_size = 22
 text = "But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
 fit_content = true
 scroll_active = false
