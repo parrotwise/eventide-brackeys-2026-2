@@ -39,7 +39,7 @@ func _on_embark_button_pressed() -> void:
 
 func _on_character_selected(char: Character) -> void:
 	var selected_ally: Character = char.duplicate()
-	selected_ally.scale = 1.5 * Vector2.ONE
+	selected_ally.scale = 1.3 * Vector2.ONE
 	for child in center_stage.get_children():
 		child.queue_free()
 	center_stage.add_child(selected_ally)
