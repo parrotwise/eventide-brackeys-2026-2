@@ -169,6 +169,19 @@ func _on_action_selected(action: Action) -> void:
 			action.name,
 		]
 	)
+	if action.name in [
+		&"Basic Attack",
+		&"Two for One",
+		&"Keelhaul Tug",
+		&"Laser-Focused",
+	]:
+		Game.pointer.switch_to(Enums.PointerType.ATTACK)
+	elif action.name == &"Sling Slop":
+		Game.pointer.switch_to(Enums.PointerType.SLOP)
+	elif action.name == &"Reposition":
+		Game.pointer.switch_to(Enums.PointerType.SWAP)
+	else:
+		Game.pointer.switch_to(Enums.PointerType.TARGET)
 
 
 func _on_status_applied(status: Status) -> void:

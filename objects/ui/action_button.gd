@@ -35,10 +35,10 @@ func _ready() -> void:
 	button.pressed.connect(pressed.emit)
 	button.toggled.connect(toggled.emit)
 
-	button.mouse_entered.connect(show_tooltip)
-	button.mouse_entered.connect(Game.pointer.switch_to.bind(Enums.PointerType.CLICKABLE))
-	button.mouse_exited.connect(hide_tooltip)
-	button.mouse_exited.connect(Game.pointer.switch_to.bind(Enums.PointerType.DEFAULT))
+	# button.mouse_entered.connect(show_tooltip)
+	button.mouse_entered.connect(_on_mouse_enter)
+	# button.mouse_exited.connect(hide_tooltip)
+	button.mouse_exited.connect(_on_mouse_exit)
 
 	icon.texture = icon_texture
 	frame.texture = frame_texture
@@ -60,11 +60,20 @@ func set_selected(selected: bool = false):
 	button.texture_disabled = inner_texture_disabled
 
 
-## TODO: implement!
-func show_tooltip() -> void:
-	pass
+func _on_mouse_enter() -> void:
+	if Game.pointer.type in [Enums.PointerType.DEFAULT, Enums.PointerType.PRESSING]:
+		Game.pointer.switch_to(Enums.PointerType.CLICKABLE)
+
+func _on_mouse_exit() -> void:
+	if Game.pointer.type in [Enums.PointerType.CLICKABLE, Enums.PointerType.CLICKING]:
+		Game.pointer.switch_to(Enums.PointerType.DEFAULT)
 
 
-## TODO: implement!
-func hide_tooltip() -> void:
-	pass
+## old to do implement! use _on_mouse_enter instead
+#func show_tooltip() -> void:
+#	pass
+
+
+## old to do implement! use _on_mouse_exit instead
+#func hide_tooltip() -> void:
+#	pass
