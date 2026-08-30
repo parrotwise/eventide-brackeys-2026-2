@@ -103,6 +103,7 @@ func select_target(target: Character, player_input: bool = true) -> void:
 		Debug.info(
 			"%s is not a valid target." % target.name
 		)
+		Game.pointer.switch_to(Enums.PointerType.DISABLED)
 		return
 
 	current_target = target
@@ -132,6 +133,14 @@ func submit_target(player_input: bool = true) -> void:
 		current_user,
 		current_target
 	)
+	
+	if Game.pointer.type in [
+		Enums.PointerType.TARGET, 
+		Enums.PointerType.ATTACK, 
+		Enums.PointerType.SLOP, 
+		Enums.PointerType.SWAP
+	]:
+		Game.pointer.switch_to(Enums.PointerType.DEFAULT)
 	
 	current_action.use(current_user, current_target)
 

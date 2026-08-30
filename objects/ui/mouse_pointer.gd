@@ -15,17 +15,29 @@ extends Control
 }
 
 var type: Enums.PointerType
-
+var previous_type: Enums.PointerType = Enums.PointerType.DEFAULT
+var disable_count: int = 0
 
 func _ready() -> void:
 	switch_to(Enums.PointerType.DEFAULT)
+	disable_count = 0
 
 
 func switch_to(pointer_type: Enums.PointerType) -> void:
 	hide_all()
 	_sprite_map[pointer_type].show()
+	
+	if pointer_type == Enums.PointerType.DISABLED:
+		disable_count +=1
+		if  type != Enums.PointerType.DISABLED:
+			previous_type = type
 	type = pointer_type
 
+func return_to_previous() -> void:
+	if disable_count > 0:
+		disable_count -= 1
+		if disable_count == 0:
+			switch_to(previous_type)
 
 func hide_all() -> void:
 	for sprite: Sprite2D in _sprite_map.values():
