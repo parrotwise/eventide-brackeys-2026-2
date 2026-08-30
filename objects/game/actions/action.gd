@@ -10,6 +10,7 @@ signal used(user: Character, target: Character)
 @export var name: String
 @export_multiline() var description: String
 @export var icon: Texture
+@export var sfx: Audio.Clip
 
 @export_group("Effect Definition")
 
@@ -50,6 +51,7 @@ var owner: Character
 
 func use(user: Character, target: Character) -> void:
 	Game.level.effector_component.apply(self, user, target)
+	Audio.play_sfx(sfx)
 	used.emit(user, target)
 
 

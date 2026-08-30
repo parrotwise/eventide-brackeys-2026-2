@@ -4,9 +4,12 @@ extends Resource
 
 signal applied()
 
-@export_group("Effect Definition")
+@export_group("Identifiers")
 
 @export var name: String = ""
+@export var sfx: Audio.Clip
+
+@export_group("Effect Definition")
 
 @export var damage: int = 0
 @export var damage_explosive: int = 0

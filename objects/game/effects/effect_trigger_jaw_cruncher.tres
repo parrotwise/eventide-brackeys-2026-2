@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_dylrl")
-name = "Jaw Cruncher"
+sfx = 3
 damage = 40
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

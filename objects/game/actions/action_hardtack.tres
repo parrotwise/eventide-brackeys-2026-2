@@ -9,6 +9,7 @@ script = ExtResource("3_xwicr")
 name = "Throw Hardtack"
 description = "Deal damage, then heal for the same amount."
 icon = ExtResource("2_se75s")
+sfx = 8
 power_as_target_damage = true
 power_as_target_healing = true
 free_action = true

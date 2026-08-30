@@ -10,6 +10,7 @@ script = ExtResource("3_4cw82")
 name = "Sling Slop"
 description = "Your Attack heals instead of dealing damage. Whenever a target is hit by slung slop, it receives a “No more, please” status that lasts for two turns."
 icon = ExtResource("2_epcpq")
+sfx = 7
 power_as_target_healing = true
 applied_statuses = Array[ExtResource("1_epcpq")]([ExtResource("2_6po1l")])
 target_group = 0

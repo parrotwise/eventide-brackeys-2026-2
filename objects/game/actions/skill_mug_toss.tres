@@ -12,5 +12,6 @@ script = ExtResource("3_hv8rv")
 name = "Mug Toss"
 description = "Throw a mug of rum at any cat in the game (Ally or enemy). Target receives a permanent +40% damage bonus and a stack of “Smashed”, which makes them miss their next attack or damaging skill. Target also becomes Flammable."
 icon = ExtResource("2_hu5c3")
+sfx = 10
 applied_statuses = Array[ExtResource("1_4evt0")]([ExtResource("2_vgcrm"), ExtResource("3_sophx"), ExtResource("4_fkeyt")])
 target_group = 0

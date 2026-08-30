@@ -9,6 +9,7 @@ script = ExtResource("3_kxjon")
 name = "Pick Up & Crunch"
 description = "Crunch on the peanuts, leaving none for the seagulls to fight over, and getting healed for 10 HP."
 icon = ExtResource("2_gyu3l")
+sfx = 8
 target_healing = 10
 crunch_peanuts = true
 range_type = 1
