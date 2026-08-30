@@ -36,6 +36,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action_pressed(&'select_action_%d' % [i + 3]):
 				if is_instance_valid(skill):
 					Game.level.selector_component.select_action(skill)
+	
+	if Game.level.selector_component.current_action:
+		if event.is_action_pressed(&'escape') or event.is_action_pressed(&'cancel'):
+			Game.level.selector_component.cancel_action()
+			Game.pointer.switch_to(Enums.PointerType.DEFAULT)
+	
+	elif event.is_action_pressed(&'escape'):
+		Game.level.ui.settings_menu.visible = not Game.level.ui.settings_menu.visible
 
 
 func _on_combat_start() -> void:
