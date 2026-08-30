@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://dr6tnaumb3c77"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_o41qe"]
-[ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/UI/buttons/action_button_icon_placeholder.png" id="2_xo4y6"]
+[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/UI/cursors/cursor_valid_attack.png" id="2_o41qe"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_fdjti"]
 
 [resource]
 script = ExtResource("3_fdjti")
 name = "Basic Attack"
 description = "Perform a basic attack."
-icon = ExtResource("2_xo4y6")
+icon = ExtResource("2_o41qe")
 sfx = 9
 power_as_target_damage = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

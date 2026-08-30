@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://bvc70k4tckegj"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_72v5k"]
-[ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/UI/buttons/action_button_icon_placeholder.png" id="2_xfgpk"]
+[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/UI/cursors/cursor_valid_attack.png" id="2_72v5k"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_bfpdt"]
 
 [resource]
 script = ExtResource("3_bfpdt")
 name = "Basic Attack"
 description = "Perform a basic attack. Can only hit directly in front of you."
-icon = ExtResource("2_xfgpk")
+icon = ExtResource("2_72v5k")
 sfx = 1
 power_as_target_damage = true
 range_type = 3
