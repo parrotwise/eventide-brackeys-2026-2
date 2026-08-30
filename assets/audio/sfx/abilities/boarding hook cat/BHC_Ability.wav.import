@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rf2e27jfp7t5"
+path="res://.godot/imported/BHC_Ability.wav-a7570b14e5e08570c7aadb4d9cec0bae.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/abilities/boarding hook cat/BHC_Ability.wav"
+dest_files=["res://.godot/imported/BHC_Ability.wav-a7570b14e5e08570c7aadb4d9cec0bae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
