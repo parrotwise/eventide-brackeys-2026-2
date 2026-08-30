@@ -180,6 +180,10 @@ func _on_hover_detection_mouse_entered() -> void:
 	#Debug.debug("Tooltip _on_hover[...] detected.")
 	hover_timer.start()
 
+	if 'button_tooltip_text' in get_parent() and get_parent().button_tooltip_text:
+		header = ''
+		description = get_parent().button_tooltip_text
+
 
 func _on_hover_detection_mouse_exited() -> void:
 	hover_timer.stop()

@@ -27,6 +27,8 @@ var button: TextureButton:
 	get: return $InnerButton
 var background: TextureRect:
 	get: return $Background
+var button_tooltip_text: String:
+	get: return button.tooltip_text
 
 
 func _ready() -> void:
