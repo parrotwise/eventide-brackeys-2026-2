@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://ddotenkftxmtf"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_eiabe"]
+[ext_resource type="Resource" uid="uid://bccamjn7nw43t" path="res://objects/game/statuses/status_watched_over.tres" id="1_xxt0c"]
+[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/UI/status_effect_icons/NC WATCHED.png" id="2_eiabe"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_3wp00"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_dtoms"]
+
+[resource]
+script = ExtResource("3_3wp00")
+name = "Gut-you Gutierrez"
+description = "Every cat in front of Gut-you Gutierrez receives a 25% damage negation buff, \"Watched over\"."
+icon = ExtResource("2_eiabe")
+grant_ahead = ExtResource("1_xxt0c")

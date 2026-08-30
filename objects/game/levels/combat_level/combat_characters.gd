@@ -92,8 +92,24 @@ func get_ahead_of(character: Character) -> Character:
 	return _get_character_at_offset(-1, character)
 
 
+func get_all_ahead_of(character: Character) -> Array[Character]:
+	var frendos: Array[Character] = allies if character in allies else enemies
+	return Array(
+		frendos.filter(func(f): return index_of(f) < index_of(character)),
+		TYPE_OBJECT, &'Node2D', Character
+	)
+
+
 func get_behind(character: Character) -> Character:
 	return _get_character_at_offset(+1, character)
+
+
+func get_all_behind(character: Character) -> Array[Character]:
+	var frendos: Array[Character] = allies if character in allies else enemies
+	return Array(
+		frendos.filter(func(f): return index_of(f) > index_of(character)),
+		TYPE_OBJECT, &'Node2D', Character
+	)
 
 
 func index_of(character: Character) -> int:

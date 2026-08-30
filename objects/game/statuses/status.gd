@@ -38,6 +38,9 @@ signal removed(character: Character)
 @export var granted_actions: Array[Action] = []
 @export var no_more_please: bool = false
 
+@export_group("Positional")
+@export var grant_ahead: Status = null
+
 @export_group("Triggers")
 @export var triggers: Array[Trigger] = []
 @export var trigger_uses: int = -1
@@ -46,6 +49,7 @@ signal removed(character: Character)
 @export_group("")
 @export var stacking_type: Enums.StackingType
 
+var granted_statuses: Array[Status] = []
 var stack: int = 1
 
 var owner: Character
@@ -119,3 +123,19 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.add_max_health += max_health_adder
 	
 	return effect
+
+
+func refresh_granted_statuses() -> void:
+	if not grant_ahead:
+		return
+	
+	var characters_ahead: Array[Character] = Game.level.characters.get_all_ahead_of(owner)
+
+	for status: Status in granted_statuses:
+		if status.owner not in characters_ahead:
+			status.owner.state_component.remove_status(status)
+	
+	for character: Character in characters_ahead:
+		if not character.state_component.active_statuses.any(func(s): return s.name == grant_ahead.name):
+			character.state_component.apply_status(grant_ahead)
+		

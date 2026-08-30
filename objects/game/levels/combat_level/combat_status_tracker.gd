@@ -31,6 +31,8 @@ func track(status: Status) -> void:
 	
 	_active_statuses.append(status)
 
+	status.refresh_granted_statuses()
+
 	status_applied.emit(status)
 
 
@@ -144,7 +146,22 @@ func _on_combat_start() -> void:
 				fire_triggers(Enums.TriggerType.END_TURN, character)
 	)
 
+	# Refresh positionally granted statuses on reposition
+	Game.level.characters.characters_repositioned.connect(_on_characters_repositioned.call_deferred)
+
 
 func _on_action_submitted(action: Action, user: Character, _target: Character) -> void:
 	cached['last_action'] = action
 	cached['last_attacker'] = user
+
+
+func _on_characters_repositioned(char_ahead: Character, char_behind: Character) -> void:
+	# Only one loop is necessary but I'm too tired to know which and computers are amazing fast
+
+	if is_instance_valid(char_ahead):
+		for status: Status in char_ahead.state_component.active_statuses:
+			status.refresh_granted_statuses()
+
+	if is_instance_valid(char_behind):
+		for status: Status in char_behind.state_component.active_statuses:
+			status.refresh_granted_statuses()

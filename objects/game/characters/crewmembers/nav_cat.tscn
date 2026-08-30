@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cndtqnl5hjloe" path="res://objects/game/actions/skill_laser_focused.tres" id="13_md0ka"]
 [ext_resource type="PackedScene" uid="uid://c7kdvi5on5ql8" path="res://objects/game/characters/character_equipment.tscn" id="15_y8t4a"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="16_55htr"]
+[ext_resource type="Resource" uid="uid://ddotenkftxmtf" path="res://objects/game/statuses/passive_nav_cat.tres" id="16_ohi3b"]
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
 
@@ -57,6 +58,7 @@ skills = Array[ExtResource("12_qs10e")]([ExtResource("13_md0ka")])
 
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
 max_health = 80
+passive_status = ExtResource("16_ohi3b")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=1609690468]
 visible = false
