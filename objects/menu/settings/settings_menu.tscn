@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://j5wyuyyutjpb" path="res://assets/theme/main_theme.tres" id="1_2muxl"]
 [ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="2_2muxl"]
 [ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/UI/tooltip_placeholder.png" id="2_36ubh"]
+[ext_resource type="Script" uid="uid://duhfetjbb6p4s" path="res://objects/menu/settings/settings_menu.gd" id="2_f1rnk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kafe6"]
 texture = ExtResource("2_36ubh")
@@ -24,6 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2muxl")
+script = ExtResource("2_f1rnk")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1594288756]
 layout_mode = 1
@@ -71,6 +73,9 @@ text = "Volume"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+max_value = 1.0
+step = 0.02
+value = 0.5
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
 layout_mode = 2

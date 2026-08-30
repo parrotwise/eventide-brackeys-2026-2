@@ -18,3 +18,7 @@ func _ready() -> void:
 
 	start.connect(Debug.info.bind('Game started.'))
 	end.connect(Debug.info.bind('Game ended.'))
+
+
+func quit() -> void:
+	get_tree().quit()

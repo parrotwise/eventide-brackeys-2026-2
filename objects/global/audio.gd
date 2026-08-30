@@ -25,9 +25,9 @@ enum Track {
 	TRACK2,
 }
 
-var master_volume: int
-var music_volume: int
-var sfx_volume: int
+var master_volume: float = 0.5
+var music_volume: float = 0.5
+var sfx_volume: float = 0.5
 
 var sfx_player_template: PackedScene = preload('res://objects/audio/sfx_player.tscn')
 var music_player_template: PackedScene = preload('res://objects/audio/music_player.tscn')
@@ -44,6 +44,18 @@ func _ready() -> void:
 
 	add_child(sfx_player)
 	add_child(music_player)
+
+
+func _process(_delta: float) -> void:
+	AudioServer.set_bus_volume_linear(
+		AudioServer.get_bus_index('Master'), master_volume
+	)
+	AudioServer.set_bus_volume_linear(
+		AudioServer.get_bus_index('Music'), music_volume
+	)
+	AudioServer.set_bus_volume_linear(
+		AudioServer.get_bus_index('SFX'), sfx_volume
+	)
 
 
 func play_sfx(clip: Clip, volume: float = 0.5) -> void:
