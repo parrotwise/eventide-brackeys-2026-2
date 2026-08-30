@@ -27,7 +27,7 @@ shader_parameter/shadow_intensity = 0.5
 shader_parameter/status_sloshed_overlay = ExtResource("5_yyv4h")
 shader_parameter/status_sloshed_intensity = 0.5
 
-[node name="Character" type="Node2D" unique_id=1172588862]
+[node name="GunCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
 
 [node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_krhyb")]

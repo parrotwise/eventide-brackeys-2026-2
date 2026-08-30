@@ -104,10 +104,10 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Character" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3" unique_id=1963121748 instance=ExtResource("5_dr6jf")]
+[node name="ExplodeCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3" unique_id=1963121748 instance=ExtResource("5_dr6jf")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/Character" index="8" unique_id=481135339]
+[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat" index="8" unique_id=481135339]
 visible = false
 
 [node name="Control4" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1582122687]
@@ -124,40 +124,40 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Character" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5" unique_id=309705409 instance=ExtResource("7_dbp8a")]
+[node name="HookCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5" unique_id=309705409 instance=ExtResource("7_dbp8a")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/Character" index="8" unique_id=481135339]
+[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat" index="8" unique_id=481135339]
 visible = false
 
 [node name="Control6" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2065675409]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Character" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6" unique_id=621548923 instance=ExtResource("8_7vkht")]
+[node name="NavCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6" unique_id=621548923 instance=ExtResource("8_7vkht")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/Character" index="8" unique_id=481135339]
+[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat" index="8" unique_id=481135339]
 visible = false
 
 [node name="Control7" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1667605264]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Character" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7" unique_id=262543973 instance=ExtResource("9_uemns")]
+[node name="PeanutCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7" unique_id=262543973 instance=ExtResource("9_uemns")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/Character" index="8" unique_id=481135339]
+[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat" index="8" unique_id=481135339]
 visible = false
 
 [node name="Control8" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2056705033]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Character" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=1190493796 instance=ExtResource("10_py0qi")]
+[node name="RumCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=1190493796 instance=ExtResource("10_py0qi")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/Character" index="8" unique_id=481135339]
+[node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat" index="8" unique_id=481135339]
 visible = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EquipmentUI/VBoxContainer" unique_id=453894118]
@@ -213,126 +213,127 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=1530348305]
+[node name="EquipmentGrid" type="GridContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=1530348305]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 columns = 4
 
-[node name="EquipmentButton" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1720045075 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1720045075 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("13_ocofg")
 
-[node name="EquipmentButton2" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1770892312 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton2" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1770892312 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("14_lmdjw")
 
-[node name="EquipmentButton3" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=822442675 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton3" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=822442675 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("15_fniha")
 
-[node name="EquipmentButton4" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1641624075 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton4" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1641624075 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("16_7hxp2")
 
-[node name="EquipmentButton5" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1155204005 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton5" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1155204005 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("17_wwrr1")
 
-[node name="EquipmentButton6" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=812728704 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton6" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=812728704 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("18_tt13g")
 
-[node name="EquipmentButton7" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=696158863 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton7" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=696158863 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("19_8s3l4")
 
-[node name="EquipmentButton8" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1884845518 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton8" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1884845518 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("20_qd06x")
 
-[node name="EquipmentButton9" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=2131687429 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton9" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=2131687429 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("21_l0p5b")
 
-[node name="EquipmentButton10" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=126554443 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton10" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=126554443 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("22_rav6m")
 
-[node name="EquipmentButton11" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=852010717 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton11" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=852010717 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("13_7vkht")
 
-[node name="EquipmentButton12" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=442013432 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton12" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=442013432 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("24_4tgy4")
 
-[node name="EquipmentButton13" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1896583155 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton13" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1896583155 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("25_23m8u")
 
-[node name="EquipmentButton14" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1952170129 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton14" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1952170129 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("26_cmbn8")
 
-[node name="EquipmentButton15" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1537667383 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton15" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1537667383 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("27_ej5bd")
 
-[node name="EquipmentButton16" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=112362099 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton16" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=112362099 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("28_0ltu1")
 
-[node name="EquipmentButton17" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=1711374952 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton17" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1711374952 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("29_iojch")
 
-[node name="EquipmentButton18" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=2027452285 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton18" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=2027452285 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("30_7eq30")
 
-[node name="EquipmentButton19" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=996606593 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton19" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=996606593 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 equipment = ExtResource("31_3mdqw")
 
-[node name="EquipmentButton20" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/GridContainer" unique_id=2093708393 instance=ExtResource("7_qb0y3")]
+[node name="EquipmentButton20" parent="EquipmentUI/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=2093708393 instance=ExtResource("7_qb0y3")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -348,6 +349,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+
+[node name="CharacterBlocker" type="Control" parent="EquipmentUI/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=1121036879]
+layout_mode = 2
 
 [node name="CharDetails" type="MarginContainer" parent="EquipmentUI/VBoxContainer/HBoxContainer2" unique_id=2080650798]
 custom_minimum_size = Vector2(512, 320)
@@ -419,27 +423,27 @@ vertical_alignment = 1
 
 [connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Input" to="." method="_on_character_selected"]
 [connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/Character/Input" to="." method="_on_character_selected"]
+[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Input" to="." method="_on_character_selected"]
 [connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/Character/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/Character/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/Character/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/Character/Input" to="." method="_on_character_selected"]
+[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Input" to="." method="_on_character_selected"]
+[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Input" to="." method="_on_character_selected"]
+[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Input" to="." method="_on_character_selected"]
+[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Input" to="." method="_on_character_selected"]
 [connection signal="pressed" from="EmbarkBG/EmbarkButton" to="." method="_on_embark_button_pressed"]
 
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat"]
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators"]
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat"]
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/Character"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/Character/Indicators"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators"]
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat"]
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/Character"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/Character/Indicators"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/Character"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/Character/Indicators"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/Character"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/Character/Indicators"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/Character"]
-[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/Character/Indicators"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat"]
+[editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators"]
