@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://ccqagvrjnsn86" path="res://assets/art/UI/bounding bar top.png" id="2_jbiga"]
 [ext_resource type="Texture2D" uid="uid://ty7icd4jprp3" path="res://assets/art/UI/bounding bar bottom.png" id="2_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="3_xuj1j"]
+[ext_resource type="Texture2D" uid="uid://bvgxm7jfq2pd7" path="res://assets/art/UI/menu_close.png" id="4_qt348"]
+[ext_resource type="Texture2D" uid="uid://kkud7wbs6plu" path="res://assets/art/UI/menu_close_hover_click.png" id="5_u1is4"]
 [ext_resource type="Texture2D" uid="uid://70gfkcjro3yv" path="res://assets/art/UI/buttons/passive_icon_sc.png" id="5_xuj1j"]
 [ext_resource type="PackedScene" uid="uid://bm6qubhbcqywi" path="res://objects/ui/passive_button.tscn" id="6_df5b6"]
+[ext_resource type="Texture2D" uid="uid://q2qoyq731rw1" path="res://assets/art/UI/menu_close_hover.png" id="6_m7apa"]
 [ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/menu/settings/settings_menu.tscn" id="7_wfv58"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p4nv"]
@@ -69,6 +72,9 @@ texture = ExtResource("2_jbiga")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopPanel" unique_id=1493146712]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 16)
+theme_override_constants/separation = 12
 alignment = 2
 
 [node name="OpenSettingsButton" parent="TopPanel/HBoxContainer" unique_id=1397875926 instance=ExtResource("3_xuj1j")]
@@ -76,6 +82,16 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+icon_texture = null
+frame_texture = null
+inner_texture_normal = ExtResource("4_qt348")
+inner_texture_pressed = ExtResource("5_u1is4")
+inner_texture_hover = ExtResource("6_m7apa")
+inner_texture_disabled = null
+inner_texture_selected_normal = null
+inner_texture_selected_pressed = null
+inner_texture_selected_hover = null
+background_texture = null
 
 [node name="BottomPanel" type="PanelContainer" parent="." unique_id=1035039101]
 anchors_preset = -1
