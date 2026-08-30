@@ -27,6 +27,7 @@ func save_equipment_selection(equipment: Equipment, is_equipped: bool) -> void:
 		if is_equipped:
 			inventories[selected_character.name].append(character_equipment)
 			Debug.info(selected_character.name + " gained " + equipment.name)
+			check_equipment_grid()
 		else:
 			inventories[selected_character.name].remove_at(inventories[selected_character.name].find(equipment))
 			Debug.info(selected_character.name + " removed " + equipment.name)
@@ -49,6 +50,14 @@ func check_equipment_grid() -> void:
 			continue
 		# If the item is pressed by owned by someone else, disable it.
 		item.disabled = true
+	
+	if inventories.has(selected_character.name) and (inventories[selected_character.name].size() >= 2):
+		for item: EquipmentButton in equipment_grid.get_children():
+			is_owned_by_selected = item.equipment in inventories[selected_character.name]
+			if is_owned_by_selected:
+				item.disabled = false
+			else:
+				item.disabled = true
 
 
 func _on_embark_button_pressed() -> void:
