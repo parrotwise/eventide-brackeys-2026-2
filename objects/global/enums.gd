@@ -11,6 +11,7 @@ enum RangeType {
 	ANY,
 	SELF,
 	MELEE,
+	CHARACTER_AHEAD,
 	ADJACENT_ALLY,
 }
 
