@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://crxs4mty5ag4m"]
 
 [ext_resource type="Script" uid="uid://b7es7kuvnrcfo" path="res://objects/ui/mouse_pointer.gd" id="1_csbsw"]
-[ext_resource type="Texture2D" uid="uid://bq3qbm03475fp" path="res://assets/art/UI/cursors/cursor_default_placeholder.png" id="2_8q2q6"]
-[ext_resource type="Texture2D" uid="uid://ca70648juo5sg" path="res://assets/art/UI/cursors/cursor_attack_placeholder.png" id="3_a1e4b"]
-[ext_resource type="Texture2D" uid="uid://cn8kcqo2bpkbw" path="res://assets/art/UI/cursors/cursor_clickable_placeholder.png" id="4_na3et"]
-[ext_resource type="Texture2D" uid="uid://c2limai51tglv" path="res://assets/art/UI/cursors/cursor_clicking_placeholder.png" id="5_p538m"]
-[ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="6_wx6ve"]
-[ext_resource type="Texture2D" uid="uid://bafarmv7y7alk" path="res://assets/art/UI/cursors/cursor_pending_target_placeholder.png" id="7_efkq1"]
-[ext_resource type="Texture2D" uid="uid://b3dn54wmellhk" path="res://assets/art/UI/cursors/cursor_press_placeholder.png" id="8_5npaa"]
-[ext_resource type="Texture2D" uid="uid://biqrbkotdu48q" path="res://assets/art/UI/cursors/cursor_slop_placeholder.png" id="9_fhu5n"]
-[ext_resource type="Texture2D" uid="uid://caphrwo8myv17" path="res://assets/art/UI/cursors/cursor_swap_placeholder.png" id="10_stjq0"]
+[ext_resource type="Texture2D" uid="uid://b5ud26bt1pphf" path="res://assets/art/UI/cursors/cursor_default.png" id="2_8q2q6"]
+[ext_resource type="Texture2D" uid="uid://bdq7g6nnbhf15" path="res://assets/art/UI/cursors/cursor_pressing.png" id="3_a1e4b"]
+[ext_resource type="Texture2D" uid="uid://tb15il0r070m" path="res://assets/art/UI/cursors/cursor_clickable.png" id="4_na3et"]
+[ext_resource type="Texture2D" uid="uid://gsr2oco5awv5" path="res://assets/art/UI/cursors/cursor_clicking.png" id="5_p538m"]
+[ext_resource type="Texture2D" uid="uid://cwmpg4bdl8uy1" path="res://assets/art/UI/cursors/cursor_pending_target.png" id="6_wx6ve"]
+[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/UI/cursors/cursor_valid_attack.png" id="7_efkq1"]
+[ext_resource type="Texture2D" uid="uid://c8kqn8ytni25j" path="res://assets/art/UI/cursors/cursor_sling_slop.png" id="8_5npaa"]
+[ext_resource type="Texture2D" uid="uid://xhftlhpnj7wa" path="res://assets/art/UI/cursors/cursor_valid_reposition.png" id="9_fhu5n"]
+[ext_resource type="Texture2D" uid="uid://dfj3qyjn4y0to" path="res://assets/art/UI/cursors/cursor_disabled.png" id="10_stjq0"]
 
 [node name="MousePointerLayer" type="CanvasLayer" unique_id=149963576]
 layer = 2147483647
@@ -31,7 +31,7 @@ centered = false
 [node name="Pressing" type="Sprite2D" parent="MousePointer" unique_id=790326743]
 visible = false
 position = Vector2(-14, -2)
-texture = ExtResource("8_5npaa")
+texture = ExtResource("3_a1e4b")
 centered = false
 
 [node name="Clickable" type="Sprite2D" parent="MousePointer" unique_id=1593147570]
@@ -49,28 +49,28 @@ centered = false
 [node name="Target" type="Sprite2D" parent="MousePointer" unique_id=390582527]
 visible = false
 position = Vector2(-26, -26)
-texture = ExtResource("7_efkq1")
+texture = ExtResource("6_wx6ve")
 centered = false
 
 [node name="Attack" type="Sprite2D" parent="MousePointer" unique_id=435690559]
 visible = false
 position = Vector2(-13, 0)
-texture = ExtResource("3_a1e4b")
+texture = ExtResource("7_efkq1")
 centered = false
 
 [node name="Slop" type="Sprite2D" parent="MousePointer" unique_id=1372051138]
 visible = false
 position = Vector2(-27, -27)
-texture = ExtResource("9_fhu5n")
+texture = ExtResource("8_5npaa")
 centered = false
 
 [node name="Swap" type="Sprite2D" parent="MousePointer" unique_id=1801409387]
 visible = false
 position = Vector2(-26, -26)
-texture = ExtResource("10_stjq0")
+texture = ExtResource("9_fhu5n")
 centered = false
 
 [node name="Disabled" type="Sprite2D" parent="MousePointer" unique_id=1112754931]
 visible = false
-texture = ExtResource("6_wx6ve")
+texture = ExtResource("10_stjq0")
 centered = false
