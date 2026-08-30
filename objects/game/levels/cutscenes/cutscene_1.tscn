@@ -28,13 +28,13 @@ texture = ExtResource("1_d3nk7")
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1042541063]
 layout_mode = 0
 offset_left = 238.0
-offset_top = 73.0
-offset_right = 994.0
+offset_top = 186.0
+offset_right = 1144.0
 offset_bottom = 584.0
 theme_override_colors/default_color = Color(0.101960786, 0.03529412, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_3q0aq")
 theme_override_font_sizes/normal_font_size = 32
-text = "You are a rich, bored heir of an expansive(ly dilapidated) family, whose vaults are running dry. Dwindling gold supply wouldn't stop you from pursuing your latest foolish whim.
+text = "You are a rich, bored heir of an expansive(ly dilapidated) family, whose vaults are running dry. Dwindling gold supply would not stop you from pursuing your latest foolish whim.
 Space-faring Buccaneering.
 
 Every dingy moon bursts with gold, undiscovered species and titillating substances to bring back and sell, or so you heard. And all it takes is a ship and a crew to prance your way to the prize and escort the bulging treasure chests back with you."
