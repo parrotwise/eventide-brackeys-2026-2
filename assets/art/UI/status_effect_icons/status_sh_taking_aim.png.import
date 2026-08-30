@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvbcao58wk0p7"
-path="res://.godot/imported/SH TAKING AIM.png-47b795ebf7183d705089adb7831281f2.ctex"
+path="res://.godot/imported/status_sh_taking_aim.png-b4699fa6d2a8dd7379356724de454edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/SH TAKING AIM.png"
-dest_files=["res://.godot/imported/SH TAKING AIM.png-47b795ebf7183d705089adb7831281f2.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_sh_taking_aim.png"
+dest_files=["res://.godot/imported/status_sh_taking_aim.png-b4699fa6d2a8dd7379356724de454edf.ctex"]
 
 [params]
 

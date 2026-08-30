@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb38w68g0iwkt"
-path="res://.godot/imported/GC POT.png-653c89bae5aa54dbe3e8baa37f818858.ctex"
+uid="uid://dyx6s7ey8baqd"
+path="res://.godot/imported/status_nc_watched.png-3d30e7e0aa21c16ffcfa520230ed6d89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/GC POT.png"
-dest_files=["res://.godot/imported/GC POT.png-653c89bae5aa54dbe3e8baa37f818858.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_nc_watched.png"
+dest_files=["res://.godot/imported/status_nc_watched.png-3d30e7e0aa21c16ffcfa520230ed6d89.ctex"]
 
 [params]
 

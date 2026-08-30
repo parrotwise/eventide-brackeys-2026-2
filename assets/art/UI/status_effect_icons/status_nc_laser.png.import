@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy66vsxc6fux6"
-path="res://.godot/imported/GC NO MORE PLEASE.png-12189f70b6336ab75504831c8d3ea1f5.ctex"
+uid="uid://ccdggmg2gr5d6"
+path="res://.godot/imported/status_nc_laser.png-480389c61b6f0a7af3388687fad820cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/GC NO MORE PLEASE.png"
-dest_files=["res://.godot/imported/GC NO MORE PLEASE.png-12189f70b6336ab75504831c8d3ea1f5.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_nc_laser.png"
+dest_files=["res://.godot/imported/status_nc_laser.png-480389c61b6f0a7af3388687fad820cf.ctex"]
 
 [params]
 

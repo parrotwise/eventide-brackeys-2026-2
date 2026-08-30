@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://bccamjn7nw43t"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_is6ee"]
-[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/UI/status_effect_icons/NC WATCHED.png" id="2_is6ee"]
+[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/UI/status_effect_icons/status_nc_watched.png" id="2_is6ee"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_sa0li"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_p71sw"]
 

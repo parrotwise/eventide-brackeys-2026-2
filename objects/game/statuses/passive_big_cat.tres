@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://dfisvjpbllfj1"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_lk382"]
-[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/UI/status_effect_icons/PC PEANUTS.png" id="2_wghqq"]
+[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/UI/status_effect_icons/status_hc_attack_increase.png" id="2_lk382"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_8d7hf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_4lvpp"]
 
@@ -9,5 +9,5 @@
 script = ExtResource("3_8d7hf")
 name = "The Wringer"
 description = "Every 10% of health lost adds 15% to POW and Skill damage. Attack can only hit directly in front of you."
-icon = ExtResource("2_wghqq")
+icon = ExtResource("2_lk382")
 missing_hp_to_dmg_dealt_mult = 1.5

@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://ci1h01guccnmg"]
 
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_7dj06"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_d741v"]
-[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="1_squut"]
+[ext_resource type="Texture2D" uid="uid://bgx0iyq51unra" path="res://assets/art/UI/status_effect_icons/status_rc_smashed.png" id="2_c2gcd"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_2ny2l"]
 
 [resource]
 script = ExtResource("1_d741v")
 name = "Sloshed"
 description = "Bubbles!"
-icon = ExtResource("1_squut")
+icon = ExtResource("2_c2gcd")
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

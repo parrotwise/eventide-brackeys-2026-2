@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7ssdwpypgstv"
-path="res://.godot/imported/BC CHARGING.png-7263ebb9aea7f1b532fd2ae3007e4714.ctex"
+path="res://.godot/imported/status_bc_charging.png-c86724db3f3219c8310e3f5e6ad11469.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/BC CHARGING.png"
-dest_files=["res://.godot/imported/BC CHARGING.png-7263ebb9aea7f1b532fd2ae3007e4714.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_bc_charging.png"
+dest_files=["res://.godot/imported/status_bc_charging.png-c86724db3f3219c8310e3f5e6ad11469.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://c8s0imcnukd2x"]
 
-[ext_resource type="Texture2D" uid="uid://cukbrwhqq3j4y" path="res://assets/art/icons/icon_discord.png" id="1_8re6y"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_aglnt"]
+[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/UI/status_effect_icons/status_hc_attack_increase.png" id="2_ieo2x"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_j1b5n"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_aglnt"]
 [ext_resource type="Resource" uid="uid://bxm58jwr1sbhc" path="res://objects/game/triggers/trigger_laser_focused_damage.tres" id="4_j1b5n"]
@@ -10,7 +11,7 @@
 script = ExtResource("2_j1b5n")
 name = "Laser-Focused"
 description = "Damage and healing received doubled in the next 3 instances."
-icon = ExtResource("1_8re6y")
+icon = ExtResource("2_ieo2x")
 damage_taken_multiplier = 2.0
 healing_received_multiplier = 2.0
 triggers = Array[ExtResource("3_aglnt")]([ExtResource("4_j1b5n"), ExtResource("5_aglnt")])

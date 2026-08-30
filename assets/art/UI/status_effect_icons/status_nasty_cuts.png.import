@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyx6s7ey8baqd"
-path="res://.godot/imported/NC WATCHED.png-1a0aae8d53cc8dfc1b58894ed6a51731.ctex"
+uid="uid://crda1f8dc2arp"
+path="res://.godot/imported/status_nasty_cuts.png-3229294cd6331df68c0f2aa939efbc1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/NC WATCHED.png"
-dest_files=["res://.godot/imported/NC WATCHED.png-1a0aae8d53cc8dfc1b58894ed6a51731.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_nasty_cuts.png"
+dest_files=["res://.godot/imported/status_nasty_cuts.png-3229294cd6331df68c0f2aa939efbc1d.ctex"]
 
 [params]
 

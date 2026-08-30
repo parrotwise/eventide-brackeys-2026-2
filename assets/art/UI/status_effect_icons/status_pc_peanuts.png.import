@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnw2j2ux8re52"
-path="res://.godot/imported/HC ATTACK INCREASE.png-de7165f77894685e6de19077c0bd4bc0.ctex"
+uid="uid://363vvc517uh4"
+path="res://.godot/imported/status_pc_peanuts.png-8f9931ad75db8c6a3ad710b140e7c0c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/HC ATTACK INCREASE.png"
-dest_files=["res://.godot/imported/HC ATTACK INCREASE.png-de7165f77894685e6de19077c0bd4bc0.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_pc_peanuts.png"
+dest_files=["res://.godot/imported/status_pc_peanuts.png-8f9931ad75db8c6a3ad710b140e7c0c0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://363vvc517uh4"
-path="res://.godot/imported/PC PEANUTS.png-f80581097d29221a3525ae455f12e0a0.ctex"
+uid="uid://dy66vsxc6fux6"
+path="res://.godot/imported/status_gc_no_more_please.png-00b5ec8db3cc52305999ddeceeeb0c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/PC PEANUTS.png"
-dest_files=["res://.godot/imported/PC PEANUTS.png-f80581097d29221a3525ae455f12e0a0.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_gc_no_more_please.png"
+dest_files=["res://.godot/imported/status_gc_no_more_please.png-00b5ec8db3cc52305999ddeceeeb0c17.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h7c3x26e8jj6"
-path="res://.godot/imported/STUNNED.png-9330295db8ffa78de0314c2a0f1322df.ctex"
+uid="uid://bb38w68g0iwkt"
+path="res://.godot/imported/status_gc_pot.png-1730c15aafa28302af2437af171bce4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/STUNNED.png"
-dest_files=["res://.godot/imported/STUNNED.png-9330295db8ffa78de0314c2a0f1322df.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_gc_pot.png"
+dest_files=["res://.godot/imported/status_gc_pot.png-1730c15aafa28302af2437af171bce4e.ctex"]
 
 [params]
 

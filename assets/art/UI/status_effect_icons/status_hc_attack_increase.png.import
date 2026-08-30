@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgx0iyq51unra"
-path="res://.godot/imported/RC SMASHED.png-2f04212081f79199ea5990d995503f5f.ctex"
+uid="uid://bnw2j2ux8re52"
+path="res://.godot/imported/status_hc_attack_increase.png-2e16c610bdaf9672f9da4bd283613c5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/status_effect_icons/RC SMASHED.png"
-dest_files=["res://.godot/imported/RC SMASHED.png-2f04212081f79199ea5990d995503f5f.ctex"]
+source_file="res://assets/art/UI/status_effect_icons/status_hc_attack_increase.png"
+dest_files=["res://.godot/imported/status_hc_attack_increase.png-2e16c610bdaf9672f9da4bd283613c5b.ctex"]
 
 [params]
 
