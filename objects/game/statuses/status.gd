@@ -97,6 +97,9 @@ func remove_trigger(trigger: Trigger) -> void:
 
 
 func modify_effect(effect: Effect) -> Effect:
+	if not is_instance_valid(owner) or not is_instance_valid(effect.owner):
+		return
+	
 	if randf() > likelihood:
 		return
 	

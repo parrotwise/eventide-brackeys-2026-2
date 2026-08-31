@@ -26,8 +26,7 @@ var knocked_out: bool = false
 ## Status effects currently affecting this Character
 var _active_statuses: Array[Status] = []
 var active_statuses: Array[Status]:
-	get:
-		return _active_statuses.duplicate()
+	get: return _active_statuses
 
 
 func _ready() -> void:

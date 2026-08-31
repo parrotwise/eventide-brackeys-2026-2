@@ -48,6 +48,9 @@ func _process(_delta: float) -> void:
 
 
 func remove(character: Character) -> void:
+	for status: Status in character.state_component.active_statuses.duplicate():
+		character.state_component.remove_status(status)
+	
 	character_removed.emit(character)
 	character.queue_free()
 
