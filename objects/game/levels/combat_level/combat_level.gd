@@ -164,19 +164,11 @@ func _on_action_missed(
 	)
 	
 
-func _on_action_finished(
-	action: Action,
-	user: Character,
-	target: Character
-) -> void:
-	Debug.debug(
-		"%s finished using %s on %s." % [
-			user.name,
-			action.name,
-			target.name
-		]
-	)
-	selector_component.cancel_action()
+func _on_action_finished(action: Action) -> void:
+	Debug.debug("%s finished using %s." % [action.owner.name, action.name])
+
+	if turn_tracker_component.current_character not in characters.enemies:
+		selector_component.cancel_action()
 
 	if action.free_action:
 		selector_component.resume()
