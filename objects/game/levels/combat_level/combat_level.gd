@@ -300,4 +300,4 @@ func _on_turn_ended(character: Character) -> void:
 
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:
-		effector_component.apply(action, user, target)
+		action.use(user, target)
