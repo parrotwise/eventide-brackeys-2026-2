@@ -270,7 +270,7 @@ func _on_round_started(round_number: int) -> void:
 func _on_battle_group_started(group_name: StringName) -> void:
 	Debug.debug("-- %s phase!" % group_name)
 	if group_name == turn_tracker_component.ALLIES_GROUP:
-		selector_component.select_ally(characters.ally_melee, false)
+		selector_component.reset()
 
 
 func _on_turn_started(character: Character) -> void:
