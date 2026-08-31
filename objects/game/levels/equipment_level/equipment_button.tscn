@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ua4bk70ltyo" path="res://assets/art/UI/buttons/EQ STATE_HOVER_CLICK.png" id="2_2145i"]
 [ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/UI/buttons/EQ STATE_HOVER.png" id="3_uu5am"]
 [ext_resource type="Texture2D" uid="uid://cysiryweubwqj" path="res://assets/art/UI/buttons/EQ FRAME.png" id="4_mom4l"]
+[ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="5_uu5am"]
 
 [node name="EquipmentButton" type="Control" unique_id=1720045075]
 layout_mode = 3
@@ -29,6 +30,7 @@ disabled = true
 toggle_mode = true
 texture_pressed = ExtResource("2_2145i")
 texture_hover = ExtResource("3_uu5am")
+texture_disabled = ExtResource("5_uu5am")
 
 [node name="MarginContainer" type="MarginContainer" parent="ButtonBG/TextureButton" unique_id=921321203]
 layout_mode = 1

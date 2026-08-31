@@ -51,5 +51,5 @@ func transition_betrayal(scene_path: String) -> void:
 	tween.tween_property(betrayal, "modulate:a", 1, 0.2)
 	
 	await tween.finished
-	await get_tree().create_timer(0.5)
+	await get_tree().create_timer(0.5).timeout
 	transition_simple_fade(scene_path)

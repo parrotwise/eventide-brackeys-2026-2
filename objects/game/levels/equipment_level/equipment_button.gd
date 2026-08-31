@@ -6,10 +6,6 @@ signal equipment_selected(equipment: Equipment, is_equipped: bool)
 
 @export var equipment: Equipment
 
-var disabled: bool:
-	set(state):
-		button.disabled = state
-
 var button: TextureButton:
 	get: return $ButtonBG/TextureButton
 
