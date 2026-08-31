@@ -60,8 +60,8 @@ func _on_character_set() -> void:
 		_add_status_icon(status)
 
 
-func _update_health_bar(current_health: int, max_health: int) -> void:
-	health_bar.set_health(current_health, max_health)
+func _update_health_bar(_previous_health: int, current_health: int) -> void:
+	health_bar.set_health(current_health, character.state_component.max_health)
 
 
 func _on_status_applied(status: Status) -> void:

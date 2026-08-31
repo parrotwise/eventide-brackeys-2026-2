@@ -98,8 +98,30 @@ func _ready() -> void:
 	_connect_enemy_strategies()
 	turn_tracker_component.start_tracking()
 
+	for character: Character in characters.all:
+		character.state_component.health_changed.connect(_on_health_changed.bind(character))
+		character.state_component.knockout.connect(_on_knocked_out.bind(character))
+
 	# Audio.play_music(Audio.Track.TRACK1)
 	Game.start.emit()
+
+
+func _on_health_changed(previous_health: int, current_health: int, character: Character) -> void:
+	Debug.debug(
+		"%s's health changed from %d to %d." % [
+			character.name,
+			previous_health,
+			current_health,
+		]
+	)
+
+
+func _on_knocked_out(character: Character) -> void:
+	Debug.debug(
+		"%s was knocked out!" % [
+			character.name,
+		]
+	)
 
 
 func _exit_tree() -> void:

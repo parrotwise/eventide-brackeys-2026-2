@@ -195,7 +195,7 @@ func apply(action: Action, user: Character, target: Character) -> void:
 	if is_instance_valid(user) and is_instance_valid(target):
 		action_finished.emit(action, user, target)
 	else:
-		Debug.error("User or target is invalid: %s, %s" % [user, target])
+		Debug.error("User or target is invalid: %s, %s" % [user, target], Debug.Verbosity.CALLER)
 
 
 func _new_effect(source: Variant, user: Character, target: Character) -> Effect:

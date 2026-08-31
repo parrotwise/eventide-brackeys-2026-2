@@ -2,7 +2,7 @@ class_name CharacterState
 extends Node
 
 
-signal health_changed(current_health: int, max_health: int)
+signal health_changed(previous_health: int, current_health: int)
 signal damage_taken()
 signal explosive_damage_taken()
 signal healing_received()
@@ -45,11 +45,16 @@ func take_damage(damage: int, explosive: bool = false) -> void:
 	if knocked_out:
 		return
 	
+	var previous_health: int = current_health
+	
 	current_health = maxi(0, current_health - damage)
 
-	health_changed.emit(current_health, max_health)
-
+	if current_health == previous_health:
+		return
+	
+	health_changed.emit(previous_health, current_health)
 	damage_taken.emit()
+
 	if explosive:
 		explosive_damage_taken.emit()
 	
@@ -64,8 +69,14 @@ func heal(amount: int) -> void:
 	if knocked_out:
 		return
 	
+	var previous_health: int = current_health
+
 	current_health = mini(max_health, current_health + amount)
-	health_changed.emit(current_health, max_health)
+
+	if current_health == previous_health:
+		return
+	
+	health_changed.emit(previous_health, current_health)
 	healing_received.emit()
 
 
@@ -74,18 +85,33 @@ func add_max_health(amount: int) -> void:
 		return
 	
 	max_health = maxi(0, max_health + amount)
+	
+	var previous_health: int = current_health
+
 	current_health = mini(max_health, current_health)
-	health_changed.emit(current_health, max_health)
+
+	if current_health == previous_health:
+		return
+	
+	health_changed.emit(previous_health, current_health)
 	
 	if current_health == 0:
 		knocked_out = true
 		knockout.emit()
 
+		Game.level.characters.remove(character)
+
 
 func reset_health() -> void:
+	var previous_health: int = current_health
+
 	current_health = max_health
 	knocked_out = false
-	health_changed.emit(current_health, max_health)
+	
+	if current_health == previous_health:
+		return
+	
+	health_changed.emit(previous_health, current_health)
 
 
 func apply_status(status_template: Status) -> Status:
