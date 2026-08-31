@@ -41,3 +41,7 @@ func pop_effect() -> void:
 
 	_effect_last_source = effect.source
 	_effect_cooldown = effect_delay
+
+
+func has_effects() -> bool:
+	return not _effect_queue.is_empty()
