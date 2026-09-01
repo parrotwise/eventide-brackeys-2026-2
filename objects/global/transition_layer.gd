@@ -32,7 +32,11 @@ func transition_simple_fade(scene_path: String) -> void:
 	
 	await transition_tween.finished
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file(scene_path)
+	
+	ResourceLoader.load_threaded_request(scene_path, "", true)
+	if ResourceLoader.THREAD_LOAD_LOADED:
+		var new_scene = ResourceLoader.load_threaded_get(scene_path)
+		get_tree().change_scene_to_packed(new_scene)
 	
 	await get_tree().scene_changed
 	await get_tree().create_timer(0.1).timeout
