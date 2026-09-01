@@ -1,3 +1,4 @@
+class_name Tooltip
 extends Control
 
 @export var hover_area_control: Control
@@ -39,6 +40,8 @@ var background: NinePatchRect:
 	get: return $NinePatchRect
 var name_label: RichTextLabel:
 	get: return $NinePatchRect/MarginContainer/VBoxContainer/NameLabel
+var divider: ColorRect:
+	get: return $NinePatchRect/MarginContainer/VBoxContainer/ColorRect
 var description_label: RichTextLabel:
 	get: return $NinePatchRect/MarginContainer/VBoxContainer/DescriptionLabel
 var hover_detection: Control:
@@ -160,6 +163,7 @@ func fill_text() -> void:
 
 func remove_text() -> void:
 	name_label.text = ""
+	divider.hide()
 	description_label.text = ""
 
 
@@ -177,7 +181,7 @@ func show_components() -> void:
 
 
 func _on_hover_detection_mouse_entered() -> void:
-	#Debug.debug("Tooltip _on_hover[...] detected.")
+	#Debug.debug("Tooltip triggered.")
 	hover_timer.start()
 
 	if 'button_tooltip_text' in get_parent() and get_parent().button_tooltip_text:
@@ -186,6 +190,7 @@ func _on_hover_detection_mouse_entered() -> void:
 
 
 func _on_hover_detection_mouse_exited() -> void:
+	#Debug.debug("Tooltip exited.")
 	hover_timer.stop()
 	shrink_tooltip()
 

@@ -6,12 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/UI/buttons/EQ STATE_HOVER.png" id="3_uu5am"]
 [ext_resource type="Texture2D" uid="uid://cysiryweubwqj" path="res://assets/art/UI/buttons/EQ FRAME.png" id="4_mom4l"]
 [ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="5_uu5am"]
+[ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="7_xwrlf"]
 
 [node name="EquipmentButton" type="Control" unique_id=1720045075]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2145i")
@@ -53,5 +56,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_mom4l")
+
+[node name="Tooltip" parent="." unique_id=1654022007 node_paths=PackedStringArray("hover_area_control") instance=ExtResource("7_xwrlf")]
+layout_mode = 0
+hover_area_control = NodePath("../ButtonBG/TextureButton")
 
 [connection signal="toggled" from="ButtonBG/TextureButton" to="." method="_on_texture_button_toggled"]

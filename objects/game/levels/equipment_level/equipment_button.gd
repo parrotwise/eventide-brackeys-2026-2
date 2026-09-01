@@ -12,6 +12,9 @@ var button: TextureButton:
 var eq_icon: TextureRect:
 	get: return $ButtonBG/TextureButton/MarginContainer/Icon
 
+var tooltip: Tooltip:
+	get: return $Tooltip
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +24,9 @@ func _ready() -> void:
 		return
 	
 	eq_icon.texture = equipment.icon
+	
+	tooltip.header = equipment.name
+	tooltip.description = equipment.description
 
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
