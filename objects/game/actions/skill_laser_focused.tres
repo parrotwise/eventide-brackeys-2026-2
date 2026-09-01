@@ -10,6 +10,7 @@ script = ExtResource("4_s8wl1")
 name = "Laser-Focused"
 description = "Look through the spyglass at a target. Shoot a beam of lens-focused energy, dealing 5 damage and doubling heal or damage received by the target in the next 3 instances."
 icon = ExtResource("3_f0gmg")
+sfx = 13
 target_damage = 5
 applied_statuses = Array[ExtResource("1_uhf0r")]([ExtResource("2_uhf0r")])
 target_group = 0

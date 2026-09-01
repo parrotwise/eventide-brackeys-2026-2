@@ -84,6 +84,8 @@ func start_ally_turn(character: Character) -> bool:
 func end_current_turn() -> void:
 	if current_character == null:
 		return
+	
+	await Game.level.queue.await_empty()
 
 	var finished_character: Character = current_character
 	current_character = null

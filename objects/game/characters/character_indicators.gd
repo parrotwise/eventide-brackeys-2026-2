@@ -28,6 +28,10 @@ var character: Character:
 var _status_icons: Dictionary = {}
 
 
+func _ready() -> void:
+	Game.start.connect(_on_combat_start)
+
+
 func hide_target_indicator() -> void:
 	target_indicator.hide()
 
@@ -42,6 +46,15 @@ func hide_selection_indicator() -> void:
 
 func show_selection_indicator() -> void:
 	selection_indicator.show()
+
+
+func _on_combat_start() -> void:
+	Game.level.effector_component.action_submitted.connect(_on_action_submitted)
+
+
+func _on_action_submitted(_action: Action, _user: Character, _target: Character) -> void:
+	hide_selection_indicator()
+	hide_target_indicator()
 
 
 func _on_character_set() -> void:
@@ -60,8 +73,8 @@ func _on_character_set() -> void:
 		_add_status_icon(status)
 
 
-func _update_health_bar(current_health: int, max_health: int) -> void:
-	health_bar.set_health(current_health, max_health)
+func _update_health_bar(_previous_health: int, current_health: int) -> void:
+	health_bar.set_health(current_health, character.state_component.max_health)
 
 
 func _on_status_applied(status: Status) -> void:

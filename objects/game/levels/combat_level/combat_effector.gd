@@ -5,7 +5,7 @@ extends Node
 signal action_submitted(action: Action, user: Character, target: Character)
 signal action_missed(action: Action, user: Character, target: Character)
 signal action_used(action: Action, user: Character, target: Character)
-signal action_finished(action: Action, user: Character, target: Character)
+signal action_finished(action: Action)
 signal effect_applied(effect: Effect, affected: Character)
 
 
@@ -191,11 +191,7 @@ func apply(action: Action, user: Character, target: Character) -> void:
 	while enqueued:
 		await get_tree().create_timer(0.2).timeout
 	
-	# Validation
-	if is_instance_valid(user) and is_instance_valid(target):
-		action_finished.emit(action, user, target)
-	else:
-		Debug.error("User or target is invalid: %s, %s" % [user, target])
+	action_finished.emit(action)
 
 
 func _new_effect(source: Variant, user: Character, target: Character) -> Effect:

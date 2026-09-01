@@ -19,6 +19,7 @@ var wobble: Vector2 = Vector2(exaggeration, exaggeration)
 func _ready() -> void:
 	shake_text()
 	shake_bg()
+	pass
 
 
 func shake_text() -> void:
@@ -26,12 +27,12 @@ func shake_text() -> void:
 	var right_tween = create_tween().set_trans(Tween.TRANS_CIRC)
 	
 	left_tween.set_loops()
-	left_tween.tween_property(text_betr, "position", wobble, 0.2).as_relative()
-	left_tween.tween_property(text_betr, "position", -wobble, 0.2).as_relative()
+	left_tween.tween_property(text_betr, "offset_transform_position", wobble, 0.2).as_relative()
+	left_tween.tween_property(text_betr, "offset_transform_position", -wobble, 0.2).as_relative()
 	
 	right_tween.set_loops()
-	right_tween.tween_property(text_ayal, "position", -wobble, 0.2).as_relative()
-	right_tween.tween_property(text_ayal, "position", wobble, 0.2).as_relative()
+	right_tween.tween_property(text_ayal, "offset_transform_position", -wobble, 0.2).as_relative()
+	right_tween.tween_property(text_ayal, "offset_transform_position", wobble, 0.2).as_relative()
 
 
 func shake_bg() -> void:
@@ -39,9 +40,9 @@ func shake_bg() -> void:
 	var right_tween = create_tween().set_trans(Tween.TRANS_CIRC)
 	
 	left_tween.set_loops()
-	left_tween.tween_property(bg_left, "position", wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
-	left_tween.tween_property(bg_left, "position", -wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
+	left_tween.tween_property(bg_left, "offset_transform_position", wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
+	left_tween.tween_property(bg_left, "offset_transform_position", -wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
 	
 	right_tween.set_loops()
-	right_tween.tween_property(bg_right, "position", -wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
-	right_tween.tween_property(bg_right, "position", wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
+	right_tween.tween_property(bg_right, "offset_transform_position", -wobble.rotated(deg_to_rad(90)), 0.2).as_relative()
+	right_tween.tween_property(bg_right, "offset_transform_position", wobble.rotated(deg_to_rad(90)), 0.2).as_relative()

@@ -50,3 +50,8 @@ func take_turn() -> void:
 		return
 
 	action_chosen.emit(action, character, target)
+	
+	await Game.level.queue.await_empty()
+
+	if character == Game.level.turn_tracker_component.current_character:
+		take_turn()

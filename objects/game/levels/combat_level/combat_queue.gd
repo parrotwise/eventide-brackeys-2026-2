@@ -41,3 +41,8 @@ func pop_effect() -> void:
 
 	_effect_last_source = effect.source
 	_effect_cooldown = effect_delay
+
+
+func await_empty() -> void:
+	while not _effect_queue.is_empty():
+		await get_tree().create_timer(0.2).timeout
