@@ -17,24 +17,26 @@ var button: TextureButton:
 var background: TextureRect:
 	get: return $Background
 
+var passive: Status
+
+var tooltip_header: String:
+	get: return passive.name if passive else ''
+var tooltip_description: String:
+	get: return passive.description if passive else ''
+
 
 func _ready() -> void:
-	button.mouse_entered.connect(show_tooltip)
-	button.mouse_exited.connect(hide_tooltip)
-
-	icon.texture = icon_texture
 	frame.texture = frame_texture
 	background.texture = background_texture
 
-	button.texture_normal = inner_texture_normal
-	button.texture_hover = inner_texture_hover
 
+func setup(new_passive: Status) -> void:
+	passive = new_passive
 
-## TODO: implement!
-func show_tooltip() -> void:
-	pass
-
-
-## TODO: implement!
-func hide_tooltip() -> void:
-	pass
+	if not passive:
+		button.texture_normal = null
+		button.texture_hover = null
+		return
+		
+	button.texture_normal = passive.passive_icon_normal
+	button.texture_hover = passive.passive_icon_hover

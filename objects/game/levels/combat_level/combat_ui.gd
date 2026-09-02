@@ -15,6 +15,8 @@ var action_buttons: Array[ActionButton]:
 		$BottomPanel/MarginContainer/ButtonGroups/ActionButtons.get_children(),
 		TYPE_OBJECT, &'Control', ActionButton
 	)
+var passive_button: PassiveButton:
+	get: return $BottomPanel/MarginContainer/ButtonGroups/PassiveButton
 var keyboard_reference: Panel:
 	get: return $KeyboardReference
 var pause_menu: Control:
@@ -47,6 +49,9 @@ func set_action_buttons(character: Character) -> void:
 		
 		button.setup(action)
 		button.show()
+	
+	var passive: Status = character.state_component.passive_status
+	passive_button.setup(passive)
 
 
 func reset_action_panel() -> void:

@@ -55,11 +55,15 @@ func _ready() -> void:
 func setup(new_action: Action) -> void:
 	action = new_action
 
-	icon.texture = new_action.icon
-
 	for connection: Dictionary in pressed.get_connections():
 		pressed.disconnect(connection['callable'])
 	
+	if not action:
+		icon.texture = null
+		return
+	
+	icon.texture = action.icon
+
 	pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	pressed.connect(Game.level.selector_component.select_action.bind(action))
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://imec5cigcf2t" path="res://assets/art/UI/buttons/action_button_frame.png" id="3_srsfh"]
 [ext_resource type="Texture2D" uid="uid://bp6cvkrrnxyy6" path="res://assets/art/UI/buttons/action_button_state_hover.png" id="4_of1qg"]
 [ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/UI/buttons/action_button_bg.png" id="5_a7c2r"]
+[ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="6_srsfh"]
 
 [node name="PassiveButton" type="Control" unique_id=1860539444]
 custom_minimum_size = Vector2(90, 90)
@@ -51,3 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Tooltip" parent="." unique_id=1654022007 node_paths=PackedStringArray("hover_area_control") instance=ExtResource("6_srsfh")]
+layout_mode = 0
+hover_area_control = NodePath("../InnerButton")

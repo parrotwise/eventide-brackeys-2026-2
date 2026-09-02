@@ -12,6 +12,8 @@ signal removed(character: Character)
 @export_multiline() var description: String
 ## An icon to be exposed to the player.
 @export var icon: Texture
+@export var passive_icon_normal: Texture
+@export var passive_icon_hover: Texture
 @export var vfx: PackedScene
 
 @export_group("Effect")
