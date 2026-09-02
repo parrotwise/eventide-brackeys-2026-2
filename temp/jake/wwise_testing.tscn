@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d76jxbxnutqp"]
+
+[ext_resource type="Script" uid="uid://btc3cq2ct8s6h" path="res://temp/jake/wwise_testing.gd" id="1_vx1wj"]
+[ext_resource type="WwiseBank" uid="uid://cg22n7rkfeo62" path="res://Wwise/resources/SoundBank/{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}.tres" id="2_st36t"]
+
+[node name="WwiseTesting" type="Node" unique_id=154972880]
+script = ExtResource("1_vx1wj")
+
+[node name="AkListener2D" type="AkListener2D" parent="." unique_id=460280438]
+
+[node name="AkBank" type="AkBank" parent="." unique_id=1917553290]
+bank = ExtResource("2_st36t")
+load_on = 1
