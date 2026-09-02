@@ -11,6 +11,27 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID ABILITY_BC_CHARGE = 4270486608U;
+        static const AkUniqueID ABILITY_BC_SLAM = 2070473987U;
+        static const AkUniqueID ABILITY_BHC = 900757501U;
+        static const AkUniqueID ABILITY_EC = 4142292096U;
+        static const AkUniqueID ABILITY_GC = 4175847530U;
+        static const AkUniqueID ABILITY_NC = 4293290861U;
+        static const AkUniqueID ABILITY_PC = 3924183055U;
+        static const AkUniqueID ABILITY_RC = 3957738481U;
+        static const AkUniqueID ABILITY_SC = 3974516038U;
+        static const AkUniqueID ATTACK_BC = 1700148525U;
+        static const AkUniqueID ATTACK_BHC = 2897586865U;
+        static const AkUniqueID ATTACK_EC = 1750481508U;
+        static const AkUniqueID ATTACK_GC = 1784036686U;
+        static const AkUniqueID ATTACK_NC = 1633038177U;
+        static const AkUniqueID ATTACK_PC = 1398151323U;
+        static const AkUniqueID ATTACK_RC = 1431706749U;
+        static const AkUniqueID ATTACK_SC = 1448484306U;
+    } // namespace EVENTS
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
@@ -34,6 +55,8 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

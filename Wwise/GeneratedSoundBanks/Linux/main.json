@@ -10,12 +10,529 @@
     "Type": "User",
     "GUID": "{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}",
     "Language": "SFX",
-    "Hash": "{71F9CEB8-45DE-23D7-AC26-882EA609EB7A}",
+    "Hash": "{86ECB217-657F-BEB2-A3EC-90FB467E3A3C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\main",
     "ShortName": "main",
-    "Path": "main.bnk"
+    "Path": "main.bnk",
+    "Media": [
+     {
+      "Id": "13557719",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BC_Ability_Slam.wav",
+      "CachePath": "42/{42E6E618-C145-BCF8-4F4F-A3ED29CE65BD}.wem"
+     },
+     {
+      "Id": "17776483",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "NC_Ability.wav",
+      "CachePath": "C0/{C08C6181-D028-5CBE-332C-E7312625F502}.wem"
+     },
+     {
+      "Id": "35917189",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GC_Attack_Var1.wav",
+      "CachePath": "1D/{1D754636-28A7-5B15-F06F-72D74437FB6C}.wem"
+     },
+     {
+      "Id": "54637397",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SC_Attack_Var3.wav",
+      "CachePath": "14/{1495A9A1-0450-7857-04ED-A2FDA513E7C6}.wem"
+     },
+     {
+      "Id": "166852162",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BHC_Attack_Var1.wav",
+      "CachePath": "34/{348DF2A4-7806-8DBF-E2B5-0E93CF32F747}.wem"
+     },
+     {
+      "Id": "239654089",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PC_Attack_Var1.wav",
+      "CachePath": "3E/{3E361903-3A8D-FF11-E745-81A224FB406F}.wem"
+     },
+     {
+      "Id": "244094632",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SC_Attack_Var1.wav",
+      "CachePath": "3E/{3E0E140F-4C20-CE7F-DD77-545FCA553DCB}.wem"
+     },
+     {
+      "Id": "266786942",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "EC_Attack_Var2 (no_fuse).wav",
+      "CachePath": "AF/{AFF4EFC4-6479-0564-7207-2AC92FA8BD28}.wem"
+     },
+     {
+      "Id": "280328494",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BC_Ability_Charge.wav",
+      "CachePath": "CF/{CF358D22-4C10-525E-470E-A9195B562407}.wem"
+     },
+     {
+      "Id": "448273026",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BHC_Attack_Var2.wav",
+      "CachePath": "91/{9172E9F7-2148-A323-7683-662BB7674551}.wem"
+     },
+     {
+      "Id": "460048746",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "NC_Attack.wav",
+      "CachePath": "99/{9921F90F-DC7C-7E61-724A-A93F633E4FD1}.wem"
+     },
+     {
+      "Id": "496573163",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SC_Ability_Var1.wav",
+      "CachePath": "2F/{2F3A9E5B-91E7-5757-CCD3-4178EE24C623}.wem"
+     },
+     {
+      "Id": "538100598",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SC_Ability_Var2.wav",
+      "CachePath": "91/{91AED4EC-F789-72A5-FFCD-74DF5DEE8F9A}.wem"
+     },
+     {
+      "Id": "704298510",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BC_Attack_Var1.wav",
+      "CachePath": "7A/{7ADE446A-8A6D-CB10-CFB6-F03D1E3DAC2A}.wem"
+     },
+     {
+      "Id": "728740746",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "EC_Ability.wav",
+      "CachePath": "48/{48CDB356-5C74-458C-AF6D-A6CA4C191A5A}.wem"
+     },
+     {
+      "Id": "782163275",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "EC_Attack_Var1 (no_fuse).wav",
+      "CachePath": "EB/{EB1E4A21-1A29-B230-8DC3-2EE14AD805DA}.wem"
+     },
+     {
+      "Id": "801564742",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BHC_Ability.wav",
+      "CachePath": "B7/{B7F25D18-D0E1-B88A-F73B-7328DD3A5137}.wem"
+     },
+     {
+      "Id": "801809568",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GC_Attack_Var2.wav",
+      "CachePath": "94/{94E88833-05AD-AE33-41B6-02B320E692D7}.wem"
+     },
+     {
+      "Id": "801977273",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "RC_Attack.wav",
+      "CachePath": "91/{9170CB19-465B-CFEC-7E72-A82AF102C0E1}.wem"
+     },
+     {
+      "Id": "818023549",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "RC_Ability.wav",
+      "CachePath": "15/{1523D679-5819-7C22-7196-C4634704692D}.wem"
+     },
+     {
+      "Id": "876127854",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BC_Attack_Var2.wav",
+      "CachePath": "A2/{A241DBE6-A1F0-739C-26D0-B1FAC28C6E2A}.wem"
+     },
+     {
+      "Id": "877950325",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BC_Attack_Var3.wav",
+      "CachePath": "77/{77DD1D0A-B603-8836-336D-AAB900377E92}.wem"
+     },
+     {
+      "Id": "979657370",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SC_Attack_Var2.wav",
+      "CachePath": "F6/{F6FED0CD-13B6-1F7A-A029-D9F851C7B10B}.wem"
+     },
+     {
+      "Id": "1028399437",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PC_Ability.wav",
+      "CachePath": "B7/{B7635D17-87D9-13EF-8C31-C9185C2717F7}.wem"
+     },
+     {
+      "Id": "1059462283",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PC_Attack_Var2.wav",
+      "CachePath": "6A/{6ABA42C9-BFB9-83C7-78C7-AF87838EECDE}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "589825513",
+       "Name": "Compressor (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\SFX\\Character SFX\\Attacks\\Shoot Cat Attack\\[Effect Slot [0]: (Compressor)]\\Compressor (Custom)",
+       "GUID": "{B735E03F-CAF5-466F-B700-899BC68F8983}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "4270486608",
+      "Name": "Ability_BC_Charge",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_BC_Charge",
+      "GUID": "{A5F09739-9824-4305-A57B-3A248F41C9B1}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.1546075",
+      "DurationMax": "2.4536424",
+      "MediaRefs": [
+       {
+        "Id": "280328494"
+       }
+      ]
+     },
+     {
+      "Id": "2070473987",
+      "Name": "Ability_BC_Slam",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_BC_Slam",
+      "GUID": "{0ACE31BF-44C2-48FE-A33C-70566155D6BC}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0556493",
+      "DurationMax": "2.4801502",
+      "MediaRefs": [
+       {
+        "Id": "13557719"
+       }
+      ]
+     },
+     {
+      "Id": "900757501",
+      "Name": "Ability_BHC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_BHC",
+      "GUID": "{80B77437-40EF-4FD8-8055-2F082E650DD9}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.046487",
+      "DurationMax": "2.3988054",
+      "MediaRefs": [
+       {
+        "Id": "801564742"
+       }
+      ]
+     },
+     {
+      "Id": "4142292096",
+      "Name": "Ability_EC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_EC",
+      "GUID": "{F448798B-C30C-4DEF-9663-6034328CE9D2}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1268736",
+      "DurationMax": "1.2832708",
+      "MediaRefs": [
+       {
+        "Id": "728740746"
+       }
+      ]
+     },
+     {
+      "Id": "4175847530",
+      "Name": "Ability_GC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_GC",
+      "GUID": "{9ACBD04B-5EC4-4A31-96D4-B68CC08A8FE8}",
+      "Color": "7",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "4293290861",
+      "Name": "Ability_NC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_NC",
+      "GUID": "{58AF45A5-C4C1-4270-AC1F-A1F0B64AA43A}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "3.0689874",
+      "DurationMax": "3.5457633",
+      "MediaRefs": [
+       {
+        "Id": "17776483"
+       }
+      ]
+     },
+     {
+      "Id": "3924183055",
+      "Name": "Ability_PC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_PC",
+      "GUID": "{BDA59500-808F-4B5C-A750-E9C17C58590A}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3898091",
+      "DurationMax": "1.6527709",
+      "MediaRefs": [
+       {
+        "Id": "1028399437"
+       }
+      ]
+     },
+     {
+      "Id": "3957738481",
+      "Name": "Ability_RC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_RC",
+      "GUID": "{787D35A6-BCAE-47A4-9145-EB74D16B4554}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "1.6047571",
+      "DurationMax": "1.9083886",
+      "MediaRefs": [
+       {
+        "Id": "818023549"
+       }
+      ]
+     },
+     {
+      "Id": "3974516038",
+      "Name": "Ability_SC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Abilities\\Ability_SC",
+      "GUID": "{166EF018-38A9-410C-BB65-66AB164F4A28}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.833521",
+      "DurationMax": "3.2715",
+      "MediaRefs": [
+       {
+        "Id": "496573163"
+       },
+       {
+        "Id": "538100598"
+       }
+      ]
+     },
+     {
+      "Id": "1700148525",
+      "Name": "Attack_BC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_BC",
+      "GUID": "{9E0CF9E1-4B8B-4429-AD62-7232CB849C85}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "0.79893845",
+      "DurationMax": "1.9843358",
+      "MediaRefs": [
+       {
+        "Id": "704298510"
+       },
+       {
+        "Id": "876127854"
+       },
+       {
+        "Id": "877950325"
+       }
+      ]
+     },
+     {
+      "Id": "2897586865",
+      "Name": "Attack_BHC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_BHC",
+      "GUID": "{A39E8403-7740-43DC-8B80-5E97A5132D54}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0092933",
+      "DurationMax": "2.5427139",
+      "MediaRefs": [
+       {
+        "Id": "166852162"
+       },
+       {
+        "Id": "448273026"
+       }
+      ]
+     },
+     {
+      "Id": "1750481508",
+      "Name": "Attack_EC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_EC",
+      "GUID": "{8E0A139A-AEDA-4142-B4B1-493FAF43937E}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.1734967",
+      "DurationMax": "3.8285682",
+      "MediaRefs": [
+       {
+        "Id": "266786942"
+       },
+       {
+        "Id": "782163275"
+       }
+      ]
+     },
+     {
+      "Id": "1784036686",
+      "Name": "Attack_GC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_GC",
+      "GUID": "{D509B126-E369-4F34-B57E-505907D0C0E9}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8491799",
+      "DurationMax": "2.5776427",
+      "MediaRefs": [
+       {
+        "Id": "35917189"
+       },
+       {
+        "Id": "801809568"
+       }
+      ]
+     },
+     {
+      "Id": "1633038177",
+      "Name": "Attack_NC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_NC",
+      "GUID": "{ADDBB215-D1C0-4B78-A123-C6E6E89065D1}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "1.4489996",
+      "DurationMax": "1.8256251",
+      "MediaRefs": [
+       {
+        "Id": "460048746"
+       }
+      ]
+     },
+     {
+      "Id": "1398151323",
+      "Name": "Attack_PC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_PC",
+      "GUID": "{2AA5A833-3840-4CF9-9C2B-7BA27A433B13}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.4771628",
+      "DurationMax": "3.1664262",
+      "MediaRefs": [
+       {
+        "Id": "239654089"
+       },
+       {
+        "Id": "1059462283"
+       }
+      ]
+     },
+     {
+      "Id": "1431706749",
+      "Name": "Attack_RC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_RC",
+      "GUID": "{C6D7ABBC-A1D5-4712-857D-2B22A5D4C74C}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.075163",
+      "DurationMax": "2.4677985",
+      "MediaRefs": [
+       {
+        "Id": "801977273"
+       }
+      ]
+     },
+     {
+      "Id": "1448484306",
+      "Name": "Attack_SC",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character Events\\Attacks\\Attack_SC",
+      "GUID": "{8F5B2BE4-8F92-4631-A9B2-5FB73B73C6F7}",
+      "Color": "7",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6551127",
+      "DurationMax": "3.8040996",
+      "MediaRefs": [
+       {
+        "Id": "54637397"
+       },
+       {
+        "Id": "244094632"
+       },
+       {
+        "Id": "979657370"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "589825513"
+        }
+       ]
+      }
+     }
+    ],
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\SFX",
+      "GUID": "{E52C5954-A135-4F57-B4B3-EC5F283654F8}",
+      "Color": "7"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Music",
+      "GUID": "{744E490E-852F-4FEE-9C05-9590BE1DB647}",
+      "Color": "1"
+     }
+    ]
    }
   ],
-  "FileHash": "{C3F87D2E-0B5B-891C-9A2F-1329C42D4A25}"
+  "FileHash": "{3D5FA417-D710-4429-BD01-37A341EC5E9F}"
  }
 }
