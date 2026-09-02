@@ -77,5 +77,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("10_3nt7m")]
-
-[editable path="Indicators"]

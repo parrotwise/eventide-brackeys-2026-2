@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ckxileaf5y4bx"]
+
+[ext_resource type="Script" uid="uid://jeldwx6dpklr" path="res://objects/ui/status_icon.gd" id="1_woqee"]
+[ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="6_kfy63"]
+
+[node name="StatusIcon" type="Control" unique_id=1860539444]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_woqee")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1911517335]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InnerButton" type="TextureButton" parent="." unique_id=1083023664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tooltip" parent="." unique_id=1654022007 node_paths=PackedStringArray("hover_area_control") instance=ExtResource("6_kfy63")]
+layout_mode = 0
+hover_area_control = NodePath("../InnerButton")

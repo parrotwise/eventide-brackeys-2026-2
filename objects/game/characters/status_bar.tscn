@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dkwsdohnrvxjl"]
+
+[ext_resource type="Script" uid="uid://dm08khvhco7xq" path="res://objects/game/characters/status_bar.gd" id="1_1b8m5"]
+
+[node name="StatusBar" type="Control" unique_id=537244635]
+layout_mode = 3
+offset_left = -120.0
+offset_right = 120.0
+script = ExtResource("1_1b8m5")
+
+[node name="StatusIconContainer" type="HFlowContainer" parent="." unique_id=1978155357]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

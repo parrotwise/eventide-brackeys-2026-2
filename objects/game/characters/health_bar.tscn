@@ -8,8 +8,7 @@
 [node name="HealthBar" type="Control" unique_id=537244635]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 16.0
 script = ExtResource("1_ye42u")
 
 [node name="Frame" type="TextureRect" parent="." unique_id=413185062]

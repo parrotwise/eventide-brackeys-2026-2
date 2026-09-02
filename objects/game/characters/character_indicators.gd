@@ -9,8 +9,8 @@ var stun_icon: Sprite2D:
 	get: return $StunIcon
 var health_bar: HealthBar:
 	get: return $HealthBar
-var status_icons: HBoxContainer:
-	get: return $StatusEffectIndicator/VBoxContainer/StatusIcons
+var status_bar: StatusBar:
+	get: return $StatusBar
 var sloshed_particles: GPUParticles2D:
 	get: return $BubbleEmitter
 var poison_particles: GPUParticles2D:
@@ -25,11 +25,17 @@ var character: Character:
 		character = value
 		_on_character_set()
 
-var _status_icons: Dictionary = {}
-
 
 func _ready() -> void:
 	Game.start.connect(_on_combat_start)
+
+
+func add_status_icon(status: Status) -> void:
+	status_bar.add_icon(status)
+
+
+func remove_status_icon(status: Status) -> void:
+	status_bar.remove_icon(status)
 
 
 func hide_target_indicator() -> void:
@@ -63,28 +69,15 @@ func _on_character_set() -> void:
 
 	var state: CharacterState = character.state_component
 	state.health_changed.connect(_update_health_bar)
-	state.status_applied.connect(_on_status_applied)
-	state.status_removed.connect(_on_status_removed)
+	state.status_applied.connect(add_status_icon)
+	state.status_removed.connect(remove_status_icon)
 	
 	_update_health_bar(state.current_health, state.max_health)
 	_update_status_indicators()
 
-	for status: Status in state.active_statuses:
-		_add_status_icon(status)
-
 
 func _update_health_bar(_previous_health: int, current_health: int) -> void:
 	health_bar.set_health(current_health, character.state_component.max_health)
-
-
-func _on_status_applied(status: Status) -> void:
-	_add_status_icon(status)
-	_update_status_indicators()
-
-
-func _on_status_removed(status: Status) -> void:
-	_remove_status_icon(status)
-	_update_status_indicators()
 
 
 func _update_status_indicators() -> void:
@@ -98,24 +91,3 @@ func _update_status_indicators() -> void:
 		func(status): return status.name == "Poisoned"
 	)
 
-
-func _add_status_icon(status: Status) -> void:
-	if status in _status_icons or status_icon_template == null:
-		return
-
-	var symbol: Control = status_icon_template.instantiate()
-	var icon_rect: TextureRect = symbol.get_node_or_null(^"TextureRect") as TextureRect
-	if icon_rect:
-		icon_rect.texture = status.icon
-
-	status_icons.add_child(symbol)
-	_status_icons[status] = symbol
-
-
-func _remove_status_icon(status: Status) -> void:
-	var status_icon: Node = _status_icons.get(status)
-	if status_icon == null:
-		return
-
-	status_icon.queue_free()
-	_status_icons.erase(status)
