@@ -45,17 +45,8 @@ func set_action_buttons(character: Character) -> void:
 		var action: Action = character.actions[action_index]
 		var button: ActionButton = action_buttons[action_index]
 		
+		button.setup(action)
 		button.show()
-		button.icon.texture = character.actions[action_index].icon
-		
-		var action_tooltip: String = character.actions[action_index].name + "\n" + character.actions[action_index].description
-		button.button.tooltip_text = action_tooltip
-
-		for connection: Dictionary in button.pressed.get_connections():
-			button.pressed.disconnect(connection['callable'])
-		
-		button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-		button.pressed.connect(Game.level.selector_component.select_action.bind(action))
 
 
 func reset_action_panel() -> void:
@@ -71,13 +62,9 @@ func hide_keyboard_reference() -> void:
 	keyboard_reference.hide()
 
 
-func hide_tooltips() -> void:
-	for button: ActionButton in action_buttons:
-		button.hide_tooltip()
-
-
 func close_settings() -> void:
 	settings_menu.hide()
+
 
 func open_settings() -> void:
 	settings_menu.show()

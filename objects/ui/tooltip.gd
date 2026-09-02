@@ -184,9 +184,15 @@ func _on_hover_detection_mouse_entered() -> void:
 	#Debug.debug("Tooltip triggered.")
 	hover_timer.start()
 
-	if 'button_tooltip_text' in get_parent() and get_parent().button_tooltip_text:
-		header = ''
-		description = get_parent().button_tooltip_text
+	# For any special tooltip parents (e.g. ActionButtons) that
+	# expose the 'tooltip_header' / 'tooltip_description' properties,
+	# override the tooltip header/description text with these values
+
+	if 'tooltip_header' in get_parent() and get_parent().tooltip_header:
+		header = get_parent().tooltip_header
+
+	if 'tooltip_description' in get_parent() and get_parent().tooltip_description:
+		description = get_parent().tooltip_description
 
 
 func _on_hover_detection_mouse_exited() -> void:

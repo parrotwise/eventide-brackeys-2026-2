@@ -27,8 +27,13 @@ var button: TextureButton:
 	get: return $InnerButton
 var background: TextureRect:
 	get: return $Background
-var button_tooltip_text: String:
-	get: return button.tooltip_text
+
+var action: Action
+
+var tooltip_header: String:
+	get: return action.name if action else ''
+var tooltip_description: String:
+	get: return action.description if action else ''
 
 
 func _ready() -> void:
@@ -45,6 +50,18 @@ func _ready() -> void:
 	background.texture = background_texture
 
 	set_selected(false)
+
+
+func setup(new_action: Action) -> void:
+	action = new_action
+
+	icon.texture = new_action.icon
+
+	for connection: Dictionary in pressed.get_connections():
+		pressed.disconnect(connection['callable'])
+	
+	pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
+	pressed.connect(Game.level.selector_component.select_action.bind(action))
 
 
 func set_selected(selected: bool = false):
