@@ -32,6 +32,7 @@ Enums="*uid://mxuycahcqgn1"
 Game="*uid://dbyjtgtfj3gux"
 Settings="*uid://dkvas51q14o1f"
 TransitionLayer="*uid://0sve2hke8hsn"
+WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 
 [display]
 
@@ -44,6 +45,8 @@ mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 [file_customization]
 
 folder_colors={
+"res://Wwise/": "purple",
+"res://addons/Wwise/": "purple",
 "res://assets/": "gray",
 "res://assets/art/": "blue",
 "res://assets/art/shaders/": "blue",
@@ -169,3 +172,9 @@ common/physics_interpolation=true
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[wwise]
+
+common_user_settings/root_output_path="res://Wwise/GeneratedSoundBanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/linux_platform_info="res://Wwise/resources/Linux.tres"

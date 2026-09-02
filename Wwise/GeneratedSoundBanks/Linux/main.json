@@ -1,0 +1,21 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}",
+    "Language": "SFX",
+    "Hash": "{71F9CEB8-45DE-23D7-AC26-882EA609EB7A}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\main",
+    "ShortName": "main",
+    "Path": "main.bnk"
+   }
+  ],
+  "FileHash": "{C3F87D2E-0B5B-891C-9A2F-1329C42D4A25}"
+ }
+}
