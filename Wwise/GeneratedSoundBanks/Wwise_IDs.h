@@ -30,7 +30,24 @@ namespace AK
         static const AkUniqueID ATTACK_PC = 1398151323U;
         static const AkUniqueID ATTACK_RC = 1431706749U;
         static const AkUniqueID ATTACK_SC = 1448484306U;
+        static const AkUniqueID MUS_START = 1973954843U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MUSIC_STATES
+        {
+            static const AkUniqueID GROUP = 1690668539U;
+
+            namespace STATE
+            {
+                static const AkUniqueID COMBAT = 2764240573U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PRECOMBAT = 3406085544U;
+            } // namespace STATE
+        } // namespace MUSIC_STATES
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {
@@ -44,6 +61,9 @@ namespace AK
         static const AkUniqueID SS_AIR_STORM = 3715662592U;
         static const AkUniqueID SS_AIR_TIMEOFDAY = 3203397129U;
         static const AkUniqueID SS_AIR_TURBULENCE = 4160247818U;
+        static const AkUniqueID VOL_MASTER = 3391499625U;
+        static const AkUniqueID VOL_MUSIC = 1004648580U;
+        static const AkUniqueID VOL_SFX = 3273357900U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -54,7 +74,7 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID MASTER = 4056684167U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES

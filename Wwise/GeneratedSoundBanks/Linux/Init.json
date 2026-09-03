@@ -10,17 +10,17 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{91402A18-9597-BBEE-590B-CFCA62F86C31}",
+    "Hash": "{04928EB5-BEC3-AD39-3AF4-0F0C24CD40DE}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "Custom": [
       {
-       "Id": "179461468",
+       "Id": "866391301",
        "Name": "Peak Limiter (Custom)",
-       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\[Effect Slot [0]: (Peak Limiter)]\\Peak Limiter (Custom)",
-       "GUID": "{8486CF1A-F606-4EAF-B4D6-9ED40CB0B85F}",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Master\\[Effect Slot [0]: (Peak Limiter)]\\Peak Limiter (Custom)",
+       "GUID": "{8F7A6118-98B3-4480-BB5E-618A6B16E882}",
        "LibName": "Wwise Peak Limiter",
        "LibId": "7208963"
       }
@@ -48,29 +48,29 @@
      {
       "Id": "393239870",
       "Name": "SFX",
-      "ObjectPath": "\\Busses\\Default Work Unit\\SFX",
-      "GUID": "{E52C5954-A135-4F57-B4B3-EC5F283654F8}",
-      "Color": "7",
-      "PluginRefs": {
-       "Custom": [
-        {
-         "Id": "179461468"
-        }
-       ]
-      }
-     },
-     {
-      "Id": "2246998526",
-      "Name": "Main Audio Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
-      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\SFX",
+      "GUID": "{1EBABC70-4D1F-439A-A8E4-9F79E4392A25}",
+      "Color": "7"
      },
      {
       "Id": "3991942870",
       "Name": "Music",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Music",
-      "GUID": "{744E490E-852F-4FEE-9C05-9590BE1DB647}",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\Music",
+      "GUID": "{CC930B33-7843-4B87-BE6A-B329462A504D}",
       "Color": "1"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "866391301"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -79,6 +79,12 @@
       "Name": "SS_Air_RPM",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_RPM",
       "GUID": "{A34890AB-B9D5-4526-A64D-5290C43EF2DC}"
+     },
+     {
+      "Id": "1004648580",
+      "Name": "Vol_Music",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Music",
+      "GUID": "{A4B37177-BBDA-4351-86AF-15DF0E7A0440}"
      },
      {
       "Id": "1029930033",
@@ -117,6 +123,18 @@
       "GUID": "{536FA72C-8C7E-4C8B-AE03-EF34FDADC314}"
      },
      {
+      "Id": "3273357900",
+      "Name": "Vol_SFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_SFX",
+      "GUID": "{791DC70D-5BE2-4BBE-A0A1-789CC36A662A}"
+     },
+     {
+      "Id": "3391499625",
+      "Name": "Vol_Master",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Master",
+      "GUID": "{B4DB30D7-8C6F-4DC3-BCD6-FEC2DC995230}"
+     },
+     {
       "Id": "3715662592",
       "Name": "SS_Air_Storm",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Storm",
@@ -133,6 +151,34 @@
       "Name": "SS_Air_Turbulence",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Turbulence",
       "GUID": "{EDA87B19-73AA-40A0-9F19-2073606DB710}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1690668539",
+      "Name": "Music_States",
+      "ObjectPath": "\\States\\Default Work Unit\\Music_States",
+      "GUID": "{2A7F4E0D-A86A-43E4-96FE-E5530639CB67}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\None",
+        "GUID": "{825EB21C-049C-43BF-9AB2-FE5A0E49564C}"
+       },
+       {
+        "Id": "2764240573",
+        "Name": "Combat",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Combat",
+        "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}"
+       },
+       {
+        "Id": "3406085544",
+        "Name": "PreCombat",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\PreCombat",
+        "GUID": "{2DF58EA2-40FA-43E1-BA95-27A0F552649E}"
+       }
+      ]
      }
     ],
     "AcousticTextures": [
@@ -614,6 +660,6 @@
     ]
    }
   ],
-  "FileHash": "{0083A664-9BC6-C024-68B2-A8022B8979DF}"
+  "FileHash": "{5D97F770-A47F-39B1-C5B9-CB39CBAA3C17}"
  }
 }

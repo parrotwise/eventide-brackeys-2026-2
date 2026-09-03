@@ -7,6 +7,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1700148525	Attack_BC			\Default Work Unit\Character Events\Attacks\Attack_BC	
 	1750481508	Attack_EC			\Default Work Unit\Character Events\Attacks\Attack_EC	
 	1784036686	Attack_GC			\Default Work Unit\Character Events\Attacks\Attack_GC	
+	1973954843	Mus_Start			\Default Work Unit\Music Events\Mus_Start	
 	2070473987	Ability_BC_Slam			\Default Work Unit\Character Events\Abilities\Ability_BC_Slam	
 	2897586865	Attack_BHC			\Default Work Unit\Character Events\Attacks\Attack_BHC	
 	3924183055	Ability_PC			\Default Work Unit\Character Events\Abilities\Ability_PC	
@@ -17,33 +18,48 @@ Event	ID	Name			Wwise Object Path	Notes
 	4270486608	Ability_BC_Charge			\Default Work Unit\Character Events\Abilities\Ability_BC_Charge	
 	4293290861	Ability_NC			\Default Work Unit\Character Events\Abilities\Ability_NC	
 
-Effect plug-ins	ID	Name	Type				Notes
-	589825513	Compressor (Custom)	Wwise Compressor			
+State Group	ID	Name			Wwise Object Path	Notes
+	1690668539	Music_States			\Default Work Unit\Music_States	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Music_States			
+	2764240573	Combat	Music_States			
+	3406085544	PreCombat	Music_States			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1004648580	Vol_Music			\Default Work Unit\Bus Volumes\Vol_Music	
+	3273357900	Vol_SFX			\Default Work Unit\Bus Volumes\Vol_SFX	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master\SFX	
+	3991942870	Music			\Default Work Unit\Master\Music	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	13557719	Big Cat Slam	.cache\42\{42E6E618-C145-BCF8-4F4F-A3ED29CE65BD}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\Big Cat Slam		456096
-	17776483	NC_Ability	.cache\C0\{C08C6181-D028-5CBE-332C-E7312625F502}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\NC_Ability		624380
-	35917189	GC_Attack_Var1	.cache\1D\{1D754636-28A7-5B15-F06F-72D74437FB6C}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Galley Cat Attack\GC_Attack_Var1		487908
-	54637397	SC_Attack_Var3	.cache\14\{1495A9A1-0450-7857-04ED-A2FDA513E7C6}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Shoot Cat Attack\SC_Attack_Var3		641468
-	166852162	BHC_Attack_Var1	.cache\34\{348DF2A4-7806-8DBF-E2B5-0E93CF32F747}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Boarding Hook Attack\BHC_Attack_Var1		426916
-	239654089	PC_Attack_Var1	.cache\3E\{3E361903-3A8D-FF11-E745-81A224FB406F}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Peanut Cat Attack\PC_Attack_Var1		573928
-	244094632	SC_Attack_Var1	.cache\3E\{3E0E140F-4C20-CE7F-DD77-545FCA553DCB}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Shoot Cat Attack\SC_Attack_Var1		624096
-	266786942	EC_Attack_Var2 (no_fuse)	.cache\AF\{AFF4EFC4-6479-0564-7207-2AC92FA8BD28}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Explodey Attack\EC_Attack_Var2 (no_fuse)		672172
-	280328494	Big Cat Charge	.cache\CF\{CF358D22-4C10-525E-470E-A9195B562407}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\Big Cat Charge		432096
-	448273026	BHC_Attack_Var2	.cache\91\{9172E9F7-2148-A323-7683-662BB7674551}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Boarding Hook Attack\BHC_Attack_Var2		441360
-	460048746	NC_Attack	.cache\99\{9921F90F-DC7C-7E61-724A-A93F633E4FD1}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Navigator Attack\NC_Attack		316916
-	496573163	SC_Ability_Var1	.cache\2F\{2F3A9E5B-91E7-5757-CCD3-4178EE24C623}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\Shoot Cat Ability\SC_Ability_Var1		628224
-	538100598	SC_Ability_Var2	.cache\91\{91AED4EC-F789-72A5-FFCD-74DF5DEE8F9A}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\Shoot Cat Ability\SC_Ability_Var2		544132
-	704298510	BC_Attack_Var1	.cache\7A\{7ADE446A-8A6D-CB10-CFB6-F03D1E3DAC2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Big Cat Attack\BC_Attack_Var1		265636
-	728740746	EC_Ability	.cache\48\{48CDB356-5C74-458C-AF6D-A6CA4C191A5A}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\EC_Ability		246484
-	782163275	EC_Attack_Var1 (no_fuse)	.cache\EB\{EB1E4A21-1A29-B230-8DC3-2EE14AD805DA}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Explodey Attack\EC_Attack_Var1 (no_fuse)		674172
-	801564742	BHC_Ability	.cache\B7\{B7F25D18-D0E1-B88A-F73B-7328DD3A5137}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\BHC_Ability		441140
-	801809568	GC_Attack_Var2	.cache\94\{94E88833-05AD-AE33-41B6-02B320E692D7}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Galley Cat Attack\GC_Attack_Var2		487908
-	801977273	RC_Attack	.cache\91\{9170CB19-465B-CFEC-7E72-A82AF102C0E1}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Rum Cat Attack\RC_Attack		447320
-	818023549	RC_Ability	.cache\15\{1523D679-5819-7C22-7196-C4634704692D}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\RC_Ability		336096
-	876127854	BC_Attack_Var2	.cache\A2\{A241DBE6-A1F0-739C-26D0-B1FAC28C6E2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Big Cat Attack\BC_Attack_Var2		265636
-	877950325	BC_Attack_Var3	.cache\77\{77DD1D0A-B603-8836-336D-AAB900377E92}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Big Cat Attack\BC_Attack_Var3		265636
-	979657370	SC_Attack_Var2	.cache\F6\{F6FED0CD-13B6-1F7A-A029-D9F851C7B10B}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Shoot Cat Attack\SC_Attack_Var2		641464
-	1028399437	PC_Ability	.cache\B7\{B7635D17-87D9-13EF-8C31-C9185C2717F7}.wem		\Containers\Default Work Unit\SFX\Character SFX\Abilities\PC_Ability		317428
-	1059462283	PC_Attack_Var2	.cache\6A\{6ABA42C9-BFB9-83C7-78C7-AF87838EECDE}.wem		\Containers\Default Work Unit\SFX\Character SFX\Attacks\Peanut Cat Attack\PC_Attack_Var2		573928
+	13557719	Big Cat Slam	.cache\42\{42E6E618-C145-BCF8-4F4F-A3ED29CE65BD}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\Big Cat Slam		456096
+	17776483	NC_Ability	.cache\C0\{C08C6181-D028-5CBE-332C-E7312625F502}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\NC_Ability		624380
+	35917189	GC_Attack_Var1	.cache\1D\{1D754636-28A7-5B15-F06F-72D74437FB6C}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Galley Cat Attack\GC_Attack_Var1		487908
+	54637397	SC_Attack_Var3	.cache\14\{1495A9A1-0450-7857-04ED-A2FDA513E7C6}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Shoot Cat Attack\SC_Attack_Var3		641468
+	166852162	BHC_Attack_Var1	.cache\34\{348DF2A4-7806-8DBF-E2B5-0E93CF32F747}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Boarding Hook Attack\BHC_Attack_Var1		426916
+	239654089	PC_Attack_Var1	.cache\3E\{3E361903-3A8D-FF11-E745-81A224FB406F}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Peanut Cat Attack\PC_Attack_Var1		573928
+	244094632	SC_Attack_Var1	.cache\3E\{3E0E140F-4C20-CE7F-DD77-545FCA553DCB}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Shoot Cat Attack\SC_Attack_Var1		624096
+	266786942	EC_Attack_Var2 (no_fuse)	.cache\AF\{AFF4EFC4-6479-0564-7207-2AC92FA8BD28}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Explodey Attack\EC_Attack_Var2 (no_fuse)		672172
+	280328494	Big Cat Charge	.cache\CF\{CF358D22-4C10-525E-470E-A9195B562407}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\Big Cat Charge		432096
+	448273026	BHC_Attack_Var2	.cache\91\{9172E9F7-2148-A323-7683-662BB7674551}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Boarding Hook Attack\BHC_Attack_Var2		441360
+	460048746	NC_Attack	.cache\99\{9921F90F-DC7C-7E61-724A-A93F633E4FD1}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Navigator Attack\NC_Attack		316916
+	496573163	SC_Ability_Var1	.cache\2F\{2F3A9E5B-91E7-5757-CCD3-4178EE24C623}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\Shoot Cat Ability\SC_Ability_Var1		628224
+	538100598	SC_Ability_Var2	.cache\91\{91AED4EC-F789-72A5-FFCD-74DF5DEE8F9A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\Shoot Cat Ability\SC_Ability_Var2		544132
+	673951063	Jam Track 2	.cache\AD\{AD61CC25-52F9-7381-7EFA-B88FD365AFBB}.wem		\Containers\Default Work Unit\Music\Music Switch\Combat\Jam Track 2\Jam Track 2		24457948
+	688935717	Jam Track 1	.cache\5A\{5A0B8DD0-BBC2-3E06-306C-F40D0753521B}.wem		\Containers\Default Work Unit\Music\Music Switch\Combat\Jam Track 1\Jam Track 1		29486868
+	704298510	BC_Attack_Var1	.cache\7A\{7ADE446A-8A6D-CB10-CFB6-F03D1E3DAC2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Big Cat Attack\BC_Attack_Var1		265636
+	728740746	EC_Ability	.cache\48\{48CDB356-5C74-458C-AF6D-A6CA4C191A5A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\EC_Ability		246484
+	782163275	EC_Attack_Var1 (no_fuse)	.cache\EB\{EB1E4A21-1A29-B230-8DC3-2EE14AD805DA}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Explodey Attack\EC_Attack_Var1 (no_fuse)		674172
+	801564742	BHC_Ability	.cache\B7\{B7F25D18-D0E1-B88A-F73B-7328DD3A5137}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\BHC_Ability		441140
+	801809568	GC_Attack_Var2	.cache\94\{94E88833-05AD-AE33-41B6-02B320E692D7}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Galley Cat Attack\GC_Attack_Var2		487908
+	801977273	RC_Attack	.cache\91\{9170CB19-465B-CFEC-7E72-A82AF102C0E1}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Rum Cat Attack\RC_Attack		447320
+	818023549	RC_Ability	.cache\15\{1523D679-5819-7C22-7196-C4634704692D}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\RC_Ability		336096
+	876127854	BC_Attack_Var2	.cache\A2\{A241DBE6-A1F0-739C-26D0-B1FAC28C6E2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Big Cat Attack\BC_Attack_Var2		265636
+	877950325	BC_Attack_Var3	.cache\77\{77DD1D0A-B603-8836-336D-AAB900377E92}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Big Cat Attack\BC_Attack_Var3		265636
+	979657370	SC_Attack_Var2	.cache\F6\{F6FED0CD-13B6-1F7A-A029-D9F851C7B10B}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Shoot Cat Attack\SC_Attack_Var2		641464
+	1028399437	PC_Ability	.cache\B7\{B7635D17-87D9-13EF-8C31-C9185C2717F7}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Abilities\PC_Ability		317428
+	1059462283	PC_Attack_Var2	.cache\6A\{6ABA42C9-BFB9-83C7-78C7-AF87838EECDE}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Peanut Cat Attack\PC_Attack_Var2		573928
 

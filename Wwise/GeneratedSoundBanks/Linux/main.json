@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}",
     "Language": "SFX",
-    "Hash": "{86ECB217-657F-BEB2-A3EC-90FB467E3A3C}",
+    "Hash": "{459C4539-F5E6-7D57-D1F9-4CBEB993BA1D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\main",
     "ShortName": "main",
     "Path": "main.bnk",
@@ -120,6 +120,22 @@
       "CachePath": "91/{91AED4EC-F789-72A5-FFCD-74DF5DEE8F9A}.wem"
      },
      {
+      "Id": "673951063",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jam Track 2.wav",
+      "CachePath": "AD/{AD61CC25-52F9-7381-7EFA-B88FD365AFBB}.wem"
+     },
+     {
+      "Id": "688935717",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jam Track 1.wav",
+      "CachePath": "5A/{5A0B8DD0-BBC2-3E06-306C-F40D0753521B}.wem"
+     },
+     {
       "Id": "704298510",
       "Language": "SFX",
       "Streaming": "false",
@@ -216,18 +232,6 @@
       "CachePath": "6A/{6ABA42C9-BFB9-83C7-78C7-AF87838EECDE}.wem"
      }
     ],
-    "Plugins": {
-     "Custom": [
-      {
-       "Id": "589825513",
-       "Name": "Compressor (Custom)",
-       "ObjectPath": "\\Containers\\Default Work Unit\\SFX\\Character SFX\\Attacks\\Shoot Cat Attack\\[Effect Slot [0]: (Compressor)]\\Compressor (Custom)",
-       "GUID": "{B735E03F-CAF5-466F-B700-899BC68F8983}",
-       "LibName": "Wwise Compressor",
-       "LibId": "7077891"
-      }
-     ]
-    },
     "Events": [
      {
       "Id": "4270486608",
@@ -505,34 +509,107 @@
        {
         "Id": "979657370"
        }
-      ],
-      "PluginRefs": {
-       "Custom": [
-        {
-         "Id": "589825513"
-        }
-       ]
-      }
+      ]
+     },
+     {
+      "Id": "1973954843",
+      "Name": "Mus_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music Events\\Mus_Start",
+      "GUID": "{C5BE1EC3-8A4F-4863-A7E6-B6C6914E5136}",
+      "Color": "1",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1690668539",
+         "Id": "2764240573",
+         "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "673951063"
+         },
+         {
+          "Id": "688935717"
+         }
+        ]
+       }
+      ]
      }
     ],
     "Busses": [
      {
       "Id": "393239870",
       "Name": "SFX",
-      "ObjectPath": "\\Busses\\Default Work Unit\\SFX",
-      "GUID": "{E52C5954-A135-4F57-B4B3-EC5F283654F8}",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\SFX",
+      "GUID": "{1EBABC70-4D1F-439A-A8E4-9F79E4392A25}",
       "Color": "7"
      },
      {
       "Id": "3991942870",
       "Name": "Music",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Music",
-      "GUID": "{744E490E-852F-4FEE-9C05-9590BE1DB647}",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\Music",
+      "GUID": "{CC930B33-7843-4B87-BE6A-B329462A504D}",
       "Color": "1"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1004648580",
+      "Name": "Vol_Music",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Music",
+      "GUID": "{A4B37177-BBDA-4351-86AF-15DF0E7A0440}"
+     },
+     {
+      "Id": "3273357900",
+      "Name": "Vol_SFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_SFX",
+      "GUID": "{791DC70D-5BE2-4BBE-A0A1-789CC36A662A}"
+     },
+     {
+      "Id": "3391499625",
+      "Name": "Vol_Master",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Master",
+      "GUID": "{B4DB30D7-8C6F-4DC3-BCD6-FEC2DC995230}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1690668539",
+      "Name": "Music_States",
+      "ObjectPath": "\\States\\Default Work Unit\\Music_States",
+      "GUID": "{2A7F4E0D-A86A-43E4-96FE-E5530639CB67}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\None",
+        "GUID": "{825EB21C-049C-43BF-9AB2-FE5A0E49564C}"
+       },
+       {
+        "Id": "2764240573",
+        "Name": "Combat",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Combat",
+        "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}"
+       },
+       {
+        "Id": "3406085544",
+        "Name": "PreCombat",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\PreCombat",
+        "GUID": "{2DF58EA2-40FA-43E1-BA95-27A0F552649E}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{3D5FA417-D710-4429-BD01-37A341EC5E9F}"
+  "FileHash": "{871110A6-AC36-5668-4766-A5CCAC59D641}"
  }
 }
