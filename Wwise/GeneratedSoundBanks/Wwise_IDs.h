@@ -13,15 +13,6 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID ABILITY_BC_CHARGE = 4270486608U;
-        static const AkUniqueID ABILITY_BC_SLAM = 2070473987U;
-        static const AkUniqueID ABILITY_BHC = 900757501U;
-        static const AkUniqueID ABILITY_EC = 4142292096U;
-        static const AkUniqueID ABILITY_GC = 4175847530U;
-        static const AkUniqueID ABILITY_NC = 4293290861U;
-        static const AkUniqueID ABILITY_PC = 3924183055U;
-        static const AkUniqueID ABILITY_RC = 3957738481U;
-        static const AkUniqueID ABILITY_SC = 3974516038U;
         static const AkUniqueID ATTACK_BC = 1700148525U;
         static const AkUniqueID ATTACK_BHC = 2897586865U;
         static const AkUniqueID ATTACK_EC = 1750481508U;
@@ -31,6 +22,15 @@ namespace AK
         static const AkUniqueID ATTACK_RC = 1431706749U;
         static const AkUniqueID ATTACK_SC = 1448484306U;
         static const AkUniqueID MUS_START = 1973954843U;
+        static const AkUniqueID SKILL_BC_CHARGE = 639682705U;
+        static const AkUniqueID SKILL_BC_SLAM = 3801119090U;
+        static const AkUniqueID SKILL_BHC = 161945808U;
+        static const AkUniqueID SKILL_EC = 1473217023U;
+        static const AkUniqueID SKILL_GC = 1506772129U;
+        static const AkUniqueID SKILL_NC = 1657770638U;
+        static const AkUniqueID SKILL_PC = 1154442192U;
+        static const AkUniqueID SKILL_RC = 1187997370U;
+        static const AkUniqueID SKILL_SC = 1171219749U;
     } // namespace EVENTS
 
     namespace STATES
@@ -42,12 +42,28 @@ namespace AK
             namespace STATE
             {
                 static const AkUniqueID COMBAT = 2764240573U;
+                static const AkUniqueID INTRO = 1125500713U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID PRECOMBAT = 3406085544U;
             } // namespace STATE
         } // namespace MUSIC_STATES
 
     } // namespace STATES
+
+    namespace SWITCHES
+    {
+        namespace EFFECT_SWITCHES
+        {
+            static const AkUniqueID GROUP = 2347947453U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID SMASHED = 730050812U;
+            } // namespace SWITCH
+        } // namespace EFFECT_SWITCHES
+
+    } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {

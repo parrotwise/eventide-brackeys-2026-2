@@ -167,6 +167,12 @@
         "GUID": "{825EB21C-049C-43BF-9AB2-FE5A0E49564C}"
        },
        {
+        "Id": "1125500713",
+        "Name": "Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Intro",
+        "GUID": "{16992E84-B31E-4B45-A5DE-B9197AB76532}"
+       },
+       {
         "Id": "2764240573",
         "Name": "Combat",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Combat",
@@ -177,6 +183,28 @@
         "Name": "PreCombat",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\PreCombat",
         "GUID": "{2DF58EA2-40FA-43E1-BA95-27A0F552649E}"
+       }
+      ]
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "2347947453",
+      "Name": "Effect_Switches",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches",
+      "GUID": "{A6B973AE-91FF-45EB-886F-623D230D7755}",
+      "Switches": [
+       {
+        "Id": "730050812",
+        "Name": "Smashed",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches\\Smashed",
+        "GUID": "{53DE62AA-32A9-4855-A81B-B6486315EB07}"
+       },
+       {
+        "Id": "1160234136",
+        "Name": "Normal",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches\\Normal",
+        "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}"
        }
       ]
      }
@@ -660,6 +688,6 @@
     ]
    }
   ],
-  "FileHash": "{5D97F770-A47F-39B1-C5B9-CB39CBAA3C17}"
+  "FileHash": "{6C3D9B0C-68DF-9FFC-C9BC-B3515449F81A}"
  }
 }
