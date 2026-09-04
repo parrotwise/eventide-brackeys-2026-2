@@ -86,13 +86,13 @@ theme_override_constants/separation = 20
 
 [node name="VolumeContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1931286854]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 40
 
-[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=31463956]
+[node name="MasterVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=31463956]
 layout_mode = 2
-text = "Volume"
+text = "Master"
 
-[node name="VolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=313815543]
+[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=313815543]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -100,9 +100,49 @@ theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
 theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
-max_value = 1.0
+min_value = -100.0
+max_value = 0.0
 step = 0.02
-value = 0.5
+
+[node name="VolumeContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=712624742]
+layout_mode = 2
+theme_override_constants/separation = 68
+
+[node name="MusicLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1055763289]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1288324845]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_5qx7l")
+theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
+theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
+theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
+min_value = -100.0
+max_value = 0.0
+step = 0.02
+
+[node name="VolumeContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1271050199]
+layout_mode = 2
+theme_override_constants/separation = 91
+
+[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=927014952]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=2077256551]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_5qx7l")
+theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
+theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
+theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
+min_value = -100.0
+max_value = 0.0
+step = 0.02
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
 layout_mode = 2

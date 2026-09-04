@@ -1,0 +1,7 @@
+[gd_resource type="WwiseBank" format=3 uid="uid://cg22n7rkfeo62"]
+
+[resource]
+name = "main"
+id = 3161908922
+guid = "{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}"
+dummy = true

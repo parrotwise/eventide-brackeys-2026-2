@@ -1,0 +1,25 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1690668539	Music_States			\Default Work Unit\Music_States	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Music_States			
+	2764240573	Combat	Music_States			
+	3406085544	PreCombat	Music_States			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1004648580	Vol_Music			\Default Work Unit\Bus Volumes\Vol_Music	
+	3273357900	Vol_SFX			\Default Work Unit\Bus Volumes\Vol_SFX	
+	3391499625	Vol_Master			\Default Work Unit\Bus Volumes\Vol_Master	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master\SFX	
+	3991942870	Music			\Default Work Unit\Master\Music	
+	4056684167	Master			\Default Work Unit\Master	
+
+Effect plug-ins	ID	Name	Type				Notes
+	866391301	Peak Limiter (Custom)	Wwise Peak Limiter			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

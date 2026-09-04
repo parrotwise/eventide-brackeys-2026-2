@@ -1,0 +1,38 @@
+{
+ "PlatformInfo": {
+  "Platform": {
+   "Name": "Linux",
+   "BasePlatform": "Linux",
+   "Generator": "2025.1.9.9197"
+  },
+  "RootPaths": {
+   "ProjectRoot": "../../../../../../OneDrive/Documents/Composition Projects/Game Jams/Team Eventide Brackeys 26.2/Wwise Project/Mates of Mendacity",
+   "SourceFilesRoot": "../../../../../../OneDrive/Documents/Composition Projects/Game Jams/Team Eventide Brackeys 26.2/Wwise Project/Mates of Mendacity/.cache",
+   "SoundBanksRoot": ".",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "../../../../../../OneDrive/Documents/Composition Projects/Game Jams/Team Eventide Brackeys 26.2/Wwise Project/Mates of Mendacity/GeneratedSoundBanks/Linux"
+  },
+  "DefaultAlign": "16",
+  "Settings": {
+   "AutoSoundBankDefinition": "false",
+   "CopyLooseStreamedMediaFiles": "true",
+   "SubFoldersForGeneratedFiles": "false",
+   "RemoveUnusedGeneratedFiles": "true",
+   "SourceControlGeneratedFiles": "true",
+   "GenerateHeaderFile": "true",
+   "GenerateContentTxtFile": "true",
+   "GenerateMetadataXML": "false",
+   "GenerateMetadataJSON": "true",
+   "GenerateAllBanksMetadata": "false",
+   "GeneratePerBankMetadata": "true",
+   "UseSoundBankNames": "true",
+   "AllowExceedingMaxSize": "false",
+   "MaxAttenuationInfo": "true",
+   "EstimatedDurationInfo": "true",
+   "PrintObjectGuid": "true",
+   "PrintObjectPath": "true",
+   "PrintObjectColor": "true"
+  },
+  "FileHash": "{FDDCD577-8BEF-73CE-AF27-B87EF75D9605}"
+ }
+}

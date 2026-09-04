@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://b0yxdocexqket"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Skill_GC"
+id = 1506772129
+guid = "{9ACBD04B-5EC4-4A31-96D4-B68CC08A8FE8}"
+dummy = true

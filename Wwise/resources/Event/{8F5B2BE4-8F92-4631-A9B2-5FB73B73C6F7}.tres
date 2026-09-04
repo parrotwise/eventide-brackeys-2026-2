@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://b4ihnym2h036q"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Attack_SC"
+id = 1448484306
+guid = "{8F5B2BE4-8F92-4631-A9B2-5FB73B73C6F7}"
+dummy = true

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d76jxbxnutqp"]
+
+[ext_resource type="Script" uid="uid://btc3cq2ct8s6h" path="res://temp/jake/wwise_testing.gd" id="1_vx1wj"]
+[ext_resource type="WwiseEvent" uid="uid://b4ihnym2h036q" path="res://Wwise/resources/Event/{8F5B2BE4-8F92-4631-A9B2-5FB73B73C6F7}.tres" id="2_n7c5o"]
+[ext_resource type="WwiseBank" uid="uid://cg22n7rkfeo62" path="res://Wwise/resources/SoundBank/{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}.tres" id="2_st36t"]
+[ext_resource type="WwiseEvent" uid="uid://dighduhbiifr5" path="res://Wwise/resources/Event/{D509B126-E369-4F34-B57E-505907D0C0E9}.tres" id="4_hyxu8"]
+
+[node name="WwiseTesting" type="Node" unique_id=154972880]
+script = ExtResource("1_vx1wj")
+event = ExtResource("2_n7c5o")
+
+[node name="AkListener2D" type="AkListener2D" parent="." unique_id=460280438]
+
+[node name="AkBank" type="AkBank" parent="." unique_id=1917553290]
+bank = ExtResource("2_st36t")
+load_on = 1
+
+[node name="Button" type="Button" parent="." unique_id=1427047111]
+offset_right = 365.0
+offset_bottom = 126.0
+text = "test event button"
+
+[node name="AkEvent2D" type="AkEvent2D" parent="." unique_id=1997623095]
+event = ExtResource("4_hyxu8")
