@@ -65,11 +65,11 @@ func _on_embark_button_pressed() -> void:
 	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
 
 
-func _on_character_selected(char: Character) -> void:
-	selected_character = char
+func _on_character_selected(character: Character) -> void:
+	selected_character = character
 	
 	# Create a clone to display.
-	var selected_ally: Actor = char.actor.duplicate()
+	var selected_ally: Actor = character.actor.duplicate()
 	selected_ally.scale = 1.3 * Vector2.ONE
 	for child in center_stage.get_children():
 		child.queue_free()

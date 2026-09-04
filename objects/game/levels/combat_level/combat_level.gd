@@ -246,9 +246,9 @@ func _on_target_selected(
 
 
 func _on_target_submitted(
-	action: Action,
-	user: Character,
-	target: Character
+	_action: Action,
+	_user: Character,
+	_target: Character
 ) -> void:
 	selector_component.pause()
 

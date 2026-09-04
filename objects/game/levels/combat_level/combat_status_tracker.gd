@@ -45,7 +45,7 @@ func untrack(status: Status) -> void:
 	status_removed.emit(status)
 
 
-func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null, specific_source_owner: Character = null) -> void:
+func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null) -> void:
 	for status: Status in active_statuses:
 		if specific_owner not in [null, status.owner]:
 			continue

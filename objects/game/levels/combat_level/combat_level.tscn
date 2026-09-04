@@ -38,6 +38,7 @@ script = ExtResource("2_7qx2x")
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("6_q682q")]
 
 [node name="Camera" parent="." unique_id=865445253 instance=ExtResource("7_q682q")]
+physics_interpolation_mode = 2
 
 [node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
 strategy_scene = ExtResource("10_f26kh")
