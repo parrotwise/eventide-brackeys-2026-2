@@ -7,11 +7,9 @@
 [resource]
 script = ExtResource("3_xwicr")
 name = "Throw Hardtack"
-description = "Deal 10 damage, then heal for the same amount. Does not end the turn."
+description = "Deal damage equal to your POW, then heal for the same amount."
 icon = ExtResource("2_se75s")
 sfx = 12
-target_damage = 10
-target_healing = 10
 power_as_target_damage = true
 power_as_target_healing = true
 free_action = true
