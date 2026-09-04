@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_v3dqp")
 effect = ExtResource("1_bf5jc")
-trigger_type = 7
+trigger_type = 10
 metadata/_custom_type_script = "uid://lvv535cj6j34"

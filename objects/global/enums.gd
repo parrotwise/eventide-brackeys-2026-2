@@ -40,6 +40,8 @@ enum TriggerType {
 	START_TURN,
 	LOSE_TURN,
 	END_TURN,
+	START_PHASE,
+	END_PHASE,
 }
 
 enum StackingType {

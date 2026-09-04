@@ -145,6 +145,21 @@ func _on_combat_start() -> void:
 			if character in Game.level.characters.all:
 				fire_triggers(Enums.TriggerType.END_TURN, character)
 	)
+	
+	Game.level.turn_tracker_component.battle_group_started.connect(
+		func (battle_group: StringName):
+			if battle_group == Game.level.turn_tracker_component.ALLIES_GROUP:
+				for character in Game.level.characters.enemies:
+					fire_triggers(Enums.TriggerType.END_PHASE, character)
+				for character in Game.level.characters.allies:
+					fire_triggers(Enums.TriggerType.START_PHASE, character)
+			
+			elif battle_group == Game.level.turn_tracker_component.ENEMIES_GROUP:
+				for character in Game.level.characters.allies:
+					fire_triggers(Enums.TriggerType.END_PHASE, character)
+				for character in Game.level.characters.enemies:
+					fire_triggers(Enums.TriggerType.START_PHASE, character)
+	)
 
 	# Refresh positionally granted statuses on reposition
 	Game.level.characters.characters_repositioned.connect(_on_characters_repositioned.call_deferred)
