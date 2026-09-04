@@ -19,3 +19,4 @@ mono_crash.*.json
 # Custom ignores
 local/
 addons/Wwise/**/~*.dll
+Wwise/resources/*.tres
