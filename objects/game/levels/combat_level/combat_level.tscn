@@ -25,11 +25,11 @@ script = ExtResource("2_7qx2x")
 
 [node name="Queue" parent="." unique_id=224857673 instance=ExtResource("2_s0i7f")]
 
+[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("4_hyn1k")]
+
 [node name="TurnTracker" parent="." unique_id=2074221435 instance=ExtResource("4_c7jmv")]
 
 [node name="StatusTracker" parent="." unique_id=1132919478 instance=ExtResource("5_f26kh")]
-
-[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("4_hyn1k")]
 
 [node name="Effector" parent="." unique_id=755835823 instance=ExtResource("2_aokjo")]
 
