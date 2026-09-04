@@ -103,7 +103,7 @@ func set_state(state: State) -> void:
 
 
 func set_switch(switch: Switch, switch_value: String) -> void:
-	var switch_group: String = _switch_group(switch)['group']
+	var switch_group: String = _switch_group(switch)
 	if switch_group:
 		Wwise.set_switch(switch_group, switch_value, self)
 
