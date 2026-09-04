@@ -101,8 +101,7 @@ func _ready() -> void:
 	for character: Character in characters.all:
 		character.state_component.health_changed.connect(_on_health_changed.bind(character))
 		character.state_component.knockout.connect(_on_knocked_out.bind(character))
-
-	# Audio.play_music(Audio.Track.TRACK1)
+	
 	Game.start.emit()
 
 

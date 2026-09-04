@@ -7,7 +7,16 @@ signal applied()
 @export_group("Identifiers")
 
 @export var name: String = ""
+
+@export_group("Audio")
+
+## TODO: Deprecated!
 @export var sfx: Audio.Clip
+##       ...replaced with these below
+@export var post_event: Audio.Event
+@export var set_state: Audio.State
+@export var set_switch: Audio.Switch
+@export var switch_value: String
 
 @export_group("Effect Definition")
 
@@ -110,7 +119,12 @@ func apply(bypass_queue: bool = false) -> void:
 	
 	if remove_source_status:
 		source.owner.state_component.remove_status(source)
-	
+
+	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
+	##       ...replaced with these below
+	Audio.post_event(post_event)
+	Audio.set_state(set_state)
+	Audio.set_switch(set_switch, switch_value)
 	
 	applied.emit()

@@ -10,7 +10,16 @@ signal used(user: Character, target: Character)
 @export var name: String
 @export_multiline() var description: String
 @export var icon: Texture
+
+@export_group("Audio")
+
+## TODO: Deprecated!
 @export var sfx: Audio.Clip
+##       ...replaced with these below
+@export var post_event: Audio.Event
+@export var set_state: Audio.State
+@export var set_switch: Audio.Switch
+@export var switch_value: String
 
 @export_group("Effect Definition")
 
@@ -51,7 +60,14 @@ var owner: Character
 
 func use(user: Character, target: Character) -> void:
 	Game.level.effector_component.apply(self, user, target)
+
+	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
+	##       ...replaced with these below
+	Audio.post_event(post_event)
+	Audio.set_state(set_state)
+	Audio.set_switch(set_switch, switch_value)
+	
 	used.emit(user, target)
 
 
