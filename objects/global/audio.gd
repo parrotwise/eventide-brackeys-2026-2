@@ -89,7 +89,7 @@ func _process(_delta: float) -> void:
 	)
 
 
-func trigger_event(event: Event) -> void:
+func post_event(event: Event) -> void:
 	var event_name: String = _event_name(event)
 	if event_name:
 		Wwise.post_event(event_name, self)
