@@ -9,6 +9,6 @@ script = ExtResource("3_fdjti")
 name = "Basic Attack"
 description = "Perform a basic attack."
 icon = ExtResource("2_o41qe")
-sfx = 9
+sfx = 14
 power_as_target_damage = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

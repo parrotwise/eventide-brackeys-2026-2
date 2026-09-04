@@ -3,19 +3,24 @@ extends Node
 
 enum Clip {
 	NONE,
-	BC_ATTACK,
 	BC_ABILITY_CHARGE,
 	BC_ABILITY_SLAM,
+	BC_ATTACK,
+	BHC_ABILITY,
 	BHC_ATTACK,
+	EC_ABILITY,
 	EC_ATTACK,
 	EC_ATTACK_NO_FUSE,
+	GC_ABILITY,
 	GC_ATTACK,
+	PC_ABILITY,
 	PC_ATTACK,
-	RC_ATTACK,
 	RC_ABILITY,
-	SC_ATTACK,
+	RC_ATTACK,
 	SC_ABILITY,
+	SC_ATTACK,
 	NC_ABILITY,
+	NC_ATTACK,
 	EAT_CRUNCH,
 	UI_BUTTON,
 }
@@ -76,32 +81,42 @@ func stop_music() -> void:
 
 func _pick_clip(clip: Clip) -> StringName:
 	match clip:
-		Clip.BC_ATTACK:
-			return &'BC Attack'
 		Clip.BC_ABILITY_CHARGE:
 			return &'BC Ability Charge'
 		Clip.BC_ABILITY_SLAM:
 			return &'BC Ability Slam'
+		Clip.BC_ATTACK:
+			return &'BC Attack'
+		Clip.BHC_ABILITY:
+			return &'BHC Ability'
 		Clip.BHC_ATTACK:
 			return &'BHC Attack'
+		Clip.EC_ABILITY:
+			return &'EC Ability'
 		Clip.EC_ATTACK:
 			return &'EC Attack'
 		Clip.EC_ATTACK_NO_FUSE:
 			return &'EC Attack No Fuse'
+		Clip.GC_ABILITY:
+			return &'GC Ability'
 		Clip.GC_ATTACK:
 			return &'GC Attack'
+		Clip.PC_ABILITY:
+			return &'PC Ability'
 		Clip.PC_ATTACK:
 			return &'PC Attack'
-		Clip.RC_ATTACK:
-			return &'RC Attack'
 		Clip.RC_ABILITY:
 			return &'RC Ability'
-		Clip.SC_ATTACK:
-			return &'SC Attack'
+		Clip.RC_ATTACK:
+			return &'RC Attack'
 		Clip.SC_ABILITY:
 			return &'SC Ability'
+		Clip.SC_ATTACK:
+			return &'SC Attack'
 		Clip.NC_ABILITY:
 			return &'NC Ability'
+		Clip.NC_ATTACK:
+			return &'NC Attack'
 		Clip.EAT_CRUNCH:
 			return &'Eat Crunch'
 		Clip.UI_BUTTON:

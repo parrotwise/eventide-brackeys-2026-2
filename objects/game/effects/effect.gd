@@ -111,4 +111,6 @@ func apply(bypass_queue: bool = false) -> void:
 	if remove_source_status:
 		source.owner.state_component.remove_status(source)
 	
+	Audio.play_sfx(sfx)
+	
 	applied.emit()
