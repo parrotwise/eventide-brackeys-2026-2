@@ -223,6 +223,7 @@ func _on_trigger_fired(trigger: Trigger) -> void:
 			trigger.effect.source.name
 		]
 	)
+	trigger.effect.source.owner.actor.do_trigger_as_user(trigger)
 
 
 func _on_target_selected(

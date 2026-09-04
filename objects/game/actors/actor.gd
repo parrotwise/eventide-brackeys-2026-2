@@ -39,6 +39,14 @@ func do_action_as_user(action: Action, _target: Character):
 	# basic_attack()
 
 
+func do_trigger_as_user(trigger: Trigger):
+	var triggering_source: Variant = trigger.effect.source
+	
+	# Basic attack
+	if triggering_source.name == &"Jaw Cruncher":
+		exit_stance()
+
+
 func fire_effect(effect: Effect) -> void:
 	print(effect.name)
 	target = effect.target
@@ -105,6 +113,12 @@ func enter_stance() -> void:
 		animation_player.play(&"enter_stance")
 	if animation_player.has_animation(&"stance"):
 		animation_player.queue(&"stance")
+
+func exit_stance() -> void:
+	if animation_player.has_animation(&"exit_stance"):
+		animation_player.play(&"exit_stance")
+	if animation_player.has_animation(&"idle"):
+		animation_player.queue(&"idle")
 
 func dead() -> void:
 	pass
