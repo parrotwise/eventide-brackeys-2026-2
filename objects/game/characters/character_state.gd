@@ -26,6 +26,11 @@ var character: Character
 var current_health: int
 var knocked_out: bool = false
 
+var current_health_ratio: float:
+	get: return float(current_health) / max_health
+var missing_health_ratio: float:
+	get: return 1.0 - current_health_ratio
+
 ## Status effects currently affecting this Character
 var _active_statuses: Array[Status] = []
 var active_statuses: Array[Status]:

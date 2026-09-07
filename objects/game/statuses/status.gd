@@ -19,6 +19,7 @@ signal removed(character: Character)
 @export_group("Effect")
 ## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.
 @export_range(0, 1, 0.01) var likelihood: float = 1
+@export_range(0, 1, 0.01) var condition_owner_health_ratio_min: float = 0
 
 @export_subgroup("Adders")
 
@@ -157,17 +158,18 @@ func modify_effect(effect: Effect) -> Effect:
 	if randf() > likelihood:
 		return
 	
+	if owner.state_component.current_health_ratio < condition_owner_health_ratio_min:
+		return
+	
 	if effect.source.name == &'Sling Slop' and no_more_please:
 		effect.cause_lose_turn = true
 	
-	var missing_health_ratio: float = 1.0 - (float(owner.state_component.current_health) / owner.state_component.max_health)
-	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * missing_health_ratio
-
+	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
+	
 	if owner == effect.owner:
 		effect.damage = floori(effect.damage * final_damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
 		effect.damage_explosive = floori(effect.damage_explosive * final_damage_dealt_multiplier)
-		effect.damage_explosive += damage_dealt_adder
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
 		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
@@ -186,7 +188,6 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.damage = floori(effect.damage * damage_taken_multiplier)
 		effect.damage += damage_taken_adder
 		effect.damage_explosive = floori(effect.damage_explosive * damage_taken_multiplier)
-		effect.damage_explosive += damage_taken_adder
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)

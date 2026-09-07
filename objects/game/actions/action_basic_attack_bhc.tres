@@ -11,4 +11,5 @@ description = "Perform a basic attack."
 icon = ExtResource("2_24cmq")
 sfx = 5
 power_as_target_damage = true
+knockback_once = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"
