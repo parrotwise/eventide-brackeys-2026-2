@@ -49,15 +49,15 @@ var damage_dealt_multiplier: float:
 
 @export var _missing_hp_to_dmg_dealt_mult: float = 0.0
 var missing_hp_to_dmg_dealt_mult: float:
-	get: return 1.0 + (_missing_hp_to_dmg_dealt_mult - 1.0) * stack
+	get: return _missing_hp_to_dmg_dealt_mult * stack
 
 @export var _damage_dealt_to_splash_mult: float = 0.0
 var damage_dealt_to_splash_mult: float:
-	get: return 1.0 + (_damage_dealt_to_splash_mult - 1.0) * stack
+	get: return _damage_dealt_to_splash_mult * stack
 
 @export var _damage_taken_to_splash_mult: float = 0.0
 var damage_taken_to_splash_mult: float:
-	get: return 1.0 + (_damage_taken_to_splash_mult - 1.0) * stack
+	get: return _damage_taken_to_splash_mult * stack
 
 @export var _damage_taken_multiplier: float = 1.0 
 var damage_taken_multiplier: float:
