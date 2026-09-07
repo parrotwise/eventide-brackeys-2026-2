@@ -12,4 +12,4 @@ name = "Nasty Cuts"
 description = "Every stack of Nasty Cuts deals 5 damage to you at the beginning of your turn. Can’t be removed."
 icon = ExtResource("1_ptmg2")
 triggers = Array[ExtResource("3_6vh4o")]([ExtResource("4_ptmg2")])
-stacking_type = 1
+stacking_type = 2

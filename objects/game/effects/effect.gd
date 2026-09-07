@@ -21,8 +21,17 @@ signal applied()
 @export_group("Effect Definition")
 
 @export var damage: int = 0
+var stacked_damage: int:
+	get: return damage * stack_mult
+
 @export var damage_explosive: int = 0
+var stacked_damage_explosive: int:
+	get: return damage_explosive * stack_mult
+
 @export var healing: int = 0
+var stacked_healing: int:
+	get: return healing * stack_mult
+
 @export var add_max_health: int = 0
 
 @export var swap_places: bool = false
@@ -45,6 +54,9 @@ signal applied()
 var source: Variant  # The parent Action or Status
 var owner: Character
 var target: Character
+
+var stack_mult: int:
+	get: return source.stack if is_instance_valid(source) and source is Status else 1
 
 
 static func create(p_source: Variant, p_user: Character, p_target: Character) -> Effect:
@@ -87,10 +99,10 @@ func apply(bypass_queue: bool = false) -> void:
 		return
 	
 	## Immediate effects first
-	if damage or damage_explosive:
-		target.state_component.take_damage(damage + damage_explosive, damage_explosive > 0)
-	if healing:
-		target.state_component.heal(healing)
+	if stacked_damage or stacked_damage_explosive:
+		target.state_component.take_damage(stacked_damage + stacked_damage_explosive, stacked_damage_explosive > 0)
+	if stacked_healing:
+		target.state_component.heal(stacked_healing)
 	if add_max_health:
 		target.state_component.add_max_health(add_max_health)
 	if swap_places:
