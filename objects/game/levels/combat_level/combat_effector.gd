@@ -28,116 +28,116 @@ func interpret(
 	
 	if action.target_damage > 0:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].damage += action.target_damage
 	
 	if action.target_damage_explosive > 0:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].damage_explosive += action.target_damage_explosive
 
 	if action.splash_damage > 0:
 		for adjacent: Character in Game.level.characters.get_adjacent_to(target):
 			if adjacent not in effects:
-				effects[adjacent] = _new_effect(action, user, adjacent)
+				effects[adjacent] = Effect.create(action, user, adjacent)
 			
 			effects[adjacent].damage += action.splash_damage
 
 	if action.target_healing > 0:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].healing += action.target_healing
 
 	if action.power_as_target_damage:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].damage += user.state_component.power
 
 	if action.power_as_target_damage_explosive:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].damage_explosive += user.state_component.power
 
 	if action.power_as_target_healing:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].healing += user.state_component.power
 
 	if action.swap_places:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].swap_places = true
 
 	if action.knockback_once:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].knockback_once = true
 
 	if action.knockback_to_rear:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].knockback_to_rear = true
 
 	if action.pull_once:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].pull_once = true
 
 	if action.pull_to_front:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].pull_to_front = true
 
 	if action.crunch_peanuts:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].crunch_peanuts = true
 
 	if action.reattach_sootgut:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].reattach_sootgut = true
 
 	if action.cause_miss_action:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].cause_miss_action = true
 
 	if action.cause_lose_turn:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].cause_lose_turn = true
 
 	if action.remove_source_status:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].remove_source_status = true
 	
 	if action.applied_statuses:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].applied_statuses.append_array(action.applied_statuses)
 	
 	if action.created_objects:
 		if target not in effects:
-			effects[target] = _new_effect(action, user, target)
+			effects[target] = Effect.create(action, user, target)
 		
 		effects[target].created_objects.append_array(action.created_objects)
 	
@@ -192,11 +192,3 @@ func apply(action: Action, user: Character, target: Character) -> void:
 		await get_tree().create_timer(0.2).timeout
 	
 	action_finished.emit(action)
-
-
-func _new_effect(source: Variant, user: Character, target: Character) -> Effect:
-	var effect := Effect.new()
-	effect.source = source
-	effect.owner = user
-	effect.target = target
-	return effect

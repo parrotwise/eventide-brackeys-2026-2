@@ -19,19 +19,24 @@ signal removed(character: Character)
 @export_group("Effect")
 ## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.
 @export_range(0, 1, 0.01) var likelihood: float = 1
+
 @export_subgroup("Adders")
 @export var damage_dealt_adder: int = 0
 @export var damage_taken_adder: int = 0
 @export var healing_applied_adder: int = 0
 @export var healing_received_adder: int = 0
 @export var max_health_adder: int = 0
+
 @export_subgroup("Multipliers")
 @export var damage_dealt_multiplier: float = 1.0 
 @export var missing_hp_to_dmg_dealt_mult: float = 0.0
+@export var damage_dealt_to_splash_mult: float = 0.0
+@export var damage_taken_to_splash_mult: float = 0.0
 @export var damage_taken_multiplier: float = 1.0 
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
 @export var max_health_multiplier: float = 1.0
+
 @export_subgroup("Flags")
 @export var can_attack_twice: bool = false
 @export var can_be_healed: bool = true
@@ -120,6 +125,15 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing += healing_applied_adder
 		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
 		effect.add_max_health += max_health_adder
+
+		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
+			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+
+				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_mult)
+				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_mult)
+				
+				effect.extra_effects.append(splash_effect)
 	
 	if owner == effect.target:
 		effect.damage = floori(effect.damage * damage_taken_multiplier)
@@ -130,6 +144,15 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing += healing_received_adder
 		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
 		effect.add_max_health += max_health_adder
+
+		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
+			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+				
+				splash_effect.damage = roundi(effect.damage * damage_taken_to_splash_mult)
+				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_taken_to_splash_mult)
+				
+				effect.extra_effects.append(splash_effect)
 	
 	return effect
 

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://c5mocfaivuod7"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_878j7"]
+[ext_resource type="Texture2D" uid="uid://cs8drrasw0aco" path="res://assets/art/UI/status_effect_icons/status_rc_flammable.png" id="2_878j7"]
+[ext_resource type="Texture2D" uid="uid://cdcabs48nu2u3" path="res://assets/art/UI/buttons/passive_icon_ec_hover.png" id="3_4jyun"]
+[ext_resource type="Texture2D" uid="uid://cuyxgps7w0lln" path="res://assets/art/UI/buttons/passive_icon_ec.png" id="4_avt27"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="5_6xrjw"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="6_lr1xc"]
+
+[resource]
+script = ExtResource("5_6xrjw")
+name = "Pinchin' Parrish"
+description = "Every time you deal damage, deal 50% of it to adjacent targets. Every time you TAKE damage, deal 40% of it to adjacent teammates."
+icon = ExtResource("2_878j7")
+passive_icon_normal = ExtResource("4_avt27")
+passive_icon_hover = ExtResource("3_4jyun")
+damage_dealt_to_splash_mult = 0.5
+damage_taken_to_splash_mult = 0.4

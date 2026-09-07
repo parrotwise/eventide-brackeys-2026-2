@@ -40,10 +40,19 @@ signal applied()
 
 @export var applied_statuses: Array[Status] = []
 @export var created_objects: Array[PackedScene] = []
+@export var extra_effects: Array[Effect] = []
 
 var source: Variant  # The parent Action or Status
 var owner: Character
 var target: Character
+
+
+static func create(p_source: Variant, p_user: Character, p_target: Character) -> Effect:
+	var effect := Effect.new()
+	effect.source = p_source
+	effect.owner = p_user
+	effect.target = p_target
+	return effect
 
 
 func merge_with(other: Effect) -> Effect:
@@ -128,3 +137,6 @@ func apply(bypass_queue: bool = false) -> void:
 	Audio.set_switch(set_switch, switch_value)
 	
 	applied.emit()
+
+	for extra_effect: Effect in extra_effects:
+		extra_effect.apply(bypass_queue)
