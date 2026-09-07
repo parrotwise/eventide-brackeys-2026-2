@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://71fog50qxyau"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_5jyce"]
+[ext_resource type="Texture2D" uid="uid://bgx0iyq51unra" path="res://assets/art/UI/status_effect_icons/status_rc_smashed.png" id="2_5jyce"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_1vnpd"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_wnqqt"]
+[ext_resource type="Resource" uid="uid://daix65ddy3dx3" path="res://objects/game/triggers/trigger_high_spirits.tres" id="5_ekeiu"]
+
+[resource]
+script = ExtResource("3_1vnpd")
+name = "High Spirits"
+description = "You gain a 25% bonus to POW, and heal 5 damage at the end of your team's turn."
+icon = ExtResource("2_5jyce")
+power_multiplier = 1.25
+triggers = Array[ExtResource("4_wnqqt")]([ExtResource("5_ekeiu")])
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

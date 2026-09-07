@@ -15,9 +15,10 @@ signal status_removed(status: Status)
 @export var max_health: int = 100
 @export var passive_status: Status
 
-## TODO: Power modified by persistent effects
+var power_multiplier: float:
+	get: return active_statuses.reduce(func(accum: float, status: Status): return accum * status.power_multiplier, 1.0)
 var power: int:
-	get: return base_power
+	get: return roundi(base_power * power_multiplier)
 
 var character: Character
 var current_health: int

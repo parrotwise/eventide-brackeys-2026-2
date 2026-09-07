@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://t3k53iw6q11o"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_v3qfg"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_4655e"]
+
+[resource]
+script = ExtResource("2_4655e")
+healing = 5
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

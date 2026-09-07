@@ -36,6 +36,7 @@ signal removed(character: Character)
 @export var healing_applied_multiplier: float = 1.0
 @export var healing_received_multiplier: float = 1.0
 @export var max_health_multiplier: float = 1.0
+@export var power_multiplier: float = 1.0
 
 @export_subgroup("Flags")
 @export var can_attack_twice: bool = false
@@ -48,6 +49,7 @@ signal removed(character: Character)
 
 @export_group("Positional")
 @export var grant_ahead: Status = null
+@export var grant_adjacent: Status = null
 
 @export_group("Triggers")
 @export var triggers: Array[Trigger] = []
@@ -132,7 +134,7 @@ func modify_effect(effect: Effect) -> Effect:
 
 				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_mult)
 				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_mult)
-				
+
 				effect.extra_effects.append(splash_effect)
 	
 	if owner == effect.target:
@@ -158,16 +160,34 @@ func modify_effect(effect: Effect) -> Effect:
 
 
 func refresh_granted_statuses() -> void:
-	if not grant_ahead:
-		return
-	
 	var characters_ahead: Array[Character] = Game.level.characters.get_all_ahead_of(owner)
+	var characters_adjacent: Array[Character] = Game.level.characters.get_adjacent_to(owner)
+
+	var revoked_statuses: Array[Status] = []
 
 	for status: Status in granted_statuses:
-		if status.owner not in characters_ahead:
-			status.owner.state_component.remove_status(status)
+		var granted_ahead: bool = grant_ahead and status.name == grant_ahead.name
+		if granted_ahead and status.owner not in characters_ahead:
+			revoked_statuses.append(status)
+
+		var granted_adjacent: bool = grant_adjacent and status.name == grant_adjacent.name
+		if granted_adjacent and status.owner not in characters_adjacent:
+			revoked_statuses.append(status)
 	
-	for character: Character in characters_ahead:
-		if not character.state_component.active_statuses.any(func(s): return s.name == grant_ahead.name):
-			character.state_component.apply_status(grant_ahead)
-		
+	for status: Status in revoked_statuses:
+		granted_statuses.erase(status)
+		status.owner.state_component.remove_status(status)
+	
+	if grant_ahead:
+		for character: Character in characters_ahead:
+			if not character.state_component.active_statuses.any(func(s): return s.name == grant_ahead.name):
+				granted_statuses.append(
+					character.state_component.apply_status(grant_ahead)
+				)
+	
+	if grant_adjacent:
+		for character: Character in characters_adjacent:
+			if not character.state_component.active_statuses.any(func(s): return s.name == grant_adjacent.name):
+				granted_statuses.append(
+					character.state_component.apply_status(grant_adjacent)
+				)
