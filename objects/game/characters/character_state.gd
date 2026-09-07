@@ -17,8 +17,10 @@ signal status_removed(status: Status)
 
 var power_multiplier: float:
 	get: return active_statuses.reduce(func(accum: float, status: Status): return accum * status.power_multiplier, 1.0)
+var power_adder: int:
+	get: return active_statuses.reduce(func(accum: int, status: Status): return accum + status.power_adder, 0)
 var power: int:
-	get: return roundi(base_power * power_multiplier)
+	get: return roundi(base_power * power_multiplier) + power_adder
 
 var character: Character
 var current_health: int

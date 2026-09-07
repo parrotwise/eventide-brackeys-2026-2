@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://piitpgpjn42w"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_wn6it"]
+[ext_resource type="Resource" uid="uid://dl13wc65a1lts" path="res://objects/game/statuses/status_unflinching.tres" id="2_wn6it"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="3_kggo1"]
+
+[resource]
+script = ExtResource("3_kggo1")
+applied_statuses = Array[ExtResource("1_wn6it")]([ExtResource("2_wn6it")])
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

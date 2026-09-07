@@ -41,6 +41,10 @@ var healing_received_adder: int:
 # Does not interact with stacks
 @export var max_health_adder: int = 0
 
+@export var _power_adder: int = 0
+var power_adder: int:
+	get: return _power_adder * stack
+
 @export_subgroup("Multipliers")
 
 @export var _damage_dealt_multiplier: float = 1.0

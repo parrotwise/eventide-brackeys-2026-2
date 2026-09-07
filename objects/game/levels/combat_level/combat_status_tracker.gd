@@ -121,6 +121,12 @@ func _on_combat_start() -> void:
 		func (_action: Action, user: Character, _target: Character):
 			fire_triggers(Enums.TriggerType.USING_ACTION, user)
 	)
+	
+	Game.level.characters.characters_repositioned.connect(
+		func (char1: Character, char2: Character):
+			fire_triggers(Enums.TriggerType.REPOSITIONED, char1)
+			fire_triggers(Enums.TriggerType.REPOSITIONED, char2)
+	)
 
 	Game.level.turn_tracker_component.turn_started.connect(
 		func (character: Character):
