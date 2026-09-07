@@ -21,22 +21,63 @@ signal removed(character: Character)
 @export_range(0, 1, 0.01) var likelihood: float = 1
 
 @export_subgroup("Adders")
-@export var damage_dealt_adder: int = 0
-@export var damage_taken_adder: int = 0
-@export var healing_applied_adder: int = 0
-@export var healing_received_adder: int = 0
+
+@export var _damage_dealt_adder: int = 0
+var damage_dealt_adder: int:
+	get: return _damage_dealt_adder * stack
+
+@export var _damage_taken_adder: int = 0
+var damage_taken_adder: int:
+	get: return _damage_taken_adder * stack
+
+@export var _healing_applied_adder: int = 0
+var healing_applied_adder: int:
+	get: return _healing_applied_adder * stack
+
+@export var _healing_received_adder: int = 0
+var healing_received_adder: int:
+	get: return _healing_received_adder * stack
+
+# Does not interact with stacks
 @export var max_health_adder: int = 0
 
 @export_subgroup("Multipliers")
-@export var damage_dealt_multiplier: float = 1.0 
-@export var missing_hp_to_dmg_dealt_mult: float = 0.0
-@export var damage_dealt_to_splash_mult: float = 0.0
-@export var damage_taken_to_splash_mult: float = 0.0
-@export var damage_taken_multiplier: float = 1.0 
-@export var healing_applied_multiplier: float = 1.0
-@export var healing_received_multiplier: float = 1.0
-@export var max_health_multiplier: float = 1.0
-@export var power_multiplier: float = 1.0
+
+@export var _damage_dealt_multiplier: float = 1.0
+var damage_dealt_multiplier: float:
+	get: return 1.0 + (_damage_dealt_multiplier - 1.0) * stack
+
+@export var _missing_hp_to_dmg_dealt_mult: float = 0.0
+var missing_hp_to_dmg_dealt_mult: float:
+	get: return 1.0 + (_missing_hp_to_dmg_dealt_mult - 1.0) * stack
+
+@export var _damage_dealt_to_splash_mult: float = 0.0
+var damage_dealt_to_splash_mult: float:
+	get: return 1.0 + (_damage_dealt_to_splash_mult - 1.0) * stack
+
+@export var _damage_taken_to_splash_mult: float = 0.0
+var damage_taken_to_splash_mult: float:
+	get: return 1.0 + (_damage_taken_to_splash_mult - 1.0) * stack
+
+@export var _damage_taken_multiplier: float = 1.0 
+var damage_taken_multiplier: float:
+	get: return 1.0 + (_damage_taken_multiplier - 1.0) * stack
+
+@export var _healing_applied_multiplier: float = 1.0
+var healing_applied_multiplier: float:
+	get: return 1.0 + (_healing_applied_multiplier - 1.0) * stack
+
+@export var _healing_received_multiplier: float = 1.0
+var healing_received_multiplier: float:
+	get: return 1.0 + (_healing_received_multiplier - 1.0) * stack
+
+@export var _max_health_multiplier: float = 1.0
+var max_health_multiplier: float:
+	get: return 1.0 + (_max_health_multiplier - 1.0) * stack
+
+@export var _power_multiplier: float = 1.0
+var power_multiplier: float:
+	get: return 1.0 + (_power_multiplier - 1.0) * stack
 
 @export_subgroup("Flags")
 @export var can_attack_twice: bool = false
