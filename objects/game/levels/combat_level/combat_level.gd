@@ -254,7 +254,7 @@ func _on_target_submitted(
 
 
 func _on_ally_selected(ally: Character):
-	ui.set_action_buttons(ally)
+	ui.setup_bottom_bar(ally)
 
 	for other: Character in characters.allies:
 		other.indicators_component.hide_selection_indicator()
@@ -295,7 +295,7 @@ func _on_turn_ended(character: Character) -> void:
 		selector_component.cycle_through_allies(Enums.Direction.RIGHT, false)
 	else:
 		selector_component.reset()
-		ui.reset_action_panel()
+		ui.reset_bottom_bar()
 
 
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:

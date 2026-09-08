@@ -12,7 +12,7 @@ signal status_applied(status: Status)
 signal status_removed(status: Status)
 
 @export var base_power: int = 10
-@export var max_health: int = 100
+@export var base_max_health: int = 100
 @export var passive_status: Status
 
 var power_multiplier: float:
@@ -21,6 +21,15 @@ var power_adder: int:
 	get: return active_statuses.reduce(func(accum: int, status: Status): return accum + status.power_adder, 0)
 var power: int:
 	get: return roundi(base_power * power_multiplier) + power_adder
+
+var max_health_multiplier: float:
+	get: return active_statuses.reduce(func(accum: float, status: Status): return accum * status.max_health_multiplier, 1.0)
+var max_health_adder: int:
+	get: return active_statuses.reduce(func(accum: int, status: Status): return accum + status.max_health_adder, 0)
+var max_health_one: bool:
+	get: return active_statuses.reduce(func(accum: int, status: Status): return accum or status.max_health_one, false)
+var max_health: int:
+	get: return 1 if max_health_one else (ceili(base_max_health * max_health_multiplier) + max_health_adder)
 
 var character: Character
 var current_health: int
@@ -87,33 +96,10 @@ func heal(amount: int) -> void:
 	healing_received.emit()
 
 
-func add_max_health(amount: int) -> void:
-	if knocked_out:
-		return
-	
-	max_health = maxi(0, max_health + amount)
-	
+func refresh_health() -> void:
 	var previous_health: int = current_health
 
-	current_health = mini(max_health, current_health)
-
-	if current_health == previous_health:
-		return
-	
-	health_changed.emit(previous_health, current_health)
-	
-	if current_health == 0:
-		knocked_out = true
-		knockout.emit()
-
-		Game.level.characters.remove(character)
-
-
-func reset_health() -> void:
-	var previous_health: int = current_health
-
-	current_health = max_health
-	knocked_out = false
+	current_health = clampi(current_health, 0, max_health)
 	
 	if current_health == previous_health:
 		return
@@ -142,6 +128,8 @@ func apply_status(status_template: Status) -> Status:
 	status.applied.connect(func(_character): status_applied.emit(status))
 	status.apply_to(character)
 
+	refresh_health()
+
 	return status
 
 
@@ -156,3 +144,5 @@ func remove_status(status: Status) -> void:
 	_active_statuses.erase(status)
 	
 	status_removed.emit(status)
+
+	refresh_health()

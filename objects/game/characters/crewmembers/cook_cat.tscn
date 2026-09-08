@@ -58,7 +58,7 @@ skills = Array[ExtResource("12_qs10e")]([ExtResource("13_3og5f")])
 
 [node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
 base_power = 11
-max_health = 110
+base_max_health = 110
 passive_status = ExtResource("16_f837q")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=270804895]

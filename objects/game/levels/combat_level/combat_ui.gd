@@ -6,14 +6,15 @@ var top_panel: PanelContainer:
 	get: return $TopPanel
 var bottom_panel: PanelContainer:
 	get: return $BottomPanel
-var passive_icon: TextureRect:
-	get: return $BottomPanel/BottomPanel/PassiveBG/PassiveIcon
-var equipment_buttons_grid: HFlowContainer:
-	get: return $BottomPanel/BottomPanel/EquipmentButtons
 var action_buttons: Array[ActionButton]:
 	get: return Array(
 		$BottomPanel/MarginContainer/ButtonGroups/ActionButtons.get_children(),
 		TYPE_OBJECT, &'Control', ActionButton
+	)
+var equipment_buttons: Array[CombatEquipmentButton]:
+	get: return Array(
+		$BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons.get_children(),
+		TYPE_OBJECT, &'Control', CombatEquipmentButton
 	)
 var passive_button: PassiveButton:
 	get: return $BottomPanel/MarginContainer/ButtonGroups/PassiveButton
@@ -41,26 +42,31 @@ func _ready() -> void:
 	close_settings_button.pressed.connect(close_settings)
 
 
-func set_action_buttons(character: Character) -> void:
-	for button: ActionButton in action_buttons:
-		button.hide()
+func setup_bottom_bar(character: Character) -> void:
+	reset_bottom_bar()
 	
 	if character.actions.size() > 4:
-		Debug.error("Character '%s' has too many actions (more than 4)." % character.name, Debug.Verbosity.CALLER)
+		Debug.error("Character '%s' has too many actions, only 4 will be shown." % character.name)
+	if character.equipment.size() > 4:
+		Debug.error("Character '%s' has too many items, only 4 will be shown." % character.name)
 	
-	for action_index: int in character.actions.size():
-		var action: Action = character.actions[action_index]
-		var button: ActionButton = action_buttons[action_index]
-		
-		button.setup(action)
-		button.show()
+	for i: int in mini(4, character.actions.size()):
+		var action: Action = character.actions[i]
+		action_buttons[i].setup(action)
+		action_buttons[i].show()
 	
-	var passive: Status = character.state_component.passive_status
-	passive_button.setup(passive)
+	for i: int in mini(4, character.equipment.size()):
+		var equipment: Equipment = character.equipment[i]
+		equipment_buttons[i].setup(equipment)
+		equipment_buttons[i].show()
+	
+	passive_button.setup(character.state_component.passive_status)
 
 
-func reset_action_panel() -> void:
+func reset_bottom_bar() -> void:
 	for button: ActionButton in action_buttons:
+		button.hide()
+	for button: CombatEquipmentButton in equipment_buttons:
 		button.hide()
 
 

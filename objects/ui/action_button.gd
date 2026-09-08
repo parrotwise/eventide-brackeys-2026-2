@@ -8,7 +8,6 @@ signal pressed()
 signal toggled(toggled_on: bool)
 
 
-@export var icon_texture: Texture2D
 @export var frame_texture: Texture2D
 @export var inner_texture_normal: Texture2D
 @export var inner_texture_pressed: Texture2D
@@ -45,7 +44,6 @@ func _ready() -> void:
 	button.mouse_entered.connect(_on_mouse_enter)
 	button.mouse_exited.connect(_on_mouse_exit)
 
-	icon.texture = icon_texture
 	frame.texture = frame_texture
 	background.texture = background_texture
 

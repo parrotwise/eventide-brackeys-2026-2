@@ -32,8 +32,6 @@ var stacked_damage_explosive: int:
 var stacked_healing: int:
 	get: return healing * stack_mult
 
-@export var add_max_health: int = 0
-
 @export var swap_places: bool = false
 @export var knockback_once: bool = false
 @export var knockback_to_rear: bool = false
@@ -71,7 +69,6 @@ func merge_with(other: Effect) -> Effect:
 	damage += other.damage
 	damage_explosive += other.damage_explosive
 	healing += other.healing
-	add_max_health += other.add_max_health
 
 	swap_places = swap_places or other.swap_places
 	knockback_once = knockback_once or other.knockback_once
@@ -103,8 +100,6 @@ func apply(bypass_queue: bool = false) -> void:
 		target.state_component.take_damage(stacked_damage + stacked_damage_explosive, stacked_damage_explosive > 0)
 	if stacked_healing:
 		target.state_component.heal(stacked_healing)
-	if add_max_health:
-		target.state_component.add_max_health(add_max_health)
 	if swap_places:
 		Game.level.characters.swap_places(owner, target)
 	if knockback_once:

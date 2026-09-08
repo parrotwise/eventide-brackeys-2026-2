@@ -69,6 +69,8 @@ func _ready() -> void:
 	background.patch_margin_right = margin_right
 	background.patch_margin_bottom = margin_bottom
 
+	show()
+
 
 func grow_tooltip(tooltip_size: Vector2) -> void:
 	# Make sure the text is hidden to prevent odd behavior.

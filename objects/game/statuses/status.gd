@@ -39,8 +39,9 @@ var healing_applied_adder: int:
 var healing_received_adder: int:
 	get: return _healing_received_adder * stack
 
-# Does not interact with stacks
-@export var max_health_adder: int = 0
+@export var _max_health_adder: int = 0
+var max_health_adder: int:
+	get: return _max_health_adder * stack
 
 @export var _power_adder: int = 0
 var power_adder: int:
@@ -90,10 +91,11 @@ var power_multiplier: float:
 ## Cannot move or be moved by force.
 @export var can_be_moved: bool = true
 @export var movement_is_free: bool = false
-@export var granted_actions: Array[Action] = []
 @export var no_more_please: bool = false
+@export var max_health_one: bool = false
 
-@export_group("Positional")
+@export_group("Grants")
+@export var granted_actions: Array[Action] = []
 @export var grant_ahead: Status = null
 @export var grant_adjacent: Status = null
 
@@ -172,8 +174,6 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.damage_explosive = floori(effect.damage_explosive * final_damage_dealt_multiplier)
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
-		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
-		effect.add_max_health += max_health_adder
 
 		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
@@ -190,8 +190,6 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.damage_explosive = floori(effect.damage_explosive * damage_taken_multiplier)
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
-		effect.add_max_health = floori((1 - max_health_multiplier) * effect.owner.state_component.max_health)
-		effect.add_max_health += max_health_adder
 
 		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):

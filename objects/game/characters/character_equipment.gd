@@ -1,22 +1,22 @@
 class_name CharacterEquipment
 extends Node2D
 
-@export var equipment: Array = []
+@export var equipment: Array[Equipment] = []
 
 var character: Character
 
 
 func _ready() -> void:
-	pass
+	Game.start.connect(_on_combat_start)
 
 
-func get_inventory() -> void:
-	if !Game.inventories.has(character.name):
-		Game.inventories.get_or_add(character.name, [])
-		return
-	Debug.info(character.name + " has " + str(Game.inventories.get(character.name)))
-	
-	equipment = Game.inventories[character.name]
+func _on_combat_start() -> void:
+	if character.name in Game.inventories:
+		equipment.assign(Game.inventories[character.name])
+		Debug.info('Restored loadout %s for %s.' % [Game.inventories[character.name].map(func(e): return e.name), character.name])
 	
 	for i: int in equipment.size():
 		equipment[i] = equipment[i].duplicate()
+	
+	for item: Equipment in equipment:
+		character.state_component.apply_status(item.equipped_status)

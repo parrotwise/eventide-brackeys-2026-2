@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://dgr0figk25y2a"]
 
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_fyre2"]
-[ext_resource type="Resource" uid="uid://dodabtxn4eyrv" path="res://objects/game/statuses/status_cured_totem.tres" id="1_v8bhj"]
+[ext_resource type="Resource" uid="uid://dodabtxn4eyrv" path="res://objects/game/statuses/status_cursed_totem.tres" id="1_v8bhj"]
 [ext_resource type="Texture2D" uid="uid://dd6a64epvhytl" path="res://assets/art/UI/equipment_icons/CURSED TOTEM.png" id="2_i3e7a"]
 
 [resource]

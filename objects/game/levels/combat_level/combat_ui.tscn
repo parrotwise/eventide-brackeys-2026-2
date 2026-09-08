@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://djbwjmtqtcmd7" path="res://assets/art/UI/top_bar/top_bar_settings_hover.png" id="6_lphsj"]
 [ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/menu/settings/settings_menu.tscn" id="7_wfv58"]
 [ext_resource type="Texture2D" uid="uid://c70csi33cgy8k" path="res://assets/art/UI/buttons/passive_icon_sc_hover.png" id="11_u1is4"]
+[ext_resource type="PackedScene" uid="uid://de8gbtkqf00j2" path="res://objects/ui/combat_equipment_button.tscn" id="12_m7apa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p4nv"]
 
@@ -83,7 +84,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-icon_texture = null
 frame_texture = null
 inner_texture_normal = ExtResource("4_u1is4")
 inner_texture_pressed = ExtResource("5_m7apa")
@@ -168,13 +168,16 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
 
-[node name="EquipmentButton1" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=934293334 instance=ExtResource("6_df5b6")]
+[node name="EquipmentButton1" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=994191855 instance=ExtResource("12_m7apa")]
 layout_mode = 2
 
-[node name="EquipmentButton2" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1837687399 instance=ExtResource("3_xuj1j")]
+[node name="EquipmentButton2" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1088290213 instance=ExtResource("12_m7apa")]
 layout_mode = 2
 
-[node name="EquipmentButton3" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1631652837 instance=ExtResource("6_df5b6")]
+[node name="EquipmentButton3" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=410484094 instance=ExtResource("12_m7apa")]
+layout_mode = 2
+
+[node name="EquipmentButton4" parent="BottomPanel/MarginContainer/ButtonGroups/EquipmentButtons" unique_id=1263749283 instance=ExtResource("12_m7apa")]
 layout_mode = 2
 
 [node name="KeyboardReference" type="Panel" parent="." unique_id=339132650]

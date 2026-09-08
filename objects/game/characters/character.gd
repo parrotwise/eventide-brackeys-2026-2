@@ -57,8 +57,6 @@ func _ready() -> void:
 
 	if strategy_component:
 		strategy_component.character = self
-	
-	equipment_component.get_inventory()
 
 
 func _process(delta: float) -> void:
