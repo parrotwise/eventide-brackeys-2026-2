@@ -103,6 +103,8 @@ var power_multiplier: float:
 @export var triggers: Array[Trigger] = []
 @export var trigger_uses: int = -1
 @export var remove_when_triggers_used_up: bool = true
+@export var damage_dealt_applies_statuses: Array[Status] = []
+@export var damage_taken_applies_statuses: Array[Status] = []
 
 @export_group("")
 @export var stacking_type: Enums.StackingType
@@ -175,7 +177,12 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
 
-		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
+		var damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+
+		if damage_dealt:
+			for status: Status in damage_dealt_applies_statuses:
+				effect.applied_statuses.append(status)
+			
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
 				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
@@ -191,7 +198,12 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 
-		if (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target):
+		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+
+		if damage_taken:
+			for status: Status in damage_taken_applies_statuses:
+				effect.applied_statuses.append(status)
+			
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
 				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 				

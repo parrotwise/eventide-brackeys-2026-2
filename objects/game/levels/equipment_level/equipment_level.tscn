@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="10_py0qi"]
 [ext_resource type="Resource" uid="uid://lcdiv1v82sr" path="res://objects/game/equipments/equipment_nipium_keepsake.tres" id="13_7vkht"]
 [ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/UI/buttons/BIG BUTTON.png" id="13_l868v"]
-[ext_resource type="Resource" uid="uid://e4emdjj3bdot" path="res://objects/game/equipments/equipment_burt_barnacle.tres" id="13_ocofg"]
+[ext_resource type="Resource" uid="uid://e4emdjj3bdot" path="res://objects/game/equipments/equipment_burt_the_barnacle.tres" id="13_ocofg"]
 [ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/UI/buttons/BIG BUTTON_HOVER.png" id="14_57xvl"]
 [ext_resource type="Resource" uid="uid://bqe1vub0nhrvb" path="res://objects/game/equipments/equipment_cannonball_necklace.tres" id="14_lmdjw"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="15_aotc2"]

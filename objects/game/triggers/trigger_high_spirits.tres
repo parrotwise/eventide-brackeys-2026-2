@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://daix65ddy3dx3"]
 
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_kcrfu"]
-[ext_resource type="Resource" uid="uid://t3k53iw6q11o" path="res://objects/game/effects/effect_high_spirits.tres" id="1_yu2oo"]
+[ext_resource type="Resource" uid="uid://t3k53iw6q11o" path="res://objects/game/effects/effect_trigger_high_spirits.tres" id="1_yu2oo"]
 
 [resource]
 script = ExtResource("1_kcrfu")

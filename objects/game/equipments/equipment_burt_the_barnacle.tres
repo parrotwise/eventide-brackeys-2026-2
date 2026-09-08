@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://e4emdjj3bdot"]
 
-[ext_resource type="Resource" uid="uid://dml3y6jrbatlh" path="res://objects/game/statuses/status_burt_barnacle.tres" id="1_4vr31"]
+[ext_resource type="Resource" uid="uid://dml3y6jrbatlh" path="res://objects/game/statuses/status_burt_the_barnacle.tres" id="1_4vr31"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_vos1o"]
 [ext_resource type="Texture2D" uid="uid://dd5osegvwfajq" path="res://assets/art/UI/equipment_icons/BURT.png" id="2_1fo60"]
 

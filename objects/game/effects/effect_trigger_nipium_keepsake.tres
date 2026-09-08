@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("3_fwmqa")
-name = "Sootgut"
+name = "Nipium Keepsake"
 applied_statuses = Array[ExtResource("1_8e5dh")]([ExtResource("2_8e5dh"), ExtResource("2_8e5dh"), ExtResource("2_8e5dh")])
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

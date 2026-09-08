@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("2_f5rxl")
+name = "Poison"
 damage_poison = 2
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

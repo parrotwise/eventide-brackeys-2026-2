@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://q6dhffy3rvg0"]
+
+[ext_resource type="Resource" uid="uid://vtxqlaj3snvx" path="res://objects/game/effects/effect_trigger_burt_the_barnacle.tres" id="1_ql4qp"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_lvhg4"]
+
+[resource]
+script = ExtResource("2_lvhg4")
+effect = ExtResource("1_ql4qp")
+trigger_type = 10
+metadata/_custom_type_script = "uid://lvv535cj6j34"
