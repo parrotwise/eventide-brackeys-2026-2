@@ -22,6 +22,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+expand_mode = 5
 
 [node name="InnerButton" type="TextureButton" parent="." unique_id=1083023664]
 layout_mode = 1
@@ -32,5 +33,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Tooltip" parent="." unique_id=1654022007 node_paths=PackedStringArray("hover_area_control") instance=ExtResource("6_kfy63")]
+visible = false
 layout_mode = 0
 hover_area_control = NodePath("../InnerButton")

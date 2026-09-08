@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://b6swyt7ah35gd"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_46sp4"]
-[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/UI/status_effect_icons/status_hc_attack_increase.png" id="2_46sp4"]
+[ext_resource type="Texture2D" uid="uid://2ggcd2qm6rcb" path="res://assets/art/UI/equipment_icons/NIPIUM.png" id="2_fg8k8"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_q47l0"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_tgt5j"]
 [ext_resource type="Resource" uid="uid://e3x6kklxcds2" path="res://objects/game/triggers/trigger_nipium_keepsake.tres" id="5_4an0j"]
@@ -10,7 +10,7 @@
 script = ExtResource("3_q47l0")
 name = "Nipium Keepsake"
 description = "Start the battle with 3 stacks of Poison. Get a 25% increase to POW."
-icon = ExtResource("2_46sp4")
+icon = ExtResource("2_fg8k8")
 _power_multiplier = 1.25
 triggers = Array[ExtResource("4_tgt5j")]([ExtResource("5_4an0j")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
