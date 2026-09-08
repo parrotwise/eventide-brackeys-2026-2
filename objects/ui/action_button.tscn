@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://u16k37lsguqx"]
 
 [ext_resource type="Script" uid="uid://c5fuk03uxarhq" path="res://objects/ui/action_button.gd" id="1_2fe0f"]
-[ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/UI/buttons/action_button_icon_placeholder.png" id="2_swtmx"]
 [ext_resource type="Texture2D" uid="uid://imec5cigcf2t" path="res://assets/art/UI/buttons/action_button_frame.png" id="3_ouukt"]
 [ext_resource type="Texture2D" uid="uid://dvtvuqeg0ndex" path="res://assets/art/UI/buttons/action_button_state_hover_click.png" id="4_yeqvw"]
 [ext_resource type="Texture2D" uid="uid://bp6cvkrrnxyy6" path="res://assets/art/UI/buttons/action_button_state_hover.png" id="5_77s0p"]
@@ -20,7 +19,6 @@ offset_right = 90.0
 offset_bottom = 90.0
 mouse_filter = 2
 script = ExtResource("1_2fe0f")
-icon_texture = ExtResource("2_swtmx")
 frame_texture = ExtResource("3_ouukt")
 inner_texture_pressed = ExtResource("4_yeqvw")
 inner_texture_hover = ExtResource("5_77s0p")

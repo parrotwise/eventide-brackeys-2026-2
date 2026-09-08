@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://e3x6kklxcds2"]
+
+[ext_resource type="Resource" uid="uid://dd0meo4u8cm2l" path="res://objects/game/effects/effect_trigger_nipium_keepsake.tres" id="1_d33fe"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_s3svt"]
+
+[resource]
+script = ExtResource("2_s3svt")
+effect = ExtResource("1_d33fe")
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

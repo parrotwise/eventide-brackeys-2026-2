@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d4ae73fjjv1vv" path="res://objects/game/characters/crewmembers/nav_cat.tscn" id="8_7vkht"]
 [ext_resource type="PackedScene" uid="uid://bg02w4miu8a8o" path="res://objects/game/characters/crewmembers/peanut_cat.tscn" id="9_uemns"]
 [ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="10_py0qi"]
-[ext_resource type="Resource" uid="uid://lcdiv1v82sr" path="res://objects/game/equipments/equipment_nipium.tres" id="13_7vkht"]
+[ext_resource type="Resource" uid="uid://lcdiv1v82sr" path="res://objects/game/equipments/equipment_nipium_keepsake.tres" id="13_7vkht"]
 [ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/UI/buttons/BIG BUTTON.png" id="13_l868v"]
 [ext_resource type="Resource" uid="uid://e4emdjj3bdot" path="res://objects/game/equipments/equipment_burt_barnacle.tres" id="13_ocofg"]
 [ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/UI/buttons/BIG BUTTON_HOVER.png" id="14_57xvl"]
@@ -38,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_shot_coin.tres" id="30_7eq30"]
 [ext_resource type="Resource" uid="uid://b50gcx7t18fa7" path="res://objects/game/equipments/equipment_spiked_armband.tres" id="31_3mdqw"]
 [ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_orange.tres" id="32_44ye3"]
+
 
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")

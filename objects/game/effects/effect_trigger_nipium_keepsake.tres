@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://dd0meo4u8cm2l"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_8e5dh"]
+[ext_resource type="Resource" uid="uid://b7jiv5bwng0ib" path="res://objects/game/statuses/status_poisoned.tres" id="2_8e5dh"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="3_fwmqa"]
+
+[resource]
+script = ExtResource("3_fwmqa")
+name = "Sootgut"
+applied_statuses = Array[ExtResource("1_8e5dh")]([ExtResource("2_8e5dh"), ExtResource("2_8e5dh"), ExtResource("2_8e5dh")])
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

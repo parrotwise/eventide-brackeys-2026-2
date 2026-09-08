@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://b7jiv5bwng0ib"]
+
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_kl8nn"]
+[ext_resource type="Texture2D" uid="uid://b0stu6wpje5oh" path="res://assets/art/UI/status_effect_icons/status_poisoned.png" id="2_kl8nn"]
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_c3bhr"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_mb4v5"]
+[ext_resource type="Resource" uid="uid://bo06t8u2xjfm8" path="res://objects/game/triggers/trigger_poisoned.tres" id="5_kl8nn"]
+
+[resource]
+script = ExtResource("3_c3bhr")
+name = "Poison"
+description = "Take 2 damage at the end of your team's turn. Every stack of Poison beyond the first doubles this damage."
+icon = ExtResource("2_kl8nn")
+triggers = Array[ExtResource("4_mb4v5")]([ExtResource("5_kl8nn")])
+stacking_type = 2

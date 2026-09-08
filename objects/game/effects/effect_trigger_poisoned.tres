@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://ddi5emdcvgre3"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_31kde"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_f5rxl"]
+
+[resource]
+script = ExtResource("2_f5rxl")
+damage_poison = 2
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

@@ -28,6 +28,10 @@ var stacked_damage: int:
 var stacked_damage_explosive: int:
 	get: return damage_explosive * stack_mult
 
+@export var damage_poison: int = 0
+var stacked_damage_poison: int:
+	get: return damage_poison * (2 ** (stack_mult - 1))
+
 @export var healing: int = 0
 var stacked_healing: int:
 	get: return healing * stack_mult
@@ -95,11 +99,14 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.level.queue.push_effect(self)
 		return
 	
+	var total_damage: int = stacked_damage + stacked_damage_explosive + stacked_damage_poison
+	var total_healing: int = stacked_healing
+	
 	## Immediate effects first
-	if stacked_damage or stacked_damage_explosive:
-		target.state_component.take_damage(stacked_damage + stacked_damage_explosive, stacked_damage_explosive > 0)
-	if stacked_healing:
-		target.state_component.heal(stacked_healing)
+	if total_damage:
+		target.state_component.take_damage(total_damage, stacked_damage_explosive > 0)
+	if total_healing:
+		target.state_component.heal(total_healing)
 	if swap_places:
 		Game.level.characters.swap_places(owner, target)
 	if knockback_once:
