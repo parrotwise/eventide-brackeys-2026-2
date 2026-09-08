@@ -55,8 +55,8 @@ func _ready() -> void:
 func setup(new_equipment: Equipment) -> void:
 	equipment = new_equipment
 
-	for connection: Dictionary in pressed.get_connections():
-		pressed.disconnect(connection['callable'])
+	for connection: Dictionary in focus_entered.get_connections():
+		focus_entered.disconnect(connection['callable'])
 
 	if not equipment:
 		icon.texture = null
@@ -113,9 +113,15 @@ func set_selected(selected: bool = false):
 
 
 func _on_mouse_enter() -> void:
+	if not equipment.activated_ability:
+		return
+	
 	if Game.pointer.type in [Enums.PointerType.DEFAULT, Enums.PointerType.PRESSING]:
 		Game.pointer.switch_to(Enums.PointerType.CLICKABLE)
 
 func _on_mouse_exit() -> void:
+	if not equipment.activated_ability:
+		return
+	
 	if Game.pointer.type in [Enums.PointerType.CLICKABLE, Enums.PointerType.CLICKING]:
 		Game.pointer.switch_to(Enums.PointerType.DEFAULT)
