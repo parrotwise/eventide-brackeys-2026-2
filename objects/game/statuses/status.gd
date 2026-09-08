@@ -103,6 +103,12 @@ var power_multiplier: float:
 @export var triggers: Array[Trigger] = []
 @export var trigger_uses: int = -1
 @export var remove_when_triggers_used_up: bool = true
+@export var base_healing_applied_applies_statuses: Array[Status] = []
+@export var base_healing_received_applies_statuses: Array[Status] = []
+@export var healing_applied_applies_statuses: Array[Status] = []
+@export var healing_received_applies_statuses: Array[Status] = []
+@export var base_damage_dealt_applies_statuses: Array[Status] = []
+@export var base_damage_taken_applies_statuses: Array[Status] = []
 @export var damage_dealt_applies_statuses: Array[Status] = []
 @export var damage_taken_applies_statuses: Array[Status] = []
 
@@ -171,6 +177,9 @@ func modify_effect(effect: Effect) -> Effect:
 	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
 	
 	if owner == effect.owner:
+		var base_damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+		var base_healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
+
 		effect.damage = floori(effect.damage * final_damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
 		effect.damage_explosive = floori(effect.damage_explosive * final_damage_dealt_multiplier)
@@ -178,6 +187,15 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing += healing_applied_adder
 
 		var damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+		var healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
+
+		if base_damage_dealt:
+			for status: Status in base_damage_dealt_applies_statuses:
+				effect.applied_statuses.append(status)
+		
+		if base_healing_applied:
+			for status: Status in base_healing_applied_applies_statuses:
+				effect.applied_statuses.append(status)
 
 		if damage_dealt:
 			for status: Status in damage_dealt_applies_statuses:
@@ -190,8 +208,15 @@ func modify_effect(effect: Effect) -> Effect:
 				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_mult)
 
 				effect.extra_effects.append(splash_effect)
+		
+		if healing_applied:
+			for status: Status in healing_applied_applies_statuses:
+				effect.applied_statuses.append(status)
 	
 	if owner == effect.target:
+		var base_damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+		var base_healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
+		
 		effect.damage = floori(effect.damage * damage_taken_multiplier)
 		effect.damage += damage_taken_adder
 		effect.damage_explosive = floori(effect.damage_explosive * damage_taken_multiplier)
@@ -199,7 +224,16 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing += healing_received_adder
 
 		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
+		var healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 
+		if base_damage_taken:
+			for status: Status in base_damage_taken_applies_statuses:
+				effect.applied_statuses.append(status)
+			
+		if base_healing_received:
+			for status: Status in base_healing_received_applies_statuses:
+				effect.applied_statuses.append(status)
+			
 		if damage_taken:
 			for status: Status in damage_taken_applies_statuses:
 				effect.applied_statuses.append(status)
@@ -211,6 +245,10 @@ func modify_effect(effect: Effect) -> Effect:
 				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_taken_to_splash_mult)
 				
 				effect.extra_effects.append(splash_effect)
+			
+		if healing_received:
+			for status: Status in healing_received_applies_statuses:
+				effect.applied_statuses.append(status)
 	
 	return effect
 
