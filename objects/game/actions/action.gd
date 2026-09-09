@@ -3,6 +3,8 @@ extends Resource
 
 
 signal used(user: Character, target: Character)
+signal uses_expended()
+signal uses_restored()
 
 
 @export_group("Identifiers")
@@ -50,6 +52,7 @@ signal used(user: Character, target: Character)
 
 @export var applied_statuses: Array[Status] = []
 @export var created_objects: Array[PackedScene] = []
+@export var number_of_uses: int = 1
 @export var free_action: bool = false
 
 @export_category("Targeting")
@@ -58,9 +61,18 @@ signal used(user: Character, target: Character)
 @export var target_group: Enums.BattleGroupType = Enums.BattleGroupType.OTHER_GROUP
 
 var owner: Character
+var uses_left: int
 
 
 func use(user: Character, target: Character) -> void:
+	if not uses_left:
+		return
+	
+	uses_left -= 1
+
+	if not uses_left:
+		uses_expended.emit()
+	
 	Game.level.effector_component.apply(self, user, target)
 
 	## TODO: Deprecated!
@@ -71,6 +83,13 @@ func use(user: Character, target: Character) -> void:
 	Audio.set_switch(set_switch, switch_value)
 	
 	used.emit(user, target)
+
+
+func restore_uses() -> void:
+	uses_left = number_of_uses
+
+	if uses_left:
+		uses_restored.emit()
 
 
 func can_target(target: Character) -> bool:

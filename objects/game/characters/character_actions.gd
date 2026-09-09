@@ -33,3 +33,16 @@ func _on_combat_start() -> void:
 
 	for skill: Action in skills:
 		skill.owner = character
+	
+	Game.level.turn_tracker_component.battle_group_started.connect(_on_battle_group_started)
+
+	for action: Action in actions:
+		action.restore_uses()
+
+
+func _on_battle_group_started(group_name: StringName) -> void:
+	if group_name != character.battle_group:
+		return
+	
+	for action: Action in actions:
+		action.restore_uses()

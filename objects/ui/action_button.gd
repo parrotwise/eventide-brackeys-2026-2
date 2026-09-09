@@ -48,13 +48,22 @@ func _ready() -> void:
 	background.texture = background_texture
 
 	set_selected(false)
+	
+	button.disabled = true
 
 
 func setup(new_action: Action) -> void:
-	action = new_action
-
+	if action:
+		if action.uses_expended.is_connected(refresh):
+			action.uses_expended.disconnect(refresh)
+		
+		if action.uses_restored.is_connected(refresh):
+			action.uses_restored.disconnect(refresh)
+	
 	for connection: Dictionary in pressed.get_connections():
 		pressed.disconnect(connection['callable'])
+
+	action = new_action
 	
 	if not action:
 		icon.texture = null
@@ -62,10 +71,15 @@ func setup(new_action: Action) -> void:
 	
 	icon.texture = action.icon
 
+	action.uses_expended.connect(refresh)
+	action.uses_restored.connect(refresh)
+
 	## TODO: Replace with the commented-out callable after Wwise migration
 	pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	# pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	pressed.connect(Game.level.selector_component.select_action.bind(action))
+
+	refresh()
 
 
 func set_selected(selected: bool = false):
@@ -82,9 +96,23 @@ func set_selected(selected: bool = false):
 
 
 func _on_mouse_enter() -> void:
+	if button.disabled:
+		return
+	
 	if Game.pointer.type in [Enums.PointerType.DEFAULT, Enums.PointerType.PRESSING]:
 		Game.pointer.switch_to(Enums.PointerType.CLICKABLE)
 
+
 func _on_mouse_exit() -> void:
+	if button.disabled:
+		return
+	
 	if Game.pointer.type in [Enums.PointerType.CLICKABLE, Enums.PointerType.CLICKING]:
 		Game.pointer.switch_to(Enums.PointerType.DEFAULT)
+
+
+func refresh() -> void:
+	if not action:
+		return
+	
+	button.disabled = not action.uses_left
