@@ -8,9 +8,15 @@ var character: Character
  
 
 func take_turn() -> void:
-	var action: Action = character.actions_component.basic_attack
+	var action: Action = null
+	
+	if character.actions_component.basic_attack.uses_left:
+		action = character.actions_component.basic_attack
 
 	for skill: Action in character.actions_component.skills:
+		if not skill.uses_left:
+			continue
+		
 		match skill.name:
 			&'Pick Up & Cronch':
 				if Random.randfloat() < 0.70: action = skill
@@ -36,8 +42,10 @@ func take_turn() -> void:
 	var target: Character = Random.randsample(action.valid_targets())
 
 	var is_big_cat: bool = character.actions_component.skills.any(func(s): return s.name == &'Jaw Cruncher')
+	var is_in_melee: bool = Game.level.characters.is_in_melee(character)
+	var can_reposition: bool = character.actions_component.reposition.uses_left
 
-	if is_big_cat and not Game.level.characters.is_in_melee(character):
+	if is_big_cat and not is_in_melee and can_reposition:
 		action = character.actions_component.reposition
 		target = Game.level.characters.get_ahead_of(character)
 	

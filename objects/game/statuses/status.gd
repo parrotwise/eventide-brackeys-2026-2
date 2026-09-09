@@ -89,7 +89,6 @@ var power_multiplier: float:
 @export var can_attack_twice: bool = false
 @export var can_be_healed: bool = true
 @export var can_be_moved: bool = true
-@export var reposition_disabled: bool = false
 @export var no_more_please: bool = false
 @export var max_health_one: bool = false
 
@@ -102,6 +101,7 @@ var power_multiplier: float:
 @export var triggers: Array[Trigger] = []
 @export var trigger_uses: int = -1
 @export var remove_when_triggers_used_up: bool = true
+@export var attacks_apply_statuses: Array[Status] = []
 @export var base_healing_applied_applies_statuses: Array[Status] = []
 @export var base_healing_received_applies_statuses: Array[Status] = []
 @export var healing_applied_applies_statuses: Array[Status] = []
@@ -210,6 +210,10 @@ func modify_effect(effect: Effect) -> Effect:
 		
 		if healing_applied:
 			for status: Status in healing_applied_applies_statuses:
+				effect.applied_statuses.append(status)
+		
+		if effect.source == owner.actions_component.basic_attack:
+			for status: Status in attacks_apply_statuses:
 				effect.applied_statuses.append(status)
 	
 	if owner == effect.target:

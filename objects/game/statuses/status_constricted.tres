@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://c3rws55skymov"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_ubs1j"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_5egt1"]
+[ext_resource type="Texture2D" uid="uid://dt71ngf0w253i" path="res://assets/art/ui/icons/equipment/equipment_rope_loop.png" id="3_osdsp"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_vepho"]
+[ext_resource type="Resource" uid="uid://cgq237csi2mcm" path="res://objects/game/triggers/trigger_constricted_expire.tres" id="5_osdsp"]
+[ext_resource type="Resource" uid="uid://cumaauvsvcfnf" path="res://objects/game/triggers/trigger_constricted_constrict.tres" id="6_vepho"]
+
+[resource]
+script = ExtResource("1_ubs1j")
+name = "Constricted"
+description = "You cannot move by yourself this turn."
+icon = ExtResource("3_osdsp")
+triggers = Array[ExtResource("4_vepho")]([ExtResource("5_osdsp"), ExtResource("6_vepho")])
+trigger_uses = 2
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

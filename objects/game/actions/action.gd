@@ -61,7 +61,7 @@ signal uses_restored()
 @export var target_group: Enums.BattleGroupType = Enums.BattleGroupType.OTHER_GROUP
 
 var owner: Character
-var uses_left: int
+var uses_left: int = 0
 
 
 func use(user: Character, target: Character) -> void:
@@ -86,10 +86,17 @@ func use(user: Character, target: Character) -> void:
 
 
 func restore_uses() -> void:
+	if uses_left == 0 and number_of_uses > 0:
+		uses_restored.emit()
+
 	uses_left = number_of_uses
 
-	if uses_left:
-		uses_restored.emit()
+
+func remove_uses() -> void:
+	if uses_left > 0:
+		uses_expended.emit()
+	
+	uses_left = 0
 
 
 func can_target(target: Character) -> bool:

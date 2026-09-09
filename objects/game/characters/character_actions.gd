@@ -6,6 +6,8 @@ extends Node
 @export var reposition: Action
 @export var skills: Array[Action] = []
 
+var usable_actions: Array[Action]:
+	get: return Array(actions.filter(func(a): return a.uses_left), TYPE_OBJECT, &'Resource', Action)
 var actions: Array[Action]:
 	get: return Array([basic_attack, reposition], TYPE_OBJECT, &'Resource', Action) + skills + granted_actions
 var granted_actions: Array[Action]:
@@ -15,6 +17,8 @@ var granted_actions: Array[Action]:
 	)
 
 var character: Character
+
+var action_cooldowns: Dictionary[Action, int] = {}
 
 
 func _ready() -> void:
@@ -36,13 +40,21 @@ func _on_combat_start() -> void:
 	
 	Game.level.turn_tracker_component.battle_group_started.connect(_on_battle_group_started)
 
-	for action: Action in actions:
-		action.restore_uses()
+	restore_action_uses()
 
 
 func _on_battle_group_started(group_name: StringName) -> void:
 	if group_name != character.battle_group:
 		return
 	
+	restore_action_uses()
+
+
+func restore_action_uses() -> void:
 	for action: Action in actions:
-		action.restore_uses()
+		var cooldown: int = action_cooldowns.get_or_add(action, 0)
+
+		if cooldown:
+			action_cooldowns[action] = cooldown - 1
+		else:
+			action.restore_uses()
