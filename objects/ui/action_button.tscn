@@ -78,6 +78,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.67
 anchor_bottom = 1.67
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.6784314, 0.36078432, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2509804)

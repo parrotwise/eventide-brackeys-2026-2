@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://fwbhbnen4cal" path="res://objects/game/statuses/status_shot_coin.tres" id="1_5jnik"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_f6c1n"]
-[ext_resource type="Texture2D" uid="uid://bajw4yq3v8cm2" path="res://assets/art/UI/equipment_icons/COIN WITH A BULLET HOLE.png" id="2_nhhs1"]
+[ext_resource type="Texture2D" uid="uid://bajw4yq3v8cm2" path="res://assets/art/ui/icons/equipment/equipment_coin_with_a_bullet_hole.png" id="2_nhhs1"]
 
 [resource]
 script = ExtResource("1_f6c1n")
