@@ -5,6 +5,8 @@ extends Node2D
 const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
+@export var id: StringName
+
 var actor: Actor:
 	get: return $Actor
 var sprite: Sprite2D:
@@ -46,6 +48,8 @@ var battle_group: StringName:
 
 
 func _ready() -> void:
+	name = id
+	
 	Game.start.connect(_on_combat_start)
 
 	animator_component.character = self

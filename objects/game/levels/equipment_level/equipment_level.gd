@@ -22,16 +22,16 @@ func _ready() -> void:
 
 
 func save_equipment_selection(equipment: Equipment, is_equipped: bool) -> void:
-	if inventories.has(selected_character.name):
+	if inventories.has(selected_character.id):
 		if is_equipped:
-			inventories[selected_character.name].append(equipment)
-			Debug.info(selected_character.name + " gained " + equipment.name)
+			inventories[selected_character.id].append(equipment)
+			Debug.info(selected_character.id + " gained " + equipment.name)
 		else:
-			inventories[selected_character.name].erase(equipment)
-			Debug.info(selected_character.name + " removed " + equipment.name)
+			inventories[selected_character.id].erase(equipment)
+			Debug.info(selected_character.id + " removed " + equipment.name)
 	else:
 		inventories.get_or_add(selected_character.name, [equipment])
-		Debug.info(selected_character.name + " gained " + equipment.name)
+		Debug.info(selected_character.id + " gained " + equipment.name)
 	Debug.debug(str(Game.inventories), Debug.Verbosity.CALLER)
 	check_equipment_grid()
 

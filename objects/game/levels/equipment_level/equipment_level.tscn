@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="5_lki8f"]
 [ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="6_qb0y3"]
 [ext_resource type="PackedScene" uid="uid://c7ar3gk6444vb" path="res://objects/game/characters/crewmembers/hook_cat.tscn" id="7_dbp8a"]
-[ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/game/levels/equipment_level/equipment_button.tscn" id="7_qb0y3"]
+[ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="7_qb0y3"]
 [ext_resource type="PackedScene" uid="uid://d4ae73fjjv1vv" path="res://objects/game/characters/crewmembers/nav_cat.tscn" id="8_7vkht"]
 [ext_resource type="PackedScene" uid="uid://bg02w4miu8a8o" path="res://objects/game/characters/crewmembers/peanut_cat.tscn" id="9_uemns"]
 [ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="10_py0qi"]
@@ -38,7 +38,6 @@
 [ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_shot_coin.tres" id="30_7eq30"]
 [ext_resource type="Resource" uid="uid://b50gcx7t18fa7" path="res://objects/game/equipments/equipment_spiked_armband.tres" id="31_3mdqw"]
 [ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_orange.tres" id="32_44ye3"]
-
 
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")
@@ -91,6 +90,13 @@ passive_status = null
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="8" unique_id=481135339]
 visible = false
 
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
+
 [node name="Control2" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2001128688]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -100,6 +106,13 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat" index="8" unique_id=481135339]
 visible = false
+
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
 
 [node name="Control3" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1672219295]
 layout_mode = 2
@@ -111,6 +124,13 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat" index="8" unique_id=481135339]
 visible = false
 
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
+
 [node name="Control4" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1582122687]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -120,6 +140,13 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat" index="8" unique_id=481135339]
 visible = false
+
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
 
 [node name="Control5" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=156658063]
 layout_mode = 2
@@ -131,6 +158,13 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat" index="8" unique_id=481135339]
 visible = false
 
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
+
 [node name="Control6" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2065675409]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -140,6 +174,13 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat" index="8" unique_id=481135339]
 visible = false
+
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
 
 [node name="Control7" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1667605264]
 layout_mode = 2
@@ -151,15 +192,30 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat" index="8" unique_id=481135339]
 visible = false
 
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
+
 [node name="Control8" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2056705033]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RumCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=1190493796 instance=ExtResource("10_py0qi")]
 scale = Vector2(0.5, 0.5)
+id = &"Mary Maker"
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat" index="8" unique_id=481135339]
 visible = false
+
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators" index="2" unique_id=813067035]
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 240.0
+offset_bottom = 0.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EquipmentUI/VBoxContainer" unique_id=453894118]
 layout_mode = 2
