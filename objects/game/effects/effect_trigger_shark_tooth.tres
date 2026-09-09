@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://cr46ly23hhtdb"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_2icwt"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_b24qu"]
+
+[resource]
+script = ExtResource("2_b24qu")
+name = "Shark Tooth"
+increase_basic_attack_max_uses = 1
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

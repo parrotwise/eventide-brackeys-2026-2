@@ -26,6 +26,8 @@ var button: TextureButton:
 	get: return $InnerButton
 var background: TextureRect:
 	get: return $Background
+var uses_label: RichTextLabel:
+	get: return $UsesLabel
 
 var action: Action
 
@@ -116,3 +118,6 @@ func refresh() -> void:
 		return
 	
 	button.disabled = not action.uses_left
+
+	uses_label.text = str(action.uses_left)
+	uses_label.visible = action.uses_left > 1

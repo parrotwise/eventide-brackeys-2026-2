@@ -41,6 +41,8 @@ func _ready() -> void:
 	# close_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	close_settings_button.pressed.connect(close_settings)
 
+	Game.start.connect(_on_combat_start)
+
 
 func setup_bottom_bar(character: Character) -> void:
 	reset_bottom_bar()
@@ -70,6 +72,11 @@ func reset_bottom_bar() -> void:
 		button.hide()
 
 
+func refresh_bottom_bar() -> void:
+	for button: ActionButton in action_buttons:
+		button.refresh()
+
+
 func show_keyboard_reference() -> void:
 	keyboard_reference.show()
 
@@ -84,3 +91,7 @@ func close_settings() -> void:
 
 func open_settings() -> void:
 	settings_menu.show()
+
+
+func _on_combat_start() -> void:
+	refresh_bottom_bar()

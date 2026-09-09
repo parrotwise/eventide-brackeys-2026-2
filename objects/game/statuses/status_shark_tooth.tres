@@ -1,14 +1,17 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://bjoo6w2dbrm8u"]
 
-[ext_resource type="Texture2D" uid="uid://dxlb3ycm52yku" path="res://assets/art/UI/equipment_icons/SHARK TOOTH.png" id="1_opsxv"]
+[ext_resource type="Texture2D" uid="uid://dxlb3ycm52yku" path="res://assets/art/ui/icons/equipment/equipment_shark_tooth.png" id="1_opsxv"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_6gggu"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_3672f"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_usfpx"]
+[ext_resource type="Resource" uid="uid://b2i31urhrg335" path="res://objects/game/triggers/trigger_shark_tooth.tres" id="5_0fhsb"]
 
 [resource]
 script = ExtResource("2_6gggu")
-name = "Shark tooth"
+name = "Shark Tooth"
 description = "You can Attack twice in a turn. Your POW is reduced by 30%."
 icon = ExtResource("1_opsxv")
-damage_dealt_multiplier = 0.7
+_power_multiplier = 0.7
 can_attack_twice = true
+triggers = Array[ExtResource("3_usfpx")]([ExtResource("5_0fhsb")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
