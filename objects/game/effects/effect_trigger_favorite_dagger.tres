@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://dl2gvqqhyftod"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_nw0dl"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_2mr7y"]
+
+[resource]
+script = ExtResource("2_2mr7y")
+name = "Favorite Dagger"
+cooldown_basic_attack = 9999
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"
