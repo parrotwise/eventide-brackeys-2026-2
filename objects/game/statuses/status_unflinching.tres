@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://dl13wc65a1lts"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_1mbwp"]
-[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/UI/status_effect_icons/status_hc_attack_increase.png" id="2_02r0k"]
+[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/ui/icons/statuses/status_hc_attack_increase.png" id="2_02r0k"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_pd08w"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_02r0k"]
 [ext_resource type="Resource" uid="uid://chdnngio3ro5a" path="res://objects/game/triggers/trigger_unflinching.tres" id="5_pd08w"]

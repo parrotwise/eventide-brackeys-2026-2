@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://lcdiv1v82sr"]
 
 [ext_resource type="Resource" uid="uid://b6swyt7ah35gd" path="res://objects/game/statuses/status_nipium_keepsake.tres" id="1_bgfhk"]
-[ext_resource type="Texture2D" uid="uid://2ggcd2qm6rcb" path="res://assets/art/UI/equipment_icons/NIPIUM.png" id="2_y1io3"]
+[ext_resource type="Texture2D" uid="uid://2ggcd2qm6rcb" path="res://assets/art/ui/icons/equipment/equipment_nipium_keepsake.png" id="2_y1io3"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="3_s6krf"]
 
 [resource]

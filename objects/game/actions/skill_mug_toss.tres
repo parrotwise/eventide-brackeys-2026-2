@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://d4lhwyirvsffd"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_4evt0"]
-[ext_resource type="Texture2D" uid="uid://b8b8scf41oowk" path="res://assets/art/UI/buttons/skill_icon_rc.png" id="2_hu5c3"]
+[ext_resource type="Texture2D" uid="uid://b8b8scf41oowk" path="res://assets/art/ui/icons/actions/skill_icon_rc.png" id="2_hu5c3"]
 [ext_resource type="Resource" uid="uid://d4ddtiwby7xkh" path="res://objects/game/statuses/status_flammable.tres" id="2_vgcrm"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_hv8rv"]
 [ext_resource type="Resource" uid="uid://c573o6hrfas5b" path="res://objects/game/statuses/status_smashed.tres" id="3_sophx"]

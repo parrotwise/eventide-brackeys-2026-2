@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cnvdwcpltliaq"]
 
 [ext_resource type="Script" uid="uid://du4c7macge3em" path="res://objects/game/levels/equipment_level/equipment_button.gd" id="1_2145i"]
-[ext_resource type="Texture2D" uid="uid://b3d1gqjcwdri3" path="res://assets/art/UI/buttons/EQ BG.png" id="1_ahppr"]
-[ext_resource type="Texture2D" uid="uid://d0ua4bk70ltyo" path="res://assets/art/UI/buttons/EQ STATE_HOVER_CLICK.png" id="2_2145i"]
-[ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/UI/buttons/EQ STATE_HOVER.png" id="3_uu5am"]
-[ext_resource type="Texture2D" uid="uid://cysiryweubwqj" path="res://assets/art/UI/buttons/EQ FRAME.png" id="4_mom4l"]
-[ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/UI/cursors/cursor_disabled_placeholder.png" id="5_uu5am"]
+[ext_resource type="Texture2D" uid="uid://b3d1gqjcwdri3" path="res://assets/art/ui/buttons/equipment_button_background.png" id="1_ahppr"]
+[ext_resource type="Texture2D" uid="uid://d0ua4bk70ltyo" path="res://assets/art/ui/buttons/equipment_button_hover_click.png" id="2_2145i"]
+[ext_resource type="Texture2D" uid="uid://bfwbmh5eeq2ga" path="res://assets/art/ui/buttons/equipment_button_hover.png" id="3_uu5am"]
+[ext_resource type="Texture2D" uid="uid://cysiryweubwqj" path="res://assets/art/ui/buttons/equipment_button_frame.png" id="4_mom4l"]
+[ext_resource type="Texture2D" uid="uid://dojprqiy3nx2" path="res://assets/art/ui/cursors/cursor_disabled_placeholder.png" id="5_uu5am"]
 [ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="7_xwrlf"]
+
 
 [node name="EquipmentButton" type="Control" unique_id=1720045075]
 layout_mode = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_uflod"]
 [ext_resource type="PackedScene" uid="uid://cqi7s5jn7r3xl" path="res://objects/game/ground_objects/peanuts.tscn" id="2_uflod"]
-[ext_resource type="Texture2D" uid="uid://6vbc5hm8cgby" path="res://assets/art/UI/buttons/skill_icon_pc1.png" id="3_uflod"]
+[ext_resource type="Texture2D" uid="uid://6vbc5hm8cgby" path="res://assets/art/ui/icons/actions/skill_icon_pc1.png" id="3_uflod"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="4_5g2io"]
 
 [resource]

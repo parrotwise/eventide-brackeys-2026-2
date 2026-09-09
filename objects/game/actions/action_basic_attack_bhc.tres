@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://c4dakf8efhhpn"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_24cmq"]
-[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/UI/cursors/cursor_valid_attack.png" id="2_24cmq"]
+[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/ui/cursors/cursor_valid_attack.png" id="2_24cmq"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_i0pwl"]
 
 [resource]

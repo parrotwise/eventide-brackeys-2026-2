@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biqrbkotdu48q"
-path="res://.godot/imported/cursor_slop_placeholder.png-2ccd0038e2c22733acb11cad686884d0.ctex"
+path="res://.godot/imported/cursor_slop_placeholder.png-2b8d48a204626c45527b823b19485f9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/cursors/cursor_slop_placeholder.png"
-dest_files=["res://.godot/imported/cursor_slop_placeholder.png-2ccd0038e2c22733acb11cad686884d0.ctex"]
+source_file="res://assets/art/ui/cursors/cursor_slop_placeholder.png"
+dest_files=["res://.godot/imported/cursor_slop_placeholder.png-2b8d48a204626c45527b823b19485f9b.ctex"]
 
 [params]
 

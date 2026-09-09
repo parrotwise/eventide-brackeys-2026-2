@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://de8gbtkqf00j2"]
 
 [ext_resource type="Script" uid="uid://bvkb1rvh5n82x" path="res://objects/ui/combat_equipment_button.gd" id="1_tje2y"]
-[ext_resource type="Texture2D" uid="uid://c34b1jwpn8etv" path="res://assets/art/UI/buttons/combat_equipment_button_frame.png" id="3_uymhc"]
-[ext_resource type="Texture2D" uid="uid://cwde2n75rwd37" path="res://assets/art/UI/buttons/combat_equipment_button_state_hover.png" id="4_1uajm"]
-[ext_resource type="Texture2D" uid="uid://60u0m7pvggdd" path="res://assets/art/UI/buttons/combat_equipment_button_bg.png" id="5_k6ari"]
+[ext_resource type="Texture2D" uid="uid://c34b1jwpn8etv" path="res://assets/art/ui/buttons/combat_equipment_button_frame.png" id="3_uymhc"]
+[ext_resource type="Texture2D" uid="uid://cwde2n75rwd37" path="res://assets/art/ui/buttons/combat_equipment_button_state_hover.png" id="4_1uajm"]
+[ext_resource type="Texture2D" uid="uid://60u0m7pvggdd" path="res://assets/art/ui/buttons/combat_equipment_button_bg.png" id="5_k6ari"]
 [ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="6_srsfh"]
 
 [node name="EquipmentButton" type="Control" unique_id=1860539444]

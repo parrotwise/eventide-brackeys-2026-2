@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://60u0m7pvggdd"
-path="res://.godot/imported/combat_equipment_button_bg.png-1c8481eaad608f196415f1d706d2196f.ctex"
+path="res://.godot/imported/combat_equipment_button_bg.png-824983a6bca0a94d3fd688f9b9704522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/buttons/combat_equipment_button_bg.png"
-dest_files=["res://.godot/imported/combat_equipment_button_bg.png-1c8481eaad608f196415f1d706d2196f.ctex"]
+source_file="res://assets/art/ui/buttons/combat_equipment_button_bg.png"
+dest_files=["res://.godot/imported/combat_equipment_button_bg.png-824983a6bca0a94d3fd688f9b9704522.ctex"]
 
 [params]
 

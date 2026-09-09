@@ -2,9 +2,9 @@
 
 [ext_resource type="Resource" uid="uid://71fog50qxyau" path="res://objects/game/statuses/status_high_spirits.tres" id="1_wa2c1"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_ba0rm"]
-[ext_resource type="Texture2D" uid="uid://bgx0iyq51unra" path="res://assets/art/UI/status_effect_icons/status_rc_smashed.png" id="2_oc1tp"]
-[ext_resource type="Texture2D" uid="uid://bmk2lsvg34dfx" path="res://assets/art/UI/buttons/passive_icon_rc_hover.png" id="3_wa2c1"]
-[ext_resource type="Texture2D" uid="uid://cr630wlpye85r" path="res://assets/art/UI/buttons/passive_icon_rc.png" id="4_ba0rm"]
+[ext_resource type="Texture2D" uid="uid://bgx0iyq51unra" path="res://assets/art/ui/icons/statuses/status_rc_smashed.png" id="2_oc1tp"]
+[ext_resource type="Texture2D" uid="uid://bmk2lsvg34dfx" path="res://assets/art/ui/icons/passives/passive_icon_rc_hover.png" id="3_wa2c1"]
+[ext_resource type="Texture2D" uid="uid://cr630wlpye85r" path="res://assets/art/ui/icons/passives/passive_icon_rc.png" id="4_ba0rm"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="6_lnm2e"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="7_aere6"]
 

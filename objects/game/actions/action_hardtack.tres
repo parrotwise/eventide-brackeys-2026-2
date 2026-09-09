@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://b320v74t8cub1"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_se75s"]
-[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/UI/status_effect_icons/status_pc_peanuts.png" id="2_se75s"]
+[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/ui/icons/statuses/status_pc_peanuts.png" id="2_se75s"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_xwicr"]
 
 [resource]

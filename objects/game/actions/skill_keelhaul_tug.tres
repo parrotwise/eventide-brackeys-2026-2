@@ -1,8 +1,9 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://dyb3mw26utgcu"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_aggd2"]
-[ext_resource type="Texture2D" uid="uid://blo137quhe73v" path="res://assets/art/UI/buttons/skill_icon_bhc.png" id="1_bk00b"]
+[ext_resource type="Texture2D" uid="uid://blo137quhe73v" path="res://assets/art/ui/icons/actions/skill_icon_bhc.png" id="1_bk00b"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_rsfff"]
+
 
 [resource]
 script = ExtResource("1_rsfff")

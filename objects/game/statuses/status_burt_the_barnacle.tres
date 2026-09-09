@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://dml3y6jrbatlh"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_dqlqy"]
-[ext_resource type="Texture2D" uid="uid://dd5osegvwfajq" path="res://assets/art/UI/equipment_icons/BURT.png" id="2_22u0f"]
+[ext_resource type="Texture2D" uid="uid://dd5osegvwfajq" path="res://assets/art/ui/icons/equipment/equipment_burt_the_barnacle.png" id="2_22u0f"]
 [ext_resource type="Resource" uid="uid://bplykso0212sj" path="res://objects/game/statuses/status_nasty_cuts.tres" id="2_xqcmf"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_xqcmf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_4x4o6"]

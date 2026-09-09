@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_7lkam"]
 [ext_resource type="PackedScene" uid="uid://bj2txay64q1v5" path="res://objects/game/ground_objects/powder_satchel.tscn" id="2_7lkam"]
-[ext_resource type="Texture2D" uid="uid://lhu5tdj1fkc" path="res://assets/art/UI/buttons/skill_icon_ec.png" id="3_6ss24"]
+[ext_resource type="Texture2D" uid="uid://lhu5tdj1fkc" path="res://assets/art/ui/icons/actions/skill_icon_ec.png" id="3_6ss24"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="4_an7bm"]
+
 
 [resource]
 script = ExtResource("4_an7bm")

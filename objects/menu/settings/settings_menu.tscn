@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="1_0mgw2"]
 [ext_resource type="Theme" uid="uid://j5wyuyyutjpb" path="res://assets/theme/main_theme.tres" id="1_2muxl"]
-[ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/UI/tooltip_placeholder.png" id="2_36ubh"]
+[ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/ui/panels/tooltip_placeholder.png" id="2_36ubh"]
 [ext_resource type="Script" uid="uid://duhfetjbb6p4s" path="res://objects/menu/settings/settings_menu.gd" id="2_f1rnk"]
-[ext_resource type="Texture2D" uid="uid://bvgxm7jfq2pd7" path="res://assets/art/UI/menu_close.png" id="4_c0utk"]
-[ext_resource type="Texture2D" uid="uid://kkud7wbs6plu" path="res://assets/art/UI/menu_close_hover_click.png" id="5_5qx7l"]
-[ext_resource type="Texture2D" uid="uid://q2qoyq731rw1" path="res://assets/art/UI/menu_close_hover.png" id="6_4yjj4"]
-[ext_resource type="Texture2D" uid="uid://cwmpg4bdl8uy1" path="res://assets/art/UI/cursors/cursor_pending_target.png" id="8_5qx7l"]
+[ext_resource type="Texture2D" uid="uid://bvgxm7jfq2pd7" path="res://assets/art/ui/icons/menus/menu_close.png" id="4_c0utk"]
+[ext_resource type="Texture2D" uid="uid://kkud7wbs6plu" path="res://assets/art/ui/icons/menus/menu_close_hover_click.png" id="5_5qx7l"]
+[ext_resource type="Texture2D" uid="uid://q2qoyq731rw1" path="res://assets/art/ui/icons/menus/menu_close_hover.png" id="6_4yjj4"]
+[ext_resource type="Texture2D" uid="uid://cwmpg4bdl8uy1" path="res://assets/art/ui/cursors/cursor_pending_target.png" id="8_5qx7l"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kafe6"]
 texture = ExtResource("2_36ubh")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Action" format=3 uid="uid://c7foc0hqmslik"]
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_bnbmo"]
-[ext_resource type="Texture2D" uid="uid://bte6o5p05bf7s" path="res://assets/art/UI/buttons/skill_icon_bc.png" id="2_bnbmo"]
+[ext_resource type="Texture2D" uid="uid://bte6o5p05bf7s" path="res://assets/art/ui/icons/actions/skill_icon_bc.png" id="2_bnbmo"]
 [ext_resource type="Resource" uid="uid://ckwd5ffet8oka" path="res://objects/game/statuses/status_jaw_cruncher.tres" id="2_qg2j7"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="3_rekjr"]
 

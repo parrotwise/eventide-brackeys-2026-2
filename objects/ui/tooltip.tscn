@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bscv27eujoala"]
 
 [ext_resource type="Script" uid="uid://cnkrridbyd328" path="res://objects/ui/tooltip.gd" id="1_owh4x"]
-[ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/UI/tooltip_bg.png" id="2_owh4x"]
+[ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/ui/panels/tooltip_bg.png" id="2_owh4x"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_ltgoe"]
+
 
 [node name="Tooltip" type="Control" unique_id=1654022007]
 layout_mode = 3

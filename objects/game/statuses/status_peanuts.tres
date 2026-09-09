@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_5el8q"]
 [ext_resource type="Resource" uid="uid://myx03h5t4cun" path="res://objects/game/actions/action_crunch_peanuts.tres" id="2_64wkf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_5qpqx"]
-[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/UI/status_effect_icons/status_pc_peanuts.png" id="3_tn4bs"]
+[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/ui/icons/statuses/status_pc_peanuts.png" id="3_tn4bs"]
 [ext_resource type="Resource" uid="uid://ck366ouckgy4n" path="res://objects/game/triggers/trigger_peanuts.tres" id="4_5el8q"]
 
 [resource]

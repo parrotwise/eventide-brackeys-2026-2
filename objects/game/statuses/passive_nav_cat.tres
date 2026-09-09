@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_eiabe"]
 [ext_resource type="Resource" uid="uid://bccamjn7nw43t" path="res://objects/game/statuses/status_watched_over.tres" id="1_xxt0c"]
-[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/UI/status_effect_icons/status_nc_watched.png" id="2_eiabe"]
+[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/ui/icons/statuses/status_nc_watched.png" id="2_eiabe"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_3wp00"]
-[ext_resource type="Texture2D" uid="uid://c42isu6h8bg63" path="res://assets/art/UI/buttons/passive_icon_nc_hover.png" id="4_3wp00"]
+[ext_resource type="Texture2D" uid="uid://c42isu6h8bg63" path="res://assets/art/ui/icons/passives/passive_icon_nc_hover.png" id="4_3wp00"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_dtoms"]
-[ext_resource type="Texture2D" uid="uid://bqdm25vllvava" path="res://assets/art/UI/buttons/passive_icon_nc.png" id="5_dtoms"]
+[ext_resource type="Texture2D" uid="uid://bqdm25vllvava" path="res://assets/art/ui/icons/passives/passive_icon_nc.png" id="5_dtoms"]
 
 [resource]
 script = ExtResource("3_3wp00")

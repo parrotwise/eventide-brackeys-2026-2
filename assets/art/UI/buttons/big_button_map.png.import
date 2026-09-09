@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dbyc47pex07l4"
+path="res://.godot/imported/big_button_map.png-c807604f8601c6de5945112aef1d424e.res"
+
+[deps]
+
+source_file="res://assets/art/ui/buttons/big_button_map.png"
+dest_files=["res://.godot/imported/big_button_map.png-c807604f8601c6de5945112aef1d424e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dxjf4cxcdt8nx"]
 
 [ext_resource type="Script" uid="uid://bi47chqxgwtnx" path="res://objects/game/characters/health_bar.gd" id="1_ye42u"]
-[ext_resource type="Texture2D" uid="uid://3rdokgqa6ou8" path="res://assets/art/UI/hp bg.png" id="2_ye42u"]
-[ext_resource type="Texture2D" uid="uid://nxfgl0l2xy25" path="res://assets/art/UI/hp grey.png" id="3_itfdc"]
-[ext_resource type="Texture2D" uid="uid://du4yxvq8yg0na" path="res://assets/art/UI/hp full.png" id="4_agnhr"]
+[ext_resource type="Texture2D" uid="uid://3rdokgqa6ou8" path="res://assets/art/ui/indicators/hp bg.png" id="2_ye42u"]
+[ext_resource type="Texture2D" uid="uid://nxfgl0l2xy25" path="res://assets/art/ui/indicators/hp grey.png" id="3_itfdc"]
+[ext_resource type="Texture2D" uid="uid://du4yxvq8yg0na" path="res://assets/art/ui/indicators/hp full.png" id="4_agnhr"]
 
 [node name="HealthBar" type="Control" unique_id=537244635]
 layout_mode = 3

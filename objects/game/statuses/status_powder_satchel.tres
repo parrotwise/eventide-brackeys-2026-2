@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://bypo8t4nqklvv"]
 
-[ext_resource type="Texture2D" uid="uid://cs8drrasw0aco" path="res://assets/art/UI/status_effect_icons/status_rc_flammable.png" id="1_bn8bh"]
+[ext_resource type="Texture2D" uid="uid://cs8drrasw0aco" path="res://assets/art/ui/icons/statuses/status_rc_flammable.png" id="1_bn8bh"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_q4dj5"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_4wsmn"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_t553c"]
 [ext_resource type="Resource" uid="uid://b8yxf5k63yrsj" path="res://objects/game/triggers/trigger_powder_satchel.tres" id="4_4wsmn"]
 [ext_resource type="Resource" uid="uid://rd4i5tbe7gna" path="res://objects/game/triggers/trigger_powder_satchel_splash_ahead.tres" id="5_bp7tc"]
 [ext_resource type="Resource" uid="uid://ugfd5g8hbg3l" path="res://objects/game/triggers/trigger_powder_satchel_splash_behind.tres" id="6_q4dj5"]
+
 
 [resource]
 script = ExtResource("2_4wsmn")

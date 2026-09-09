@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8kqn8ytni25j"
-path="res://.godot/imported/cursor_sling_slop.png-8056cf6dd67bdd019366eb40c7b805f9.ctex"
+path="res://.godot/imported/cursor_sling_slop.png-3867bf9b78c61a92587a5f705ac80cca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/UI/cursors/cursor_sling_slop.png"
-dest_files=["res://.godot/imported/cursor_sling_slop.png-8056cf6dd67bdd019366eb40c7b805f9.ctex"]
+source_file="res://assets/art/ui/cursors/cursor_sling_slop.png"
+dest_files=["res://.godot/imported/cursor_sling_slop.png-3867bf9b78c61a92587a5f705ac80cca.ctex"]
 
 [params]
 

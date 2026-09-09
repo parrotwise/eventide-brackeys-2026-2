@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bm6qubhbcqywi"]
 
 [ext_resource type="Script" uid="uid://xk4xj041w3om" path="res://objects/ui/passive_button.gd" id="1_ya3ft"]
-[ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/UI/buttons/action_button_icon_placeholder.png" id="2_kjxnl"]
-[ext_resource type="Texture2D" uid="uid://imec5cigcf2t" path="res://assets/art/UI/buttons/action_button_frame.png" id="3_srsfh"]
-[ext_resource type="Texture2D" uid="uid://bp6cvkrrnxyy6" path="res://assets/art/UI/buttons/action_button_state_hover.png" id="4_of1qg"]
-[ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/UI/buttons/action_button_bg.png" id="5_a7c2r"]
+[ext_resource type="Texture2D" uid="uid://bjjup0w8dbv4e" path="res://assets/art/ui/icons/actions/action_button_icon_placeholder.png" id="2_kjxnl"]
+[ext_resource type="Texture2D" uid="uid://imec5cigcf2t" path="res://assets/art/ui/buttons/action_button_frame.png" id="3_srsfh"]
+[ext_resource type="Texture2D" uid="uid://bp6cvkrrnxyy6" path="res://assets/art/ui/buttons/action_button_state_hover.png" id="4_of1qg"]
+[ext_resource type="Texture2D" uid="uid://bdbmg2kuivg30" path="res://assets/art/ui/buttons/action_button_bg.png" id="5_a7c2r"]
 [ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="6_srsfh"]
 
 [node name="PassiveButton" type="Control" unique_id=1860539444]
