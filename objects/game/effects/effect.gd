@@ -45,6 +45,8 @@ var stacked_healing: int:
 @export var crunch_peanuts: bool = false
 @export var reattach_sootgut: bool = false
 
+@export var free_reposition: bool = false
+
 @export var cause_miss_action: bool = false
 @export var cause_lose_turn: bool = false
 @export var remove_source_status: bool = false
@@ -127,6 +129,8 @@ func apply(bypass_queue: bool = false) -> void:
 		for object: GroundObject in Game.level.ground_objects.objects:
 			if object.name == &'Sootgut':
 				object.attach_to(target)
+	if free_reposition:
+		target.actions_component.reposition.free_action = true
 	if cause_miss_action:
 		Game.level.effector_component.missed_actions.append(
 			Game.level.status_tracker_component.cached['last_action']

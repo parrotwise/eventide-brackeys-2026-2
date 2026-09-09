@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://buopl8llbqqpu"]
 
-[ext_resource type="Texture2D" uid="uid://ceioeconir2l1" path="res://assets/art/UI/equipment_icons/MENDED BOOT.png" id="1_3jyid"]
+[ext_resource type="Texture2D" uid="uid://ceioeconir2l1" path="res://assets/art/ui/icons/equipment/equipment_mended_boot.png" id="1_3jyid"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_rt5sj"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_sgyhp"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_rt5sj"]
+[ext_resource type="Resource" uid="uid://bbn4k0soby0w2" path="res://objects/game/triggers/trigger_mended_boot.tres" id="5_rt5sj"]
 
 [resource]
 script = ExtResource("2_sgyhp")
 name = "Mended Boot"
 description = "Moving is now a free action."
 icon = ExtResource("1_3jyid")
-movement_is_free = true
+triggers = Array[ExtResource("3_rt5sj")]([ExtResource("5_rt5sj")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

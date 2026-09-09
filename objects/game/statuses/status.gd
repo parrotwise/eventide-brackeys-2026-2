@@ -88,9 +88,8 @@ var power_multiplier: float:
 @export_subgroup("Flags")
 @export var can_attack_twice: bool = false
 @export var can_be_healed: bool = true
-## Cannot move or be moved by force.
 @export var can_be_moved: bool = true
-@export var movement_is_free: bool = false
+@export var reposition_disabled: bool = false
 @export var no_more_please: bool = false
 @export var max_health_one: bool = false
 
