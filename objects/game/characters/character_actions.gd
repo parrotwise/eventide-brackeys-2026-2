@@ -24,11 +24,11 @@ var action_cooldowns: Dictionary[Action, int] = {}
 func _ready() -> void:
 	Game.start.connect(_on_combat_start)
 
-	basic_attack = basic_attack.duplicate()
-	reposition = reposition.duplicate()
+	basic_attack = basic_attack.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	reposition = reposition.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	for i: int in skills.size():
-		skills[i] = skills[i].duplicate()
+		skills[i] = skills[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 
 
 func _on_combat_start() -> void:

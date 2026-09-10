@@ -121,7 +121,7 @@ func apply_status(status_template: Status) -> Status:
 					status.stack += 1
 					return null
 
-	var status: Status = status_template.duplicate(true)
+	var status: Status = status_template.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	_active_statuses.append(status)
 	

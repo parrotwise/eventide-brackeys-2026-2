@@ -9,30 +9,37 @@ extends Resource
 
 
 func fire(specific_target: Character = null) -> void:
+	if not effect:
+		return
+	
+	var fired_effect: Effect = effect.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	fired_effect.source = effect.source
+	fired_effect.owner = effect.owner
+
 	if specific_target:
-		effect.target = specific_target
+		fired_effect.target = specific_target
 	
 	else:
 		match target_type:
 			Enums.TargetType.SELF:
-				effect.target = effect.owner
+				fired_effect.target = fired_effect.owner
 			Enums.TargetType.ALLY_AHEAD:
-				effect.target = Game.level.characters.get_ahead_of(effect.owner)
+				fired_effect.target = Game.level.characters.get_ahead_of(fired_effect.owner)
 			Enums.TargetType.ALLY_BEHIND:
-				effect.target = Game.level.characters.get_behind(effect.owner)
+				fired_effect.target = Game.level.characters.get_behind(fired_effect.owner)
 			Enums.TargetType.NEAREST_ENEMY:
-				effect.target = (
+				fired_effect.target = (
 					Game.level.characters.ally_melee
-					if effect.owner in Game.level.characters.enemies else
+					if fired_effect.owner in Game.level.characters.enemies else
 					Game.level.characters.enemy_melee
 				)
 			Enums.TargetType.CHARACTER_AHEAD:
-				effect.target = Game.level.characters.get_ahead_of(effect.owner)
+				fired_effect.target = Game.level.characters.get_ahead_of(fired_effect.owner)
 	
 	# Resource instance modified in-place
-	Game.level.status_tracker_component.modify_effect(effect)
+	Game.level.status_tracker_component.modify_effect(fired_effect)
 	
-	effect.apply(bypass_queue)
+	await fired_effect.apply(bypass_queue)
 	
 	# Let the actor know of a triggered effect
-	effect.owner.actor.fire_effect(effect)
+	fired_effect.owner.actor.fire_effect(fired_effect)

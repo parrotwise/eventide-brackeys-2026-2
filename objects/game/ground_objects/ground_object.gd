@@ -9,7 +9,7 @@ var character: Character
 
 
 func _ready() -> void:
-	granted_status = granted_status.duplicate()
+	granted_status = granted_status.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 
 	Game.level.characters.character_removed.connect(_on_character_removed)
 	Game.level.characters.characters_repositioned.connect(_on_characters_repositioned)

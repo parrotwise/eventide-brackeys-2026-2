@@ -16,7 +16,7 @@ func _on_combat_start() -> void:
 		Debug.info('Restored loadout %s for %s.' % [Game.inventories[character.id].map(func(e): return e.name), character.id])
 	
 	for i: int in equipment.size():
-		equipment[i] = equipment[i].duplicate()
+		equipment[i] = equipment[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	for item: Equipment in equipment:
 		character.state_component.apply_status(item.equipped_status)

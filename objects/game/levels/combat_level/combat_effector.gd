@@ -113,7 +113,7 @@ func interpret(
 		effects[target].created_objects.append_array(action.created_objects)
 	
 	if action.repeat_on_random_target:
-		var repeat: Action = action.duplicate()
+		var repeat: Action = action.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		repeat.owner = action.owner
 		repeat.repeat_on_random_target = false
 

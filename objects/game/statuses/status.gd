@@ -124,14 +124,14 @@ func apply_to(character: Character) -> void:
 	owner = character
 	
 	for i: int in granted_actions.size():
-		granted_actions[i] = granted_actions[i].duplicate()
+		granted_actions[i] = granted_actions[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		granted_actions[i].owner = character
 
 	for i: int in triggers.size():
-		triggers[i] = triggers[i].duplicate()
+		triggers[i] = triggers[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	for trigger: Trigger in triggers:
-		trigger.effect = trigger.effect.duplicate()
+		trigger.effect = trigger.effect.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		trigger.effect.owner = character
 		trigger.effect.source = self
 
