@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_g2jjb"]
 [ext_resource type="Resource" uid="uid://bemjfmlcmr14e" path="res://objects/game/statuses/status_crusty_smoking_pipe.tres" id="1_ksdpv"]
-[ext_resource type="Texture2D" uid="uid://crbohdv30xsr8" path="res://assets/art/UI/equipment_icons/CRUSTY SMOKING PIPE.png" id="2_kxpjp"]
+[ext_resource type="Texture2D" uid="uid://crbohdv30xsr8" path="res://assets/art/ui/icons/equipment/equipment_crusty_smoking_pipe.png" id="2_kxpjp"]
 
 [resource]
 script = ExtResource("1_g2jjb")
