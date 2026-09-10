@@ -126,7 +126,7 @@ func apply_status(status_template: Status) -> Status:
 	_active_statuses.append(status)
 	
 	status.applied.connect(func(_character): status_applied.emit(status))
-	status.apply_to(character)
+	await status.apply_to(character)
 
 	refresh_health()
 

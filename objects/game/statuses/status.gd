@@ -141,13 +141,13 @@ func apply_to(character: Character) -> void:
 
 	for trigger: Trigger in triggers:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_APPLIED:
-			trigger.fire()
+			await trigger.fire()
 
 
 func remove() -> void:
 	for trigger: Trigger in triggers:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_REMOVED:
-			trigger.fire()
+			await trigger.fire()
 	
 	Game.level.status_tracker_component.untrack(self)
 
@@ -279,12 +279,12 @@ func refresh_granted_statuses() -> void:
 		for character: Character in characters_ahead:
 			if not character.state_component.active_statuses.any(func(s): return s.name == grant_ahead.name):
 				granted_statuses.append(
-					character.state_component.apply_status(grant_ahead)
+					await character.state_component.apply_status(grant_ahead)
 				)
 	
 	if grant_adjacent:
 		for character: Character in characters_adjacent:
 			if not character.state_component.active_statuses.any(func(s): return s.name == grant_adjacent.name):
 				granted_statuses.append(
-					character.state_component.apply_status(grant_adjacent)
+					await character.state_component.apply_status(grant_adjacent)
 				)

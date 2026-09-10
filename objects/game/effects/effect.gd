@@ -102,6 +102,7 @@ func apply(bypass_queue: bool = false) -> void:
 	
 	if not bypass_queue:
 		Game.level.queue.push_effect(self)
+		await Game.level.queue.await_effect(self)
 		return
 	
 	var total_damage: int = stacked_damage + stacked_damage_explosive + stacked_damage_poison
@@ -152,7 +153,7 @@ func apply(bypass_queue: bool = false) -> void:
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:
-		target.state_component.apply_status(status)
+		await target.state_component.apply_status(status)
 	for object: PackedScene in created_objects:
 		Game.level.ground_objects.spawn(object, target)
 	
@@ -169,4 +170,4 @@ func apply(bypass_queue: bool = false) -> void:
 	applied.emit()
 
 	for extra_effect: Effect in extra_effects:
-		extra_effect.apply(bypass_queue)
+		await extra_effect.apply(bypass_queue)

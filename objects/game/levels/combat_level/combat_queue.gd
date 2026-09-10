@@ -46,3 +46,8 @@ func pop_effect() -> void:
 func await_empty() -> void:
 	while not _effect_queue.is_empty():
 		await get_tree().create_timer(0.2).timeout
+
+
+func await_effect(effect: Effect) -> void:
+	while effect in _effect_queue:
+		await get_tree().create_timer(0.2).timeout

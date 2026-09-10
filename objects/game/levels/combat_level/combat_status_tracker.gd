@@ -15,6 +15,8 @@ var active_statuses: Array[Status]:
 var cached: Dictionary[String, Variant] = {
 	'last_action': null,
 	'last_attacker': null,
+	'last_reposition_ahead': null,
+	'last_reposition_behind': null,
 }
 
 
@@ -45,6 +47,28 @@ func untrack(status: Status) -> void:
 	status_removed.emit(status)
 
 
+func acquire_target(target_type: Enums.TargetType, owner_ref: Character) -> Character:
+	match target_type:
+		Enums.TargetType.CHARACTER_AHEAD:
+			return Game.level.characters.get_ahead_of(owner_ref)
+		Enums.TargetType.LAST_ATTACKER:
+			return cached['last_attacker']
+		Enums.TargetType.LAST_REPOSITION_SELF:
+			return (
+				cached['last_reposition_ahead']
+				if cached['last_reposition_ahead'] == owner_ref
+				else cached['last_reposition_behind']
+			)
+		Enums.TargetType.LAST_REPOSITION_OTHER:
+			return (
+				cached['last_reposition_ahead']
+				if cached['last_reposition_behind'] == owner_ref
+				else cached['last_reposition_behind']
+			)
+	
+	return null
+
+
 func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null) -> void:
 	for status: Status in active_statuses:
 		if specific_owner not in [null, status.owner]:
@@ -56,25 +80,8 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 			if trigger_type != trigger.trigger_type:
 				continue
 			
-			match trigger.target_type:
-				Enums.TargetType.SELF: # Auto-detected
-					trigger.fire()
-					fired.append(trigger)
-				Enums.TargetType.ALLY_AHEAD: # Auto-detected
-					trigger.fire()
-					fired.append(trigger)
-				Enums.TargetType.ALLY_BEHIND: # Auto-detected
-					trigger.fire()
-					fired.append(trigger)
-				Enums.TargetType.NEAREST_ENEMY: # Auto-detected
-					trigger.fire()
-					fired.append(trigger)
-				Enums.TargetType.CHARACTER_AHEAD:
-					trigger.fire(Game.level.characters.get_ahead_of(status.owner))
-					fired.append(trigger)
-				Enums.TargetType.LAST_ATTACKER:
-					trigger.fire(cached['last_attacker'])
-					fired.append(trigger)
+			await trigger.fire(acquire_target(trigger.target_type, specific_owner))
+			fired.append(trigger)
 		
 		for trigger: Trigger in fired:
 			trigger_fired.emit(trigger)
@@ -120,12 +127,6 @@ func _on_combat_start() -> void:
 	Game.level.effector_component.action_submitted.connect(
 		func (_action: Action, user: Character, _target: Character):
 			fire_triggers(Enums.TriggerType.USING_ACTION, user)
-	)
-	
-	Game.level.characters.characters_repositioned.connect(
-		func (char1: Character, char2: Character):
-			fire_triggers(Enums.TriggerType.REPOSITIONED, char1)
-			fire_triggers(Enums.TriggerType.REPOSITIONED, char2)
 	)
 
 	Game.level.turn_tracker_component.turn_started.connect(
@@ -177,7 +178,8 @@ func _on_action_submitted(action: Action, user: Character, _target: Character) -
 
 
 func _on_characters_repositioned(char_ahead: Character, char_behind: Character) -> void:
-	# Only one loop is necessary but I'm too tired to know which and computers are amazing fast
+	cached['last_reposition_ahead'] = char_ahead
+	cached['last_reposition_behind'] = char_behind
 
 	if is_instance_valid(char_ahead):
 		for status: Status in char_ahead.state_component.active_statuses:
@@ -186,3 +188,6 @@ func _on_characters_repositioned(char_ahead: Character, char_behind: Character) 
 	if is_instance_valid(char_behind):
 		for status: Status in char_behind.state_component.active_statuses:
 			status.refresh_granted_statuses()
+	
+	fire_triggers(Enums.TriggerType.REPOSITIONED, char_ahead)
+	fire_triggers(Enums.TriggerType.REPOSITIONED, char_behind)

@@ -38,7 +38,7 @@ func attach_to(new_character: Character) -> void:
 	detach()
 	character = new_character
 
-	var applied_copy: Status = character.state_component.apply_status(granted_status)
+	var applied_copy: Status = await character.state_component.apply_status(granted_status)
 	# Apply_status can return null
 	if applied_copy == null: return
 	if despawn_on_status_removed:
