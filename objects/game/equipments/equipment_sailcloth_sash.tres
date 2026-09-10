@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_f4443"]
 [ext_resource type="Resource" uid="uid://b3rx2xffk022e" path="res://objects/game/statuses/status_sailcloth_sash.tres" id="1_khicc"]
-[ext_resource type="Texture2D" uid="uid://jjux6i6t56pa" path="res://assets/art/UI/equipment_icons/SAILCLOTH SASH.png" id="2_m4u7n"]
+[ext_resource type="Texture2D" uid="uid://jjux6i6t56pa" path="res://assets/art/ui/icons/equipment/equipment_sailcloth_sash.png" id="2_m4u7n"]
 
 [resource]
 script = ExtResource("1_f4443")

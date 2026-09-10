@@ -47,14 +47,15 @@ var active_statuses: Array[Status]:
 
 
 func _ready() -> void:
-	current_health = max_health
-
 	Game.start.connect(_on_combat_start)
 
 
 func _on_combat_start() -> void:
 	if passive_status != null:
 		apply_status(passive_status)
+	
+	current_health = max_health
+	character.indicators_component.health_bar.set_health(current_health, max_health)
 
 
 func take_damage(damage: int, explosive: bool = false) -> void:
