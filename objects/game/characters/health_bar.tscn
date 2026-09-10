@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://3rdokgqa6ou8" path="res://assets/art/ui/indicators/hp bg.png" id="2_ye42u"]
 [ext_resource type="Texture2D" uid="uid://nxfgl0l2xy25" path="res://assets/art/ui/indicators/hp grey.png" id="3_itfdc"]
 [ext_resource type="Texture2D" uid="uid://du4yxvq8yg0na" path="res://assets/art/ui/indicators/hp full.png" id="4_agnhr"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="5_itfdc"]
 
 [node name="HealthBar" type="Control" unique_id=537244635]
 layout_mode = 3
-anchors_preset = 0
 offset_bottom = 16.0
+mouse_filter = 1
 script = ExtResource("1_ye42u")
 
 [node name="Frame" type="TextureRect" parent="." unique_id=413185062]
@@ -23,6 +24,7 @@ layout_mode = 0
 offset_left = -80.0
 offset_right = 80.0
 offset_bottom = 16.0
+mouse_filter = 2
 value = 100.0
 texture_progress = ExtResource("3_itfdc")
 
@@ -31,5 +33,28 @@ layout_mode = 0
 offset_left = -80.0
 offset_right = 80.0
 offset_bottom = 16.0
+mouse_filter = 2
 value = 60.0
 texture_progress = ExtResource("4_agnhr")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=116879665]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = -80.0
+offset_top = -4.0
+offset_right = 80.0
+offset_bottom = 20.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.7490196, 0.4392157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5019608)
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("5_itfdc")
+theme_override_font_sizes/normal_font_size = 20
+text = "80/100"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
