@@ -49,14 +49,14 @@ script = ExtResource("7_meodt")
 [node name="InputArea" type="CollisionPolygon2D" parent="Input" unique_id=1579786761]
 polygon = PackedVector2Array(-100, -300, 100, -300, 100, 0, -100, 0)
 
+[node name="State" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
+
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("1_i7xxf")]
 basic_attack = ExtResource("9_wshwh")
 reposition = ExtResource("10_5yqpb")
 skills = Array[ExtResource("9_263tf")]([ExtResource("12_nw1x3"), ExtResource("13_nw1x3")])
 
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("4_g2flc")]
-
-[node name="State" parent="." unique_id=1290732730 instance=ExtResource("1_iixya")]
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=851659538]
 visible = false

@@ -50,16 +50,16 @@ script = ExtResource("8_v3xvm")
 [node name="InputArea" type="CollisionPolygon2D" parent="Input" unique_id=1579786761]
 polygon = PackedVector2Array(-100, -300, 100, -300, 100, 0, -100, 0)
 
+[node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
+base_power = 8
+passive_status = ExtResource("16_34f4u")
+
 [node name="Actions" parent="." unique_id=1878263473 instance=ExtResource("9_7e32w")]
 basic_attack = ExtResource("10_lh73c")
 reposition = ExtResource("11_r13gu")
 skills = Array[ExtResource("12_qs10e")]([ExtResource("13_eyxd2")])
 
 [node name="Equipment" parent="." unique_id=1318300644 instance=ExtResource("15_y8t4a")]
-
-[node name="State" parent="." unique_id=1290732730 instance=ExtResource("16_qj74d")]
-base_power = 8
-passive_status = ExtResource("16_34f4u")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=127842753]
 visible = false
@@ -80,5 +80,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
+
+[node name="HealthBar" parent="Indicators" index="1" unique_id=537244635]
+anchors_preset = 0
 
 [editable path="Indicators"]
