@@ -57,13 +57,21 @@ var damage_dealt_multiplier: float:
 var missing_hp_to_dmg_dealt_mult: float:
 	get: return _missing_hp_to_dmg_dealt_mult * stack
 
-@export var _damage_dealt_to_splash_mult: float = 0.0
-var damage_dealt_to_splash_mult: float:
-	get: return _damage_dealt_to_splash_mult * stack
+@export var _damage_dealt_to_splash_both_sides_mult: float = 0.0
+var damage_dealt_to_splash_both_sides_mult: float:
+	get: return _damage_dealt_to_splash_both_sides_mult * stack
 
-@export var _damage_taken_to_splash_mult: float = 0.0
-var damage_taken_to_splash_mult: float:
-	get: return _damage_taken_to_splash_mult * stack
+@export var _damage_dealt_to_splash_one_side_mult: float = 0.0
+var damage_dealt_to_splash_one_side_mult: float:
+	get: return _damage_dealt_to_splash_one_side_mult * stack
+
+@export var _damage_taken_to_splash_both_sides_mult: float = 0.0
+var damage_taken_to_splash_both_sides_mult: float:
+	get: return _damage_taken_to_splash_both_sides_mult * stack
+
+@export var _damage_taken_to_splash_one_side_mult: float = 0.0
+var damage_taken_to_splash_one_side_mult: float:
+	get: return _damage_taken_to_splash_one_side_mult * stack
 
 @export var _damage_taken_multiplier: float = 1.0 
 var damage_taken_multiplier: float:
@@ -203,10 +211,19 @@ func modify_effect(effect: Effect) -> Effect:
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
 				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
-				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_mult)
-				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_mult)
+				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_both_sides_mult)
+				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_both_sides_mult)
 
 				effect.extra_effects.append(splash_effect)
+			
+			for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+
+				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_one_side_mult)
+				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_one_side_mult)
+
+				effect.extra_effects.append(splash_effect)
+				break
 		
 		if healing_applied:
 			for status: Status in healing_applied_applies_statuses:
@@ -244,10 +261,19 @@ func modify_effect(effect: Effect) -> Effect:
 			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
 				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 				
-				splash_effect.damage = roundi(effect.damage * damage_taken_to_splash_mult)
-				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_taken_to_splash_mult)
+				splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_both_sides_mult)
+				splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_both_sides_mult)
 				
 				effect.extra_effects.append(splash_effect)
+			
+			for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+				
+				splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_one_side_mult)
+				splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_one_side_mult)
+				
+				effect.extra_effects.append(splash_effect)
+				break
 			
 		if healing_received:
 			for status: Status in healing_received_applies_statuses:

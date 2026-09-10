@@ -1,12 +1,15 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://d3qb0plalw5l1"]
 
-[ext_resource type="Texture2D" uid="uid://cs0mj1hfkft30" path="res://assets/art/UI/equipment_icons/EELSKIN.png" id="1_g11qf"]
+[ext_resource type="Texture2D" uid="uid://cs0mj1hfkft30" path="res://assets/art/ui/icons/equipment/equipment_eelskin.png" id="1_g11qf"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_q2vyc"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_g11qf"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_p45x7"]
 
 [resource]
 script = ExtResource("1_q2vyc")
 name = "Eelskin"
 description = "You reflect 30% of the incoming damage onto an adjacent ally."
 icon = ExtResource("1_g11qf")
+_damage_taken_to_splash_one_side_mult = 0.3
+_damage_taken_multiplier = 0.7
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

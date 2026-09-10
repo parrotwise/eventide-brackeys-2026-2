@@ -14,5 +14,5 @@ description = "Every time you deal damage, deal 50% of it to adjacent targets. E
 icon = ExtResource("2_878j7")
 passive_icon_normal = ExtResource("4_avt27")
 passive_icon_hover = ExtResource("3_4jyun")
-damage_dealt_to_splash_mult = 0.5
-damage_taken_to_splash_mult = 0.4
+_damage_dealt_to_splash_both_sides_mult = 0.5
+_damage_taken_to_splash_both_sides_mult = 0.4
