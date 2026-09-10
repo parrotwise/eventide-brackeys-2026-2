@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bpt70ngfaaqqa" path="res://objects/game/statuses/status_spiked_armband.tres" id="1_pnodw"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_xno84"]
-[ext_resource type="Texture2D" uid="uid://7o8w0ipbc0a1" path="res://assets/art/UI/equipment_icons/SPIKED ARMBAND.png" id="2_o8bg4"]
+[ext_resource type="Texture2D" uid="uid://7o8w0ipbc0a1" path="res://assets/art/ui/icons/equipment/equipment_spiked_armband.png" id="2_o8bg4"]
 
 [resource]
 script = ExtResource("1_xno84")

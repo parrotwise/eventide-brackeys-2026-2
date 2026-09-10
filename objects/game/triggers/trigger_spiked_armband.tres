@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://ctlyyvk3o82m8"]
+
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_7e1l7"]
+[ext_resource type="Resource" uid="uid://5mgepayuyx2t" path="res://objects/game/effects/effect_trigger_spiked_armband.tres" id="1_s30tc"]
+
+[resource]
+script = ExtResource("1_7e1l7")
+effect = ExtResource("1_s30tc")
+target_type = 7
+trigger_type = 11
+metadata/_custom_type_script = "uid://lvv535cj6j34"

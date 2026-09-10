@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://53nlswrt0bjk"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_squut"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_2ny2l"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_c18ma"]
+
+[resource]
+script = ExtResource("1_squut")
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
