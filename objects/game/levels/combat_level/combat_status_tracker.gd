@@ -105,10 +105,26 @@ func modify_effect(effect: Effect) -> Effect:
 
 
 func _on_combat_start() -> void:
-	# Cache targets first
-	Game.level.effector_component.action_submitted.connect(_on_action_submitted)
+	# /***************\
+	# ) CACHE TARGETS (
+	# \***************/
 
-	# Trigger effects after
+	Game.level.effector_component.action_submitted.connect(
+		func (action: Action, user: Character, _target: Character):
+			cached['last_action'] = action
+			cached['last_attacker'] = user
+	)
+
+	Game.level.characters.characters_repositioned.connect(
+		func (char_ahead: Character, char_behind: Character):
+			cached['last_reposition_ahead'] = char_ahead
+			cached['last_reposition_behind'] = char_behind
+	)
+
+	# /*****************\
+	# ) TRIGGER EFFECTS (
+	# \*****************/
+
 	for character: Character in Game.level.characters.all:
 		character.state_component.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
@@ -124,11 +140,40 @@ func _on_combat_start() -> void:
 			fire_triggers.bind(Enums.TriggerType.HEALING_RECEIVED, character)
 		)
 	
-	Game.level.effector_component.action_submitted.connect(
-		func (_action: Action, user: Character, _target: Character):
-			fire_triggers(Enums.TriggerType.USING_ACTION, user)
+	Game.level.characters.characters_repositioned.connect(
+		func (char_ahead: Character, char_behind: Character):
+			fire_triggers(Enums.TriggerType.REPOSITIONED, char_ahead)
+			fire_triggers(Enums.TriggerType.REPOSITIONED, char_behind)
 	)
+	
+	Game.level.effector_component.action_submitted.connect(
+		func (action: Action, user: Character, _target: Character):
+			fire_triggers(Enums.TriggerType.USING_ACTION, user)
 
+			if action == user.actions_component.basic_attack:
+				fire_triggers(Enums.TriggerType.USING_BASIC_ATTACK, user)
+
+			elif action == user.actions_component.reposition:
+				fire_triggers(Enums.TriggerType.USING_REPOSITION, user)
+
+			elif action == user.actions_component.skills[0]:
+				fire_triggers(Enums.TriggerType.USING_CHARACTER_SKILL, user)
+	)
+	
+	Game.level.effector_component.action_finished.connect(
+		func (action: Action):
+			fire_triggers(Enums.TriggerType.FINISHED_ACTION, action.owner)
+
+			if action == action.owner.actions_component.basic_attack:
+				fire_triggers(Enums.TriggerType.FINISHED_BASIC_ATTACK, action.owner)
+
+			elif action == action.owner.actions_component.reposition:
+				fire_triggers(Enums.TriggerType.FINISHED_REPOSITION, action.owner)
+
+			elif action == action.owner.actions_component.skills[0]:
+				fire_triggers(Enums.TriggerType.FINISHED_CHARACTER_SKILL, action.owner)
+	)
+	
 	Game.level.turn_tracker_component.turn_started.connect(
 		func (character: Character):
 			if character in Game.level.characters.enemies:
@@ -168,26 +213,17 @@ func _on_combat_start() -> void:
 					fire_triggers(Enums.TriggerType.START_PHASE, character)
 	)
 
-	# Refresh positionally granted statuses on reposition
-	Game.level.characters.characters_repositioned.connect(_on_characters_repositioned.call_deferred)
+	# /****************\
+	# ) REFRESH STATES (
+	# \****************/
 
+	Game.level.characters.characters_repositioned.connect(
+		func (char_ahead: Character, char_behind: Character):
+			if is_instance_valid(char_ahead):
+				for status: Status in char_ahead.state_component.active_statuses:
+					status.refresh_granted_statuses.call_deferred()
 
-func _on_action_submitted(action: Action, user: Character, _target: Character) -> void:
-	cached['last_action'] = action
-	cached['last_attacker'] = user
-
-
-func _on_characters_repositioned(char_ahead: Character, char_behind: Character) -> void:
-	cached['last_reposition_ahead'] = char_ahead
-	cached['last_reposition_behind'] = char_behind
-
-	if is_instance_valid(char_ahead):
-		for status: Status in char_ahead.state_component.active_statuses:
-			status.refresh_granted_statuses()
-
-	if is_instance_valid(char_behind):
-		for status: Status in char_behind.state_component.active_statuses:
-			status.refresh_granted_statuses()
-	
-	fire_triggers(Enums.TriggerType.REPOSITIONED, char_ahead)
-	fire_triggers(Enums.TriggerType.REPOSITIONED, char_behind)
+			if is_instance_valid(char_behind):
+				for status: Status in char_behind.state_component.active_statuses:
+					status.refresh_granted_statuses.call_deferred()
+	)

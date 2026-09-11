@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://dkp2xsuymfqjr"]
+
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_7ulsi"]
+[ext_resource type="Resource" uid="uid://epsu1651m2tk" path="res://objects/game/effects/effect_trigger_old_key_cooldown.tres" id="1_oa3yd"]
+
+[resource]
+script = ExtResource("1_7ulsi")
+effect = ExtResource("1_oa3yd")
+trigger_type = 18
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

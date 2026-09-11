@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bgmu6v0to371q" path="res://objects/game/statuses/status_old_key.tres" id="1_4phlh"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_eq07s"]
-[ext_resource type="Texture2D" uid="uid://dta3xjtlemk2h" path="res://assets/art/UI/equipment_icons/OLD KEY.png" id="2_hdt28"]
+[ext_resource type="Texture2D" uid="uid://dta3xjtlemk2h" path="res://assets/art/ui/icons/equipment/equipment_old_key.png" id="2_hdt28"]
 
 [resource]
 script = ExtResource("1_eq07s")

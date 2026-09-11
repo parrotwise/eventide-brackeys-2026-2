@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://draicum6d4rfx"]
+
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_r7mnx"]
+[ext_resource type="Resource" uid="uid://domrtro7rqgd2" path="res://objects/game/effects/effect_trigger_old_key_boost.tres" id="1_vpiat"]
+
+[resource]
+script = ExtResource("1_r7mnx")
+effect = ExtResource("1_vpiat")
+trigger_type = 18
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

@@ -48,6 +48,7 @@ var stacked_healing: int:
 @export var increase_basic_attack_max_uses: int = 0
 @export var cooldown_basic_attack: int = 0
 @export var cooldown_reposition: int = 0
+@export var cooldown_character_skill: int = 0
 @export var free_reposition: bool = false
 
 @export var cause_miss_action: bool = false
@@ -142,6 +143,9 @@ func apply(bypass_queue: bool = false) -> void:
 	if cooldown_reposition:
 		target.actions_component.reposition.remove_uses()
 		target.actions_component.action_cooldowns[target.actions_component.reposition] = cooldown_reposition
+	if cooldown_character_skill:
+		target.actions_component.skills[0].remove_uses()
+		target.actions_component.action_cooldowns[target.actions_component.skills[0]] = cooldown_character_skill
 	if free_reposition:
 		target.actions_component.reposition.free_action = true
 	if cause_miss_action:

@@ -1,12 +1,16 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://bgmu6v0to371q"]
 
-[ext_resource type="Texture2D" uid="uid://dta3xjtlemk2h" path="res://assets/art/UI/equipment_icons/OLD KEY.png" id="1_hlk6r"]
+[ext_resource type="Texture2D" uid="uid://dta3xjtlemk2h" path="res://assets/art/ui/icons/equipment/equipment_old_key.png" id="1_hlk6r"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_krsw8"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_hlk6r"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_xyks4"]
+[ext_resource type="Resource" uid="uid://dkp2xsuymfqjr" path="res://objects/game/triggers/trigger_old_key_cooldown.tres" id="5_irpm8"]
+[ext_resource type="Resource" uid="uid://draicum6d4rfx" path="res://objects/game/triggers/trigger_old_key_boost.tres" id="6_3jcvl"]
 
 [resource]
 script = ExtResource("1_krsw8")
 name = "Old Key"
 description = "Your ability gains a cooldown of 1 turn. After using the ability, attack is temporarily stronger."
 icon = ExtResource("1_hlk6r")
+triggers = Array[ExtResource("2_hlk6r")]([ExtResource("5_irpm8"), ExtResource("6_3jcvl")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
