@@ -37,9 +37,9 @@ signal uses_restored()
 @export var power_as_target_healing: bool = false
 
 @export var swap_places: bool = false
-@export var knockback_once: bool = false
+@export var knockback_steps: int = 0
 @export var knockback_to_rear: bool = false
-@export var pull_once: bool = false
+@export var pull_steps: int = 0
 @export var pull_to_front: bool = false
 
 @export var crunch_peanuts: bool = false

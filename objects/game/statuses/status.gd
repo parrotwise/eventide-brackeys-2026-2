@@ -47,6 +47,14 @@ var max_health_adder: int:
 var power_adder: int:
 	get: return _power_adder * stack
 
+@export var _attack_knockback_steps_adder: int = 0
+var attack_knockback_steps_adder: int:
+	get: return _attack_knockback_steps_adder * stack
+
+@export var _attack_pull_steps_adder: int = 0
+var attack_pull_steps_adder: int:
+	get: return _attack_pull_steps_adder * stack
+
 @export_subgroup("Multipliers")
 
 @export var _damage_dealt_multiplier: float = 1.0
@@ -230,6 +238,9 @@ func modify_effect(effect: Effect) -> Effect:
 				effect.applied_statuses.append(status)
 		
 		if effect.source == owner.actions_component.basic_attack:
+			effect.knockback_steps += attack_knockback_steps_adder
+			effect.pull_steps += attack_pull_steps_adder
+			
 			for status: Status in attacks_apply_statuses:
 				effect.applied_statuses.append(status)
 	

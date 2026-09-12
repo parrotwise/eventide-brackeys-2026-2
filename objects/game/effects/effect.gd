@@ -37,9 +37,9 @@ var stacked_healing: int:
 	get: return healing * stack_mult
 
 @export var swap_places: bool = false
-@export var knockback_once: bool = false
+@export var knockback_steps: int = 0
 @export var knockback_to_rear: bool = false
-@export var pull_once: bool = false
+@export var pull_steps: int = 0
 @export var pull_to_front: bool = false
 
 @export var crunch_peanuts: bool = false
@@ -81,9 +81,9 @@ func merge_with(other: Effect) -> Effect:
 	healing += other.healing
 
 	swap_places = swap_places or other.swap_places
-	knockback_once = knockback_once or other.knockback_once
+	knockback_steps = knockback_steps + other.knockback_steps
 	knockback_to_rear = knockback_to_rear or other.knockback_to_rear
-	pull_once = pull_once or other.pull_once
+	pull_steps = pull_steps + other.pull_steps
 	pull_to_front = pull_to_front or other.pull_to_front
 
 	crunch_peanuts = crunch_peanuts or other.crunch_peanuts
@@ -116,12 +116,12 @@ func apply(bypass_queue: bool = false) -> void:
 		target.state_component.heal(total_healing)
 	if swap_places:
 		Game.level.characters.swap_places(owner, target)
-	if knockback_once:
+	for __ in knockback_steps:
 		Game.level.characters.move_backward(target)
 	if knockback_to_rear:
 		while not Game.level.characters.is_in_rear(target):
 			Game.level.characters.move_backward(target)
-	if pull_once:
+	for __ in pull_steps:
 		Game.level.characters.move_forward(target)
 	if pull_to_front:
 		while not Game.level.characters.is_in_melee(target):

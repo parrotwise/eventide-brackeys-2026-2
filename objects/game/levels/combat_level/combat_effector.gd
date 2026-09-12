@@ -68,17 +68,17 @@ func interpret(
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].swap_places = true
 
-	if action.knockback_once:
+	if action.knockback_steps:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].knockback_once = true
+		effects[target].knockback_steps = action.knockback_steps
 
 	if action.knockback_to_rear:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].knockback_to_rear = true
 
-	if action.pull_once:
+	if action.pull_steps:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].pull_once = true
+		effects[target].pull_steps = action.pull_steps
 
 	if action.pull_to_front:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
