@@ -222,6 +222,9 @@ func _on_trigger_fired(trigger: Trigger) -> void:
 			trigger.effect.source.name
 		]
 	)
+	if not is_instance_valid(trigger.effect.source.owner):
+		return
+	
 	trigger.effect.source.owner.actor.do_trigger_as_user(trigger)
 
 
