@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://c03f8n0pjrerv"]
+
+[ext_resource type="Resource" uid="uid://mfqq58rdhyn4" path="res://objects/game/effects/effect_trigger_stunned_lose_turn.tres" id="1_u5xi6"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_qxvpr"]
+
+[resource]
+script = ExtResource("2_qxvpr")
+effect = ExtResource("1_u5xi6")
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

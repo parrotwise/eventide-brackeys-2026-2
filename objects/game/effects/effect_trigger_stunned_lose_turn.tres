@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://mfqq58rdhyn4"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_2hu5m"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_l3oi0"]
+
+[resource]
+script = ExtResource("2_l3oi0")
+name = "Stunned"
+cause_lose_turn = true
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"
