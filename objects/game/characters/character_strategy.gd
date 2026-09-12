@@ -39,7 +39,7 @@ func take_turn() -> void:
 			_:
 				if Random.randfloat() < 0.50: action = skill
 	
-	var target: Character = Random.randsample(action.valid_targets())
+	var target: Character = Random.randsample(action.valid_targets()) if action else null
 
 	var is_big_cat: bool = character.actions_component.skills.any(func(s): return s.name == &'Jaw Cruncher')
 	var is_in_melee: bool = Game.level.characters.is_in_melee(character)
