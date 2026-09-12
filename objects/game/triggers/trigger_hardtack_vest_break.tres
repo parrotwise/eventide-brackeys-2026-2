@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://c14l0itpjmvtp"]
+
+[ext_resource type="Resource" uid="uid://bdgcmf05yaqj7" path="res://objects/game/effects/effect_trigger_hardtack_vest_break.tres" id="1_h207x"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_w3xy7"]
+
+[resource]
+script = ExtResource("1_w3xy7")
+effect = ExtResource("1_h207x")
+trigger_type = 1
+metadata/_custom_type_script = "uid://lvv535cj6j34"

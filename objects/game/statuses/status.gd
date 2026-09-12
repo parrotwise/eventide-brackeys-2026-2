@@ -4,6 +4,8 @@ extends Resource
 
 signal applied(character: Character)
 signal removed(character: Character)
+signal effect_modified(effect: Effect)
+
 
 @export_group("Identifiers")
 ## A name to be exposed to the player.
@@ -145,6 +147,7 @@ func apply_to(character: Character) -> void:
 
 	for i: int in triggers.size():
 		triggers[i] = triggers[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+		triggers[i].source = self
 	
 	for trigger: Trigger in triggers:
 		trigger.effect = trigger.effect.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
@@ -186,8 +189,11 @@ func modify_effect(effect: Effect) -> Effect:
 	if owner.state_component.current_health_ratio < condition_owner_health_ratio_min:
 		return
 	
+	var mods_applied: bool = false
+	
 	if effect.source.name == &'Sling Slop' and no_more_please:
 		effect.cause_lose_turn = true
+		mods_applied = true
 	
 	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
 	
@@ -204,45 +210,59 @@ func modify_effect(effect: Effect) -> Effect:
 		var damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
 
+		if damage_dealt != base_damage_dealt or healing_applied != base_healing_applied:
+			mods_applied = true
+
 		if base_damage_dealt:
 			for status: Status in base_damage_dealt_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 		
 		if base_healing_applied:
 			for status: Status in base_healing_applied_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 
 		if damage_dealt:
 			for status: Status in damage_dealt_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 			
-			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
-				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+			if damage_dealt_to_splash_both_sides_mult:
+				for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
-				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_both_sides_mult)
-				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_both_sides_mult)
+					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_both_sides_mult)
+					splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_both_sides_mult)
 
-				effect.extra_effects.append(splash_effect)
+					effect.extra_effects.append(splash_effect)
+					mods_applied = true
 			
-			for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
-				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+			if damage_dealt_to_splash_one_side_mult:
+				for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
-				splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_one_side_mult)
-				splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_one_side_mult)
+					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_one_side_mult)
+					splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_one_side_mult)
 
-				effect.extra_effects.append(splash_effect)
-				break
+					effect.extra_effects.append(splash_effect)
+					mods_applied = true
+					break
 		
 		if healing_applied:
 			for status: Status in healing_applied_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 		
 		if effect.source == owner.actions_component.basic_attack:
-			effect.knockback_steps += attack_knockback_steps_adder
-			effect.pull_steps += attack_pull_steps_adder
+			if attack_knockback_steps_adder or attack_pull_steps_adder:
+				effect.knockback_steps += attack_knockback_steps_adder
+				effect.pull_steps += attack_pull_steps_adder
+				mods_applied = true
 			
 			for status: Status in attacks_apply_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 	
 	if owner == effect.target:
 		var base_damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
@@ -257,38 +277,52 @@ func modify_effect(effect: Effect) -> Effect:
 		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 
+		if damage_taken != base_damage_taken or healing_received != base_healing_received:
+			mods_applied = true
+
 		if base_damage_taken:
 			for status: Status in base_damage_taken_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 			
 		if base_healing_received:
 			for status: Status in base_healing_received_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 			
 		if damage_taken:
 			for status: Status in damage_taken_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
 			
-			for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
-				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
-				
-				splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_both_sides_mult)
-				splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_both_sides_mult)
-				
-				effect.extra_effects.append(splash_effect)
+			if damage_taken_to_splash_both_sides_mult:
+				for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+					
+					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_both_sides_mult)
+					splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_both_sides_mult)
+					
+					effect.extra_effects.append(splash_effect)
+					mods_applied = true
 			
-			for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
-				var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
-				
-				splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_one_side_mult)
-				splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_one_side_mult)
-				
-				effect.extra_effects.append(splash_effect)
-				break
+			if damage_taken_to_splash_one_side_mult:
+				for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+					
+					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_one_side_mult)
+					splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_one_side_mult)
+					
+					effect.extra_effects.append(splash_effect)
+					mods_applied = true
+					break
 			
 		if healing_received:
 			for status: Status in healing_received_applies_statuses:
 				effect.applied_statuses.append(status)
+				mods_applied = true
+	
+	if mods_applied:
+		effect_modified.emit(effect)
 	
 	return effect
 

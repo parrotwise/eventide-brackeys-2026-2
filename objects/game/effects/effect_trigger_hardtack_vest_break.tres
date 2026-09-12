@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://bdgcmf05yaqj7"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_on1wc"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_h7afd"]
+[ext_resource type="Resource" uid="uid://boew8mgia6e14" path="res://objects/game/statuses/status_stunned.tres" id="2_wc2r3"]
+
+[resource]
+script = ExtResource("2_h7afd")
+name = "Hardtack Vest"
+applied_statuses = Array[ExtResource("1_on1wc")]([ExtResource("2_wc2r3")])
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

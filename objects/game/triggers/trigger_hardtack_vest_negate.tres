@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://cukcs6nbpfv56"]
+
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_lxt63"]
+[ext_resource type="Resource" uid="uid://dphng5woqbwrp" path="res://objects/game/effects/effect_null.tres" id="1_twai6"]
+
+[resource]
+script = ExtResource("1_lxt63")
+effect = ExtResource("1_twai6")
+trigger_type = 19
+bypass_queue = true
+metadata/_custom_type_script = "uid://lvv535cj6j34"

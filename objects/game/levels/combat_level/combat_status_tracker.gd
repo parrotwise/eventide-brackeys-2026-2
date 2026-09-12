@@ -6,6 +6,7 @@ extends Node
 signal status_applied(status: Status)
 signal status_removed(status: Status)
 signal trigger_fired(trigger: Trigger)
+signal effect_modified(effect: Effect, status: Status)
 
 ## All active status effects in combat_level
 var _active_statuses: Array[Status] = []
@@ -34,6 +35,15 @@ func track(status: Status) -> void:
 	_active_statuses.append(status)
 
 	status.refresh_granted_statuses()
+
+	status.effect_modified.connect(
+		func (effect: Effect):
+			effect_modified.emit(effect, status)
+			fire_triggers(Enums.TriggerType.SOURCE_MODIFIED_EFFECT, status.owner, status)
+	)
+
+	for trigger: Trigger in status.triggers:
+		trigger.fired.connect(trigger_fired.emit.bind(trigger))
 
 	status_applied.emit(status)
 
@@ -69,31 +79,18 @@ func acquire_target(target_type: Enums.TargetType, owner_ref: Character) -> Char
 	return null
 
 
-func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null) -> void:
+func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null, specific_status: Status = null) -> void:
 	for status: Status in active_statuses:
+		if specific_status not in [null, status]:
+			continue
 		if specific_owner not in [null, status.owner]:
 			continue
-		
-		var fired: Array[Trigger] = []
 
 		for trigger: Trigger in status.triggers:
 			if trigger_type != trigger.trigger_type:
 				continue
 			
 			await trigger.fire(acquire_target(trigger.target_type, specific_owner))
-			fired.append(trigger)
-		
-		for trigger: Trigger in fired:
-			trigger_fired.emit(trigger)
-
-			if status.trigger_uses > 0:
-				status.trigger_uses -= 1
-				
-				if not status.trigger_uses:
-					status.remove_trigger(trigger)
-					
-					if status.remove_when_triggers_used_up:
-						status.owner.state_component.remove_status(status)
 
 
 func modify_effect(effect: Effect) -> Effect:
