@@ -117,7 +117,7 @@ func refresh() -> void:
 	if not action:
 		return
 	
-	button.disabled = not action.uses_left
+	button.disabled = not action.can_be_used()
 
 	uses_label.text = str(action.uses_left)
 	uses_label.visible = action.uses_left > 1

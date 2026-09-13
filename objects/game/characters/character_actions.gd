@@ -7,7 +7,7 @@ extends Node
 @export var skills: Array[Action] = []
 
 var usable_actions: Array[Action]:
-	get: return Array(actions.filter(func(a): return a.uses_left), TYPE_OBJECT, &'Resource', Action)
+	get: return Array(actions.filter(func(a): return a.can_be_used()), TYPE_OBJECT, &'Resource', Action)
 var actions: Array[Action]:
 	get: return Array([basic_attack, reposition], TYPE_OBJECT, &'Resource', Action) + skills + granted_actions
 var granted_actions: Array[Action]:

@@ -23,18 +23,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		var skills: Array[Action] = selected_ally.actions_component.skills
 		
 		if event.is_action_pressed(&'select_action_1'):
-			if is_instance_valid(basic_attack):
+			if is_instance_valid(basic_attack) and basic_attack.can_be_used():
 				Game.level.selector_component.select_action(basic_attack)
 		
 		if event.is_action_pressed(&'select_action_2'):
-			if is_instance_valid(reposition):
+			if is_instance_valid(reposition) and reposition.can_be_used():
 				Game.level.selector_component.select_action(reposition)
 		
 		for i: int in skills.size():
 			var skill: Action = skills[i]
 
 			if event.is_action_pressed(&'select_action_%d' % [i + 3]):
-				if is_instance_valid(skill):
+				if is_instance_valid(skill) and skill.can_be_used():
 					Game.level.selector_component.select_action(skill)
 	
 	if Game.level.selector_component.current_action:

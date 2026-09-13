@@ -65,7 +65,7 @@ var uses_left: int = 0
 
 
 func use(user: Character, target: Character) -> void:
-	if not uses_left:
+	if not can_be_used():
 		return
 	
 	uses_left -= 1
@@ -97,6 +97,13 @@ func remove_uses() -> void:
 		uses_expended.emit()
 	
 	uses_left = 0
+
+
+func can_be_used() -> bool:
+	if not uses_left:
+		return false
+	
+	return true
 
 
 func can_target(target: Character) -> bool:
