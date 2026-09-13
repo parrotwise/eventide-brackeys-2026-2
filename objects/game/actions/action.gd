@@ -103,11 +103,17 @@ func can_be_used() -> bool:
 	if not uses_left:
 		return false
 	
+	if swap_places and not owner.state_component.can_move:
+		return false
+	
 	return true
 
 
 func can_target(target: Character) -> bool:
 	if not is_instance_valid(owner) or not is_instance_valid(target):
+		return false
+	
+	if swap_places and not target.state_component.can_move:
 		return false
 	
 	var target_is_valid: bool = true

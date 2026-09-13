@@ -10,5 +10,5 @@ script = ExtResource("2_r75d1")
 name = "Cannonball Necklace"
 description = "You can’t be moved, either by yourself or forcefully."
 icon = ExtResource("1_gnof6")
-can_be_moved = false
+prevent_movement = true
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

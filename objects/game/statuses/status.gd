@@ -110,9 +110,9 @@ var power_multiplier: float:
 @export_subgroup("Flags")
 @export var can_attack_twice: bool = false
 @export var can_be_healed: bool = true
-@export var can_be_moved: bool = true
 @export var no_more_please: bool = false
 @export var max_health_one: bool = false
+@export var prevent_movement: bool = false
 
 @export_group("Grants")
 @export var granted_actions: Array[Action] = []

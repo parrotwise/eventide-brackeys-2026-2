@@ -118,14 +118,18 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.level.characters.swap_places(owner, target)
 	for __ in knockback_steps:
 		Game.level.characters.move_backward(target)
-	if knockback_to_rear:
-		while not Game.level.characters.is_in_rear(target):
-			Game.level.characters.move_backward(target)
+	while knockback_to_rear:
+		var old_index: int = Game.level.characters.index_of(target)
+		Game.level.characters.move_backward(target)
+		if old_index == Game.level.characters.index_of(target):
+			break
 	for __ in pull_steps:
 		Game.level.characters.move_forward(target)
-	if pull_to_front:
-		while not Game.level.characters.is_in_melee(target):
-			Game.level.characters.move_forward(target)
+	while pull_to_front:
+		var old_index: int = Game.level.characters.index_of(target)
+		Game.level.characters.move_forward(target)
+		if old_index == Game.level.characters.index_of(target):
+			break
 	if crunch_peanuts:
 		for object: GroundObject in Game.level.ground_objects.objects:
 			if object.name == &'Peanuts' and object.character == owner:

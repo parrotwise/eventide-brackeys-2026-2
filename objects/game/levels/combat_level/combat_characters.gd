@@ -187,19 +187,27 @@ func _move_by(steps: int, character: Character) -> void:
 	if character not in all:
 		return
 	
+	if not character.state_component.can_move:
+		return
+	
 	var frendos: Array[Character] = allies if character in allies else enemies
 	var current_index: int = frendos.find(character)
 	var new_index: int = current_index + steps
+	
+	if new_index < 0 or new_index >= frendos.size():
+		return
+	
+	if not frendos[new_index].state_component.can_move:
+		return
+	
+	if steps > 0:
+		for i: int in range(current_index, new_index):
+			characters_repositioned.emit(frendos[i], frendos[i + 1])
+	elif steps < 0:
+		for i: int in range(new_index, current_index):
+			characters_repositioned.emit(frendos[i], frendos[i + 1])
 
-	if new_index >= 0 and new_index < frendos.size():
-		if steps > 0:
-			for i: int in range(current_index, new_index):
-				characters_repositioned.emit(frendos[i], frendos[i + 1])
-		elif steps < 0:
-			for i: int in range(new_index, current_index):
-				characters_repositioned.emit(frendos[i], frendos[i + 1])
-
-		character.get_parent().move_child(character, new_index)
+	character.get_parent().move_child(character, new_index)
 
 
 
