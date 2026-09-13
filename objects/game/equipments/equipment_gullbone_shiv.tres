@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_7yh0c"]
 [ext_resource type="Resource" uid="uid://csfb247kcm2pb" path="res://objects/game/statuses/status_gullbone_shiv.tres" id="1_s4ksf"]
-[ext_resource type="Texture2D" uid="uid://41xbllqs6gxr" path="res://assets/art/UI/equipment_icons/GULLBONE SHIV.png" id="2_q85wo"]
+[ext_resource type="Texture2D" uid="uid://41xbllqs6gxr" path="res://assets/art/ui/icons/equipment/equipment_gullbone_shiv.png" id="2_q85wo"]
 
 [resource]
 script = ExtResource("1_7yh0c")
