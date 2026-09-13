@@ -5,7 +5,7 @@ extends Control
 static var status_icon_template: PackedScene = preload('res://objects/ui/status_icon.tscn')
 
 var icon_container: HFlowContainer:
-	get: return $StatusIconContainer
+	get: return $StatusIconContainerAnchor/StatusIconContainer
 var status_icons: Array[StatusIcon]:
 	get: return Array(icon_container.get_children(), TYPE_OBJECT, &'Control', StatusIcon)
 

@@ -58,12 +58,8 @@ libraries/Stun = ExtResource("4_1cxyt")
 layout_mode = 1
 anchors_preset = 0
 
-[node name="StatusBar" parent="." unique_id=813067035 instance=ExtResource("5_jx2bi")]
-layout_mode = 1
-anchors_preset = 0
-size = Vector2(240, 24)
-position = Vector2(-120, 24)
-offset_bottom = 48.0
+[node name="StatusBar" parent="." unique_id=865305231 instance=ExtResource("5_jx2bi")]
+layout_mode = 0
 
 [node name="BubbleEmitter" type="GPUParticles2D" parent="." unique_id=969967582]
 material = SubResource("CanvasItemMaterial_2f26l")
