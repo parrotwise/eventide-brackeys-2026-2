@@ -217,7 +217,7 @@ func first_round_crew_select() -> void:
 			"EnemyCenterRear",
 			"EnemyRear",
 		][idx]
-		print(character.name)
+		
 		if idx < 4:
 			$Allies.add_child(character)
 		else:

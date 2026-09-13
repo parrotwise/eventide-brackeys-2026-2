@@ -48,7 +48,6 @@ func do_trigger_as_user(trigger: Trigger):
 
 
 func fire_effect(effect: Effect) -> void:
-	print(effect.name)
 	target = effect.target
 	
 	if effect.name == &"Jaw Cruncher":
