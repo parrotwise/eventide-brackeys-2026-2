@@ -28,15 +28,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FO
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-
-## Team Eventide
-- [StarStrider](https://star-strider.itch.io) – Lead Artist
-- [Silver](https://weresnooze.itch.io) – Artist
-- [Sorin](https://milkywaybnuuy.itch.io) – Artist
-- [Frumento](https://krovulone.itch.io) – Game Designer, Writer
-- [Jake Eves](https://jakeevesmusic.itch.io) – Musician, SFX
-- [Parrotwise](https://parrotwise.itch.io) – Lead Programmer
-- [StoneHolder28](https://stoneholder28.itch.io) – Programmer
-- [Agecaf](https://agecaf.itch.io) – Programmer
-- [Elliot Morris](https://plughouse.itch.io) – Programmer
-- [Jack Costa](https://jackbit.itch.io) – Programmer
