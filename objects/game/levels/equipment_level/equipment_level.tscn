@@ -37,7 +37,7 @@
 [ext_resource type="Resource" uid="uid://csnbit87qa7ic" path="res://objects/game/equipments/equipment_shark_tooth.tres" id="29_iojch"]
 [ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_shot_coin.tres" id="30_7eq30"]
 [ext_resource type="Resource" uid="uid://b50gcx7t18fa7" path="res://objects/game/equipments/equipment_spiked_armband.tres" id="31_3mdqw"]
-[ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_orange.tres" id="32_44ye3"]
+[ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_looking_orange.tres" id="32_44ye3"]
 
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")

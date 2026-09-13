@@ -113,6 +113,7 @@ var power_multiplier: float:
 @export var no_more_please: bool = false
 @export var max_health_one: bool = false
 @export var prevent_movement: bool = false
+@export var prevent_healing_by_others: bool = false
 
 @export_group("Grants")
 @export var granted_actions: Array[Action] = []
@@ -281,6 +282,9 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 
+		if owner != effect.owner and not owner.state_component.can_be_healed_by_others:
+			effect.healing = 0
+		
 		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 

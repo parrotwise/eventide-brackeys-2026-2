@@ -36,6 +36,10 @@ var stacked_damage_poison: int:
 var stacked_healing: int:
 	get: return healing * stack_mult
 
+@export var healing_ratio: float = 0
+var stacked_healing_ratio: float:
+	get: return healing_ratio * stack_mult
+
 @export var swap_places: bool = false
 @export var knockback_steps: int = 0
 @export var knockback_to_rear: bool = false
@@ -107,7 +111,7 @@ func apply(bypass_queue: bool = false) -> void:
 		return
 	
 	var total_damage: int = stacked_damage + stacked_damage_explosive + stacked_damage_poison
-	var total_healing: int = stacked_healing
+	var total_healing: int = stacked_healing + ceili(stacked_healing_ratio * target.state_component.max_health)
 	
 	## Immediate effects first
 	if total_damage:

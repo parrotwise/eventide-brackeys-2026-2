@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://bhjj2lxgysmpn"]
+
+[ext_resource type="Resource" uid="uid://bqjjkwcr7l5q5" path="res://objects/game/effects/effect_trigger_strange_looking_orange.tres" id="1_o6ybv"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="1_ysosm"]
+
+[resource]
+script = ExtResource("1_ysosm")
+effect = ExtResource("1_o6ybv")
+trigger_type = 9
+metadata/_custom_type_script = "uid://lvv535cj6j34"

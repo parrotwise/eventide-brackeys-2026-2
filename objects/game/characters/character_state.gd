@@ -42,6 +42,8 @@ var missing_health_ratio: float:
 
 var can_move: bool:
 	get: return not active_statuses.reduce(func(accum: int, status: Status): return accum or status.prevent_movement, false)
+var can_be_healed_by_others: bool:
+	get: return not active_statuses.reduce(func(accum: int, status: Status): return accum or status.prevent_healing_by_others, false)
 
 ## Status effects currently affecting this Character
 var _active_statuses: Array[Status] = []

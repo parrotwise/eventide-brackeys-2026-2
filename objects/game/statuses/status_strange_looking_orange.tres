@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://cndgdoij5tdw7"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_dpaat"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_ss168"]
+[ext_resource type="Texture2D" uid="uid://c7dnypl34k2qt" path="res://assets/art/ui/icons/equipment/equipment_strange_orange.png" id="3_mgr0a"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_rag4e"]
+[ext_resource type="Resource" uid="uid://bhjj2lxgysmpn" path="res://objects/game/triggers/trigger_strange_looking_orange.tres" id="5_ss168"]
+
+[resource]
+script = ExtResource("1_dpaat")
+name = "Strange-Looking Orange"
+description = "You cannot be healed by others, you heal by 10% of your health every turn."
+icon = ExtResource("3_mgr0a")
+can_be_healed = false
+prevent_healing_by_others = true
+triggers = Array[ExtResource("4_rag4e")]([ExtResource("5_ss168")])
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

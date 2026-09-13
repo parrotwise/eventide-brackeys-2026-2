@@ -48,6 +48,10 @@ func interpret(
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].healing += action.target_healing
 
+	if action.target_healing_ratio > 0:
+		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
+		effects[target].healing_ratio += action.target_healing_ratio
+
 	if action.power_as_target_damage:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].damage += user.state_component.power
