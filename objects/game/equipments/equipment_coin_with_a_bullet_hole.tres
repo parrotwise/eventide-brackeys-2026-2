@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bebhhe6scpm"]
 
-[ext_resource type="Resource" uid="uid://fwbhbnen4cal" path="res://objects/game/statuses/status_shot_coin.tres" id="1_5jnik"]
+[ext_resource type="Resource" uid="uid://fwbhbnen4cal" path="res://objects/game/statuses/status_coin_with_a_bullet_hole.tres" id="1_5jnik"]
 [ext_resource type="Script" uid="uid://bdnm15wvsdye" path="res://objects/game/equipments/equipment.gd" id="1_f6c1n"]
 [ext_resource type="Texture2D" uid="uid://bajw4yq3v8cm2" path="res://assets/art/ui/icons/equipment/equipment_coin_with_a_bullet_hole.png" id="2_nhhs1"]
 
 [resource]
 script = ExtResource("1_f6c1n")
-name = "Shot Coin"
+name = "Coin with a Bullet Hole"
 description = "Damage you deal and receive has 30% chance to deal +50% damage."
 icon = ExtResource("2_nhhs1")
 equipped_status = ExtResource("1_5jnik")

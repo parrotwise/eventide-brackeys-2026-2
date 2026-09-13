@@ -35,7 +35,7 @@
 [ext_resource type="Resource" uid="uid://bdi7k66e04hof" path="res://objects/game/equipments/equipment_sailcloth_sash.tres" id="27_ej5bd"]
 [ext_resource type="Resource" uid="uid://b2q1x0j24wk83" path="res://objects/game/equipments/equipment_secret_mixture.tres" id="28_0ltu1"]
 [ext_resource type="Resource" uid="uid://csnbit87qa7ic" path="res://objects/game/equipments/equipment_shark_tooth.tres" id="29_iojch"]
-[ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_shot_coin.tres" id="30_7eq30"]
+[ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_coin_with_a_bullet_hole.tres" id="30_7eq30"]
 [ext_resource type="Resource" uid="uid://b50gcx7t18fa7" path="res://objects/game/equipments/equipment_spiked_armband.tres" id="31_3mdqw"]
 [ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_looking_orange.tres" id="32_44ye3"]
 
