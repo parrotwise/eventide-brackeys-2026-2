@@ -91,6 +91,10 @@ var damage_taken_to_splash_one_side_mult: float:
 var damage_taken_multiplier: float:
 	get: return 1.0 + (_damage_taken_multiplier - 1.0) * stack
 
+@export var _attack_damage_taken_multiplier: float = 1.0 
+var attack_damage_taken_multiplier: float:
+	get: return 1.0 + (_attack_damage_taken_multiplier - 1.0) * stack
+
 @export var _healing_applied_multiplier: float = 1.0
 var healing_applied_multiplier: float:
 	get: return 1.0 + (_healing_applied_multiplier - 1.0) * stack
@@ -200,11 +204,11 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.cause_lose_turn = true
 		mods_applied = true
 	
-	var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
-	
 	if owner == effect.owner:
 		var base_damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var base_healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
+
+		var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
 
 		effect.damage = floori(effect.damage * final_damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
@@ -276,15 +280,17 @@ func modify_effect(effect: Effect) -> Effect:
 		var base_damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var base_healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 		
-		effect.damage = floori(effect.damage * damage_taken_multiplier)
+		var final_damage_taken_multiplier = damage_taken_multiplier * (attack_damage_taken_multiplier if effect.source == effect.owner.actions_component.basic_attack else 1.0)
+
+		effect.damage = floori(effect.damage * final_damage_taken_multiplier)
 		effect.damage += damage_taken_adder
-		effect.damage_explosive = floori(effect.damage_explosive * damage_taken_multiplier)
+		effect.damage_explosive = floori(effect.damage_explosive * final_damage_taken_multiplier)
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 
 		if owner != effect.owner and not owner.state_component.can_be_healed_by_others:
 			effect.healing = 0
-		
+
 		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 
