@@ -5,7 +5,9 @@
 [node name="StatusBar" type="Control" unique_id=537244635]
 layout_mode = 3
 offset_left = -120.0
+offset_top = 24.0
 offset_right = 120.0
+offset_bottom = 24.0
 script = ExtResource("1_1b8m5")
 
 [node name="StatusIconContainer" type="HFlowContainer" parent="." unique_id=1978155357]
