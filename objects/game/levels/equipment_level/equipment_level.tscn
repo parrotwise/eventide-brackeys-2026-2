@@ -30,7 +30,7 @@
 [ext_resource type="Resource" uid="uid://cmpd8bm3e6f4b" path="res://objects/game/equipments/equipment_knuckle_o_salt.tres" id="21_l0p5b"]
 [ext_resource type="Resource" uid="uid://cw3wtakxpmrne" path="res://objects/game/equipments/equipment_mended_boot.tres" id="22_rav6m"]
 [ext_resource type="Resource" uid="uid://c7iumuaf13m6c" path="res://objects/game/equipments/equipment_old_key.tres" id="24_4tgy4"]
-[ext_resource type="Resource" uid="uid://cvrp3m2dh8si7" path="res://objects/game/equipments/equipment_pocket_jerky.tres" id="25_23m8u"]
+[ext_resource type="Resource" uid="uid://cvrp3m2dh8si7" path="res://objects/game/equipments/equipment_pocket_of_jerky.tres" id="25_23m8u"]
 [ext_resource type="Resource" uid="uid://c1lcnv8g58ibe" path="res://objects/game/equipments/equipment_rope_loop.tres" id="26_cmbn8"]
 [ext_resource type="Resource" uid="uid://bdi7k66e04hof" path="res://objects/game/equipments/equipment_sailcloth_sash.tres" id="27_ej5bd"]
 [ext_resource type="Resource" uid="uid://b2q1x0j24wk83" path="res://objects/game/equipments/equipment_secret_mixture.tres" id="28_0ltu1"]

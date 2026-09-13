@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://dfy1v8h2mgind"]
+
+[ext_resource type="Resource" uid="uid://bsjbqv3j6dh5t" path="res://objects/game/effects/effect_trigger_pocket_of_jerky_splash.tres" id="1_pjhx3"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_6je20"]
+
+[resource]
+script = ExtResource("2_6je20")
+effect = ExtResource("1_pjhx3")
+target_type = 2
+trigger_type = 2
+metadata/_custom_type_script = "uid://lvv535cj6j34"

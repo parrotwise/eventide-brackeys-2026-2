@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://bsjbqv3j6dh5t"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_r7m20"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_lkr60"]
+
+[resource]
+script = ExtResource("2_lkr60")
+name = "Pocket of Jerky Splash"
+healing = 5
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"
