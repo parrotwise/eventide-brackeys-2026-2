@@ -117,21 +117,9 @@ func interpret(
 		effects[target].created_objects.append_array(action.created_objects)
 	
 	if action.repeat_on_random_target:
-		var repeat: Action = action.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
-		repeat.owner = action.owner
-		repeat.repeat_on_random_target = false
-
-		var random_target: Character = Random.randsample(repeat.valid_targets())
-		last_random_target = random_target
-		var repeat_effects: Dictionary[Character, Effect] = interpret(repeat, user, random_target)
-
-		for repeat_affected: Character in repeat_effects:
-			var repeat_effect: Effect = repeat_effects[repeat_affected]
-
-			if repeat_affected not in effects:
-				effects[repeat_affected] = repeat_effect
-			else:
-				effects[repeat_affected].merge_with(repeat_effect)
+		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
+		last_random_target = Random.randsample(action.valid_targets())
+		effects[target].repeat_on_target = last_random_target
 	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place

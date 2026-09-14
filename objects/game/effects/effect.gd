@@ -67,6 +67,8 @@ var source: Variant  # The parent Action or Status
 var owner: Character
 var target: Character
 
+var repeat_on_target: Character = null
+
 var stack_mult: int:
 	get: return source.stack if is_instance_valid(source) and source is Status else 1
 
@@ -77,28 +79,6 @@ static func create(p_source: Variant, p_user: Character, p_target: Character) ->
 	effect.owner = p_user
 	effect.target = p_target
 	return effect
-
-
-func merge_with(other: Effect) -> Effect:
-	damage += other.damage
-	damage_explosive += other.damage_explosive
-	healing += other.healing
-
-	swap_places = swap_places or other.swap_places
-	knockback_steps = knockback_steps + other.knockback_steps
-	knockback_to_rear = knockback_to_rear or other.knockback_to_rear
-	pull_steps = pull_steps + other.pull_steps
-	pull_to_front = pull_to_front or other.pull_to_front
-
-	crunch_peanuts = crunch_peanuts or other.crunch_peanuts
-	reattach_sootgut = reattach_sootgut or other.reattach_sootgut
-
-	cause_miss_action = cause_miss_action or other.cause_miss_action
-	remove_source_status = remove_source_status or other.remove_source_status
-
-	applied_statuses.append_array(other.applied_statuses)
-
-	return self
 
 
 func apply(bypass_queue: bool = false) -> void:
@@ -179,7 +159,15 @@ func apply(bypass_queue: bool = false) -> void:
 	Audio.set_state(set_state)
 	Audio.set_switch(set_switch, switch_value)
 	
-	applied.emit()
-
 	for extra_effect: Effect in extra_effects:
 		await extra_effect.apply(bypass_queue)
+
+	if repeat_on_target:
+		var repeat: Effect = duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+		repeat.owner = owner
+		repeat.source = source
+		repeat.target = repeat_on_target
+		repeat.repeat_on_target = null
+		await repeat.apply(bypass_queue)
+	
+	applied.emit()
