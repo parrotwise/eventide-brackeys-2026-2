@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dkunn533f1ue2"]
+
+[ext_resource type="Script" uid="uid://cartbq167rdq4" path="res://objects/ui/preview_icon.gd" id="1_an6n3"]
+[ext_resource type="Texture2D" uid="uid://bde12bski42kx" path="res://assets/art/ui/icons/previews/preview_icon_effect_damage.png" id="2_4cmkv"]
+[ext_resource type="Texture2D" uid="uid://bs1od700i385c" path="res://assets/art/ui/icons/previews/preview_icon_effect_damage_explosive.png" id="3_03f8a"]
+[ext_resource type="Texture2D" uid="uid://bktivnkshjyep" path="res://assets/art/ui/icons/previews/preview_icon_effect_healing.png" id="4_vjudk"]
+[ext_resource type="Texture2D" uid="uid://b3sgh0h1px5od" path="res://assets/art/ui/icons/previews/preview_icon_effect_stray_bullet.png" id="5_v7kua"]
+[ext_resource type="Texture2D" uid="uid://cteunlsr8qrvf" path="res://assets/art/ui/icons/previews/preview_icon_object_peanuts.png" id="6_3pbkp"]
+[ext_resource type="Texture2D" uid="uid://65whbm3sr1ts" path="res://assets/art/ui/icons/previews/preview_icon_object_powder_satchel.png" id="7_pxu84"]
+[ext_resource type="Texture2D" uid="uid://beocn1amdppak" path="res://assets/art/ui/icons/previews/preview_icon_object_sootgut.png" id="8_7frta"]
+[ext_resource type="Texture2D" uid="uid://rayi1k4b72yr" path="res://assets/art/ui/icons/previews/preview_icon_reposition_knockback.png" id="9_k76u0"]
+[ext_resource type="Texture2D" uid="uid://bkhwhnyts8sj2" path="res://assets/art/ui/icons/previews/preview_icon_reposition_pull.png" id="10_kunwu"]
+[ext_resource type="Texture2D" uid="uid://bo1phtbb3a4ss" path="res://assets/art/ui/icons/previews/preview_icon_reposition_swap.png" id="11_1r7e7"]
+[ext_resource type="Texture2D" uid="uid://clkcnstbrvo5x" path="res://assets/art/ui/icons/previews/preview_icon_status_charging.png" id="12_sjoff"]
+[ext_resource type="Texture2D" uid="uid://hbq8240kyvg" path="res://assets/art/ui/icons/previews/preview_icon_status_damage_dealt_up2.png" id="13_ci77g"]
+[ext_resource type="Texture2D" uid="uid://bcpfyed3iq2s2" path="res://assets/art/ui/icons/previews/preview_icon_status_damage_taken_up.png" id="14_1b8sx"]
+[ext_resource type="Texture2D" uid="uid://j06yj8fvbhg" path="res://assets/art/ui/icons/previews/preview_icon_status_flammable.png" id="15_tespp"]
+[ext_resource type="Texture2D" uid="uid://xht01jch380b" path="res://assets/art/ui/icons/previews/preview_icon_status_healing_received_up2.png" id="16_wcwqx"]
+[ext_resource type="Texture2D" uid="uid://pmxxp1c2st4b" path="res://assets/art/ui/icons/previews/preview_icon_status_immobilized.png" id="17_j2lil"]
+[ext_resource type="Texture2D" uid="uid://db1ny24s5u1bw" path="res://assets/art/ui/icons/previews/preview_icon_status_nasty_cuts.png" id="18_rs5oj"]
+[ext_resource type="Texture2D" uid="uid://booohio3yxiys" path="res://assets/art/ui/icons/previews/preview_icon_status_no_more_please.png" id="19_scsho"]
+[ext_resource type="Texture2D" uid="uid://dqpnav1cnhy1v" path="res://assets/art/ui/icons/previews/preview_icon_status_poisoned.png" id="20_bqoqo"]
+[ext_resource type="Texture2D" uid="uid://chhfwyrjk2f6n" path="res://assets/art/ui/icons/previews/preview_icon_status_smashed.png" id="21_ssgff"]
+
+[node name="PreviewIcon" type="Control" unique_id=1860539444]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 3
+offset_right = 44.0
+offset_bottom = 44.0
+mouse_filter = 2
+script = ExtResource("1_an6n3")
+icon_template = null
+icon_textures = Dictionary[int, Texture2D]({
+0: null,
+1: ExtResource("2_4cmkv"),
+2: ExtResource("3_03f8a"),
+3: ExtResource("4_vjudk"),
+4: ExtResource("5_v7kua"),
+5: ExtResource("6_3pbkp"),
+6: ExtResource("7_pxu84"),
+7: ExtResource("8_7frta"),
+8: ExtResource("9_k76u0"),
+9: ExtResource("10_kunwu"),
+10: ExtResource("11_1r7e7"),
+11: ExtResource("12_sjoff"),
+12: ExtResource("13_ci77g"),
+13: ExtResource("14_1b8sx"),
+14: ExtResource("15_tespp"),
+15: ExtResource("16_wcwqx"),
+16: ExtResource("17_j2lil"),
+17: ExtResource("18_rs5oj"),
+18: ExtResource("19_scsho"),
+19: ExtResource("20_bqoqo"),
+20: ExtResource("21_ssgff")
+})
+mirroring_icons = Array[int]([8, 9])
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1911517335]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 5
+
+[node name="ValueLabel" type="RichTextLabel" parent="." unique_id=2117876952]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = -0.2
+anchor_right = 1.2
+anchor_bottom = 1.2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2509804)
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 20
+text = "8"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

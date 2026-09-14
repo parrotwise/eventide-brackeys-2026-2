@@ -14,7 +14,7 @@ func add_icon(status: Status) -> void:
 	if not status:
 		return
 	
-	var status_icon: StatusIcon = status_icon_template.instantiate() as StatusIcon
+	var status_icon := status_icon_template.instantiate() as StatusIcon
 	status_icon.setup(status)
 	icon_container.add_child(status_icon)
 

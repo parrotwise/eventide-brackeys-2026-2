@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://w3pjsqf6gbt4"]
 
 [ext_resource type="Texture2D" uid="uid://dt71ngf0w253i" path="res://assets/art/ui/icons/equipment/equipment_rope_loop.png" id="1_wxrl4"]
-[ext_resource type="Resource" uid="uid://c3rws55skymov" path="res://objects/game/statuses/status_constricted.tres" id="2_2k3q4"]
+[ext_resource type="Resource" uid="uid://c3rws55skymov" path="res://objects/game/statuses/status_immobilized.tres" id="2_2k3q4"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_577yi"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_wuwnj"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_577yi"]

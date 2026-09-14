@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://cumaauvsvcfnf"]
 
-[ext_resource type="Resource" uid="uid://bwklqxqxs1yw2" path="res://objects/game/effects/effect_trigger_constricted_constrict.tres" id="1_tjufi"]
+[ext_resource type="Resource" uid="uid://bwklqxqxs1yw2" path="res://objects/game/effects/effect_trigger_immobilized_apply.tres" id="1_tjufi"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_qqsh2"]
 
 [resource]

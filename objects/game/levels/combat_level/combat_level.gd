@@ -249,6 +249,7 @@ func _on_target_selected(
 		other.indicators_component.hide_target_indicator()
 	target.indicators_component.show_target_indicator()
 
+	preview_component.preview_action(action, user, target)
 
 
 func _on_target_cancelled(
@@ -258,6 +259,8 @@ func _on_target_cancelled(
 ) -> void:
 	if is_instance_valid(target):
 		target.indicators_component.hide_target_indicator()
+	
+	preview_component.hide_previews()
 
 
 func _on_target_submitted(
@@ -266,6 +269,7 @@ func _on_target_submitted(
 	_target: Character
 ) -> void:
 	selector_component.pause()
+	preview_component.hide_previews()
 
 
 func _on_ally_selected(ally: Character):

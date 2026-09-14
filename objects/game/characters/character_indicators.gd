@@ -11,6 +11,8 @@ var health_bar: HealthBar:
 	get: return $HealthBar
 var status_bar: StatusBar:
 	get: return $StatusBar
+var preview_bar: PreviewBar:
+	get: return $PreviewBar
 var sloshed_particles: GPUParticles2D:
 	get: return $BubbleEmitter
 var poison_particles: GPUParticles2D:
@@ -28,6 +30,14 @@ var character: Character:
 
 func _ready() -> void:
 	Game.start.connect(_on_combat_start)
+
+
+func preview_effect(effect: Effect) -> void:
+	preview_bar.add_icons_for(effect)
+
+
+func hide_previews() -> void:
+	preview_bar.clear_icons()
 
 
 func add_status_icon(status: Status) -> void:

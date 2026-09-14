@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://c3rws55skymov"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_odnwx"]
+[ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_ssgbh"]
+[ext_resource type="Texture2D" uid="uid://dt71ngf0w253i" path="res://assets/art/ui/icons/equipment/equipment_rope_loop.png" id="3_g13ca"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_h107o"]
+[ext_resource type="Resource" uid="uid://cgq237csi2mcm" path="res://objects/game/triggers/trigger_immobilized_expire.tres" id="5_cuj2t"]
+[ext_resource type="Resource" uid="uid://cumaauvsvcfnf" path="res://objects/game/triggers/trigger_immobilized_apply.tres" id="6_ywirj"]
+
+[resource]
+script = ExtResource("1_odnwx")
+name = "Immobilized"
+description = "You cannot move by yourself this turn."
+icon = ExtResource("3_g13ca")
+triggers = Array[ExtResource("4_h107o")]([ExtResource("5_cuj2t"), ExtResource("6_ywirj")])
+trigger_uses = 2
+metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

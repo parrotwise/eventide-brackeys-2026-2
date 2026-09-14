@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://y5ps25m07eoq"]
+
+[ext_resource type="Script" uid="uid://cjuahkxij26qp" path="res://objects/game/characters/preview_bar.gd" id="1_podkg"]
+
+[node name="PreviewBar" type="Control" unique_id=537244635]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_podkg")
+
+[node name="PreviewIconContainerAnchor" type="Control" parent="." unique_id=342189675]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -120.0
+offset_top = -360.0
+offset_right = 120.0
+offset_bottom = -360.0
+
+[node name="PreviewIconContainer" type="HFlowContainer" parent="PreviewIconContainerAnchor" unique_id=1978155357]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+reverse_fill = true

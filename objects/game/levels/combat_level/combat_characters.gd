@@ -91,8 +91,8 @@ func get_adjacent_to(character: Character) -> Array[Character]:
 	return adjacent
 
 
-func get_ahead_of(character: Character) -> Character:
-	return _get_character_at_offset(-1, character)
+func get_ahead_of(character: Character, in_group: bool = false) -> Character:
+	return _get_character_at_offset(-1, character, in_group)
 
 
 func get_all_ahead_of(character: Character) -> Array[Character]:
@@ -103,8 +103,8 @@ func get_all_ahead_of(character: Character) -> Array[Character]:
 	)
 
 
-func get_behind(character: Character) -> Character:
-	return _get_character_at_offset(+1, character)
+func get_behind(character: Character, in_group: bool = false) -> Character:
+	return _get_character_at_offset(+1, character, in_group)
 
 
 func get_all_behind(character: Character) -> Array[Character]:
@@ -161,18 +161,21 @@ func move_backward(character: Character) -> void:
 	_move_by(+1, character)
 
 
-func _get_character_at_offset(offset: int, character: Character) -> Character:
+func _get_character_at_offset(offset: int, character: Character, in_group: bool = false) -> Character:
 	if character not in all:
 		return null
 	
-	if character == ally_melee and offset < 0:
+	if in_group:
+		pass
+	
+	elif character == ally_melee and offset < 0:
 		# Hacky solution, only works because our largest splash radius is 1
 		return enemy_melee if offset == -1 else null
 	
-	if character == enemy_melee and offset < 0:
+	elif character == enemy_melee and offset < 0:
 		# Hacky solution, only works because our largest splash radius is 1
 		return ally_melee if offset == -1 else null
-
+	
 	var frendos: Array[Character] = allies if character in allies else enemies
 	var index: int = frendos.find(character)
 	var offset_index: int = index + offset
