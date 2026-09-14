@@ -16,6 +16,12 @@ signal target_selected(
 	target: Character
 )
 
+signal target_cancelled(
+	action: Action,
+	user: Character,
+	target: Character
+)
+
 signal target_submitted(
 	action: Action,
 	user: Character,
@@ -192,8 +198,30 @@ func cycle_through_targets(direction := Enums.Direction.RIGHT, player_input: boo
 		select_target(valid_targets[index], player_input)
 
 
-func cancel_action() -> void:
+func deselect_character(character: Character, player_input: bool = true) -> void:
+	if player_input and not _responsive:
+		return
+	
+	if not is_instance_valid(character):
+		return
+	
+	if is_targeting and character == current_target:
+		cancel_target()
+
+
+func cancel_target() -> void:
+	target_cancelled.emit(
+		current_action,
+		current_user,
+		current_target
+	)
+
 	current_target = null
+
+
+func cancel_action() -> void:
+	cancel_target()
+
 	current_action = null
 	is_targeting = false
 

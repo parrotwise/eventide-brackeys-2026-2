@@ -67,6 +67,10 @@ func _ready() -> void:
 	selector_component.target_selected.connect(
 		_on_target_selected
 	)
+
+	selector_component.target_cancelled.connect(
+		_on_target_cancelled
+	)
 	
 	selector_component.ally_selected.connect(
 		_on_ally_selected
@@ -245,7 +249,15 @@ func _on_target_selected(
 		other.indicators_component.hide_target_indicator()
 	target.indicators_component.show_target_indicator()
 
-	# TODO: preview_component.preview(action, user, target)
+
+
+func _on_target_cancelled(
+	action: Action,
+	user: Character,
+	target: Character
+) -> void:
+	if is_instance_valid(target):
+		target.indicators_component.hide_target_indicator()
 
 
 func _on_target_submitted(

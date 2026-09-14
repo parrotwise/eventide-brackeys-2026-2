@@ -3,6 +3,7 @@ extends Area2D
 
 
 signal selected()
+signal deselected()
 signal submitted(character: Character)
 
 var input_area: CollisionPolygon2D:
@@ -27,6 +28,7 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
+	deselected.emit()
 	character.label.hide()
 	Game.pointer.return_to_previous()
 
