@@ -53,6 +53,10 @@ var power_adder: int:
 var attack_damage_dealt_adder: int:
 	get: return _attack_damage_dealt_adder * stack
 
+@export var _skill_damage_dealt_adder: int = 0
+var skill_damage_dealt_adder: int:
+	get: return _skill_damage_dealt_adder * stack
+
 @export var _attack_knockback_steps_adder: int = 0
 var attack_knockback_steps_adder: int:
 	get: return _attack_knockback_steps_adder * stack
@@ -218,6 +222,8 @@ func modify_effect(effect: Effect) -> Effect:
 
 		if effect.source == effect.owner.actions_component.basic_attack:
 			effect.damage += attack_damage_dealt_adder
+		elif effect.source == effect.owner.actions_component.skills[0]:
+			effect.damage += skill_damage_dealt_adder
 
 		var damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
