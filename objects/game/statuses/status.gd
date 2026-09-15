@@ -151,6 +151,10 @@ var stack: int = 1
 var owner: Character
 
 
+static func create(filename: String) -> Status:
+	return load('res://objects/game/statuses/%s.tres' % [filename]).duplicate(Resource.DEEP_DUPLICATE_ALL) as Status
+
+
 func apply_to(character: Character) -> void:
 	owner = character
 	
@@ -205,7 +209,7 @@ func modify_effect(effect: Effect) -> Effect:
 	var mods_applied: bool = false
 	
 	if effect.source.name == &'Sling Slop' and no_more_please:
-		effect.cause_lose_turn = true
+		effect.applied_statuses.append(Status.create('status_stunned'))
 		mods_applied = true
 	
 	if owner == effect.owner:

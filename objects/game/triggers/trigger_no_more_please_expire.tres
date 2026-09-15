@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trigger" format=3 uid="uid://o17och1yx3qh"]
+
+[ext_resource type="Resource" uid="uid://dphng5woqbwrp" path="res://objects/game/effects/effect_null.tres" id="1_bmxjm"]
+[ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="2_1b6jy"]
+
+[resource]
+script = ExtResource("2_1b6jy")
+effect = ExtResource("1_bmxjm")
+trigger_type = 9
+metadata/_custom_type_script = "uid://lvv535cj6j34"
