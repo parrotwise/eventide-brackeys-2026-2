@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://c2l6765qnv65m"]
 
-[ext_resource type="Texture2D" uid="uid://cw6xwbq0dhaqp" path="res://assets/art/ui/icons/equipment/equipment_knuckle_o_salt.png" id="1_qg1qg"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_8e5qf"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_ehgyv"]
+[ext_resource type="Texture2D" uid="uid://he7gggh0caa1" path="res://assets/art/ui/icons/statuses/status_equipment_knuckle_o_salt.png" id="3_8e5qf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_th0pb"]
 
 [resource]
 script = ExtResource("2_ehgyv")
 name = "Knuckle'o'Salt"
 description = "Your Attacks make the target move backwards."
-icon = ExtResource("1_qg1qg")
+icon = ExtResource("3_8e5qf")
 _attack_knockback_steps_adder = 1
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

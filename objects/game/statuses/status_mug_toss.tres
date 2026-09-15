@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_3fkrn"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_3fkrn"]
-[ext_resource type="Texture2D" uid="uid://bnw2j2ux8re52" path="res://assets/art/ui/icons/statuses/status_hc_attack_increase.png" id="2_xdbgw"]
+[ext_resource type="Texture2D" uid="uid://comp5ytxa3f07" path="res://assets/art/ui/icons/statuses/status_rc_mug_toss.png" id="3_3fkrn"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_xdbgw"]
 
 [resource]
 script = ExtResource("2_3fkrn")
 name = "Mug Toss"
 description = "Damage increased by 40%"
-icon = ExtResource("2_xdbgw")
+icon = ExtResource("3_3fkrn")

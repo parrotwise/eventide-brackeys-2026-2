@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://bpt70ngfaaqqa"]
 
-[ext_resource type="Texture2D" uid="uid://7o8w0ipbc0a1" path="res://assets/art/ui/icons/equipment/equipment_spiked_armband.png" id="1_oipp0"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_14a2n"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_gaylf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_gaylf"]
+[ext_resource type="Texture2D" uid="uid://bn24fd8o4eau7" path="res://assets/art/ui/icons/statuses/status_equipment_spiked_armband.png" id="3_lm28a"]
 [ext_resource type="Resource" uid="uid://ctlyyvk3o82m8" path="res://objects/game/triggers/trigger_spiked_armband.tres" id="5_lm28a"]
 
 [resource]
 script = ExtResource("2_14a2n")
 name = "Spiked Armband"
 description = "When moving, by yourself or affected by an enemy, deal 5 damage to allies you pass."
-icon = ExtResource("1_oipp0")
+icon = ExtResource("3_lm28a")
 triggers = Array[ExtResource("3_gaylf")]([ExtResource("5_lm28a")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

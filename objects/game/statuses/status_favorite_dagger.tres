@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://cmvmhhnqr5eyh"]
 
-[ext_resource type="Texture2D" uid="uid://bpjceobo8ovce" path="res://assets/art/ui/icons/equipment/equipment_favorite_dagger.png" id="1_8nf6m"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_4duru"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_s1wnl"]
+[ext_resource type="Texture2D" uid="uid://dy3x74r4b8k0b" path="res://assets/art/ui/icons/statuses/status_equipment_favorite_dagger.png" id="3_qxeqj"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_s1wnl"]
 [ext_resource type="Resource" uid="uid://c4seqfu3fa700" path="res://objects/game/triggers/trigger_favorite_dagger.tres" id="5_s1wnl"]
 
@@ -10,6 +10,6 @@
 script = ExtResource("2_4duru")
 name = "Favorite Dagger"
 description = "You can’t use your basic attack anymore."
-icon = ExtResource("1_8nf6m")
+icon = ExtResource("3_qxeqj")
 triggers = Array[ExtResource("3_s1wnl")]([ExtResource("5_s1wnl")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

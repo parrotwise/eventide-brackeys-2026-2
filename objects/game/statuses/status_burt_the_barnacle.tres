@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://dml3y6jrbatlh"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_dqlqy"]
-[ext_resource type="Texture2D" uid="uid://dd5osegvwfajq" path="res://assets/art/ui/icons/equipment/equipment_burt_the_barnacle.png" id="2_22u0f"]
 [ext_resource type="Resource" uid="uid://bplykso0212sj" path="res://objects/game/statuses/status_nasty_cuts.tres" id="2_xqcmf"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_xqcmf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_4x4o6"]
+[ext_resource type="Texture2D" uid="uid://dvkyis3aakg26" path="res://assets/art/ui/icons/statuses/status_equipment_burt_the_barnacle.png" id="4_xqcmf"]
 [ext_resource type="Resource" uid="uid://q6dhffy3rvg0" path="res://objects/game/triggers/trigger_burt_the_barnacle.tres" id="5_22u0f"]
 
 [resource]
 script = ExtResource("3_xqcmf")
 name = "Burt the Barnacle"
 description = "Damage you deal inflicts Nasty Cuts. You get a stack of Nasty Cuts at the end of every turn."
-icon = ExtResource("2_22u0f")
+icon = ExtResource("4_xqcmf")
 triggers = Array[ExtResource("4_4x4o6")]([ExtResource("5_22u0f")])
 damage_dealt_applies_statuses = Array[ExtResource("3_xqcmf")]([ExtResource("2_xqcmf")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
