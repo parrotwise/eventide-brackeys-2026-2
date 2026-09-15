@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://b1f22qjsuaneh"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_t8umh"]
-[ext_resource type="Texture2D" uid="uid://363vvc517uh4" path="res://assets/art/ui/icons/statuses/status_pc_peanuts.png" id="2_t8umh"]
 [ext_resource type="Texture2D" uid="uid://653h5leex0ju" path="res://assets/art/ui/icons/passives/passive_icon_pc_hover.png" id="3_h1gyb"]
+[ext_resource type="Texture2D" uid="uid://crfai2c6mec81" path="res://assets/art/ui/icons/statuses/status_passive.png" id="3_h43hp"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_wt3w0"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_h43hp"]
 [ext_resource type="Texture2D" uid="uid://b4hewamuq36uq" path="res://assets/art/ui/icons/passives/passive_icon_pc.png" id="4_wt3w0"]
@@ -11,6 +11,6 @@
 script = ExtResource("3_wt3w0")
 name = "Desmond the Dime"
 description = "Attack is a free action you can use every turn. Attack throws a couple hardtack biscuits that deal damage first, then heal for the same amount."
-icon = ExtResource("2_t8umh")
+icon = ExtResource("3_h43hp")
 passive_icon_normal = ExtResource("4_wt3w0")
 passive_icon_hover = ExtResource("3_h1gyb")

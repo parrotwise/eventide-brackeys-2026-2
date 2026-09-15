@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_eiabe"]
 [ext_resource type="Resource" uid="uid://bccamjn7nw43t" path="res://objects/game/statuses/status_watched_over.tres" id="1_xxt0c"]
-[ext_resource type="Texture2D" uid="uid://dyx6s7ey8baqd" path="res://assets/art/ui/icons/statuses/status_nc_watched.png" id="2_eiabe"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_3wp00"]
 [ext_resource type="Texture2D" uid="uid://c42isu6h8bg63" path="res://assets/art/ui/icons/passives/passive_icon_nc_hover.png" id="4_3wp00"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_dtoms"]
+[ext_resource type="Texture2D" uid="uid://crfai2c6mec81" path="res://assets/art/ui/icons/statuses/status_passive.png" id="4_l8p6l"]
 [ext_resource type="Texture2D" uid="uid://bqdm25vllvava" path="res://assets/art/ui/icons/passives/passive_icon_nc.png" id="5_dtoms"]
 
 [resource]
 script = ExtResource("3_3wp00")
 name = "Gut-you Gutierrez"
 description = "Every cat in front of Gut-you Gutierrez receives a 25% damage negation buff, \"Watched over\"."
-icon = ExtResource("2_eiabe")
+icon = ExtResource("4_l8p6l")
 passive_icon_normal = ExtResource("5_dtoms")
 passive_icon_hover = ExtResource("4_3wp00")
 grant_ahead = ExtResource("1_xxt0c")

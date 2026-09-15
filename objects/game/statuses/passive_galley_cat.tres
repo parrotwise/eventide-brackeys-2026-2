@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_x0ers"]
 [ext_resource type="Texture2D" uid="uid://nv3vrl5j4hds" path="res://assets/art/ui/icons/passives/passive_icon_gc_hover.png" id="2_a6d7s"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_vsfkx"]
-[ext_resource type="Texture2D" uid="uid://bb38w68g0iwkt" path="res://assets/art/ui/icons/statuses/status_gc_pot.png" id="2_x0ers"]
+[ext_resource type="Texture2D" uid="uid://crfai2c6mec81" path="res://assets/art/ui/icons/statuses/status_passive.png" id="3_5cg8q"]
 [ext_resource type="Texture2D" uid="uid://bc5bo5fap4qet" path="res://assets/art/ui/icons/passives/passive_icon_gc.png" id="3_jehg0"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_x0ers"]
 [ext_resource type="Resource" uid="uid://cy5iu4pd7cty" path="res://objects/game/triggers/trigger_sootgut.tres" id="4_vsfkx"]
@@ -12,7 +12,7 @@
 script = ExtResource("2_vsfkx")
 name = "Scuttler O’Riley"
 description = "Scuttler O’Riley starts the battle with a big pot (called Sootgut) on the same spot. While on the spot with Sootgut, a cat receives a 50% reduction to all incoming attack damage."
-icon = ExtResource("2_x0ers")
+icon = ExtResource("3_5cg8q")
 passive_icon_normal = ExtResource("3_jehg0")
 passive_icon_hover = ExtResource("2_a6d7s")
 triggers = Array[ExtResource("3_x0ers")]([ExtResource("4_vsfkx")])
