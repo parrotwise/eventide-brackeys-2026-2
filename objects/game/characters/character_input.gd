@@ -22,6 +22,19 @@ func set_flip(flip: bool = true) -> void:
 	input_area.scale = Vector2(-1, 1) if flip else Vector2.ONE
 
 
+func submit_as_target() -> void:
+	if not is_instance_valid(Game.level.selector_component.current_action):
+		return
+	
+	if not is_instance_valid(Game.level.selector_component.current_target):
+		return
+	
+	if Game.level.selector_component.current_target != character:
+		return
+	
+	submitted.emit(character)
+
+
 func _on_mouse_entered() -> void:
 	selected.emit()
 	character.label.show()
@@ -32,10 +45,8 @@ func _on_mouse_exited() -> void:
 	character.label.hide()
 	Game.pointer.return_to_previous()
 
+
 func _on_input_event(viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed(&'left_click'):
-		# TODO: If no action selected, and target valid for basic attack XOR reposition, select that action first
-		submitted.emit(character)
-	elif event.is_action_pressed(&'right_click'):
-		# TODO: If no action selected, and target valid for basic attack AND reposition, select reposition then submit as above
+		submit_as_target()
 		viewport.set_input_as_handled()
