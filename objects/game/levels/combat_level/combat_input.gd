@@ -55,6 +55,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 				if event.is_action_pressed(&'select_action_%d' % [i + 1]):
 					Game.level.selector_component.select_action(actions[i])
+
+					for button: ActionButton in Game.level.ui.action_buttons:
+						if button.action == actions[i]:
+							button.button.grab_focus()
+				
+				elif event.is_action_released(&'select_action_%d' % [i + 1]):
+					for button: ActionButton in Game.level.ui.action_buttons:
+						if button.action == actions[i]:
+							button.button.release_focus()
 		
 		var selected_action: Action = Game.level.selector_component.current_action
 		var selected_target: Character = Game.level.selector_component.current_target

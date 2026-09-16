@@ -6,6 +6,8 @@ signal action_selected(
 	action: Action
 )
 
+signal action_cancelled()
+
 signal ally_selected(
 	ally: Character
 )
@@ -224,6 +226,8 @@ func cancel_action() -> void:
 
 	current_action = null
 	is_targeting = false
+
+	action_cancelled.emit()
 
 
 func reset() -> void:

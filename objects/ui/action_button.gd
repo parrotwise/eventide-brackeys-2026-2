@@ -12,10 +12,12 @@ signal toggled(toggled_on: bool)
 @export var inner_texture_normal: Texture2D
 @export var inner_texture_pressed: Texture2D
 @export var inner_texture_hover: Texture2D
+@export var inner_texture_focused: Texture2D
 @export var inner_texture_disabled: Texture2D
 @export var inner_texture_selected_normal: Texture2D
 @export var inner_texture_selected_pressed: Texture2D
 @export var inner_texture_selected_hover: Texture2D
+@export var inner_texture_selected_focused: Texture2D
 @export var background_texture: Texture2D
 
 var icon: TextureRect:
@@ -103,6 +105,8 @@ func _on_mouse_enter() -> void:
 	if button.disabled:
 		return
 	
+	button.grab_focus()
+	
 	if Game.pointer.type in [Enums.PointerType.DEFAULT, Enums.PointerType.PRESSING]:
 		Game.pointer.switch_to(Enums.PointerType.CLICKABLE)
 
@@ -110,6 +114,8 @@ func _on_mouse_enter() -> void:
 func _on_mouse_exit() -> void:
 	if button.disabled:
 		return
+	
+	button.release_focus()
 	
 	if Game.pointer.type in [Enums.PointerType.CLICKABLE, Enums.PointerType.CLICKING]:
 		Game.pointer.switch_to(Enums.PointerType.DEFAULT)

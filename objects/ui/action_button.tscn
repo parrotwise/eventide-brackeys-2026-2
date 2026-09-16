@@ -22,10 +22,12 @@ script = ExtResource("1_2fe0f")
 frame_texture = ExtResource("3_ouukt")
 inner_texture_pressed = ExtResource("4_yeqvw")
 inner_texture_hover = ExtResource("5_77s0p")
+inner_texture_focused = ExtResource("5_77s0p")
 inner_texture_disabled = ExtResource("6_rh5ku")
 inner_texture_selected_normal = ExtResource("7_4erub")
 inner_texture_selected_pressed = ExtResource("8_53u8l")
 inner_texture_selected_hover = ExtResource("9_smof5")
+inner_texture_selected_focused = ExtResource("9_smof5")
 background_texture = ExtResource("10_i5qa0")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1219822120]
@@ -67,10 +69,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Tooltip" parent="." unique_id=647096474 node_paths=PackedStringArray("hover_area_control") instance=ExtResource("11_swtmx")]
+[node name="Tooltip" parent="." unique_id=647096474 node_paths=PackedStringArray("focus_control") instance=ExtResource("11_swtmx")]
 visible = false
 layout_mode = 0
-hover_area_control = NodePath("../InnerButton")
+focus_control = NodePath("../InnerButton")
 
 [node name="UsesLabel" type="RichTextLabel" parent="." unique_id=2110346770]
 visible = false

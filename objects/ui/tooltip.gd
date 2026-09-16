@@ -2,6 +2,7 @@ class_name Tooltip
 extends Control
 
 @export var hover_area_control: Control
+@export var focus_control: Control
 
 @export_group("Text")
 @export var header: String
@@ -16,7 +17,7 @@ extends Control
 @export var margin_top: int = 40
 @export var margin_right: int = 45
 @export var margin_bottom: int = 40
-@export var tooltip_rect_size: Vector2 = Vector2(480, 280)
+@export var tooltip_size: Vector2 = Vector2(480, 280)
 
 @export_group("")
 @export_enum("NE", "SE", "SW", "NW") var growth_direction: String = "NE"
@@ -34,8 +35,8 @@ var parent: Control:
 		else:
 			Debug.error("Tooltip parent is not derived from Control.", Debug.Verbosity.CALLER)
 			return
-var hover_timer: Timer:
-	get: return $HoverTimer
+var popup_timer: Timer:
+	get: return $PopupTimer
 var background: NinePatchRect:
 	get: return $NinePatchRect
 var name_label: RichTextLabel:
@@ -56,14 +57,21 @@ func _ready() -> void:
 	shrink_tooltip()
 	
 	if is_instance_valid(hover_area_control):
-		hover_area_control.mouse_entered.connect(_on_hover_detection_mouse_entered)
-		hover_area_control.mouse_exited.connect(_on_hover_detection_mouse_exited)
+		hover_area_control.mouse_entered.connect(grow_tooltip)
+		hover_area_control.mouse_exited.connect(shrink_tooltip)
 	
+	if is_instance_valid(focus_control):
+		focus_control.focus_entered.connect(grow_tooltip)
+		focus_control.focus_exited.connect(shrink_tooltip)
+	
+	popup_timer.timeout.connect(grow_tooltip.bind(true))
+	popup_timer.wait_time = popup_delay_time
+
 	hover_detection.size = parent.size
-	hover_timer.wait_time = popup_delay_time
 	
 	if nine_patch_texture:
 		background.texture = nine_patch_texture
+	
 	background.patch_margin_left = margin_left
 	background.patch_margin_top = margin_top
 	background.patch_margin_right = margin_right
@@ -72,7 +80,21 @@ func _ready() -> void:
 	show()
 
 
-func grow_tooltip(tooltip_size: Vector2) -> void:
+func grow_tooltip(bypass_timer: bool = false) -> void:
+	if not bypass_timer:
+		popup_timer.start()
+		return
+
+	# For any special tooltip parents (e.g. ActionButtons) that
+	# expose the 'tooltip_header' / 'tooltip_description' properties,
+	# override the tooltip header/description text with these values
+
+	if 'tooltip_header' in get_parent() and get_parent().tooltip_header:
+		header = get_parent().tooltip_header
+
+	if 'tooltip_description' in get_parent() and get_parent().tooltip_description:
+		description = get_parent().tooltip_description
+	
 	# Make sure the text is hidden to prevent odd behavior.
 	name_label.text = ""
 	description_label.text = ""
@@ -103,23 +125,25 @@ func grow_tooltip(tooltip_size: Vector2) -> void:
 			move_to = -tooltip_size
 			background.position = -size
 	
-	var tooltip_tween = create_tween()
-	tooltip_tween.tween_property(background, "size:x", tooltip_size.x, 0.2)
-	tooltip_tween.parallel().tween_property(background, "position:x", move_to.x, 0.2)
+	var tween: Tween = create_tween()
+	tween.tween_property(background, "size:x", tooltip_size.x, 0.2)
+	tween.parallel().tween_property(background, "position:x", move_to.x, 0.2)
 	
-	tooltip_tween.tween_property(background, "size:y", tooltip_size.y, 0.3)
-	tooltip_tween.parallel().tween_property(background, "position:y", move_to.y, 0.3)
+	tween.tween_property(background, "size:y", tooltip_size.y, 0.3)
+	tween.parallel().tween_property(background, "position:y", move_to.y, 0.3)
 	
-	tooltip_tween.tween_property(background, "patch_margin_top", full_margin, 0.15)
-	tooltip_tween.parallel().tween_property(background, "patch_margin_bottom", full_margin, 0.15)
+	tween.tween_property(background, "patch_margin_top", full_margin, 0.15)
+	tween.parallel().tween_property(background, "patch_margin_bottom", full_margin, 0.15)
 	
 	# Now that the box is the right size, populate it with text.
-	await tooltip_tween.finished
+	await tween.finished
 	is_expanded = true
 	fill_text()
 
 
 func shrink_tooltip() -> void:
+	popup_timer.stop()
+	
 	remove_text()
 	
 	var move_to: Vector2 = Vector2.ZERO
@@ -176,32 +200,8 @@ func hide_components() -> void:
 	size = parent.size
 	position = Vector2.ZERO
 
+
 func show_components() -> void:
 	for child in get_children():
 		if child.has_method("show"):
 			child.show()
-
-
-func _on_hover_detection_mouse_entered() -> void:
-	#Debug.debug("Tooltip triggered.")
-	hover_timer.start()
-
-	# For any special tooltip parents (e.g. ActionButtons) that
-	# expose the 'tooltip_header' / 'tooltip_description' properties,
-	# override the tooltip header/description text with these values
-
-	if 'tooltip_header' in get_parent() and get_parent().tooltip_header:
-		header = get_parent().tooltip_header
-
-	if 'tooltip_description' in get_parent() and get_parent().tooltip_description:
-		description = get_parent().tooltip_description
-
-
-func _on_hover_detection_mouse_exited() -> void:
-	#Debug.debug("Tooltip exited.")
-	hover_timer.stop()
-	shrink_tooltip()
-
-
-func _on_hover_timer_timeout() -> void:
-	grow_tooltip(tooltip_rect_size)

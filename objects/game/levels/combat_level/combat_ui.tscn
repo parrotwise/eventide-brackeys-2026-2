@@ -88,10 +88,12 @@ frame_texture = null
 inner_texture_normal = ExtResource("4_u1is4")
 inner_texture_pressed = ExtResource("5_m7apa")
 inner_texture_hover = ExtResource("6_lphsj")
+inner_texture_focused = ExtResource("6_lphsj")
 inner_texture_disabled = null
 inner_texture_selected_normal = null
 inner_texture_selected_pressed = null
 inner_texture_selected_hover = null
+inner_texture_selected_focused = null
 background_texture = null
 
 [node name="BottomPanel" type="PanelContainer" parent="." unique_id=1035039101]
@@ -216,13 +218,13 @@ text = "[font_size=48px]Keyboard Reference[/font_size]
 [cell]Tab  [/cell]
 [cell]Keyboard reference[/cell]
 [cell]1–4  [/cell]
-[cell]Select action[/cell]
+[cell]Select action (press), view tooltips (hold)[/cell]
 [cell]ESC  [/cell]
-[cell]Deselect action, toggle menu on/off[/cell]
+[cell]Cancel action, toggle menu on/off[/cell]
 [cell]Space  [/cell]
-[cell]Submit menu item, action target[/cell]
+[cell]Submit action target, menu item[/cell]
 [cell]A← / D→  [/cell]
-[cell]Cycle menu buttons, ally turns, valid targets[/cell]
+[cell]Cycle ally turns, valid targets, menu buttons[/cell]
 [cell]W↑ / S↓  [/cell]
 [cell]Move volume slider[/cell]
 [/table]"

@@ -83,3 +83,15 @@ func open_settings() -> void:
 
 func _on_combat_start() -> void:
 	refresh_bottom_bar()
+
+	Game.level.selector_component.action_selected.connect(
+		func (selected_action: Action) -> void:
+			for button: ActionButton in action_buttons:
+				button.set_selected(button.action == selected_action)
+	)
+
+	Game.level.selector_component.action_cancelled.connect(
+		func () -> void:
+			for button: ActionButton in action_buttons:
+				button.set_selected(false)
+	)

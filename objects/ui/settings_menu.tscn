@@ -67,10 +67,12 @@ frame_texture = null
 inner_texture_normal = ExtResource("4_c0utk")
 inner_texture_pressed = ExtResource("5_5qx7l")
 inner_texture_hover = ExtResource("6_4yjj4")
+inner_texture_focused = ExtResource("6_4yjj4")
 inner_texture_disabled = null
 inner_texture_selected_normal = null
 inner_texture_selected_pressed = null
 inner_texture_selected_hover = null
+inner_texture_selected_focused = null
 background_texture = null
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=200103709]
