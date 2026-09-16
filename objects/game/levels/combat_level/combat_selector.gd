@@ -185,6 +185,14 @@ func cycle_through_targets(direction := Enums.Direction.RIGHT, player_input: boo
 		return
 	
 	var valid_targets: Array[Character] = current_action.valid_targets()
+	valid_targets.sort_custom(
+		func (c1: Character, c2: Character) -> bool:
+			var i1: int = Game.level.characters.index_of(c1)
+			var i2: int = Game.level.characters.index_of(c2)
+			var s1: int = 100 + i1 if c1 in Game.level.characters.enemies else -i1
+			var s2: int = 100 + i2 if c2 in Game.level.characters.enemies else -i2
+			return s1 < s2
+	)
 
 	if not current_target:
 		select_target(valid_targets[0], player_input)
