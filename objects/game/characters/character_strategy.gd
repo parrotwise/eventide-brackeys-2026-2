@@ -62,4 +62,5 @@ func take_turn() -> void:
 	await Game.level.queue.await_empty()
 
 	if character == Game.level.turn_tracker_component.current_character:
+		await Game.level.queue.await_action_delay()
 		take_turn()
