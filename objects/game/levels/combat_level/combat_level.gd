@@ -108,7 +108,7 @@ func _ready() -> void:
 		if enemy.strategy_component:
 			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
 	
-	await turn_tracker_component.start_tracking()
+	turn_tracker_component.start_tracking()
 	
 	Game.start.emit()
 
@@ -251,8 +251,8 @@ func _on_target_selected(
 
 
 func _on_target_cancelled(
-	action: Action,
-	user: Character,
+	_action: Action,
+	_user: Character,
 	target: Character
 ) -> void:
 	if is_instance_valid(target):
