@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c70csi33cgy8k" path="res://assets/art/ui/icons/passives/passive_icon_sc_hover.png" id="11_u1is4"]
 [ext_resource type="PackedScene" uid="uid://de8gbtkqf00j2" path="res://objects/ui/combat_equipment_button.tscn" id="12_m7apa"]
 
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p4nv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q2q6"]
@@ -216,16 +215,16 @@ text = "[font_size=48px]Keyboard Reference[/font_size]
 [hr][font_size=32px][left][indent][indent][indent][indent][indent][table=2]
 [cell]Tab  [/cell]
 [cell]Keyboard reference[/cell]
-[cell]1–8  [/cell]
+[cell]1–4  [/cell]
 [cell]Select action[/cell]
 [cell]ESC  [/cell]
 [cell]Deselect action, toggle menu on/off[/cell]
-[cell]Enter  [/cell]
+[cell]Space  [/cell]
 [cell]Submit menu item, action target[/cell]
-[cell]Q←↑  [/cell]
-[cell]Cycle menu buttons, ally turns, valid targets left[/cell]
-[cell]E→↓  [/cell]
-[cell]Cycle menu buttons, ally turns, valid targets right[/cell]
+[cell]A← / D→  [/cell]
+[cell]Cycle menu buttons, ally turns, valid targets[/cell]
+[cell]W↑ / S↓  [/cell]
+[cell]Move volume slider[/cell]
 [/table]"
 autowrap_mode = 0
 horizontal_alignment = 1

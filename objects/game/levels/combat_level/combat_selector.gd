@@ -238,10 +238,3 @@ func pause() -> void:
 
 func resume() -> void:
 	_responsive = true
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed(&'cycle_characters_right'):
-		cycle_through_characters(Enums.Direction.RIGHT)
-	if event.is_action_pressed(&'cycle_characters_left'):
-		cycle_through_characters(Enums.Direction.LEFT)

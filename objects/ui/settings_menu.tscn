@@ -56,7 +56,7 @@ layout_mode = 2
 layout_mode = 2
 alignment = 2
 
-[node name="CloseSettingsButton" parent="CenterContainer/VBoxContainer/CloseButtonContainer" unique_id=1397875926 instance=ExtResource("1_0mgw2")]
+[node name="CloseButton" parent="CenterContainer/VBoxContainer/CloseButtonContainer" unique_id=1397875926 instance=ExtResource("1_0mgw2")]
 unique_name_in_owner = true
 z_index = 2
 layout_mode = 2
@@ -92,9 +92,11 @@ layout_mode = 2
 text = "Master"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=313815543]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+focus_mode = 0
 theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
@@ -112,9 +114,11 @@ layout_mode = 2
 text = "Music"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1288324845]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+focus_mode = 0
 theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
@@ -132,9 +136,11 @@ layout_mode = 2
 text = "SFX"
 
 [node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=2077256551]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+focus_mode = 0
 theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
@@ -144,5 +150,7 @@ max_value = 0.0
 step = 0.02
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
+unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 text = "Quit Game"

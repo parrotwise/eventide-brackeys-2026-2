@@ -89,10 +89,12 @@ func set_selected(selected: bool = false):
 		button.texture_normal = inner_texture_selected_normal
 		button.texture_pressed = inner_texture_selected_pressed
 		button.texture_hover = inner_texture_selected_hover
+		button.texture_focused = inner_texture_selected_hover
 	else:
 		button.texture_normal = inner_texture_normal
 		button.texture_pressed = inner_texture_pressed
 		button.texture_hover = inner_texture_hover
+		button.texture_focused = inner_texture_hover
 	
 	button.texture_disabled = inner_texture_disabled
 

@@ -5,6 +5,8 @@ enum Direction {
 	NONE,
 	LEFT,
 	RIGHT,
+	UP,
+	DOWN,
 }
 
 enum RangeType {

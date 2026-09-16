@@ -20,14 +20,10 @@ var passive_button: PassiveButton:
 	get: return $BottomPanel/MarginContainer/ButtonGroups/PassiveButton
 var keyboard_reference: Panel:
 	get: return $KeyboardReference
-var pause_menu: Control:
-	get: return $PauseMenu
-var settings_menu: Control:
+var settings_menu: SettingsMenu:
 	get: return $SettingsMenu
 var open_settings_button: ActionButton:
 	get: return %OpenSettingsButton
-var close_settings_button: ActionButton:
-	get: return $SettingsMenu/%CloseSettingsButton
 
 
 func _ready() -> void:
@@ -36,11 +32,6 @@ func _ready() -> void:
 	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	open_settings_button.pressed.connect(open_settings)
 	open_settings_button.button.disabled = false
-	
-	## TODO: Replace with the commented-out callable after Wwise migration
-	close_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# close_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
-	close_settings_button.pressed.connect(close_settings)
 
 	Game.start.connect(_on_combat_start)
 
@@ -84,10 +75,6 @@ func show_keyboard_reference() -> void:
 
 func hide_keyboard_reference() -> void:
 	keyboard_reference.hide()
-
-
-func close_settings() -> void:
-	settings_menu.hide()
 
 
 func open_settings() -> void:
