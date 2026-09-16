@@ -61,4 +61,5 @@ func fire(specific_target: Character = null) -> void:
 			source.remove_trigger(self)
 			
 			if source.remove_when_triggers_used_up:
-				source.owner.state_component.remove_status(source)
+				if is_instance_valid(source.owner):
+					source.owner.state_component.remove_status(source)
