@@ -23,12 +23,13 @@ func pop_effect() -> void:
 	if not _effect_queue:
 		return
 
-	var effect: Effect = _effect_queue.pop_back()
-
+	var effect: Effect = _effect_queue[-1]
+	
 	if not effect:
 		return
 	
-	effect.apply(true)
+	await effect.apply(true)
+	_effect_queue.erase(effect)
 	
 	var concurrents: Array[Effect] = Array(
 		_effect_queue.filter(func(e): return e.source == effect.source),
@@ -36,8 +37,8 @@ func pop_effect() -> void:
 	)
 
 	for concurrent: Effect in concurrents:
+		await concurrent.apply(true)
 		_effect_queue.erase(concurrent)
-		concurrent.apply(true)
 
 	_effect_last_source = effect.source
 	_effect_cooldown = effect_delay
@@ -45,6 +46,14 @@ func pop_effect() -> void:
 
 func await_time(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
+
+
+func await_enemy_turn_delay() -> void:
+	await await_time(1.5)
+
+
+func await_round_delay() -> void:
+	await await_time(2.5)
 
 
 func await_action_delay() -> void:

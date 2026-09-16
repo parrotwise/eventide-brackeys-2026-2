@@ -99,12 +99,16 @@ func _ready() -> void:
 	turn_tracker_component.turn_ended.connect(
 		_on_turn_ended
 	)
-	_connect_enemy_strategies()
-	turn_tracker_component.start_tracking()
 
 	for character: Character in characters.all:
 		character.state_component.health_changed.connect(_on_health_changed.bind(character))
 		character.state_component.knockout.connect(_on_knocked_out.bind(character))
+	
+	for enemy: Character in characters.enemies:
+		if enemy.strategy_component:
+			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
+	
+	await turn_tracker_component.start_tracking()
 	
 	Game.start.emit()
 
@@ -132,12 +136,6 @@ func _exit_tree() -> void:
 		Game.level = null
 
 	Game.end.emit()
-
-
-func _connect_enemy_strategies() -> void:
-	for enemy: Character in characters.enemies:
-		if enemy.strategy_component:
-			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
 
 
 func _on_action_used(
@@ -279,7 +277,7 @@ func _on_ally_selected(ally: Character):
 		other.indicators_component.hide_selection_indicator()
 	ally.indicators_component.show_selection_indicator()
 	
-	turn_tracker_component.start_ally_turn(ally)
+	await turn_tracker_component.start_ally_turn(ally)
 
 
 func _on_round_started(round_number: int) -> void:

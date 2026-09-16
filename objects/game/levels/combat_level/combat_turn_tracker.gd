@@ -38,22 +38,7 @@ func start_tracking() -> void:
 
 	_start_round()
 
-func _start_round() -> void:
-	round_number += 1
 
-	acted_allies.clear()
-	enemy_turn_index = 0
-	current_character = null
-
-	round_started.emit(round_number)
-
-	_start_allies_phase()
-
-func _start_allies_phase() -> void:
-	active_group = ALLIES_GROUP
-	battle_group_started.emit(active_group)
-	
-	
 func start_ally_turn(character: Character) -> bool:
 	if not is_tracking:
 		return false
@@ -75,12 +60,13 @@ func start_ally_turn(character: Character) -> bool:
 	if character in lost_turns:
 		lost_turns.erase(current_character)
 		turn_lost.emit(current_character)
-		end_current_turn()
+		await end_current_turn()
 		return false
 
 	turn_started.emit(current_character)
 	return true
-	
+
+
 func end_current_turn() -> void:
 	if current_character == null:
 		return
@@ -93,43 +79,68 @@ func end_current_turn() -> void:
 	turn_ended.emit(finished_character)
 
 	if active_group == ALLIES_GROUP:
-		_finish_ally_turn(finished_character)
+		await _finish_ally_turn(finished_character)
 	elif active_group == ENEMIES_GROUP:
-		_finish_enemy_turn()
+		await _finish_enemy_turn()
+
 
 func lose_turn(character: Character) -> void:
 	lost_turns.append(character)
+
+
+func _start_round() -> void:
+	round_number += 1
+
+	acted_allies.clear()
+	enemy_turn_index = 0
+	current_character = null
+
+	round_started.emit(round_number)
+
+	_start_allies_phase()
+
+
+func _start_allies_phase() -> void:
+	active_group = ALLIES_GROUP
+	battle_group_started.emit(active_group)
+
 
 func _finish_ally_turn(character: Character) -> void:
 	if character not in acted_allies:
 		acted_allies.append(character)
 
 	if acted_allies.size() >= allies.size():
-		_start_enemies_phase()
-		
+		await _start_enemies_phase()
+
+
 func _start_enemies_phase() -> void:
 	active_group = ENEMIES_GROUP
 	enemy_turn_index = 0
 
 	battle_group_started.emit(active_group)
 
-	_start_next_enemy_turn()
-	
+	await _start_next_enemy_turn()
+
+
 func _start_next_enemy_turn() -> void:
 	if enemy_turn_index >= enemies.size():
+		await Game.level.queue.await_round_delay()
 		_start_round()
 		return
-
+	
+	await Game.level.queue.await_enemy_turn_delay()
+	
 	current_character = enemies[enemy_turn_index]
 	
 	if current_character in lost_turns:
 		lost_turns.erase(current_character)
 		turn_lost.emit(current_character)
-		end_current_turn()
+		await end_current_turn()
 	
 	else:
 		turn_started.emit(current_character)
-	
+
+
 func _finish_enemy_turn() -> void:
 	enemy_turn_index += 1
-	_start_next_enemy_turn()
+	await _start_next_enemy_turn()
