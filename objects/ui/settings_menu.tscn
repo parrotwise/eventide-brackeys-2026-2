@@ -3,12 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="1_0mgw2"]
 [ext_resource type="Theme" uid="uid://j5wyuyyutjpb" path="res://assets/theme/main_theme.tres" id="1_2muxl"]
 [ext_resource type="Texture2D" uid="uid://cmi5fhxhswevr" path="res://assets/art/ui/panels/tooltip_placeholder.png" id="2_36ubh"]
-[ext_resource type="Script" uid="uid://duhfetjbb6p4s" path="res://objects/menu/settings/settings_menu.gd" id="2_f1rnk"]
+[ext_resource type="Script" uid="uid://xwp6g0pgblx2" path="res://objects/ui/settings_menu.gd" id="2_ethdn"]
 [ext_resource type="Texture2D" uid="uid://bvgxm7jfq2pd7" path="res://assets/art/ui/icons/menus/menu_close.png" id="4_c0utk"]
 [ext_resource type="Texture2D" uid="uid://kkud7wbs6plu" path="res://assets/art/ui/icons/menus/menu_close_hover_click.png" id="5_5qx7l"]
 [ext_resource type="Texture2D" uid="uid://q2qoyq731rw1" path="res://assets/art/ui/icons/menus/menu_close_hover.png" id="6_4yjj4"]
 [ext_resource type="Texture2D" uid="uid://cwmpg4bdl8uy1" path="res://assets/art/ui/cursors/cursor_pending_target.png" id="8_5qx7l"]
-
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kafe6"]
 texture = ExtResource("2_36ubh")
@@ -40,7 +39,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2muxl")
-script = ExtResource("2_f1rnk")
+script = ExtResource("2_ethdn")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1594288756]
 layout_mode = 1
@@ -64,7 +63,6 @@ layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(50, 50)
 offset_transform_visual_only = false
-icon_texture = null
 frame_texture = null
 inner_texture_normal = ExtResource("4_c0utk")
 inner_texture_pressed = ExtResource("5_5qx7l")
