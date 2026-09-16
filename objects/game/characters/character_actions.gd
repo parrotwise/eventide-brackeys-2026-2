@@ -58,3 +58,4 @@ func restore_action_uses() -> void:
 			action_cooldowns[action] = cooldown - 1
 		else:
 			action.restore_uses()
+			Game.level.ui.refresh_bottom_bar()
