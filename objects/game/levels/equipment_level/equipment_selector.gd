@@ -38,9 +38,9 @@ func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 		var index: int = characters.find(current_character)
 
 		if direction == Enums.Direction.RIGHT:
-			index = (index - 1) % characters.size()
-		elif direction == Enums.Direction.LEFT:
 			index = (index + 1) % characters.size()
+		elif direction == Enums.Direction.LEFT:
+			index = (index - 1) % characters.size()
 		
 		select_character(characters[index])
 

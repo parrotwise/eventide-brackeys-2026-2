@@ -36,6 +36,27 @@
 [ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/ui/buttons/big_button.png" id="34_7wcrm"]
 [ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="35_qqjad"]
 [ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="36_1tnxd"]
+[ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="37_bur2v"]
+[ext_resource type="Texture2D" uid="uid://cu6p5i0kmbfs2" path="res://assets/art/ui/icons/menus/top_bar_settings.png" id="38_dv0om"]
+[ext_resource type="Texture2D" uid="uid://d1nntf8x0my5n" path="res://assets/art/ui/icons/menus/top_bar_settings_hover_click.png" id="39_6nhjp"]
+[ext_resource type="Texture2D" uid="uid://djbwjmtqtcmd7" path="res://assets/art/ui/icons/menus/top_bar_settings_hover.png" id="40_6q3fk"]
+[ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/ui/settings_menu.tscn" id="41_kr2rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bur2v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.7529412)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.2509804)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="UI" type="CanvasLayer" unique_id=1020680442]
 script = ExtResource("1_r005t")
@@ -439,6 +460,81 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Embark"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="OpenSettingsButton" parent="." unique_id=1397875926 instance=ExtResource("37_bur2v")]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_right = 0.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+frame_texture = null
+inner_texture_normal = ExtResource("38_dv0om")
+inner_texture_pressed = ExtResource("39_6nhjp")
+inner_texture_hover = ExtResource("40_6q3fk")
+inner_texture_focused = ExtResource("40_6q3fk")
+inner_texture_disabled = null
+inner_texture_selected_normal = null
+inner_texture_selected_pressed = null
+inner_texture_selected_hover = null
+inner_texture_selected_focused = null
+background_texture = null
+
+[node name="KeyboardReference" type="Panel" parent="." unique_id=1990384897]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = 120.0
+offset_right = -360.0
+offset_bottom = -284.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bur2v")
+
+[node name="MarginContainer" type="MarginContainer" parent="KeyboardReference" unique_id=1734508931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyboardReference/MarginContainer" unique_id=576688403]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.8156863)
+theme_override_constants/outline_size = 6
+bbcode_enabled = true
+text = "[font_size=48px]Keyboard Reference[/font_size]
+[hr][font_size=32px][left][indent][indent][indent][indent][indent][table=2]
+[cell]Tab  [/cell]
+[cell]Keyboard reference[/cell]
+[cell]1–4  [/cell]
+[cell]Select action (press), view tooltips (hold)[/cell]
+[cell]ESC  [/cell]
+[cell]Cancel action, toggle menu on/off[/cell]
+[cell]Space  [/cell]
+[cell]Submit action target, menu item[/cell]
+[cell]A← / D→  [/cell]
+[cell]Cycle ally turns, valid targets, menu buttons[/cell]
+[cell]W↑ / S↓  [/cell]
+[cell]Move volume slider[/cell]
+[/table]"
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." unique_id=233459091 instance=ExtResource("41_kr2rp")]
+visible = false
 
 [editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat"]
 [editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators"]

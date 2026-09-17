@@ -10,6 +10,12 @@ var center_stage: Control:
 	get: return %CenterStage
 var embark_button: TextureButton:
 	get: return %EmbarkButton
+var keyboard_reference: Panel:
+	get: return $KeyboardReference
+var settings_menu: SettingsMenu:
+	get: return $SettingsMenu
+var open_settings_button: ActionButton:
+	get: return %OpenSettingsButton
 
 var characters: Array[Character]:
 	get: return Array(
@@ -27,6 +33,12 @@ var selected_character: Character:
 
 
 func _ready() -> void:
+	## TODO: Replace with the commented-out callable after Wwise migration
+	open_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
+	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
+	open_settings_button.pressed.connect(open_settings)
+	open_settings_button.button.disabled = false
+
 	Game.equipment_start.connect(_on_equipment_start)
 
 
@@ -65,6 +77,18 @@ func refresh() -> void:
 				button.button.disabled = false
 			else:
 				button.button.disabled = true
+
+
+func show_keyboard_reference() -> void:
+	keyboard_reference.show()
+
+
+func hide_keyboard_reference() -> void:
+	keyboard_reference.hide()
+
+
+func open_settings() -> void:
+	settings_menu.show()
 
 
 func _on_equipment_start() -> void:
