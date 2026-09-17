@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5luk7pogr2hh"]
 
 [ext_resource type="Script" uid="uid://b2ekcq0ipf8om" path="res://objects/game/levels/equipment_level/equipment_level.gd" id="1_62xg3"]
-[ext_resource type="PackedScene" uid="uid://cdulsr4pnewfm" path="res://objects/game/levels/combat_level/combat_selector.tscn" id="2_np0m2"]
+[ext_resource type="PackedScene" uid="uid://bj7rhx32phusy" path="res://objects/game/levels/equipment_level/equipment_selector.tscn" id="2_fniha"]
 [ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="3_2wmpb"]
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="3_fniha"]
 [ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="4_jx2we"]
@@ -42,7 +42,7 @@
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")
 
-[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_np0m2")]
+[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_fniha")]
 
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("3_fniha")]
 
@@ -81,21 +81,17 @@ size_flags_horizontal = 3
 [node name="BigCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control" unique_id=1172588862 instance=ExtResource("3_2wmpb")]
 scale = Vector2(0.6, 0.6)
 
-[node name="Actions" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="4" unique_id=1878263473]
-basic_attack = ExtResource("4_lmdjw")
-
-[node name="State" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="6" unique_id=1290732730]
+[node name="State" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="4" unique_id=1290732730]
 passive_status = null
+
+[node name="Actions" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="5" unique_id=1878263473]
+basic_attack = ExtResource("4_lmdjw")
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control2" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2001128688]
 layout_mode = 2
@@ -107,12 +103,8 @@ scale = Vector2(0.6, 0.6)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control3" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1672219295]
 layout_mode = 2
@@ -124,12 +116,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control4" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1582122687]
 layout_mode = 2
@@ -141,12 +129,8 @@ scale = Vector2(0.6, 0.6)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control5" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=156658063]
 layout_mode = 2
@@ -158,12 +142,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control6" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2065675409]
 layout_mode = 2
@@ -175,12 +155,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control7" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1667605264]
 layout_mode = 2
@@ -192,12 +168,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="Control8" type="Control" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2056705033]
 layout_mode = 2
@@ -205,17 +177,12 @@ size_flags_horizontal = 3
 
 [node name="RumCat" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=1190493796 instance=ExtResource("10_py0qi")]
 scale = Vector2(0.5, 0.5)
-id = &"Mary Maker"
 
 [node name="Indicators" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat" index="8" unique_id=481135339]
 visible = false
 
-[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators" index="2" unique_id=813067035]
-anchors_preset = 0
-offset_left = 0.0
-offset_top = 0.0
+[node name="StatusBar" parent="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators" index="2" unique_id=865305231]
 offset_right = 240.0
-offset_bottom = 0.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EquipmentUI/VBoxContainer" unique_id=453894118]
 layout_mode = 2
@@ -478,14 +445,6 @@ text = "Embark"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Input" to="." method="_on_character_selected"]
-[connection signal="submitted" from="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Input" to="." method="_on_character_selected"]
 [connection signal="pressed" from="EmbarkBG/EmbarkButton" to="." method="_on_embark_button_pressed"]
 
 [editable path="EquipmentUI/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat"]

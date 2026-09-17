@@ -84,7 +84,7 @@ func select_ally(ally: Character, player_input: bool = true) -> void:
 	if ally.battle_group != ally.ALLIES_GROUP:
 		return
 
-	if ally in Game.level.turn_tracker_component.acted_allies:
+	if ally in Game.combat.turn_tracker.acted_allies:
 		return
 	
 	cancel_action()
@@ -161,7 +161,7 @@ func cycle_through_characters(direction := Enums.Direction.RIGHT, player_input: 
 
 
 func cycle_through_allies(direction := Enums.Direction.RIGHT, player_input: bool = true) -> void:
-	var free_allies: Array[Character] = Game.level.characters.free_allies
+	var free_allies: Array[Character] = Game.combat.characters.free_allies
 
 	if not free_allies:
 		return
@@ -187,10 +187,10 @@ func cycle_through_targets(direction := Enums.Direction.RIGHT, player_input: boo
 	var valid_targets: Array[Character] = current_action.valid_targets()
 	valid_targets.sort_custom(
 		func (c1: Character, c2: Character) -> bool:
-			var i1: int = Game.level.characters.index_of(c1)
-			var i2: int = Game.level.characters.index_of(c2)
-			var s1: int = 100 + i1 if c1 in Game.level.characters.enemies else -i1
-			var s2: int = 100 + i2 if c2 in Game.level.characters.enemies else -i2
+			var i1: int = Game.combat.characters.index_of(c1)
+			var i2: int = Game.combat.characters.index_of(c2)
+			var s1: int = 100 + i1 if c1 in Game.combat.characters.enemies else -i1
+			var s2: int = 100 + i2 if c2 in Game.combat.characters.enemies else -i2
 			return s1 < s2
 	)
 

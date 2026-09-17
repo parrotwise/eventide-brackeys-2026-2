@@ -10,10 +10,10 @@ var character: Character
 func take_turn() -> void:
 	var action: Action = null
 	
-	if character.actions_component.basic_attack.can_be_used():
-		action = character.actions_component.basic_attack
+	if character.actions.basic_attack.can_be_used():
+		action = character.actions.basic_attack
 
-	for skill: Action in character.actions_component.skills:
+	for skill: Action in character.actions.skills:
 		if not skill.can_be_used():
 			continue
 		
@@ -41,13 +41,13 @@ func take_turn() -> void:
 	
 	var target: Character = Random.randsample(action.valid_targets()) if action else null
 
-	var is_big_cat: bool = character.actions_component.skills.any(func(s): return s.name == &'Jaw Cruncher')
-	var is_in_melee: bool = Game.level.characters.is_in_melee(character)
-	var can_reposition: bool = character.actions_component.reposition.can_be_used()
+	var is_big_cat: bool = character.actions.skills.any(func(s): return s.name == &'Jaw Cruncher')
+	var is_in_melee: bool = Game.combat.characters.is_in_melee(character)
+	var can_reposition: bool = character.actions.reposition.can_be_used()
 
 	if is_big_cat and not is_in_melee and can_reposition:
-		action = character.actions_component.reposition
-		target = Game.level.characters.get_ahead_of(character)
+		action = character.actions.reposition
+		target = Game.combat.characters.get_ahead_of(character)
 	
 	if action == null:
 		action_chosen.emit(null, character, null)
@@ -59,8 +59,8 @@ func take_turn() -> void:
 
 	action_chosen.emit(action, character, target)
 	
-	await Game.level.queue.await_empty()
+	await Game.combat.queue.await_empty()
 
-	if character == Game.level.turn_tracker_component.current_character:
-		await Game.level.queue.await_action_delay()
+	if character == Game.combat.turn_tracker.current_character:
+		await Game.combat.queue.await_action_delay()
 		take_turn()

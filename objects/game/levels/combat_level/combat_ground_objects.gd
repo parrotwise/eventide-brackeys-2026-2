@@ -11,7 +11,7 @@ func target_position(object: GroundObject) -> Vector2:
 	if not is_instance_valid(object):
 		return Vector2.ZERO
 
-	return Game.level.characters.target_position(object.character)
+	return Game.combat.characters.target_position(object.character)
 
 
 func get_attached_to(character: Character) -> Array[GroundObject]:

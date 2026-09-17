@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bj7rhx32phusy"]
+
+[ext_resource type="Script" uid="uid://bj8ehnodhdk7f" path="res://objects/game/levels/equipment_level/equipment_selector.gd" id="1_g6wpt"]
+
+[node name="Selector" type="Node" unique_id=157429735]
+script = ExtResource("1_g6wpt")

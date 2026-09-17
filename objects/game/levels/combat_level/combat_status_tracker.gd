@@ -60,7 +60,7 @@ func untrack(status: Status) -> void:
 func acquire_target(target_type: Enums.TargetType, owner_ref: Character) -> Character:
 	match target_type:
 		Enums.TargetType.CHARACTER_AHEAD:
-			return Game.level.characters.get_ahead_of(owner_ref)
+			return Game.combat.characters.get_ahead_of(owner_ref)
 		Enums.TargetType.LAST_ATTACKER:
 			return cached['last_attacker']
 		Enums.TargetType.LAST_REPOSITION_SELF:
@@ -106,13 +106,13 @@ func _on_combat_start() -> void:
 	# ) CACHE TARGETS (
 	# \***************/
 
-	Game.level.effector_component.action_submitted.connect(
+	Game.combat.effector.action_submitted.connect(
 		func (action: Action, user: Character, _target: Character):
 			cached['last_action'] = action
 			cached['last_attacker'] = user
 	)
 
-	Game.level.characters.characters_repositioned.connect(
+	Game.combat.characters.characters_repositioned.connect(
 		func (char_ahead: Character, char_behind: Character):
 			cached['last_reposition_ahead'] = char_ahead
 			cached['last_reposition_behind'] = char_behind
@@ -122,91 +122,91 @@ func _on_combat_start() -> void:
 	# ) TRIGGER EFFECTS (
 	# \*****************/
 
-	for character: Character in Game.level.characters.all:
-		character.state_component.damage_taken.connect(
+	for character: Character in Game.combat.characters.all:
+		character.state.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
 		)
 	
-	for character: Character in Game.level.characters.all:
-		character.state_component.explosive_damage_taken.connect(
+	for character: Character in Game.combat.characters.all:
+		character.state.explosive_damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.EXPLOSIVE_DAMAGE_TAKEN, character)
 		)
 	
-	for character: Character in Game.level.characters.all:
-		character.state_component.healing_received.connect(
+	for character: Character in Game.combat.characters.all:
+		character.state.healing_received.connect(
 			fire_triggers.bind(Enums.TriggerType.HEALING_RECEIVED, character)
 		)
 	
-	Game.level.characters.characters_repositioned.connect(
+	Game.combat.characters.characters_repositioned.connect(
 		func (char_ahead: Character, char_behind: Character):
 			fire_triggers(Enums.TriggerType.REPOSITIONED, char_ahead)
 			fire_triggers(Enums.TriggerType.REPOSITIONED, char_behind)
 	)
 	
-	Game.level.effector_component.action_submitted.connect(
+	Game.combat.effector.action_submitted.connect(
 		func (action: Action, user: Character, _target: Character):
 			fire_triggers(Enums.TriggerType.USING_ACTION, user)
 
-			if action == user.actions_component.basic_attack:
+			if action == user.actions.basic_attack:
 				fire_triggers(Enums.TriggerType.USING_BASIC_ATTACK, user)
 
-			elif action == user.actions_component.reposition:
+			elif action == user.actions.reposition:
 				fire_triggers(Enums.TriggerType.USING_REPOSITION, user)
 
-			elif action == user.actions_component.skills[0]:
+			elif action == user.actions.skills[0]:
 				fire_triggers(Enums.TriggerType.USING_CHARACTER_SKILL, user)
 	)
 	
-	Game.level.effector_component.action_finished.connect(
+	Game.combat.effector.action_finished.connect(
 		func (action: Action):
 			fire_triggers(Enums.TriggerType.FINISHED_ACTION, action.owner)
 
-			if action == action.owner.actions_component.basic_attack:
+			if action == action.owner.actions.basic_attack:
 				fire_triggers(Enums.TriggerType.FINISHED_BASIC_ATTACK, action.owner)
 
-			elif action == action.owner.actions_component.reposition:
+			elif action == action.owner.actions.reposition:
 				fire_triggers(Enums.TriggerType.FINISHED_REPOSITION, action.owner)
 
-			elif action == action.owner.actions_component.skills[0]:
+			elif action == action.owner.actions.skills[0]:
 				fire_triggers(Enums.TriggerType.FINISHED_CHARACTER_SKILL, action.owner)
 	)
 	
-	Game.level.turn_tracker_component.turn_started.connect(
+	Game.combat.turn_tracker.turn_started.connect(
 		func (character: Character):
-			if character in Game.level.characters.enemies:
+			if character in Game.combat.characters.enemies:
 				fire_triggers(Enums.TriggerType.START_TURN, character)
 	)
 
-	Game.level.turn_tracker_component.round_started.connect(
+	Game.combat.turn_tracker.round_started.connect(
 		func (_round_number: int):
-			for character in Game.level.characters.allies:
+			for character in Game.combat.characters.allies:
 				fire_triggers(Enums.TriggerType.START_TURN, character)
 	)
 
-	Game.level.turn_tracker_component.turn_lost.connect(
+	Game.combat.turn_tracker.turn_lost.connect(
 		func (character: Character):
-			if character in Game.level.characters.all:
+			if character in Game.combat.characters.all:
 				fire_triggers(Enums.TriggerType.LOSE_TURN, character)
 	)
 
-	Game.level.turn_tracker_component.turn_ended.connect(
+	Game.combat.turn_tracker.turn_ended.connect(
 		func (character: Character):
-			if character in Game.level.characters.all:
+			if character in Game.combat.characters.all:
 				fire_triggers(Enums.TriggerType.END_TURN, character)
 	)
 	
-	Game.level.turn_tracker_component.battle_group_started.connect(
+	Game.combat.turn_tracker.battle_group_started.connect(
 		func (battle_group: StringName):
-			if battle_group == Game.level.turn_tracker_component.ALLIES_GROUP:
-				for character in Game.level.characters.enemies:
+			if battle_group == Game.combat.turn_tracker.ALLIES_GROUP:
+				for character in Game.combat.characters.enemies:
 					fire_triggers(Enums.TriggerType.END_PHASE, character)
-				for character in Game.level.characters.allies:
+				for character in Game.combat.characters.allies:
 					fire_triggers(Enums.TriggerType.START_PHASE, character)
 			
-			elif battle_group == Game.level.turn_tracker_component.ENEMIES_GROUP:
-				for character in Game.level.characters.allies:
+			elif battle_group == Game.combat.turn_tracker.ENEMIES_GROUP:
+				for character in Game.combat.characters.allies:
 					fire_triggers(Enums.TriggerType.END_PHASE, character)
-				for character in Game.level.characters.enemies:
+				for character in Game.combat.characters.enemies:
 					fire_triggers(Enums.TriggerType.START_PHASE, character)
 	)
 
@@ -214,13 +214,13 @@ func _on_combat_start() -> void:
 	# ) REFRESH STATES (
 	# \****************/
 
-	Game.level.characters.characters_repositioned.connect(
+	Game.combat.characters.characters_repositioned.connect(
 		func (char_ahead: Character, char_behind: Character):
 			if is_instance_valid(char_ahead):
-				for status: Status in char_ahead.state_component.active_statuses:
+				for status: Status in char_ahead.state.active_statuses:
 					status.refresh_granted_statuses.call_deferred()
 
 			if is_instance_valid(char_behind):
-				for status: Status in char_behind.state_component.active_statuses:
+				for status: Status in char_behind.state.active_statuses:
 					status.refresh_granted_statuses.call_deferred()
 	)

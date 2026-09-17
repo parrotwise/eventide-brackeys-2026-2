@@ -39,22 +39,22 @@ func _ready() -> void:
 func setup_bottom_bar(character: Character) -> void:
 	reset_bottom_bar()
 	
-	if character.actions.size() > 4:
+	if character.all_actions.size() > 4:
 		Debug.error("Character '%s' has too many actions, only 4 will be shown." % character.name)
-	if character.equipment.size() > 4:
+	if character.all_equipment.size() > 4:
 		Debug.error("Character '%s' has too many items, only 4 will be shown." % character.name)
 	
-	for i: int in mini(4, character.actions.size()):
-		var action: Action = character.actions[i]
+	for i: int in mini(4, character.all_actions.size()):
+		var action: Action = character.all_actions[i]
 		action_buttons[i].setup(action)
 		action_buttons[i].show()
 	
-	for i: int in mini(4, character.equipment.size()):
-		var equipment: Equipment = character.equipment[i]
+	for i: int in mini(4, character.all_equipment.size()):
+		var equipment: Equipment = character.all_equipment[i]
 		equipment_buttons[i].setup(equipment)
 		equipment_buttons[i].show()
 	
-	passive_button.setup(character.state_component.passive_status)
+	passive_button.setup(character.state.passive_status)
 
 
 func reset_bottom_bar() -> void:
@@ -84,13 +84,13 @@ func open_settings() -> void:
 func _on_combat_start() -> void:
 	refresh_bottom_bar()
 
-	Game.level.selector_component.action_selected.connect(
+	Game.combat.selector.action_selected.connect(
 		func (selected_action: Action) -> void:
 			for button: ActionButton in action_buttons:
 				button.set_selected(button.action == selected_action)
 	)
 
-	Game.level.selector_component.action_cancelled.connect(
+	Game.combat.selector.action_cancelled.connect(
 		func () -> void:
 			for button: ActionButton in action_buttons:
 				button.set_selected(false)

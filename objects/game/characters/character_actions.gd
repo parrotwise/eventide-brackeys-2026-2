@@ -12,7 +12,7 @@ var actions: Array[Action]:
 	get: return Array([basic_attack, reposition], TYPE_OBJECT, &'Resource', Action) + skills + granted_actions
 var granted_actions: Array[Action]:
 	get: return Array(
-		character.state_component.active_statuses.reduce(func(accum, s): return accum + s.granted_actions, []),
+		character.state.active_statuses.reduce(func(accum, s): return accum + s.granted_actions, []),
 		TYPE_OBJECT, &'Resource', Action
 	)
 
@@ -38,7 +38,7 @@ func _on_combat_start() -> void:
 	for skill: Action in skills:
 		skill.owner = character
 	
-	Game.level.turn_tracker_component.battle_group_started.connect(_on_battle_group_started)
+	Game.combat.turn_tracker.battle_group_started.connect(_on_battle_group_started)
 
 	restore_action_uses()
 
@@ -58,4 +58,4 @@ func restore_action_uses() -> void:
 			action_cooldowns[action] = cooldown - 1
 		else:
 			action.restore_uses()
-			Game.level.ui.refresh_bottom_bar()
+			Game.combat.ui.refresh_bottom_bar()

@@ -65,7 +65,7 @@ func show_selection_indicator() -> void:
 
 
 func _on_combat_start() -> void:
-	Game.level.effector_component.action_submitted.connect(_on_action_submitted)
+	Game.combat.effector.action_submitted.connect(_on_action_submitted)
 
 
 func _on_action_submitted(_action: Action, _user: Character, _target: Character) -> void:
@@ -77,7 +77,7 @@ func _on_character_set() -> void:
 	if character == null:
 		return
 
-	var state: CharacterState = character.state_component
+	var state: CharacterState = character.state
 	state.health_changed.connect(_update_health_bar)
 	state.status_applied.connect(add_status_icon)
 	state.status_removed.connect(remove_status_icon)
@@ -87,17 +87,17 @@ func _on_character_set() -> void:
 
 
 func _update_health_bar(_previous_health: int, current_health: int) -> void:
-	health_bar.set_health(current_health, character.state_component.max_health)
+	health_bar.set_health(current_health, character.state.max_health)
 
 
 func _update_status_indicators() -> void:
-	stun_icon.visible = character.state_component.active_statuses.any(
+	stun_icon.visible = character.state.active_statuses.any(
 		func(status): return status.name == "Stunned"
 	)
-	sloshed_particles.emitting = character.state_component.active_statuses.any(
+	sloshed_particles.emitting = character.state.active_statuses.any(
 		func(status): return status.name == "Sloshed"
 	)
-	poison_particles.emitting = character.state_component.active_statuses.any(
+	poison_particles.emitting = character.state.active_statuses.any(
 		func(status): return status.name == "Poisoned"
 	)
 

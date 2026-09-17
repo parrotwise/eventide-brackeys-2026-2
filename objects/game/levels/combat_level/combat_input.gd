@@ -8,14 +8,14 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&'right_click') or event.is_action_pressed(&'cancel'):
-		Game.level.selector_component.cancel_action.call_deferred()
+		Game.combat.selector.cancel_action.call_deferred()
 	
 	if event.is_action_pressed(&'keyboard_reference'):
-		Game.level.ui.show_keyboard_reference()
+		Game.combat.ui.show_keyboard_reference()
 	if event.is_action_released(&'keyboard_reference'):
-		Game.level.ui.hide_keyboard_reference()
+		Game.combat.ui.hide_keyboard_reference()
 	
-	var menu: SettingsMenu = Game.level.ui.settings_menu
+	var menu: SettingsMenu = Game.combat.ui.settings_menu
 	
 	if menu.visible:
 		if menu.focused:
@@ -44,46 +44,46 @@ func _unhandled_input(event: InputEvent) -> void:
 			menu.visible = false
 
 	else:
-		var selected_ally: Character = Game.level.selector_component.current_user
+		var selected_ally: Character = Game.combat.selector.current_user
 
 		if is_instance_valid(selected_ally):
-			var actions: Array[Action] = selected_ally.actions_component.actions
+			var actions: Array[Action] = selected_ally.actions.actions
 			
 			for i: int in actions.size():
 				if not is_instance_valid(actions[i]) or not actions[i].can_be_used():
 					continue
 				
 				if event.is_action_pressed(&'select_action_%d' % [i + 1]):
-					Game.level.selector_component.select_action(actions[i])
+					Game.combat.selector.select_action(actions[i])
 
-					for button: ActionButton in Game.level.ui.action_buttons:
+					for button: ActionButton in Game.combat.ui.action_buttons:
 						if button.action == actions[i]:
 							button.button.grab_focus()
 				
 				elif event.is_action_released(&'select_action_%d' % [i + 1]):
-					for button: ActionButton in Game.level.ui.action_buttons:
+					for button: ActionButton in Game.combat.ui.action_buttons:
 						if button.action == actions[i]:
 							button.button.release_focus()
 		
-		var selected_action: Action = Game.level.selector_component.current_action
-		var selected_target: Character = Game.level.selector_component.current_target
+		var selected_action: Action = Game.combat.selector.current_action
+		var selected_target: Character = Game.combat.selector.current_target
 		
 		if is_instance_valid(selected_action):
 			if event.is_action_pressed(&'escape') or event.is_action_pressed(&'cancel'):
-				Game.level.selector_component.cancel_action()
+				Game.combat.selector.cancel_action()
 				Game.pointer.switch_to(Enums.PointerType.DEFAULT)
 			
 			if is_instance_valid(selected_target) and event.is_action_pressed(&'submit'):
-				selected_target.input_component.submit_as_target()
+				selected_target.input.submit_as_target()
 		
 		elif event.is_action_pressed(&'escape'):
-			Game.level.ui.settings_menu.visible = true
+			Game.combat.ui.settings_menu.visible = true
 				
 		if event.is_action_pressed(&'cycle_forward'):
-			Game.level.selector_component.cycle_through_characters(Enums.Direction.RIGHT)
+			Game.combat.selector.cycle_through_characters(Enums.Direction.RIGHT)
 
 		if event.is_action_pressed(&'cycle_backward'):
-			Game.level.selector_component.cycle_through_characters(Enums.Direction.LEFT)
+			Game.combat.selector.cycle_through_characters(Enums.Direction.LEFT)
 
 
 func _on_combat_start() -> void:

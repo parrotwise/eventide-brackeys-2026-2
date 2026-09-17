@@ -173,7 +173,7 @@ func apply_to(character: Character) -> void:
 
 	applied.emit(owner)
 	
-	Game.level.status_tracker_component.track(self)
+	Game.combat.status_tracker.track(self)
 
 	for trigger: Trigger in triggers:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_APPLIED:
@@ -185,7 +185,7 @@ func remove() -> void:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_REMOVED:
 			await trigger.fire()
 	
-	Game.level.status_tracker_component.untrack(self)
+	Game.combat.status_tracker.untrack(self)
 
 	removed.emit(owner)
 
@@ -203,7 +203,7 @@ func modify_effect(effect: Effect) -> Effect:
 	if randf() > likelihood:
 		return
 	
-	if owner.state_component.current_health_ratio < condition_owner_health_ratio_min:
+	if owner.state.current_health_ratio < condition_owner_health_ratio_min:
 		return
 	
 	var mods_applied: bool = false
@@ -216,7 +216,7 @@ func modify_effect(effect: Effect) -> Effect:
 		var base_damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var base_healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
 
-		var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state_component.missing_health_ratio
+		var final_damage_dealt_multiplier = damage_dealt_multiplier + missing_hp_to_dmg_dealt_mult * owner.state.missing_health_ratio
 
 		effect.damage = floori(effect.damage * final_damage_dealt_multiplier)
 		effect.damage += damage_dealt_adder
@@ -224,9 +224,9 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing = floori(effect.healing * healing_applied_multiplier)
 		effect.healing += healing_applied_adder
 
-		if effect.source == effect.owner.actions_component.basic_attack:
+		if effect.source == effect.owner.actions.basic_attack:
 			effect.damage += attack_damage_dealt_adder
-		elif effect.source == effect.owner.actions_component.skills[0]:
+		elif effect.source == effect.owner.actions.skills[0]:
 			effect.damage += skill_damage_dealt_adder
 
 		var damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
@@ -251,7 +251,7 @@ func modify_effect(effect: Effect) -> Effect:
 				mods_applied = true
 			
 			if damage_dealt_to_splash_both_sides_mult:
-				for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+				for adjacent: Character in Game.combat.characters.get_adjacent_to(effect.target):
 					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
 					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_both_sides_mult)
@@ -261,7 +261,7 @@ func modify_effect(effect: Effect) -> Effect:
 					mods_applied = true
 			
 			if damage_dealt_to_splash_one_side_mult:
-				for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+				for adjacent: Character in Random.shuffle(Game.combat.characters.get_adjacent_to(effect.target)):
 					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 
 					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_one_side_mult)
@@ -276,7 +276,7 @@ func modify_effect(effect: Effect) -> Effect:
 				effect.applied_statuses.append(status)
 				mods_applied = true
 		
-		if effect.source == owner.actions_component.basic_attack:
+		if effect.source == owner.actions.basic_attack:
 			if attack_knockback_steps_adder or attack_pull_steps_adder:
 				effect.knockback_steps += attack_knockback_steps_adder
 				effect.pull_steps += attack_pull_steps_adder
@@ -290,7 +290,7 @@ func modify_effect(effect: Effect) -> Effect:
 		var base_damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var base_healing_received: bool = (effect.healing) and is_instance_valid(effect.target)
 		
-		var final_damage_taken_multiplier = damage_taken_multiplier * (attack_damage_taken_multiplier if effect.source == effect.owner.actions_component.basic_attack else 1.0)
+		var final_damage_taken_multiplier = damage_taken_multiplier * (attack_damage_taken_multiplier if effect.source == effect.owner.actions.basic_attack else 1.0)
 
 		effect.damage = floori(effect.damage * final_damage_taken_multiplier)
 		effect.damage += damage_taken_adder
@@ -298,7 +298,7 @@ func modify_effect(effect: Effect) -> Effect:
 		effect.healing = floori(effect.healing * healing_received_multiplier)
 		effect.healing += healing_received_adder
 
-		if owner != effect.owner and not owner.state_component.can_be_healed_by_others:
+		if owner != effect.owner and not owner.state.can_be_healed_by_others:
 			effect.healing = 0
 
 		var damage_taken: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
@@ -323,7 +323,7 @@ func modify_effect(effect: Effect) -> Effect:
 				mods_applied = true
 			
 			if damage_taken_to_splash_both_sides_mult:
-				for adjacent: Character in Game.level.characters.get_adjacent_to(effect.target):
+				for adjacent: Character in Game.combat.characters.get_adjacent_to(effect.target):
 					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 					
 					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_both_sides_mult)
@@ -333,7 +333,7 @@ func modify_effect(effect: Effect) -> Effect:
 					mods_applied = true
 			
 			if damage_taken_to_splash_one_side_mult:
-				for adjacent: Character in Random.shuffle(Game.level.characters.get_adjacent_to(effect.target)):
+				for adjacent: Character in Random.shuffle(Game.combat.characters.get_adjacent_to(effect.target)):
 					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
 					
 					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_one_side_mult)
@@ -355,8 +355,8 @@ func modify_effect(effect: Effect) -> Effect:
 
 
 func refresh_granted_statuses() -> void:
-	var characters_ahead: Array[Character] = Game.level.characters.get_all_ahead_of(owner)
-	var characters_adjacent: Array[Character] = Game.level.characters.get_adjacent_to(owner)
+	var characters_ahead: Array[Character] = Game.combat.characters.get_all_ahead_of(owner)
+	var characters_adjacent: Array[Character] = Game.combat.characters.get_adjacent_to(owner)
 
 	var revoked_statuses: Array[Status] = []
 
@@ -371,18 +371,18 @@ func refresh_granted_statuses() -> void:
 	
 	for status: Status in revoked_statuses:
 		granted_statuses.erase(status)
-		status.owner.state_component.remove_status(status)
+		status.owner.state.remove_status(status)
 	
 	if grant_ahead:
 		for character: Character in characters_ahead:
-			if not character.state_component.active_statuses.any(func(s): return s.name == grant_ahead.name):
+			if not character.state.active_statuses.any(func(s): return s.name == grant_ahead.name):
 				granted_statuses.append(
-					await character.state_component.apply_status(grant_ahead)
+					await character.state.apply_status(grant_ahead)
 				)
 	
 	if grant_adjacent:
 		for character: Character in characters_adjacent:
-			if not character.state_component.active_statuses.any(func(s): return s.name == grant_adjacent.name):
+			if not character.state.active_statuses.any(func(s): return s.name == grant_adjacent.name):
 				granted_statuses.append(
-					await character.state_component.apply_status(grant_adjacent)
+					await character.state.apply_status(grant_adjacent)
 				)

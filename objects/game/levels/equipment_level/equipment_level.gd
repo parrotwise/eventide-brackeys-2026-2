@@ -1,12 +1,18 @@
+class_name EquipmentLevel
 extends Node
 
 
-var selector: CombatSelector:
+var selector: EquipmentSelector:
 	get: return $Selector
 var inventories: Dictionary:
 	get: return Game.inventories
 var character_lineup: HBoxContainer:
 	get: return %CharacterLineup
+var characters: Array[Character]:
+	get: return Array(
+		character_lineup.get_children().reduce(func(accum, node): return accum + node.get_children(), []),
+		TYPE_OBJECT, &'Node2D', Character
+	)
 var equipment_grid: GridContainer:
 	get: return %EquipmentGrid
 var center_stage: Control:
@@ -14,11 +20,16 @@ var center_stage: Control:
 
 var selected_character: Character
 
-var test: Array
+
 func _ready() -> void:
+	Game.equipment = self
+
 	for item: EquipmentButton in equipment_grid.get_children():
 		item.equipment_selected.connect(save_equipment_selection)
 		item.button.disabled = true
+	
+	for character: Character in characters:
+		character.input.submitted.connect(_on_character_selected)
 
 
 func save_equipment_selection(equipment: Equipment, is_equipped: bool) -> void:

@@ -40,7 +40,7 @@ func interpret(
 		effects[target].damage_poison += action.target_damage_poison
 
 	if action.splash_damage > 0:
-		for adjacent: Character in Game.level.characters.get_adjacent_to(target):
+		for adjacent: Character in Game.combat.characters.get_adjacent_to(target):
 			effects[adjacent] = effects[adjacent] if adjacent in effects else Effect.create(action, user, adjacent)
 			effects[adjacent].damage += action.splash_damage
 
@@ -54,19 +54,19 @@ func interpret(
 
 	if action.power_as_target_damage:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].damage += user.state_component.power
+		effects[target].damage += user.state.power
 
 	if action.power_as_target_damage_explosive:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].damage_explosive += user.state_component.power
+		effects[target].damage_explosive += user.state.power
 
 	if action.power_as_target_damage_poison:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].damage_poison += user.state_component.power
+		effects[target].damage_poison += user.state.power
 
 	if action.power_as_target_healing:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].healing += user.state_component.power
+		effects[target].healing += user.state.power
 
 	if action.swap_places:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
@@ -123,7 +123,7 @@ func interpret(
 	
 	for effect: Effect in effects.values():
 		# Resource instance modified in-place
-		Game.level.status_tracker_component.modify_effect(effect)
+		Game.combat.status_tracker.modify_effect(effect)
 
 	return effects
 

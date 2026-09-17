@@ -14,9 +14,9 @@ const ENEMIES_GROUP: StringName = &"enemies"
 
 
 var allies: Array[Character]:
-	get: return Game.level.characters.allies
+	get: return Game.combat.characters.allies
 var enemies: Array[Character]:
-	get: return Game.level.characters.enemies
+	get: return Game.combat.characters.enemies
 
 var round_number: int = 0
 var active_group: StringName = &""
@@ -71,7 +71,7 @@ func end_current_turn() -> void:
 	if current_character == null:
 		return
 	
-	await Game.level.queue.await_empty()
+	await Game.combat.queue.await_empty()
 
 	var finished_character: Character = current_character
 	current_character = null
@@ -124,11 +124,11 @@ func _start_enemies_phase() -> void:
 
 func _start_next_enemy_turn() -> void:
 	if enemy_turn_index >= enemies.size():
-		await Game.level.queue.await_round_delay()
+		await Game.combat.queue.await_round_delay()
 		_start_round()
 		return
 	
-	await Game.level.queue.await_enemy_turn_delay()
+	await Game.combat.queue.await_enemy_turn_delay()
 	
 	current_character = enemies[enemy_turn_index]
 	

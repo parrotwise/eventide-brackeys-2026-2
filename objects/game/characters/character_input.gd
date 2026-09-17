@@ -23,13 +23,18 @@ func set_flip(flip: bool = true) -> void:
 
 
 func submit_as_target() -> void:
-	if not is_instance_valid(Game.level.selector_component.current_action):
+	if not is_instance_valid(Game.combat):
+		if is_instance_valid(Game.equipment):
+			submitted.emit(character)
 		return
 	
-	if not is_instance_valid(Game.level.selector_component.current_target):
+	if not is_instance_valid(Game.combat.selector.current_action):
 		return
-	
-	if Game.level.selector_component.current_target != character:
+
+	if not is_instance_valid(Game.combat.selector.current_target):
+		return
+
+	if Game.combat.selector.current_target != character:
 		return
 	
 	submitted.emit(character)

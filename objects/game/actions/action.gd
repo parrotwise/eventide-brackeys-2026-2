@@ -74,7 +74,7 @@ func use(user: Character, target: Character) -> void:
 	if not uses_left:
 		uses_expended.emit()
 	
-	Game.level.effector_component.apply(self, user, target)
+	Game.combat.effector.apply(self, user, target)
 
 	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
@@ -104,7 +104,7 @@ func can_be_used() -> bool:
 	if not uses_left:
 		return false
 	
-	if swap_places and not owner.state_component.can_move:
+	if swap_places and not owner.state.can_move:
 		return false
 	
 	return true
@@ -114,7 +114,7 @@ func can_target(target: Character) -> bool:
 	if not is_instance_valid(owner) or not is_instance_valid(target):
 		return false
 	
-	if swap_places and not target.state_component.can_move:
+	if swap_places and not target.state.can_move:
 		return false
 	
 	var target_is_valid: bool = true
@@ -126,11 +126,11 @@ func can_target(target: Character) -> bool:
 		Enums.RangeType.SELF:
 			target_is_valid = target_is_valid and owner == target
 		Enums.RangeType.MELEE:
-			target_is_valid = target_is_valid and Game.level.characters.is_in_melee(owner) and Game.level.characters.is_in_melee(target)
+			target_is_valid = target_is_valid and Game.combat.characters.is_in_melee(owner) and Game.combat.characters.is_in_melee(target)
 		Enums.RangeType.CHARACTER_AHEAD:
-			target_is_valid = target_is_valid and target == Game.level.characters.get_ahead_of(owner)
+			target_is_valid = target_is_valid and target == Game.combat.characters.get_ahead_of(owner)
 		Enums.RangeType.ADJACENT_ALLY:
-			target_is_valid = target_is_valid and target in Game.level.characters.get_adjacent_to(owner)
+			target_is_valid = target_is_valid and target in Game.combat.characters.get_adjacent_to(owner)
 	
 	match target_group:
 		Enums.BattleGroupType.OWN_GROUP:
@@ -143,6 +143,6 @@ func can_target(target: Character) -> bool:
 
 func valid_targets() -> Array[Character]:
 	return Array(
-		Game.level.characters.all.filter(func(c): return can_target(c)),
+		Game.combat.characters.all.filter(func(c): return can_target(c)),
 		TYPE_OBJECT, &'Node2D', Character
 	)

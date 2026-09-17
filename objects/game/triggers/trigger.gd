@@ -30,20 +30,20 @@ func fire(specific_target: Character = null) -> void:
 			Enums.TargetType.SELF:
 				fired_effect.target = fired_effect.owner
 			Enums.TargetType.ALLY_AHEAD:
-				fired_effect.target = Game.level.characters.get_ahead_of(fired_effect.owner)
+				fired_effect.target = Game.combat.characters.get_ahead_of(fired_effect.owner)
 			Enums.TargetType.ALLY_BEHIND:
-				fired_effect.target = Game.level.characters.get_behind(fired_effect.owner)
+				fired_effect.target = Game.combat.characters.get_behind(fired_effect.owner)
 			Enums.TargetType.NEAREST_ENEMY:
 				fired_effect.target = (
-					Game.level.characters.ally_melee
-					if fired_effect.owner in Game.level.characters.enemies else
-					Game.level.characters.enemy_melee
+					Game.combat.characters.ally_melee
+					if fired_effect.owner in Game.combat.characters.enemies else
+					Game.combat.characters.enemy_melee
 				)
 			Enums.TargetType.CHARACTER_AHEAD:
-				fired_effect.target = Game.level.characters.get_ahead_of(fired_effect.owner)
+				fired_effect.target = Game.combat.characters.get_ahead_of(fired_effect.owner)
 	
 	# Resource instance modified in-place
-	Game.level.status_tracker_component.modify_effect(fired_effect)
+	Game.combat.status_tracker.modify_effect(fired_effect)
 	
 	await fired_effect.apply(bypass_queue)
 	
@@ -62,4 +62,4 @@ func fire(specific_target: Character = null) -> void:
 			
 			if source.remove_when_triggers_used_up:
 				if is_instance_valid(source.owner):
-					source.owner.state_component.remove_status(source)
+					source.owner.state.remove_status(source)

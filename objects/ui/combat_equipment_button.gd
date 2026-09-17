@@ -79,7 +79,7 @@ func setup(new_equipment: Equipment) -> void:
 		## TODO: Replace with the commented-out callable after Wwise migration
 		focus_entered.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 		# focus_entered.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
-		focus_entered.connect(Game.level.selector_component.select_action.bind(equipment.activated_ability))
+		focus_entered.connect(Game.combat.selector.select_action.bind(equipment.activated_ability))
 
 		set_selected(false)
 	

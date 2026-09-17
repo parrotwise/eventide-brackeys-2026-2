@@ -6,15 +6,15 @@ extends Node
 
 var queue: CombatQueue:
 	get: return $Queue
-var turn_tracker_component: CombatTurnTracker:
+var turn_tracker: CombatTurnTracker:
 	get: return $TurnTracker
-var status_tracker_component: CombatStatusTracker:
+var status_tracker: CombatStatusTracker:
 	get: return $StatusTracker
-var selector_component: CombatSelector:
+var selector: CombatSelector:
 	get: return $Selector
-var effector_component: CombatEffector:
+var effector: CombatEffector:
 	get: return $Effector
-var preview_component: CombatPreview:
+var preview: CombatPreview:
 	get: return $Preview
 var scenery: CombatScenery:
 	get: return $Scenery
@@ -34,81 +34,81 @@ var enemy_spawn_points: Node:
 
 
 func _ready() -> void:
-	Game.level = self
+	Game.combat = self
 
-	effector_component.action_used.connect(
+	effector.action_used.connect(
 		_on_action_used
 	)
 
-	effector_component.action_missed.connect(
+	effector.action_missed.connect(
 		_on_action_missed
 	)
 
-	effector_component.action_finished.connect(
+	effector.action_finished.connect(
 		_on_action_finished
 	)
 
-	status_tracker_component.status_applied.connect(
+	status_tracker.status_applied.connect(
 		_on_status_applied
 	)
 
-	status_tracker_component.status_removed.connect(
+	status_tracker.status_removed.connect(
 		_on_status_removed
 	)
 
-	status_tracker_component.trigger_fired.connect(
+	status_tracker.trigger_fired.connect(
 		_on_trigger_fired
 	)
 
-	selector_component.action_selected.connect(
+	selector.action_selected.connect(
 		_on_action_selected
 	)
 
-	selector_component.target_selected.connect(
+	selector.target_selected.connect(
 		_on_target_selected
 	)
 
-	selector_component.target_cancelled.connect(
+	selector.target_cancelled.connect(
 		_on_target_cancelled
 	)
 	
-	selector_component.ally_selected.connect(
+	selector.ally_selected.connect(
 		_on_ally_selected
 	)
 
-	selector_component.target_submitted.connect(
+	selector.target_submitted.connect(
 		_on_target_submitted
 	)
 
-	turn_tracker_component.round_started.connect(
+	turn_tracker.round_started.connect(
 		_on_round_started
 	)
 
-	turn_tracker_component.battle_group_started.connect(
+	turn_tracker.battle_group_started.connect(
 		_on_battle_group_started
 	)
 
-	turn_tracker_component.turn_started.connect(
+	turn_tracker.turn_started.connect(
 		_on_turn_started
 	)
 
-	turn_tracker_component.turn_lost.connect(
+	turn_tracker.turn_lost.connect(
 		_on_turn_lost
 	)
 
-	turn_tracker_component.turn_ended.connect(
+	turn_tracker.turn_ended.connect(
 		_on_turn_ended
 	)
 
 	for character: Character in characters.all:
-		character.state_component.health_changed.connect(_on_health_changed.bind(character))
-		character.state_component.knockout.connect(_on_knocked_out.bind(character))
+		character.state.health_changed.connect(_on_health_changed.bind(character))
+		character.state.knockout.connect(_on_knocked_out.bind(character))
 	
 	for enemy: Character in characters.enemies:
-		if enemy.strategy_component:
-			enemy.strategy_component.action_chosen.connect(_on_enemy_action_chosen)
+		if enemy.strategy:
+			enemy.strategy.action_chosen.connect(_on_enemy_action_chosen)
 	
-	turn_tracker_component.start_tracking()
+	turn_tracker.start_tracking()
 	
 	Game.start.emit()
 
@@ -132,8 +132,8 @@ func _on_knocked_out(character: Character) -> void:
 
 
 func _exit_tree() -> void:
-	if Game.level == self:
-		Game.level = null
+	if Game.combat == self:
+		Game.combat = null
 
 	Game.end.emit()
 
@@ -168,20 +168,20 @@ func _on_action_missed(
 func _on_action_finished(action: Action) -> void:
 	Debug.debug("%s finished using %s." % [action.owner.name, action.name])
 
-	if turn_tracker_component.current_character not in characters.enemies:
-		selector_component.cancel_action()
+	if turn_tracker.current_character not in characters.enemies:
+		selector.cancel_action()
 
-	if action.free_action and action.owner.actions_component.usable_actions:
-		selector_component.resume()
+	if action.free_action and action.owner.actions.usable_actions:
+		selector.resume()
 	else:
-		turn_tracker_component.end_current_turn()
+		turn_tracker.end_current_turn()
 	
 	
 	
 func _on_action_selected(action: Action) -> void:
 	Debug.debug(
 		"%s has selected %s, targeting requested." % [
-			selector_component.current_user.name,
+			selector.current_user.name,
 			action.name,
 		]
 	)
@@ -244,10 +244,10 @@ func _on_target_selected(
 	)
 
 	for other: Character in characters.all:
-		other.indicators_component.hide_target_indicator()
-	target.indicators_component.show_target_indicator()
+		other.indicators.hide_target_indicator()
+	target.indicators.show_target_indicator()
 
-	preview_component.preview_action(action, user, target)
+	preview.preview_action(action, user, target)
 
 
 func _on_target_cancelled(
@@ -256,9 +256,9 @@ func _on_target_cancelled(
 	target: Character
 ) -> void:
 	if is_instance_valid(target):
-		target.indicators_component.hide_target_indicator()
+		target.indicators.hide_target_indicator()
 	
-	preview_component.hide_previews()
+	preview.hide_previews()
 
 
 func _on_target_submitted(
@@ -266,18 +266,18 @@ func _on_target_submitted(
 	_user: Character,
 	_target: Character
 ) -> void:
-	selector_component.pause()
-	preview_component.hide_previews()
+	selector.pause()
+	preview.hide_previews()
 
 
 func _on_ally_selected(ally: Character):
 	ui.setup_bottom_bar(ally)
 
 	for other: Character in characters.allies:
-		other.indicators_component.hide_selection_indicator()
-	ally.indicators_component.show_selection_indicator()
+		other.indicators.hide_selection_indicator()
+	ally.indicators.show_selection_indicator()
 	
-	await turn_tracker_component.start_ally_turn(ally)
+	await turn_tracker.start_ally_turn(ally)
 
 
 func _on_round_started(round_number: int) -> void:
@@ -286,16 +286,16 @@ func _on_round_started(round_number: int) -> void:
 
 func _on_battle_group_started(group_name: StringName) -> void:
 	Debug.debug("-- %s phase!" % group_name)
-	if group_name == turn_tracker_component.ALLIES_GROUP:
-		selector_component.reset()
+	if group_name == turn_tracker.ALLIES_GROUP:
+		selector.reset()
 
 
 func _on_turn_started(character: Character) -> void:
 	Debug.debug("%s's turn started." % character.name)
 	if character in characters.allies:
-		selector_component.resume()
-	if character.strategy_component:
-		character.strategy_component.take_turn()
+		selector.resume()
+	if character.strategy:
+		character.strategy.take_turn()
 
 
 func _on_turn_lost(character: Character) -> void:
@@ -309,9 +309,9 @@ func _on_turn_ended(character: Character) -> void:
 		return
 	
 	if characters.free_allies:
-		selector_component.cycle_through_allies(Enums.Direction.RIGHT, false)
+		selector.cycle_through_allies(Enums.Direction.RIGHT, false)
 	else:
-		selector_component.reset()
+		selector.reset()
 		ui.reset_bottom_bar()
 
 

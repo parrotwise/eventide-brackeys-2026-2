@@ -73,12 +73,12 @@ func heal_target() -> void:
 
 
 func hurt_random_target() -> void:
-	var random_target: Character = Game.level.effector_component.last_random_target
+	var random_target: Character = Game.combat.effector.last_random_target
 	if random_target == null: return
 	random_target.actor.hurt()
 
 func launch_ground_object() -> void:
-	Game.level.ground_objects.launch(global_position + Vector2(0.0, -400.0))
+	Game.combat.ground_objects.launch(global_position + Vector2(0.0, -400.0))
 
 
 #

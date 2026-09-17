@@ -86,68 +86,68 @@ func apply(bypass_queue: bool = false) -> void:
 		return
 	
 	if not bypass_queue:
-		Game.level.queue.push_effect(self)
-		await Game.level.queue.await_effect(self)
+		Game.combat.queue.push_effect(self)
+		await Game.combat.queue.await_effect(self)
 		return
 	
 	var total_damage: int = stacked_damage + stacked_damage_explosive + stacked_damage_poison
-	var total_healing: int = stacked_healing + ceili(stacked_healing_ratio * target.state_component.max_health)
+	var total_healing: int = stacked_healing + ceili(stacked_healing_ratio * target.state.max_health)
 	
 	## Immediate effects first
 	if total_damage:
-		target.state_component.take_damage(total_damage, stacked_damage_explosive > 0)
+		target.state.take_damage(total_damage, stacked_damage_explosive > 0)
 	if total_healing:
-		target.state_component.heal(total_healing)
+		target.state.heal(total_healing)
 	if swap_places:
-		Game.level.characters.swap_places(owner, target)
+		Game.combat.characters.swap_places(owner, target)
 	for __ in knockback_steps:
-		Game.level.characters.move_backward(target)
+		Game.combat.characters.move_backward(target)
 	while knockback_to_rear:
-		var old_index: int = Game.level.characters.index_of(target)
-		Game.level.characters.move_backward(target)
-		if old_index == Game.level.characters.index_of(target):
+		var old_index: int = Game.combat.characters.index_of(target)
+		Game.combat.characters.move_backward(target)
+		if old_index == Game.combat.characters.index_of(target):
 			break
 	for __ in pull_steps:
-		Game.level.characters.move_forward(target)
+		Game.combat.characters.move_forward(target)
 	while pull_to_front:
-		var old_index: int = Game.level.characters.index_of(target)
-		Game.level.characters.move_forward(target)
-		if old_index == Game.level.characters.index_of(target):
+		var old_index: int = Game.combat.characters.index_of(target)
+		Game.combat.characters.move_forward(target)
+		if old_index == Game.combat.characters.index_of(target):
 			break
 	if crunch_peanuts:
-		for object: GroundObject in Game.level.ground_objects.objects:
+		for object: GroundObject in Game.combat.ground_objects.objects:
 			if object.name == &'Peanuts' and object.character == owner:
 				object.despawn()
 	if reattach_sootgut:
-		for object: GroundObject in Game.level.ground_objects.objects:
+		for object: GroundObject in Game.combat.ground_objects.objects:
 			if object.name == &'Sootgut':
 				object.attach_to(target)
 	if increase_basic_attack_max_uses:
-		target.actions_component.basic_attack.number_of_uses += 1
-		target.actions_component.basic_attack.uses_left += 1
+		target.actions.basic_attack.number_of_uses += 1
+		target.actions.basic_attack.uses_left += 1
 	if cooldown_basic_attack:
-		target.actions_component.basic_attack.remove_uses()
-		target.actions_component.action_cooldowns[target.actions_component.basic_attack] = cooldown_basic_attack
+		target.actions.basic_attack.remove_uses()
+		target.actions.action_cooldowns[target.actions.basic_attack] = cooldown_basic_attack
 	if cooldown_reposition:
-		target.actions_component.reposition.remove_uses()
-		target.actions_component.action_cooldowns[target.actions_component.reposition] = cooldown_reposition
+		target.actions.reposition.remove_uses()
+		target.actions.action_cooldowns[target.actions.reposition] = cooldown_reposition
 	if cooldown_character_skill:
-		target.actions_component.skills[0].remove_uses()
-		target.actions_component.action_cooldowns[target.actions_component.skills[0]] = cooldown_character_skill
+		target.actions.skills[0].remove_uses()
+		target.actions.action_cooldowns[target.actions.skills[0]] = cooldown_character_skill
 	if free_reposition:
-		target.actions_component.reposition.free_action = true
+		target.actions.reposition.free_action = true
 	if cause_miss_action:
-		Game.level.effector_component.missed_actions.append(
-			Game.level.status_tracker_component.cached['last_action']
+		Game.combat.effector.missed_actions.append(
+			Game.combat.status_tracker.cached['last_action']
 		)
 	if cause_lose_turn:
-		Game.level.turn_tracker_component.lose_turn(target)
+		Game.combat.turn_tracker.lose_turn(target)
 	
 	## Persistent effects next
 	for status: Status in applied_statuses:
-		await target.state_component.apply_status(status)
+		await target.state.apply_status(status)
 	for object: PackedScene in created_objects:
-		Game.level.ground_objects.spawn(object, target)
+		Game.combat.ground_objects.spawn(object, target)
 	
 	if remove_source_status:
 		source.owner.state_component.remove_status(source)

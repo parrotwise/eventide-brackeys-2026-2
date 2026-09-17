@@ -60,7 +60,7 @@ func _on_combat_start() -> void:
 		apply_status(passive_status)
 	
 	current_health = max_health
-	character.indicators_component.health_bar.set_health(current_health, max_health)
+	character.indicators.health_bar.set_health(current_health, max_health)
 
 
 func take_damage(damage: int, explosive: bool = false) -> void:
@@ -84,7 +84,7 @@ func take_damage(damage: int, explosive: bool = false) -> void:
 		knocked_out = true
 		knockout.emit()
 
-		Game.level.characters.remove(character)
+		Game.combat.characters.remove(character)
 
 
 func heal(amount: int) -> void:

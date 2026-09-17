@@ -14,7 +14,7 @@ func add_icons_for(effect: Effect) -> void:
 	if not effect:
 		return
 	
-	var on_enemy: bool = effect.target in Game.level.characters.enemies
+	var on_enemy: bool = effect.target in Game.combat.characters.enemies
 	
 	if effect.stacked_damage:
 		icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
@@ -34,7 +34,7 @@ func add_icons_for(effect: Effect) -> void:
 	
 	if effect.stacked_healing_ratio:
 		icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
-		preview_icons[-1].setup(PreviewIcon.IconType.HEALING, ceili(effect.stacked_healing_ratio * effect.target.state_component.max_health), on_enemy)
+		preview_icons[-1].setup(PreviewIcon.IconType.HEALING, ceili(effect.stacked_healing_ratio * effect.target.state.max_health), on_enemy)
 	
 	if effect.swap_places:
 		icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
@@ -42,14 +42,14 @@ func add_icons_for(effect: Effect) -> void:
 	
 	if effect.knockback_steps or effect.knockback_to_rear:
 		var steps: int = 0
-		var probe: Character = Game.level.characters.get_behind(effect.target, true)
+		var probe: Character = Game.combat.characters.get_behind(effect.target, true)
 
 		for i: int in (99 if effect.knockback_to_rear else effect.knockback_steps):
-			if not probe or not probe.state_component.can_move:
+			if not probe or not probe.state.can_move:
 				break
 			
 			steps += 1
-			probe = Game.level.characters.get_behind(probe, true)
+			probe = Game.combat.characters.get_behind(probe, true)
 
 		if steps:
 			icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
@@ -57,14 +57,14 @@ func add_icons_for(effect: Effect) -> void:
 	
 	if effect.pull_steps or effect.pull_to_front:
 		var steps: int = 0
-		var probe: Character = Game.level.characters.get_ahead_of(effect.target, true)
+		var probe: Character = Game.combat.characters.get_ahead_of(effect.target, true)
 
 		for i: int in (99 if effect.pull_to_front else effect.pull_steps):
-			if not probe or not probe.state_component.can_move:
+			if not probe or not probe.state.can_move:
 				break
 			
 			steps += 1
-			probe = Game.level.characters.get_ahead_of(probe, true)
+			probe = Game.combat.characters.get_ahead_of(probe, true)
 
 		if steps:
 			icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)

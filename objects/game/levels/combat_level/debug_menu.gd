@@ -37,61 +37,61 @@ func _on_zoom_button_pressed() -> void:
 
 
 func _on_take_damage_button_pressed() -> void:
-	target_character.state_component.take_damage(25)
+	target_character.state.take_damage(25)
 
 
 func _on_heal_button_pressed() -> void:
-	target_character.state_component.heal(25)
+	target_character.state.heal(25)
 
 
 func _on_apply_status_pressed() -> void:
-	target_character.state_component.apply_status(test_status)
+	target_character.state.apply_status(test_status)
 
 
 func _on_remove_status_pressed() -> void:
-	for status: Status in target_character.state_component.active_statuses:
+	for status: Status in target_character.state.active_statuses:
 		if status.name == test_status.name:
-			target_character.state_component.remove_status(status)
+			target_character.state.remove_status(status)
 			return
 
 
 func _on_select_character_pressed() -> void:
-	Game.level.selector_component.select_ally(
-		Random.randsample(Game.level.characters.allies)
+	Game.combat.selector.select_ally(
+		Random.randsample(Game.combat.characters.allies)
 	)
 
 
 func _on_select_action_pressed() -> void:
-	Game.level.selector_component.select_action(
-		Random.randsample(Game.level.selector_component.current_user.actions)
+	Game.combat.selector.select_action(
+		Random.randsample(Game.combat.selector.current_user.all_actions)
 	)
 
 
 func _on_select_target_pressed() -> void:
-	Game.level.selector_component.select_target(
-		Random.randsample(Game.level.selector_component.current_action.valid_targets())
+	Game.combat.selector.select_target(
+		Random.randsample(Game.combat.selector.current_action.valid_targets())
 	)
 
 
 func _on_spawn_cauldron() -> void:
-	Game.level.ground_objects.spawn(
+	Game.combat.ground_objects.spawn(
 		load('res://objects/game/ground_objects/cauldron.tscn'),
-		Game.level.characters.allies[1]
+		Game.combat.characters.allies[1]
 	)
 
 
 func _on_despawn_cauldron() -> void:
-	Random.randsample(Game.level.ground_objects.objects).despawn()
+	Random.randsample(Game.combat.ground_objects.objects).despawn()
 
 
 func _on_move_cauldron_dude() -> void:
-	Game.level.characters._move_by(
+	Game.combat.characters._move_by(
 		Random.randint(0, 1) * 2 - 1,
-		Random.randsample(Game.level.ground_objects.objects).character
+		Random.randsample(Game.combat.ground_objects.objects).character
 	)
 
 
 func _on_kill_cauldron_dude() -> void:
-	Game.level.characters.remove(
-		Random.randsample(Game.level.ground_objects.objects).character
+	Game.combat.characters.remove(
+		Random.randsample(Game.combat.ground_objects.objects).character
 	)

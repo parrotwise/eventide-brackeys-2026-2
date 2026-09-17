@@ -19,4 +19,4 @@ func _on_combat_start() -> void:
 		equipment[i] = equipment[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	
 	for item: Equipment in equipment:
-		character.state_component.apply_status(item.equipped_status)
+		character.state.apply_status(item.equipped_status)

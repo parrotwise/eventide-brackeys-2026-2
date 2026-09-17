@@ -4,7 +4,8 @@ extends Node
 signal start()
 signal end()
 
-var level: CombatLevel
+var equipment: EquipmentLevel
+var combat: CombatLevel
 var pointer: MousePointer
 
 

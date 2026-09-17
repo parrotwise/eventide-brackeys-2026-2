@@ -12,7 +12,7 @@ var allies: Array[Character]:
 	get: return Array($Allies.get_children(), TYPE_OBJECT, &'Node2D', Character)
 var free_allies: Array[Character]:
 	get: return Array(
-		allies.filter(func(ally: Character): return ally not in Game.level.turn_tracker_component.acted_allies),
+		allies.filter(func(ally: Character): return ally not in Game.combat.turn_tracker.acted_allies),
 		TYPE_OBJECT, &'Node2D', Character
 	)
 var enemies: Array[Character]:
@@ -44,12 +44,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	for character: Character in all:
 		character.sprite.flip_h = character in enemies
-		character.input_component.set_flip(character in enemies)
+		character.input.set_flip(character in enemies)
 
 
 func remove(character: Character) -> void:
-	for status: Status in character.state_component.active_statuses.duplicate():
-		character.state_component.remove_status(status)
+	for status: Status in character.state.active_statuses.duplicate():
+		character.state.remove_status(status)
 	
 	character_removed.emit(character)
 	character.queue_free()
@@ -190,7 +190,7 @@ func _move_by(steps: int, character: Character) -> void:
 	if character not in all:
 		return
 	
-	if not character.state_component.can_move:
+	if not character.state.can_move:
 		return
 	
 	var frendos: Array[Character] = allies if character in allies else enemies
@@ -200,7 +200,7 @@ func _move_by(steps: int, character: Character) -> void:
 	if new_index < 0 or new_index >= frendos.size():
 		return
 	
-	if not frendos[new_index].state_component.can_move:
+	if not frendos[new_index].state.can_move:
 		return
 	
 	if steps > 0:
