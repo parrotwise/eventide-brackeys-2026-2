@@ -48,7 +48,7 @@ func fire(specific_target: Character = null) -> void:
 	await fired_effect.apply(bypass_queue)
 	
 	# Let the actor know of a triggered effect, if the character is still alive
-	if is_instance_valid(fired_effect.owner.actor):
+	if is_instance_valid(fired_effect.owner):
 		fired_effect.owner.actor.fire_effect(fired_effect)
 	
 	if not source:
