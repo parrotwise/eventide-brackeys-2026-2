@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://5luk7pogr2hh"]
 
 [ext_resource type="Script" uid="uid://b2ekcq0ipf8om" path="res://objects/game/levels/equipment_level/equipment_level.gd" id="1_62xg3"]
+[ext_resource type="PackedScene" uid="uid://c54nvxdpt7evw" path="res://objects/game/levels/equipment_level/equipment_input.tscn" id="2_7hxp2"]
 [ext_resource type="PackedScene" uid="uid://bj7rhx32phusy" path="res://objects/game/levels/equipment_level/equipment_selector.tscn" id="2_fniha"]
 [ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="3_2wmpb"]
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="3_fniha"]
@@ -41,6 +42,8 @@
 
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")
+
+[node name="Input" parent="." unique_id=803254853 instance=ExtResource("2_7hxp2")]
 
 [node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_fniha")]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iocsq4dy46kl"]
 
 [ext_resource type="Script" uid="uid://b74fbacvwku76" path="res://objects/game/levels/combat_level/combat_level.gd" id="1_gn8s7"]
-[ext_resource type="Script" uid="uid://ouwu68nmyhkv" path="res://objects/game/levels/combat_level/combat_input.gd" id="2_7qx2x"]
+[ext_resource type="PackedScene" uid="uid://bsedeu71mx4lk" path="res://objects/game/levels/combat_level/combat_input.tscn" id="2_4krdr"]
 [ext_resource type="PackedScene" uid="uid://cg67efp7rslcw" path="res://objects/game/levels/combat_level/combat_effector.tscn" id="2_aokjo"]
 [ext_resource type="PackedScene" uid="uid://d1a0rg1vrosrn" path="res://objects/game/levels/combat_level/combat_queue.tscn" id="2_s0i7f"]
 [ext_resource type="PackedScene" uid="uid://bhcochngxa5w6" path="res://objects/game/levels/combat_level/combat_turn_tracker.tscn" id="4_c7jmv"]
@@ -20,8 +20,7 @@
 [node name="CombatLevel" type="Node" unique_id=1024184618]
 script = ExtResource("1_gn8s7")
 
-[node name="Input" type="Node" parent="." unique_id=1408138918]
-script = ExtResource("2_7qx2x")
+[node name="Input" parent="." unique_id=803254853 instance=ExtResource("2_4krdr")]
 
 [node name="Queue" parent="." unique_id=224857673 instance=ExtResource("2_s0i7f")]
 

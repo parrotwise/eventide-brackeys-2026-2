@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsedeu71mx4lk"]
+
+[ext_resource type="Script" uid="uid://ouwu68nmyhkv" path="res://objects/game/levels/combat_level/combat_input.gd" id="1_g1uyt"]
+
+[node name="Input" type="Node" unique_id=803254853]
+script = ExtResource("1_g1uyt")
