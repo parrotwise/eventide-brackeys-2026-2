@@ -110,7 +110,7 @@ func _ready() -> void:
 	
 	turn_tracker.start_tracking()
 	
-	Game.start.emit()
+	Game.combat_start.emit()
 
 
 func _on_health_changed(previous_health: int, current_health: int, character: Character) -> void:
@@ -135,7 +135,7 @@ func _exit_tree() -> void:
 	if Game.combat == self:
 		Game.combat = null
 
-	Game.end.emit()
+	Game.combat_end.emit()
 
 
 func _on_action_used(

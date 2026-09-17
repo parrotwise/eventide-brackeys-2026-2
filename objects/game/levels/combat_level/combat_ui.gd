@@ -33,7 +33,7 @@ func _ready() -> void:
 	open_settings_button.pressed.connect(open_settings)
 	open_settings_button.button.disabled = false
 
-	Game.start.connect(_on_combat_start)
+	Game.combat_start.connect(_on_combat_start)
 
 
 func setup_bottom_bar(character: Character) -> void:

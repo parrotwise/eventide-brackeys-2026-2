@@ -3,14 +3,14 @@ extends Node
 
 
 signal character_selected(
-	ally: Character
+	character: Character
 )
 
 var current_character: Character
 
 
 func _ready() -> void:
-	Game.start.connect(reset)
+	Game.equipment_start.connect(_on_equipment_start)
 
 
 func select_character(character: Character) -> void:
@@ -27,7 +27,7 @@ func select_character(character: Character) -> void:
 
 func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 	var characters: Array[Character] = Game.equipment.characters
-
+	
 	if not characters:
 		return
 	
@@ -45,6 +45,10 @@ func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 		select_character(characters[index])
 
 
-func reset() -> void:
+func _on_equipment_start() -> void:
 	current_character = null
+	
+	for character: Character in Game.equipment.characters:
+		character.input.submitted.connect(select_character)
+	
 	cycle_through_characters(Enums.Direction.RIGHT)

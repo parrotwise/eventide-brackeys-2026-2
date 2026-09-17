@@ -29,7 +29,7 @@ var character: Character:
 
 
 func _ready() -> void:
-	Game.start.connect(_on_combat_start)
+	Game.combat_start.connect(_on_combat_start)
 
 
 func preview_effect(effect: Effect) -> void:

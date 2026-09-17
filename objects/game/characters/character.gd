@@ -50,7 +50,7 @@ var battle_group: StringName:
 func _ready() -> void:
 	name = id
 	
-	Game.start.connect(_on_combat_start)
+	Game.combat_start.connect(_on_combat_start)
 
 	animator.character = self
 	input.character = self

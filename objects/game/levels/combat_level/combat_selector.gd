@@ -39,7 +39,7 @@ var _responsive: bool = true
 
 
 func _ready() -> void:
-	Game.start.connect(reset)
+	Game.combat_start.connect(reset)
 
 
 func select_action(action: Action, player_input: bool = true) -> void:

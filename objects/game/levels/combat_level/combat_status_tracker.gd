@@ -22,7 +22,7 @@ var cached: Dictionary[String, Variant] = {
 
 
 func _ready() -> void:
-	Game.start.connect(_on_combat_start)
+	Game.combat_start.connect(_on_combat_start)
 
 
 func track(status: Status) -> void:

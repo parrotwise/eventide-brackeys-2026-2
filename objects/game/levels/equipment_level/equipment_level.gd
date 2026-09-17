@@ -23,13 +23,14 @@ var selected_character: Character
 
 func _ready() -> void:
 	Game.equipment = self
+	
+	selector.character_selected.connect(_on_character_selected)
 
 	for item: EquipmentButton in equipment_grid.get_children():
 		item.equipment_selected.connect(save_equipment_selection)
 		item.button.disabled = true
 	
-	for character: Character in characters:
-		character.input.submitted.connect(_on_character_selected)
+	Game.equipment_start.emit()
 
 
 func save_equipment_selection(equipment: Equipment, is_equipped: bool) -> void:
@@ -73,6 +74,8 @@ func check_equipment_grid() -> void:
 
 
 func _on_embark_button_pressed() -> void:
+	Game.equipment_end.emit()
+	# TODO: Don't do ↓this↓ here, connect Game.equipment_end to it in transitions script
 	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
 
 

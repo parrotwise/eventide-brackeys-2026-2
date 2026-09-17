@@ -1,8 +1,10 @@
 extends Node
 
 
-signal start()
-signal end()
+signal combat_start()
+signal combat_end()
+signal equipment_start()
+signal equipment_end()
 
 var equipment: EquipmentLevel
 var combat: CombatLevel
@@ -17,8 +19,11 @@ func _ready() -> void:
 	get_tree().root.add_child.call_deferred(pointer_layer)
 	pointer = pointer_layer.get_child(0) as MousePointer
 
-	start.connect(Debug.info.bind('Game started.'))
-	end.connect(Debug.info.bind('Game ended.'))
+	combat_start.connect(Debug.info.bind('Combat started.'))
+	combat_end.connect(Debug.info.bind('Combat ended.'))
+
+	equipment_start.connect(Debug.info.bind('Equipment allocation started.'))
+	equipment_end.connect(Debug.info.bind('Equipment allocation ended.'))
 
 
 func quit() -> void:
