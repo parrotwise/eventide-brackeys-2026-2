@@ -10,4 +10,4 @@ func _ready() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	TransitionLayer.transition_simple_fade(TransitionLayer.equipment_level)
+	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)

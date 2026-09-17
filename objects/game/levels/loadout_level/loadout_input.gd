@@ -1,4 +1,4 @@
-class_name EquipmentInput
+class_name LoadoutInput
 extends Node
 
 
@@ -8,11 +8,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&'keyboard_reference'):
-		Game.equipment.ui.show_keyboard_reference()
+		Game.loadout.ui.show_keyboard_reference()
 	if event.is_action_released(&'keyboard_reference'):
-		Game.equipment.ui.hide_keyboard_reference()
+		Game.loadout.ui.hide_keyboard_reference()
 	
-	var menu: SettingsMenu = Game.equipment.ui.settings_menu
+	var menu: SettingsMenu = Game.loadout.ui.settings_menu
 	
 	if menu.visible:
 		if menu.focused:
@@ -42,13 +42,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	else:
 		if event.is_action_pressed(&'escape'):
-			Game.equipment.ui.settings_menu.visible = true
+			Game.loadout.ui.settings_menu.visible = true
 				
 		if event.is_action_pressed(&'cycle_forward'):
-			Game.equipment.selector.cycle_through_characters(Enums.Direction.RIGHT)
+			Game.loadout.selector.cycle_through_characters(Enums.Direction.RIGHT)
 
 		if event.is_action_pressed(&'cycle_backward'):
-			Game.equipment.selector.cycle_through_characters(Enums.Direction.LEFT)
+			Game.loadout.selector.cycle_through_characters(Enums.Direction.LEFT)
 
 
 func _on_equipment_start() -> void:

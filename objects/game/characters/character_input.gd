@@ -24,7 +24,7 @@ func set_flip(flip: bool = true) -> void:
 
 func submit_as_target() -> void:
 	if not is_instance_valid(Game.combat):
-		if is_instance_valid(Game.equipment):
+		if is_instance_valid(Game.loadout):
 			submitted.emit(character)
 		return
 	

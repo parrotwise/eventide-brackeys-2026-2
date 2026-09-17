@@ -1,10 +1,10 @@
-class_name EquipmentLevel
+class_name LoadoutLevel
 extends Node
 
 
-var selector: EquipmentSelector:
+var selector: LoadoutSelector:
 	get: return $Selector
-var ui: EquipmentUI:
+var ui: LoadoutUI:
 	get: return $UI
 var characters: Array[Character]:
 	get: return ui.characters
@@ -15,7 +15,7 @@ var selected_character: Character:
 
 
 func _ready() -> void:
-	Game.equipment = self
+	Game.loadout = self
 	
 	selector.character_selected.connect(ui.display_character)
 

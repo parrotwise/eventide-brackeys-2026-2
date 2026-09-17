@@ -6,7 +6,7 @@ signal combat_end()
 signal equipment_start()
 signal equipment_end()
 
-var equipment: EquipmentLevel
+var loadout: LoadoutLevel
 var combat: CombatLevel
 var pointer: MousePointer
 

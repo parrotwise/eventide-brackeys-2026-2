@@ -5,7 +5,7 @@ signal transition_finished()
 
 
 const cutscene_1: String = "res://objects/game/levels/cutscenes/cutscene_1.tscn"
-const equipment_level: String = "res://objects/game/levels/equipment_level/equipment_level.tscn"
+const loadout_level: String = "res://objects/game/levels/loadout_level/loadout_level.tscn"
 const cutscene_3: String = "res://objects/game/levels/cutscenes/cutscene_3.tscn"
 const cutscene_4: String = "res://objects/game/levels/cutscenes/cutscene_4.tscn"
 const combat_level: String = "res://objects/game/levels/combat_level/combat_level.tscn"

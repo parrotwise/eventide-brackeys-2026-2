@@ -1,4 +1,4 @@
-class_name EquipmentSelector
+class_name LoadoutSelector
 extends Node
 
 
@@ -26,7 +26,7 @@ func select_character(character: Character) -> void:
 
 
 func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
-	var characters: Array[Character] = Game.equipment.characters
+	var characters: Array[Character] = Game.loadout.characters
 	
 	if not characters:
 		return
@@ -48,7 +48,7 @@ func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 func _on_equipment_start() -> void:
 	current_character = null
 	
-	for character: Character in Game.equipment.characters:
+	for character: Character in Game.loadout.characters:
 		character.input.submitted.connect(select_character)
 	
 	cycle_through_characters(Enums.Direction.RIGHT)

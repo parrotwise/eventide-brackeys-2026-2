@@ -1,4 +1,4 @@
-class_name EquipmentUI
+class_name LoadoutUI
 extends CanvasLayer
 
 
@@ -29,7 +29,7 @@ var equipment_buttons: Array[EquipmentButton]:
 	)
 
 var selected_character: Character:
-	get: return Game.equipment.selector.current_character
+	get: return Game.loadout.selector.current_character
 
 
 func _ready() -> void:
@@ -92,4 +92,4 @@ func open_settings() -> void:
 
 
 func _on_equipment_start() -> void:
-	embark_button.pressed.connect(Game.equipment.submit_allocation)
+	embark_button.pressed.connect(Game.loadout.submit_allocation)
