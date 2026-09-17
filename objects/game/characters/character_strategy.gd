@@ -17,6 +17,10 @@ func take_turn() -> void:
 		if not skill.can_be_used():
 			continue
 		
+		if not action or not action.can_be_used():
+			action = skill
+			continue
+		
 		match skill.name:
 			&'Pick Up & Cronch':
 				if Random.randfloat() < 0.70: action = skill
