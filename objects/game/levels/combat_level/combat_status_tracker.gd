@@ -81,6 +81,8 @@ func acquire_target(target_type: Enums.TargetType, owner_ref: Character) -> Char
 
 func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = null, specific_status: Status = null) -> void:
 	for status: Status in active_statuses:
+		if not is_instance_valid(status.owner):
+			continue
 		if specific_status not in [null, status]:
 			continue
 		if specific_owner not in [null, status.owner]:
