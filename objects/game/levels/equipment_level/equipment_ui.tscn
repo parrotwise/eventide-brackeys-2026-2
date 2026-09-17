@@ -1,0 +1,458 @@
+[gd_scene format=3 uid="uid://b8ywcsmgu2k6w"]
+
+[ext_resource type="Script" uid="uid://dtxxjmu2aeff4" path="res://objects/game/levels/equipment_level/equipment_ui.gd" id="1_r005t"]
+[ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="2_ubrnq"]
+[ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="3_ru0an"]
+[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="4_mqmhs"]
+[ext_resource type="PackedScene" uid="uid://cnrqlgxush8bk" path="res://objects/game/characters/crewmembers/explode_cat.tscn" id="5_kkjxt"]
+[ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="6_2aqyu"]
+[ext_resource type="PackedScene" uid="uid://c7ar3gk6444vb" path="res://objects/game/characters/crewmembers/hook_cat.tscn" id="7_bur2v"]
+[ext_resource type="PackedScene" uid="uid://d4ae73fjjv1vv" path="res://objects/game/characters/crewmembers/nav_cat.tscn" id="8_dv0om"]
+[ext_resource type="PackedScene" uid="uid://bg02w4miu8a8o" path="res://objects/game/characters/crewmembers/peanut_cat.tscn" id="9_6nhjp"]
+[ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="10_6q3fk"]
+[ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="11_kr2rp"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="12_81bva"]
+[ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="13_2qq68"]
+[ext_resource type="Resource" uid="uid://e4emdjj3bdot" path="res://objects/game/equipments/equipment_burt_the_barnacle.tres" id="14_5jemg"]
+[ext_resource type="Resource" uid="uid://bqe1vub0nhrvb" path="res://objects/game/equipments/equipment_cannonball_necklace.tres" id="15_3urka"]
+[ext_resource type="Resource" uid="uid://p66q3h0sfvma" path="res://objects/game/equipments/equipment_crusty_smoking_pipe.tres" id="16_nuguq"]
+[ext_resource type="Resource" uid="uid://dgr0figk25y2a" path="res://objects/game/equipments/equipment_cursed_totem.tres" id="17_uribw"]
+[ext_resource type="Resource" uid="uid://crf51q2xavihq" path="res://objects/game/equipments/equipment_eelskin.tres" id="18_2qqww"]
+[ext_resource type="Resource" uid="uid://bday1rxo7unn" path="res://objects/game/equipments/equipment_favorite_dagger.tres" id="19_ibpgl"]
+[ext_resource type="Resource" uid="uid://dvicjyo12mk6w" path="res://objects/game/equipments/equipment_gullbone_shiv.tres" id="20_wajpd"]
+[ext_resource type="Resource" uid="uid://cgsibsmdyyvuk" path="res://objects/game/equipments/equipment_hardtack_vest.tres" id="21_u04qu"]
+[ext_resource type="Resource" uid="uid://cmpd8bm3e6f4b" path="res://objects/game/equipments/equipment_knuckle_o_salt.tres" id="22_30ls0"]
+[ext_resource type="Resource" uid="uid://cw3wtakxpmrne" path="res://objects/game/equipments/equipment_mended_boot.tres" id="23_k1p8t"]
+[ext_resource type="Resource" uid="uid://lcdiv1v82sr" path="res://objects/game/equipments/equipment_nipium_keepsake.tres" id="24_bbb8l"]
+[ext_resource type="Resource" uid="uid://c7iumuaf13m6c" path="res://objects/game/equipments/equipment_old_key.tres" id="25_piidu"]
+[ext_resource type="Resource" uid="uid://cvrp3m2dh8si7" path="res://objects/game/equipments/equipment_pocket_of_jerky.tres" id="26_ciuum"]
+[ext_resource type="Resource" uid="uid://c1lcnv8g58ibe" path="res://objects/game/equipments/equipment_rope_loop.tres" id="27_5ukvk"]
+[ext_resource type="Resource" uid="uid://bdi7k66e04hof" path="res://objects/game/equipments/equipment_sailcloth_sash.tres" id="28_e82m2"]
+[ext_resource type="Resource" uid="uid://b2q1x0j24wk83" path="res://objects/game/equipments/equipment_secret_mixture.tres" id="29_rxmhv"]
+[ext_resource type="Resource" uid="uid://csnbit87qa7ic" path="res://objects/game/equipments/equipment_shark_tooth.tres" id="30_xe53u"]
+[ext_resource type="Resource" uid="uid://bebhhe6scpm" path="res://objects/game/equipments/equipment_coin_with_a_bullet_hole.tres" id="31_g7hkc"]
+[ext_resource type="Resource" uid="uid://b50gcx7t18fa7" path="res://objects/game/equipments/equipment_spiked_armband.tres" id="32_sgh7w"]
+[ext_resource type="Resource" uid="uid://dw8yliudaua4g" path="res://objects/game/equipments/equipment_strange_looking_orange.tres" id="33_fymuv"]
+[ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/ui/buttons/big_button.png" id="34_7wcrm"]
+[ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="35_qqjad"]
+[ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="36_1tnxd"]
+
+[node name="UI" type="CanvasLayer" unique_id=1020680442]
+script = ExtResource("1_r005t")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=595140286]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=301853825]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1098011133]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 240
+theme_override_constants/margin_bottom = 24
+
+[node name="CharacterLineup" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1163482645]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Buffer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1777405004]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=249677221]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BigCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control" unique_id=1172588862 instance=ExtResource("2_ubrnq")]
+scale = Vector2(0.6, 0.6)
+
+[node name="State" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="4" unique_id=1290732730]
+passive_status = null
+
+[node name="Actions" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="5" unique_id=1878263473]
+basic_attack = ExtResource("3_ru0an")
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1068115517]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CookCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2" unique_id=1472138325 instance=ExtResource("4_mqmhs")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2018190753]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExplodeCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3" unique_id=732126098 instance=ExtResource("5_kkjxt")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=955554056]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GunCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4" unique_id=946976808 instance=ExtResource("6_2aqyu")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control5" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=13927815]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HookCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5" unique_id=1391760081 instance=ExtResource("7_bur2v")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control6" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=921096605]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NavCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6" unique_id=58018413 instance=ExtResource("8_dv0om")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control7" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1228744198]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PeanutCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7" unique_id=776494932 instance=ExtResource("9_6nhjp")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="Control8" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2090970955]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RumCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=2069606014 instance=ExtResource("10_6q3fk")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat" index="8" unique_id=481135339]
+visible = false
+
+[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators" index="2" unique_id=865305231]
+offset_right = 240.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=193784369]
+layout_mode = 2
+
+[node name="EquipmentSelection" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1633841618]
+custom_minimum_size = Vector2(0, 640)
+custom_maximum_size = Vector2(520, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1798979044]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("11_kr2rp")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1401793384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="EquipmentLineup" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer" unique_id=1721739116]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=1211840200]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_colors/font_outline_color = Color(0.015686275, 0.011764706, 0.050980393, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("12_81bva")
+theme_override_font_sizes/normal_font_size = 32
+text = "Select yer items!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquipmentGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=196893366]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="EquipmentButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1720045075 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("14_5jemg")
+
+[node name="EquipmentButton2" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=588883933 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("15_3urka")
+
+[node name="EquipmentButton3" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1235766137 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("16_nuguq")
+
+[node name="EquipmentButton4" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1429235785 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("17_uribw")
+
+[node name="EquipmentButton5" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=783588232 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("18_2qqww")
+
+[node name="EquipmentButton6" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=926869619 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("19_ibpgl")
+
+[node name="EquipmentButton7" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=543106962 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("20_wajpd")
+
+[node name="EquipmentButton8" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=850510022 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("21_u04qu")
+
+[node name="EquipmentButton9" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=12056024 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("22_30ls0")
+
+[node name="EquipmentButton10" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1423306129 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("23_k1p8t")
+
+[node name="EquipmentButton11" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=648089895 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("24_bbb8l")
+
+[node name="EquipmentButton12" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1173796893 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("25_piidu")
+
+[node name="EquipmentButton13" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=620201716 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("26_ciuum")
+
+[node name="EquipmentButton14" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=757737490 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("27_5ukvk")
+
+[node name="EquipmentButton15" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=49050233 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("28_e82m2")
+
+[node name="EquipmentButton16" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=270341574 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("29_rxmhv")
+
+[node name="EquipmentButton17" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1163531214 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("30_xe53u")
+
+[node name="EquipmentButton18" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=1711559533 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("31_g7hkc")
+
+[node name="EquipmentButton19" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=337897010 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("32_sgh7w")
+
+[node name="EquipmentButton20" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup/EquipmentGrid" unique_id=282220226 instance=ExtResource("13_2qq68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+equipment = ExtResource("33_fymuv")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=439045438]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 64
+
+[node name="CenterStage" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=847321913]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="CharacterBlocker" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=2117679675]
+layout_mode = 2
+
+[node name="CharDetails" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=968581247]
+custom_minimum_size = Vector2(512, 320)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1494869905]
+layout_mode = 2
+texture = ExtResource("11_kr2rp")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails" unique_id=517180133]
+layout_mode = 2
+
+[node name="NameLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails/VBoxContainer" unique_id=211850445]
+layout_mode = 2
+text = "Lorem Ipsum"
+fit_content = true
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails/VBoxContainer" unique_id=1115370375]
+layout_mode = 2
+text = "Why deny man pleasure or something."
+fit_content = true
+
+[node name="EmbarkBG" type="Control" parent="." unique_id=1763911202]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1280.0
+offset_top = 745.0
+offset_right = 1280.0
+offset_bottom = 745.0
+mouse_filter = 1
+
+[node name="EmbarkButton" type="TextureButton" parent="EmbarkBG" unique_id=1782506793]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("34_7wcrm")
+texture_hover = ExtResource("35_qqjad")
+texture_click_mask = ExtResource("36_1tnxd")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EmbarkBG/EmbarkButton" unique_id=873387037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 8.0
+offset_right = 61.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_fonts/normal_font = ExtResource("12_81bva")
+theme_override_font_sizes/normal_font_size = 48
+text = "Embark"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat"]
+[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators"]
