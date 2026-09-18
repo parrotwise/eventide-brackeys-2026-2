@@ -18,6 +18,33 @@ var combat: CombatLevel
 var pointer: MousePointer
 
 var stage: Stage = Stage.LOADOUT1
+
+var available_equipment: Array[Equipment] = Array(
+	[
+		'burt_the_barnacle',
+		'cannonball_necklace',
+		'coin_with_a_bullet_hole',
+		'crusty_smoking_pipe',
+		'cursed_totem',
+		'eelskin',
+		'favorite_dagger',
+		'gullbone_shiv',
+		'hardtack_vest',
+		'knuckle_o_salt',
+		'mended_boot',
+		'nipium_keepsake',
+		'old_key',
+		'pocket_of_jerky',
+		'rope_loop',
+		'sailcloth_sash',
+		'secret_mixture',
+		'shark_tooth',
+		'spiked_armband',
+		'strange_looking_orange',
+	].map(func(item): return load('res://objects/game/equipments/equipment_%s.tres' % [item])),
+	TYPE_OBJECT, &'Resource', Equipment
+)
+
 var inventories: Dictionary[String, Array] = {}	# Character.name : Array[Equipment]
 
 

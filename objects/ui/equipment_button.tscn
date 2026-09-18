@@ -17,6 +17,8 @@ offset_right = -1920.0
 offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_2145i")
 
 [node name="ButtonBG" type="TextureRect" parent="." unique_id=2007978541]
@@ -61,5 +63,3 @@ texture = ExtResource("4_mom4l")
 visible = false
 layout_mode = 0
 hover_area_control = NodePath("../ButtonBG/TextureButton")
-
-[connection signal="toggled" from="ButtonBG/TextureButton" to="." method="_on_texture_button_toggled"]

@@ -2,32 +2,35 @@ class_name EquipmentButton
 extends Control
 
 
-signal equipment_selected(equipment: Equipment, is_equipped: bool)
-
 @export var equipment: Equipment
 
 var button: TextureButton:
 	get: return $ButtonBG/TextureButton
-
-var eq_icon: TextureRect:
+var icon: TextureRect:
 	get: return $ButtonBG/TextureButton/MarginContainer/Icon
 
-var tooltip: Tooltip:
-	get: return $Tooltip
+var tooltip_header: String:
+	get: return equipment.name if equipment else ''
+var tooltip_description: String:
+	get: return equipment.description if equipment else ''
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Check if the button has an equipment assigned. If not, hide self.
-	if !equipment:
+	setup(equipment)
+
+
+func setup(new_equipment: Equipment) -> void:
+	if not new_equipment:
 		hide()
 		return
 	
-	eq_icon.texture = equipment.icon
+	equipment = new_equipment
+
+	for connection: Dictionary in button.toggled.get_connections():
+		button.toggled.disconnect(connection['callable'])
 	
-	tooltip.header = equipment.name
-	tooltip.description = equipment.description
+	button.toggled.connect(Game.loadout.toggle_equipment.bind(equipment))
+	
+	icon.texture = equipment.icon
 
-
-func _on_texture_button_toggled(toggled_on: bool) -> void:
-	equipment_selected.emit(equipment, toggled_on)
+	show()

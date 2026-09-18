@@ -2,6 +2,8 @@ class_name LoadoutUI
 extends CanvasLayer
 
 
+@export var equipment_button_template: PackedScene
+
 var character_lineup: HBoxContainer:
 	get: return %CharacterLineup
 var equipment_grid: GridContainer:
@@ -92,4 +94,15 @@ func open_settings() -> void:
 
 
 func _on_equipment_start() -> void:
+	for button: EquipmentButton in equipment_buttons:
+		equipment_grid.remove_child(button)
+		button.queue_free()
+	
+	for equipment: Equipment in Game.available_equipment:
+		var button := equipment_button_template.instantiate() as EquipmentButton
+		equipment_grid.add_child(button)
+		button.setup(equipment)
+	
+	refresh()
+
 	embark_button.pressed.connect(Game.loadout.submit_allocation)
