@@ -26,7 +26,7 @@ var equipment: CharacterEquipment:
 var indicators: CharacterIndicators:
 	get: return $Indicators
 var strategy: CharacterStrategy:
-	get: return get_node_or_null(^"Strategy") as CharacterStrategy
+	get: return $Strategy
 
 var all_actions: Array[Action]:
 	get: return actions.actions
@@ -58,9 +58,7 @@ func _ready() -> void:
 	actions.character = self
 	equipment.character = self
 	indicators.character = self
-
-	if strategy:
-		strategy.character = self
+	strategy.character = self
 
 
 func _process(delta: float) -> void:

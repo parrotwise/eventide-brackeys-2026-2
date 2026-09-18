@@ -3,7 +3,7 @@ extends Node
 
 
 func _ready() -> void:
-	Game.equipment_start.connect(_on_equipment_start)
+	Game.loadout_start.connect(_on_loadout_start)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -51,5 +51,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			Game.loadout.selector.cycle_through_characters(Enums.Direction.LEFT)
 
 
-func _on_equipment_start() -> void:
+func _on_loadout_start() -> void:
 	pass

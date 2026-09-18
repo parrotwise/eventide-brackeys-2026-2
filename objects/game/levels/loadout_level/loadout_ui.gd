@@ -20,10 +20,14 @@ var open_settings_button: ActionButton:
 	get: return %OpenSettingsButton
 
 var characters: Array[Character]:
-	get: return Array(
-		character_lineup.get_children().reduce(func(accum, node): return accum + node.get_children(), []),
-		TYPE_OBJECT, &'Node2D', Character
-	)
+	get:
+		var found: Array[Character] = []
+		for anchor: Control in character_lineup.get_children():
+			for scaler: Node2D in anchor.get_children():
+				if scaler.get_child_count():
+					found.append(scaler.get_child(0))
+		return found
+
 var equipment_buttons: Array[EquipmentButton]:
 	get: return Array(
 		equipment_grid.get_children(),
@@ -41,7 +45,7 @@ func _ready() -> void:
 	open_settings_button.pressed.connect(open_settings)
 	open_settings_button.button.disabled = false
 
-	Game.equipment_start.connect(_on_equipment_start)
+	Game.loadout_start.connect(_on_loadout_start)
 
 
 func display_character(character: Character) -> void:
@@ -57,6 +61,9 @@ func display_character(character: Character) -> void:
 
 
 func refresh() -> void:
+	if not is_instance_valid(selected_character):
+		return
+	
 	var is_owned_by_selected: bool
 	for button: EquipmentButton in equipment_buttons:
 		# If the item is owned by the currently selected character, we can make sure it is enabled and pressed.
@@ -93,7 +100,16 @@ func open_settings() -> void:
 	settings_menu.show()
 
 
-func _on_equipment_start() -> void:
+func _on_loadout_start() -> void:
+	for character: Character in characters:
+		character.get_parent().remove_child(character)
+		character.queue_free()
+	
+	for i: int in Game.available_characters.size():
+		var character: Character = Game.available_characters[i]
+		character_lineup.get_child(i + 1).get_child(0).add_child(character)
+		character.indicators.hide()
+	
 	for button: EquipmentButton in equipment_buttons:
 		equipment_grid.remove_child(button)
 		button.queue_free()
@@ -102,7 +118,7 @@ func _on_equipment_start() -> void:
 		var button := equipment_button_template.instantiate() as EquipmentButton
 		equipment_grid.add_child(button)
 		button.setup(equipment)
-	
+
 	refresh()
 
 	embark_button.pressed.connect(Game.loadout.submit_allocation)

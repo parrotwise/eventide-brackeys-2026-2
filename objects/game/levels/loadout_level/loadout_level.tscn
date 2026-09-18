@@ -9,10 +9,10 @@
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")
 
-[node name="Input" parent="." unique_id=803254853 instance=ExtResource("2_7hxp2")]
-
-[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_fniha")]
-
 [node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("3_fniha")]
 
 [node name="UI" parent="." unique_id=1020680442 instance=ExtResource("5_h0eue")]
+
+[node name="Input" parent="." unique_id=803254853 instance=ExtResource("2_7hxp2")]
+
+[node name="Selector" parent="." unique_id=157429735 instance=ExtResource("2_fniha")]

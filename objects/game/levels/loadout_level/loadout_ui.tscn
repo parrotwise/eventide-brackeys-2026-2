@@ -1,15 +1,6 @@
 [gd_scene format=3 uid="uid://b8ywcsmgu2k6w"]
 
 [ext_resource type="Script" uid="uid://dtxxjmu2aeff4" path="res://objects/game/levels/loadout_level/loadout_ui.gd" id="1_e3hgc"]
-[ext_resource type="PackedScene" uid="uid://cdlfmt6nsjjhc" path="res://objects/game/characters/crewmembers/big_cat.tscn" id="2_o27js"]
-[ext_resource type="Resource" uid="uid://br7xrv4die1qn" path="res://objects/game/actions/action_basic_attack.tres" id="3_bc6u8"]
-[ext_resource type="PackedScene" uid="uid://cawn1xvp1vpu5" path="res://objects/game/characters/crewmembers/cook_cat.tscn" id="4_0oqqn"]
-[ext_resource type="PackedScene" uid="uid://cnrqlgxush8bk" path="res://objects/game/characters/crewmembers/explode_cat.tscn" id="5_4nts5"]
-[ext_resource type="PackedScene" uid="uid://m1ypkvc3v7ar" path="res://objects/game/characters/crewmembers/gun_cat.tscn" id="6_gg3xg"]
-[ext_resource type="PackedScene" uid="uid://c7ar3gk6444vb" path="res://objects/game/characters/crewmembers/hook_cat.tscn" id="7_1w36b"]
-[ext_resource type="PackedScene" uid="uid://d4ae73fjjv1vv" path="res://objects/game/characters/crewmembers/nav_cat.tscn" id="8_s3jgd"]
-[ext_resource type="PackedScene" uid="uid://bg02w4miu8a8o" path="res://objects/game/characters/crewmembers/peanut_cat.tscn" id="9_vijra"]
-[ext_resource type="PackedScene" uid="uid://cgfvw8ipnvn7c" path="res://objects/game/characters/crewmembers/rum_cat.tscn" id="10_gwd3y"]
 [ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="11_x648l"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="12_02pi6"]
 [ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="13_ughvu"]
@@ -70,115 +61,61 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=249677221]
+[node name="CharacterAnchor1" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=249677221]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BigCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control" unique_id=1172588862 instance=ExtResource("2_o27js")]
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor1" unique_id=899338700]
 scale = Vector2(0.6, 0.6)
 
-[node name="State" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="4" unique_id=1290732730]
-passive_status = null
-
-[node name="Actions" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="5" unique_id=1878263473]
-basic_attack = ExtResource("3_bc6u8")
-
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1068115517]
+[node name="CharacterAnchor2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1068115517]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CookCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2" unique_id=1472138325 instance=ExtResource("4_0oqqn")]
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor2" unique_id=352377646]
 scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2018190753]
+[node name="CharacterAnchor3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2018190753]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ExplodeCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3" unique_id=732126098 instance=ExtResource("5_4nts5")]
-scale = Vector2(0.5, 0.5)
-
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=955554056]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="GunCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4" unique_id=946976808 instance=ExtResource("6_gg3xg")]
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor3" unique_id=149214542]
 scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control5" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=13927815]
+[node name="CharacterAnchor4" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=955554056]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HookCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5" unique_id=1391760081 instance=ExtResource("7_1w36b")]
-scale = Vector2(0.5, 0.5)
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor4" unique_id=1555678710]
+scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control6" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=921096605]
+[node name="CharacterAnchor5" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=13927815]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NavCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6" unique_id=58018413 instance=ExtResource("8_s3jgd")]
-scale = Vector2(0.5, 0.5)
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor5" unique_id=173631862]
+scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control7" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1228744198]
+[node name="CharacterAnchor6" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=921096605]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PeanutCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7" unique_id=776494932 instance=ExtResource("9_vijra")]
-scale = Vector2(0.5, 0.5)
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor6" unique_id=899920189]
+scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat" index="8" unique_id=481135339]
-visible = false
-
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
-
-[node name="Control8" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2090970955]
+[node name="CharacterAnchor7" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1228744198]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RumCat" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8" unique_id=2069606014 instance=ExtResource("10_gwd3y")]
-scale = Vector2(0.5, 0.5)
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor7" unique_id=1314161258]
+scale = Vector2(0.6, 0.6)
 
-[node name="Indicators" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat" index="8" unique_id=481135339]
-visible = false
+[node name="CharacterAnchor8" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2090970955]
+layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="StatusBar" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators" index="2" unique_id=865305231]
-offset_right = 240.0
+[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor8" unique_id=48446375]
+scale = Vector2(0.6, 0.6)
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=193784369]
 layout_mode = 2
@@ -396,20 +333,3 @@ vertical_alignment = 1
 
 [node name="SettingsMenu" parent="." unique_id=233459091 instance=ExtResource("41_1savk")]
 visible = false
-
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control/BigCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control2/CookCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control3/ExplodeCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control4/GunCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control5/HookCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control6/NavCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control7/PeanutCat/Indicators"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat"]
-[editable path="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/Control8/RumCat/Indicators"]

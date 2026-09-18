@@ -10,7 +10,7 @@ var current_character: Character
 
 
 func _ready() -> void:
-	Game.equipment_start.connect(_on_equipment_start)
+	Game.loadout_start.connect(_on_loadout_start)
 
 
 func select_character(character: Character) -> void:
@@ -45,7 +45,7 @@ func cycle_through_characters(direction := Enums.Direction.RIGHT) -> void:
 		select_character(characters[index])
 
 
-func _on_equipment_start() -> void:
+func _on_loadout_start() -> void:
 	current_character = null
 	
 	for character: Character in Game.loadout.characters:

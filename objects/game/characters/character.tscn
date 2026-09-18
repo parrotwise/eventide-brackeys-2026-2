@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dyb3mw26utgcu" path="res://objects/game/actions/skill_keelhaul_tug.tres" id="12_nw1x3"]
 [ext_resource type="Resource" uid="uid://d4lhwyirvsffd" path="res://objects/game/actions/skill_mug_toss.tres" id="13_nw1x3"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="17_o0fxq"]
+[ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="19_7lgdf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("2_5lvk8")
@@ -77,3 +78,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("10_3nt7m")]
+
+[node name="Strategy" parent="." unique_id=1632544301 instance=ExtResource("19_7lgdf")]

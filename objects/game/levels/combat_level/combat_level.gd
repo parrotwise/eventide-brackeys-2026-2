@@ -294,7 +294,7 @@ func _on_turn_started(character: Character) -> void:
 	Debug.debug("%s's turn started." % character.name)
 	if character in characters.allies:
 		selector.resume()
-	if character.strategy:
+	if character in Game.enemies:
 		character.strategy.take_turn()
 
 

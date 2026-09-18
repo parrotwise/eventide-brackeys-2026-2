@@ -17,11 +17,11 @@ func _ready() -> void:
 	
 	selector.character_selected.connect(ui.display_character)
 	
-	Game.equipment_start.emit()
+	Game.loadout_start.emit()
 
 
 func submit_allocation() -> void:
-	Game.equipment_end.emit()
+	Game.loadout_end.emit()
 	# TODO: Don't do ↓this↓ here, connect Game.equipment_end to it in transitions script
 	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
 

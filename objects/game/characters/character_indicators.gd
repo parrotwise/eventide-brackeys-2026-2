@@ -29,6 +29,7 @@ var character: Character:
 
 
 func _ready() -> void:
+	Game.loadout_start.connect(_on_loadout_start)
 	Game.combat_start.connect(_on_combat_start)
 
 
@@ -64,7 +65,12 @@ func show_selection_indicator() -> void:
 	selection_indicator.show()
 
 
+func _on_loadout_start() -> void:
+	hide()
+
+
 func _on_combat_start() -> void:
+	show()
 	Game.combat.effector.action_submitted.connect(_on_action_submitted)
 
 
