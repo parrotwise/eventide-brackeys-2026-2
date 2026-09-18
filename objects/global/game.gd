@@ -59,6 +59,9 @@ var available_equipment: Array[Equipment] = Array(
 	TYPE_OBJECT, &'Resource', Equipment
 )
 
+var allies: Array[Character] = available_characters.duplicate(false)
+var enemies: Array[Character] = []
+
 var inventories: Dictionary[String, Array] = {}	# Character.name : Array[Equipment]
 
 

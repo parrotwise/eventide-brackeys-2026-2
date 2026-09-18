@@ -46,6 +46,7 @@ func _ready() -> void:
 	open_settings_button.button.disabled = false
 
 	Game.loadout_start.connect(_on_loadout_start)
+	Game.loadout_end.connect(_on_loadout_end)
 
 
 func display_character(character: Character) -> void:
@@ -98,7 +99,7 @@ func hide_keyboard_reference() -> void:
 
 func open_settings() -> void:
 	settings_menu.show()
-
+	
 
 func _on_loadout_start() -> void:
 	for character: Character in characters:
@@ -122,3 +123,8 @@ func _on_loadout_start() -> void:
 	refresh()
 
 	embark_button.pressed.connect(Game.loadout.submit_allocation)
+
+
+func _on_loadout_end() -> void:
+	for character: Character in characters:
+		character.get_parent().remove_child(character)

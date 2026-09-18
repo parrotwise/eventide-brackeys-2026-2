@@ -1,8 +1,6 @@
 class_name CombatCharacters
 extends Node
 
-@export var character_crewmembers: Array[PackedScene]
-@export var strategy_scene: PackedScene
 
 signal character_removed(character: Character)
 signal characters_repositioned(char1: Character, char2: Character)
@@ -36,11 +34,6 @@ var enemy_targeted_indicator: Sprite2D:
 	get: return $EnemyTargetedIndicator
 
 
-func _ready() -> void:
-	first_round_crew_select()
-
-
-
 func _process(_delta: float) -> void:
 	for character: Character in all:
 		character.sprite.flip_h = character in enemies
@@ -52,7 +45,16 @@ func remove(character: Character) -> void:
 		character.state.remove_status(status)
 	
 	character_removed.emit(character)
-	character.queue_free()
+	
+	if character in Game.allies:
+		$Allies.remove_child(character)
+		Game.allies.erase(character)
+		Game.available_characters.erase(character)
+	
+	elif character in Game.enemies:
+		$Enemies.remove_child(character)
+		Game.enemies.erase(character)
+		Game.available_characters.erase(character)
 
 
 func target_position(character: Character) -> Vector2:
@@ -213,27 +215,27 @@ func _move_by(steps: int, character: Character) -> void:
 	character.get_parent().move_child(character, new_index)
 
 
-
-func first_round_crew_select() -> void:
-	character_crewmembers.shuffle()
-	for idx in len(character_crewmembers):
-		var character: Character = character_crewmembers[idx].instantiate()
-		character.name = [
-			"AllyFront",
-			"AllyCenterFront",
-			"AllyCenterRear",
-			"AllyRear",
-			"EnemyFront",
-			"EnemyCenterFront",
-			"EnemyCenterRear",
-			"EnemyRear",
-		][idx]
-		
-		if idx < 4:
-			$Allies.add_child(character)
-		else:
-			character.add_child(strategy_scene.instantiate())
-			$Enemies.add_child(character)
+func mutiny() -> void:
+	for character: Character in allies:
+		$Allies.remove_child(character)
 	
-	for character in allies: character.position = target_position(character)
-	for character in enemies: character.position = target_position(character)
+	for character: Character in enemies:
+		$Enemies.remove_child(character)
+	
+	Game.allies.shuffle()
+	
+	var num_enemies: int = ceili(Game.allies.size() / 2.0)
+	for __ in num_enemies:
+		Game.enemies.append(
+			Game.allies.pop_at(
+				Random.randindex(Game.allies)
+			)
+		)
+	
+	for character: Character in Game.allies:
+		$Allies.add_child(character)
+		character.position = target_position(character)
+	
+	for character: Character in Game.enemies:
+		$Enemies.add_child(character)
+		character.position = target_position(character)

@@ -100,6 +100,8 @@ func _ready() -> void:
 		_on_turn_ended
 	)
 
+	characters.mutiny()
+
 	for character: Character in characters.all:
 		character.state.health_changed.connect(_on_health_changed.bind(character))
 		character.state.knockout.connect(_on_knocked_out.bind(character))

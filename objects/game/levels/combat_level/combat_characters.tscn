@@ -12,7 +12,6 @@
 
 [node name="Characters" type="Node2D" unique_id=651192194]
 script = ExtResource("1_l7eby")
-character_crewmembers = Array[PackedScene]([ExtResource("2_lyr0r"), ExtResource("3_3ts0b"), ExtResource("4_cm1mk"), ExtResource("5_bcwhw"), ExtResource("6_ic7m8"), ExtResource("7_sqw3q"), ExtResource("8_y4ddo"), ExtResource("9_lj4iy")])
 
 [node name="Allies" type="Node2D" parent="." unique_id=266524114]
 
