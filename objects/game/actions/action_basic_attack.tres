@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_axnhv"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_vnlhm"]
-[ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/ui/cursors/cursor_valid_attack.png" id="2_axnhv"]
+[ext_resource type="Texture2D" uid="uid://c0i4suf3vuw50" path="res://assets/art/ui/icons/actions/attack_icon.png" id="2_axnhv"]
 
 [resource]
 script = ExtResource("1_vnlhm")

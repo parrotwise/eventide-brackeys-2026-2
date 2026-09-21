@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b6rnx064mlyy7" path="res://objects/game/levels/combat_level/combat_camera.tscn" id="7_q682q"]
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_level/combat_ui.tscn" id="8_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_level/combat_characters.tscn" id="9_m1tc0"]
-[ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="10_f26kh"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
 [ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
@@ -40,7 +39,6 @@ script = ExtResource("1_gn8s7")
 physics_interpolation_mode = 2
 
 [node name="Characters" parent="." unique_id=726374269 instance=ExtResource("9_m1tc0")]
-strategy_scene = ExtResource("10_f26kh")
 
 [node name="AllyCenterFront" parent="Characters/SpawnPoints/Allies" parent_id_path=PackedInt32Array(726374269, 1075970252) index="1" unique_id=1498937753]
 position = Vector2(540, 700)
