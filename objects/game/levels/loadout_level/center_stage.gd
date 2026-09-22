@@ -13,4 +13,7 @@ func refresh() -> void:
 	for child in get_children():
 		child.queue_free()
 	
-	add_child(selected.actor.duplicate())
+	var actor: Actor = selected.actor.duplicate()
+	actor.scale *= 1.3
+
+	add_child(actor)
