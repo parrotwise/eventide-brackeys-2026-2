@@ -6,6 +6,7 @@ const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
 @export var id: StringName
+@export_multiline var blurb: String
 
 var actor: Actor:
 	get: return $Actor
