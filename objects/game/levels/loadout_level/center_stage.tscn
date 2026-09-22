@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwjhj86hyn8h3"]
+
+[ext_resource type="Script" uid="uid://difd86ma7qvh" path="res://objects/game/levels/loadout_level/center_stage.gd" id="1_qrhe7"]
+
+[node name="CenterStage" type="Control" unique_id=591495346]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_qrhe7")

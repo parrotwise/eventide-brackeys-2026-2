@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://mk1qefbaxiab"]
+
+[ext_resource type="Script" uid="uid://bohx13oupp00n" path="res://objects/game/levels/loadout_level/info_panel.gd" id="1_6ocsb"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_xv24u"]
+[ext_resource type="Texture2D" uid="uid://c6qhxsrvbwi83" path="res://assets/art/ui/icons/passives/passive_icon_bc.png" id="3_aayvn"]
+[ext_resource type="Texture2D" uid="uid://bte6o5p05bf7s" path="res://assets/art/ui/icons/actions/skill_icon_bc.png" id="4_t6i4r"]
+
+[node name="InfoPanel" type="VBoxContainer" unique_id=566562747]
+custom_minimum_size = Vector2(442, 0)
+theme_override_constants/separation = 18
+script = ExtResource("1_6ocsb")
+
+[node name="IDLabel" type="RichTextLabel" parent="." unique_id=856342291]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=32]Character Name[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="BlurbLabel" type="RichTextLabel" parent="." unique_id=1887225080]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=20]Blurb[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="PassiveSection" type="HBoxContainer" parent="." unique_id=86638758]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Image" type="TextureRect" parent="PassiveSection" unique_id=2126864738]
+custom_minimum_size = Vector2(70, 105)
+custom_maximum_size = Vector2(70, 105)
+layout_mode = 2
+texture = ExtResource("3_aayvn")
+expand_mode = 3
+
+[node name="Text" type="VBoxContainer" parent="PassiveSection" unique_id=1724835589]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PassiveSection/Text" unique_id=765797391]
+custom_maximum_size = Vector2(356, 64)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=24]Passive Ability[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="Description" type="RichTextLabel" parent="PassiveSection/Text" unique_id=1237441049]
+custom_maximum_size = Vector2(356, 160)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=18]Description[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="SkillSection" type="HBoxContainer" parent="." unique_id=692068257]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Image" type="TextureRect" parent="SkillSection" unique_id=1636540088]
+custom_minimum_size = Vector2(70, 70)
+custom_maximum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("4_t6i4r")
+expand_mode = 3
+
+[node name="Text" type="VBoxContainer" parent="SkillSection" unique_id=1689509930]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="SkillSection/Text" unique_id=865967231]
+custom_maximum_size = Vector2(356, 64)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=24]Skill[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="Description" type="RichTextLabel" parent="SkillSection/Text" unique_id=644618951]
+custom_maximum_size = Vector2(356, 160)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=18]Description[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="EquipmentSection" type="VBoxContainer" parent="." unique_id=160203504]
+layout_mode = 2
+
+[node name="Margin" type="Control" parent="EquipmentSection" unique_id=527749539]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Heading" type="RichTextLabel" parent="EquipmentSection" unique_id=608713201]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=32]Equipped Items[/font_size]"
+fit_content = true
+scroll_active = false
+
+[node name="Buttons" type="HBoxContainer" parent="EquipmentSection" unique_id=1288952880]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+alignment = 1

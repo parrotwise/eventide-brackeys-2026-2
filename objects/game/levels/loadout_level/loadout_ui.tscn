@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://b8ywcsmgu2k6w"]
 
 [ext_resource type="Script" uid="uid://dtxxjmu2aeff4" path="res://objects/game/levels/loadout_level/loadout_ui.gd" id="1_e3hgc"]
+[ext_resource type="PackedScene" uid="uid://dnowuab4x2e56" path="res://objects/game/levels/loadout_level/character_lineup.tscn" id="2_du4em"]
+[ext_resource type="PackedScene" uid="uid://px43xwasi37h" path="res://objects/game/levels/loadout_level/equipment_grid.tscn" id="5_5gy6n"]
+[ext_resource type="PackedScene" uid="uid://bwjhj86hyn8h3" path="res://objects/game/levels/loadout_level/center_stage.tscn" id="6_5gy6n"]
+[ext_resource type="PackedScene" uid="uid://mk1qefbaxiab" path="res://objects/game/levels/loadout_level/info_panel.tscn" id="6_6r2pp"]
 [ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="11_x648l"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="12_02pi6"]
 [ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="13_ughvu"]
@@ -47,86 +51,26 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=301853825]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1098011133]
+[node name="CharacterLineupContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1098011133]
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 240
 theme_override_constants/margin_bottom = 24
 
-[node name="CharacterLineup" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1163482645]
+[node name="CharacterLineup" parent="MarginContainer/VBoxContainer/CharacterLineupContainer" unique_id=1127547518 instance=ExtResource("2_du4em")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Buffer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1777405004]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterAnchor1" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=249677221]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor1" unique_id=899338700]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1068115517]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor2" unique_id=352377646]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2018190753]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor3" unique_id=149214542]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor4" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=955554056]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor4" unique_id=1555678710]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor5" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=13927815]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor5" unique_id=173631862]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor6" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=921096605]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor6" unique_id=899920189]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor7" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=1228744198]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor7" unique_id=1314161258]
-scale = Vector2(0.6, 0.6)
-
-[node name="CharacterAnchor8" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup" unique_id=2090970955]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CharacterScaler" type="Node2D" parent="MarginContainer/VBoxContainer/MarginContainer/CharacterLineup/CharacterAnchor8" unique_id=48446375]
-scale = Vector2(0.6, 0.6)
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=193784369]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=193784369]
 layout_mode = 2
 
-[node name="EquipmentSelection" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1633841618]
+[node name="EquipmentGridContainer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1633841618]
 custom_minimum_size = Vector2(0, 640)
 custom_maximum_size = Vector2(520, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1798979044]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer" unique_id=1798979044]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,7 +84,7 @@ patch_margin_top = 50
 patch_margin_right = 50
 patch_margin_bottom = 50
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection" unique_id=1401793384]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer" unique_id=1401793384]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,13 +96,13 @@ theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 35
 theme_override_constants/margin_bottom = 35
 
-[node name="EquipmentLineup" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer" unique_id=1721739116]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer" unique_id=1721739116]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=1211840200]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1211840200]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_colors/font_outline_color = Color(0.015686275, 0.011764706, 0.050980393, 1)
@@ -170,32 +114,28 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EquipmentGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/EquipmentSelection/MarginContainer/EquipmentLineup" unique_id=196893366]
+[node name="EquipmentGrid" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1674922410 instance=ExtResource("5_5gy6n")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-columns = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=439045438]
+[node name="CenterStageContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=439045438]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_bottom = 64
 
-[node name="CenterStage" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=847321913]
+[node name="CenterStage" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterStageContainer" unique_id=591495346 instance=ExtResource("6_5gy6n")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
 
-[node name="CharacterBlocker" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=2117679675]
+[node name="CharacterBlocker" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterStageContainer" unique_id=2117679675]
 layout_mode = 2
 
-[node name="CharDetails" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=968581247]
-custom_minimum_size = Vector2(512, 320)
+[node name="InfoPanelContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=968581247]
+custom_minimum_size = Vector2(512, 480)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails" unique_id=1494869905]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1494869905]
 layout_mode = 2
 texture = ExtResource("11_x648l")
 patch_margin_left = 50
@@ -203,44 +143,34 @@ patch_margin_top = 50
 patch_margin_right = 50
 patch_margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails" unique_id=517180133]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1178018420]
 layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
 
-[node name="NameLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails/VBoxContainer" unique_id=211850445]
-layout_mode = 2
-text = "Lorem Ipsum"
-fit_content = true
-
-[node name="DescriptionLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/CharDetails/VBoxContainer" unique_id=1115370375]
-layout_mode = 2
-text = "Why deny man pleasure or something."
-fit_content = true
-
-[node name="EmbarkBG" type="Control" parent="." unique_id=1763911202]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1280.0
-offset_top = 745.0
-offset_right = 1280.0
-offset_bottom = 745.0
-mouse_filter = 1
-
-[node name="EmbarkButton" type="TextureButton" parent="EmbarkBG" unique_id=1782506793]
+[node name="InfoPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer/MarginContainer" unique_id=566562747 instance=ExtResource("6_6r2pp")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 2
+
+[node name="EmbarkButton" type="TextureButton" parent="." unique_id=1782506793]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 600.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -600.0
+offset_top = -300.0
+grow_horizontal = 0
+grow_vertical = 0
 texture_normal = ExtResource("34_i52mc")
 texture_hover = ExtResource("35_dcpep")
 texture_click_mask = ExtResource("36_vncq4")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="EmbarkBG/EmbarkButton" unique_id=873387037]
+[node name="RichTextLabel" type="RichTextLabel" parent="EmbarkButton" unique_id=873387037]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

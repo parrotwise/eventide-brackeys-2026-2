@@ -15,7 +15,7 @@ var selected_character: Character:
 func _ready() -> void:
 	Game.loadout = self
 	
-	selector.character_selected.connect(ui.display_character)
+	selector.character_selected.connect(func(_char): ui.refresh())
 	
 	Game.loadout_start.emit()
 

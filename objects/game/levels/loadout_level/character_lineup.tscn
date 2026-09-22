@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dnowuab4x2e56"]
+
+[ext_resource type="Script" uid="uid://bronqldvnyyk4" path="res://objects/game/levels/loadout_level/character_lineup.gd" id="1_dvkeq"]
+
+[node name="CharacterLineup" type="HBoxContainer" unique_id=1127547518]
+script = ExtResource("1_dvkeq")
+
+[node name="Buffer" type="Control" parent="." unique_id=1440816273]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterAnchor1" type="Control" parent="." unique_id=624873180]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor1" unique_id=1667261970]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor2" type="Control" parent="." unique_id=471050229]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor2" unique_id=1588391245]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor3" type="Control" parent="." unique_id=1616123085]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor3" unique_id=303589811]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor4" type="Control" parent="." unique_id=29290550]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor4" unique_id=944903873]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor5" type="Control" parent="." unique_id=50575879]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor5" unique_id=645617579]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor6" type="Control" parent="." unique_id=1939637491]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor6" unique_id=1708492423]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor7" type="Control" parent="." unique_id=934552377]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor7" unique_id=609343304]
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterAnchor8" type="Control" parent="." unique_id=345595883]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterScaler" type="Node2D" parent="CharacterAnchor8" unique_id=712246043]
+scale = Vector2(0.6, 0.6)
