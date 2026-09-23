@@ -11,6 +11,7 @@ script = ExtResource("2_6gggu")
 name = "Shark Tooth"
 description = "You can Attack twice in a turn. Your POW is reduced by 30%."
 icon = ExtResource("3_0fhsb")
+icon_priority = 10
 _power_multiplier = 0.7
 can_attack_twice = true
 triggers = Array[ExtResource("3_usfpx")]([ExtResource("5_0fhsb")])

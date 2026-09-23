@@ -12,5 +12,6 @@ script = ExtResource("2_bpp8d")
 name = "Pocket of Jerky"
 description = "When receiving damage, you heal adjacent teammates for 5 HP."
 icon = ExtResource("3_frrh2")
+icon_priority = 10
 triggers = Array[ExtResource("3_bvn7h")]([ExtResource("5_femp5"), ExtResource("6_ieufl")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

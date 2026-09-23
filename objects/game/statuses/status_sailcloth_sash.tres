@@ -10,5 +10,6 @@ script = ExtResource("2_v4lam")
 name = "Sailcloth Sash"
 description = "Your HP is increased by 40%."
 icon = ExtResource("3_f2gmh")
+icon_priority = 10
 _max_health_multiplier = 1.4
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

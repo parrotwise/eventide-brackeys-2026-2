@@ -10,5 +10,6 @@ script = ExtResource("2_ft6nl")
 name = "Crusty Smoking Pipe"
 description = "Your HP is reduced by 40%. "
 icon = ExtResource("3_ft6nl")
+icon_priority = 10
 _max_health_multiplier = 0.6
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

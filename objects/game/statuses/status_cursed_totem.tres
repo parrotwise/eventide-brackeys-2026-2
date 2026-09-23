@@ -10,6 +10,7 @@ script = ExtResource("3_pnocb")
 name = "Cursed Totem"
 description = "Your HP is 1, but you deal triple damage."
 icon = ExtResource("3_fyk62")
+icon_priority = 10
 _damage_dealt_multiplier = 3.0
 max_health_one = true
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

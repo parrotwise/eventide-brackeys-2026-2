@@ -10,5 +10,6 @@ script = ExtResource("2_ehgyv")
 name = "Knuckle'o'Salt"
 description = "Your Attacks make the target move backwards."
 icon = ExtResource("3_8e5qf")
+icon_priority = 10
 _attack_knockback_steps_adder = 1
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

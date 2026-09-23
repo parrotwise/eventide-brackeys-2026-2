@@ -14,3 +14,4 @@ description = "Attack is a free action you can use every turn. Attack throws a c
 icon = ExtResource("3_h43hp")
 passive_icon_normal = ExtResource("4_wt3w0")
 passive_icon_hover = ExtResource("3_h1gyb")
+icon_priority = 100

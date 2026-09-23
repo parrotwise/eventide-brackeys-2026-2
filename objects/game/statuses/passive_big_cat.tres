@@ -14,3 +14,4 @@ description = "Every 10% of health lost adds 15% to POW and Skill damage. Attack
 icon = ExtResource("3_7q0cn")
 passive_icon_normal = ExtResource("3_4lvpp")
 passive_icon_hover = ExtResource("2_wghqq")
+icon_priority = 100

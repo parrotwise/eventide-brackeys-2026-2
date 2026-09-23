@@ -18,6 +18,8 @@ func add_icon(status: Status) -> void:
 	status_icon.setup(status)
 	icon_container.add_child(status_icon)
 
+	reorder_icons()
+
 
 func remove_icon(status: Status) -> void:
 	if not status:
@@ -28,3 +30,11 @@ func remove_icon(status: Status) -> void:
 			icon_container.remove_child(status_icon)
 			status_icon.queue_free()
 			return
+
+
+func reorder_icons() -> void:
+	var priority_order: Array[StatusIcon] = status_icons
+	priority_order.sort_custom(func(a, b): return a.status.icon_priority > b.status.icon_priority)
+
+	for icon: StatusIcon in priority_order:
+		icon_container.move_child(icon, -1)

@@ -11,6 +11,7 @@ script = ExtResource("3_q47l0")
 name = "Nipium Keepsake"
 description = "Start the battle with 3 stacks of Poison. Get a 25% increase to POW."
 icon = ExtResource("3_46sp4")
+icon_priority = 10
 _power_multiplier = 1.25
 triggers = Array[ExtResource("4_tgt5j")]([ExtResource("5_4an0j")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

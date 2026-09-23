@@ -17,6 +17,7 @@ signal effect_modified(effect: Effect)
 @export var passive_icon_normal: Texture
 @export var passive_icon_hover: Texture
 @export var vfx: PackedScene
+@export var icon_priority: int
 
 @export_group("Effect")
 ## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.

@@ -15,4 +15,5 @@ description = "Receive a stackable +5 POW if you haven’t moved from your spot 
 icon = ExtResource("3_hdf0j")
 passive_icon_normal = ExtResource("3_jmvxq")
 passive_icon_hover = ExtResource("2_461lq")
+icon_priority = 100
 triggers = Array[ExtResource("6_jmvxq")]([ExtResource("7_hdf0j")])

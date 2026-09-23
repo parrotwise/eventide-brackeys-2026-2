@@ -11,6 +11,7 @@ script = ExtResource("1_dpaat")
 name = "Strange-Looking Orange"
 description = "You cannot be healed by others, you heal by 10% of your health every turn."
 icon = ExtResource("3_ss168")
+icon_priority = 10
 can_be_healed = false
 prevent_healing_by_others = true
 triggers = Array[ExtResource("4_rag4e")]([ExtResource("5_ss168")])

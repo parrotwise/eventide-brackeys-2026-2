@@ -12,6 +12,7 @@ script = ExtResource("3_xqcmf")
 name = "Burt the Barnacle"
 description = "Damage you deal inflicts Nasty Cuts. You get a stack of Nasty Cuts at the end of every turn."
 icon = ExtResource("4_xqcmf")
+icon_priority = 10
 triggers = Array[ExtResource("4_4x4o6")]([ExtResource("5_22u0f")])
 damage_dealt_applies_statuses = Array[ExtResource("3_xqcmf")]([ExtResource("2_xqcmf")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

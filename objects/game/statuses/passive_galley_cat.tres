@@ -15,4 +15,5 @@ description = "Scuttler O’Riley starts the battle with a big pot (called Sootg
 icon = ExtResource("3_5cg8q")
 passive_icon_normal = ExtResource("3_jehg0")
 passive_icon_hover = ExtResource("2_a6d7s")
+icon_priority = 100
 triggers = Array[ExtResource("3_x0ers")]([ExtResource("4_vsfkx")])

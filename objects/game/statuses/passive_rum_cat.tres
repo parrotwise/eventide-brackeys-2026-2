@@ -15,4 +15,5 @@ description = "Allies while standing next to you receive a 25% POW bonus and hea
 icon = ExtResource("4_wa2c1")
 passive_icon_normal = ExtResource("4_ba0rm")
 passive_icon_hover = ExtResource("3_wa2c1")
+icon_priority = 100
 grant_adjacent = ExtResource("1_wa2c1")

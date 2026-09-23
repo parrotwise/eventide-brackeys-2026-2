@@ -12,6 +12,7 @@ script = ExtResource("2_3axlj")
 name = "Hardtack Vest"
 description = "First three instances of damage in a fight are negated. After the third hit, the vest cracks and you’re stunned for a turn."
 icon = ExtResource("3_l26uq")
+icon_priority = 10
 _damage_taken_multiplier = 0.0
 triggers = Array[ExtResource("3_7paih")]([ExtResource("5_l26uq"), ExtResource("6_2dtsq")])
 trigger_uses = 3

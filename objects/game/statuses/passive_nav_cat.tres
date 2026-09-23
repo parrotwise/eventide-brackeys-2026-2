@@ -15,4 +15,5 @@ description = "Every cat in front of Gut-you Gutierrez receives a 25% damage neg
 icon = ExtResource("4_l8p6l")
 passive_icon_normal = ExtResource("5_dtoms")
 passive_icon_hover = ExtResource("4_3wp00")
+icon_priority = 100
 grant_ahead = ExtResource("1_xxt0c")

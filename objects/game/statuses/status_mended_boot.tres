@@ -11,5 +11,6 @@ script = ExtResource("2_sgyhp")
 name = "Mended Boot"
 description = "Moving is now a free action."
 icon = ExtResource("3_jep2q")
+icon_priority = 10
 triggers = Array[ExtResource("3_rt5sj")]([ExtResource("5_rt5sj")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

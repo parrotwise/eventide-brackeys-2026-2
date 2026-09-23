@@ -14,6 +14,7 @@ description = "Your attack makes a target stumble backward, shifting positions. 
 icon = ExtResource("3_da5rs")
 passive_icon_normal = ExtResource("4_4g1uf")
 passive_icon_hover = ExtResource("3_gaf5b")
+icon_priority = 100
 condition_owner_health_ratio_min = 0.8
 _attack_damage_dealt_adder = 15
 _skill_damage_dealt_adder = 15

@@ -10,6 +10,7 @@ script = ExtResource("1_q2vyc")
 name = "Eelskin"
 description = "You reflect 30% of the incoming damage onto an adjacent ally."
 icon = ExtResource("3_p45x7")
+icon_priority = 10
 _damage_taken_to_splash_one_side_mult = 0.3
 _damage_taken_multiplier = 0.7
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

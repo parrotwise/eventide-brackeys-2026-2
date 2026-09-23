@@ -10,6 +10,7 @@ script = ExtResource("1_1tr7m")
 name = "Coin with a Bullet Hole"
 description = "Damage you deal and receive has 30% chance to deal +50% damage."
 icon = ExtResource("3_q2sqb")
+icon_priority = 10
 likelihood = 0.3
 _damage_dealt_multiplier = 1.5
 _damage_taken_multiplier = 1.5

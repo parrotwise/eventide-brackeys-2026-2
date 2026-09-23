@@ -11,5 +11,6 @@ script = ExtResource("2_14a2n")
 name = "Spiked Armband"
 description = "When moving, by yourself or affected by an enemy, deal 5 damage to allies you pass."
 icon = ExtResource("3_lm28a")
+icon_priority = 10
 triggers = Array[ExtResource("3_gaylf")]([ExtResource("5_lm28a")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"
