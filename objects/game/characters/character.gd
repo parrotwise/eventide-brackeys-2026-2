@@ -26,6 +26,8 @@ var equipment: CharacterEquipment:
 	get: return $Equipment
 var indicators: CharacterIndicators:
 	get: return $Indicators
+var bandage_button: CharacterBandage:
+	get: return $BandageButton
 var strategy: CharacterStrategy:
 	get: return $Strategy
 
@@ -59,6 +61,7 @@ func _ready() -> void:
 	actions.character = self
 	equipment.character = self
 	indicators.character = self
+	bandage_button.character = self
 	strategy.character = self
 
 

@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cvpqjkipf6mgx" path="res://objects/game/characters/character_state.tscn" id="16_qj74d"]
 [ext_resource type="PackedScene" uid="uid://bixdvlydnvhu1" path="res://objects/game/characters/character_indicators.tscn" id="17_kgt66"]
 [ext_resource type="PackedScene" uid="uid://fabk6s3d7xoe" path="res://objects/game/characters/character_strategy.tscn" id="19_ns3xl"]
+[ext_resource type="PackedScene" uid="uid://c7uwcxcie4sy3" path="res://objects/game/characters/character_bandage.tscn" id="19_ytaky"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1tc0"]
 shader = ExtResource("3_xcks8")
@@ -81,5 +82,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Indicators" parent="." unique_id=481135339 instance=ExtResource("17_kgt66")]
+
+[node name="BandageButton" parent="." unique_id=1513948574 instance=ExtResource("19_ytaky")]
 
 [node name="Strategy" parent="." unique_id=1632544301 instance=ExtResource("19_ns3xl")]

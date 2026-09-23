@@ -23,4 +23,6 @@ func reset() -> void:
 	for i: int in Game.available_characters.size():
 		var character: Character = Game.available_characters[i]
 		get_child(i + 1).get_child(0).add_child(character)
-		character.indicators.hide()
+
+		if Game.stage == Game.Stage.LOADOUT2:
+			character.indicators.hide()
