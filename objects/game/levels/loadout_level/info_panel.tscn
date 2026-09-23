@@ -30,6 +30,70 @@ text = "[font_size=20]Blurb[/font_size]"
 fit_content = true
 scroll_active = false
 
+[node name="StatsSection" type="HBoxContainer" parent="." unique_id=370730293]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="POWSection" type="HBoxContainer" parent="StatsSection" unique_id=479664473]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="RichTextLabel" parent="StatsSection/POWSection" unique_id=37823198]
+custom_minimum_size = Vector2(76, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=24]Attack[br]Power[/font_size]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="StatsSection/POWSection" unique_id=1719402228]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=32]88[/font_size]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPSection" type="HBoxContainer" parent="StatsSection" unique_id=527683284]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="RichTextLabel" parent="StatsSection/HPSection" unique_id=1399709250]
+custom_minimum_size = Vector2(76, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=24]Hit[br]Points[/font_size]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="RichTextLabel" parent="StatsSection/HPSection" unique_id=1608990767]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_xv24u")
+bbcode_enabled = true
+text = "[font_size=32]88[/font_size]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PassiveSection" type="HBoxContainer" parent="." unique_id=86638758]
 layout_mode = 2
 theme_override_constants/separation = 12

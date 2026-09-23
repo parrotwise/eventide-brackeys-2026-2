@@ -6,6 +6,12 @@ var id_label: RichTextLabel:
 	get: return $IDLabel
 var blurb_label: RichTextLabel:
 	get: return $BlurbLabel
+var stats_section: HBoxContainer:
+	get: return $StatsSection
+var pow_value: RichTextLabel:
+	get: return $StatsSection/POWSection/Value
+var hp_value: RichTextLabel:
+	get: return $StatsSection/HPSection/Value
 var passive_section: HBoxContainer:
 	get: return $PassiveSection
 var passive_image: TextureRect:
@@ -38,13 +44,16 @@ func refresh() -> void:
 	for child: Node in get_children():
 		child.hide()
 
-	if selected.id:
-		id_label.text = '[font_size=32]%s[/font_size]' % selected.id
-		id_label.show()
+	id_label.text = '[font_size=32]%s[/font_size]' % selected.id
+	id_label.show()
 	
 	if selected.blurb:
 		blurb_label.text = '[font_size=20]%s[/font_size]' % selected.blurb
 		blurb_label.show()
+	
+	pow_value.text = '[font_size=32]%d[/font_size]' % selected.state.base_power
+	hp_value.text = '[font_size=32]%d[/font_size]' % selected.state.base_max_health
+	stats_section.show()
 	
 	if selected.state.passive_status:
 		passive_image.texture = selected.state.passive_status.passive_icon_normal
