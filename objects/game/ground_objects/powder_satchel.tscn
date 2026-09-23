@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://f4qvx4177opl" path="res://assets/art/ground_objects/powder_placeholder.png" id="3_p2osy"]
 
 [node name="PowderSatchel" type="Node2D" unique_id=1307450514]
-z_index = -10
+z_index = 2
 script = ExtResource("1_jlj40")
 granted_status = ExtResource("2_jlj40")
 despawn_on_status_removed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_p2osy")
-offset = Vector2(0, -90)
+offset = Vector2(0, -50)

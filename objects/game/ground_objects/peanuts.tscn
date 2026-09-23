@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dml2n4jcm7dxn" path="res://assets/art/ground_objects/peanuts_placeholder.png" id="3_rshom"]
 
 [node name="Peanuts" type="Node2D" unique_id=1307450514]
-z_index = -10
+z_index = 1
 script = ExtResource("1_rshom")
 granted_status = ExtResource("2_vf8w0")
 despawn_on_status_removed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_rshom")
-offset = Vector2(0, -224)
+offset = Vector2(0, -108)

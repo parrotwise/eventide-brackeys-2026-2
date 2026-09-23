@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://waknecaedevy" path="res://objects/game/ground_objects/ground_object.gd" id="1_ol3wm"]
 [ext_resource type="Resource" uid="uid://dcrtsgkn70lf4" path="res://objects/game/statuses/status_sootgut.tres" id="2_l0njl"]
-[ext_resource type="Texture2D" uid="uid://dc1copvfunrsv" path="res://assets/art/ground_objects/cauldron_placeholder.png" id="2_m3x8b"]
+[ext_resource type="Texture2D" uid="uid://c7ee1v7se8tg6" path="res://assets/art/characters/animations/character_cook_cat_cauldron_480.png" id="3_l0njl"]
 
 [node name="Sootgut" type="Node2D" unique_id=1307450514]
-z_index = -10
 script = ExtResource("1_ol3wm")
 granted_status = ExtResource("2_l0njl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
-texture = ExtResource("2_m3x8b")
-offset = Vector2(0, -240)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_l0njl")
+offset = Vector2(92, -184)

@@ -35,12 +35,22 @@ func detach() -> void:
 
 
 func attach_to(new_character: Character) -> void:
+	if not is_instance_valid(new_character):
+		return
+	
 	detach()
 	character = new_character
+	
+	if character in Game.combat.characters.allies:
+		scale = Vector2(1.0, 1.0)
+	else:
+		scale = Vector2(-1.0, 1.0)
 
 	var applied_copy: Status = await character.state.apply_status(granted_status)
-	# Apply_status can return null
-	if applied_copy == null: return
+	
+	if applied_copy == null:
+		return
+	
 	if despawn_on_status_removed:
 		applied_copy.removed.connect(func(_c): despawn(true))
 
