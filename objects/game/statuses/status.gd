@@ -190,6 +190,10 @@ func remove() -> void:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_REMOVED:
 			await trigger.fire()
 	
+	for status: Status in granted_statuses:
+		if is_instance_valid(status.owner):
+			status.owner.state.remove_status(status)
+	
 	Game.combat.status_tracker.untrack(self)
 
 	removed.emit(owner)
