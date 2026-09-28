@@ -103,9 +103,9 @@ theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
 theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
-min_value = -100.0
-max_value = 0.0
+max_value = 1.0
 step = 0.02
+value = 0.5
 
 [node name="VolumeContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=712624742]
 layout_mode = 2
@@ -125,9 +125,9 @@ theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
 theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
-min_value = -100.0
-max_value = 0.0
+max_value = 1.0
 step = 0.02
+value = 0.5
 
 [node name="VolumeContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1271050199]
 layout_mode = 2
@@ -147,9 +147,9 @@ theme_override_icons/grabber = ExtResource("8_5qx7l")
 theme_override_icons/grabber_highlight = ExtResource("8_5qx7l")
 theme_override_icons/grabber_disabled = ExtResource("8_5qx7l")
 theme_override_styles/slider = SubResource("StyleBoxFlat_oqr0j")
-min_value = -100.0
-max_value = 0.0
+max_value = 1.0
 step = 0.02
+value = 0.5
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
 unique_name_in_owner = true

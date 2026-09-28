@@ -5,5 +5,6 @@
 
 [node name="MusicPlayer" type="AudioStreamPlayer" unique_id=1608115462]
 stream = ExtResource("1_1hait")
+bus = &"Music"
 playback_type = 1
 script = ExtResource("2_rylt1")

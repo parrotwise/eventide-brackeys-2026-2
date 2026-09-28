@@ -6,4 +6,5 @@
 [node name="SFXPlayer" type="AudioStreamPlayer" unique_id=1813658307]
 stream = ExtResource("1_745ec")
 max_polyphony = 8
+bus = &"SFX"
 script = ExtResource("2_6266f")

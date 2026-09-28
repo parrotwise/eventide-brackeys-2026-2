@@ -115,15 +115,21 @@ func submit_focused() -> void:
 
 
 func _on_master_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value("Vol_Master", value, null)
+	Audio.master_volume = value
+	## TODO: Change to ↓↓ this ↓↓ on Wwise migration, also update slider value range
+	# Wwise.set_rtpc_value("Vol_Master", value, null)
 
 
 func _on_music_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value("Vol_Music", value, null)
+	Audio.music_volume = value
+	## TODO: Change to ↓↓ this ↓↓ on Wwise migration, also update slider value range
+	# Wwise.set_rtpc_value("Vol_Music", value, null)
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value("Vol_SFX", value, null)
+	Audio.sfx_volume = value
+	## TODO: Change to ↓↓ this ↓↓ on Wwise migration, also update slider value range
+	# Wwise.set_rtpc_value("Vol_SFX", value, null)
 
 
 func _on_mouse_enter() -> void:
