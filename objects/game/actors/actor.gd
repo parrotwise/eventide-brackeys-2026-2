@@ -1,10 +1,12 @@
-class_name Actor extends Node2D
-# Used to control a character visually
+class_name Actor
+extends Node2D
+
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var target: Character = null
 var in_stance: bool = false
+
 
 func do_action_as_user(action: Action, _target: Character):
 	# Recall target
@@ -64,11 +66,16 @@ func do_action_as_target(action: Action):
 
 # Animation functions!
 func hurt_target() -> void:
-	if target == null: return
+	if not is_instance_valid(target):
+		return
+	
 	target.actor.hurt()
 
+
 func heal_target() -> void:
-	if target == null: return
+	if not is_instance_valid(target):
+		return
+	
 	target.actor.heal()
 
 
@@ -77,18 +84,17 @@ func hurt_random_target() -> void:
 	if random_target == null: return
 	random_target.actor.hurt()
 
+
 func launch_ground_object() -> void:
 	Game.combat.ground_objects.launch(global_position + Vector2(0.0, -400.0))
 
 
-#
-# Call these to trigger animations
-#
 func basic_attack() -> void:
 	if animation_player.has_animation(&"basic_attack"):
 		animation_player.play(&"basic_attack")
 	if animation_player.has_animation(&"idle"):
 		animation_player.queue(&"idle")
+
 
 func hurt() -> void:
 	if animation_player.has_animation(&"hurt"):
@@ -100,6 +106,7 @@ func hurt() -> void:
 		if animation_player.has_animation(&"idle"):
 			animation_player.queue(&"idle")
 
+
 func special() -> void:
 	if animation_player.has_animation(&"special"):
 		animation_player.play(&"special")
@@ -107,11 +114,13 @@ func special() -> void:
 		animation_player.queue(&"idle")
 	in_stance = false
 
+
 func enter_stance() -> void:
 	if animation_player.has_animation(&"enter_stance"):
 		animation_player.play(&"enter_stance")
 	if animation_player.has_animation(&"stance"):
 		animation_player.queue(&"stance")
+
 
 func exit_stance() -> void:
 	if animation_player.has_animation(&"exit_stance"):
@@ -119,10 +128,15 @@ func exit_stance() -> void:
 	if animation_player.has_animation(&"idle"):
 		animation_player.queue(&"idle")
 
+
 func dead() -> void:
 	pass
 
+
 func heal() -> void:
+	if not is_inside_tree():
+		return
+	
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "position", Vector2(0.0, -100.0), 0.15)
