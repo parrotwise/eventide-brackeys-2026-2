@@ -2,6 +2,8 @@ class_name Character
 extends Node2D
 
 
+signal combat_ready()
+
 const ALLIES_GROUP: StringName = &"allies"
 const ENEMIES_GROUP: StringName = &"enemies"
 
@@ -85,3 +87,5 @@ func _on_combat_start() -> void:
 		actor.scale = Vector2(1.0, 1.0)
 	else:
 		actor.scale = Vector2(-1.0, 1.0)
+	
+	combat_ready.emit()

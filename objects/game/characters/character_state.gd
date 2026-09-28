@@ -64,8 +64,12 @@ func _on_combat_start() -> void:
 	if passive_status != null:
 		apply_status(passive_status)
 	
+	character.combat_ready.connect(_on_character_combat_ready)
+
+
+func _on_character_combat_ready() -> void:
 	current_health = max_health
-	character.indicators.health_bar.set_health(current_health, max_health)
+	character.indicators.health_bar.set_health.call_deferred(current_health, max_health)
 
 
 func take_damage(damage: int, explosive: bool = false) -> void:
