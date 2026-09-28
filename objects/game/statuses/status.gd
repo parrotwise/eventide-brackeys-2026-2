@@ -166,6 +166,7 @@ func apply_to(character: Character) -> void:
 	for i: int in granted_actions.size():
 		granted_actions[i] = granted_actions[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 		granted_actions[i].owner = character
+		granted_actions[i].restore_uses()
 
 	for i: int in triggers.size():
 		triggers[i] = triggers[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
