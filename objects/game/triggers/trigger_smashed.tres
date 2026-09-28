@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_5wc2o")
 effect = ExtResource("1_652pk")
-trigger_type = 3
+trigger_type = 5
 bypass_queue = true
 metadata/_custom_type_script = "uid://lvv535cj6j34"
