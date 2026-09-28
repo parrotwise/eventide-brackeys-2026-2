@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_frrh2"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_bvn7h"]
 [ext_resource type="Texture2D" uid="uid://bcou2qngdm2pb" path="res://assets/art/ui/icons/statuses/status_equipment_pocket_of_jerky.png" id="3_frrh2"]
-[ext_resource type="Resource" uid="uid://bcl6qqqtlsqdv" path="res://objects/game/triggers/trigger_pocket_of_jerky_splash_ahead.tres" id="5_femp5"]
-[ext_resource type="Resource" uid="uid://dfy1v8h2mgind" path="res://objects/game/triggers/trigger_pocket_of_jerky_splash_behind.tres" id="6_ieufl"]
 
 [resource]
 script = ExtResource("2_bpp8d")
@@ -13,5 +11,5 @@ name = "Pocket of Jerky"
 description = "When receiving damage, you heal adjacent teammates for 5 HP."
 icon = ExtResource("3_frrh2")
 icon_priority = 10
-triggers = Array[ExtResource("3_bvn7h")]([ExtResource("5_femp5"), ExtResource("6_ieufl")])
+_damage_taken_splash_heals_both_sides = 5
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

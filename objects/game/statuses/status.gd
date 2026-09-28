@@ -34,6 +34,10 @@ var damage_dealt_adder: int:
 var damage_taken_adder: int:
 	get: return _damage_taken_adder * stack
 
+@export var _damage_taken_splash_heals_both_sides: int = 0
+var damage_taken_splash_heals_both_sides: int:
+	get: return _damage_taken_splash_heals_both_sides * stack
+
 @export var _healing_applied_adder: int = 0
 var healing_applied_adder: int:
 	get: return _healing_applied_adder * stack
@@ -322,6 +326,15 @@ func modify_effect(effect: Effect) -> Effect:
 			for status: Status in damage_taken_applies_statuses:
 				effect.applied_statuses.append(status)
 				mods_applied = true
+			
+			if damage_taken_splash_heals_both_sides:
+				for adjacent: Character in Game.combat.characters.get_adjacent_to(effect.target):
+					var splash_effect: Effect = Effect.create(self, effect.owner, adjacent)
+					
+					splash_effect.healing = damage_taken_splash_heals_both_sides
+					
+					effect.extra_effects.append(splash_effect)
+					mods_applied = true
 			
 			if damage_taken_to_splash_both_sides_mult:
 				for adjacent: Character in Game.combat.characters.get_adjacent_to(effect.target):
