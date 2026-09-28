@@ -66,16 +66,19 @@ script = ExtResource("1_mhon3")
 [node name="TopPanel" type="PanelContainer" parent="." unique_id=1366081002]
 offset_right = 1920.0
 offset_bottom = 80.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5p4nv")
 
 [node name="TextureRect" type="TextureRect" parent="TopPanel" unique_id=1408344608]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_jbiga")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopPanel" unique_id=1493146712]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 16)
+mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 2
 
@@ -107,6 +110,7 @@ offset_top = -244.0
 offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8q2q6")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="BottomPanel" unique_id=1905378653]
@@ -124,17 +128,20 @@ texture = ExtResource("2_xuj1j")
 
 [node name="MarginContainer" type="MarginContainer" parent="BottomPanel" unique_id=647129931]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 676
 theme_override_constants/margin_top = 88
 theme_override_constants/margin_right = 676
 
 [node name="ButtonGroups" type="HBoxContainer" parent="BottomPanel/MarginContainer" unique_id=1732133601]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ActionButtons" type="HFlowContainer" parent="BottomPanel/MarginContainer/ButtonGroups" unique_id=1993286851]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
@@ -166,6 +173,7 @@ background_texture = null
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1

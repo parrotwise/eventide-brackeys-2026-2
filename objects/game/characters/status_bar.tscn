@@ -5,13 +5,16 @@
 [node name="StatusBar" type="Control" unique_id=537244635]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_1b8m5")
 
 [node name="StatusIconContainerAnchor" type="Control" parent="." unique_id=342189675]
 layout_mode = 1
+anchors_preset = 0
 offset_left = -120.0
 offset_top = 24.0
 offset_right = 120.0
+mouse_filter = 2
 
 [node name="StatusIconContainer" type="HFlowContainer" parent="StatusIconContainerAnchor" unique_id=1978155357]
 layout_mode = 1
@@ -20,4 +23,5 @@ anchor_right = 1.0
 offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 alignment = 1

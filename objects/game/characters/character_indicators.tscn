@@ -43,6 +43,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_l5r23")
 
 [node name="StunIcon" type="Sprite2D" parent="." unique_id=788883167]
@@ -57,7 +58,6 @@ libraries/Stun = ExtResource("4_1cxyt")
 
 [node name="HealthBar" parent="." unique_id=537244635 instance=ExtResource("4_33amg")]
 layout_mode = 1
-anchors_preset = 0
 
 [node name="StatusBar" parent="." unique_id=865305231 instance=ExtResource("5_jx2bi")]
 layout_mode = 0
