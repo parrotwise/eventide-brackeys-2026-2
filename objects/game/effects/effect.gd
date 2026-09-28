@@ -150,7 +150,7 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.combat.ground_objects.spawn(object, target)
 	
 	if remove_source_status:
-		source.owner.state_component.remove_status(source)
+		source.owner.state.remove_status(source)
 
 	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
