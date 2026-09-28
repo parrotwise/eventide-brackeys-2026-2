@@ -217,10 +217,6 @@ func modify_effect(effect: Effect) -> Effect:
 	
 	var mods_applied: bool = false
 	
-	if effect.source.name == &'Sling Slop' and no_more_please:
-		effect.applied_statuses.append(Status.create('status_stunned'))
-		mods_applied = true
-	
 	if owner == effect.owner:
 		var base_damage_dealt: bool = (effect.damage or effect.damage_explosive) and is_instance_valid(effect.target)
 		var base_healing_applied: bool = (effect.healing) and is_instance_valid(effect.target)
@@ -365,6 +361,10 @@ func modify_effect(effect: Effect) -> Effect:
 			for status: Status in healing_received_applies_statuses:
 				effect.applied_statuses.append(status)
 				mods_applied = true
+
+		if no_more_please and effect.applied_statuses.any(func(s): return s.no_more_please):
+			effect.applied_statuses.append(Status.create('status_stunned'))
+			mods_applied = true
 	
 	if mods_applied:
 		effect_modified.emit(effect)
