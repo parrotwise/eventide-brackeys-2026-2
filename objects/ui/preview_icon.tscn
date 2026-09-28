@@ -21,15 +21,16 @@
 [ext_resource type="Texture2D" uid="uid://booohio3yxiys" path="res://assets/art/ui/icons/previews/preview_icon_status_no_more_please.png" id="19_scsho"]
 [ext_resource type="Texture2D" uid="uid://dqpnav1cnhy1v" path="res://assets/art/ui/icons/previews/preview_icon_status_poisoned.png" id="20_bqoqo"]
 [ext_resource type="Texture2D" uid="uid://chhfwyrjk2f6n" path="res://assets/art/ui/icons/previews/preview_icon_status_smashed.png" id="21_ssgff"]
+[ext_resource type="Texture2D" uid="uid://cc2htc41su8d" path="res://assets/art/ui/icons/previews/preview_icon_status_stunned.png" id="22_03f8a"]
 
 [node name="PreviewIcon" type="Control" unique_id=1860539444]
 custom_minimum_size = Vector2(44, 44)
 layout_mode = 3
+anchors_preset = 0
 offset_right = 44.0
 offset_bottom = 44.0
 mouse_filter = 2
 script = ExtResource("1_an6n3")
-icon_template = null
 icon_textures = Dictionary[int, Texture2D]({
 0: null,
 1: ExtResource("2_4cmkv"),
@@ -51,7 +52,8 @@ icon_textures = Dictionary[int, Texture2D]({
 17: ExtResource("18_rs5oj"),
 18: ExtResource("19_scsho"),
 19: ExtResource("20_bqoqo"),
-20: ExtResource("21_ssgff")
+20: ExtResource("21_ssgff"),
+21: ExtResource("22_03f8a")
 })
 mirroring_icons = Array[int]([8, 9])
 
