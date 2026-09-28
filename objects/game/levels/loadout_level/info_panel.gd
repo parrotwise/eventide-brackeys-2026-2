@@ -51,8 +51,8 @@ func refresh() -> void:
 		blurb_label.text = '[font_size=20]%s[/font_size]' % selected.blurb
 		blurb_label.show()
 	
-	pow_value.text = '[font_size=32]%d[/font_size]' % selected.state.base_power
-	hp_value.text = '[font_size=32]%d[/font_size]' % selected.state.base_max_health
+	pow_value.text = '[font_size=32]%d[/font_size]' % selected.state.power
+	hp_value.text = '[font_size=32]%d[/font_size]' % selected.state.max_health
 	stats_section.show()
 	
 	if selected.state.passive_status:

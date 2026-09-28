@@ -52,7 +52,12 @@ var active_statuses: Array[Status]:
 
 
 func _ready() -> void:
+	Game.loadout_end.connect(_on_loadout_end)
 	Game.combat_start.connect(_on_combat_start)
+
+
+func _on_loadout_end() -> void:
+	active_statuses.clear()
 
 
 func _on_combat_start() -> void:
