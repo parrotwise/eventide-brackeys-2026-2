@@ -130,8 +130,9 @@ func set_state(state: State) -> void:
 		Wwise.set_state(state_group, state_value)
 
 
-func set_switch(switch: Switch, switch_value: String, source: Node = null) -> void:
-	var switch_group: String = _switch_group(switch)
+func set_switch(switch: Switch, source: Node = null) -> void:
+	var switch_group: String = _switch(switch)['group']
+	var switch_value: String = _switch(switch)['value']
 	if switch_group:
 		Wwise.set_switch(switch_group, switch_value, source if source else self)
 
@@ -219,14 +220,23 @@ func _state(state: State) -> Dictionary[String, String]:
 	}
 
 
-func _switch_group(switch: Switch) -> String:
+func _switch(switch: Switch) -> Dictionary[String, String]:
 	match switch:
 		Switch.NORMAL:
-			return 'Effect_Switches'
+			return {
+				'group': 'Effect_Switches',
+				'value': 'Normal'
+			}
 		Switch.SMASHED:
-			return 'Effect_Switches'
+			return {
+				'group': 'Effect_Switches',
+				'value': 'Smashed'
+			}
 	
-	return ''
+	return {
+		'group': '',
+		'value': ''
+	}
 
 
 ## TODO: Deprecated! Replaced with the functions above.

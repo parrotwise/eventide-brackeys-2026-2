@@ -16,7 +16,6 @@ signal applied()
 @export var post_event: Audio.Event
 @export var set_state: Audio.State
 @export var set_switch: Audio.Switch
-@export var switch_value: String
 
 @export_group("Effect Definition")
 
@@ -157,7 +156,7 @@ func apply(bypass_queue: bool = false) -> void:
 	##       ...replaced with these below
 	Audio.post_event(post_event, owner)
 	Audio.set_state(set_state)
-	Audio.set_switch(set_switch, switch_value, target)
+	Audio.set_switch(set_switch, target)
 	
 	for extra_effect: Effect in extra_effects:
 		await extra_effect.apply(bypass_queue)

@@ -22,7 +22,6 @@ signal effect_modified(effect: Effect)
 @export_group("Audio")
 
 @export var set_switch: Audio.Switch
-@export var switch_value: String
 
 @export_group("Effect")
 ## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.
@@ -186,8 +185,8 @@ func apply_to(character: Character) -> void:
 	
 	Game.combat.status_tracker.track(self)
 	
-	if set_switch not in [Audio.Switch.NONE]:
-		Audio.set_switch(set_switch, switch_value, character)
+	if set_switch not in [Audio.Switch.NONE, Audio.Switch.NORMAL]:
+		Audio.set_switch(set_switch, character)
 
 	for trigger: Trigger in triggers:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_APPLIED:
@@ -203,8 +202,8 @@ func remove() -> void:
 		if is_instance_valid(status.owner):
 			status.owner.state.remove_status(status)
 	
-	if set_switch not in [Audio.Switch.NONE]:
-		Audio.set_switch(set_switch, '', owner)
+	if set_switch not in [Audio.Switch.NONE, Audio.Switch.NORMAL]:
+		Audio.set_switch(Audio.Switch.NORMAL, owner)
 	
 	Game.combat.status_tracker.untrack(self)
 
