@@ -4,22 +4,38 @@ extends Node
 ## TODO: Add one item per Wwise event.
 enum Event {
 	NONE,
-	WWISE_EVENT1,
-	WWISE_EVENT2,
+	Attack_BC,
+	Attack_BHC,
+	Attack_EC,
+	Attack_GC,
+	Attack_NC,
+	Attack_PC,
+	Attack_RC,
+	Attack_SC,
+	Skill_BC_Charge,
+	Skill_BC_Slam,
+	Skill_BHC,
+	Skill_EC,
+	Skill_GC,
+	Skill_NC,
+	Skill_PC,
+	Skill_RC,
+	Skill_SC,
 }
 
 ## TODO: Add one item per Wwise StateGroup+State combination.
 enum State {
 	NONE,
-	WWISE_STATE1,
-	WWISE_STATE2,
+	Intro,
+	PreCombat,
+	Combat,
 }
 
 ## TODO: Add one item per Wwise SwitchGroup.
 enum Switch {
 	NONE,
-	WWISE_SWITCH1,
-	WWISE_SWITCH2,
+	Normal,
+	Smashed,
 }
 
 ## TODO: Deprecated! Replace with the enums above.
@@ -129,25 +145,60 @@ func stop_music() -> void:
 
 func _event_name(event: Event) -> String:
 	match event:
-		Event.WWISE_EVENT1:
-			return 'WwiseEvent1Name'
-		Event.WWISE_EVENT2:
-			return 'WwiseEvent2Name'
+		Event.Attack_BC:
+			return 'Attack_BC'
+		Event.Attack_BHC:
+			return 'Attack_BHC'
+		Event.Attack_EC:
+			return 'Attack_EC'
+		Event.Attack_GC:
+			return 'Attack_GC'
+		Event.Attack_NC:
+			return 'Attack_NC'
+		Event.Attack_PC:
+			return 'Attack_PC'
+		Event.Attack_RC:
+			return 'Attack_RC'
+		Event.Attack_SC:
+			return 'Attack_SC'
+		Event.Skill_BC_Charge:
+			return 'SKill_BC_Charge'
+		Event.Skill_BC_Slam:
+			return 'SKill_BC_Slam'
+		Event.Skill_BHC:
+			return 'SKill_BHC'
+		Event.Skill_EC:
+			return 'SKill_EC'
+		Event.Skill_GC:
+			return 'SKill_GC'
+		Event.Skill_NC:
+			return 'SKill_NC'
+		Event.Skill_PC:
+			return 'SKill_PC'
+		Event.Skill_RC:
+			return 'SKill_RC'
+		Event.Skill_SC:
+			return 'SKill_SC'
 	
 	return ''
 
 
 func _state(state: State) -> Dictionary[String, String]:
 	match state:
-		State.WWISE_STATE1:
+		State.Intro:
 			return {
-				'group': 'WwiseState1GroupName',
-				'value': 'WwiseState1Name'
+				'group': 'Music_States',
+				'value': 'Intro'
 			}
-		State.WWISE_STATE2:
+		State.Combat:
 			return {
-				'group': 'WwiseState2GroupName',
-				'value': 'WwiseState2Name'
+				'group': 'Music_States',
+				'value': 'Combat'
+			}
+		State.PreCombat:
+			return {
+				'group': 'Music_States',
+				'value': 'PreCombat'
 			}
 	
 	return {
@@ -158,10 +209,10 @@ func _state(state: State) -> Dictionary[String, String]:
 
 func _switch_group(switch: Switch) -> String:
 	match switch:
-		Switch.WWISE_SWITCH1:
-			return 'WwiseSwitch1GroupName'
-		Switch.WWISE_SWITCH2:
-			return 'WwiseSwitch2GroupName'
+		Switch.Normal:
+			return 'Effect_Switches'
+		Switch.Smashed:
+			return 'Effect_Switches'
 	
 	return ''
 
