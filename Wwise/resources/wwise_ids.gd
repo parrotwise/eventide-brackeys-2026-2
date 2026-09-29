@@ -1,16 +1,55 @@
 class_name AK
 
 class EVENTS:
-	pass
+
+	const ATTACK_BC : int = 1700148525
+	const ATTACK_BHC : int = 2897586865
+	const ATTACK_EC : int = 1750481508
+	const ATTACK_GC : int = 1784036686
+	const ATTACK_NC : int = 1633038177
+	const ATTACK_PC : int = 1398151323
+	const ATTACK_RC : int = 1431706749
+	const ATTACK_SC : int = 1448484306
+	const SKILL_BC_CHARGE : int = 639682705
+	const SKILL_BC_SLAM : int = 3801119090
+	const SKILL_BHC : int = 161945808
+	const SKILL_EC : int = 1473217023
+	const SKILL_GC : int = 1506772129
+	const SKILL_NC : int = 1657770638
+	const SKILL_PC : int = 1154442192
+	const SKILL_RC : int = 1187997370
+	const SKILL_SC : int = 1171219749
+	const EAT_CRUNCH : int = 3099592491
+	const UI_BUTTON : int = 2505162442
+	const MUS_START : int = 1973954843
 
 class STATES:
-	pass
+
+	class MUSIC_STATES:
+		const GROUP : int = 1690668539
+	
+		class STATE:
+			const COMBAT : int = 2764240573
+			const INTRO : int = 1125500713
+			const NONE : int = 748895195
+			const PRECOMBAT : int = 3406085544
+
 
 class SWITCHES:
-	pass
+
+	class EFFECT_SWITCHES:
+		const GROUP : int = 2347947453
+	
+		class SWITCH:
+			const NORMAL : int = 1160234136
+			const SMASHED : int = 730050812
+
 
 class GAME_PARAMETERS:
 
+	const VOL_MASTER : int = 3391499625
+	const VOL_MUSIC : int = 1004648580
+	const VOL_SFX : int = 3273357900
 	const SS_AIR_FEAR : int = 1351367891
 	const SS_AIR_FREEFALL : int = 3002758120
 	const SS_AIR_FURY : int = 1029930033

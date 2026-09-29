@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}",
     "Language": "SFX",
-    "Hash": "{06E92654-2CD9-F7FE-1FAE-303DC5267597}",
+    "Hash": "{76090BAF-2047-DBB6-FA49-232D350DEED5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\main",
     "ShortName": "main",
     "Path": "main.bnk",
@@ -144,6 +144,14 @@
       "CachePath": "7A/{7ADE446A-8A6D-CB10-CFB6-F03D1E3DAC2A}.wem"
      },
      {
+      "Id": "714840394",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI_TestClick2.wav",
+      "CachePath": "9E/{9E7DFE64-5D0E-BC8D-C16F-667A620C9BBB}.wem"
+     },
+     {
       "Id": "728740746",
       "Language": "SFX",
       "Streaming": "false",
@@ -192,6 +200,14 @@
       "CachePath": "15/{1523D679-5819-7C22-7196-C4634704692D}.wem"
      },
      {
+      "Id": "875275555",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI_TestClick.wav",
+      "CachePath": "02/{025C945D-655F-4B04-C65F-599258836F01}.wem"
+     },
+     {
       "Id": "876127854",
       "Language": "SFX",
       "Streaming": "false",
@@ -206,6 +222,14 @@
       "Location": "Memory",
       "ShortName": "BC_Attack_Var3.wav",
       "CachePath": "77/{77DD1D0A-B603-8836-336D-AAB900377E92}.wem"
+     },
+     {
+      "Id": "885638041",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Eat_Crunch.wav",
+      "CachePath": "11/{11230E5E-F019-72EB-E2B0-715B55CEEEDE}.wem"
      },
      {
       "Id": "979657370",
@@ -249,6 +273,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -281,6 +306,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -310,6 +336,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -357,6 +384,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -383,6 +411,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -412,6 +441,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -438,6 +468,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -455,6 +486,20 @@
       ]
      },
      {
+      "Id": "3099592491",
+      "Name": "Eat_Crunch",
+      "ObjectPath": "\\Events\\Default Work Unit\\Misc\\Eat_Crunch",
+      "GUID": "{AC9D6FAB-FE78-49AD-8AD7-BED808FAA777}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9430829",
+      "DurationMax": "1.2588646",
+      "MediaRefs": [
+       {
+        "Id": "885638041"
+       }
+      ]
+     },
+     {
       "Id": "1973954843",
       "Name": "Mus_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\Music Events\\Mus_Start",
@@ -467,7 +512,8 @@
          "GroupType": "State",
          "GroupId": "1690668539",
          "Id": "2764240573",
-         "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}"
+         "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}",
+         "Color": "1"
         },
         "MediaRefs": [
          {
@@ -511,6 +557,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -537,6 +584,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -588,7 +636,9 @@
          "GroupType": "Switch",
          "GroupId": "2347947453",
          "Id": "1160234136",
-         "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}"
+         "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
+         "Default": "true"
         },
         "MediaRefs": [
          {
@@ -644,6 +694,7 @@
          "GroupId": "2347947453",
          "Id": "1160234136",
          "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+         "Color": "4",
          "Default": "true"
         },
         "MediaRefs": [
@@ -654,6 +705,23 @@
           "Id": "538100598"
          }
         ]
+       }
+      ]
+     },
+     {
+      "Id": "2505162442",
+      "Name": "UI_Button",
+      "ObjectPath": "\\Events\\Default Work Unit\\Misc\\UI_Button",
+      "GUID": "{6BFA151A-434E-4AA7-9E21-F050BF0D7D38}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.05196349",
+      "DurationMax": "0.05917543",
+      "MediaRefs": [
+       {
+        "Id": "714840394"
+       },
+       {
+        "Id": "875275555"
        }
       ]
      }
@@ -685,19 +753,22 @@
       "Id": "1004648580",
       "Name": "Vol_Music",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Music",
-      "GUID": "{A4B37177-BBDA-4351-86AF-15DF0E7A0440}"
+      "GUID": "{A4B37177-BBDA-4351-86AF-15DF0E7A0440}",
+      "Color": "14"
      },
      {
       "Id": "3273357900",
       "Name": "Vol_SFX",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_SFX",
-      "GUID": "{791DC70D-5BE2-4BBE-A0A1-789CC36A662A}"
+      "GUID": "{791DC70D-5BE2-4BBE-A0A1-789CC36A662A}",
+      "Color": "14"
      },
      {
       "Id": "3391499625",
       "Name": "Vol_Master",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Bus Volumes\\Vol_Master",
-      "GUID": "{B4DB30D7-8C6F-4DC3-BCD6-FEC2DC995230}"
+      "GUID": "{B4DB30D7-8C6F-4DC3-BCD6-FEC2DC995230}",
+      "Color": "14"
      }
     ],
     "StateGroups": [
@@ -706,30 +777,35 @@
       "Name": "Music_States",
       "ObjectPath": "\\States\\Default Work Unit\\Music_States",
       "GUID": "{2A7F4E0D-A86A-43E4-96FE-E5530639CB67}",
+      "Color": "1",
       "States": [
        {
         "Id": "748895195",
         "Name": "None",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\None",
-        "GUID": "{825EB21C-049C-43BF-9AB2-FE5A0E49564C}"
+        "GUID": "{825EB21C-049C-43BF-9AB2-FE5A0E49564C}",
+        "Color": "1"
        },
        {
         "Id": "1125500713",
         "Name": "Intro",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Intro",
-        "GUID": "{16992E84-B31E-4B45-A5DE-B9197AB76532}"
+        "GUID": "{16992E84-B31E-4B45-A5DE-B9197AB76532}",
+        "Color": "1"
        },
        {
         "Id": "2764240573",
         "Name": "Combat",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\Combat",
-        "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}"
+        "GUID": "{F7137A02-4975-4D16-BE9A-100BABE701A1}",
+        "Color": "1"
        },
        {
         "Id": "3406085544",
         "Name": "PreCombat",
         "ObjectPath": "\\States\\Default Work Unit\\Music_States\\PreCombat",
-        "GUID": "{2DF58EA2-40FA-43E1-BA95-27A0F552649E}"
+        "GUID": "{2DF58EA2-40FA-43E1-BA95-27A0F552649E}",
+        "Color": "1"
        }
       ]
      }
@@ -740,24 +816,27 @@
       "Name": "Effect_Switches",
       "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches",
       "GUID": "{A6B973AE-91FF-45EB-886F-623D230D7755}",
+      "Color": "4",
       "Switches": [
        {
         "Id": "730050812",
         "Name": "Smashed",
         "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches\\Smashed",
-        "GUID": "{53DE62AA-32A9-4855-A81B-B6486315EB07}"
+        "GUID": "{53DE62AA-32A9-4855-A81B-B6486315EB07}",
+        "Color": "4"
        },
        {
         "Id": "1160234136",
         "Name": "Normal",
         "ObjectPath": "\\Switches\\Default Work Unit\\Effect_Switches\\Normal",
-        "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}"
+        "GUID": "{39A47366-D668-4AF2-BB5A-D2D17CDC58B5}",
+        "Color": "4"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{6074D4A2-67EB-2233-6D26-BE8BB7DD1E55}"
+  "FileHash": "{3727A7AA-F8F9-E2C5-94D8-FB0CB7685DF5}"
  }
 }

@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID ATTACK_PC = 1398151323U;
         static const AkUniqueID ATTACK_RC = 1431706749U;
         static const AkUniqueID ATTACK_SC = 1448484306U;
+        static const AkUniqueID EAT_CRUNCH = 3099592491U;
         static const AkUniqueID MUS_START = 1973954843U;
         static const AkUniqueID SKILL_BC_CHARGE = 639682705U;
         static const AkUniqueID SKILL_BC_SLAM = 3801119090U;
@@ -31,6 +32,7 @@ namespace AK
         static const AkUniqueID SKILL_PC = 1154442192U;
         static const AkUniqueID SKILL_RC = 1187997370U;
         static const AkUniqueID SKILL_SC = 1171219749U;
+        static const AkUniqueID UI_BUTTON = 2505162442U;
     } // namespace EVENTS
 
     namespace STATES

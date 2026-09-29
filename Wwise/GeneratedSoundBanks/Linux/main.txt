@@ -15,7 +15,9 @@ Event	ID	Name			Wwise Object Path	Notes
 	1750481508	Attack_EC			\Default Work Unit\Character Events\Attacks\Attack_EC	
 	1784036686	Attack_GC			\Default Work Unit\Character Events\Attacks\Attack_GC	
 	1973954843	Mus_Start			\Default Work Unit\Music Events\Mus_Start	
+	2505162442	UI_Button			\Default Work Unit\Character Events\Misc\UI_Button	
 	2897586865	Attack_BHC			\Default Work Unit\Character Events\Attacks\Attack_BHC	
+	3099592491	Eat_Crunch			\Default Work Unit\Character Events\Misc\Eat_Crunch	
 	3801119090	Skill_BC_Slam			\Default Work Unit\Character Events\Skills\Skill_BC_Slam	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -59,14 +61,17 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	673951063	Jam Track 2	.cache\AD\{AD61CC25-52F9-7381-7EFA-B88FD365AFBB}.wem		\Containers\Default Work Unit\Music\Music Switch\Combat\Jam Track 2\Jam Track 2		24457948
 	688935717	Jam Track 1	.cache\5A\{5A0B8DD0-BBC2-3E06-306C-F40D0753521B}.wem		\Containers\Default Work Unit\Music\Music Switch\Combat\Jam Track 1\Jam Track 1		29486868
 	704298510	BC_Attack_Var1	.cache\7A\{7ADE446A-8A6D-CB10-CFB6-F03D1E3DAC2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\BC Att Switch\Big Cat Attack\BC_Attack_Var1		265636
+	714840394	UI_TestClick2	.cache\9E\{9E7DFE64-5D0E-BC8D-C16F-667A620C9BBB}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Misc\UI_Button\UI_TestClick2		10820
 	728740746	EC_Skill	.cache\48\{48CDB356-5C74-458C-AF6D-A6CA4C191A5A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Skills\EC_Skill		246484
 	782163275	EC_Attack_Var1 (no_fuse)	.cache\EB\{EB1E4A21-1A29-B230-8DC3-2EE14AD805DA}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\EC Att Switch\Explodey Attack\EC_Attack_Var1 (no_fuse)		674172
 	801564742	BHC_Skill	.cache\B7\{B7F25D18-D0E1-B88A-F73B-7328DD3A5137}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Skills\BCH Sk Switch\BHC_Skill		441140
 	801809568	GC_Attack_Var2	.cache\94\{94E88833-05AD-AE33-41B6-02B320E692D7}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\Galley Cat Attack\GC_Attack_Var2		487908
 	801977273	RC_Attack	.cache\91\{9170CB19-465B-CFEC-7E72-A82AF102C0E1}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\RC Att Switch\Rum Cat Attack\RC_Attack		447320
 	818023549	RC_Skill	.cache\15\{1523D679-5819-7C22-7196-C4634704692D}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Skills\RC_Skill		336096
+	875275555	UI_TestClick	.cache\02\{025C945D-655F-4B04-C65F-599258836F01}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Misc\UI_Button\UI_TestClick		10820
 	876127854	BC_Attack_Var2	.cache\A2\{A241DBE6-A1F0-739C-26D0-B1FAC28C6E2A}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\BC Att Switch\Big Cat Attack\BC_Attack_Var2		265636
 	877950325	BC_Attack_Var3	.cache\77\{77DD1D0A-B603-8836-336D-AAB900377E92}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\BC Att Switch\Big Cat Attack\BC_Attack_Var3		265636
+	885638041	Eat_Crunch	.cache\11\{11230E5E-F019-72EB-E2B0-715B55CEEEDE}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Misc\Eat_Crunch		215428
 	979657370	SC_Attack_Var2	.cache\F6\{F6FED0CD-13B6-1F7A-A029-D9F851C7B10B}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\SC Att Switch\Shoot Cat Attack\SC_Attack_Var2		641464
 	1028399437	PC_Skill	.cache\B7\{B7635D17-87D9-13EF-8C31-C9185C2717F7}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Skills\PC_Skill		317428
 	1059462283	PC_Attack_Var2	.cache\6A\{6ABA42C9-BFB9-83C7-78C7-AF87838EECDE}.wem		\Containers\Default Work Unit\SFX\Character SFX\SFX Property Container\Attacks\PC Att Switch\Peanut Cat Attack\PC_Attack_Var2		573928
