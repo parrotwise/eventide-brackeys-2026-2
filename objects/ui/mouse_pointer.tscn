@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://crxs4mty5ag4m"]
 
 [ext_resource type="Script" uid="uid://b7es7kuvnrcfo" path="res://objects/ui/mouse_pointer.gd" id="1_csbsw"]
-[ext_resource type="Texture2D" uid="uid://b5ud26bt1pphf" path="res://assets/art/ui/cursors/cursor_default.png" id="2_8q2q6"]
-[ext_resource type="Texture2D" uid="uid://bdq7g6nnbhf15" path="res://assets/art/ui/cursors/cursor_pressing.png" id="3_a1e4b"]
-[ext_resource type="Texture2D" uid="uid://tb15il0r070m" path="res://assets/art/ui/cursors/cursor_clickable.png" id="4_na3et"]
-[ext_resource type="Texture2D" uid="uid://gsr2oco5awv5" path="res://assets/art/ui/cursors/cursor_clicking.png" id="5_p538m"]
+[ext_resource type="Texture2D" uid="uid://cf22aw77gcafc" path="res://assets/art/ui/cursors/cursor_default2.png" id="2_8q2q6"]
+[ext_resource type="Texture2D" uid="uid://65otesvjnw0g" path="res://assets/art/ui/cursors/cursor_pressing2.png" id="3_8q2q6"]
+[ext_resource type="Texture2D" uid="uid://ca8buvolr4ds7" path="res://assets/art/ui/cursors/cursor_clickable2.png" id="4_8q2q6"]
+[ext_resource type="Texture2D" uid="uid://d07lptkkg131g" path="res://assets/art/ui/cursors/cursor_clicking2.png" id="5_8q2q6"]
 [ext_resource type="Texture2D" uid="uid://cwmpg4bdl8uy1" path="res://assets/art/ui/cursors/cursor_pending_target.png" id="6_wx6ve"]
 [ext_resource type="Texture2D" uid="uid://3rnoykwdr2o7" path="res://assets/art/ui/cursors/cursor_valid_attack.png" id="7_efkq1"]
-[ext_resource type="Texture2D" uid="uid://c8kqn8ytni25j" path="res://assets/art/ui/cursors/cursor_sling_slop.png" id="8_5npaa"]
+[ext_resource type="Texture2D" uid="uid://d237eskjsfc5f" path="res://assets/art/ui/cursors/cursor_sling_slop2.png" id="8_8q2q6"]
 [ext_resource type="Texture2D" uid="uid://xhftlhpnj7wa" path="res://assets/art/ui/cursors/cursor_valid_reposition.png" id="9_fhu5n"]
 [ext_resource type="Texture2D" uid="uid://dfj3qyjn4y0to" path="res://assets/art/ui/cursors/cursor_disabled.png" id="10_stjq0"]
 
@@ -31,19 +31,19 @@ centered = false
 [node name="Pressing" type="Sprite2D" parent="MousePointer" unique_id=790326743]
 visible = false
 position = Vector2(-14, -2)
-texture = ExtResource("3_a1e4b")
+texture = ExtResource("3_8q2q6")
 centered = false
 
 [node name="Clickable" type="Sprite2D" parent="MousePointer" unique_id=1593147570]
 visible = false
 position = Vector2(-15, -9)
-texture = ExtResource("4_na3et")
+texture = ExtResource("4_8q2q6")
 centered = false
 
 [node name="Clicking" type="Sprite2D" parent="MousePointer" unique_id=1960152167]
 visible = false
 position = Vector2(-14, -8)
-texture = ExtResource("5_p538m")
+texture = ExtResource("5_8q2q6")
 centered = false
 
 [node name="Target" type="Sprite2D" parent="MousePointer" unique_id=390582527]
@@ -61,7 +61,7 @@ centered = false
 [node name="Slop" type="Sprite2D" parent="MousePointer" unique_id=1372051138]
 visible = false
 position = Vector2(-27, -27)
-texture = ExtResource("8_5npaa")
+texture = ExtResource("8_8q2q6")
 centered = false
 
 [node name="Swap" type="Sprite2D" parent="MousePointer" unique_id=1801409387]
