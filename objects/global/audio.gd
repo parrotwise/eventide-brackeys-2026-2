@@ -4,38 +4,38 @@ extends Node
 ## TODO: Add one item per Wwise event.
 enum Event {
 	NONE,
-	Attack_BC,
-	Attack_BHC,
-	Attack_EC,
-	Attack_GC,
-	Attack_NC,
-	Attack_PC,
-	Attack_RC,
-	Attack_SC,
-	Skill_BC_Charge,
-	Skill_BC_Slam,
-	Skill_BHC,
-	Skill_EC,
-	Skill_GC,
-	Skill_NC,
-	Skill_PC,
-	Skill_RC,
-	Skill_SC,
+	ATTACK_BC,
+	ATTACK_BHC,
+	ATTACK_EC,
+	ATTACK_GC,
+	ATTACK_NC,
+	ATTACK_PC,
+	ATTACK_RC,
+	ATTACK_SC,
+	SKILL_BC_CHARGE,
+	SKILL_BC_SLAM,
+	SKILL_BHC,
+	SKILL_EC,
+	SKILL_GC,
+	SKILL_NC,
+	SKILL_PC,
+	SKILL_RC,
+	SKILL_SC,
 }
 
 ## TODO: Add one item per Wwise StateGroup+State combination.
 enum State {
 	NONE,
-	Intro,
-	PreCombat,
-	Combat,
+	INTRO,
+	PRECOMBAT,
+	COMBAT,
 }
 
 ## TODO: Add one item per Wwise SwitchGroup.
 enum Switch {
 	NONE,
-	Normal,
-	Smashed,
+	NORMAL,
+	SMASHED,
 }
 
 ## TODO: Deprecated! Replace with the enums above.
@@ -79,9 +79,15 @@ var audio_components: Array[CharacterAudio] = []
 var sfx_player_template: PackedScene = preload('res://objects/audio/sfx_player.tscn')
 var music_player_template: PackedScene = preload('res://objects/audio/music_player.tscn')
 
+var wwise_audio_listener_template: PackedScene = preload('res://objects/audio/wwise_audio_listener.tscn')
+var wwise_sound_bank_template: PackedScene = preload('res://objects/audio/wwise_sound_bank.tscn')
+
 ## TODO: Both deprecated! Remove after Wwise migration.
 var sfx_player: SFXPlayer
 var music_player: MusicPlayer
+
+var wwise_audio_listener: AkListener2D
+var wwise_sound_bank: AkBank
 
 
 ## TODO: Deprecated! Remove/Replace after Wwise migration.
@@ -89,8 +95,14 @@ func _ready() -> void:
 	sfx_player = sfx_player_template.instantiate()
 	music_player = music_player_template.instantiate()
 
+	wwise_audio_listener = wwise_audio_listener_template.instantiate()
+	wwise_sound_bank = wwise_sound_bank_template.instantiate()
+
 	add_child(sfx_player)
 	add_child(music_player)
+
+	add_child(wwise_audio_listener)
+	add_child(wwise_sound_bank)
 
 
 func _process(_delta: float) -> void:
@@ -145,39 +157,39 @@ func stop_music() -> void:
 
 func _event_name(event: Event) -> String:
 	match event:
-		Event.Attack_BC:
+		Event.ATTACK_BC:
 			return 'Attack_BC'
-		Event.Attack_BHC:
+		Event.ATTACK_BHC:
 			return 'Attack_BHC'
-		Event.Attack_EC:
+		Event.ATTACK_EC:
 			return 'Attack_EC'
-		Event.Attack_GC:
+		Event.ATTACK_GC:
 			return 'Attack_GC'
-		Event.Attack_NC:
+		Event.ATTACK_NC:
 			return 'Attack_NC'
-		Event.Attack_PC:
+		Event.ATTACK_PC:
 			return 'Attack_PC'
-		Event.Attack_RC:
+		Event.ATTACK_RC:
 			return 'Attack_RC'
-		Event.Attack_SC:
+		Event.ATTACK_SC:
 			return 'Attack_SC'
-		Event.Skill_BC_Charge:
+		Event.SKILL_BC_CHARGE:
 			return 'SKill_BC_Charge'
-		Event.Skill_BC_Slam:
+		Event.SKILL_BC_SLAM:
 			return 'SKill_BC_Slam'
-		Event.Skill_BHC:
+		Event.SKILL_BHC:
 			return 'SKill_BHC'
-		Event.Skill_EC:
+		Event.SKILL_EC:
 			return 'SKill_EC'
-		Event.Skill_GC:
+		Event.SKILL_GC:
 			return 'SKill_GC'
-		Event.Skill_NC:
+		Event.SKILL_NC:
 			return 'SKill_NC'
-		Event.Skill_PC:
+		Event.SKILL_PC:
 			return 'SKill_PC'
-		Event.Skill_RC:
+		Event.SKILL_RC:
 			return 'SKill_RC'
-		Event.Skill_SC:
+		Event.SKILL_SC:
 			return 'SKill_SC'
 	
 	return ''
@@ -185,17 +197,17 @@ func _event_name(event: Event) -> String:
 
 func _state(state: State) -> Dictionary[String, String]:
 	match state:
-		State.Intro:
+		State.INTRO:
 			return {
 				'group': 'Music_States',
 				'value': 'Intro'
 			}
-		State.Combat:
+		State.COMBAT:
 			return {
 				'group': 'Music_States',
 				'value': 'Combat'
 			}
-		State.PreCombat:
+		State.PRECOMBAT:
 			return {
 				'group': 'Music_States',
 				'value': 'PreCombat'
@@ -209,9 +221,9 @@ func _state(state: State) -> Dictionary[String, String]:
 
 func _switch_group(switch: Switch) -> String:
 	match switch:
-		Switch.Normal:
+		Switch.NORMAL:
 			return 'Effect_Switches'
-		Switch.Smashed:
+		Switch.SMASHED:
 			return 'Effect_Switches'
 	
 	return ''

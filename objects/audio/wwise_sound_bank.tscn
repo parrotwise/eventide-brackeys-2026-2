@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://4ahh8vmwsytc"]
+
+[ext_resource type="WwiseBank" uid="uid://cg22n7rkfeo62" path="res://Wwise/resources/SoundBank/{1E13BBDD-0499-4C72-B6AF-4E500BDB3939}.tres" id="1_r7bo0"]
+
+[node name="WwiseSoundBank" type="AkBank" unique_id=13236258]
+bank = ExtResource("1_r7bo0")
+load_on = 1
