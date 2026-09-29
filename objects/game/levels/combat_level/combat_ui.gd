@@ -27,9 +27,7 @@ var open_settings_button: ActionButton:
 
 
 func _ready() -> void:
-	## TODO: Replace with the commented-out callable after Wwise migration
-	open_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
+	open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	open_settings_button.pressed.connect(open_settings)
 	open_settings_button.button.disabled = false
 

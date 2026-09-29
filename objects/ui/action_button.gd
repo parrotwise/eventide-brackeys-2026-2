@@ -78,9 +78,7 @@ func setup(new_action: Action) -> void:
 	action.uses_expended.connect(refresh)
 	action.uses_restored.connect(refresh)
 
-	## TODO: Replace with the commented-out callable after Wwise migration
-	pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
+	pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	pressed.connect(Game.combat.selector.select_action.bind(action))
 
 	refresh()

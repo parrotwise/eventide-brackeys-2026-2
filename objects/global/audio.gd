@@ -21,6 +21,8 @@ enum Event {
 	SKILL_PC,
 	SKILL_RC,
 	SKILL_SC,
+	EAT_CRUNCH,
+	UI_BUTTON,
 }
 
 ## TODO: Add one item per Wwise StateGroup+State combination.
@@ -192,6 +194,10 @@ func _event_name(event: Event) -> String:
 			return 'SKill_RC'
 		Event.SKILL_SC:
 			return 'SKill_SC'
+		Event.EAT_CRUNCH:
+			return 'Eat_Crunch'
+		Event.UI_BUTTON:
+			return 'UI_Button'
 	
 	return ''
 

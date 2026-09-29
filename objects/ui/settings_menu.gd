@@ -56,9 +56,7 @@ func _ready() -> void:
 	for focusable: Control in focusables:
 		focusable.focus_mode = Control.FOCUS_CLICK
 	
-	## TODO: Replace with the commented-out callable after Wwise migration
-	close_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# close_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
+	close_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	close_button.pressed.connect(hide)
 
 	close_button.button.disabled = false
