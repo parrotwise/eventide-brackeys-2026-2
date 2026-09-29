@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_dylrl")
-sfx = 2
+post_event = 10
 damage = 40
 remove_source_status = true
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

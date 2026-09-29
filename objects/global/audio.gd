@@ -117,10 +117,10 @@ func _process(_delta: float) -> void:
 	)
 
 
-func post_event(event: Event) -> void:
+func post_event(event: Event, source: Node = null) -> void:
 	var event_name: String = _event_name(event)
 	if event_name:
-		Wwise.post_event(event_name, self)
+		Wwise.post_event(event_name, source if source else self)
 
 
 func set_state(state: State) -> void:
@@ -130,10 +130,10 @@ func set_state(state: State) -> void:
 		Wwise.set_state(state_group, state_value)
 
 
-func set_switch(switch: Switch, switch_value: String) -> void:
+func set_switch(switch: Switch, switch_value: String, source: Node = null) -> void:
 	var switch_group: String = _switch_group(switch)
 	if switch_group:
-		Wwise.set_switch(switch_group, switch_value, self)
+		Wwise.set_switch(switch_group, switch_value, source if source else self)
 
 
 ## TODO: Deprecated! Replaced with the functions above.

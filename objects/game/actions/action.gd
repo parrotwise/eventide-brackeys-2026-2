@@ -79,9 +79,9 @@ func use(user: Character, target: Character) -> void:
 	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
 	##       ...replaced with these below
-	Audio.post_event(post_event)
+	Audio.post_event(post_event, user)
 	Audio.set_state(set_state)
-	Audio.set_switch(set_switch, switch_value)
+	Audio.set_switch(set_switch, switch_value, target)
 	
 	used.emit(user, target)
 

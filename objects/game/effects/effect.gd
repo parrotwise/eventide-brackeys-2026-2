@@ -155,9 +155,9 @@ func apply(bypass_queue: bool = false) -> void:
 	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
 	##       ...replaced with these below
-	Audio.post_event(post_event)
+	Audio.post_event(post_event, owner)
 	Audio.set_state(set_state)
-	Audio.set_switch(set_switch, switch_value)
+	Audio.set_switch(set_switch, switch_value, target)
 	
 	for extra_effect: Effect in extra_effects:
 		await extra_effect.apply(bypass_queue)

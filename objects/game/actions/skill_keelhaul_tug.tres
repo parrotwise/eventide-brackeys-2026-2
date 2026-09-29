@@ -4,13 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://blo137quhe73v" path="res://assets/art/ui/icons/actions/skill_icon_bhc.png" id="1_bk00b"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_rsfff"]
 
-
 [resource]
 script = ExtResource("1_rsfff")
 name = "Keelhaul Tug"
 description = "Drag an enemy cat to the front of its party, no matter the position, dealing 10 damage to it in the process."
 icon = ExtResource("1_bk00b")
-sfx = 4
+post_event = 11
 target_damage = 10
 pull_to_front = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

@@ -19,6 +19,11 @@ signal effect_modified(effect: Effect)
 @export var vfx: PackedScene
 @export var icon_priority: int
 
+@export_group("Audio")
+
+@export var set_switch: Audio.Switch
+@export var switch_value: String
+
 @export_group("Effect")
 ## Likelihood of the following effects being applied. Odds apply all at once, not to each effect.
 @export_range(0, 1, 0.01) var likelihood: float = 1
@@ -180,6 +185,9 @@ func apply_to(character: Character) -> void:
 	applied.emit(owner)
 	
 	Game.combat.status_tracker.track(self)
+	
+	if set_switch not in [Audio.Switch.NONE]:
+		Audio.set_switch(set_switch, switch_value, character)
 
 	for trigger: Trigger in triggers:
 		if trigger.trigger_type == Enums.TriggerType.SOURCE_APPLIED:
@@ -194,6 +202,9 @@ func remove() -> void:
 	for status: Status in granted_statuses:
 		if is_instance_valid(status.owner):
 			status.owner.state.remove_status(status)
+	
+	if set_switch not in [Audio.Switch.NONE]:
+		Audio.set_switch(set_switch, '', owner)
 	
 	Game.combat.status_tracker.untrack(self)
 
