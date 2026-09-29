@@ -71,10 +71,6 @@ enum Track {
 	TRACK2,
 }
 
-var master_volume: float = 0.5
-var music_volume: float = 0.5
-var sfx_volume: float = 0.5
-
 var audio_components: Array[CharacterAudio] = []
 
 ## TODO: Both deprecated! Remove after Wwise migration.
@@ -92,31 +88,24 @@ var wwise_audio_listener: AkListener2D
 var wwise_sound_bank: AkBank
 
 
-## TODO: Deprecated! Remove/Replace after Wwise migration.
 func _ready() -> void:
+	## TODO: Deprecated! Remove/Replace after Wwise migration... ↓↓
 	sfx_player = sfx_player_template.instantiate()
 	music_player = music_player_template.instantiate()
+
+	add_child(sfx_player)
+	add_child(music_player)
+	## ...until this point. ↑↑
 
 	wwise_audio_listener = wwise_audio_listener_template.instantiate()
 	wwise_sound_bank = wwise_sound_bank_template.instantiate()
 
-	add_child(sfx_player)
-	add_child(music_player)
-
 	add_child(wwise_audio_listener)
 	add_child(wwise_sound_bank)
-
-
-func _process(_delta: float) -> void:
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index('Master'), master_volume
-	)
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index('Music'), music_volume
-	)
-	AudioServer.set_bus_volume_linear(
-		AudioServer.get_bus_index('SFX'), sfx_volume
-	)
+	
+	Wwise.set_rtpc_value("Vol_Master", -50, null)
+	Wwise.set_rtpc_value("Vol_Music", -50, null)
+	Wwise.set_rtpc_value("Vol_SFX", -50, null)
 
 
 func post_event(event: Event, source: Node = null) -> void:
