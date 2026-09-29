@@ -103,9 +103,9 @@ func _ready() -> void:
 	add_child(wwise_audio_listener)
 	add_child(wwise_sound_bank)
 	
-	Wwise.set_rtpc_value("Vol_Master", -50, null)
-	Wwise.set_rtpc_value("Vol_Music", -50, null)
-	Wwise.set_rtpc_value("Vol_SFX", -50, null)
+	Wwise.set_rtpc_value("Vol_Master", 100 * (pow(0.5, 0.9) - 1), null)
+	Wwise.set_rtpc_value("Vol_Music", 100 * (pow(0.5, 0.9) - 1), null)
+	Wwise.set_rtpc_value("Vol_SFX", 100 * (pow(0.5, 0.9) - 1), null)
 
 
 func post_event(event: Event, source: Node = null) -> void:

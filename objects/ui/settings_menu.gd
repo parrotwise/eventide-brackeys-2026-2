@@ -113,15 +113,15 @@ func submit_focused() -> void:
 
 
 func _on_master_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value('Vol_Master', 100 * (value - 1), null)
+	Wwise.set_rtpc_value('Vol_Master', 100 * (pow(value, 0.9) - 1), null)
 
 
 func _on_music_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value('Vol_Music', 100 * (value - 1), null)
+	Wwise.set_rtpc_value('Vol_Music', 100 * (pow(value, 0.9) - 1), null)
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	Wwise.set_rtpc_value('Vol_SFX', 100 * (value - 1), null)
+	Wwise.set_rtpc_value('Vol_SFX', 100 * (pow(value, 0.9) - 1), null)
 
 
 func _on_mouse_enter() -> void:
