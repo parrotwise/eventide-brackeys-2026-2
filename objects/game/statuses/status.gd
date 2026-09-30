@@ -136,6 +136,7 @@ var power_multiplier: float:
 @export_group("Triggers")
 @export var triggers: Array[Trigger] = []
 @export var trigger_uses: int = -1
+@export var show_remaining_trigger_uses_on_label: bool = false
 @export var remove_when_triggers_used_up: bool = true
 @export var attacks_apply_statuses: Array[Status] = []
 @export var base_healing_applied_applies_statuses: Array[Status] = []

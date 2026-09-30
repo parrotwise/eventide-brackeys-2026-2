@@ -14,3 +14,4 @@ description = "Damage and healing received doubled in the next 3 instances."
 icon = ExtResource("3_ieo2x")
 triggers = Array[ExtResource("3_aglnt")]([ExtResource("4_j1b5n"), ExtResource("5_aglnt")])
 trigger_uses = 3
+show_remaining_trigger_uses_on_label = true

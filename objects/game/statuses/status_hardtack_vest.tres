@@ -16,4 +16,5 @@ icon_priority = 10
 _damage_taken_multiplier = 0.0
 triggers = Array[ExtResource("3_7paih")]([ExtResource("5_l26uq"), ExtResource("6_2dtsq")])
 trigger_uses = 3
+show_remaining_trigger_uses_on_label = true
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

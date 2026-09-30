@@ -21,7 +21,11 @@ func _process(_delta: float) -> void:
 	if not status:
 		return
 	
-	if status.stack == 1:
+	if status.show_remaining_trigger_uses_on_label:
+		stack_label.text = '%d' % [status.trigger_uses]
+		stack_label.show()
+	
+	elif status.stack == 1:
 		stack_label.hide()
 	
 	else:
