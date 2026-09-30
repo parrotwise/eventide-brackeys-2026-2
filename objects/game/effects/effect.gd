@@ -125,10 +125,8 @@ func apply(bypass_queue: bool = false) -> void:
 			if object.name == &'Peanuts' and object.character == target:
 				object.despawn()
 	if despawn_satchel:
-		Debug.error('effect with despawn satchel owner=%s target=%s ' % [owner, target])
 		for object: GroundObject in Game.combat.ground_objects.objects:
 			if object.name == &'PowderSatchel' and object.character == target:
-				Debug.error('found one, despawning ')
 				object.despawn()
 	if reattach_sootgut:
 		for object: GroundObject in Game.combat.ground_objects.objects:
