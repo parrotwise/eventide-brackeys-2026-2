@@ -8,5 +8,6 @@
 script = ExtResource("2_18ka0")
 sfx = 19
 damage = 20
+despawn_peanuts = true
 applied_statuses = Array[ExtResource("1_567w6")]([ExtResource("2_7issn")])
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

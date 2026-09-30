@@ -70,7 +70,7 @@ func add_icons_for(effect: Effect) -> void:
 			icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
 			preview_icons[-1].setup(PreviewIcon.IconType.PULL, steps, on_enemy)
 	
-	if effect.crunch_peanuts:
+	if effect.despawn_peanuts:
 		icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
 		preview_icons[-1].setup(PreviewIcon.IconType.PEANUTS, '', on_enemy)
 	

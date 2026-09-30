@@ -43,7 +43,7 @@ signal uses_restored()
 @export var pull_steps: int = 0
 @export var pull_to_front: bool = false
 
-@export var crunch_peanuts: bool = false
+@export var despawn_peanuts: bool = false
 @export var reattach_sootgut: bool = false
 
 @export var cause_miss_action: bool = false

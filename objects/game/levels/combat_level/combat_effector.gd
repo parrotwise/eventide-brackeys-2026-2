@@ -88,9 +88,9 @@ func interpret(
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].pull_to_front = true
 
-	if action.crunch_peanuts:
+	if action.despawn_peanuts:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
-		effects[target].crunch_peanuts = true
+		effects[target].despawn_peanuts = true
 
 	if action.reattach_sootgut:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)

@@ -3,7 +3,6 @@ extends Node2D
 
 
 @export var granted_status: Status
-@export var despawn_on_status_removed: bool = false
 
 var character: Character
 
@@ -54,9 +53,6 @@ func attach_to(new_character: Character) -> void:
 	
 	if applied_copy == null:
 		return
-	
-	if despawn_on_status_removed:
-		applied_copy.removed.connect(func(_c): despawn(true))
 
 
 func despawn(bypass_detach: bool = false) -> void:

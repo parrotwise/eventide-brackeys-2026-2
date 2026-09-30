@@ -46,7 +46,8 @@ var stacked_healing_ratio: float:
 @export var pull_steps: int = 0
 @export var pull_to_front: bool = false
 
-@export var crunch_peanuts: bool = false
+@export var despawn_peanuts: bool = false
+@export var despawn_satchel: bool = false
 @export var reattach_sootgut: bool = false
 
 @export var increase_basic_attack_max_uses: int = 0
@@ -114,9 +115,15 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.combat.characters.move_forward(target)
 		if old_index == Game.combat.characters.index_of(target):
 			break
-	if crunch_peanuts:
+	if despawn_peanuts:
 		for object: GroundObject in Game.combat.ground_objects.objects:
-			if object.name == &'Peanuts' and object.character == owner:
+			if object.name == &'Peanuts' and object.character == target:
+				object.despawn()
+	if despawn_satchel:
+		Debug.error('effect with despawn satchel owner=%s target=%s ' % [owner, target])
+		for object: GroundObject in Game.combat.ground_objects.objects:
+			if object.name == &'PowderSatchel' and object.character == target:
+				Debug.error('found one, despawning ')
 				object.despawn()
 	if reattach_sootgut:
 		for object: GroundObject in Game.combat.ground_objects.objects:

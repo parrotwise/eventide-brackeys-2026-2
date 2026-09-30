@@ -8,7 +8,6 @@
 z_index = 1
 script = ExtResource("1_rshom")
 granted_status = ExtResource("2_vf8w0")
-despawn_on_status_removed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]
 scale = Vector2(0.8, 0.8)
