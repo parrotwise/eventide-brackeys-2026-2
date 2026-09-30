@@ -14,6 +14,10 @@ func _ready() -> void:
 	Game.combat.characters.character_removed.connect(_on_character_removed)
 	Game.combat.characters.characters_repositioned.connect(_on_characters_repositioned)
 
+	for component: Node in get_children():
+		if component is AnimationPlayer:
+			component.start()
+
 
 func _process(delta: float) -> void:
 	if not is_instance_valid(character):

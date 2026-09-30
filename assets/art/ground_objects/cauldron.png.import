@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ee1v7se8tg6"
-path="res://.godot/imported/character_cook_cat_cauldron_480.png-e65b890112fce4abc8980d9eaa7ac321.ctex"
+uid="uid://7nb4va1xnyi1"
+path="res://.godot/imported/cauldron.png-88e058f1aa7f32445ffdd8f942ca5b3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/animations/character_cook_cat_cauldron_480.png"
-dest_files=["res://.godot/imported/character_cook_cat_cauldron_480.png-e65b890112fce4abc8980d9eaa7ac321.ctex"]
+source_file="res://assets/art/ground_objects/cauldron.png"
+dest_files=["res://.godot/imported/cauldron.png-88e058f1aa7f32445ffdd8f942ca5b3e.ctex"]
 
 [params]
 
