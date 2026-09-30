@@ -179,16 +179,15 @@ func shrink_tooltip() -> void:
 
 
 func fill_text() -> void:
-	if not is_inside_tree():
-		return
-	
 	for chunk in range(0, header.length() + text_chunk_size, text_chunk_size):
 		name_label.text = header.substr(0, chunk)
-		await get_tree().create_timer(1/text_speed).timeout
+		if is_inside_tree():
+			await get_tree().create_timer(1/text_speed).timeout
 	
 	for chunk in range(0, description.length() + text_chunk_size, text_chunk_size):
 		description_label.text = description.substr(0, chunk)
-		await get_tree().create_timer(1/text_speed).timeout
+		if is_inside_tree():
+			await get_tree().create_timer(1/text_speed).timeout
 
 
 func remove_text() -> void:
