@@ -68,6 +68,8 @@ var source: Variant  # The parent Action or Status
 var owner: Character
 var target: Character
 
+var modifying_statuses: Array[Status] = []
+
 var repeat_on_target: Character = null
 
 var stack_mult: int:
@@ -90,6 +92,9 @@ func apply(bypass_queue: bool = false) -> void:
 		Game.combat.queue.push_effect(self)
 		await Game.combat.queue.await_effect(self)
 		return
+	
+	for status: Status in modifying_statuses:
+		status.effect_modified.emit(self)
 	
 	var total_damage: int = stacked_damage + stacked_damage_explosive + stacked_damage_poison
 	var total_healing: int = stacked_healing + ceili(stacked_healing_ratio * target.state.max_health)

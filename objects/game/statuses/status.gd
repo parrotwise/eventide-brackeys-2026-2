@@ -369,7 +369,7 @@ func modify_effect(effect: Effect) -> Effect:
 			mods_applied = true
 	
 	if mods_applied:
-		effect_modified.emit(effect)
+		effect.modifying_statuses.append(self)
 	
 	return effect
 

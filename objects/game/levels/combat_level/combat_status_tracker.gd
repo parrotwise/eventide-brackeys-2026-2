@@ -96,6 +96,8 @@ func fire_triggers(trigger_type: Enums.TriggerType, specific_owner: Character = 
 
 
 func modify_effect(effect: Effect) -> Effect:
+	effect.modifying_statuses.clear()
+	
 	for status: Status in active_statuses:
 		# Resource instance modified in-place
 		status.modify_effect(effect)
