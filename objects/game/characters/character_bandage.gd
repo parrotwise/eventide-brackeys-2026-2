@@ -2,8 +2,8 @@ class_name CharacterBandage
 extends Control
 
 
-var tooltip: Tooltip:
-	get: return $Tooltip
+var uses_label: RichTextLabel:
+	get: return $UsesLabel
 
 var character: Character
 
@@ -27,8 +27,6 @@ var button: TextureButton:
 
 
 func _ready() -> void:
-	Game.loadout_start.connect(refresh)
-	
 	button.pressed.connect(apply)
 	button.mouse_entered.connect(_on_mouse_enter)
 	button.mouse_exited.connect(_on_mouse_exit)
@@ -37,8 +35,12 @@ func _ready() -> void:
 
 
 func apply() -> void:
+	if Game.stage != Game.Stage.LOADOUT2:
+		return
 	if not character:
 		return
+	
+	Game.loadout.bandage_uses -= 1
 	
 	character.state.heal(
 		ceili(character.state.max_health * 0.3)
@@ -46,18 +48,26 @@ func apply() -> void:
 	
 	button.disabled = true
 
-	refresh()
+	for c: Character in Game.loadout.characters:
+		c.bandage_button.refresh()
 	
 	Game.pointer.switch_to(Enums.PointerType.DEFAULT)
 
 
 func refresh() -> void:
 	visible = (
-		Game.stage == Game.Stage.LOADOUT1
+		Game.stage == Game.Stage.LOADOUT2
 		and not button.disabled
 		and is_instance_valid(character)
+		and Game.loadout.bandage_uses
 		and character.state.missing_health_ratio > 0
 	)
+
+	if not visible:
+		return
+
+	uses_label.text = str(Game.loadout.bandage_uses)
+	uses_label.visible = visible
 
 
 func _on_mouse_enter() -> void:

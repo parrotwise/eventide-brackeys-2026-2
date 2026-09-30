@@ -2,6 +2,8 @@ class_name LoadoutLevel
 extends Node
 
 
+@export var bandage_uses: int = 2
+
 var selector: LoadoutSelector:
 	get: return $Selector
 var ui: LoadoutUI:

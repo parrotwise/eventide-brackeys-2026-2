@@ -66,6 +66,8 @@ func _ready() -> void:
 	bandage_button.character = self
 	strategy.character = self
 
+	bandage_button.refresh()
+
 
 func _process(delta: float) -> void:
 	if Game.combat is not CombatLevel:
