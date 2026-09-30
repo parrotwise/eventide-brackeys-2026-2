@@ -67,29 +67,31 @@ func despawn(bypass_detach: bool = false) -> void:
 
 
 func _on_character_removed(removed_character: Character) -> void:
-	if character == removed_character:
-		var behind: Character = Game.combat.characters.get_behind(character)
-		if is_instance_valid(behind):
-			attach_to(behind)
-			return
+	if not is_instance_valid(character):
+		return
+	if not is_instance_valid(removed_character):
+		return
+	if character != removed_character:
+		return
+	
+	var ahead: Character = Game.combat.characters.get_ahead_of(character)
+	var behind: Character = Game.combat.characters.get_behind(character)
 
-		var ahead: Character = Game.combat.characters.get_ahead_of(character)
-		if is_instance_valid(ahead):
-			attach_to(ahead)
-			return
-		
+	if is_instance_valid(behind):
+		attach_to(behind)
+	elif is_instance_valid(ahead):
+		attach_to(ahead)
+	else:
 		despawn()
 
 
 func _on_characters_repositioned(char_ahead: Character, char_behind: Character) -> void:
+	if not is_instance_valid(character):
+		return
 	if not is_instance_valid(char_ahead) or not is_instance_valid(char_behind):
 		return
 	
-	var objs_ahead: Array[GroundObject] = Game.combat.ground_objects.get_attached_to(char_ahead)
-	var objs_behind: Array[GroundObject] = Game.combat.ground_objects.get_attached_to(char_behind)
-
-	for object: GroundObject in objs_ahead:
-		object.attach_to(char_behind)
-
-	for object: GroundObject in objs_behind:
-		object.attach_to(char_ahead)
+	if character == char_ahead:
+		attach_to(char_behind)
+	elif character == char_behind:
+		attach_to(char_ahead)
