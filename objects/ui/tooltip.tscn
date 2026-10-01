@@ -21,11 +21,8 @@ one_shot = true
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=647096474]
 propagate_maximum_size = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 90.0
+offset_bottom = 80.0
 texture = ExtResource("2_owh4x")
 patch_margin_left = 45
 patch_margin_top = 40

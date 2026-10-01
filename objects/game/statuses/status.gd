@@ -4,6 +4,7 @@ extends Resource
 
 signal applied(character: Character)
 signal removed(character: Character)
+@warning_ignore('unused_signal')
 signal effect_modified(effect: Effect)
 
 

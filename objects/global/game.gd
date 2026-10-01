@@ -29,7 +29,7 @@ var available_characters: Array[Character] = Array(
 		'peanut_cat',
 		'cook_cat',
 		'big_cat',
-	].map(func(char): return load('res://objects/game/characters/crewmembers/%s.tscn' % [char]).instantiate() as Character),
+	].map(func(ch): return load('res://objects/game/characters/crewmembers/%s.tscn' % [ch]).instantiate() as Character),
 	TYPE_OBJECT, &'Node2D', Character
 )
 
