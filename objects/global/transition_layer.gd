@@ -9,11 +9,9 @@ const loadout_level: String = "res://objects/game/levels/loadout_level/loadout_l
 const cutscene_3: String = "res://objects/game/levels/cutscenes/cutscene_3.tscn"
 const cutscene_4: String = "res://objects/game/levels/cutscenes/cutscene_4.tscn"
 const combat_level: String = "res://objects/game/levels/combat_level/combat_level.tscn"
-const cutscene_6: String = ""
-const cutscene_7: String = ""
-const cutscene_9: String = ""
-const cutscene_10: String = ""
-const cutscene_11: String = ""
+
+const cutscene_combat_victory: String = "res://objects/game/levels/cutscenes/cutscene_combat_victory.tscn"
+const cutscene_combat_defeat: String = "res://objects/game/levels/cutscenes/cutscene_combat_defeat.tscn"
 
 var blindfold: ColorRect:
 	get: return $ColorRect

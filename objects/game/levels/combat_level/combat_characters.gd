@@ -56,6 +56,9 @@ func remove(character: Character) -> void:
 		Game.enemies.erase(character)
 		Game.available_characters.erase(character)
 
+		if not Game.enemies or not Game.allies:
+			Game.combat_end.emit()
+
 
 func target_position(character: Character) -> Vector2:
 	if character not in all:

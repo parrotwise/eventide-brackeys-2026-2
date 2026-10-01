@@ -8,6 +8,7 @@ var character: Character
 
 func _ready() -> void:
 	Game.combat_start.connect(_on_combat_start)
+	Game.combat_end.connect(_on_combat_end)
 
 
 func _on_combat_start() -> void:
@@ -20,3 +21,8 @@ func _on_combat_start() -> void:
 	
 	for item: Equipment in equipment:
 		character.state.apply_status(item.equipped_status)
+
+
+func _on_combat_end() -> void:
+	if character not in Game.available_characters and character.id in Game.inventories:
+		Game.inventories[character.id].clear()

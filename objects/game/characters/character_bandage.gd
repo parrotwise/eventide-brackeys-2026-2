@@ -30,8 +30,6 @@ func _ready() -> void:
 	button.pressed.connect(apply)
 	button.mouse_entered.connect(_on_mouse_enter)
 	button.mouse_exited.connect(_on_mouse_exit)
-	
-	refresh()
 
 
 func apply() -> void:

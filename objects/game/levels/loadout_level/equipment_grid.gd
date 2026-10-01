@@ -31,20 +31,24 @@ func refresh() -> void:
 
 	for button: EquipmentButton in equipment_buttons:
 		var is_owned_by_selected: bool = (
-			Game.inventories.has(selected.name)
-			and (button.equipment in Game.inventories[selected.name])
+			button.equipment in Game.inventories.get(selected.name, [])
+		)
+		var is_owned_by_anyone: bool = Game.inventories.keys().any(
+			func(ch): return button.equipment in Game.inventories[ch]
 		)
 
 		if is_owned_by_selected:
 			button.button.disabled = false
 			button.button.button_pressed = true
 		
-		elif not button.button.button_pressed:
-			button.button.disabled = false
+		elif is_owned_by_anyone:
+			button.button.disabled = true
+			button.button.button_pressed = false
 		
 		else:
-			button.button.disabled = true
+			button.button.disabled = false
+			button.button.button_pressed = false
 	
-	if Game.inventories.has(selected.name) and (Game.inventories[selected.name].size() >= 2):
+	if Game.inventories.get(selected.name, []).size() >= 2:
 		for button: EquipmentButton in equipment_buttons:
 			button.button.disabled = button.equipment not in Game.inventories[selected.name]

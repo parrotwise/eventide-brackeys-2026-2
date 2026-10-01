@@ -36,6 +36,8 @@ var enemy_spawn_points: Node:
 func _ready() -> void:
 	Game.combat = self
 
+	Game.combat_end.connect(_on_combat_end)
+
 	effector.action_used.connect(
 		_on_action_used
 	)
@@ -136,8 +138,6 @@ func _on_knocked_out(character: Character) -> void:
 func _exit_tree() -> void:
 	if Game.combat == self:
 		Game.combat = null
-
-	Game.combat_end.emit()
 
 
 func _on_action_used(
@@ -320,3 +320,22 @@ func _on_turn_ended(character: Character) -> void:
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:
 		action.use(user, target)
+
+
+func _on_combat_end() -> void:
+	queue.clear()
+	selector.pause()
+
+	await get_tree().create_timer(3).timeout
+	
+	for character: Character in characters.all:
+		character.get_parent().remove_child(character)
+	
+	if not Game.allies:
+		TransitionLayer.transition_simple_fade(
+			TransitionLayer.cutscene_combat_defeat
+		)
+	else:
+		TransitionLayer.transition_simple_fade(
+			TransitionLayer.cutscene_combat_victory
+		)

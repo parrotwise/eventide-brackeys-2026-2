@@ -16,16 +16,17 @@ var selected_character: Character:
 
 func _ready() -> void:
 	Game.loadout = self
+
+	Game.loadout_end.connect(_on_loadout_end)
 	
+	ui.refresh()
 	selector.character_selected.connect(func(_char): ui.refresh())
-	
+
 	Game.loadout_start.emit()
 
 
 func submit_allocation() -> void:
 	Game.loadout_end.emit()
-	# TODO: Don't do ↓this↓ here, connect Game.equipment_end to it in transitions script
-	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
 
 
 func toggle_equipment(toggled_on: bool, equipment: Equipment) -> void:
@@ -37,13 +38,18 @@ func toggle_equipment(toggled_on: bool, equipment: Equipment) -> void:
 	if selected_character.id not in Game.inventories:
 		Game.inventories[selected_character.id] = []
 	
-	if toggled_on:
+	if toggled_on and equipment not in Game.inventories[selected_character.id]:
 		selected_character.state.active_statuses.append(equipment.equipped_status)
 		Game.inventories[selected_character.id].append(equipment)
 		Debug.debug(selected_character.id + " equipped " + equipment.name)
-	else:
+	
+	elif not toggled_on and equipment in Game.inventories[selected_character.id]:
 		selected_character.state.active_statuses.erase(equipment.equipped_status)
 		Game.inventories[selected_character.id].erase(equipment)
 		Debug.debug(selected_character.id + " unequipped " + equipment.name)
 	
 	ui.refresh()
+
+
+func _on_loadout_end() -> void:
+	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)

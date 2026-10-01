@@ -95,3 +95,6 @@ func _on_combat_start() -> void:
 			for button: ActionButton in action_buttons:
 				button.set_selected(false)
 	)
+
+	for character: Character in Game.combat.characters.all:
+		character.bandage_button.refresh()

@@ -41,6 +41,9 @@ func refresh() -> void:
 	center_stage.refresh()
 	info_panel.refresh()
 
+	for character: Character in characters:
+		character.bandage_button.refresh()
+
 
 func show_keyboard_reference() -> void:
 	keyboard_reference.show()

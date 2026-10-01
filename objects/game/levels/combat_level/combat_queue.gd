@@ -44,6 +44,10 @@ func pop_effect() -> void:
 	_effect_cooldown = effect_delay
 
 
+func clear() -> void:
+	_effect_queue.clear()
+
+
 func await_time(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 

@@ -54,6 +54,7 @@ var active_statuses: Array[Status]:
 func _ready() -> void:
 	Game.loadout_end.connect(_on_loadout_end)
 	Game.combat_start.connect(_on_combat_start)
+	Game.combat_end.connect(_on_combat_end)
 
 
 func _on_loadout_end() -> void:
@@ -65,6 +66,10 @@ func _on_combat_start() -> void:
 		apply_status(passive_status)
 	
 	character.combat_ready.connect(_on_character_combat_ready)
+
+
+func _on_combat_end() -> void:
+	character.combat_ready.disconnect(_on_character_combat_ready)
 
 
 func _on_character_combat_ready() -> void:

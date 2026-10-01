@@ -56,6 +56,7 @@ func _ready() -> void:
 	name = id
 	
 	Game.combat_start.connect(_on_combat_start)
+	Game.combat_end.connect(_on_combat_end)
 
 	animator.character = self
 	input.character = self
@@ -91,3 +92,9 @@ func _on_combat_start() -> void:
 		actor.scale = Vector2(-1.0, 1.0)
 	
 	combat_ready.emit()
+
+
+func _on_combat_end() -> void:
+	for input_signal: Signal in [input.selected, input.deselected, input.submitted]:
+		for connection: Dictionary in input_signal.get_connections():
+			input_signal.disconnect(connection['callable'])

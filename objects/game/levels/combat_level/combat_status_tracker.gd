@@ -23,6 +23,7 @@ var cached: Dictionary[String, Variant] = {
 
 func _ready() -> void:
 	Game.combat_start.connect(_on_combat_start)
+	Game.combat_end.connect(_on_combat_end)
 
 
 func track(status: Status) -> void:
@@ -228,3 +229,8 @@ func _on_combat_start() -> void:
 				for status: Status in char_behind.state.active_statuses:
 					status.refresh_granted_statuses.call_deferred()
 	)
+
+
+func _on_combat_end() -> void:
+	while active_statuses:
+		active_statuses[0].owner.state.remove_status(active_statuses[0])

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b7tqr2dcbjx4p"]
+
+[ext_resource type="Script" uid="uid://c7400vhqebh01" path="res://objects/game/levels/cutscenes/cutscene_combat_victory.gd" id="1_jxhxi"]
+[ext_resource type="Texture2D" uid="uid://c5mpwawvyo5na" path="res://assets/art/narrative/cutscene_4_1.png" id="2_yj87i"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_uyyxk"]
+
+[node name="CutsceneCombatVictory" type="Control" unique_id=38669092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxhxi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1431666020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yj87i")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1552977941]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("3_uyyxk")
+theme_override_font_sizes/normal_font_size = 48
+text = "To the victor go the spoils!
+It’s time to lick your wounds,
+but be wary, supplies are limited!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
