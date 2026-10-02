@@ -80,5 +80,17 @@ func _ready() -> void:
 	combat_start.connect(func(): stage = Stage.COMBAT2 if stage == Stage.LOADOUT2 else Stage.COMBAT1)
 
 
+func mutiny() -> void:
+	allies.shuffle()
+	
+	var num_enemies: int = ceili(allies.size() / 2.0)
+	for __ in num_enemies:
+		enemies.append(
+			allies.pop_at(
+				Random.randindex(allies)
+			)
+		)
+
+
 func quit() -> void:
 	get_tree().quit()

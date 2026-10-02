@@ -52,4 +52,7 @@ func toggle_equipment(toggled_on: bool, equipment: Equipment) -> void:
 
 
 func _on_loadout_end() -> void:
-	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
+	if Game.stage == Game.Stage.LOADOUT1:
+		TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_3)
+	else:
+		TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_second_mutiny)

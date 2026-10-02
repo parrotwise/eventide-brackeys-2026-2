@@ -40,6 +40,27 @@ func _process(_delta: float) -> void:
 		character.input.set_flip(character in enemies)
 
 
+func mutiny() -> void:
+	Game.mutiny()
+	spawn()
+
+
+func spawn() -> void:
+	for character: Character in allies:
+		$Allies.remove_child(character)
+	
+	for character: Character in enemies:
+		$Enemies.remove_child(character)
+	
+	for character: Character in Game.allies:
+		$Allies.add_child(character)
+		character.position = target_position(character)
+	
+	for character: Character in Game.enemies:
+		$Enemies.add_child(character)
+		character.position = target_position(character)
+
+
 func remove(character: Character) -> void:
 	for status: Status in character.state.active_statuses.duplicate():
 		character.state.remove_status(status)
@@ -216,29 +237,3 @@ func _move_by(steps: int, character: Character) -> void:
 			characters_repositioned.emit(frendos[i], frendos[i + 1])
 
 	character.get_parent().move_child(character, new_index)
-
-
-func mutiny() -> void:
-	for character: Character in allies:
-		$Allies.remove_child(character)
-	
-	for character: Character in enemies:
-		$Enemies.remove_child(character)
-	
-	Game.allies.shuffle()
-	
-	var num_enemies: int = ceili(Game.allies.size() / 2.0)
-	for __ in num_enemies:
-		Game.enemies.append(
-			Game.allies.pop_at(
-				Random.randindex(Game.allies)
-			)
-		)
-	
-	for character: Character in Game.allies:
-		$Allies.add_child(character)
-		character.position = target_position(character)
-	
-	for character: Character in Game.enemies:
-		$Enemies.add_child(character)
-		character.position = target_position(character)

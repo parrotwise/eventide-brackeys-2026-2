@@ -102,7 +102,10 @@ func _ready() -> void:
 		_on_turn_ended
 	)
 
-	characters.mutiny()
+	if Game.stage == Game.Stage.LOADOUT1:
+		characters.mutiny()
+	else:
+		characters.spawn()
 
 	for character: Character in characters.all:
 		character.state.health_changed.connect(_on_health_changed.bind(character))
