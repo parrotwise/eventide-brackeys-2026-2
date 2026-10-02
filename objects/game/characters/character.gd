@@ -9,6 +9,8 @@ const ENEMIES_GROUP: StringName = &"enemies"
 
 @export var id: StringName
 @export_multiline var blurb: String
+@export var silhouette: Texture2D
+@export var eyes: Texture2D
 
 var actor: Actor:
 	get: return $Actor

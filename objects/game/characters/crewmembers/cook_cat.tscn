@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
 [ext_resource type="PackedScene" uid="uid://dyswgjme1uv88" path="res://objects/game/actors/crewmembers/cook_cat_actor.tscn" id="2_f837q"]
+[ext_resource type="Texture2D" uid="uid://bju5c31jxfa3s" path="res://assets/art/narrative/rest/sil_gc.png" id="2_ohvv7"]
+[ext_resource type="Texture2D" uid="uid://bwmga348w1bra" path="res://assets/art/narrative/eyes/eyes_gc.png" id="3_rrwuj"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
@@ -33,6 +35,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 [node name="CookCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
 id = &"Scuttler O’Riley"
+silhouette = ExtResource("2_ohvv7")
+eyes = ExtResource("3_rrwuj")
 
 [node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_f837q")]
 
@@ -87,6 +91,5 @@ z_index = 10
 
 [node name="BandageButton" parent="." unique_id=1513948574 instance=ExtResource("19_o6nob")]
 z_index = 10
-anchors_preset = 0
 
 [node name="Strategy" parent="." unique_id=1632544301 instance=ExtResource("19_vjerw")]

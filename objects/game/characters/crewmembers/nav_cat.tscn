@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
 [ext_resource type="PackedScene" uid="uid://dqv8ugu88fqcs" path="res://objects/game/actors/crewmembers/nav_cat_actor.tscn" id="2_55htr"]
+[ext_resource type="Texture2D" uid="uid://dmfd2v7e13hc0" path="res://assets/art/narrative/rest/sil_nc.png" id="2_ib3gd"]
+[ext_resource type="Texture2D" uid="uid://e86la3fsktu7" path="res://assets/art/narrative/eyes/eyes_nc.png" id="3_w8l1o"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
@@ -33,6 +35,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 [node name="NavCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
 id = &"Gut-you Gutierrez"
+silhouette = ExtResource("2_ib3gd")
+eyes = ExtResource("3_w8l1o")
 
 [node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_55htr")]
 
@@ -86,6 +90,5 @@ z_index = 10
 
 [node name="BandageButton" parent="." unique_id=1513948574 instance=ExtResource("19_ytaky")]
 z_index = 10
-anchors_preset = 0
 
 [node name="Strategy" parent="." unique_id=1632544301 instance=ExtResource("19_ns3xl")]

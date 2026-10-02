@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bg02w4miu8a8o"]
 
 [ext_resource type="Script" uid="uid://cfp4qlilg2msx" path="res://objects/game/characters/character.gd" id="1_p4kuh"]
+[ext_resource type="Texture2D" uid="uid://jyurb3rkyd2j" path="res://assets/art/narrative/rest/sil_pc.png" id="2_632xr"]
 [ext_resource type="PackedScene" uid="uid://tmccgndh20eo" path="res://objects/game/actors/crewmembers/peanut_cat_actor.tscn" id="2_mp3tf"]
+[ext_resource type="Texture2D" uid="uid://duifmy3ymo2sn" path="res://assets/art/narrative/eyes/eyes_pc.png" id="3_8jy8j"]
 [ext_resource type="Shader" uid="uid://c0kad2ufi1qjg" path="res://assets/art/shaders/character_sprite.gdshader" id="3_xcks8"]
 [ext_resource type="Texture2D" uid="uid://ctdwg2ax4em5c" path="res://assets/art/shaders/shadow_gradient.png" id="4_opj0v"]
 [ext_resource type="Texture2D" uid="uid://7rwmud3xboqs" path="res://assets/art/shaders/status_overlay_sloshed_overlay.png" id="5_yyv4h"]
@@ -33,6 +35,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 [node name="PeanutCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
 id = &"Desmond the Dime"
+silhouette = ExtResource("2_632xr")
+eyes = ExtResource("3_8jy8j")
 
 [node name="Actor" parent="." unique_id=782497136 instance=ExtResource("2_mp3tf")]
 
@@ -86,6 +90,5 @@ z_index = 10
 
 [node name="BandageButton" parent="." unique_id=1513948574 instance=ExtResource("19_flrp0")]
 z_index = 10
-anchors_preset = 0
 
 [node name="Strategy" parent="." unique_id=1632544301 instance=ExtResource("19_v3fhl")]
