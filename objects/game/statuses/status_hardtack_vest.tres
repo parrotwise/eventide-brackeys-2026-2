@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_3axlj"]
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_twnok"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_7paih"]
-[ext_resource type="Texture2D" uid="uid://couo7a3nxaju4" path="res://assets/art/ui/icons/statuses/status_equipment_hardtack_vest.png" id="3_l26uq"]
+[ext_resource type="Texture2D" uid="uid://caty55a8523ac" path="res://assets/art/ui/icons/statuses/status_equipment_hardtack_vest_border.png" id="3_l26uq"]
 [ext_resource type="Resource" uid="uid://cukcs6nbpfv56" path="res://objects/game/triggers/trigger_hardtack_vest_negate.tres" id="5_l26uq"]
 [ext_resource type="Resource" uid="uid://c14l0itpjmvtp" path="res://objects/game/triggers/trigger_hardtack_vest_break.tres" id="6_2dtsq"]
 

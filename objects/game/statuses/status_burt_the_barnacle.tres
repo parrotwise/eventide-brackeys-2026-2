@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bplykso0212sj" path="res://objects/game/statuses/status_nasty_cuts.tres" id="2_xqcmf"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_xqcmf"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_4x4o6"]
-[ext_resource type="Texture2D" uid="uid://dvkyis3aakg26" path="res://assets/art/ui/icons/statuses/status_equipment_burt_the_barnacle.png" id="4_xqcmf"]
+[ext_resource type="Texture2D" uid="uid://b6lkcnet6xlcc" path="res://assets/art/ui/icons/statuses/status_equipment_burt_the_barnacle_border.png" id="4_xqcmf"]
 [ext_resource type="Resource" uid="uid://q6dhffy3rvg0" path="res://objects/game/triggers/trigger_burt_the_barnacle.tres" id="5_22u0f"]
 
 [resource]

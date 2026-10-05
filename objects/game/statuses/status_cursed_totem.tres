@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Status" format=3 uid="uid://dodabtxn4eyrv"]
 
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_fyk62"]
-[ext_resource type="Texture2D" uid="uid://dft8to830xqpd" path="res://assets/art/ui/icons/statuses/status_equipment_cursed_totem.png" id="3_fyk62"]
+[ext_resource type="Texture2D" uid="uid://5sruhk1aejfq" path="res://assets/art/ui/icons/statuses/status_equipment_cursed_totem_border.png" id="3_fyk62"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="3_pnocb"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="4_w1dhq"]
 

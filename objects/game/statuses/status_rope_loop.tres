@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="2_577yi"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_wuwnj"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_577yi"]
-[ext_resource type="Texture2D" uid="uid://wfi17voa70t2" path="res://assets/art/ui/icons/statuses/status_equipment_rope_loop.png" id="4_577yi"]
+[ext_resource type="Texture2D" uid="uid://dv15omyydt5nj" path="res://assets/art/ui/icons/statuses/status_equipment_rope_loop_border.png" id="4_577yi"]
 
 [resource]
 script = ExtResource("2_wuwnj")

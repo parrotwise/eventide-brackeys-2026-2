@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3ummvu47lsv6" path="res://objects/game/actions/action.gd" id="1_bvn2n"]
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_r75d1"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_5jf3u"]
-[ext_resource type="Texture2D" uid="uid://cc7kv8bcq6w3a" path="res://assets/art/ui/icons/statuses/status_equipment_cannonball_necklace.png" id="3_bvn2n"]
+[ext_resource type="Texture2D" uid="uid://cs6uvky5780so" path="res://assets/art/ui/icons/statuses/status_equipment_cannonball_necklace_border.png" id="3_bvn2n"]
 
 [resource]
 script = ExtResource("2_r75d1")
