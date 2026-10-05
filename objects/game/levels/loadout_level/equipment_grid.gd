@@ -38,17 +38,22 @@ func refresh() -> void:
 		)
 
 		if is_owned_by_selected:
-			button.button.disabled = false
-			button.button.button_pressed = true
+			button.set_equipped(true)
+			button.set_responsive(true)
+			button.set_pressed(true)
 		
 		elif is_owned_by_anyone:
-			button.button.disabled = true
-			button.button.button_pressed = false
+			button.set_equipped(true)
+			button.set_responsive(false)
+			button.set_pressed(false)
 		
 		else:
-			button.button.disabled = false
-			button.button.button_pressed = false
+			button.set_equipped(false)
+			button.set_responsive(true)
+			button.set_pressed(false)
 	
 	if Game.inventories.get(selected.name, []).size() >= 2:
 		for button: EquipmentButton in equipment_buttons:
-			button.button.disabled = button.equipment not in Game.inventories[selected.name]
+			button.set_responsive(
+				button.equipment in Game.inventories[selected.name]
+			)

@@ -29,24 +29,29 @@ func submit_allocation() -> void:
 	Game.loadout_end.emit()
 
 
-func toggle_equipment(toggled_on: bool, equipment: Equipment) -> void:
+func toggle_equipment(equipment: Equipment) -> void:
 	if not equipment:
 		return
 	if not selected_character:
 		return
 	
+	for character: Character in characters:
+		if character != selected_character:
+			if equipment in Game.inventories.get(character.id, []):
+				return
+	
 	if selected_character.id not in Game.inventories:
 		Game.inventories[selected_character.id] = []
 	
-	if toggled_on and equipment not in Game.inventories[selected_character.id]:
+	if equipment not in Game.inventories[selected_character.id]:
 		selected_character.state.active_statuses.append(equipment.equipped_status)
 		Game.inventories[selected_character.id].append(equipment)
-		Debug.debug(selected_character.id + " equipped " + equipment.name)
-	
-	elif not toggled_on and equipment in Game.inventories[selected_character.id]:
+		Debug.debug('%s equipped %s.' % [selected_character.id, equipment.name])
+
+	else:
 		selected_character.state.active_statuses.erase(equipment.equipped_status)
 		Game.inventories[selected_character.id].erase(equipment)
-		Debug.debug(selected_character.id + " unequipped " + equipment.name)
+		Debug.debug('%s unequipped %s.' % [selected_character.id, equipment.name])
 	
 	ui.refresh()
 
