@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://tg71ogl1tk2c"]
+
+[ext_resource type="Script" uid="uid://cnsu5hfop3wof" path="res://objects/game/levels/cutscenes/cutscene_combat_defeat.gd" id="1_ojbtq"]
+[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/narrative/eyes/eyes_background.png" id="2_wwbf5"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_7du0u"]
+
+[node name="CutsceneCombatDefeat" type="Control" unique_id=38669092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojbtq")
+
+[node name="BGTexture" type="TextureRect" parent="." unique_id=1431666020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wwbf5")
+expand_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1552977941]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_7du0u")
+theme_override_font_sizes/normal_font_size = 48
+text = "Whoops.
+Game over!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Curtain" type="ColorRect" parent="." unique_id=853500806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
