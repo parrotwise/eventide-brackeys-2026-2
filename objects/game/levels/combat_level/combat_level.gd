@@ -338,7 +338,11 @@ func _on_combat_end() -> void:
 		TransitionLayer.transition_simple_fade(
 			TransitionLayer.cutscene_combat_defeat
 		)
-	else:
+	elif Game.stage == Game.Stage.COMBAT1:
 		TransitionLayer.transition_simple_fade(
 			TransitionLayer.cutscene_combat_victory
+		)
+	else:
+		TransitionLayer.transition_simple_fade(
+			TransitionLayer.cutscene_final_betrayal
 		)

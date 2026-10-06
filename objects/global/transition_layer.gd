@@ -13,6 +13,8 @@ const combat_level: String = "res://objects/game/levels/combat_level/combat_leve
 const cutscene_combat_victory: String = "res://objects/game/levels/cutscenes/cutscene_combat_victory.tscn"
 const cutscene_combat_defeat: String = "res://objects/game/levels/cutscenes/cutscene_combat_defeat.tscn"
 const cutscene_second_mutiny: String = "res://objects/game/levels/cutscenes/cutscene_second_mutiny.tscn"
+const cutscene_final_betrayal: String = "res://objects/game/levels/cutscenes/cutscene_final_betrayal.tscn"
+const credits: String = "res://objects/game/levels/cutscenes/credits.tscn"
 
 var blindfold: ColorRect:
 	get: return $ColorRect

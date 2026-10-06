@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://dpcedkm5xq5pv"]
+
+[ext_resource type="Script" uid="uid://d2k4reyvcnbpe" path="res://objects/game/levels/cutscenes/credits.gd" id="1_e4w12"]
+[ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="2_djk2j"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_2efix"]
+[ext_resource type="Texture2D" uid="uid://dkxav8844g5e0" path="res://assets/art/logo color.png" id="4_e4w12"]
+[ext_resource type="Texture2D" uid="uid://bqc7bi5hy6sd0" path="res://assets/art/jam_logo.png" id="4_rsfto"]
+
+[sub_resource type="Gradient" id="Gradient_djk2j"]
+colors = PackedColorArray(0, 0, 0, 1, 0.039215688, 0.039215688, 0.039215688, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rsfto"]
+gradient = SubResource("Gradient_djk2j")
+width = 1920
+use_hdr = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ywvrj"]
+
+[node name="CreditsScene" type="Control" unique_id=38669092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4w12")
+
+[node name="BGTexture" type="TextureRect" parent="." unique_id=1431666020]
+z_index = -1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 58.397514
+offset_top = -334.6027
+offset_right = 233.47949
+offset_bottom = 5.0577393
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.17278759
+texture = SubResource("GradientTexture1D_rsfto")
+
+[node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("2_djk2j")]
+modulate = Color(1, 1, 1, 0.019607844)
+material = SubResource("CanvasItemMaterial_ywvrj")
+layout_mode = 0
+
+[node name="DistantParallax" parent="Scenery" index="0" unique_id=239518672]
+use_parent_material = true
+
+[node name="Background" parent="Scenery/DistantParallax" index="0" unique_id=1560975777]
+use_parent_material = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BigCloudEmitter2" parent="Scenery/DistantParallax" index="1" unique_id=1360380948]
+use_parent_material = true
+
+[node name="BigSplatterEmitter" parent="Scenery/DistantParallax" index="2" unique_id=1254296861]
+use_parent_material = true
+
+[node name="BigCloudEmitter" parent="Scenery/DistantParallax" index="3" unique_id=383496791]
+use_parent_material = true
+
+[node name="StarEmitter" parent="Scenery/DistantParallax" index="4" unique_id=1636939827]
+use_parent_material = true
+
+[node name="MidParallax" parent="Scenery" index="1" unique_id=1420827354]
+use_parent_material = true
+
+[node name="PlanetEmitter" parent="Scenery/MidParallax" index="0" unique_id=570364296]
+use_parent_material = true
+
+[node name="BigComet" parent="Scenery/MidParallax" index="1" unique_id=1295206345]
+use_parent_material = true
+
+[node name="NearParallax" parent="Scenery" index="2" unique_id=1838346190]
+use_parent_material = true
+
+[node name="AstroidEmitter" parent="Scenery/NearParallax" index="0" unique_id=1030885657]
+use_parent_material = true
+
+[node name="AstroidEmitter2" parent="Scenery/NearParallax" index="1" unique_id=439370192]
+use_parent_material = true
+
+[node name="DebrisEmitter" parent="Scenery/NearParallax" index="2" unique_id=1161285893]
+use_parent_material = true
+
+[node name="Foreground" parent="Scenery" index="3" unique_id=1619556345]
+visible = false
+
+[node name="ScrollArea" type="MarginContainer" parent="." unique_id=1314037461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="Container" type="MarginContainer" parent="ScrollArea" unique_id=2007468842]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 1080
+
+[node name="Content" type="VBoxContainer" parent="ScrollArea/Container" unique_id=2135206004]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="Text" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=1060926742]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_2efix")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][font_size=72]Credits
+
+[font_size=48]Ut mollis augue vel nibh sagittis, sed cursus quam auctor.
+Ut nec mi eu arcu dapibus aliquam.
+
+In blandit orci nec massa condimentum, non consequat metus iaculis.
+Nullam maximus arcu sed tempus mattis.
+Vestibulum vitae ipsum eget lacus faucibus sagittis a in metus.
+
+Pellentesque congue sem vitae dapibus laoreet.
+Donec a eros porta, gravida lectus rutrum, pulvinar quam.
+Nam ullamcorper mi sed ante porttitor, ac porttitor enim interdum.
+Cras tincidunt elit nec velit bibendum suscipit.
+Nullam consectetur justo quis urna condimentum volutpat.
+
+Praesent sodales sapien et tincidunt rutrum.
+Nam consequat est vel hendrerit convallis.
+Sed lacinia leo non est tempor pretium ultrices vel urna.
+
+Nullam aliquet enim ac velit lacinia, vitae faucibus augue semper.
+Cras sed mi tincidunt, laoreet lorem non, mollis diam.
+Pellentesque interdum dolor sed ultrices egestas.
+Mauris porta purus et tortor vehicula euismod."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Space" type="Control" parent="ScrollArea/Container/Content" unique_id=1274747468]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="MadeFor" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=402963152]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32)
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_2efix")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][font_size=72]Made for"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="JamLogo" type="TextureRect" parent="ScrollArea/Container/Content" unique_id=97988740]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_rsfto")
+expand_mode = 5
+
+[node name="LogoArea" type="MarginContainer" parent="." unique_id=17911627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="Logo" type="TextureRect" parent="LogoArea" unique_id=404333691]
+layout_mode = 2
+texture = ExtResource("4_e4w12")
+stretch_mode = 5
+
+[editable path="Scenery"]

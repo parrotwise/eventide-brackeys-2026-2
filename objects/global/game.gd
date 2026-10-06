@@ -17,55 +17,19 @@ var loadout: LoadoutLevel
 var combat: CombatLevel
 var pointer: MousePointer
 
-var stage: Stage = Stage.LOADOUT1
+var stage: Stage
 
-var available_characters: Array[Character] = Array(
-	[
-		'gun_cat',
-		'hook_cat',
-		'explode_cat',
-		'rum_cat',
-		'nav_cat',
-		'peanut_cat',
-		'cook_cat',
-		'big_cat',
-	].map(func(ch): return load('res://objects/game/characters/crewmembers/%s.tscn' % [ch]).instantiate() as Character),
-	TYPE_OBJECT, &'Node2D', Character
-)
+var available_characters: Array[Character]
+var available_equipment: Array[Equipment]
 
-var available_equipment: Array[Equipment] = Array(
-	[
-		'burt_the_barnacle',
-		'cannonball_necklace',
-		'coin_with_a_bullet_hole',
-		'crusty_smoking_pipe',
-		'cursed_totem',
-		'eelskin',
-		'favorite_dagger',
-		'gullbone_shiv',
-		'hardtack_vest',
-		'knuckle_o_salt',
-		'mended_boot',
-		'nipium_keepsake',
-		'old_key',
-		'pocket_of_jerky',
-		'rope_loop',
-		'sailcloth_sash',
-		'secret_mixture',
-		'shark_tooth',
-		'spiked_armband',
-		'strange_looking_orange',
-	].map(func(item): return load('res://objects/game/equipments/equipment_%s.tres' % [item])),
-	TYPE_OBJECT, &'Resource', Equipment
-)
-
-var allies: Array[Character] = available_characters.duplicate(false)
-var enemies: Array[Character] = []
-
-var inventories: Dictionary[String, Array] = {}	# Character.name : Array[Equipment]
+var allies: Array[Character]
+var enemies: Array[Character]
+var inventories: Dictionary[String, Array]
 
 
 func _ready() -> void:
+	initialize()
+
 	combat_start.connect(Debug.info.bind('Combat started.'))
 	combat_end.connect(Debug.info.bind('Combat ended.'))
 
@@ -90,6 +54,58 @@ func mutiny() -> void:
 				Random.randindex(allies)
 			)
 		)
+
+
+func initialize() -> void:
+	stage = Stage.LOADOUT1
+
+	available_characters = Array(
+		[
+			'gun_cat',
+			'hook_cat',
+			'explode_cat',
+			'rum_cat',
+			'nav_cat',
+			'peanut_cat',
+			'cook_cat',
+			'big_cat',
+		].map(func(ch): return load('res://objects/game/characters/crewmembers/%s.tscn' % [ch]).instantiate() as Character),
+		TYPE_OBJECT, &'Node2D', Character
+	)
+	available_equipment = Array(
+		[
+			'burt_the_barnacle',
+			'cannonball_necklace',
+			'coin_with_a_bullet_hole',
+			'crusty_smoking_pipe',
+			'cursed_totem',
+			'eelskin',
+			'favorite_dagger',
+			'gullbone_shiv',
+			'hardtack_vest',
+			'knuckle_o_salt',
+			'mended_boot',
+			'nipium_keepsake',
+			'old_key',
+			'pocket_of_jerky',
+			'rope_loop',
+			'sailcloth_sash',
+			'secret_mixture',
+			'shark_tooth',
+			'spiked_armband',
+			'strange_looking_orange',
+		].map(func(item): return load('res://objects/game/equipments/equipment_%s.tres' % [item])),
+		TYPE_OBJECT, &'Resource', Equipment
+	)
+
+	allies = available_characters.duplicate(false)
+	enemies = []
+	inventories = {}
+
+
+func restart() -> void:
+	initialize()
+	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
 
 
 func quit() -> void:
