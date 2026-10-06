@@ -14,4 +14,4 @@ func _ready() -> void:
 
 	await get_tree().create_timer(5).timeout
 
-	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_1)
+	TransitionLayer.transition_simple_fade(TransitionLayer.credits, Color.BLACK)

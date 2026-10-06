@@ -105,7 +105,7 @@ func initialize() -> void:
 
 func restart() -> void:
 	initialize()
-	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
+	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_1)
 
 
 func quit() -> void:
