@@ -50,4 +50,4 @@ func _ready() -> void:
 				char_sprites[i].hide()
 	
 	await get_tree().create_timer(10).timeout
-	TransitionLayer.transition_simple_fade(TransitionLayer.credits)
+	TransitionLayer.transition_simple_fade(TransitionLayer.credits, Color.BLACK)

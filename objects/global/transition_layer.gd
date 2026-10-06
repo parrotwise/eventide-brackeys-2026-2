@@ -4,6 +4,8 @@ extends CanvasLayer
 signal transition_finished()
 
 
+const DEFAULT_BLINDFOLD_COLOR: Color = Color('#130300') # Color('#391200')
+
 const cutscene_1: String = "res://objects/game/levels/cutscenes/cutscene_1.tscn"
 const loadout_level: String = "res://objects/game/levels/loadout_level/loadout_level.tscn"
 const cutscene_3: String = "res://objects/game/levels/cutscenes/cutscene_3.tscn"
@@ -17,7 +19,7 @@ const cutscene_final_betrayal: String = "res://objects/game/levels/cutscenes/cut
 const credits: String = "res://objects/game/levels/cutscenes/credits.tscn"
 
 var blindfold: ColorRect:
-	get: return $ColorRect
+	get: return $Blindfold
 var betrayal: Control:
 	get: return $Betrayal
 
@@ -27,7 +29,9 @@ func _ready() -> void:
 	betrayal.hide()
 
 
-func transition_simple_fade(scene_path: String) -> void:
+func transition_simple_fade(scene_path: String, bg_color: Color = DEFAULT_BLINDFOLD_COLOR) -> void:
+	blindfold.color = bg_color
+
 	var transition_tween = create_tween()
 	transition_tween.tween_property(blindfold, "modulate:a", 1, 0.2)
 	
