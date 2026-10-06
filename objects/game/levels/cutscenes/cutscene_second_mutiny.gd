@@ -39,4 +39,4 @@ func _ready() -> void:
 		enemy2_rect.hide()
 	
 	await get_tree().create_timer(7).timeout
-	TransitionLayer.transition_simple_fade(TransitionLayer.combat_level)
+	TransitionLayer.transition_betrayal(TransitionLayer.combat_level)
