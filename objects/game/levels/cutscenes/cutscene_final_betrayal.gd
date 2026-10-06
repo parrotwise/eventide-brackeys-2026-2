@@ -11,12 +11,7 @@ var char_sprites: Array[Sprite2D]:
 
 
 func _ready() -> void:
-	if Game.allies.size() <= 1:
-		## Shouldn't be in this scene, go to...uh...some other scene
-		TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
-	
-	else:
-		Game.allies.shuffle()
+	if Game.allies:
 		for i: int in char_sprites.size():
 			if i < Game.allies.size():
 				var sprite1: Sprite2D = char_sprites[i]
@@ -49,5 +44,6 @@ func _ready() -> void:
 			else:
 				char_sprites[i].hide()
 	
-	await get_tree().create_timer(10).timeout
+		await get_tree().create_timer(10).timeout
+	
 	TransitionLayer.transition_simple_fade(TransitionLayer.credits, Color.BLACK)
