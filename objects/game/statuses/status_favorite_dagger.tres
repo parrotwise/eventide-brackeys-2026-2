@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_4duru")
-name = "Favorite Dagger"
-description = "You can’t use your basic attack anymore."
+name = &"ITEM_DAGGER_NAME"
+description = &"ITEM_DAGGER_DESCRIPTION"
 icon = ExtResource("3_qxeqj")
 icon_priority = 10
 triggers = Array[ExtResource("3_s1wnl")]([ExtResource("5_s1wnl")])

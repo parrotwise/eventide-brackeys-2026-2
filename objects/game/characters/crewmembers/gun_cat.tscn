@@ -34,7 +34,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 
 [node name="GunCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
-id = &"Sell-Mother Selma"
+id = &"CHARACTER_SC_NAME"
+blurb = &"CHARACTER_SC_BLURB"
 silhouette = ExtResource("2_yul2i")
 eyes = ExtResource("3_xbjan")
 

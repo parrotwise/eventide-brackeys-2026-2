@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_ebwul")
-name = "Eelskin"
-description = "You reflect 30% of the incoming damage onto an adjacent ally."
+name = &"ITEM_EELSKIN_NAME"
+description = &"ITEM_EELSKIN_DESCRIPTION"
 icon = ExtResource("2_8khro")
 equipped_status = ExtResource("1_t81w4")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

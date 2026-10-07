@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_vnlhm")
-name = "Basic Attack"
-description = "Perform a basic attack."
+name = &"ACTION_ATTACK_SC_NAME"
+description = &"ACTION_ATTACK_SC_DESCRIPTION"
 icon = ExtResource("2_axnhv")
 power_as_target_damage = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

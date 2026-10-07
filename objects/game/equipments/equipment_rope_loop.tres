@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_7b31s")
-name = "Rope Loop"
-description = "Your Attacks make the target unable to move by itself on their next turn."
+name = &"ITEM_ROPE_NAME"
+description = &"ITEM_ROPE_DESCRIPTION"
 icon = ExtResource("1_ib1t4")
 equipped_status = ExtResource("1_hmgpi")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -13,7 +13,7 @@ var status_bar: StatusBar:
 	get: return $StatusBar
 var preview_bar: PreviewBar:
 	get: return $PreviewBar
-var sloshed_particles: GPUParticles2D:
+var smashed_particles: GPUParticles2D:
 	get: return $BubbleEmitter
 var poison_particles: GPUParticles2D:
 	get: return $GreenDropEmitter
@@ -98,12 +98,11 @@ func _update_health_bar(_previous_health: int, current_health: int) -> void:
 
 func _update_status_indicators() -> void:
 	stun_icon.visible = character.state.active_statuses.any(
-		func(status): return status.name == "Stunned"
+		func(status): return status.name == &"STATUS_STUNNED_NAME"
 	)
-	sloshed_particles.emitting = character.state.active_statuses.any(
-		func(status): return status.name == "Sloshed"
+	smashed_particles.emitting = character.state.active_statuses.any(
+		func(status): return status.name == &"STATUS_SMASHED_NAME"
 	)
 	poison_particles.emitting = character.state.active_statuses.any(
-		func(status): return status.name == "Poisoned"
+		func(status): return status.name == &"STATUS_POISONED_NAME"
 	)
-

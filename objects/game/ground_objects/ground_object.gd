@@ -2,6 +2,7 @@ class_name GroundObject
 extends Node2D
 
 
+@export var id: StringName
 @export var granted_status: Status
 
 var character: Character

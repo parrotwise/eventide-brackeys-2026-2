@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("1_rsfff")
-name = "Keelhaul Tug"
-description = "Drag an enemy cat to the front of its party, no matter the position, dealing 10 damage to it in the process."
+name = &"ACTION_SKILL_BHC_NAME"
+description = &"ACTION_SKILL_BHC_DESCRIPTION"
 icon = ExtResource("1_bk00b")
 sfx = 4
 target_damage = 10

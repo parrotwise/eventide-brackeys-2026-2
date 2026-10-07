@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_xno84")
-name = "Spiked Armband"
-description = "When moving, by yourself or affected by an enemy, deal 5 damage to allies you pass."
+name = &"ITEM_ARMBAND_NAME"
+description = &"ITEM_ARMBAND_DESCRIPTION"
 icon = ExtResource("2_o8bg4")
 equipped_status = ExtResource("1_pnodw")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

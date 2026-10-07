@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("4_s8wl1")
-name = "Laser-Focused"
-description = "Look through the spyglass at a target. Shoot a beam of lens-focused energy, dealing 5 damage and doubling heal or damage received by the target in the next 3 instances."
+name = &"ACTION_SKILL_NC_NAME"
+description = &"ACTION_SKILL_NC_DESCRIPTION"
 icon = ExtResource("3_f0gmg")
 sfx = 17
 target_damage = 5

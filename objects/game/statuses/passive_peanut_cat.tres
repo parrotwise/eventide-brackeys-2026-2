@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("3_wt3w0")
-name = "Desmond the Dime"
-description = "Attack is a free action you can use every turn. Attack throws a couple hardtack biscuits that deal damage first, then heal for the same amount."
+name = &"CHARACTER_PC_NAME"
+description = &"STATUS_PASSIVE_PC_DESCRIPTION"
 icon = ExtResource("3_h43hp")
 passive_icon_normal = ExtResource("4_wt3w0")
 passive_icon_hover = ExtResource("3_h1gyb")

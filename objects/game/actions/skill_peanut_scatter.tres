@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("4_5g2io")
-name = "Peanut Scatter"
-description = "Scatter some nuts on a spot. If the nuts are not picked up until your next turn, a flock of seagulls will swoop in to fight for the nuts, dealing 20 damage to the cat standing on the spot, and applying 1 Nasty Cuts stack."
+name = &"ACTION_SKILL_PC_NAME"
+description = &"ACTION_SKILL_PC_DESCRIPTION"
 icon = ExtResource("3_uflod")
 sfx = 11
 created_objects = Array[PackedScene]([ExtResource("2_uflod")])

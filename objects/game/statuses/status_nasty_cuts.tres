@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_6cqdn")
-name = "Nasty Cuts"
-description = "Every stack of Nasty Cuts deals 5 damage to you at the beginning of your turn. Can’t be removed."
+name = &"STATUS_NASTY_CUTS_NAME"
+description = &"STATUS_NASTY_CUTS_DESCRIPTION"
 icon = ExtResource("3_6cqdn")
 triggers = Array[ExtResource("3_6vh4o")]([ExtResource("4_ptmg2")])
 stacking_type = 2

@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("3_3wp00")
-name = "Gut-you Gutierrez"
-description = "Every cat in front of Gut-you Gutierrez receives a 25% damage negation buff, \"Watched over\"."
+name = &"CHARACTER_NC_NAME"
+description = &"STATUS_PASSIVE_NC_DESCRIPTION"
 icon = ExtResource("4_l8p6l")
 passive_icon_normal = ExtResource("5_dtoms")
 passive_icon_hover = ExtResource("4_3wp00")

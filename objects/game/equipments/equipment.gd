@@ -3,9 +3,9 @@ extends Resource
 
 @export_group("Identifiers")
 ## A name to be exposed to the player.
-@export var name: String
+@export var name: StringName
 ## A description to be exposed to the player.
-@export_multiline() var description: String
+@export var description: StringName
 ## An icon to be exposed to the player.
 @export var icon: Texture2D
 ## Implement the persistent effect of using this Equipment as a Status effect.

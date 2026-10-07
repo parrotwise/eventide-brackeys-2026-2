@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("2_bpp8d")
-name = "Pocket of Jerky"
-description = "When receiving damage, you heal adjacent teammates for 5 HP."
+name = &"ITEM_JERKY_NAME"
+description = &"ITEM_JERKY_DESCRIPTION"
 icon = ExtResource("3_sy88v")
 icon_priority = 10
 _damage_taken_splash_heals_both_sides = 5

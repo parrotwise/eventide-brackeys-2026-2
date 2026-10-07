@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_s5yat")
-name = "Jaw Cruncher"
-description = "At the beginning of your team's next turn, deliver a devastating 40-damage punch in front of you."
+name = &"STATUS_JAW_CRUNCHER_NAME"
+description = &"STATUS_JAW_CRUNCHER_DESCRIPTION"
 icon = ExtResource("3_vggon")
 triggers = Array[ExtResource("3_nvgkg")]([ExtResource("4_s5yat")])

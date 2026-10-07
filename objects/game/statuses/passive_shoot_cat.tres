@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("6_ff2pa")
-name = "Sell-Mother Selma"
-description = "Receive a stackable +5 POW if you haven’t moved from your spot since last turn. Lose all stacks when you move."
+name = &"CHARACTER_SC_NAME"
+description = &"STATUS_PASSIVE_SC_DESCRIPTION"
 icon = ExtResource("3_hdf0j")
 passive_icon_normal = ExtResource("3_jmvxq")
 passive_icon_hover = ExtResource("2_461lq")

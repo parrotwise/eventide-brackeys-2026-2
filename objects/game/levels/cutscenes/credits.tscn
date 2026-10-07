@@ -106,10 +106,11 @@ size_flags_vertical = 0
 theme_override_constants/margin_top = 1080
 
 [node name="Content" type="VBoxContainer" parent="ScrollArea/Container" unique_id=2135206004]
+unique_name_in_owner = true
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Text" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=1060926742]
+[node name="Heading" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=1060926742]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -120,9 +121,28 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/normal_font = ExtResource("4_2efix")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "[center][font_size=72]Credits
+text = "[center][font_size=72]Credits"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[font_size=48]Ut mollis augue vel nibh sagittis, sed cursus quam auctor.
+[node name="Space1" type="Control" parent="ScrollArea/Container/Content" unique_id=1274747468]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Block" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=97827622]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_2efix")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[font_size=48]Ut mollis augue vel nibh sagittis, sed cursus quam auctor.
 Ut nec mi eu arcu dapibus aliquam.
 
 In blandit orci nec massa condimentum, non consequat metus iaculis.
@@ -148,11 +168,11 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Space" type="Control" parent="ScrollArea/Container/Content" unique_id=1274747468]
+[node name="Space2" type="Control" parent="ScrollArea/Container/Content" unique_id=166931363]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="MadeFor" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=402963152]
+[node name="MadeForPre" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=402963152]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 32)
@@ -177,6 +197,24 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_rsfto")
 expand_mode = 5
+
+[node name="MadeForPost" type="RichTextLabel" parent="ScrollArea/Container/Content" unique_id=1526965388]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -12)
+theme_override_colors/default_color = Color(0.99215686, 0.95686275, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_2efix")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="LogoArea" type="MarginContainer" parent="." unique_id=17911627]
 layout_mode = 1

@@ -35,9 +35,9 @@ var background: TextureRect:
 var equipment: Equipment
 
 var tooltip_header: String:
-	get: return equipment.name if equipment else ''
+	get: return tr(equipment.name) if equipment else ''
 var tooltip_description: String:
-	get: return equipment.description if equipment else ''
+	get: return tr(equipment.description) if equipment else ''
 
 
 func _ready() -> void:

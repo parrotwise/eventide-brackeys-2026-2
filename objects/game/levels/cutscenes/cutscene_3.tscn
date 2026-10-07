@@ -52,7 +52,8 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("3_uxxsw")
 theme_override_font_sizes/normal_font_size = 32
-text = "You have overpayed greatly for every trinket, tool, crew member, and the eagerly-sold ship, Mendacity."
+bbcode_enabled = true
+text = "SCENE_CUTSCENE3_BLOCK1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,7 +77,8 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("3_uxxsw")
 theme_override_font_sizes/normal_font_size = 32
-text = "You hope that was enough to earn their loyalty and camaraderie."
+bbcode_enabled = true
+text = "SCENE_CUTSCENE3_BLOCK2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,7 +102,8 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("3_uxxsw")
 theme_override_font_sizes/normal_font_size = 32
-text = "It was not."
+bbcode_enabled = true
+text = "SCENE_CUTSCENE3_BLOCK3"
 horizontal_alignment = 1
 vertical_alignment = 1
 

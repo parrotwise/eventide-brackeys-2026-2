@@ -34,7 +34,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 
 [node name="PeanutCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
-id = &"Desmond the Dime"
+id = &"CHARACTER_PC_NAME"
+blurb = &"CHARACTER_PC_BLURB"
 silhouette = ExtResource("2_632xr")
 eyes = ExtResource("3_8jy8j")
 

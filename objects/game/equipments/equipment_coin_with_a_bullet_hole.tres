@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_f6c1n")
-name = "Coin with a Bullet Hole"
-description = "Damage you deal and receive has 30% chance to deal +50% damage."
+name = &"ITEM_COIN_NAME"
+description = &"ITEM_COIN_DESCRIPTION"
 icon = ExtResource("2_nhhs1")
 equipped_status = ExtResource("1_5jnik")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

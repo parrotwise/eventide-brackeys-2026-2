@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("3_sa0li")
-name = "Watched Over"
-description = "You receive 25% less damage."
+name = &"STATUS_WATCHED_OVER_NAME"
+description = &"STATUS_WATCHED_OVER_DESCRIPTION"
 icon = ExtResource("3_is6ee")
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

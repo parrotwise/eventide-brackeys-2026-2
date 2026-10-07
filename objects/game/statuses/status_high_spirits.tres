@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("3_1vnpd")
-name = "High Spirits"
-description = "You gain a 25% bonus to POW, and heal 5 damage at the end of your team's turn."
+name = &"STATUS_HIGH_SPIRITS_NAME"
+description = &"STATUS_HIGH_SPIRITS_DESCRIPTION"
 icon = ExtResource("3_ekeiu")
 triggers = Array[ExtResource("4_wnqqt")]([ExtResource("5_ekeiu")])
 metadata/_custom_type_script = "uid://bikqvt8qvrsdm"

@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("2_n5tix")
-name = "Gullbone Shiv"
-description = "Every time you Attack, you deal flat extra +4 damage."
+name = &"ITEM_SHIV_NAME"
+description = &"ITEM_SHIV_DESCRIPTION"
 icon = ExtResource("3_6noja")
 icon_priority = 10
 _attack_damage_dealt_adder = 4

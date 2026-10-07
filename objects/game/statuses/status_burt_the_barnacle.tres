@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("3_xqcmf")
-name = "Burt the Barnacle"
-description = "Damage you deal inflicts Nasty Cuts. You get a stack of Nasty Cuts at the end of every turn."
+name = &"ITEM_BURT_NAME"
+description = &"ITEM_BURT_DESCRIPTION"
 icon = ExtResource("4_xqcmf")
 icon_priority = 10
 triggers = Array[ExtResource("4_4x4o6")]([ExtResource("5_22u0f")])

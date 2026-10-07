@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("4_8rds7")
-name = "Two for One"
-description = "Perform a basic attack, with another basic attack being shot at a random enemy."
+name = &"ACTION_SKILL_SC_NAME"
+description = &"ACTION_SKILL_SC_DESCRIPTION"
 icon = ExtResource("3_oan5t")
 sfx = 15
 power_as_target_damage = true

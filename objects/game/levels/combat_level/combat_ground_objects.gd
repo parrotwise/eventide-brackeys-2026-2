@@ -29,7 +29,7 @@ func launch(from_position: Vector2) -> void:
 func spawn(object_template: PackedScene, character: Character) -> void:
 	var object: GroundObject = object_template.instantiate() as GroundObject
 	add_child(object)
-	if object.name != &'Sootgut':
+	if object.id != &'OBJECT_SOOTGUT_NAME':
 		object.hide()
 		last_object = object
 	object.attach_to(character)

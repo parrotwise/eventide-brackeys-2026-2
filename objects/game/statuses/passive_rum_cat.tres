@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("6_lnm2e")
-name = "Mary Maker"
-description = "Allies while standing next to you receive a 25% POW bonus and heal for 5 health at the end of the team’s turn."
+name = &"CHARACTER_RC_NAME"
+description = &"STATUS_PASSIVE_RC_DESCRIPTION"
 icon = ExtResource("4_wa2c1")
 passive_icon_normal = ExtResource("4_ba0rm")
 passive_icon_hover = ExtResource("3_wa2c1")

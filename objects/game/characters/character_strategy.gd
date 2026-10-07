@@ -31,30 +31,30 @@ func take_turn() -> void:
 			continue
 		
 		match skill.name:
-			&'Pick Up & Cronch':
+			&'ACTION_CRUNCH_PEANUTS_NAME':
 				if Random.randfloat() < 0.70: action = skill
-			&'Jaw Cruncher':
+			&'ACTION_SKILL_BC_NAME':
 				if Random.randfloat() < 0.50: action = skill
-			&'Powder Satchel':
+			&'ACTION_SKILL_EC_NAME':
 				if Random.randfloat() < 0.50: action = skill
-			&'Mug Toss':
+			&'ACTION_SKILL_RC_NAME':
 				if Random.randfloat() < 0.65: action = skill
-			&'Two for One':
+			&'ACTION_SKILL_SC_NAME':
 				if Random.randfloat() < 0.70: action = skill
-			&'Peanut Scatter':
+			&'ACTION_SKILL_PC_NAME':
 				if Random.randfloat() < 0.50: action = skill
-			&'Keelhaul Tug':
+			&'ACTION_SKILL_BHC_NAME':
 				if Random.randfloat() < 0.50: action = skill
-			&'Roll the Pot':
+			&'ACTION_SKILL_GC_NAME':
 				if Random.randfloat() < 0.30: action = skill
-			&'Laser-Focused':
+			&'ACTION_SKILL_NC_NAME':
 				if Random.randfloat() < 0.75: action = skill
 			_:
 				if Random.randfloat() < 0.50: action = skill
 	
 	var target: Character = Random.randsample(action.valid_targets()) if action else null
 
-	var is_big_cat: bool = character.actions.skills.any(func(s): return s.name == &'Jaw Cruncher')
+	var is_big_cat: bool = character.actions.skills.any(func(s): return s.name == &'ACTION_SKILL_BC_NAME')
 	var is_in_melee: bool = Game.combat.characters.is_in_melee(character)
 	var can_reposition: bool = character.actions.reposition.can_be_used()
 

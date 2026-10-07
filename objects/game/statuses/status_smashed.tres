@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_cci3m")
-name = "Smashed"
-description = "The target's next attack will MISS. "
+name = &"STATUS_SMASHED_NAME"
+description = &"STATUS_SMASHED_DESCRIPTION"
 icon = ExtResource("3_nl3qr")
 triggers = Array[ExtResource("3_27nap")]([ExtResource("4_cci3m")])

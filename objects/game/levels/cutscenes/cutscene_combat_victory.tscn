@@ -106,9 +106,8 @@ theme_override_constants/shadow_outline_size = 12
 theme_override_constants/outline_size = 8
 theme_override_fonts/normal_font = ExtResource("3_uyyxk")
 theme_override_font_sizes/normal_font_size = 48
-text = "To the victor go the spoils!
-It’s time to lick your wounds,
-but be wary, supplies are limited!"
+bbcode_enabled = true
+text = "SCENE_VICTORY_BLOCK"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("2_dry5n")
-name = "Sootgut"
-description = "While on the spot with Sootgut, a cat receives a 50% reduction to all incoming attack damage."
+name = &"OBJECT_SOOTGUT_NAME"
+description = &"STATUS_OBJECT_SOOTGUT_DESCRIPTION"
 icon = ExtResource("3_dry5n")
 _attack_damage_taken_multiplier = 0.5

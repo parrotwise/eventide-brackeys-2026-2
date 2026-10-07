@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_eq07s")
-name = "Old Key"
-description = "Your ability gains a cooldown of 1 turn. After using the ability, attack is temporarily stronger."
+name = &"ITEM_KEY_NAME"
+description = &"ITEM_KEY_DESCRIPTION"
 icon = ExtResource("2_hdt28")
 equipped_status = ExtResource("1_4phlh")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

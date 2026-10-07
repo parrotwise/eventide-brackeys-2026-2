@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("2_r75d1")
-name = "Cannonball Necklace"
-description = "You can’t be moved, either by yourself or forcefully."
+name = &"ITEM_CANNONBALL_NAME"
+description = &"ITEM_CANNONBALL_DESCRIPTION"
 icon = ExtResource("3_bvn2n")
 icon_priority = 10
 prevent_movement = true

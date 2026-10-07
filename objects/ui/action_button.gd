@@ -34,9 +34,9 @@ var uses_label: RichTextLabel:
 var action: Action
 
 var tooltip_header: String:
-	get: return action.name if action else ''
+	get: return tr(action.name) if action else ''
 var tooltip_description: String:
-	get: return action.description if action else ''
+	get: return tr(action.description) if action else ''
 
 
 func _ready() -> void:

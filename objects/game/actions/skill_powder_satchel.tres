@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("4_an7bm")
-name = "Powder Satchel"
-description = "Throw a bag of blackpowder onto a spot. Dealing explosive damage to that satchel makes it BLOW for 25 damage to that spot and 15 damage to adjacent spots."
+name = &"ACTION_SKILL_EC_NAME"
+description = &"ACTION_SKILL_EC_DESCRIPTION"
 icon = ExtResource("3_6ss24")
 sfx = 6
 created_objects = Array[PackedScene]([ExtResource("2_7lkam")])

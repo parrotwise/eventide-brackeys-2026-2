@@ -34,7 +34,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 
 [node name="CookCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
-id = &"Scuttler O’Riley"
+id = &"CHARACTER_GC_NAME"
+blurb = &"CHARACTER_GC_BLURB"
 silhouette = ExtResource("2_ohvv7")
 eyes = ExtResource("3_rrwuj")
 

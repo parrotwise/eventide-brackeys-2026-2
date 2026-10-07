@@ -82,31 +82,31 @@ func add_icons_for(effect: Effect) -> void:
 		icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
 
 		match status.name:
-			'Jaw Cruncher':
+			&'STATUS_JAW_CRUNCHER_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.CHARGING, '', on_enemy)
-			'High Spirits':
+			&'STATUS_HIGH_SPIRITS_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.DAMAGE_DEALT_UP, '', on_enemy)
-			'Immobilized':
+			&'STATUS_IMMOBILIZED_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.IMMOBILIZED, '', on_enemy)
-			'Laser-Focused':
+			&'STATUS_LASER_FOCUSED_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.HEALING_RECEIVED_UP, '', on_enemy)
 				icon_container.add_child(preview_icon_template.instantiate() as PreviewIcon)
 				preview_icons[-1].setup(PreviewIcon.IconType.DAMAGE_TAKEN_UP, '', on_enemy)
-			'Mug Toss':
+			&'STATUS_MUG_TOSS_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.DAMAGE_DEALT_UP, '', on_enemy)
-			'Nasty Cuts':
+			&'STATUS_NASTY_CUTS_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.NASTY_CUTS, '', on_enemy)
-			'No More Please':
+			&'STATUS_NO_MORE_PLEASE_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.NO_MORE_PLEASE, '', on_enemy)
-			'Old Key Boost':
+			&'STATUS_OLD_KEY_BOOST_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.DAMAGE_DEALT_UP, '', on_enemy)
-			'Poisoned':
+			&'STATUS_POISONED_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.POISONED, '', on_enemy)
-			'Smashed':
+			&'STATUS_SMASHED_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.SMASHED, '', on_enemy)
-			'Stunned':
+			&'STATUS_STUNNED_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.STUNNED, '', on_enemy)
-			'Unflinching':
+			&'STATUS_UNFLINCHING_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.DAMAGE_DEALT_UP, '', on_enemy)
 			_:
 				preview_icons[-1].setup(PreviewIcon.IconType.NONE, '', on_enemy)
@@ -118,11 +118,11 @@ func add_icons_for(effect: Effect) -> void:
 		var object := object_template.instantiate() as GroundObject
 
 		match object.granted_status.name:
-			'Peanuts':
+			&'OBJECT_PEANUTS_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.PEANUTS, '', on_enemy)
-			'Powder Satchel':
+			&'OBJECT_SATCHEL_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.POWDER_SATCHEL, '', on_enemy)
-			'Sootgut':
+			&'OBJECT_SOOTGUT_NAME':
 				preview_icons[-1].setup(PreviewIcon.IconType.SOOTGUT, '', on_enemy)
 			_:
 				preview_icons[-1].setup(PreviewIcon.IconType.NONE, '', on_enemy)

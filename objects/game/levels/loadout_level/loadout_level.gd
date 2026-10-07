@@ -46,12 +46,12 @@ func toggle_equipment(equipment: Equipment) -> void:
 	if equipment not in Game.inventories[selected_character.id]:
 		selected_character.state.active_statuses.append(equipment.equipped_status)
 		Game.inventories[selected_character.id].append(equipment)
-		Debug.debug('%s equipped %s.' % [selected_character.id, equipment.name])
+		Debug.debug('%s equipped %s.' % [tr(selected_character.id), tr(equipment.name)])
 
 	else:
 		selected_character.state.active_statuses.erase(equipment.equipped_status)
 		Game.inventories[selected_character.id].erase(equipment)
-		Debug.debug('%s unequipped %s.' % [selected_character.id, equipment.name])
+		Debug.debug('%s unequipped %s.' % [tr(selected_character.id), tr(equipment.name)])
 	
 	ui.refresh()
 

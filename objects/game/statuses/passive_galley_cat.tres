@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("2_vsfkx")
-name = "Scuttler O’Riley"
-description = "Scuttler O’Riley starts the battle with a big pot (called Sootgut) on the same spot. While on the spot with Sootgut, a cat receives a 50% reduction to all incoming attack damage."
+name = &"CHARACTER_GC_NAME"
+description = &"STATUS_PASSIVE_GC_DESCRIPTION"
 icon = ExtResource("3_5cg8q")
 passive_icon_normal = ExtResource("3_jehg0")
 passive_icon_hover = ExtResource("2_a6d7s")

@@ -13,30 +13,19 @@ func do_action_as_user(action: Action, _target: Character):
 	target = _target
 	
 	# Basic attack
-	if action.name in [
-		&"Basic Attack",
-		&"Throw Hardtack",
-		&"Sling Slop",
-	]:
+	if 'ACTION_ATTACK_' in action.name:
 		basic_attack()
 	
-	# Special abilities
-	if action.name in [
-		&"Roll the Pot",
-		&"Powder Satchel",
-		&"Two for One",
-		&"Keelhaul Tug",
-		&"Laser-Focused",
-		&"Peanut Scatter",
-		&"Mug Toss",
-	]:
-		special()
-	
-	if action.name == &"Jaw Cruncher":
+	# The Wringer's skill
+	if action.name == &"ACTION_SKILL_BC_NAME":
 		in_stance = true
 		enter_stance()
 	
-	if action.name == &"Pick Up & Crunch":
+	# Other character skills
+	elif 'ACTION_SKILL_' in action.name:
+		special()
+	
+	if action.name == &"ACTION_CRUNCH_PEANUTS_NAME":
 		heal()
 	# basic_attack()
 
@@ -45,20 +34,20 @@ func do_trigger_as_user(trigger: Trigger):
 	var triggering_source: Variant = trigger.effect.source
 	
 	# Basic attack
-	if triggering_source.name == &"Jaw Cruncher":
+	if triggering_source.name == &"STATUS_JAW_CRUNCHER_NAME":
 		exit_stance()
 
 
 func fire_effect(effect: Effect) -> void:
 	target = effect.target
 	
-	if effect.name == &"Jaw Cruncher":
+	if effect.name == &"ACTION_SKILL_BC_NAME":
 		special()
 
 
 # No longer used.
 func do_action_as_target(action: Action):
-	if action.name == &"basic_attack":
+	if 'ACTION_ATTACK_' in action.name:
 		pass
 	await get_tree().create_timer(0.6).timeout
 	hurt()

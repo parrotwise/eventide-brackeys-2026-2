@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_hvao1")
-name = "Cannonball Necklace"
-description = "You can’t be moved, either by yourself or forcefully."
+name = &"ITEM_CANNONBALL_NAME"
+description = &"ITEM_CANNONBALL_DESCRIPTION"
 icon = ExtResource("1_gyje5")
 equipped_status = ExtResource("1_v0m3l")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

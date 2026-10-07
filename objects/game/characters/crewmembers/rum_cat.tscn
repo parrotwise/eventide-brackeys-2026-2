@@ -34,7 +34,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 
 [node name="RumCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
-id = &"Mary Maker"
+id = &"CHARACTER_RC_NAME"
+blurb = &"CHARACTER_RC_BLURB"
 silhouette = ExtResource("2_bpst1")
 eyes = ExtResource("3_3ei1r")
 

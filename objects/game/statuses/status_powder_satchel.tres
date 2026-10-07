@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("2_4wsmn")
-name = "Powder Satchel"
-description = "There's blackpowder on the ground! Taking explosive damage makes it BLOW for 25 damage, and 15 damage to adjacent spots."
+name = &"OBJECT_SATCHEL_NAME"
+description = &"STATUS_OBJECT_SATCHEL_DESCRIPTION"
 icon = ExtResource("3_q4dj5")
 triggers = Array[ExtResource("3_t553c")]([ExtResource("4_4wsmn"), ExtResource("5_bp7tc"), ExtResource("6_q4dj5")])
 trigger_uses = 3

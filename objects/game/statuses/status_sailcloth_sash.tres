@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("2_v4lam")
-name = "Sailcloth Sash"
-description = "Your HP is increased by 40%."
+name = &"ITEM_SASH_NAME"
+description = &"ITEM_SASH_DESCRIPTION"
 icon = ExtResource("3_f2gmh")
 icon_priority = 10
 _max_health_multiplier = 1.4

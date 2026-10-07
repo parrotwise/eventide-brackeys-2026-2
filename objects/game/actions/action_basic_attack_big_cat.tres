@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("3_bfpdt")
-name = "Basic Attack"
-description = "Perform a basic attack. Can only hit directly in front of you."
+name = &"ACTION_ATTACK_BC_NAME"
+description = &"ACTION_ATTACK_BC_DESCRIPTION"
 icon = ExtResource("2_72v5k")
 sfx = 3
 power_as_target_damage = true

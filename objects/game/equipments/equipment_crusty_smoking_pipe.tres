@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_g2jjb")
-name = "Crusty Smoking Pipe"
-description = "Your HP is reduced by 40%. "
+name = &"ITEM_PIPE_NAME"
+description = &"ITEM_PIPE_DESCRIPTION"
 icon = ExtResource("2_kxpjp")
 equipped_status = ExtResource("1_ksdpv")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("3_1au8w")
-name = "Stunned"
-description = "You lose your next turn."
+name = &"STATUS_STUNNED_NAME"
+description = &"STATUS_STUNNED_DESCRIPTION"
 icon = ExtResource("3_cd66i")
 triggers = Array[ExtResource("4_cd66i")]([ExtResource("5_1au8w"), ExtResource("6_cd66i")])
 trigger_uses = 2

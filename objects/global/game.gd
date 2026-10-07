@@ -24,7 +24,7 @@ var available_equipment: Array[Equipment]
 
 var allies: Array[Character]
 var enemies: Array[Character]
-var inventories: Dictionary[String, Array]
+var inventories: Dictionary[StringName, Array]
 
 
 func _ready() -> void:
@@ -42,6 +42,8 @@ func _ready() -> void:
 
 	loadout_start.connect(func(): stage = Stage.LOADOUT2 if stage == Stage.COMBAT1 else Stage.LOADOUT1)
 	combat_start.connect(func(): stage = Stage.COMBAT2 if stage == Stage.LOADOUT2 else Stage.COMBAT1)
+
+	TranslationServer.set_locale('pr')
 
 
 func mutiny() -> void:

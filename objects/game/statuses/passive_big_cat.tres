@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("3_8d7hf")
-name = "The Wringer"
-description = "Every 10% of health lost adds 15% to POW and Skill damage. Attack can only hit directly in front of you."
+name = &"CHARACTER_BC_NAME"
+description = &"STATUS_PASSIVE_BC_DESCRIPTION"
 icon = ExtResource("3_7q0cn")
 passive_icon_normal = ExtResource("3_4lvpp")
 passive_icon_hover = ExtResource("2_wghqq")

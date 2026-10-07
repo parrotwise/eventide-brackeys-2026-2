@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("2_j1b5n")
-name = "Laser-Focused"
-description = "Damage and healing received doubled in the next 3 instances."
+name = &"STATUS_LASER_FOCUSED_NAME"
+description = &"STATUS_LASER_FOCUSED_DESCRIPTION"
 icon = ExtResource("3_ieo2x")
 triggers = Array[ExtResource("3_aglnt")]([ExtResource("4_j1b5n"), ExtResource("5_aglnt")])
 trigger_uses = 3

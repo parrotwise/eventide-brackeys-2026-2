@@ -109,7 +109,7 @@ func select_target(target: Character, player_input: bool = true) -> void:
 
 	if not current_action.can_target(target):
 		Debug.info(
-			"%s is not a valid target." % target.name
+			"%s is not a valid target." % tr(target.name)
 		)
 		Game.pointer.switch_to(Enums.PointerType.DISABLED)
 		return
@@ -132,7 +132,7 @@ func submit_target(player_input: bool = true) -> void:
 
 	if not current_action.can_target(current_target):
 		Debug.info(
-			"%s is not a valid target." % current_target.name
+			"%s is not a valid target." % tr(current_target.name)
 		)
 		return
 

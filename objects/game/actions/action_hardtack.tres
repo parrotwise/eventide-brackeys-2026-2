@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("3_xwicr")
-name = "Throw Hardtack"
-description = "Deal damage equal to your POW, then heal for the same amount."
+name = &"ACTION_ATTACK_PC_NAME"
+description = &"ACTION_ATTACK_PC_DESCRIPTION"
 icon = ExtResource("2_se75s")
 sfx = 12
 power_as_target_damage = true

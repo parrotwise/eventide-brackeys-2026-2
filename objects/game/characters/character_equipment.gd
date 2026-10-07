@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_combat_start() -> void:
 	if character.id in Game.inventories:
 		equipment.assign(Game.inventories[character.id])
-		Debug.info('Restored loadout %s for %s.' % [Game.inventories[character.id].map(func(e): return e.name), character.id])
+		Debug.info('Restored loadout %s for %s.' % [Game.inventories[character.id].map(func(e): return tr(e.name)), tr(character.id)])
 	
 	for i: int in equipment.size():
 		equipment[i] = equipment[i].duplicate_deep(Resource.DEEP_DUPLICATE_ALL)

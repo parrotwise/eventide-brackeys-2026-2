@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_pd08w")
-name = "Unflinching"
-description = "You have increased POW. Lose this bonus when you move."
+name = &"STATUS_UNFLINCHING_NAME"
+description = &"STATUS_UNFLINCHING_DESCRIPTION"
 icon = ExtResource("3_pd08w")
 _power_adder = 5
 triggers = Array[ExtResource("3_02r0k")]([ExtResource("5_pd08w")])

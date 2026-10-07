@@ -20,9 +20,9 @@ var background: TextureRect:
 var passive: Status
 
 var tooltip_header: String:
-	get: return passive.name if passive else ''
+	get: return tr(passive.name) if passive else ''
 var tooltip_description: String:
-	get: return passive.description if passive else ''
+	get: return tr(passive.description) if passive else ''
 
 
 func _ready() -> void:

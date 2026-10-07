@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_wuwnj")
-name = "Rope Loop"
-description = "Your Attacks make the target unable to move by itself until your next turn."
+name = &"ITEM_ROPE_NAME"
+description = &"ITEM_ROPE_DESCRIPTION"
 icon = ExtResource("4_577yi")
 icon_priority = 10
 attacks_apply_statuses = Array[ExtResource("2_wuwnj")]([ExtResource("2_2k3q4")])

@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_hj5t0")
-name = "Knuckle'o'Salt"
-description = "Your Attacks make the target move backwards."
+name = &"ITEM_KNUCKLE_NAME"
+description = &"ITEM_KNUCKLE_DESCRIPTION"
 icon = ExtResource("2_5omi3")
 equipped_status = ExtResource("1_j60rd")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

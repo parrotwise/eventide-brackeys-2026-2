@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="4_dy3c4"]
 [ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="5_rtp05"]
 
-
 [node name="Cutscene1" type="Control" unique_id=2001640636]
 layout_mode = 3
 anchors_preset = 15
@@ -26,7 +25,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_d3nk7")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1042541063]
+[node name="TextBlock" type="RichTextLabel" parent="." unique_id=1042541063]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 238.0
 offset_top = 186.0
@@ -35,12 +35,10 @@ offset_bottom = 584.0
 theme_override_colors/default_color = Color(0.101960786, 0.03529412, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_3q0aq")
 theme_override_font_sizes/normal_font_size = 32
-text = "You are a rich, bored heir of an expansive(ly dilapidated) family, whose vaults are running dry. Dwindling gold supply would not stop you from pursuing your latest foolish whim.
-Space-faring Buccaneering.
+bbcode_enabled = true
+text = "SCENE_CUTSCENE1_BLOCK"
 
-Every dingy moon bursts with gold, undiscovered species and titillating substances to bring back and sell, or so you heard. And all it takes is a ship and a crew to prance your way to the prize and escort the bulging treasure chests back with you."
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=906150599]
+[node name="BeginButton" type="TextureButton" parent="." unique_id=906150599]
 layout_mode = 0
 offset_left = 118.0
 offset_top = 561.0
@@ -51,7 +49,8 @@ texture_hover = ExtResource("4_dy3c4")
 texture_click_mask = ExtResource("5_rtp05")
 flip_h = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton" unique_id=232847550]
+[node name="BeginButtonLabel" type="RichTextLabel" parent="BeginButton" unique_id=232847550]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,8 +65,9 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_fonts/normal_font = ExtResource("2_3q0aq")
 theme_override_font_sizes/normal_font_size = 48
-text = "Begin"
+bbcode_enabled = true
+text = "SCENE_CUTSCENE1_BEGIN_BUTTON"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="BeginButton" to="." method="_on_texture_button_pressed"]

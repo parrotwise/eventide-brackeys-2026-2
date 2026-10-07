@@ -12,9 +12,9 @@ var stack_label: RichTextLabel:
 var status: Status
 
 var tooltip_header: String:
-	get: return status.name if status else ''
+	get: return tr(status.name) if status else ''
 var tooltip_description: String:
-	get: return status.description if status else ''
+	get: return tr(status.description) if status else ''
 
 
 func _process(_delta: float) -> void:

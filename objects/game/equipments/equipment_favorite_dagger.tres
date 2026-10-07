@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_khek0")
-name = "Favorite Dagger"
-description = "You can’t use your basic attack anymore."
+name = &"ITEM_DAGGER_NAME"
+description = &"ITEM_DAGGER_DESCRIPTION"
 icon = ExtResource("2_cukvb")
 equipped_status = ExtResource("1_l6hot")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -40,9 +40,9 @@ func setup_bottom_bar(character: Character) -> void:
 	reset_bottom_bar()
 	
 	if character.all_actions.size() > 4:
-		Debug.error("Character '%s' has too many actions, only 4 will be shown." % character.name)
+		Debug.error("%s has too many actions, only 4 will be shown." % tr(character.name))
 	if character.all_equipment.size() > 4:
-		Debug.error("Character '%s' has too many items, only 4 will be shown." % character.name)
+		Debug.error("%s has too many items, only 4 will be shown." % tr(character.name))
 	
 	for i: int in mini(4, character.all_actions.size()):
 		var action: Action = character.all_actions[i]

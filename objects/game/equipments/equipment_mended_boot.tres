@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_3asfd")
-name = "Mended Boot"
-description = "Moving is now a free action."
+name = &"ITEM_BOOT_NAME"
+description = &"ITEM_BOOT_DESCRIPTION"
 icon = ExtResource("2_ufpvt")
 equipped_status = ExtResource("1_vxkal")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

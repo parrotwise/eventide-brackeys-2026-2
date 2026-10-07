@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_6gggu")
-name = "Shark Tooth"
-description = "You can Attack twice in a turn. Your POW is reduced by 30%."
+name = &"ITEM_TOOTH_NAME"
+description = &"ITEM_TOOTH_DESCRIPTION"
 icon = ExtResource("3_0fhsb")
 icon_priority = 10
 _power_multiplier = 0.7

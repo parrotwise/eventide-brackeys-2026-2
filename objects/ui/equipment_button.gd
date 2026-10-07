@@ -23,9 +23,9 @@ var icon: TextureRect:
 	get: return $ButtonBG/TextureButton/MarginContainer/Icon
 
 var tooltip_header: String:
-	get: return equipment.name if equipment else ''
+	get: return tr(equipment.name) if equipment else ''
 var tooltip_description: String:
-	get: return equipment.description if equipment else ''
+	get: return tr(equipment.description) if equipment else ''
 
 var equipment: Equipment
 

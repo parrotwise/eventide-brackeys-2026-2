@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("5_6xrjw")
-name = "Pinchin' Parrish"
-description = "Every time you deal damage, deal 50% of it to adjacent targets. Every time you TAKE damage, deal 40% of it to adjacent teammates."
+name = &"CHARACTER_EC_NAME"
+description = &"STATUS_PASSIVE_EC_DESCRIPTION"
 icon = ExtResource("3_878j7")
 passive_icon_normal = ExtResource("4_avt27")
 passive_icon_hover = ExtResource("3_4jyun")

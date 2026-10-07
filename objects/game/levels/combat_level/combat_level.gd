@@ -123,7 +123,7 @@ func _ready() -> void:
 func _on_health_changed(previous_health: int, current_health: int, character: Character) -> void:
 	Debug.debug(
 		"%s's health changed from %d to %d." % [
-			character.name,
+			tr(character.name),
 			previous_health,
 			current_health,
 		]
@@ -133,7 +133,7 @@ func _on_health_changed(previous_health: int, current_health: int, character: Ch
 func _on_knocked_out(character: Character) -> void:
 	Debug.debug(
 		"%s was knocked out!" % [
-			character.name,
+			tr(character.name),
 		]
 	)
 
@@ -150,9 +150,9 @@ func _on_action_used(
 ) -> void:
 	Debug.debug(
 		"%s used %s on %s." % [
-			user.name,
-			action.name,
-			target.name
+			tr(user.name),
+			tr(action.name),
+			tr(target.name)
 		]
 	)
 	user.actor.do_action_as_user(action, target)
@@ -165,13 +165,13 @@ func _on_action_missed(
 ) -> void:
 	Debug.debug(
 		"%s missed!" % [
-			action.name,
+			tr(action.name),
 		]
 	)
 	
 
 func _on_action_finished(action: Action) -> void:
-	Debug.debug("%s finished using %s." % [action.owner.name, action.name])
+	Debug.debug("%s finished using %s." % [tr(action.owner.name), tr(action.name)])
 
 	if turn_tracker.current_character not in characters.enemies:
 		selector.cancel_action()
@@ -186,20 +186,23 @@ func _on_action_finished(action: Action) -> void:
 func _on_action_selected(action: Action) -> void:
 	Debug.debug(
 		"%s has selected %s, targeting requested." % [
-			selector.current_user.name,
-			action.name,
+			tr(selector.current_user.name),
+			tr(action.name),
 		]
 	)
 	if action.name in [
-		&"Basic Attack",
-		&"Two for One",
-		&"Keelhaul Tug",
-		&"Laser-Focused",
+		&"ACTION_ATTACK_BC_NAME",
+		&"ACTION_ATTACK_BHC_NAME",
+		&"ACTION_ATTACK_EC_NAME",
+		&"ACTION_ATTACK_NC_NAME",
+		&"ACTION_ATTACK_PC_NAME",
+		&"ACTION_ATTACK_RC_NAME",
+		&"ACTION_ATTACK_SC_NAME",
 	]:
 		Game.pointer.switch_to(Enums.PointerType.ATTACK)
-	elif action.name == &"Sling Slop":
+	elif action.name == &"ACTION_ATTACK_GC_NAME":
 		Game.pointer.switch_to(Enums.PointerType.SLOP)
-	elif action.name == &"Reposition":
+	elif action.name == &"ACTION_REPOSITION_NAME":
 		Game.pointer.switch_to(Enums.PointerType.SWAP)
 	else:
 		Game.pointer.switch_to(Enums.PointerType.TARGET)
@@ -208,8 +211,8 @@ func _on_action_selected(action: Action) -> void:
 func _on_status_applied(status: Status) -> void:
 	Debug.debug(
 		"%s gained %s." % [
-			status.owner.name,
-			status.name
+			tr(status.owner.name),
+			tr(status.name)
 		]
 	)
 
@@ -217,8 +220,8 @@ func _on_status_applied(status: Status) -> void:
 func _on_status_removed(status: Status) -> void:
 	Debug.debug(
 		"%s lost %s." % [
-			status.owner.name,
-			status.name
+			tr(status.owner.name),
+			tr(status.name)
 		]
 	)
 
@@ -242,9 +245,9 @@ func _on_target_selected(
 ) -> void:
 	Debug.debug(
 		"%s has selected %s as the target for %s." % [
-			user.name,
-			target.name,
-			action.name,
+			tr(user.name),
+			tr(target.name),
+			tr(action.name),
 		]
 	)
 
@@ -296,7 +299,7 @@ func _on_battle_group_started(group_name: StringName) -> void:
 
 
 func _on_turn_started(character: Character) -> void:
-	Debug.debug("%s's turn started." % character.name)
+	Debug.debug("%s's turn started." % tr(character.name))
 	if character in characters.allies:
 		selector.resume()
 	if character in Game.enemies:
@@ -304,11 +307,11 @@ func _on_turn_started(character: Character) -> void:
 
 
 func _on_turn_lost(character: Character) -> void:
-	Debug.debug("%s's turn was lost!" % character.name)
+	Debug.debug("%s's turn was lost!" % tr(character.name))
 
 
 func _on_turn_ended(character: Character) -> void:
-	Debug.debug("%s's turn ended." % character.name)
+	Debug.debug("%s's turn ended." % tr(character.name))
 
 	if character not in characters.allies:
 		return

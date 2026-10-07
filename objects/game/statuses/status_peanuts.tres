@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("2_5el8q")
-name = "Peanuts"
-description = "There are peanuts on the ground! If not Picked Up & Crunched this turn, a flock of seagulls will swoop in to fight for them, dealing 20 damage and applying 1 Nasty Cuts stack."
+name = &"OBJECT_PEANUTS_NAME"
+description = &"STATUS_OBJECT_PEANUTS_DESCRIPTION"
 icon = ExtResource("4_tn4bs")
 granted_actions = Array[ExtResource("1_tn4bs")]([ExtResource("2_64wkf")])
 triggers = Array[ExtResource("3_5qpqx")]([ExtResource("4_5el8q")])

@@ -34,7 +34,8 @@ shader_parameter/status_sloshed_intensity = 0.5
 
 [node name="HookCat" type="Node2D" unique_id=1172588862]
 script = ExtResource("1_p4kuh")
-id = &"Boatswain Bones"
+id = &"CHARACTER_BHC_NAME"
+blurb = &"CHARACTER_BHC_BLURB"
 silhouette = ExtResource("2_l71r7")
 eyes = ExtResource("3_ha6ro")
 

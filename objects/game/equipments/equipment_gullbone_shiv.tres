@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_7yh0c")
-name = "Gullbone Shiv"
-description = "Every time you Attack, you deal flat extra +4 damage."
+name = &"ITEM_SHIV_NAME"
+description = &"ITEM_SHIV_DESCRIPTION"
 icon = ExtResource("2_q85wo")
 equipped_status = ExtResource("1_s4ksf")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

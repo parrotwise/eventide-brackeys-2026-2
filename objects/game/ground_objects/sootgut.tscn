@@ -28,6 +28,7 @@ _data = {
 
 [node name="Sootgut" type="Node2D" unique_id=1307450514]
 script = ExtResource("1_ol3wm")
+id = &"OBJECT_SOOTGUT_NAME"
 granted_status = ExtResource("2_l0njl")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=87316925]

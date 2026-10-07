@@ -9,8 +9,8 @@ signal uses_restored()
 
 @export_group("Identifiers")
 
-@export var name: String
-@export_multiline() var description: String
+@export var name: StringName
+@export var description: StringName
 @export var icon: Texture
 
 @export_group("Audio")

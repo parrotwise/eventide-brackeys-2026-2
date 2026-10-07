@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_14a2n")
-name = "Spiked Armband"
-description = "When moving, by yourself or affected by an enemy, deal 5 damage to allies you pass."
+name = &"ITEM_ARMBAND_NAME"
+description = &"ITEM_ARMBAND_DESCRIPTION"
 icon = ExtResource("3_lm28a")
 icon_priority = 10
 triggers = Array[ExtResource("3_gaylf")]([ExtResource("5_lm28a")])

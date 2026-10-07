@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_t141p")
-name = "Reposition"
-description = "Swap places with an adjacent ally."
+name = &"ACTION_REPOSITION_NAME"
+description = &"ACTION_REPOSITION_DESCRIPTION"
 icon = ExtResource("2_1jry5")
 swap_places = true
 range_type = 4

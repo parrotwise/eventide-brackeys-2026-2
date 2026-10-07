@@ -6,6 +6,8 @@ extends CanvasLayer
 
 var character_lineup: CharacterLineup:
 	get: return %CharacterLineup
+var equipment_grid_heading: RichTextLabel:
+	get: return %EquipmentGridHeading
 var equipment_grid: EquipmentGrid:
 	get: return %EquipmentGrid
 var center_stage: CenterStage:
@@ -14,6 +16,8 @@ var info_panel: InfoPanel:
 	get: return %InfoPanel
 var embark_button: TextureButton:
 	get: return %EmbarkButton
+var embark_button_label: RichTextLabel:
+	get: return %EmbarkButtonLabel
 var keyboard_reference: Panel:
 	get: return $KeyboardReference
 var settings_menu: SettingsMenu:
@@ -26,6 +30,9 @@ var characters: Array[Character]:
 
 
 func _ready() -> void:
+	equipment_grid_heading.text = tr(&'SCENE_LOADOUT_GRID_HEADING')
+	embark_button_label.text = tr(&'SCENE_LOADOUT_EMBARK_BUTTON')
+
 	## TODO: Replace with the commented-out callable after Wwise migration
 	open_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))

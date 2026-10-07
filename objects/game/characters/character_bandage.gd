@@ -8,16 +8,16 @@ var uses_label: RichTextLabel:
 var character: Character
 
 var tooltip_header: String:
-	get: return 'Bandage'
+	get: return tr(&'ACTION_BANDAGE_NAME')
 var tooltip_description: String:
 	get: return (
-		'Heal %s for %d hit points.' % [
-			character.id,
-			mini(
+		tr(&'ACTION_BANDAGE_DESCRIPTION').format({
+			'character': tr(character.id),
+			'amount': mini(
 				ceili(character.state.max_health * 0.3),
 				character.state.max_health - character.state.current_health
-			)
-		]
+			),
+		})
 	) if character else ''
 
 

@@ -8,8 +8,12 @@ var blurb_label: RichTextLabel:
 	get: return $BlurbLabel
 var stats_section: HBoxContainer:
 	get: return $StatsSection
+var pow_title: RichTextLabel:
+	get: return $StatsSection/POWSection/Title
 var pow_value: RichTextLabel:
 	get: return $StatsSection/POWSection/Value
+var hp_title: RichTextLabel:
+	get: return $StatsSection/HPSection/Title
 var hp_value: RichTextLabel:
 	get: return $StatsSection/HPSection/Value
 var passive_section: HBoxContainer:
@@ -30,6 +34,8 @@ var skill_description: RichTextLabel:
 	get: return $SkillSection/Text/Description
 var equipment_section: VBoxContainer:
 	get: return $EquipmentSection
+var equipment_heading: RichTextLabel:
+	get: return $EquipmentSection/Heading
 var equipment_buttons: HBoxContainer:
 	get: return $EquipmentSection/Buttons
 
@@ -44,27 +50,31 @@ func refresh() -> void:
 	for child: Node in get_children():
 		child.hide()
 
-	id_label.text = '[font_size=32]%s[/font_size]' % selected.id
+	id_label.text = '[font_size=32]%s' % tr(selected.id)
 	id_label.show()
 	
 	if selected.blurb:
-		blurb_label.text = '[font_size=20]%s[/font_size]' % selected.blurb
+		blurb_label.text = '[font_size=20]%s' % tr(selected.blurb)
 		blurb_label.show()
 	
-	pow_value.text = '[font_size=32]%d[/font_size]' % selected.state.power
-	hp_value.text = '[font_size=32]%d[/font_size]' % selected.state.max_health
+	pow_title.text = '[font_size=24]%s' % tr(&'SCENE_LOADOUT_INFO_HEADING_POW')
+	pow_value.text = '[font_size=32]%d' % selected.state.power
+
+	hp_title.text = '[font_size=24]%s' % tr(&'SCENE_LOADOUT_INFO_HEADING_HP')
+	hp_value.text = '[font_size=32]%d' % selected.state.max_health
+
 	stats_section.show()
 	
 	if selected.state.passive_status:
 		passive_image.texture = selected.state.passive_status.passive_icon_normal
 
 		passive_title.text = (
-			'[font_size=24]%s[/font_size]' %
-			'Passive Ability'
+			'[font_size=24]%s' %
+			tr(&'SCENE_LOADOUT_INFO_HEADING_PASSIVE')
 		)
 		passive_description.text = (
-			'[font_size=18]%s[/font_size]' %
-			selected.state.passive_status.description
+			'[font_size=18]%s' %
+			tr(selected.state.passive_status.description)
 		)
 
 		passive_section.show()
@@ -73,16 +83,18 @@ func refresh() -> void:
 		skill_image.texture = selected.actions.skills[0].icon
 
 		skill_title.text = (
-			'[font_size=24]%s[/font_size]' %
-			selected.actions.skills[0].name
+			'[font_size=24]%s' %
+			tr(selected.actions.skills[0].name)
 		)
 		skill_description.text = (
-			'[font_size=18]%s[/font_size]' %
-			selected.actions.skills[0].description
+			'[font_size=18]%s' %
+			tr(selected.actions.skills[0].description)
 		)
 
 		skill_section.show()
 	
+	equipment_heading.text = '[font_size=32]%s' % tr(&'SCENE_LOADOUT_INFO_HEADING_ITEMS')
+
 	if Game.inventories.get(selected.id):
 		for child: Node in equipment_buttons.get_children():
 			child.queue_free()

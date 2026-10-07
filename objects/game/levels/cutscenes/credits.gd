@@ -13,11 +13,25 @@ var content: VBoxContainer:
 var logo: TextureRect:
 	get: return $LogoArea/Logo
 
+var content_heading: RichTextLabel:
+	get: return %Content/Heading
+var content_block: RichTextLabel:
+	get: return %Content/Block
+var content_made_for_pre: RichTextLabel:
+	get: return %Content/MadeForPre
+var content_made_for_post: RichTextLabel:
+	get: return %Content/MadeForPost
+
 var target_y_offset: float = 0
 var transitioning: bool = false
 
 
 func _ready() -> void:
+	content_heading.text = '[center][font_size=72]%s' % tr(&'SCENE_CREDITS_HEADING')
+	content_block.text = '[font_size=48]%s' % tr(&'SCENE_CREDITS_BLOCK')
+	content_made_for_pre.text = '[center][font_size=72]%s' % tr(&'SCENE_CREDITS_MADE_FOR_PRE')
+	content_made_for_post.text = '[center][font_size=72]%s' % tr(&'SCENE_CREDITS_MADE_FOR_POST')
+
 	scroll_area.position = Vector2.ZERO
 	container.position = Vector2.ZERO
 	logo.modulate = Color.TRANSPARENT

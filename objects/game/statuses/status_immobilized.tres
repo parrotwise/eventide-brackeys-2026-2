@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("1_odnwx")
-name = "Immobilized"
-description = "You cannot move by yourself this turn."
+name = &"STATUS_IMMOBILIZED_NAME"
+description = &"STATUS_IMMOBILIZED_DESCRIPTION"
 icon = ExtResource("3_odnwx")
 triggers = Array[ExtResource("4_h107o")]([ExtResource("5_cuj2t"), ExtResource("6_ywirj")])
 trigger_uses = 2

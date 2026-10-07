@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("3_q47l0")
-name = "Nipium Keepsake"
-description = "Start the battle with 3 stacks of Poison. Get a 25% increase to POW."
+name = &"ITEM_NIPIUM_NAME"
+description = &"ITEM_NIPIUM_DESCRIPTION"
 icon = ExtResource("3_46sp4")
 icon_priority = 10
 _power_multiplier = 1.25

@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_umts2")
-name = "Hardtack Vest"
-description = "First three instances of damage in a fight are negated. After the third hit, the vest cracks and you’re stunned for a turn."
+name = &"ITEM_VEST_NAME"
+description = &"ITEM_VEST_DESCRIPTION"
 icon = ExtResource("2_bcanl")
 equipped_status = ExtResource("1_46wyx")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

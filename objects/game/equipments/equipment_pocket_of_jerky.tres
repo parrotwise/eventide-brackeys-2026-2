@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_bo3jw")
-name = "Pocket of Jerky"
-description = "When receiving damage, you heal adjacent teammates for 5 HP."
+name = &"ITEM_JERKY_NAME"
+description = &"ITEM_JERKY_DESCRIPTION"
 icon = ExtResource("1_ksh4x")
 equipped_status = ExtResource("1_nw7lx")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

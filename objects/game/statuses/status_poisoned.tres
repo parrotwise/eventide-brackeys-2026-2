@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("3_c3bhr")
-name = "Poison"
-description = "Take 2 damage at the end of your team's turn. Every stack of Poison beyond the first doubles this damage."
+name = &"STATUS_POISONED_NAME"
+description = &"STATUS_POISONED_DESCRIPTION"
 icon = ExtResource("3_kl8nn")
 triggers = Array[ExtResource("4_mb4v5")]([ExtResource("5_kl8nn")])
 stacking_type = 2

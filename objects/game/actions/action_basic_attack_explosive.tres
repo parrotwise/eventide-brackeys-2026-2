@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("3_kilpe")
-name = "Basic Attack"
-description = "Perform a basic attack."
+name = &"ACTION_ATTACK_EC_NAME"
+description = &"ACTION_ATTACK_EC_DESCRIPTION"
 icon = ExtResource("2_rwl77")
 sfx = 7
 power_as_target_damage_explosive = true

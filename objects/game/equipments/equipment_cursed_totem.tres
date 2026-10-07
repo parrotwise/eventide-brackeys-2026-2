@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_fyre2")
-name = "Cursed Totem"
-description = "Your HP is 1, but you deal triple damage."
+name = &"ITEM_TOTEM_NAME"
+description = &"ITEM_TOTEM_DESCRIPTION"
 icon = ExtResource("2_i3e7a")
 equipped_status = ExtResource("1_v8bhj")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("1_krsw8")
-name = "Old Key"
-description = "Your ability gains a cooldown of 1 turn. After using the ability, attack is temporarily stronger."
+name = &"ITEM_KEY_NAME"
+description = &"ITEM_KEY_DESCRIPTION"
 icon = ExtResource("3_xyks4")
 icon_priority = 10
 triggers = Array[ExtResource("2_hlk6r")]([ExtResource("5_irpm8"), ExtResource("6_3jcvl")])

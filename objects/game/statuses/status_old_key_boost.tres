@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("1_xmjoc")
-name = "Old Key Boost"
-description = "Your next basic attack is stronger. (+50% POW)"
+name = &"STATUS_OLD_KEY_BOOST_NAME"
+description = &"STATUS_OLD_KEY_BOOST_DESCRIPTION"
 icon = ExtResource("3_jv5if")
 _power_multiplier = 1.5
 triggers = Array[ExtResource("3_w6xlx")]([ExtResource("4_ljiaw")])

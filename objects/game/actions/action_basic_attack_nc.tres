@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("3_odoje")
-name = "Basic Attack"
-description = "Perform a basic attack."
+name = &"ACTION_ATTACK_NC_NAME"
+description = &"ACTION_ATTACK_NC_DESCRIPTION"
 icon = ExtResource("2_hwyyl")
 sfx = 18
 power_as_target_damage = true

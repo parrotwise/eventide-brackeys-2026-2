@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("5_a4cdj")
-name = "Boatswain Bones"
-description = "Your attack makes a target stumble backward, shifting positions. As long as you’re above 80% HP, you deal additional 15 damage with your Attack and Skill."
+name = &"CHARACTER_BHC_NAME"
+description = &"STATUS_PASSIVE_BHC_DESCRIPTION"
 icon = ExtResource("3_da5rs")
 passive_icon_normal = ExtResource("4_4g1uf")
 passive_icon_hover = ExtResource("3_gaf5b")

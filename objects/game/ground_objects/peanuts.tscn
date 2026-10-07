@@ -7,6 +7,7 @@
 [node name="Peanuts" type="Node2D" unique_id=1307450514]
 z_index = 1
 script = ExtResource("1_rshom")
+id = &"OBJECT_PEANUTS_NAME"
 granted_status = ExtResource("2_vf8w0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=852742750]

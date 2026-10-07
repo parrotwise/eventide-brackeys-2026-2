@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_qkkcv")
-name = "Strange-Looking Orange"
-description = "You cannot be healed by others, you heal by 10% of your health every turn."
+name = &"ITEM_ORANGE_NAME"
+description = &"ITEM_ORANGE_DESCRIPTION"
 icon = ExtResource("1_m0lfr")
 equipped_status = ExtResource("1_t0ygn")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_f4443")
-name = "Sailcloth Sash"
-description = "Your HP is increased by 40%."
+name = &"ITEM_SASH_NAME"
+description = &"ITEM_SASH_DESCRIPTION"
 icon = ExtResource("2_m4u7n")
 equipped_status = ExtResource("1_khicc")
 metadata/_custom_type_script = "uid://bdnm15wvsdye"

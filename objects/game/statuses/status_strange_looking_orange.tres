@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("1_dpaat")
-name = "Strange-Looking Orange"
-description = "You cannot be healed by others, you heal by 10% of your health every turn."
+name = &"ITEM_ORANGE_NAME"
+description = &"ITEM_ORANGE_DESCRIPTION"
 icon = ExtResource("3_ss168")
 icon_priority = 10
 can_be_healed = false

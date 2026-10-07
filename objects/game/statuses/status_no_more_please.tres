@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("3_2snhk")
-name = "No More Please"
-description = "For the next two turns, if you are hit by slung slop, you become stunned and lose your turn."
+name = &"STATUS_NO_MORE_PLEASE_NAME"
+description = &"STATUS_NO_MORE_PLEASE_DESCRIPTION"
 icon = ExtResource("3_ehhs1")
 no_more_please = true
 triggers = Array[ExtResource("4_53x2u")]([ExtResource("5_ehhs1")])

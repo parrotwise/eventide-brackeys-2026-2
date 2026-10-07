@@ -122,15 +122,15 @@ func apply(bypass_queue: bool = false) -> void:
 			break
 	if despawn_peanuts:
 		for object: GroundObject in Game.combat.ground_objects.objects:
-			if object.name == &'Peanuts' and object.character == target:
+			if object.id == &'OBJECT_PEANUTS_NAME' and object.character == target:
 				object.despawn()
 	if despawn_satchel:
 		for object: GroundObject in Game.combat.ground_objects.objects:
-			if object.name == &'PowderSatchel' and object.character == target:
+			if object.id == &'OBJECT_SATCHEL_NAME' and object.character == target:
 				object.despawn()
 	if reattach_sootgut:
 		for object: GroundObject in Game.combat.ground_objects.objects:
-			if object.name == &'Sootgut':
+			if object.id == &'OBJECT_SOOTGUT_NAME':
 				object.attach_to(target)
 	if increase_basic_attack_max_uses:
 		target.actions.basic_attack.number_of_uses += 1

@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("2_ehgyv")
-name = "Knuckle'o'Salt"
-description = "Your Attacks make the target move backwards."
+name = &"ITEM_KNUCKLE_NAME"
+description = &"ITEM_KNUCKLE_DESCRIPTION"
 icon = ExtResource("3_8e5qf")
 icon_priority = 10
 _attack_knockback_steps_adder = 1

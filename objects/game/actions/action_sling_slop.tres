@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("3_4cw82")
-name = "Sling Slop"
-description = "Your Attack heals instead of dealing damage. Whenever a target is hit by slung slop, it receives a “No more, please” status that lasts for two turns."
+name = &"ACTION_ATTACK_GC_NAME"
+description = &"ACTION_ATTACK_GC_DESCRIPTION"
 icon = ExtResource("3_6po1l")
 sfx = 10
 power_as_target_healing = true

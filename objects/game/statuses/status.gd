@@ -10,9 +10,9 @@ signal effect_modified(effect: Effect)
 
 @export_group("Identifiers")
 ## A name to be exposed to the player.
-@export var name: String
+@export var name: StringName
 ## A description to be exposed to the player.
-@export_multiline() var description: String
+@export var description: StringName
 ## An icon to be exposed to the player.
 @export var icon: Texture
 @export var passive_icon_normal: Texture

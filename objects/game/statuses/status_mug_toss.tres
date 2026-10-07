@@ -7,6 +7,6 @@
 
 [resource]
 script = ExtResource("2_3fkrn")
-name = "Mug Toss"
-description = "Damage increased by 40%"
+name = &"STATUS_MUG_TOSS_NAME"
+description = &"STATUS_MUG_TOSS_DESCRIPTION"
 icon = ExtResource("3_3fkrn")

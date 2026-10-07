@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("2_3axlj")
-name = "Hardtack Vest"
-description = "First three instances of damage in a fight are negated. After the third hit, the vest cracks and you’re stunned for a turn."
+name = &"ITEM_VEST_NAME"
+description = &"ITEM_VEST_DESCRIPTION"
 icon = ExtResource("3_l26uq")
 icon_priority = 10
 _damage_taken_multiplier = 0.0

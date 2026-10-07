@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("2_3ntjn")
-name = "Flammable"
-description = "Next instance of sparking damage ignites target, dealing damage and stunning it."
+name = &"STATUS_FLAMMABLE_NAME"
+description = &"STATUS_FLAMMABLE_DESCRIPTION"
 icon = ExtResource("3_3ntjn")
 stacking_type = 2

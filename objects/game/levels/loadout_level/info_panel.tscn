@@ -16,7 +16,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=32]Character Name[/font_size]"
+text = "[font_size=32]Character Name"
 fit_content = true
 scroll_active = false
 
@@ -26,7 +26,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=20]Blurb[/font_size]"
+text = "[font_size=20]Blurb"
 fit_content = true
 scroll_active = false
 
@@ -45,7 +45,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=24]Attack[br]Power[/font_size]"
+text = "[font_size=24]Attack[br]Power"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -75,7 +75,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=24]Hit[br]Points[/font_size]"
+text = "[font_size=24]Hit[br]Points"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -117,7 +117,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=24]Passive Ability[/font_size]"
+text = "[font_size=24]Passive Ability"
 fit_content = true
 scroll_active = false
 
@@ -155,7 +155,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=24]Skill[/font_size]"
+text = "[font_size=24]Skill"
 fit_content = true
 scroll_active = false
 
@@ -183,7 +183,7 @@ theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_xv24u")
 bbcode_enabled = true
-text = "[font_size=32]Equipped Items[/font_size]"
+text = "[font_size=32]Equipped Items"
 fit_content = true
 scroll_active = false
 

@@ -103,13 +103,15 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1211840200]
+[node name="EquipmentGridHeading" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1211840200]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_colors/font_outline_color = Color(0.015686275, 0.011764706, 0.050980393, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("12_02pi6")
 theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
 text = "Select yer items!"
 fit_content = true
 horizontal_alignment = 1
@@ -169,7 +171,8 @@ texture_hover = ExtResource("35_dcpep")
 texture_click_mask = ExtResource("36_vncq4")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="EmbarkButton" unique_id=873387037]
+[node name="EmbarkButtonLabel" type="RichTextLabel" parent="EmbarkButton" unique_id=873387037]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,6 +187,7 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_fonts/normal_font = ExtResource("12_02pi6")
 theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
 text = "Embark"
 horizontal_alignment = 1
 vertical_alignment = 1
