@@ -5,9 +5,18 @@ extends Node
 signal action_chosen(action: Action, user: Character, target: Character)
 
 var character: Character
- 
+
+var _paused: bool = false
+
+
+func pause() -> void:
+	_paused = true
+
 
 func take_turn() -> void:
+	while _paused:
+		await Game.combat.queue.await_time(1)
+	
 	var action: Action = null
 	
 	if character.actions.basic_attack.can_be_used():

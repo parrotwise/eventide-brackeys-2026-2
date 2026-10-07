@@ -329,6 +329,9 @@ func _on_combat_end() -> void:
 	queue.clear()
 	selector.pause()
 
+	for character: Character in characters.all:
+		character.strategy.pause()
+
 	await get_tree().create_timer(3).timeout
 	
 	for character: Character in characters.all:
