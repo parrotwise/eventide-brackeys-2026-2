@@ -95,3 +95,7 @@ func _on_kill_cauldron_dude() -> void:
 	Game.combat.characters.remove(
 		Random.randsample(Game.combat.ground_objects.objects).character
 	)
+
+
+func _on_go_to_credits() -> void:
+	TransitionLayer.transition_simple_fade(TransitionLayer.credits)
