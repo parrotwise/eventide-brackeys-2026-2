@@ -24,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e4w12")
+scroll_speed = 8.0
 
 [node name="BGTexture" type="TextureRect" parent="." unique_id=1431666020]
 z_index = -1000

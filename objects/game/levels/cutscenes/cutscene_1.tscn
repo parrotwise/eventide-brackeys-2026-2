@@ -25,8 +25,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_d3nk7")
 
-[node name="TextBlock" type="RichTextLabel" parent="." unique_id=1042541063]
+[node name="TextBlocksdgdsrgsdrg" type="RichTextLabel" parent="." unique_id=1042541063]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 238.0
 offset_top = 186.0
@@ -37,6 +38,26 @@ theme_override_fonts/normal_font = ExtResource("2_3q0aq")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "SCENE_CUTSCENE1_BLOCK"
+
+[node name="TextBlock" type="RichTextLabel" parent="." unique_id=1264617890]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 207.0
+offset_top = 83.0
+offset_right = 1080.0
+offset_bottom = 584.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+theme_override_constants/line_separation = 8
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_3q0aq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "SCENE_CUTSCENE1_BLOCK"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
 
 [node name="BeginButton" type="TextureButton" parent="." unique_id=906150599]
 layout_mode = 0

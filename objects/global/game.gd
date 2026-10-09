@@ -43,7 +43,7 @@ func _ready() -> void:
 	loadout_start.connect(func(): stage = Stage.LOADOUT2 if stage == Stage.COMBAT1 else Stage.LOADOUT1)
 	combat_start.connect(func(): stage = Stage.COMBAT2 if stage == Stage.LOADOUT2 else Stage.COMBAT1)
 
-	TranslationServer.set_locale('pr')
+	TranslationServer.set_locale('en')
 
 
 func mutiny() -> void:
