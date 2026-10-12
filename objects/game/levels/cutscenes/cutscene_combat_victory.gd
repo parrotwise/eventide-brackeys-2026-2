@@ -13,8 +13,13 @@ var c4_sprite: Sprite2D:
 var char_sprites: Array[Sprite2D]:
 	get: return [c1_sprite, c2_sprite, c3_sprite, c4_sprite]
 
+var skipper: CutsceneSkipper:
+	get: return $Skipper
+
 
 func _ready() -> void:
+	skipper.skip_requested.connect(skip)
+	
 	if Game.allies.size() <= 1:
 		## Shouldn't be in this scene, go to...uh...some other scene
 		TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
@@ -34,4 +39,8 @@ func _ready() -> void:
 				char_sprites[i].hide()
 	
 	await get_tree().create_timer(7).timeout
+	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
+
+
+func skip() -> void:
 	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)

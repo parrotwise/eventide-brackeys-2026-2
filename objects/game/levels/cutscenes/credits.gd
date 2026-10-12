@@ -22,11 +22,16 @@ var content_made_for_pre: RichTextLabel:
 var content_made_for_post: RichTextLabel:
 	get: return %Content/MadeForPost
 
+var skipper: CutsceneSkipper:
+	get: return $Skipper
+
 var target_y_offset: float = 0
 var transitioning: bool = false
 
 
 func _ready() -> void:
+	skipper.skip_requested.connect(skip)
+	
 	content_heading.text = '[center][font_size=72]%s' % tr(&'SCENE_CREDITS_HEADING')
 	content_block.text = '[font_size=48]%s' % tr(&'SCENE_CREDITS_BLOCK')
 	content_made_for_pre.text = '[center][font_size=72]%s' % tr(&'SCENE_CREDITS_MADE_FOR_PRE')
@@ -65,4 +70,8 @@ func transition() -> void:
 	
 	await get_tree().create_timer(10.5).timeout
 
+	Game.restart()
+
+
+func skip() -> void:
 	Game.restart()

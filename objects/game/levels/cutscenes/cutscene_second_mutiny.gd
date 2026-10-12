@@ -10,9 +10,14 @@ var enemy1_rect: TextureRect:
 var enemy2_rect: TextureRect:
 	get: return $TeamAnchors/EnemiesAnchor/Eyes/Eyes2
 
+var skipper: CutsceneSkipper:
+	get: return $Skipper
+
 
 func _ready() -> void:
 	Game.mutiny()
+	
+	skipper.skip_requested.connect(skip)
 	
 	if Game.allies:
 		ally1_rect.texture = Game.allies[0].eyes
@@ -39,4 +44,8 @@ func _ready() -> void:
 		enemy2_rect.hide()
 	
 	await get_tree().create_timer(7).timeout
+	TransitionLayer.transition_betrayal(TransitionLayer.combat_level)
+
+
+func skip() -> void:
 	TransitionLayer.transition_betrayal(TransitionLayer.combat_level)

@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_2efix"]
 [ext_resource type="Texture2D" uid="uid://dkxav8844g5e0" path="res://assets/art/logo color.png" id="4_e4w12"]
 [ext_resource type="Texture2D" uid="uid://bqc7bi5hy6sd0" path="res://assets/art/jam_logo.png" id="4_rsfto"]
+[ext_resource type="PackedScene" uid="uid://cop8o2kgprybt" path="res://objects/game/levels/cutscenes/cutscene_skipper.tscn" id="6_2t6a5"]
 
 [sub_resource type="Gradient" id="Gradient_djk2j"]
 colors = PackedColorArray(0, 0, 0, 1, 0.039215688, 0.039215688, 0.039215688, 1)
@@ -233,5 +234,9 @@ theme_override_constants/margin_bottom = 128
 layout_mode = 2
 texture = ExtResource("4_e4w12")
 stretch_mode = 5
+
+[node name="Skipper" parent="." unique_id=1266325475 instance=ExtResource("6_2t6a5")]
+layout_mode = 1
+hold_threshold = 2.6
 
 [editable path="Scenery"]

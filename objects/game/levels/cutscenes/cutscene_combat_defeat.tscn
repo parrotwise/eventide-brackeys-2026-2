@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnsu5hfop3wof" path="res://objects/game/levels/cutscenes/cutscene_combat_defeat.gd" id="1_ojbtq"]
 [ext_resource type="Texture2D" uid="uid://c1ly5exscbl4k" path="res://assets/art/backgrounds/death_bg.png" id="2_kw3br"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_7du0u"]
+[ext_resource type="PackedScene" uid="uid://cop8o2kgprybt" path="res://objects/game/levels/cutscenes/cutscene_skipper.tscn" id="4_ojbtq"]
 
 [node name="CutsceneCombatDefeat" type="Control" unique_id=38669092]
 layout_mode = 3
@@ -56,3 +57,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="Skipper" parent="." unique_id=1266325475 instance=ExtResource("4_ojbtq")]
+layout_mode = 1
+offset_right = 0.00012207031
+offset_bottom = 0.00012207031

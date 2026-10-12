@@ -11,8 +11,13 @@ var c2_sprite: Sprite2D:
 var char_sprites: Array[Sprite2D]:
 	get: return [c1_sprite, c2_sprite]
 
+var skipper: CutsceneSkipper:
+	get: return $Skipper
+
 
 func _ready() -> void:	
+	skipper.skip_requested.connect(skip)
+	
 	get_tree().create_tween().tween_property(
 		bg, ^'offset_transform_position', 260 * Vector2.UP, 10
 	)
@@ -52,4 +57,8 @@ func _ready() -> void:
 	
 		await get_tree().create_timer(10).timeout
 	
+	TransitionLayer.transition_simple_fade(TransitionLayer.credits, Color.BLACK)
+
+
+func skip() -> void:
 	TransitionLayer.transition_simple_fade(TransitionLayer.credits, Color.BLACK)

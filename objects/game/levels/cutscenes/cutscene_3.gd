@@ -7,10 +7,13 @@ var panel_2: TextureRect:
 	get: return $VBoxContainer/HBoxContainer/Panel2
 var panel_3: TextureRect:
 	get: return $VBoxContainer/Panel3
+var skipper: CutsceneSkipper:
+	get: return $Skipper
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	skipper.skip_requested.connect(skip)
+	
 	await get_tree().create_timer(1).timeout
 	get_panel_1()
 	await get_tree().create_timer(2).timeout
@@ -36,3 +39,7 @@ func get_panel_3() -> void:
 	
 	var tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(panel_3, "offset_transform_position", Vector2(0, 0), 2)
+
+
+func skip() -> void:
+	TransitionLayer.transition_betrayal(TransitionLayer.combat_level)

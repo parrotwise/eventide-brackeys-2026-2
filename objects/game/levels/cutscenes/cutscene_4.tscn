@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6xt1bgtye3jx" path="res://objects/game/levels/cutscenes/cutscene_4.gd" id="1_2ukia"]
 [ext_resource type="Texture2D" uid="uid://c5mpwawvyo5na" path="res://assets/art/backgrounds/cutscene_4_1.png" id="1_q5j6p"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_xfnc4"]
+[ext_resource type="PackedScene" uid="uid://cop8o2kgprybt" path="res://objects/game/levels/cutscenes/cutscene_skipper.tscn" id="4_5ny5k"]
 
 [node name="Cutscene4" type="Control" unique_id=38669092]
 layout_mode = 3
@@ -51,3 +52,6 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Skipper" parent="." unique_id=1266325475 instance=ExtResource("4_5ny5k")]
+layout_mode = 1

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lqlekofto1lp" path="res://assets/art/backgrounds/scene_11_threat_bg.png" id="2_ct2a6"]
 [ext_resource type="Texture2D" uid="uid://b17jicqdnt75f" path="res://assets/art/characters/silhouettes/sil_bc.png" id="3_o3d6q"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_tyeyv"]
+[ext_resource type="PackedScene" uid="uid://cop8o2kgprybt" path="res://objects/game/levels/cutscenes/cutscene_skipper.tscn" id="5_o3d6q"]
 
 [node name="CutsceneFinalBetrayal" type="Control" unique_id=38669092]
 layout_mode = 3
@@ -89,3 +90,6 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Skipper" parent="." unique_id=1266325475 instance=ExtResource("5_o3d6q")]
+layout_mode = 1

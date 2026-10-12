@@ -1,8 +1,12 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
+var skipper: CutsceneSkipper:
+	get: return $Skipper
+
+
 func _ready() -> void:
+	skipper.skip_requested.connect(skip)
 	
 	## TODO: Replace with the commented-out call after Wwise migration
 	Audio.play_music(Audio.Track.TRACK2)
@@ -10,4 +14,9 @@ func _ready() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
+
+
+func skip() -> void:
+	skipper.feedback_text.hide()
 	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)
