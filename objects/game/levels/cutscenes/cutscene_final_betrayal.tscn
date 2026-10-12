@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dphnw143gny12"]
 
 [ext_resource type="Script" uid="uid://bttcnu3b81b6c" path="res://objects/game/levels/cutscenes/cutscene_final_betrayal.gd" id="1_ct2a6"]
-[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/backgrounds/eyes_background.png" id="2_o3d6q"]
+[ext_resource type="Texture2D" uid="uid://lqlekofto1lp" path="res://assets/art/backgrounds/scene_11_threat_bg.png" id="2_ct2a6"]
 [ext_resource type="Texture2D" uid="uid://b17jicqdnt75f" path="res://assets/art/characters/silhouettes/sil_bc.png" id="3_o3d6q"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_tyeyv"]
 
@@ -21,7 +21,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o3d6q")
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 260)
+texture = ExtResource("2_ct2a6")
 expand_mode = 5
 
 [node name="CharAnchors" type="HBoxContainer" parent="." unique_id=255076616]

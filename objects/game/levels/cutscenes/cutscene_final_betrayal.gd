@@ -1,6 +1,8 @@
 extends Control
 
 
+var bg: TextureRect:
+	get: return $BGTexture
 var c1_sprite: Sprite2D:
 	get: return $CharAnchors/C1Anchor/C1Sprite
 var c2_sprite: Sprite2D:
@@ -10,7 +12,11 @@ var char_sprites: Array[Sprite2D]:
 	get: return [c1_sprite, c2_sprite]
 
 
-func _ready() -> void:
+func _ready() -> void:	
+	get_tree().create_tween().tween_property(
+		bg, ^'offset_transform_position', 260 * Vector2.UP, 10
+	)
+	
 	if Game.allies:
 		for i: int in char_sprites.size():
 			if i < Game.allies.size():
