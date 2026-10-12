@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://27xo0wj1tp3v"]
 
 [ext_resource type="Script" uid="uid://cif2nxy6tj6yi" path="res://objects/game/levels/cutscenes/cutscene_second_mutiny.gd" id="1_yoqs1"]
-[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/narrative/eyes/eyes_background.png" id="2_2yluc"]
-[ext_resource type="Texture2D" uid="uid://dwiuil7jpxrg5" path="res://assets/art/narrative/eyes/eyes_bc.png" id="3_yoqs1"]
+[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/backgrounds/eyes_background.png" id="2_2yluc"]
+[ext_resource type="Texture2D" uid="uid://dwiuil7jpxrg5" path="res://assets/art/characters/eyes/eyes_bc.png" id="3_yoqs1"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_phbt2"]
 
 [node name="CutsceneSecondMutiny" type="Control" unique_id=38669092]

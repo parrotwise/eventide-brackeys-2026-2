@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bloiakskhop7d"]
 
-[ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/backgrounds/bg_placeholder.png" id="1_b106r"]
+[ext_resource type="Texture2D" uid="uid://u6e6e7yuj0dt" path="res://assets/art/scenery/bg_placeholder.png" id="1_b106r"]
 [ext_resource type="Script" uid="uid://g23brjejw4jf" path="res://objects/game/levels/combat_level/combat_scenery.gd" id="1_mtt6l"]
-[ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/backgrounds/bg_space_cloud.png" id="2_mtt6l"]
-[ext_resource type="Texture2D" uid="uid://7rj35oktahiu" path="res://assets/art/backgrounds/BG_parallax_sprite_sheet.png" id="3_6c6dk"]
-[ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/backgrounds/space_dust_sheet.png" id="3_bj8y4"]
-[ext_resource type="Texture2D" uid="uid://be1e2tgc8pvqw" path="res://assets/art/backgrounds/Big Comet.png" id="4_6c6dk"]
-[ext_resource type="Texture2D" uid="uid://beewuo8pfhnul" path="res://assets/art/backgrounds/bg_deck_placeholder.png" id="5_k6iuq"]
+[ext_resource type="Texture2D" uid="uid://1u06u17aq6j1" path="res://assets/art/scenery/bg_space_cloud.png" id="2_mtt6l"]
+[ext_resource type="Texture2D" uid="uid://7rj35oktahiu" path="res://assets/art/scenery/BG_parallax_sprite_sheet.png" id="3_6c6dk"]
+[ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/scenery/space_dust_sheet.png" id="3_bj8y4"]
+[ext_resource type="Texture2D" uid="uid://be1e2tgc8pvqw" path="res://assets/art/scenery/Big Comet.png" id="4_6c6dk"]
+[ext_resource type="Texture2D" uid="uid://cab4wkyoeph60" path="res://assets/art/backgrounds/bg_deck_b1.png" id="7_1qjvi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpvd8"]
 load_path = "res://.godot/imported/BG_parallax_sprite_sheet.png-fbabf6e1c3c45abdeb2c05b4729db43c.ctex"
@@ -354,6 +354,6 @@ offset_top = -300.0
 offset_right = 2220.0
 offset_bottom = 1380.0
 mouse_filter = 2
-texture = ExtResource("5_k6iuq")
+texture = ExtResource("7_1qjvi")
 
 [connection signal="timeout" from="MidParallax/BigComet/BigCometTimer" to="." method="_on_big_comet_timer_timeout"]

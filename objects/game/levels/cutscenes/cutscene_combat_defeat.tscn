@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tg71ogl1tk2c"]
 
 [ext_resource type="Script" uid="uid://cnsu5hfop3wof" path="res://objects/game/levels/cutscenes/cutscene_combat_defeat.gd" id="1_ojbtq"]
-[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/narrative/eyes/eyes_background.png" id="2_wwbf5"]
+[ext_resource type="Texture2D" uid="uid://lv4ebe274s05" path="res://assets/art/backgrounds/eyes_background.png" id="2_wwbf5"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="4_7du0u"]
 
 [node name="CutsceneCombatDefeat" type="Control" unique_id=38669092]

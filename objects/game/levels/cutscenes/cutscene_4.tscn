@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnl6mnexrfvoq"]
 
 [ext_resource type="Script" uid="uid://c6xt1bgtye3jx" path="res://objects/game/levels/cutscenes/cutscene_4.gd" id="1_2ukia"]
-[ext_resource type="Texture2D" uid="uid://c5mpwawvyo5na" path="res://assets/art/narrative/cutscene_4_1.png" id="1_q5j6p"]
+[ext_resource type="Texture2D" uid="uid://c5mpwawvyo5na" path="res://assets/art/backgrounds/cutscene_4_1.png" id="1_q5j6p"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_xfnc4"]
 
 [node name="Cutscene4" type="Control" unique_id=38669092]
