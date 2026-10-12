@@ -1,21 +1,28 @@
 extends CanvasLayer
 
 
-@export var combat_camera: CombatCamera
-@export var target_character: Character
-@export var test_status: Status
-
-var is_camera_zoomed: bool = false
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
+	setup()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func setup() -> void:
+	$PanelContainer/VBoxContainer/KillAllyFront.pressed.connect(_on_kill_ally.bind(0))
+	$PanelContainer/VBoxContainer/KillAlly2nd.pressed.connect(_on_kill_ally.bind(1))
+	$PanelContainer/VBoxContainer/KillAlly3rd.pressed.connect(_on_kill_ally.bind(2))
+	$PanelContainer/VBoxContainer/KillAlly4th.pressed.connect(_on_kill_ally.bind(3))
+	
+	$PanelContainer/VBoxContainer/KillEnemyFront.pressed.connect(_on_kill_enemy.bind(0))
+	$PanelContainer/VBoxContainer/KillEnemy2nd.pressed.connect(_on_kill_enemy.bind(1))
+	$PanelContainer/VBoxContainer/KillEnemy3rd.pressed.connect(_on_kill_enemy.bind(2))
+	$PanelContainer/VBoxContainer/KillEnemy4th.pressed.connect(_on_kill_enemy.bind(3))
+	
+	$PanelContainer/VBoxContainer/LoseBattle.pressed.connect(_on_lose_battle)
+	$PanelContainer/VBoxContainer/WinBattle.pressed.connect(_on_win_battle)
+
+	$PanelContainer/VBoxContainer/RollCredits.pressed.connect(
+		TransitionLayer.transition_simple_fade.bind(TransitionLayer.credits)
+	)
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -23,79 +30,37 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		visible = !visible
 
 
-func _on_shake_screen_button_pressed() -> void:
-	combat_camera.shake_screen()
+func _on_kill_ally(index: int) -> void:
+	if index >= Game.combat.characters.allies.size():
+		return
+	
+	var ally: Character = Game.combat.characters.allies[index]
+	
+	while not ally.state.knocked_out:
+		ally.state.take_damage(999)
+	
+	if ally == Game.combat.turn_tracker.current_character:
+		Game.combat.turn_tracker.end_current_turn()
 
 
-func _on_zoom_button_pressed() -> void:
-	if !is_camera_zoomed:
-		combat_camera.zoom_on_characters([target_character])
-		is_camera_zoomed = true
-	else:
-		combat_camera.zoom_to_full()
-		is_camera_zoomed = false
+func _on_kill_enemy(index: int) -> void:
+	if index >= Game.combat.characters.enemies.size():
+		return
+	
+	var enemy: Character = Game.combat.characters.enemies[index]
+	
+	while not enemy.state.knocked_out:
+		enemy.state.take_damage(999)
+	
+	if enemy == Game.combat.turn_tracker.current_character:
+		Game.combat.turn_tracker.end_current_turn()
 
 
-func _on_take_damage_button_pressed() -> void:
-	target_character.state.take_damage(25)
+func _on_lose_battle() -> void:
+	while Game.combat.characters.allies.size():
+		_on_kill_ally(-1)
 
 
-func _on_heal_button_pressed() -> void:
-	target_character.state.heal(25)
-
-
-func _on_apply_status_pressed() -> void:
-	target_character.state.apply_status(test_status)
-
-
-func _on_remove_status_pressed() -> void:
-	for status: Status in target_character.state.active_statuses:
-		if status.name == test_status.name:
-			target_character.state.remove_status(status)
-			return
-
-
-func _on_select_character_pressed() -> void:
-	Game.combat.selector.select_ally(
-		Random.randsample(Game.combat.characters.allies)
-	)
-
-
-func _on_select_action_pressed() -> void:
-	Game.combat.selector.select_action(
-		Random.randsample(Game.combat.selector.current_user.all_actions)
-	)
-
-
-func _on_select_target_pressed() -> void:
-	Game.combat.selector.select_target(
-		Random.randsample(Game.combat.selector.current_action.valid_targets())
-	)
-
-
-func _on_spawn_cauldron() -> void:
-	Game.combat.ground_objects.spawn(
-		load('res://objects/game/ground_objects/cauldron.tscn'),
-		Game.combat.characters.allies[1]
-	)
-
-
-func _on_despawn_cauldron() -> void:
-	Random.randsample(Game.combat.ground_objects.objects).despawn()
-
-
-func _on_move_cauldron_dude() -> void:
-	Game.combat.characters._move_by(
-		Random.randint(0, 1) * 2 - 1,
-		Random.randsample(Game.combat.ground_objects.objects).character
-	)
-
-
-func _on_kill_cauldron_dude() -> void:
-	Game.combat.characters.remove(
-		Random.randsample(Game.combat.ground_objects.objects).character
-	)
-
-
-func _on_go_to_credits() -> void:
-	TransitionLayer.transition_simple_fade(TransitionLayer.credits)
+func _on_win_battle() -> void:
+	while Game.combat.characters.enemies.size():
+		_on_kill_enemy(-1)

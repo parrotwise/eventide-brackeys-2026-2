@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ny1jdimt2uae" path="res://objects/game/levels/combat_level/combat_ui.tscn" id="8_c7jmv"]
 [ext_resource type="PackedScene" uid="uid://dvkf3pae2axej" path="res://objects/game/levels/combat_level/combat_characters.tscn" id="9_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://bt630geujiome" path="res://objects/game/levels/combat_level/debug_menu.tscn" id="11_f26kh"]
-[ext_resource type="Resource" uid="uid://ci1h01guccnmg" path="res://objects/game/statuses/status_sloshed.tres" id="13_m1tc0"]
 [ext_resource type="PackedScene" uid="uid://cywd1kqbrehsb" path="res://objects/game/levels/combat_level/combat_ground_objects.tscn" id="15_ymi32"]
 
 [node name="CombatLevel" type="Node" unique_id=1024184618]
@@ -62,8 +61,6 @@ position = Vector2(1780, 700)
 
 [node name="UI" parent="." unique_id=1657674242 instance=ExtResource("8_c7jmv")]
 
-[node name="DebugMenu" parent="." unique_id=403288196 node_paths=PackedStringArray("combat_camera") instance=ExtResource("11_f26kh")]
-combat_camera = NodePath("../Camera")
-test_status = ExtResource("13_m1tc0")
+[node name="DebugMenu" parent="." unique_id=403288196 instance=ExtResource("11_f26kh")]
 
 [editable path="Characters"]

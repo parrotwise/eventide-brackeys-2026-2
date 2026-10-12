@@ -14,75 +14,48 @@ offset_bottom = 369.0
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1294739171]
 layout_mode = 2
 
-[node name="ShakeScreenButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2004456094]
+[node name="KillAllyFront" type="Button" parent="PanelContainer/VBoxContainer" unique_id=420483858]
 layout_mode = 2
-text = "shake_screen()"
+text = "Kill Ally Front"
 
-[node name="ZoomButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=67158399]
+[node name="KillAlly2nd" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1777358058]
 layout_mode = 2
-text = "zoom"
+text = "Kill Ally 2nd"
 
-[node name="TakeDamageButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=177673395]
+[node name="KillAlly3rd" type="Button" parent="PanelContainer/VBoxContainer" unique_id=612040710]
 layout_mode = 2
-text = "TakeDamage"
+text = "Kill Ally 3rd"
 
-[node name="HealButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=5474275]
+[node name="KillAlly4th" type="Button" parent="PanelContainer/VBoxContainer" unique_id=839004071]
 layout_mode = 2
-text = "Heal"
+text = "Kill Ally 4th"
 
-[node name="ApplySloshed" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1179330753]
+[node name="KillEnemyFront" type="Button" parent="PanelContainer/VBoxContainer" unique_id=661912269]
 layout_mode = 2
-text = "Apply Sloshed"
+text = "Kill Enemy Front"
 
-[node name="RemoveSloshed" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1021602925]
+[node name="KillEnemy2nd" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1839130973]
 layout_mode = 2
-text = "Remove Sloshed
+text = "Kill Enemy 2nd"
+
+[node name="KillEnemy3rd" type="Button" parent="PanelContainer/VBoxContainer" unique_id=17172041]
+layout_mode = 2
+text = "Kill Enemy 3rd"
+
+[node name="KillEnemy4th" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1978133797]
+layout_mode = 2
+text = "Kill Enemy 4th"
+
+[node name="LoseBattle" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1444536238]
+layout_mode = 2
+text = "Lose Battle
 "
 
-[node name="SelectCharacter" type="Button" parent="PanelContainer/VBoxContainer" unique_id=897695493]
+[node name="WinBattle" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2020328222]
 layout_mode = 2
-text = "Select Character"
-
-[node name="SelectAction" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1659901342]
-layout_mode = 2
-text = "Select Action"
-
-[node name="SelectTarget" type="Button" parent="PanelContainer/VBoxContainer" unique_id=526699504]
-layout_mode = 2
-text = "Select Target"
-
-[node name="SpawnCauldron" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1685016993]
-layout_mode = 2
-text = "Spawn Cauldron"
-
-[node name="DespawnCauldron" type="Button" parent="PanelContainer/VBoxContainer" unique_id=904028744]
-layout_mode = 2
-text = "Despawn Cauldron"
-
-[node name="MoveCauldronDude" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1873139050]
-layout_mode = 2
-text = "Move Cauldron Dude"
-
-[node name="KillCauldronDude" type="Button" parent="PanelContainer/VBoxContainer" unique_id=613030782]
-layout_mode = 2
-text = "Kill Cauldron Dude"
-
-[node name="GoToCredits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1444536238]
-layout_mode = 2
-text = "GO TO CREDITS
+text = "Win Battle
 "
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ShakeScreenButton" to="." method="_on_shake_screen_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TakeDamageButton" to="." method="_on_take_damage_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HealButton" to="." method="_on_heal_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ApplySloshed" to="." method="_on_apply_status_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/RemoveSloshed" to="." method="_on_remove_status_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectCharacter" to="." method="_on_select_character_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectAction" to="." method="_on_select_action_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/SelectTarget" to="." method="_on_select_target_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/SpawnCauldron" to="." method="_on_spawn_cauldron"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/DespawnCauldron" to="." method="_on_despawn_cauldron"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MoveCauldronDude" to="." method="_on_move_cauldron_dude"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/KillCauldronDude" to="." method="_on_kill_cauldron_dude"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/GoToCredits" to="." method="_on_go_to_credits"]
+[node name="RollCredits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=30741470]
+layout_mode = 2
+text = "Roll Credits"
