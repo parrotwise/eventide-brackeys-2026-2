@@ -303,7 +303,7 @@ func _on_turn_started(character: Character) -> void:
 	if character in characters.allies:
 		selector.resume()
 	if character in Game.enemies:
-		character.strategy.take_turn()
+		character.strategy.take_turn(true)
 
 
 func _on_turn_lost(character: Character) -> void:
