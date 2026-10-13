@@ -10,5 +10,6 @@ name = &"ACTION_ATTACK_SC_NAME"
 description = &"ACTION_ATTACK_SC_DESCRIPTION"
 icon = ExtResource("2_prdvv")
 sfx = 16
+is_sparking = true
 power_as_target_damage = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

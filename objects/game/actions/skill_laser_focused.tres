@@ -12,6 +12,7 @@ description = &"ACTION_SKILL_NC_DESCRIPTION"
 icon = ExtResource("3_f0gmg")
 sfx = 17
 target_damage = 5
+is_sparking = true
 applied_statuses = Array[ExtResource("1_uhf0r")]([ExtResource("2_uhf0r")])
 target_group = 0
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

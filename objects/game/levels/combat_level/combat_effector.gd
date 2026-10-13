@@ -43,7 +43,11 @@ func interpret(
 		for adjacent: Character in Game.combat.characters.get_adjacent_to(target):
 			effects[adjacent] = effects[adjacent] if adjacent in effects else Effect.create(action, user, adjacent)
 			effects[adjacent].damage += action.splash_damage
-
+	
+	if action.is_sparking:
+		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
+		effects[target].is_sparking = true
+	
 	if action.target_healing > 0:
 		effects[target] = effects[target] if target in effects else Effect.create(action, user, target)
 		effects[target].healing += action.target_healing

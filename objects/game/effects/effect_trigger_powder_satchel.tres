@@ -7,5 +7,6 @@
 script = ExtResource("3_b2jvr")
 sfx = 8
 damage = 25
+is_sparking = true
 despawn_satchel = true
 metadata/_custom_type_script = "uid://d1fq7x1mytto3"

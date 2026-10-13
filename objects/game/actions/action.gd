@@ -31,6 +31,7 @@ signal uses_restored()
 @export var splash_damage: int = 0
 @export var target_healing: int = 0
 @export var target_healing_ratio: float = 0
+@export var is_sparking: bool = false
 
 @export var power_as_target_damage: bool = false
 @export var power_as_target_damage_explosive: bool = false

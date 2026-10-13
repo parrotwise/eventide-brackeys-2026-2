@@ -5,6 +5,7 @@ extends Node
 signal health_changed(previous_health: int, current_health: int)
 signal damage_taken()
 signal explosive_damage_taken()
+signal sparking_damage_taken()
 signal healing_received()
 signal knockout()
 
@@ -77,7 +78,7 @@ func _on_character_combat_ready() -> void:
 	character.indicators.health_bar.set_health.call_deferred(current_health, max_health)
 
 
-func take_damage(damage: int, explosive: bool = false) -> void:
+func take_damage(damage: int, explosive: bool = false, sparking: bool = false) -> void:
 	if knocked_out:
 		return
 	
@@ -93,6 +94,9 @@ func take_damage(damage: int, explosive: bool = false) -> void:
 
 	if explosive:
 		explosive_damage_taken.emit()
+	
+	if sparking:
+		sparking_damage_taken.emit()
 	
 	if current_health == 0:
 		knocked_out = true

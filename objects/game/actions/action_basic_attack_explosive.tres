@@ -10,6 +10,7 @@ name = &"ACTION_ATTACK_EC_NAME"
 description = &"ACTION_ATTACK_EC_DESCRIPTION"
 icon = ExtResource("2_rwl77")
 sfx = 7
+is_sparking = true
 power_as_target_damage_explosive = true
 target_group = 0
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

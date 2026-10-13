@@ -131,13 +131,12 @@ func _on_combat_start() -> void:
 		character.state.damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.DAMAGE_TAKEN, character)
 		)
-	
-	for character: Character in Game.combat.characters.all:
 		character.state.explosive_damage_taken.connect(
 			fire_triggers.bind(Enums.TriggerType.EXPLOSIVE_DAMAGE_TAKEN, character)
 		)
-	
-	for character: Character in Game.combat.characters.all:
+		character.state.sparking_damage_taken.connect(
+			fire_triggers.bind(Enums.TriggerType.SPARKING_DAMAGE_TAKEN, character)
+		)
 		character.state.healing_received.connect(
 			fire_triggers.bind(Enums.TriggerType.HEALING_RECEIVED, character)
 		)

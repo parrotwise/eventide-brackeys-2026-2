@@ -264,6 +264,7 @@ func modify_effect(effect: Effect) -> Effect:
 
 					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_both_sides_mult)
 					splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_both_sides_mult)
+					splash_effect.is_sparking = effect.is_sparking
 
 					effect.extra_effects.append(splash_effect)
 					mods_applied = true
@@ -274,6 +275,7 @@ func modify_effect(effect: Effect) -> Effect:
 
 					splash_effect.damage = roundi(effect.damage * damage_dealt_to_splash_one_side_mult)
 					splash_effect.damage_explosive = roundi(effect.damage_explosive * damage_dealt_to_splash_one_side_mult)
+					splash_effect.is_sparking = effect.is_sparking
 
 					effect.extra_effects.append(splash_effect)
 					mods_applied = true
@@ -345,6 +347,7 @@ func modify_effect(effect: Effect) -> Effect:
 					
 					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_both_sides_mult)
 					splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_both_sides_mult)
+					splash_effect.is_sparking = effect.is_sparking
 					
 					effect.extra_effects.append(splash_effect)
 					mods_applied = true
@@ -355,6 +358,7 @@ func modify_effect(effect: Effect) -> Effect:
 					
 					splash_effect.damage = ceili(effect.damage * damage_taken_to_splash_one_side_mult)
 					splash_effect.damage_explosive = ceili(effect.damage_explosive * damage_taken_to_splash_one_side_mult)
+					splash_effect.is_sparking = effect.is_sparking
 					
 					effect.extra_effects.append(splash_effect)
 					mods_applied = true

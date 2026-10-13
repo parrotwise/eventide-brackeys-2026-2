@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Effect" format=3 uid="uid://h7xno7bda6jt"]
+
+[ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="1_4ya2l"]
+[ext_resource type="Resource" uid="uid://boew8mgia6e14" path="res://objects/game/statuses/status_stunned.tres" id="2_ra75f"]
+[ext_resource type="Script" uid="uid://d1fq7x1mytto3" path="res://objects/game/effects/effect.gd" id="2_trjt1"]
+
+[resource]
+script = ExtResource("2_trjt1")
+damage = 30
+applied_statuses = Array[ExtResource("1_4ya2l")]([ExtResource("2_ra75f")])
+metadata/_custom_type_script = "uid://d1fq7x1mytto3"

@@ -32,6 +32,8 @@ var stacked_damage_explosive: int:
 var stacked_damage_poison: int:
 	get: return damage_poison * (2 ** (stack_mult - 1))
 
+@export var is_sparking: bool = false
+
 @export var healing: int = 0
 var stacked_healing: int:
 	get: return healing * stack_mult
@@ -101,7 +103,7 @@ func apply(bypass_queue: bool = false) -> void:
 	
 	## Immediate effects first
 	if total_damage:
-		target.state.take_damage(total_damage, stacked_damage_explosive > 0)
+		target.state.take_damage(total_damage, stacked_damage_explosive > 0, is_sparking)
 	if total_healing:
 		target.state.heal(total_healing)
 	if swap_places:

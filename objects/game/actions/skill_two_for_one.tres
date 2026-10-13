@@ -10,6 +10,7 @@ name = &"ACTION_SKILL_SC_NAME"
 description = &"ACTION_SKILL_SC_DESCRIPTION"
 icon = ExtResource("3_oan5t")
 sfx = 15
+is_sparking = true
 power_as_target_damage = true
 repeat_on_random_target = true
 metadata/_custom_type_script = "uid://b3ummvu47lsv6"

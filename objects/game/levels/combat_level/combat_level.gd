@@ -229,7 +229,7 @@ func _on_status_removed(status: Status) -> void:
 func _on_trigger_fired(trigger: Trigger) -> void:
 	Debug.debug(
 		"Triggered effect fired by %s!" % [
-			trigger.effect.source.name
+			tr(trigger.effect.source.name)
 		]
 	)
 	if not is_instance_valid(trigger.effect.source.owner):

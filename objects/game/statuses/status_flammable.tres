@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://bikqvt8qvrsdm" path="res://objects/game/statuses/status.gd" id="2_3ntjn"]
 [ext_resource type="Texture2D" uid="uid://bj656ud07l5qw" path="res://assets/art/ui/icons/statuses/status_rc_flammable_border.png" id="3_3ntjn"]
 [ext_resource type="Script" uid="uid://lvv535cj6j34" path="res://objects/game/triggers/trigger.gd" id="3_yjui2"]
+[ext_resource type="Resource" uid="uid://d2unlcr0qk34k" path="res://objects/game/triggers/trigger_flammable.tres" id="5_yjui2"]
 
 [resource]
 script = ExtResource("2_3ntjn")
 name = &"STATUS_FLAMMABLE_NAME"
 description = &"STATUS_FLAMMABLE_DESCRIPTION"
 icon = ExtResource("3_3ntjn")
-stacking_type = 2
+triggers = Array[ExtResource("3_yjui2")]([ExtResource("5_yjui2")])
+trigger_uses = 1
