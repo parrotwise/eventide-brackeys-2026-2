@@ -176,7 +176,7 @@ func _on_action_finished(action: Action) -> void:
 	if turn_tracker.current_character not in characters.enemies:
 		selector.cancel_action()
 
-	if action.free_action and action.owner.actions.usable_actions:
+	if action.owner.actions.usable_actions and (action.free_action or action.uses_left):
 		selector.resume()
 	else:
 		turn_tracker.end_current_turn()
