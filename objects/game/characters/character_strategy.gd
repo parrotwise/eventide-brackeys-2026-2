@@ -13,6 +13,10 @@ func pause() -> void:
 	_paused = true
 
 
+func resume() -> void:
+	_paused = false
+
+
 func take_turn(heuristic: bool = false) -> void:
 	while _paused:
 		await Game.combat.queue.await_time(1)

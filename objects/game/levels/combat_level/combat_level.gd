@@ -36,6 +36,7 @@ var enemy_spawn_points: Node:
 func _ready() -> void:
 	Game.combat = self
 
+	Game.combat_start.connect(_on_combat_start)
 	Game.combat_end.connect(_on_combat_end)
 
 	effector.action_used.connect(
@@ -326,6 +327,11 @@ func _on_turn_ended(character: Character) -> void:
 func _on_enemy_action_chosen(action: Action, user: Character, target: Character) -> void:
 	if action != null and target != null:
 		action.use(user, target)
+
+
+func _on_combat_start() -> void:
+	for character: Character in characters.all:
+		character.strategy.resume()
 
 
 func _on_combat_end() -> void:
