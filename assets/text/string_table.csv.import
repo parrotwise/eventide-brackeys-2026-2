@@ -6,10 +6,10 @@ uid="uid://bhys1os5pekmd"
 
 [deps]
 
-files=["res://assets/text/string_table.en.translation"]
+files=["res://assets/text/string_table.en.translation", "res://assets/text/string_table.tr.translation", "res://assets/text/string_table.uk.translation"]
 
 source_file="res://assets/text/string_table.csv"
-dest_files=["res://assets/text/string_table.en.translation"]
+dest_files=["res://assets/text/string_table.en.translation", "res://assets/text/string_table.tr.translation", "res://assets/text/string_table.uk.translation"]
 
 [params]
 

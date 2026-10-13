@@ -14,6 +14,11 @@ var music_volume_slider: Slider:
 	get: return %MusicVolumeSlider
 var sfx_volume_slider: Slider:
 	get: return %SFXVolumeSlider
+var lang_buttons: Array[Button]:
+	get: return Array(
+		%LangButtons.get_children(),
+		TYPE_OBJECT, &'Button', Button
+	)
 var quit_button: Button:
 	get: return %QuitButton
 
@@ -67,9 +72,23 @@ func _ready() -> void:
 	music_volume_slider.value_changed.connect(_on_music_slider_value_changed)
 	sfx_volume_slider.value_changed.connect(_on_sfx_slider_value_changed)
 
-	quit_button.pressed.connect(Game.quit)
 	quit_button.mouse_entered.connect(_on_mouse_enter)
 	quit_button.mouse_exited.connect(_on_mouse_exit)
+	quit_button.pressed.connect(Game.quit)
+
+	for lang_button: Button in lang_buttons:
+		lang_button.mouse_entered.connect(_on_mouse_enter)
+		lang_button.mouse_exited.connect(_on_mouse_exit)
+		lang_button.pressed.connect(
+			func():
+				match lang_button.text:
+					'English':
+						TranslationServer.set_locale('en')
+					'Türkçe':
+						TranslationServer.set_locale('tr')
+					'Українська':
+						TranslationServer.set_locale('uk')
+		)
 
 
 func _process(delta: float) -> void:

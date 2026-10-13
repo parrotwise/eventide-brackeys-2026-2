@@ -31,6 +31,82 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ethdn"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihr05"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0.3764706, 0.5019608, 0.7529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1x2s2"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 0.7529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnmhp"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.3764706)
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s4p1"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 0.7529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="SettingsMenu" type="Control" unique_id=233459091]
 layout_mode = 3
 anchors_preset = 15
@@ -91,7 +167,7 @@ theme_override_constants/separation = 40
 
 [node name="MasterVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=31463956]
 layout_mode = 2
-text = "Master"
+text = "SETTINGS_LABEL_MASTER"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=313815543]
 unique_name_in_owner = true
@@ -113,7 +189,7 @@ theme_override_constants/separation = 68
 
 [node name="MusicLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1055763289]
 layout_mode = 2
-text = "Music"
+text = "SETTINGS_LABEL_MUSIC"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1288324845]
 unique_name_in_owner = true
@@ -135,7 +211,7 @@ theme_override_constants/separation = 91
 
 [node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=927014952]
 layout_mode = 2
-text = "SFX"
+text = "SETTINGS_LABEL_SFX"
 
 [node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=2077256551]
 unique_name_in_owner = true
@@ -151,8 +227,72 @@ max_value = 1.0
 step = 0.02
 value = 0.5
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1995891338]
+[node name="Margin1" type="Control" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=669774576]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="LangPanel" type="VBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=274448373]
+layout_mode = 2
+
+[node name="LangHeading" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel" unique_id=1569741840]
+layout_mode = 2
+text = "SETTINGS_LABEL_LANG"
+horizontal_alignment = 1
+
+[node name="Margin" type="Control" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel" unique_id=385690235]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="LangButtons" type="HFlowContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel" unique_id=1712149808]
 unique_name_in_owner = true
 layout_mode = 2
-focus_mode = 0
-text = "Quit Game"
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12
+alignment = 1
+
+[node name="LangButtonEN" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=301796422]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihr05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1x2s2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
+text = "English"
+
+[node name="LangButtonTR" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=1235423695]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihr05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1x2s2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
+text = "Türkçe"
+
+[node name="LangButtonUK" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=1138143387]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihr05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1x2s2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
+text = "Українська"
+
+[node name="Margin2" type="Control" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1070767043]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1000701647]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihr05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1x2s2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
+text = "SETTINGS_LABEL_QUIT"
