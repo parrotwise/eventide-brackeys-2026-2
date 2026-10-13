@@ -35,7 +35,9 @@ var current_action: Action = null
 var current_target: Character = null
 var current_user: Character = null
 var is_targeting: bool = false
+
 var _responsive: bool = true
+var _shutdown: bool = false
 
 
 func _ready() -> void:
@@ -249,4 +251,16 @@ func pause() -> void:
 
 
 func resume() -> void:
+	if _shutdown:
+		return
+	
 	_responsive = true
+
+
+func shutdown() -> void:
+	cancel_action()
+	pause()
+	
+	Game.pointer.switch_to(Enums.PointerType.DEFAULT)
+
+	_shutdown = true

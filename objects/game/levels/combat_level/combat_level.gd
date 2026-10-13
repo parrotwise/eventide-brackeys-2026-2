@@ -4,6 +4,8 @@ extends Node
 
 @export_range(0.005, 0.15, 0.001) var positioning_acceleration: float = 0.007
 
+var input: CombatInput:
+	get: return $Input
 var queue: CombatQueue:
 	get: return $Queue
 var turn_tracker: CombatTurnTracker:
@@ -336,7 +338,8 @@ func _on_combat_start() -> void:
 
 func _on_combat_end() -> void:
 	queue.clear()
-	selector.pause()
+	selector.shutdown()
+	input.shutdown()
 
 	for character: Character in characters.all:
 		character.strategy.pause()

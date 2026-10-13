@@ -2,11 +2,17 @@ class_name CombatInput
 extends Node
 
 
+var _responsive: bool = true
+
+
 func _ready() -> void:
 	Game.combat_start.connect(_on_combat_start)
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not _responsive:
+		return
+	
 	if event.is_action_pressed(&'right_click') or event.is_action_pressed(&'cancel'):
 		Game.combat.selector.cancel_action.call_deferred()
 	
@@ -84,6 +90,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		if event.is_action_pressed(&'cycle_backward'):
 			Game.combat.selector.cycle_through_characters(Enums.Direction.LEFT)
+
+
+func shutdown() -> void:
+	_responsive = false
 
 
 func _on_combat_start() -> void:
