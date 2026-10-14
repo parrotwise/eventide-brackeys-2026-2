@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bnwg0l8b55f5l" path="res://assets/art/betrayal/BACKGROUND BETR.png" id="1_qahcn"]
 [ext_resource type="Script" uid="uid://4q4neovfb6or" path="res://objects/game/levels/cutscenes/betrayal.gd" id="1_qxhjl"]
 [ext_resource type="Texture2D" uid="uid://cmlfkukmtlox" path="res://assets/art/betrayal/BACKGROUND AYAL.png" id="2_qxhjl"]
-[ext_resource type="Texture2D" uid="uid://ftuchv68cxj6" path="res://assets/art/betrayal/BETR.png" id="3_1gg3p"]
-[ext_resource type="Texture2D" uid="uid://dvdwkxxw1l3m6" path="res://assets/art/betrayal/AYAL.png" id="4_vps30"]
+[ext_resource type="Texture2D" uid="uid://bou5la5e631r3" path="res://assets/art/betrayal/BETR_1.png" id="4_qxhjl"]
+[ext_resource type="Texture2D" uid="uid://cjlpusswpoi3h" path="res://assets/art/betrayal/AYAL_1.png" id="5_1gg3p"]
 
 [node name="Betrayal" type="Control" unique_id=1339346911]
 layout_mode = 3
@@ -49,10 +49,10 @@ mouse_filter = 2
 layout_mode = 2
 offset_transform_enabled = true
 mouse_filter = 2
-texture = ExtResource("3_1gg3p")
+texture = ExtResource("4_qxhjl")
 
 [node name="AYAL" type="TextureRect" parent="CenterContainer/HBoxContainer2" unique_id=48253623]
 layout_mode = 2
 offset_transform_enabled = true
 mouse_filter = 2
-texture = ExtResource("4_vps30")
+texture = ExtResource("5_1gg3p")

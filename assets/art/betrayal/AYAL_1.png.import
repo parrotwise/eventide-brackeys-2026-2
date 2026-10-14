@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ftuchv68cxj6"
-path="res://.godot/imported/BETR.png-214169753a76dec2f4911cbafa38311b.ctex"
+uid="uid://cjlpusswpoi3h"
+path="res://.godot/imported/AYAL_1.png-9ce36c728cc5271eaf649a58b5d6bdc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/betrayal/BETR.png"
-dest_files=["res://.godot/imported/BETR.png-214169753a76dec2f4911cbafa38311b.ctex"]
+source_file="res://assets/art/betrayal/AYAL_1.png"
+dest_files=["res://.godot/imported/AYAL_1.png-9ce36c728cc5271eaf649a58b5d6bdc8.ctex"]
 
 [params]
 
