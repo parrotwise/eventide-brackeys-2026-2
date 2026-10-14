@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnkrridbyd328" path="res://objects/ui/tooltip.gd" id="1_owh4x"]
 [ext_resource type="Texture2D" uid="uid://lox7wut0ara5" path="res://assets/art/ui/panels/tooltip_bg.png" id="2_owh4x"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_ltgoe"]
+[ext_resource type="Texture2D" uid="uid://jsqphwewj612" path="res://assets/art/ui/panels/tooltip_divider.png" id="4_j82u3"]
 
 [node name="Tooltip" type="Control" unique_id=1654022007]
 layout_mode = 3
@@ -60,10 +61,27 @@ scroll_active = false
 autowrap_mode = 2
 shortcut_keys_enabled = false
 
+[node name="Margin1" type="Control" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1603642903]
+layout_mode = 2
+mouse_filter = 2
+
 [node name="ColorRect" type="ColorRect" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1524662588]
+visible = false
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 color = Color(0.99607843, 0.6627451, 0.25490198, 0.8039216)
+
+[node name="Divider" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=806321932]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_j82u3")
+expand_mode = 5
+
+[node name="Margin2" type="Control" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=658291271]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+mouse_filter = 2
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=906544854]
 layout_mode = 2

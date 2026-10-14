@@ -41,8 +41,8 @@ var background: NinePatchRect:
 	get: return $NinePatchRect
 var name_label: RichTextLabel:
 	get: return $NinePatchRect/MarginContainer/VBoxContainer/NameLabel
-var divider: ColorRect:
-	get: return $NinePatchRect/MarginContainer/VBoxContainer/ColorRect
+var divider: TextureRect:
+	get: return $NinePatchRect/MarginContainer/VBoxContainer/Divider
 var description_label: RichTextLabel:
 	get: return $NinePatchRect/MarginContainer/VBoxContainer/DescriptionLabel
 var hover_detection: Control:
@@ -184,6 +184,8 @@ func fill_text() -> void:
 		if is_inside_tree():
 			await get_tree().create_timer(1/text_speed).timeout
 	
+	divider.show()
+
 	for chunk in range(0, description.length() + text_chunk_size, text_chunk_size):
 		description_label.text = description.substr(0, chunk)
 		if is_inside_tree():
