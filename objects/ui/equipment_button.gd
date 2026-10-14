@@ -4,6 +4,7 @@ extends Control
 
 @export var frame_texture_normal: Texture2D
 @export var frame_texture_disabled: Texture2D
+@export var frame_texture_equipped: Texture2D
 @export var inner_texture_normal: Texture2D
 @export var inner_texture_pressed: Texture2D
 @export var inner_texture_hover: Texture2D
@@ -29,6 +30,8 @@ var tooltip_description: String:
 
 var equipment: Equipment
 
+var _equipped: bool = false
+
 
 func _ready() -> void:
 	set_equipped(false)
@@ -53,16 +56,20 @@ func setup(new_equipment: Equipment) -> void:
 
 
 func set_equipped(equipped: bool = true) -> void:
+	_equipped = equipped
+
 	if equipped:
 		button.texture_normal = inner_texture_equipped_normal
 		button.texture_pressed = inner_texture_equipped_pressed
 		button.texture_hover = inner_texture_equipped_hover
 		button.texture_focused = inner_texture_equipped_focused
+		frame.texture = frame_texture_equipped
 	else:
 		button.texture_normal = inner_texture_normal
 		button.texture_pressed = inner_texture_pressed
 		button.texture_hover = inner_texture_hover
 		button.texture_focused = inner_texture_hover
+		frame.texture = frame_texture_normal
 	
 	button.texture_disabled = inner_texture_disabled
 
@@ -70,7 +77,7 @@ func set_equipped(equipped: bool = true) -> void:
 func set_responsive(responsive: bool = true) -> void:
 	if responsive:
 		button.disabled = false
-		frame.texture = frame_texture_normal
+		frame.texture = frame_texture_equipped if _equipped else frame_texture_normal
 	else:
 		button.disabled = true
 		frame.texture = frame_texture_disabled
