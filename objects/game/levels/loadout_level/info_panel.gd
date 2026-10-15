@@ -43,6 +43,14 @@ var selected: Character:
 	get: return Game.loadout.selector.current_character
 
 
+func _ready() -> void:
+	Game.lang_changed.connect(
+		func():
+			await get_tree().process_frame
+			refresh()
+	)
+
+
 func refresh() -> void:
 	if not is_instance_valid(selected):
 		return

@@ -1,6 +1,7 @@
 extends Node
 
 
+signal lang_changed()
 signal combat_start()
 signal combat_end()
 signal loadout_start()
@@ -29,6 +30,12 @@ var inventories: Dictionary[StringName, Array]
 
 func _ready() -> void:
 	initialize()
+
+	lang_changed.connect(
+		func():
+			await get_tree().process_frame
+			Debug.info.call_deferred('TranslationServer locale changed to %s.' % [TranslationServer.get_locale()])
+	)
 
 	combat_start.connect(Debug.info.bind('Combat started.'))
 	combat_end.connect(Debug.info.bind('Combat ended.'))
@@ -107,7 +114,7 @@ func initialize() -> void:
 
 func restart() -> void:
 	initialize()
-	TransitionLayer.transition_simple_fade(TransitionLayer.cutscene_1)
+	TransitionLayer.transition_simple_fade(TransitionLayer.main_menu)
 
 
 func quit() -> void:

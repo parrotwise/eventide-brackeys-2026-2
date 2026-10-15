@@ -30,9 +30,6 @@ var characters: Array[Character]:
 
 
 func _ready() -> void:
-	equipment_grid_heading.text = tr(&'SCENE_LOADOUT_GRID_HEADING')
-	embark_button_label.text = tr(&'SCENE_LOADOUT_EMBARK_BUTTON')
-
 	## TODO: Replace with the commented-out callable after Wwise migration
 	open_settings_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
 	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))

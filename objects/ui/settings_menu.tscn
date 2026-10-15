@@ -161,16 +161,19 @@ custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="VolumeContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1931286854]
+[node name="VolumeContaine" type="GridContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1050122925]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 12
+columns = 2
 
-[node name="MasterVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=31463956]
+[node name="MasterVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=31463956]
 layout_mode = 2
 text = "SETTINGS_LABEL_MASTER"
 
-[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer" unique_id=313815543]
+[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=313815543]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -183,16 +186,13 @@ max_value = 1.0
 step = 0.02
 value = 0.5
 
-[node name="VolumeContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=712624742]
-layout_mode = 2
-theme_override_constants/separation = 68
-
-[node name="MusicLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1055763289]
+[node name="MusicLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=1055763289]
 layout_mode = 2
 text = "SETTINGS_LABEL_MUSIC"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer2" unique_id=1288324845]
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=1288324845]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -205,16 +205,13 @@ max_value = 1.0
 step = 0.02
 value = 0.5
 
-[node name="VolumeContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1271050199]
-layout_mode = 2
-theme_override_constants/separation = 91
-
-[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=927014952]
+[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=927014952]
 layout_mode = 2
 text = "SETTINGS_LABEL_SFX"
 
-[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContainer3" unique_id=2077256551]
+[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/VolumeContaine" unique_id=2077256551]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -262,7 +259,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
 text = "English"
 
 [node name="LangButtonTR" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=1235423695]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")

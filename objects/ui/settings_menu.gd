@@ -84,10 +84,13 @@ func _ready() -> void:
 				match lang_button.text:
 					'English':
 						TranslationServer.set_locale('en')
+						Game.lang_changed.emit()
 					'Türkçe':
 						TranslationServer.set_locale('tr')
+						Game.lang_changed.emit()
 					'Українська':
 						TranslationServer.set_locale('uk')
+						Game.lang_changed.emit()
 		)
 
 

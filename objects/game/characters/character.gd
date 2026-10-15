@@ -56,6 +56,14 @@ var battle_group: StringName:
 
 func _ready() -> void:
 	name = id
+
+	$Name.text = tr(id)
+
+	Game.lang_changed.connect(
+		func():
+			await get_tree().process_frame
+			$Name.text = tr(id)
+	)
 	
 	Game.combat_start.connect(_on_combat_start)
 	Game.combat_end.connect(_on_combat_end)

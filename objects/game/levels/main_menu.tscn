@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bpuyamjg7wdv0"]
+
+[ext_resource type="Script" uid="uid://cf4qko3ab6t44" path="res://objects/game/levels/main_menu.gd" id="1_ww8fm"]
+[ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="2_h8ko3"]
+[ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_ocr7h"]
+[ext_resource type="Texture2D" uid="uid://dkxav8844g5e0" path="res://assets/art/logo color.png" id="5_2p4sr"]
+[ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/ui/buttons/big_button.png" id="6_meh5x"]
+[ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="7_pj6jp"]
+[ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="8_1rq8l"]
+[ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/ui/settings_menu.tscn" id="8_meh5x"]
+
+[sub_resource type="Gradient" id="Gradient_djk2j"]
+colors = PackedColorArray(0, 0, 0, 1, 0.039215688, 0.039215688, 0.039215688, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rsfto"]
+gradient = SubResource("Gradient_djk2j")
+width = 1920
+use_hdr = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ywvrj"]
+
+[node name="MenuScene" type="Control" unique_id=38669092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww8fm")
+
+[node name="BGTexture" type="TextureRect" parent="." unique_id=1431666020]
+z_index = -1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 58.397514
+offset_top = -334.6027
+offset_right = 233.47949
+offset_bottom = 5.0577393
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.17278759
+texture = SubResource("GradientTexture1D_rsfto")
+
+[node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("2_h8ko3")]
+modulate = Color(1, 1, 1, 0.03137255)
+material = SubResource("CanvasItemMaterial_ywvrj")
+layout_mode = 0
+
+[node name="DistantParallax" parent="Scenery" index="0" unique_id=239518672]
+use_parent_material = true
+
+[node name="Background" parent="Scenery/DistantParallax" index="0" unique_id=1560975777]
+use_parent_material = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BigCloudEmitter2" parent="Scenery/DistantParallax" index="1" unique_id=1360380948]
+use_parent_material = true
+
+[node name="BigSplatterEmitter" parent="Scenery/DistantParallax" index="2" unique_id=1254296861]
+use_parent_material = true
+
+[node name="BigCloudEmitter" parent="Scenery/DistantParallax" index="3" unique_id=383496791]
+use_parent_material = true
+
+[node name="StarEmitter" parent="Scenery/DistantParallax" index="4" unique_id=1636939827]
+use_parent_material = true
+
+[node name="MidParallax" parent="Scenery" index="1" unique_id=1420827354]
+use_parent_material = true
+
+[node name="PlanetEmitter" parent="Scenery/MidParallax" index="0" unique_id=570364296]
+use_parent_material = true
+
+[node name="BigComet" parent="Scenery/MidParallax" index="1" unique_id=1295206345]
+use_parent_material = true
+
+[node name="NearParallax" parent="Scenery" index="2" unique_id=1838346190]
+use_parent_material = true
+
+[node name="AstroidEmitter" parent="Scenery/NearParallax" index="0" unique_id=1030885657]
+use_parent_material = true
+
+[node name="AstroidEmitter2" parent="Scenery/NearParallax" index="1" unique_id=439370192]
+use_parent_material = true
+
+[node name="DebrisEmitter" parent="Scenery/NearParallax" index="2" unique_id=1161285893]
+use_parent_material = true
+
+[node name="Foreground" parent="Scenery" index="3" unique_id=1619556345]
+visible = false
+
+[node name="LogoArea" type="MarginContainer" parent="." unique_id=17911627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -306.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="Logo" type="TextureRect" parent="LogoArea" unique_id=404333691]
+layout_mode = 2
+texture = ExtResource("5_2p4sr")
+stretch_mode = 5
+
+[node name="TitleLabel" type="RichTextLabel" parent="LogoArea" unique_id=1896136734]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 280)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.3764706, 0.17254902, 0.16862746, 1)
+theme_override_colors/font_outline_color = Color(0.03137255, 0.03137255, 0.043137256, 1)
+theme_override_colors/font_shadow_color = Color(0.86, 0.65704006, 0.35260004, 0.49803922)
+theme_override_constants/shadow_outline_size = 18
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("3_ocr7h")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "MAIN_MENU_LABEL_GAME_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="." unique_id=809255830]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -400.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_meh5x")
+texture_hover = ExtResource("7_pj6jp")
+texture_click_mask = ExtResource("8_1rq8l")
+stretch_mode = 0
+flip_h = true
+
+[node name="StartButtonLabel" type="RichTextLabel" parent="StartButton" unique_id=383268278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 91.0
+offset_top = 11.0
+offset_right = -129.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_fonts/normal_font = ExtResource("3_ocr7h")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "MAIN_MENU_LABEL_START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButton" type="TextureButton" parent="." unique_id=2129301356]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_right = 600.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_meh5x")
+texture_hover = ExtResource("7_pj6jp")
+texture_click_mask = ExtResource("8_1rq8l")
+stretch_mode = 0
+
+[node name="OptionsButtonLabel" type="RichTextLabel" parent="OptionsButton" unique_id=2000364070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -5.0
+offset_right = -88.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
+theme_override_fonts/normal_font = ExtResource("3_ocr7h")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "MAIN_MENU_LABEL_OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." unique_id=233459091 instance=ExtResource("8_meh5x")]
+visible = false
+layout_mode = 1
+
+[editable path="Scenery"]

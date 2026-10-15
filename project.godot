@@ -16,7 +16,7 @@ warnings/check_angle_interpolation_type_conflicting=false
 [application]
 
 config/name="Eventide Brackeys 2026.2"
-run/main_scene="uid://c8l523x6hx5ok"
+run/main_scene="uid://bpuyamjg7wdv0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
 boot_splash/image="uid://dkxav8844g5e0"

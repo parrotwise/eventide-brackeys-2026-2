@@ -17,6 +17,7 @@ const cutscene_combat_defeat: String = "res://objects/game/levels/cutscenes/cuts
 const cutscene_second_mutiny: String = "res://objects/game/levels/cutscenes/cutscene_second_mutiny.tscn"
 const cutscene_final_betrayal: String = "res://objects/game/levels/cutscenes/cutscene_final_betrayal.tscn"
 const credits: String = "res://objects/game/levels/cutscenes/credits.tscn"
+const main_menu: String = "res://objects/game/levels/main_menu.tscn"
 
 var blindfold: ColorRect:
 	get: return $Blindfold
