@@ -46,9 +46,10 @@ offset_transform_position = Vector2(0, 60)
 [node name="C1Sprite" type="Sprite2D" parent="CharAnchors/C1Anchor" unique_id=1123341700]
 visible = false
 texture = ExtResource("3_o3d6q")
-hframes = 2
+hframes = 3
+frame = 1
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="C2Anchor" type="Control" parent="CharAnchors" unique_id=167793494]
 layout_mode = 2
@@ -60,9 +61,10 @@ offset_transform_position = Vector2(0, 60)
 visible = false
 texture = ExtResource("3_o3d6q")
 flip_h = true
-hframes = 2
+hframes = 3
+frame = 1
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1552977941]
 visible = false

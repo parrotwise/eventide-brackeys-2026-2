@@ -44,9 +44,9 @@ offset_transform_position = Vector2(0, 60)
 visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_yj87i")
-hframes = 2
+hframes = 3
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="C2Anchor" type="Control" parent="CharAnchors" unique_id=1140030217]
 layout_mode = 2
@@ -56,9 +56,9 @@ size_flags_vertical = 4
 visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_yj87i")
-hframes = 2
+hframes = 3
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="C3Anchor" type="Control" parent="CharAnchors" unique_id=1284201520]
 layout_mode = 2
@@ -69,9 +69,9 @@ visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_yj87i")
 flip_h = true
-hframes = 2
+hframes = 3
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="C4Anchor" type="Control" parent="CharAnchors" unique_id=167793494]
 layout_mode = 2
@@ -84,9 +84,9 @@ visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_yj87i")
 flip_h = true
-hframes = 2
+hframes = 3
 region_enabled = true
-region_rect = Rect2(0, 0, 2400, 1200)
+region_rect = Rect2(0, 0, 3600, 1200)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1552977941]
 layout_mode = 1

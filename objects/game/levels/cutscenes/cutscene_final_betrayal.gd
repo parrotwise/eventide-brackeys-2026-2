@@ -28,11 +28,11 @@ func _ready() -> void:
 				var sprite1: Sprite2D = char_sprites[i]
 
 				sprite1.texture = Game.allies[i].silhouette
-				sprite1.frame = 0
+				sprite1.frame = 1
 				sprite1.show()
 
 				var sprite2: Sprite2D = sprite1.duplicate()
-				sprite2.frame = 1
+				sprite2.frame = 2
 				sprite2.show()
 
 				sprite1.get_parent().add_child(sprite2)
