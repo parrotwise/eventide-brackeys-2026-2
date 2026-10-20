@@ -39,7 +39,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="Title" type="RichTextLabel" parent="StatsSection/POWSection" unique_id=37823198]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4
@@ -70,7 +70,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="Title" type="RichTextLabel" parent="StatsSection/HPSection" unique_id=1399709250]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_constants/outline_size = 4

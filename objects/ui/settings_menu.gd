@@ -85,6 +85,9 @@ func _ready() -> void:
 					'English':
 						TranslationServer.set_locale('en')
 						Game.lang_changed.emit()
+					'Español':
+						TranslationServer.set_locale('es')
+						Game.lang_changed.emit()
 					'Türkçe':
 						TranslationServer.set_locale('tr')
 						Game.lang_changed.emit()

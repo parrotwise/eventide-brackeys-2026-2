@@ -258,6 +258,17 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
 theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
 text = "English"
 
+[node name="LangButtonES" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=916345269]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihr05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1x2s2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gnmhp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
+text = "Українська"
+
 [node name="LangButtonTR" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=1235423695]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
@@ -269,7 +280,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_0s4p1")
 text = "Türkçe"
 
 [node name="LangButtonUK" type="Button" parent="CenterContainer/VBoxContainer/PanelContainer/VBoxContainer/LangPanel/LangButtons" unique_id=1138143387]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_ethdn")

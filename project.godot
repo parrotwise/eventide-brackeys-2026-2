@@ -181,7 +181,7 @@ escape={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/text/string_table.en.translation", "res://assets/text/string_table.tr.translation", "res://assets/text/string_table.uk.translation")
+locale/translations=PackedStringArray("res://assets/text/string_table.en.translation", "res://assets/text/string_table.tr.translation", "res://assets/text/string_table.uk.translation", "res://assets/text/string_table.es.translation")
 
 [physics]
 
