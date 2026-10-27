@@ -4,6 +4,8 @@ extends Control
 
 var uses_label: RichTextLabel:
 	get: return $UsesLabel
+var tooltip: Tooltip:
+	get: return $Tooltip
 
 var character: Character
 
@@ -45,6 +47,9 @@ func apply() -> void:
 	)
 	
 	button.disabled = true
+	
+	tooltip.shrink_tooltip()
+	tooltip.hide()
 
 	for c: Character in Game.loadout.characters:
 		c.bandage_button.refresh()
@@ -55,17 +60,19 @@ func apply() -> void:
 func refresh() -> void:
 	visible = (
 		Game.stage == Game.Stage.LOADOUT2
-		and not button.disabled
 		and is_instance_valid(character)
-		and Game.loadout.bandage_uses
-		and character.state.missing_health_ratio > 0
 	)
 
 	if not visible:
 		return
-
+	
+	button.disabled = (
+		character.state.current_health >= character.state.max_health
+		or not Game.loadout.bandage_uses
+	)
+	
 	uses_label.text = str(Game.loadout.bandage_uses)
-	uses_label.visible = visible
+	uses_label.visible = visible and not button.disabled
 
 
 func _on_mouse_enter() -> void:

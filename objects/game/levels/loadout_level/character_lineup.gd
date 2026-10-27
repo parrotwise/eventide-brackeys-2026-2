@@ -25,6 +25,4 @@ func reset() -> void:
 		get_child(i + 1).get_child(0).add_child(character)
 
 		character.position = Vector2.ZERO
-		
-		if Game.stage == Game.Stage.LOADOUT2:
-			character.indicators.hide()
+		character.indicators.visible = Game.stage != Game.Stage.LOADOUT1

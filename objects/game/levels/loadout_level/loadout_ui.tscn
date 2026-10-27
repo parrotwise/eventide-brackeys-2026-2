@@ -69,6 +69,7 @@ custom_minimum_size = Vector2(0, 760)
 custom_maximum_size = Vector2(520, -1)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer" unique_id=1798979044]
 custom_minimum_size = Vector2(310, 260)
@@ -92,6 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 18
 theme_override_constants/margin_top = 108
 theme_override_constants/margin_right = 72
@@ -106,6 +108,7 @@ alignment = 1
 [node name="EquipmentGridHeading" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1211840200]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.6627451, 0.25490198, 1)
 theme_override_colors/font_outline_color = Color(0.015686275, 0.011764706, 0.050980393, 1)
 theme_override_constants/outline_size = 4
@@ -120,6 +123,7 @@ vertical_alignment = 1
 [node name="EquipmentGrid" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer/VBoxContainer" unique_id=1674922410 instance=ExtResource("5_5gy6n")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 
 [node name="CenterStageContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=439045438]
 layout_mode = 2
@@ -135,6 +139,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(512, 480)
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1494869905]
 custom_minimum_size = Vector2(310, 200)
@@ -147,6 +152,7 @@ patch_margin_bottom = 100
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1178018420]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 108
 theme_override_constants/margin_bottom = 100
