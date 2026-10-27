@@ -216,6 +216,10 @@ SCENE_CREDITS_BLOCK, ,"[left][indent][indent][indent][indent][indent][indent][ta
 [cell padding=0,12,0,12]Elliot Morris[/cell]
 [br][cell padding=0,12,0,12]Programmer  [/cell]
 [cell padding=0,12,0,12]Jack Costa[/cell]
+[br][cell padding=0,12,0,12]Turkish Translation  [/cell]
+[cell padding=0,12,0,12]Parrotwise[/cell]
+[br][cell padding=0,12,0,12]Ukrainian Translation  [/cell]
+[cell padding=0,12,0,12]StarStrider[/cell]
 [/table][/indent][/indent][/indent][/indent][/indent][/indent][/left]
 
 [br]Thank you for playing our game![br]","[left][indent][indent][indent][indent][indent][indent][table=2][cell padding=0,12,0,12]Baş Ressam  [/cell]
@@ -238,9 +242,13 @@ SCENE_CREDITS_BLOCK, ,"[left][indent][indent][indent][indent][indent][indent][ta
 [cell padding=0,12,0,12]Elliot Morris[/cell]
 [br][cell padding=0,12,0,12]Programcı  [/cell]
 [cell padding=0,12,0,12]Jack Costa[/cell]
+[br][cell padding=0,12,0,12]Türkçe Tercüme  [/cell]
+[cell padding=0,12,0,12]Parrotwise[/cell]
+[br][cell padding=0,12,0,12]Ukraynaca Tercüme  [/cell]
+[cell padding=0,12,0,12]StarStrider[/cell]
 [/table][/indent][/indent][/indent][/indent][/indent][/indent][/left]
 
-[br]Oyunumuzu oynadığınız için teşekkür ederiz![br]","[left][indent][indent][indent][indent][indent][indent][table=2][cell padding=0,12,0,12]Головний Художник  [/cell]
+[br]Oyunumuzu oynadığınız için teşekkür ederiz![br]","[left][indent][indent][indent][indent][indent][table=2][cell padding=0,12,0,12]Головний Художник  [/cell]
 [cell padding=0,12,0,12]StarStrider[/cell]
 [br][cell padding=0,12,0,12]Художник  [/cell]
 [cell padding=0,12,0,12]Silver[/cell]
@@ -260,7 +268,11 @@ SCENE_CREDITS_BLOCK, ,"[left][indent][indent][indent][indent][indent][indent][ta
 [cell padding=0,12,0,12]Elliot Morris[/cell]
 [br][cell padding=0,12,0,12]Програміст [/cell]
 [cell padding=0,12,0,12]Jack Costa[/cell]
-[/table][/indent][/indent][/indent][/indent][/indent][/indent][/left]
+[br][cell padding=0,12,0,12]Український Переклад  [/cell]
+[cell padding=0,12,0,12]StarStrider[/cell]
+[br][cell padding=0,12,0,12]Турецький Переклад  [/cell]
+[cell padding=0,12,0,12]Parrotwise[/cell]
+[/table][/indent][/indent][/indent][/indent][/indent][/left]
 
 [br]Дякуємо, що грали в нашу гру![br]", 
 SCENE_CREDITS_MADE_FOR_PRE, ,[color=#36eeff]Made for[/color], ,[color=#36eeff]Зроблено Для[/color], 
