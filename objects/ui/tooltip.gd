@@ -81,19 +81,22 @@ func _ready() -> void:
 
 
 func grow_tooltip(bypass_timer: bool = false) -> void:
-	if not bypass_timer:
-		popup_timer.start()
-		return
-
 	# For any special tooltip parents (e.g. ActionButtons) that
 	# expose the 'tooltip_header' / 'tooltip_description' properties,
 	# override the tooltip header/description text with these values
 
-	if 'tooltip_header' in get_parent() and get_parent().tooltip_header:
+	if 'tooltip_header' in get_parent() and get_parent().tooltip_header != null:
 		header = get_parent().tooltip_header
 
-	if 'tooltip_description' in get_parent() and get_parent().tooltip_description:
+	if 'tooltip_description' in get_parent() and get_parent().tooltip_description != null:
 		description = get_parent().tooltip_description
+	
+	if not description and not header:
+		return
+
+	if not bypass_timer:
+		popup_timer.start()
+		return
 	
 	# Make sure the text is hidden to prevent odd behavior.
 	name_label.text = ""
