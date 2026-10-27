@@ -5,13 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://dpalnp0bvpqgp" path="res://assets/art/ui/buttons/char_frame_hover.png" id="3_v4fos"]
 
 [node name="CharacterLineup" type="HBoxContainer" unique_id=1127547518]
+alignment = 1
 script = ExtResource("1_dvkeq")
 
 [node name="Buffer" type="Control" parent="." unique_id=1440816273]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="CharacterAnchor1" type="Control" parent="." unique_id=624873180]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -32,6 +35,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor2" type="Control" parent="." unique_id=471050229]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -52,6 +56,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor3" type="Control" parent="." unique_id=1616123085]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -72,6 +77,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor4" type="Control" parent="." unique_id=29290550]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -92,6 +98,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor5" type="Control" parent="." unique_id=50575879]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -112,6 +119,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor6" type="Control" parent="." unique_id=1939637491]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -132,6 +140,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor7" type="Control" parent="." unique_id=934552377]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -152,6 +161,7 @@ z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor8" type="Control" parent="." unique_id=345595883]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 

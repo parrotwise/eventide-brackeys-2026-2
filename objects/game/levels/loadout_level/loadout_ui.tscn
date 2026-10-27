@@ -52,6 +52,7 @@ layout_mode = 2
 
 [node name="CharacterLineupContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1098011133]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 240
 theme_override_constants/margin_bottom = 24

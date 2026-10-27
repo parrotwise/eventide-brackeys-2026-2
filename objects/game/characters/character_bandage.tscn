@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bscv27eujoala" path="res://objects/ui/tooltip.tscn" id="8_s3gt8"]
 
 [node name="BandageButton" type="Control" unique_id=1513948574]
-custom_minimum_size = Vector2(90, 90)
+custom_minimum_size = Vector2(186, 171)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 90.0
@@ -21,9 +21,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -45.0
+offset_left = -93.0
 offset_top = 24.0
-offset_right = -45.0
+offset_right = -93.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -32,6 +32,7 @@ texture_pressed = ExtResource("3_krfuj")
 texture_hover = ExtResource("4_qveie")
 texture_disabled = ExtResource("5_roiil")
 texture_focused = ExtResource("4_qveie")
+stretch_mode = 5
 
 [node name="Tooltip" parent="." unique_id=1654022007 node_paths=PackedStringArray("focus_control") instance=ExtResource("8_s3gt8")]
 visible = false
@@ -44,14 +45,13 @@ scale = Vector2(1.4, 1.4)
 focus_control = NodePath("../InnerButton")
 
 [node name="UsesLabel" type="RichTextLabel" parent="." unique_id=593646698]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.67
 anchor_bottom = 1.67
-offset_left = -45.0
+offset_left = -93.0
 offset_top = 24.0
-offset_right = -45.0
+offset_right = -93.0
 offset_bottom = 24.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.6784314, 0.36078432, 1)
@@ -61,7 +61,7 @@ theme_override_constants/shadow_outline_size = 16
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = -4
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 48
 text = "8"
 scroll_active = false
 horizontal_alignment = 1
