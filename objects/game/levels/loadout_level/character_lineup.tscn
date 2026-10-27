@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dnowuab4x2e56"]
 
 [ext_resource type="Script" uid="uid://bronqldvnyyk4" path="res://objects/game/levels/loadout_level/character_lineup.gd" id="1_dvkeq"]
+[ext_resource type="Texture2D" uid="uid://daqub1jsge5my" path="res://assets/art/ui/buttons/char_frame.png" id="2_nv7aq"]
+[ext_resource type="Texture2D" uid="uid://dpalnp0bvpqgp" path="res://assets/art/ui/buttons/char_frame_hover.png" id="3_v4fos"]
 
 [node name="CharacterLineup" type="HBoxContainer" unique_id=1127547518]
 script = ExtResource("1_dvkeq")
@@ -13,54 +15,158 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor1" unique_id=1500936845]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor1" unique_id=1667261970]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor2" type="Control" parent="." unique_id=471050229]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor2" unique_id=1827012691]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor2" unique_id=1588391245]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor3" type="Control" parent="." unique_id=1616123085]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor3" unique_id=1663684163]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor3" unique_id=303589811]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor4" type="Control" parent="." unique_id=29290550]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor4" unique_id=1623451350]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor4" unique_id=944903873]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor5" type="Control" parent="." unique_id=50575879]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor5" unique_id=1727825451]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor5" unique_id=645617579]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor6" type="Control" parent="." unique_id=1939637491]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor6" unique_id=276016919]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor6" unique_id=1708492423]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor7" type="Control" parent="." unique_id=934552377]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor7" unique_id=1364078279]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor7" unique_id=609343304]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterAnchor8" type="Control" parent="." unique_id=345595883]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CharacterFrame" type="TextureButton" parent="CharacterAnchor8" unique_id=1602645031]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -213.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_nv7aq")
+texture_pressed = ExtResource("3_v4fos")
+texture_hover = ExtResource("3_v4fos")
+texture_focused = ExtResource("3_v4fos")
+stretch_mode = 5
+
 [node name="CharacterScaler" type="Node2D" parent="CharacterAnchor8" unique_id=712246043]
+z_index = 1
 scale = Vector2(0.6, 0.6)
