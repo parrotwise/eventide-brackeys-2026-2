@@ -61,7 +61,7 @@ func _ready() -> void:
 
 	Game.lang_changed.connect(
 		func():
-			await get_tree().process_frame
+			await Game.get_tree().process_frame
 			$Name.text = tr(id)
 	)
 	
