@@ -9,7 +9,8 @@
 [node name="HealthBar" type="Control" unique_id=537244635]
 layout_mode = 3
 anchors_preset = 0
-offset_bottom = 16.0
+offset_top = 1.0
+offset_bottom = 15.0
 mouse_filter = 1
 script = ExtResource("1_ye42u")
 
@@ -17,7 +18,9 @@ script = ExtResource("1_ye42u")
 layout_mode = 1
 anchors_preset = -1
 offset_left = -80.0
-offset_bottom = 16.0
+offset_top = -4.0
+offset_right = 80.0
+offset_bottom = 20.0
 texture = ExtResource("2_ye42u")
 
 [node name="BottomBar" type="TextureProgressBar" parent="." unique_id=799724466]
