@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://px43xwasi37h" path="res://objects/game/levels/loadout_level/equipment_grid.tscn" id="5_5gy6n"]
 [ext_resource type="PackedScene" uid="uid://bwjhj86hyn8h3" path="res://objects/game/levels/loadout_level/center_stage.tscn" id="6_5gy6n"]
 [ext_resource type="PackedScene" uid="uid://mk1qefbaxiab" path="res://objects/game/levels/loadout_level/info_panel.tscn" id="6_6r2pp"]
+[ext_resource type="Texture2D" uid="uid://ct250f4dwhh2h" path="res://assets/art/ui/panels/info_panel_bg.png" id="8_f8uhx"]
 [ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="11_x648l"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="12_02pi6"]
 [ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="13_ughvu"]
@@ -43,9 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=301853825]
@@ -66,12 +65,13 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="EquipmentGridContainer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1633841618]
-custom_minimum_size = Vector2(0, 640)
+custom_minimum_size = Vector2(0, 760)
 custom_maximum_size = Vector2(520, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer" unique_id=1798979044]
+custom_minimum_size = Vector2(310, 260)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,10 +80,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 texture = ExtResource("11_x648l")
-patch_margin_left = 50
-patch_margin_top = 50
-patch_margin_right = 50
-patch_margin_bottom = 50
+patch_margin_left = 210
+patch_margin_top = 160
+patch_margin_right = 100
+patch_margin_bottom = 100
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer" unique_id=1401793384]
 layout_mode = 1
@@ -92,10 +92,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 35
-theme_override_constants/margin_right = 35
-theme_override_constants/margin_bottom = 35
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 108
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 72
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/EquipmentGridContainer/MarginContainer" unique_id=1721739116]
 layout_mode = 2
@@ -137,19 +137,19 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1494869905]
+custom_minimum_size = Vector2(310, 200)
 layout_mode = 2
-texture = ExtResource("11_x648l")
-patch_margin_left = 50
-patch_margin_top = 50
-patch_margin_right = 50
-patch_margin_bottom = 50
+texture = ExtResource("8_f8uhx")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 210
+patch_margin_bottom = 100
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer" unique_id=1178018420]
 layout_mode = 2
-theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 48
-theme_override_constants/margin_right = 35
-theme_override_constants/margin_bottom = 35
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 108
+theme_override_constants/margin_bottom = 100
 
 [node name="InfoPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/InfoPanelContainer/MarginContainer" unique_id=566562747 instance=ExtResource("6_6r2pp")]
 unique_name_in_owner = true
@@ -162,10 +162,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -600.0
+offset_left = -541.0
 offset_top = -300.0
+offset_right = 130.0
+offset_bottom = 56.0
 grow_horizontal = 0
 grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-32, 0)
 texture_normal = ExtResource("34_i52mc")
 texture_hover = ExtResource("35_dcpep")
 texture_click_mask = ExtResource("36_vncq4")
@@ -177,10 +181,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 160.0
-offset_top = 8.0
-offset_right = -88.0
-offset_bottom = 8.0
+offset_left = -1.0
+offset_top = 83.0
+offset_right = -151.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -189,8 +193,8 @@ theme_override_fonts/normal_font = ExtResource("12_02pi6")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "SCENE_LOADOUT_EMBARK_BUTTON"
-horizontal_alignment = 1
-vertical_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="OpenSettingsButton" parent="." unique_id=1397875926 instance=ExtResource("37_ib8r8")]
 unique_name_in_owner = true
