@@ -15,7 +15,12 @@ warnings/check_angle_interpolation_type_conflicting=false
 
 [application]
 
-config/name="Eventide Brackeys 2026.2"
+config/name="Mates of Mendacity"
+config/name_localized={
+"en": "Mates of Mendacity",
+"tr": "Vefasız Tayfa",
+"uk": "Пірати-Ренегати"
+}
 run/main_scene="uid://bpuyamjg7wdv0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
