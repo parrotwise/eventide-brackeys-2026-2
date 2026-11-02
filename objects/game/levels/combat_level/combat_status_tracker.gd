@@ -219,13 +219,9 @@ func _on_combat_start() -> void:
 	# \****************/
 
 	Game.combat.characters.characters_repositioned.connect(
-		func (char_ahead: Character, char_behind: Character):
-			if is_instance_valid(char_ahead):
-				for status: Status in char_ahead.state.active_statuses:
-					status.refresh_granted_statuses.call_deferred()
-
-			if is_instance_valid(char_behind):
-				for status: Status in char_behind.state.active_statuses:
+		func (_char_ahead: Character, _char_behind: Character):
+			for character: Character in Game.combat.characters.all:
+				for status: Status in character.state.active_statuses:
 					status.refresh_granted_statuses.call_deferred()
 	)
 
