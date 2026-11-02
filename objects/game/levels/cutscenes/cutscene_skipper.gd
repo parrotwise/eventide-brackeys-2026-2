@@ -8,6 +8,8 @@ signal skip_requested()
 
 var feedback_text: RichTextLabel:
 	get: return $FeedbackText
+var progress_bar: TextureProgressBar:
+	get: return $ProgressBar
 
 var held_time: float
 var suppressed: bool
@@ -20,14 +22,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	feedback_text.hide()
+	progress_bar.hide()
 	
 	if suppressed:
 		if not Input.is_action_pressed(&'escape'):
 			suppressed = false
 		
 		return
-	
-	feedback_text.visible = Input.is_action_pressed(&'escape')
 	
 	if Input.is_action_pressed(&'escape'):
 		held_time += delta
@@ -38,3 +39,11 @@ func _process(delta: float) -> void:
 	
 	else:
 		held_time = 0
+	
+	progress_bar.value = progress_bar.max_value * held_time / hold_threshold
+
+	if hold_threshold == 0:
+		return
+	
+	feedback_text.visible = Input.is_action_pressed(&'escape')
+	progress_bar.visible = held_time > 0

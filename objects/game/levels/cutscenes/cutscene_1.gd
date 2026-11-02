@@ -18,5 +18,4 @@ func _on_texture_button_pressed() -> void:
 
 
 func skip() -> void:
-	skipper.feedback_text.hide()
 	TransitionLayer.transition_simple_fade(TransitionLayer.loadout_level)

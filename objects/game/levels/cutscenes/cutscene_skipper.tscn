@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://bpwmkdcjbwooj" path="res://objects/game/levels/cutscenes/cutscene_skipper.gd" id="1_poxry"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="2_5fenh"]
 
+[sub_resource type="Gradient" id="Gradient_poxry"]
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_poxry"]
+gradient = SubResource("Gradient_poxry")
+width = 540
+height = 3
+
 [node name="Skipper" type="Control" unique_id=1266325475]
 layout_mode = 3
 anchors_preset = 15
@@ -14,7 +22,6 @@ mouse_filter = 2
 script = ExtResource("1_poxry")
 
 [node name="FeedbackText" type="RichTextLabel" parent="." unique_id=786364223]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -22,9 +29,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -620.0
-offset_top = -220.0
+offset_top = -180.0
 offset_right = -20.0
-offset_bottom = -20.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -42,3 +49,17 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=6422348]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -591.0
+offset_top = -61.0
+offset_right = -51.0
+offset_bottom = -51.0
+texture_progress = SubResource("GradientTexture2D_poxry")
