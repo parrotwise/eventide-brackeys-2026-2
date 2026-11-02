@@ -2,14 +2,21 @@
 
 [ext_resource type="Script" uid="uid://b2ekcq0ipf8om" path="res://objects/game/levels/loadout_level/loadout_level.gd" id="1_62xg3"]
 [ext_resource type="PackedScene" uid="uid://c54nvxdpt7evw" path="res://objects/game/levels/loadout_level/loadout_input.tscn" id="2_7hxp2"]
+[ext_resource type="Texture2D" uid="uid://bmys86ljifgn" path="res://assets/art/backgrounds/loadout_bg_placeholder.png" id="2_ck6rl"]
 [ext_resource type="PackedScene" uid="uid://bj7rhx32phusy" path="res://objects/game/levels/loadout_level/loadout_selector.tscn" id="2_fniha"]
-[ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="3_fniha"]
 [ext_resource type="PackedScene" uid="uid://b8ywcsmgu2k6w" path="res://objects/game/levels/loadout_level/loadout_ui.tscn" id="5_h0eue"]
 
 [node name="EquipmentLevel" type="Node" unique_id=880102905]
 script = ExtResource("1_62xg3")
 
-[node name="Scenery" parent="." unique_id=1388419847 instance=ExtResource("3_fniha")]
+[node name="Background" type="TextureRect" parent="." unique_id=1203886790]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ck6rl")
+expand_mode = 5
 
 [node name="UI" parent="." unique_id=1020680442 instance=ExtResource("5_h0eue")]
 
