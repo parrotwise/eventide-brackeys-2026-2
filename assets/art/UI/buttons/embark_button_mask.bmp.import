@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ciq0bc3rc562"
+path="res://.godot/imported/embark_button_mask.bmp-ca5b805571feca98776b897d8524169f.res"
+
+[deps]
+
+source_file="res://assets/art/ui/buttons/embark_button_mask.bmp"
+dest_files=["res://.godot/imported/embark_button_mask.bmp-ca5b805571feca98776b897d8524169f.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

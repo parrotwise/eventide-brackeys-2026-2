@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bloiakskhop7d" path="res://objects/game/levels/combat_level/combat_scenery.tscn" id="2_h8ko3"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="3_ocr7h"]
 [ext_resource type="Texture2D" uid="uid://dkxav8844g5e0" path="res://assets/art/logo color.png" id="5_2p4sr"]
-[ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/ui/buttons/big_button.png" id="6_meh5x"]
-[ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="7_pj6jp"]
-[ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="8_1rq8l"]
+[ext_resource type="Texture2D" uid="uid://yjfq2s8v3yj8" path="res://assets/art/ui/buttons/menu_button.png" id="5_meh5x"]
+[ext_resource type="Texture2D" uid="uid://bx2rq8uyfuldp" path="res://assets/art/ui/buttons/menu_button_hover.png" id="6_pj6jp"]
+[ext_resource type="BitMap" uid="uid://guebxdjsp2mm" path="res://assets/art/ui/buttons/menu_button_mask.bmp" id="7_1rq8l"]
 [ext_resource type="PackedScene" uid="uid://dyaa4eux5g17d" path="res://objects/ui/settings_menu.tscn" id="8_meh5x"]
 
 [sub_resource type="Gradient" id="Gradient_djk2j"]
@@ -140,21 +140,20 @@ offset_top = -400.0
 offset_bottom = -100.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("6_meh5x")
-texture_hover = ExtResource("7_pj6jp")
-texture_click_mask = ExtResource("8_1rq8l")
+texture_normal = ExtResource("5_meh5x")
+texture_hover = ExtResource("6_pj6jp")
+texture_click_mask = ExtResource("7_1rq8l")
 stretch_mode = 0
-flip_h = true
 
 [node name="StartButtonLabel" type="RichTextLabel" parent="StartButton" unique_id=383268278]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 91.0
-offset_top = 11.0
-offset_right = -129.0
-offset_bottom = 8.0
+offset_left = 147.0
+offset_top = 46.0
+offset_right = -68.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -163,8 +162,8 @@ theme_override_fonts/normal_font = ExtResource("3_ocr7h")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "MAIN_MENU_LABEL_START"
-horizontal_alignment = 1
-vertical_alignment = 1
+scroll_active = false
+vertical_alignment = 2
 
 [node name="OptionsButton" type="TextureButton" parent="." unique_id=2129301356]
 layout_mode = 1
@@ -178,20 +177,21 @@ offset_right = 600.0
 offset_bottom = -100.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("6_meh5x")
-texture_hover = ExtResource("7_pj6jp")
-texture_click_mask = ExtResource("8_1rq8l")
+texture_normal = ExtResource("5_meh5x")
+texture_hover = ExtResource("6_pj6jp")
+texture_click_mask = ExtResource("7_1rq8l")
 stretch_mode = 0
+flip_h = true
 
 [node name="OptionsButtonLabel" type="RichTextLabel" parent="OptionsButton" unique_id=2000364070]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 128.0
-offset_top = -5.0
-offset_right = -88.0
-offset_bottom = 8.0
+offset_left = 68.0
+offset_top = 46.0
+offset_right = -144.0
+offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -200,8 +200,9 @@ theme_override_fonts/normal_font = ExtResource("3_ocr7h")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "MAIN_MENU_LABEL_OPTIONS"
-horizontal_alignment = 1
-vertical_alignment = 1
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="SettingsMenu" parent="." unique_id=233459091 instance=ExtResource("8_meh5x")]
 visible = false

@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bwjhj86hyn8h3" path="res://objects/game/levels/loadout_level/center_stage.tscn" id="6_5gy6n"]
 [ext_resource type="PackedScene" uid="uid://mk1qefbaxiab" path="res://objects/game/levels/loadout_level/info_panel.tscn" id="6_6r2pp"]
 [ext_resource type="Texture2D" uid="uid://ct250f4dwhh2h" path="res://assets/art/ui/panels/info_panel_bg.png" id="8_f8uhx"]
+[ext_resource type="Texture2D" uid="uid://cjpkkyt6kafrp" path="res://assets/art/ui/buttons/embark_button.png" id="10_f8uhx"]
+[ext_resource type="Texture2D" uid="uid://txpf64qlomtq" path="res://assets/art/ui/buttons/embark_button_hover.png" id="11_wk60c"]
 [ext_resource type="Texture2D" uid="uid://dx76148ksuxn7" path="res://assets/art/ui/panels/equipment_panel_bg.png" id="11_x648l"]
 [ext_resource type="FontFile" uid="uid://dv4cpo7xflp1d" path="res://assets/theme/font/Leander.ttf" id="12_02pi6"]
+[ext_resource type="BitMap" uid="uid://ciq0bc3rc562" path="res://assets/art/ui/buttons/embark_button_mask.bmp" id="12_10osi"]
 [ext_resource type="PackedScene" uid="uid://cnvdwcpltliaq" path="res://objects/ui/equipment_button.tscn" id="13_ughvu"]
-[ext_resource type="Texture2D" uid="uid://c38ei3ovda6m3" path="res://assets/art/ui/buttons/big_button.png" id="34_i52mc"]
-[ext_resource type="Texture2D" uid="uid://bnv1p6mrb1ssk" path="res://assets/art/ui/buttons/big_button_hover.png" id="35_dcpep"]
-[ext_resource type="BitMap" uid="uid://dxdcdkkvgiy4b" path="res://assets/art/ui/buttons/big_button_map.bmp" id="36_vncq4"]
 [ext_resource type="PackedScene" uid="uid://u16k37lsguqx" path="res://objects/ui/action_button.tscn" id="37_ib8r8"]
 [ext_resource type="Texture2D" uid="uid://cu6p5i0kmbfs2" path="res://assets/art/ui/icons/menus/top_bar_settings.png" id="38_yvkc6"]
 [ext_resource type="Texture2D" uid="uid://d1nntf8x0my5n" path="res://assets/art/ui/icons/menus/top_bar_settings_hover_click.png" id="39_2t2ci"]
@@ -169,17 +169,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -541.0
-offset_top = -300.0
-offset_right = 130.0
-offset_bottom = 56.0
+offset_left = -570.0
+offset_top = -225.0
+offset_right = 32.0
 grow_horizontal = 0
 grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(-32, 0)
-texture_normal = ExtResource("34_i52mc")
-texture_hover = ExtResource("35_dcpep")
-texture_click_mask = ExtResource("36_vncq4")
+texture_normal = ExtResource("10_f8uhx")
+texture_hover = ExtResource("11_wk60c")
+texture_click_mask = ExtResource("12_10osi")
 stretch_mode = 0
 
 [node name="EmbarkButtonLabel" type="RichTextLabel" parent="EmbarkButton" unique_id=873387037]
@@ -188,10 +187,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 83.0
-offset_right = -151.0
-offset_bottom = -123.0
+offset_left = 241.0
+offset_top = 79.0
+offset_right = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -200,16 +198,19 @@ theme_override_fonts/normal_font = ExtResource("12_02pi6")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "SCENE_LOADOUT_EMBARK_BUTTON"
-horizontal_alignment = 2
-vertical_alignment = 2
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="OpenSettingsButton" parent="." unique_id=1397875926 instance=ExtResource("37_ib8r8")]
 unique_name_in_owner = true
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -90.0
-offset_right = 0.0
+offset_left = -100.0
+offset_top = 20.0
+offset_right = -10.0
+offset_bottom = 110.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
