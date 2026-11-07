@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7rj35oktahiu" path="res://assets/art/scenery/BG_parallax_sprite_sheet.png" id="3_6c6dk"]
 [ext_resource type="Texture2D" uid="uid://dep2gtaxs5svr" path="res://assets/art/scenery/space_dust_sheet.png" id="3_bj8y4"]
 [ext_resource type="Texture2D" uid="uid://be1e2tgc8pvqw" path="res://assets/art/scenery/Big Comet.png" id="4_6c6dk"]
+[ext_resource type="Texture2D" uid="uid://bvaopi6gf8cyf" path="res://assets/art/scenery/drifting_astroid_sheet.png" id="6_cfncb"]
 [ext_resource type="Texture2D" uid="uid://cab4wkyoeph60" path="res://assets/art/backgrounds/bg_deck_b1.png" id="7_1qjvi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpvd8"]
@@ -66,11 +67,8 @@ gravity = Vector3(0, 0, 0)
 hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sywex"]
-load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncmcp"]
-atlas = SubResource("CompressedTexture2D_sywex")
+atlas = ExtResource("6_cfncb")
 region = Rect2(337, 922, 97, 85)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fms0n"]
@@ -170,11 +168,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tthab"]
-load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_uh431"]
-atlas = SubResource("CompressedTexture2D_tthab")
+atlas = ExtResource("6_cfncb")
 region = Rect2(4, 582, 325, 384)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rab3a"]
@@ -195,11 +190,8 @@ scale_min = 0.79999995
 hue_variation_min = -0.100000024
 hue_variation_max = 0.049999975
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xukqx"]
-load_path = "res://.godot/imported/drifting_astroid_sheet.png-67c922dda1a659e6fa4644dbf62be85e.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_53vu4"]
-atlas = SubResource("CompressedTexture2D_xukqx")
+atlas = ExtResource("6_cfncb")
 region = Rect2(337, 752, 136, 162)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y7ltd"]
