@@ -1,44 +1,6 @@
 extends Node
 
 
-## TODO: Add one item per Wwise event.
-enum Event {
-	NONE,
-	ATTACK_BC,
-	ATTACK_BHC,
-	ATTACK_EC,
-	ATTACK_GC,
-	ATTACK_NC,
-	ATTACK_PC,
-	ATTACK_RC,
-	ATTACK_SC,
-	SKILL_BC_CHARGE,
-	SKILL_BC_SLAM,
-	SKILL_BHC,
-	SKILL_EC,
-	SKILL_GC,
-	SKILL_NC,
-	SKILL_PC,
-	SKILL_RC,
-	SKILL_SC,
-}
-
-## TODO: Add one item per Wwise StateGroup+State combination.
-enum State {
-	NONE,
-	INTRO,
-	PRECOMBAT,
-	COMBAT,
-}
-
-## TODO: Add one item per Wwise SwitchGroup.
-enum Switch {
-	NONE,
-	NORMAL,
-	SMASHED,
-}
-
-## TODO: Deprecated! Replace with the enums above.
 enum Clip {
 	NONE,
 	BC_ABILITY_CHARGE,
@@ -63,7 +25,6 @@ enum Clip {
 	UI_BUTTON,
 }
 
-## TODO: Deprecated! Replace with the enums above.
 enum Track {
 	TRACK1,
 	TRACK2,
@@ -75,19 +36,11 @@ var sfx_volume: float = 0.5
 
 var audio_components: Array[CharacterAudio] = []
 
-## TODO: Both deprecated! Remove after Wwise migration.
 var sfx_player_template: PackedScene = preload('res://objects/audio/sfx_player.tscn')
 var music_player_template: PackedScene = preload('res://objects/audio/music_player.tscn')
 
-var wwise_audio_listener_template: PackedScene = preload('res://objects/audio/wwise_audio_listener.tscn')
-var wwise_sound_bank_template: PackedScene = preload('res://objects/audio/wwise_sound_bank.tscn')
-
-## TODO: Both deprecated! Remove after Wwise migration.
 var sfx_player: SFXPlayer
 var music_player: MusicPlayer
-
-var wwise_audio_listener: AkListener2D
-var wwise_sound_bank: AkBank
 
 
 ## TODO: Deprecated! Remove/Replace after Wwise migration.
@@ -95,14 +48,8 @@ func _ready() -> void:
 	sfx_player = sfx_player_template.instantiate()
 	music_player = music_player_template.instantiate()
 
-	wwise_audio_listener = wwise_audio_listener_template.instantiate()
-	wwise_sound_bank = wwise_sound_bank_template.instantiate()
-
 	add_child(sfx_player)
 	add_child(music_player)
-
-	add_child(wwise_audio_listener)
-	add_child(wwise_sound_bank)
 
 
 func _process(_delta: float) -> void:
@@ -115,25 +62,6 @@ func _process(_delta: float) -> void:
 	AudioServer.set_bus_volume_linear(
 		AudioServer.get_bus_index('SFX'), sfx_volume
 	)
-
-
-func post_event(event: Event) -> void:
-	var event_name: String = _event_name(event)
-	if event_name:
-		Wwise.post_event(event_name, self)
-
-
-func set_state(state: State) -> void:
-	var state_group: String = _state(state)['group']
-	var state_value: String = _state(state)['value']
-	if state_group:
-		Wwise.set_state(state_group, state_value)
-
-
-func set_switch(switch: Switch, switch_value: String) -> void:
-	var switch_group: String = _switch_group(switch)
-	if switch_group:
-		Wwise.set_switch(switch_group, switch_value, self)
 
 
 ## TODO: Deprecated! Replaced with the functions above.
@@ -155,81 +83,6 @@ func stop_music() -> void:
 	music_player.stop()
 
 
-func _event_name(event: Event) -> String:
-	match event:
-		Event.ATTACK_BC:
-			return 'Attack_BC'
-		Event.ATTACK_BHC:
-			return 'Attack_BHC'
-		Event.ATTACK_EC:
-			return 'Attack_EC'
-		Event.ATTACK_GC:
-			return 'Attack_GC'
-		Event.ATTACK_NC:
-			return 'Attack_NC'
-		Event.ATTACK_PC:
-			return 'Attack_PC'
-		Event.ATTACK_RC:
-			return 'Attack_RC'
-		Event.ATTACK_SC:
-			return 'Attack_SC'
-		Event.SKILL_BC_CHARGE:
-			return 'SKill_BC_Charge'
-		Event.SKILL_BC_SLAM:
-			return 'SKill_BC_Slam'
-		Event.SKILL_BHC:
-			return 'SKill_BHC'
-		Event.SKILL_EC:
-			return 'SKill_EC'
-		Event.SKILL_GC:
-			return 'SKill_GC'
-		Event.SKILL_NC:
-			return 'SKill_NC'
-		Event.SKILL_PC:
-			return 'SKill_PC'
-		Event.SKILL_RC:
-			return 'SKill_RC'
-		Event.SKILL_SC:
-			return 'SKill_SC'
-	
-	return ''
-
-
-func _state(state: State) -> Dictionary[String, String]:
-	match state:
-		State.INTRO:
-			return {
-				'group': 'Music_States',
-				'value': 'Intro'
-			}
-		State.COMBAT:
-			return {
-				'group': 'Music_States',
-				'value': 'Combat'
-			}
-		State.PRECOMBAT:
-			return {
-				'group': 'Music_States',
-				'value': 'PreCombat'
-			}
-	
-	return {
-		'group': '',
-		'value': ''
-	}
-
-
-func _switch_group(switch: Switch) -> String:
-	match switch:
-		Switch.NORMAL:
-			return 'Effect_Switches'
-		Switch.SMASHED:
-			return 'Effect_Switches'
-	
-	return ''
-
-
-## TODO: Deprecated! Replaced with the functions above.
 func _pick_clip(clip: Clip) -> StringName:
 	match clip:
 		Clip.BC_ABILITY_CHARGE:
@@ -276,7 +129,6 @@ func _pick_clip(clip: Clip) -> StringName:
 	return &''
 
 
-## TODO: Deprecated! Replaced with the functions above.
 func _pick_track(track: Track) -> StringName:
 	match track:
 		Track.TRACK1:

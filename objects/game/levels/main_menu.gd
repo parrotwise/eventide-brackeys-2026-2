@@ -10,14 +10,10 @@ var settings_menu: SettingsMenu:
 
 
 func _ready() -> void:
-	## TODO: Replace with the commented-out callable after Wwise migration
 	start_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	start_button.pressed.connect(TransitionLayer.transition_simple_fade.bind(TransitionLayer.cutscene_1))
 
-	## TODO: Replace with the commented-out callable after Wwise migration
 	options_button.pressed.connect(Audio.play_sfx.bind(Audio.Clip.UI_BUTTON))
-	# open_settings_button.pressed.connect(Audio.post_event.bind(Audio.Event.UI_BUTTON))
 	options_button.pressed.connect(settings_menu.show)
 
 

@@ -15,12 +15,7 @@ signal uses_restored()
 
 @export_group("Audio")
 
-## TODO: Deprecated!
 @export var sfx: Audio.Clip
-##       ...replaced with these below
-@export var post_event: Audio.Event
-@export var set_state: Audio.State
-@export var set_switch: Audio.Switch
 @export var switch_value: String
 
 @export_group("Effect Definition")
@@ -77,12 +72,7 @@ func use(user: Character, target: Character) -> void:
 	
 	Game.combat.effector.apply(self, user, target)
 
-	## TODO: Deprecated!
 	Audio.play_sfx(sfx)
-	##       ...replaced with these below
-	Audio.post_event(post_event)
-	Audio.set_state(set_state)
-	Audio.set_switch(set_switch, switch_value)
 	
 	used.emit(user, target)
 

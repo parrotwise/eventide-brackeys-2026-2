@@ -8,9 +8,7 @@ var skipper: CutsceneSkipper:
 func _ready() -> void:
 	skipper.skip_requested.connect(skip)
 	
-	## TODO: Replace with the commented-out call after Wwise migration
 	Audio.play_music(Audio.Track.TRACK2)
-	# Audio.post_event(Audio.Event.MUSIC_START)
 
 
 func _on_texture_button_pressed() -> void:
