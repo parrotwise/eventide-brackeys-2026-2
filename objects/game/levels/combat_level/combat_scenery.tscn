@@ -9,11 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bvaopi6gf8cyf" path="res://assets/art/scenery/drifting_astroid_sheet.png" id="6_cfncb"]
 [ext_resource type="Texture2D" uid="uid://cab4wkyoeph60" path="res://assets/art/backgrounds/bg_deck_b1.png" id="7_1qjvi"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpvd8"]
-load_path = "res://.godot/imported/BG_parallax_sprite_sheet.png-fbabf6e1c3c45abdeb2c05b4729db43c.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ne8bu"]
-atlas = SubResource("CompressedTexture2D_jpvd8")
+atlas = ExtResource("3_6c6dk")
 region = Rect2(670, 8, 990, 516)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwvcv"]
