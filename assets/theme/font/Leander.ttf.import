@@ -27,14 +27,15 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("res://assets/theme/font/Bluu Next Cyrillic.otf")]
+fallbacks=[Resource("res://assets/theme/font/Bluu Next Cyrillic.otf"), Resource("res://assets/theme/font/Arbutus Slab.ttf"), Resource("uid://hi3fnh5dwn6u", "res://assets/theme/font/Alegreya.otf")]
 Compress=null
 compress=true
 preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0)
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
 }]
 language_support={}
 script_support={}
